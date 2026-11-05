@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-11-05T07:07:47Z",
-  "updated_at": "2026-11-05T19:22:06Z",
+  "updated_at": "2026-11-05T20:04:46Z",
   "files": {
     ".claude/agents/sonnet-coder.md": {
       "role": "index",
@@ -41,9 +41,9 @@
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "3a7dc427e50f27f683eb73d269b352a0534f8b548ac093c2815dfc8815b150fa",
-      "size": 162040,
-      "normalized_sha256": "3a7dc427e50f27f683eb73d269b352a0534f8b548ac093c2815dfc8815b150fa"
+      "sha256": "ffb7f2aa13640677e4a637e0962db411a5e15268dc9b2335dcd7f03cd9690f48",
+      "size": 162373,
+      "normalized_sha256": "ffb7f2aa13640677e4a637e0962db411a5e15268dc9b2335dcd7f03cd9690f48"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -112962,9 +112962,9 @@
     },
     "docs/verification.md": {
       "role": "index",
-      "sha256": "8d15ebeaa6e020603c4b18f9a8fb7711b0121e5f239f4d3ea753bc26039f4ca8",
-      "size": 27261,
-      "normalized_sha256": "8d15ebeaa6e020603c4b18f9a8fb7711b0121e5f239f4d3ea753bc26039f4ca8"
+      "sha256": "1288b1df3c2d02d0cf449e99876ab6f5c4b2c4f1aed7488e572e9209b240d9db",
+      "size": 28185,
+      "normalized_sha256": "1288b1df3c2d02d0cf449e99876ab6f5c4b2c4f1aed7488e572e9209b240d9db"
     },
     "editable/assets/fonts/1056_Toonish.ttf": {
       "role": "observe",
@@ -113085,9 +113085,9 @@
     },
     "game/core/game_universe.gd": {
       "role": "index",
-      "sha256": "a6a28919fb0172c573f8a42ee4d3415f9bb58ed369ad7d5bfb0ac4c2aa814adf",
-      "size": 60987,
-      "normalized_sha256": "a6a28919fb0172c573f8a42ee4d3415f9bb58ed369ad7d5bfb0ac4c2aa814adf"
+      "sha256": "389365e7f16f55a3630f3d2376cec637013ea13a531f85e21f48732369d2c0d0",
+      "size": 61394,
+      "normalized_sha256": "389365e7f16f55a3630f3d2376cec637013ea13a531f85e21f48732369d2c0d0"
     },
     "game/core/global_data.gd": {
       "role": "index",
@@ -118299,9 +118299,9 @@
     },
     "tests/input_battle_flow.gd": {
       "role": "observe",
-      "sha256": "f1ab2c69f8dec9ba802648a8735ac294292bb89de08dc0eb121149441fabe706",
-      "size": 18806,
-      "normalized_sha256": "f1ab2c69f8dec9ba802648a8735ac294292bb89de08dc0eb121149441fabe706"
+      "sha256": "6c8ce8ef1b18ae101341f7694812901174a6d8d887d37b3c2536565a78dd6d72",
+      "size": 19945,
+      "normalized_sha256": "6c8ce8ef1b18ae101341f7694812901174a6d8d887d37b3c2536565a78dd6d72"
     },
     "tests/input_e2e.gd": {
       "role": "observe",
