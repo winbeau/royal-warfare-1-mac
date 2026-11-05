@@ -188,5 +188,117 @@ func run() -> void:
 		[HintsManager.a_hints_list, HintsManager.new_hint_shown])
 
 	h.shutdown()
+
+	# ===== 5. 第 2 关真实路径（main.tscn -> 主菜单 -> 地图 -> 第 2 面旗帜 -> Start Battle），推进到
+	# 第一个 GLOBAL_WAVE，确认招募图标可见、战士/弓手能招募（其余按原版 getLockedUnits 锁定），
+	# 中途做一次失焦自动暂停再恢复，确认不影响结果。
+	# 原版 extlvl2.xml 事件顺序是 对白->敌人->对白->敌人x3->对白->GLOBAL_WAVE，招募本来就只在红色
+	# "Start Wave"按钮出现（GLOBAL_WAVE）之后才开放——这是原版设计，不是本次要修的 bug，前几波招募
+	# 面板本该是空的。
+	await run_level2_global_wave_recruit()
+
 	print(JSON.stringify({"checks": checks, "failures": failures}))
 	quit(0 if failures.is_empty() else 1)
+
+func click_center(c: Control) -> void:
+	await click_at(visual_center_global(c))
+
+func run_level2_global_wave_recruit() -> void:
+	StoredData.test_wipe()
+
+	var main2: Main = (load("res://scenes/main.tscn") as PackedScene).instantiate()
+	root.add_child(main2)
+	await wait_until(func() -> bool: return main2.resources_loaded, 20000, "5.0 第二次启动：资源加载完成")
+	await process_frame
+	await process_frame
+	await process_frame
+	# Main._load_step(76) 在资源加载过程中会调用一次 StoredData.init()，存档标志要等 resources_loaded
+	# 之后再改，否则会被这次 init() 盖掉（和 input_e2e.gd 的做法一致）。
+	# 标记第 1 关已通关（3 星），第 2 关旗帜才会在地图上解锁、可点（game_map_object.gd _build_flags：
+	# 第一个 stars==0 的关卡才是 next_unvisited，之后的关卡保持 flag.visible=false）。
+	var levels: Array = StoredData.local_game_data[StoredData.NUMPAN_LEVELS]
+	levels[0] = 3
+	var flags: Dictionary = StoredData.local_game_data[StoredData.NUMPAN_COMIX]
+	for k in flags.keys():
+		flags[k] = 1
+	LevelIntro.is_shown = true
+	LevelIntro.can_end_intro = true
+	StoredData.main_params["hints"] = false
+
+	await wait_until(func() -> bool: return main2.start_game_button != null, 3000, "5.1 预载 Start 按钮出现")
+	await click_center(main2.start_game_button)
+	await wait_until(func() -> bool: return main2.main_menu != null and main2.main_menu.get_parent() != null and main2.main_menu.visible, 15000, "5.2 点击预载 Start 后主菜单出现")
+	var b_play: Control = main2.main_menu.get_node_or_null("bPlay")
+	if b_play != null:
+		await click_center(b_play)
+	await wait_until(func() -> bool: return main2.g_map != null and main2.g_map.get_parent() != null, 8000, "5.3 点击 Play 后地图出现")
+
+	var g_map: GameMapObject = main2.g_map
+	check(g_map.a_markers.size() > 1, "5.4 地图至少有 2 面旗帜")
+	var flag2: FlashClip = g_map.a_markers[1]
+	check(flag2.visible, "5.5 第 1 关已通关后第 2 面旗帜可见/可点")
+	var sens2: Control = flag2.get_node_or_null("sens")
+	var banner2: FlashClip = flag2.get_node("eVisited") if flag2.get_node("eVisited").visible else flag2.get_node("eUnvisited")
+	await click_at(visual_center_global(banner2))
+	await wait_until(func() -> bool: return g_map.pop != null and g_map.pop.get_parent() != null, 8000, "5.6 点击第 2 面旗帜后弹窗出现")
+	var popup2: PopupMissionEx = g_map.pop
+	await wait_until(func() -> bool: return popup2.popup.modulate.a > 0.99, 8000, "5.7 弹窗入场动画播完")
+	await process_frame
+	check(popup2.b_playbtn != null, "5.8 弹窗 Start Battle 按钮存在")
+	if popup2.b_playbtn != null:
+		await click_center(popup2.b_playbtn)
+	await wait_until(func() -> bool: return main2.game_uni != null and main2.game_uni.get_parent() != null and main2.game_uni.is_inside_tree(), 15000, "5.9 点击 Start Battle 后进入第 2 关战斗")
+
+	var gu2: GameUniverse = main2.game_uni
+	var ui2: MainGameUIEx = gu2.ingame_ui
+	check(ui2 != null, "5.10 第 2 关战斗 HUD 存在")
+	check(gu2.cur_level_num == 1, "5.11 进入的确实是第 2 关（cur_level_num 是 0 基下标，第 2 关=1，实际=%d）" % gu2.cur_level_num)
+
+	# 推进到第一个 GLOBAL_WAVE（红色 Start Wave 按钮出现）：对白用真实点击关掉，敌人事件只靠加速
+	# 逻辑帧推进（不需要真实点击）。中途在接近推进中点时做一次失焦自动暂停（NOTIFICATION_
+	# APPLICATION_FOCUS_OUT）再恢复（FOCUS_IN），验证不会让流程卡住或让已有补间永久冻结。
+	var did_focus_test := false
+	var ticks := 0
+	while not ui2.a_buttons[0].mouse_enabled and ticks < 30000:
+		await dismiss_chat_if_any()
+		if not ChatFrameController.on_stage and gu2.is_paused == false:
+			for i in 10:
+				gu2._physics_process(1.0 / 30.0)
+			ticks += 10
+		if not did_focus_test and ticks > 1500:
+			did_focus_test = true
+			ui2.notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
+			for i in 10:
+				await process_frame
+			ui2.notification(NOTIFICATION_APPLICATION_FOCUS_IN)
+			if gu2.is_paused:
+				await click_center(ui2.t_pause_message)  # call_pause() 把 CLICK 监听直接挂在 tPauseMessage 整个剪辑上
+				for i in 5:
+					await process_frame
+		await process_frame
+	check(ui2.a_buttons[0].mouse_enabled, "5.12 推进到第一个 GLOBAL_WAVE 后招募按钮 mouseEnabled 变为 true（ticks=%d）" % ticks)
+	check(did_focus_test, "5.13 中途确实做过一次失焦自动暂停/恢复")
+
+	# eVert/eHoriz 等六个按钮的隐藏淡出动画结束（真实墙钟），再确认招募图标本身可见、未被盖住。
+	var t_hide := Time.get_ticks_msec()
+	while ui2.e_horiz.visible and Time.get_ticks_msec() - t_hide < 3000:
+		await process_frame
+	check(not ui2.e_horiz.visible, "5.14 红色 Start Wave 按钮出现后 eHoriz 等按钮已经隐藏，不挡住招募图标")
+	await dismiss_chat_if_any()
+	check(ui2.e1.visible and ui2.e4.visible, "5.15 战士(e1)/弓手(e4)招募图标可见")
+	check(not (ui2.e1.get_node("eLocked") as FlashClip).visible, "5.16 战士未锁定")
+	check(not (ui2.e4.get_node("eLocked") as FlashClip).visible, "5.17 弓手未锁定")
+	for pair in [[ui2.e2, "法师"], [ui2.e3, "牧师"], [ui2.e5, "盗贼"]]:
+		check((pair[0].get_node("eLocked") as FlashClip).visible, "5.18 %s 按原版 getLockedUnits 锁定" % pair[1])
+
+	# 真实点击招募一个战士：开子面板 -> 点 tier 1 -> 单位变多、钱变少。
+	var money_before: float = gu2.current_money
+	var units_before: int = gu2.a_all_units.size()
+	await click_at(visual_center_global(ui2.e1))
+	await wait_until(func() -> bool: return ui2.e_sub_down.position.y < ui2.sub_units_panel_down_y - 1.0, 1500, "5.19 点战士图标后 tier 子面板滑出")
+	await click_at(visual_center_global(ui2.e_sub_one))
+	await wait_until(func() -> bool: return gu2.a_all_units.size() > units_before, 1500, "5.20 第 2 关 GLOBAL_WAVE 期间真实点击招募战士成功")
+	check(gu2.current_money < money_before, "5.21 招募按原版扣钱")
+
+	main2.queue_free()
+	await process_frame

@@ -285,6 +285,30 @@ func test_tween_pause_kill() -> void:
 	RWTween.pause_all(true, false)
 	RWTween.step(0.6)
 	check(n.position.x == 0.0 and calls == ["dc"], "pause_all(tweens=true, delayedCalls=false) leaves delayed calls running")
+	# TweenMax.pauseAll()/resumeAll() 对照 editable/scripts/com/greensock/TweenMax.as 的 changePause()：
+	# 只对调用那一刻 getAllTweens() 里已经存在的 tween 做一次性的 `.paused = x` 赋值，没有任何全局标志，
+	# 所以暂停期间新建的 tween（原版等价于关卡对话框弹出/游戏失焦自动暂停期间，HUD 代码仍可能新建补间，
+	# 例如 showRedButton 的淡出动画）不受影响，照常从 0 开始播放，直到自己调用处理完才算数；
+	# resumeAll() 之后，之前被冻结的那些旧 tween 要能从冻结时的进度继续推进，不是从头重放。
+	RWTween.reset(); calls.clear()
+	var n2 := make_node()
+	n.position.x = 0
+	n2.position.x = 0
+	RWTween.to(n, 1.0, {"x": 100.0, "ease": RWEase.linear_ease_none})
+	RWTween.step(0.3)
+	RWTween.pause_all()
+	# 暂停期间新建的 tween（等价于暂停中仍会跑的 HUD 代码新开的补间）：不应该被这次 pause_all 影响。
+	RWTween.to(n2, 1.0, {"x": 100.0, "ease": RWEase.linear_ease_none})
+	RWTween.step(0.5)
+	check(near(n.position.x, 30.0), "pause_all 期间旧 tween 保持冻结在暂停时的进度")
+	check(near(n2.position.x, 50.0), "pause_all 期间新建的 tween 不受影响，照常从 0 开始播放")
+	RWTween.resume_all()
+	RWTween.step(0.2)
+	check(near(n.position.x, 50.0), "resume_all 后旧 tween 从冻结时的进度（0.3）继续，不是从头重放")
+	check(near(n2.position.x, 70.0), "resume_all 不影响本来就没被暂停过的新 tween")
+	RWTween.step(0.5)
+	check(near(n.position.x, 100.0) and near(n2.position.x, 100.0), "两者最终都能播完")
+	n2.free()
 	# kill_all
 	RWTween.reset(); calls.clear()
 	RWTween.to(n, 1.0, {"x": 100.0, "onComplete": note, "onCompleteParams": ["k"]})
