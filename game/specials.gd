@@ -51,7 +51,7 @@ func update(unit: RoyalUnit, _delta: float) -> void:
 			"specMassHeal":
 				var used := false
 				for other in allies:
-					if other.hp < other.max_hp: other.heal(unit.stat("damageRanged", 4) * 3); used = true
+					if other.hp < other.max_hp: other.heal(unit.stat("damageRanged", 4)); used = true
 				if used: consume(unit, skill, "healEffect")
 			"specRessurect", "specSmallRessurect":
 				var count := 0
@@ -139,7 +139,7 @@ func update(unit: RoyalUnit, _delta: float) -> void:
 
 func support(unit: RoyalUnit, target: RoyalUnit) -> void:
 	if ready(unit,"specStrongHeal"):
-		target.heal(unit.stat("damageRanged",4)*value(unit,"specStrongHeal","_loc2_",6))
+		target.heal(unit.stat("damageRanged",4)*(value(unit,"specStrongHeal","_loc2_",6)-1))
 		consume(unit,"specStrongHeal","strongHealAni")
 
 func defend(unit: RoyalUnit, attacker: RoyalUnit, ranged: bool) -> bool:

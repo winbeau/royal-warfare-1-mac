@@ -371,7 +371,6 @@ func resolve_attack(attacker: RoyalUnit, victim: RoyalUnit, ranged: bool) -> voi
 	if ranged and randf() > attacker.stat("accuracy",1): effect("missEffect",victim.position); return
 	var defense := maxf(0,victim.stat("Resist")-attacker.stat("magicPierce")) if attacker.magic() else maxf(0,victim.stat("Armor")-victim.armor_damage-attacker.stat("armorPierceRanged" if ranged else "armorPierceMelee"))
 	var amount := attacker.stat("damageRanged" if ranged else "damageMelee",1) * (1-clampf(defense,0,0.98))
-	if attacker.statuses.has("curse"): amount *= 1.0-float(attacker.statuses.curse.strength)
 	if attacker.statuses.has("enchant"): amount *= float(attacker.statuses.enchant.strength)
 	amount = specials.strike(attacker,victim,amount,ranged)
 	victim.hurt(amount,attacker)
@@ -559,7 +558,11 @@ func update_swarm(delta: float) -> void:
 func summon_record(record: Dictionary) -> void:
 	var route_id := str(int(record.get("route",1)))
 	var point := route_point(route_id)+Vector2(randf_range(-60,60),randf_range(-60,60))
-	var unit := spawn(str(record.kind),false,point,int(record.get("level",1)))
+	var rank:=int(record.get("level",1))
+	var dif:=int(Content.profile.slots[12])
+	if dif==2: rank=mini(3,rank+1)
+	elif dif==3: rank=3
+	var unit := spawn(str(record.kind),false,point,rank)
 	unit.follow_route(paths.get(route_id,[]))
 	unit.apply_status("stun",0.5 if unit.kind=="UNDEAD_VAMPIRE_KING" else 3.0)
 	effect("summonAni" if unit.kind=="UNDEAD_VAMPIRE_KING" else "summonSingleAni",point)

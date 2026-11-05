@@ -19,12 +19,16 @@ case "$action" in
     run) exec "$godot_bin" --path "$project_dir" ;;
     editor) exec "$godot_bin" --editor --path "$project_dir" ;;
     test)
+        mkdir -p "$project_dir/build"
+        touch "$project_dir/build/.gdignore"
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
         "$godot_bin" --headless --path "$project_dir" --script tests/smoke.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/combat_rules.gd -- --isolated-profile
         exec "$godot_bin" --headless --path "$project_dir" --script tests/campaign_flow.gd -- --isolated-profile
         ;;
     export)
         mkdir -p "$project_dir/build"
+        touch "$project_dir/build/.gdignore"
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
         exec "$godot_bin" --headless --path "$project_dir" --export-release macOS "$project_dir/build/Royal Warfare 1.app"
         ;;

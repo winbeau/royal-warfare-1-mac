@@ -95,6 +95,10 @@ func follow_route(points: Array) -> void:
 
 func apply_status(key: String, duration: float, strength: float = 1.0, source: RoyalUnit = null) -> void:
 	if key == "stun" and statuses.has("harm_resist"): return
+	if key=="curse" and not statuses.has("curse"):
+		var ratio:=hp/max_hp
+		max_hp=maxf(1,floorf(max_hp*(1-strength)))
+		hp=maxf(1,floorf(max_hp*ratio))
 	statuses[key] = {"time": duration, "strength": strength, "source": source}
 
 func tick(delta: float) -> void:
@@ -110,6 +114,10 @@ func tick(delta: float) -> void:
 			statuses.erase(key)
 			if key == "betray": friendly = original_friendly
 			if key == "corrupt": armor_damage = 0
+			if key=="curse":
+				var ratio:=hp/max_hp
+				max_hp=stat("Health",1)
+				hp=maxf(1,floorf(max_hp*ratio))
 	if dead:
 		death_time += delta
 		if death_time >= 10 and not escaped:
@@ -134,12 +142,12 @@ func tick(delta: float) -> void:
 	if is_instance_valid(target) and (target.dead or target.escaped or target.friendly == friendly): target = null
 	var healer: bool = record.base == "priestClass"
 	if healer:
-		target = battle.closest(self, true, 266.0, true)
+		target = battle.closest(self, true, 147.0, true)
 	elif not moving or attack_move or not friendly:
 		if not is_instance_valid(target): target = battle.closest(self, false, 266.0 if ranged() else 85.0)
 	if is_instance_valid(target):
 		var distance := position.distance_to(target.position)
-		var attack_range := 250.0 if ranged() or healer else 28.0
+		var attack_range := 147.0 if healer else (266.0 if ranged() else 28.0)
 		if distance <= attack_range:
 			if cooldown <= 0:
 				face(target.position)
@@ -148,9 +156,10 @@ func tick(delta: float) -> void:
 					target.heal(stat("damageRanged", 3))
 					battle.specials.support(self, target)
 				else:
-					play_state("Ranged" if ranged() else "Attack")
-					battle.attack(self, target, ranged())
-				cooldown = maxf(0.15, stat("attackSpeedRanged" if ranged() or healer else "attackSpeedMelee", 40) / 30.0)
+					var use_ranged:=ranged() and distance>40
+					play_state("Ranged" if use_ranged else "Attack")
+					battle.attack(self, target, use_ranged)
+				cooldown = maxf(0.15, stat("attackSpeedRanged" if (ranged() and distance>40) or healer else "attackSpeedMelee", 40) / 30.0)
 				if statuses.has("weakness"): cooldown *= 1.5
 				if statuses.has("suppress"): cooldown *= float(statuses.suppress.strength)
 				if statuses.has("bless"): cooldown *= 1.0-float(statuses.bless.strength)
@@ -210,7 +219,7 @@ func walk(delta: float) -> void:
 
 func hurt(amount: float, attacker: RoyalUnit = null, direct: bool = false) -> void:
 	if dead or escaped: return
-	if statuses.has("harm_resist"): amount *= 0.2
+	if statuses.has("harm_resist") and amount>0: amount=1
 	if statuses.has("weak_spot"): amount *= float(statuses.weak_spot.strength)
 	amount = maxf(0, amount)
 	hp -= amount
@@ -221,6 +230,7 @@ func hurt(amount: float, attacker: RoyalUnit = null, direct: bool = false) -> vo
 	if attacker and not is_instance_valid(target) and not moving: target = attacker
 	if friendly: battle.damage_received += amount
 	else: battle.damage_dealt += amount
+	if hp>0 and not direct and amount>0: gain_experience(1)
 	if hp <= 0:
 		dead = true
 		death_time = 0
@@ -252,10 +262,11 @@ func gain_experience(amount: float) -> void:
 	experience += amount
 	if level < 3 and experience >= stat("Experience", 20):
 		experience -= stat("Experience", 20)
+		var ratio:=hp/max_hp
 		level += 1
 		if level==3: battle.achievements.add("a48_getElite")
 		max_hp = stat("Health", max_hp)
-		hp = max_hp
+		hp = maxf(1,floorf(max_hp*ratio))
 	queue_redraw()
 
 func _draw() -> void:
