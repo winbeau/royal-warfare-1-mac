@@ -1,4 +1,4 @@
-# Royal Warfare 1 — Mac
+# Royal Warfare 1（Godot macOS 重写）
 
 《Royal Warfare》一代的 Godot 4 原生 macOS 重写工程，独立于二代项目。游戏行为使用 GDScript，运行时不使用 SWF、Flash、Ruffle、Wine 或原版程序。
 

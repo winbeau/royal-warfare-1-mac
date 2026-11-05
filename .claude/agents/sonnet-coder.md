@@ -12,7 +12,8 @@ model: sonnet
 - 移植时以原版 AS3 的行为为准：保留原有数值、帧数、计时、判定顺序和随机调用方式。遇到看似笔误的原始数值，照搬并在汇报里注明，不要自行"修正"。
 - 写出的 GDScript 风格要和周围代码保持一致：缩进用 tab，使用静态类型标注，命名和注释密度与现有文件一致。
 - Godot 在 `/Applications/Godot.app/Contents/MacOS/Godot`，通过 `./dev/godot.sh` 调用。测试必须带 `-- --isolated-profile`，不能修改玩家存档。
-- 不执行 git commit、push 或 reset，提交由主会话完成。不删除你没有创建的文件。
+- 不执行 git commit 或 push，提交由主会话完成。不删除你没有创建的文件。
+- 工作区由多个子代理共用，禁止执行任何会丢弃未提交改动的 git 命令：`git reset`、`git restore`、`git stash`、`git clean`、`git checkout -- <file>`、`git switch`。本地钩子会拦截这些命令。需要对比基线时，用 `git show HEAD:<path>` 或 `git diff`；需要回退时，只能用 Edit 或 Write 手工恢复你自己改过的文件。
 - 任务说明里有歧义或与原版源码冲突时，按原版处理，并在汇报中说明。
 
 ## 汇报格式
