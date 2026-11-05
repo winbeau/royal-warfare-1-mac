@@ -316,6 +316,25 @@ func _has_point(point: Vector2) -> bool:
 			var img2 := data.hit_image(tex)
 			if img2 == null or img2.get_pixelv(Vector2i(local)).a > 0.05:
 				return true
+	# 组合符号常见做法：可见图形来自具名子剪辑（例如 eNewHint 的徽标画在子剪辑 d3 里），不是直接烘进
+	# 本剪辑自己的 back/front 栅格。mouseChildren=false 只表示子节点不单独派发事件（见 button_class.gd
+	# 顶部注释），Flash 的 hitTestPoint 对这类容器仍按整个显示对象（含子树）合并后的可见像素判定——
+	# 不下探子节点会让点击只在"父剪辑自己恰好也有不透明像素"的地方生效，肉眼看来明明点在按钮画出来的
+	# 图案上（其实画在子剪辑里）却落空，这正是 NEW HINT 这类徽标点不开的根因。按 clip_bounds 同样的
+	# 仿射换算（position + scale，不含旋转，和既有写法一致）递归下探。
+	for raw_c in get_children():
+		if raw_c == _back or raw_c == _front or not (raw_c is FlashClip):
+			continue
+		var c: FlashClip = raw_c
+		if not c.visible:
+			continue
+		var sx: float = c.scale.x
+		var sy: float = c.scale.y
+		if sx == 0.0 or sy == 0.0:
+			continue
+		var local_pt: Vector2 = (point - c.position) / Vector2(sx, sy)
+		if c._has_point(local_pt):
+			return true
 	if not any_texture and data.children.is_empty() and not _has_content_children() and data.rect.size != Vector2.ZERO:
 		# 纯"命中形状"符号（Flash 里常见做法：填充 alpha=0 的矢量形状专门用来当点击热区，例如地图旗帜/
 		# 单位的 sens：Symbol_5595 这类，总帧数 1、没有子对象、back/front 纹理都是空的，只有一个非零

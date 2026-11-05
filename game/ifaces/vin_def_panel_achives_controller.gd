@@ -168,10 +168,21 @@ static func _descr(achive: Variant) -> String:
 	var descr: Array = screen.get("a_achives_description")
 	return str(descr[achive]) if descr != null and int(achive) < descr.size() else ""
 
-## eCont.width：当前所有精灵包围盒的并集宽度（可排除一个正在摆放的精灵）。
+## eCont.width：AS3 的 DisplayObject.width 取的是整个显示对象（自身图形 ∪ 全部子节点）的包围盒，
+## 不只是手动加进去的那几个 AchiveSprite。eCont 这个符号自己在时间轴上就画着一块半透明的背景条
+## （Symbol 5952，403x51，见 assets/clips/5953/clip.tres），没有成就图标时它也是 eCont 唯一的内容——
+## 原来这里只统计 AchiveSprite，没有图标时并集为空，showPage 就把 eCont.position.x 强制置 0（本该是
+## "按总宽度居中"的 -width/2），这块本该一直居中显示在成就区域下方的背景条于是整块偏到面板右侧，
+## 看起来像一块漂浮的灰白色方块（胜利/失败面板"No new achievements"那一行右边的空块）。
+## 用 IfaceUtil.clip_bounds(eCont) 取 eCont 自身栅格内容的包围盒，与 AchiveSprite 的包围盒取并集，
+## 和 AS3 的 getBounds 语义一致。
 static func _cont_width(exclude: AchiveSprite = null) -> float:
 	var lo := INF
 	var hi := -INF
+	var own: Rect2 = IfaceUtil.clip_bounds(e_cont)
+	if own.size != Vector2.ZERO or own.position != Vector2.ZERO:
+		lo = minf(lo, own.position.x)
+		hi = maxf(hi, own.end.x)
 	for c in e_cont.get_children():
 		if c is AchiveSprite and c != exclude:
 			var r := Rect2(c.position, c.size * c.scale)

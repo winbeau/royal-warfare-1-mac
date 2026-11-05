@@ -34,6 +34,8 @@
 | `assets/backgrounds/` | 一代 24 组关卡背景 |
 | `assets/library/` | 角色与特效图集、动画、原矢量图、字体、声音和文字 |
 | `assets/clips/` | `scenes/clips/` 场景引用的逐符号位图与剪辑数据 |
+| `assets/paths/` | 每张背景的原版障碍掩码（`pathBD`，700x600），`game/service/path_parser.gd` 读取为 `path_bd` |
+| `assets/paths_extra/` | 用户要求的玩法改动：每张背景的补充障碍（空气墙，天空/远山/水面等明显不可走的区域），和原版掩码分开存放，不改 `assets/paths/`；由 `GameUniverse.USE_EXTRA_OBSTACLES` 控制是否与原版掩码合并，见 `docs/verification.md`「用户要求的玩法改动」|
 | `data/campaign.json` | 序章和 24 关，含 313 个原事件、对话与初始配置（仅 `tests/levels_data.gd` 用于校验，运行时不读取） |
 | `data/geometry.json` | 原路线、地图元素变换及障碍多边形 |
 | `data/save_schema.json` | 存档槽位结构（`NUMPAN_*` 下标），供 `LegacySave` 做旧存档字段映射 |

@@ -525,6 +525,13 @@ func test_achives_pages() -> void:
 	check(left.visible and right.visible and not no_new.visible, "arrows shown for more than 5")
 	check(cont.get_children().filter(func(c): return c is VinDefPanelAchivesController.AchiveSprite).size() == 5, "page 1 shows 5 icons")
 	check(VinDefPanelAchivesController.a2[0].current_frame == 4, "icon frame = achievement number + 1")
+	# eHint（成就描述提示框）悬停才出现：用真实的 mouse_entered/mouse_exited 信号（AchiveSprite 自己连接
+	# 的回调，和真实鼠标移入移出触发的是同一条路径），不是直接调用 rover()/rout()。
+	check(not hint.visible, "未悬停任何成就图标时 eHint 保持隐藏")
+	VinDefPanelAchivesController.a1[0].mouse_entered.emit()
+	check(hint.visible, "真实悬停第一个成就图标后 eHint 出现")
+	VinDefPanelAchivesController.a1[0].mouse_exited.emit()
+	check(not hint.visible, "移出后 eHint 重新隐藏")
 	var ev := ButtonClass.ButtonEvent.new()
 	ev.target = right
 	VinDefPanelAchivesController.button_clicked(ev)
@@ -538,6 +545,14 @@ func test_achives_pages() -> void:
 	VinDefPanelAchivesController.remove_events()
 	VinDefPanelAchivesController.init(panel, [], no_new, left, right, cont, hint)
 	check(no_new.visible and not left.visible, "no achievements -> 'no new' label")
+	# 根因修复：eCont.width（AS3 DisplayObject.width）包含它自己时间轴上的背景图形（Symbol 5952，
+	# 没有成就图标时它是 eCont 唯一的内容），不只是手动加进去的 AchiveSprite；漏算会让"没有新成就"
+	# 时 eCont.position.x 被强制置 0，背景条整块偏到面板右侧，变成漂浮的半透明方块（胜利/失败面板的
+	# 截图反馈）。断言：没有图标时 eCont 仍按自身背景宽度居中（position.x 约为其宽度负一半），不是 0。
+	check(not hint.visible, "没有新成就时 eHint 也保持隐藏，不会凭空出现一块提示框背景")
+	var cw: float = VinDefPanelAchivesController._cont_width()
+	check(cw > 0.0, "没有图标时 eCont 自身背景图形的宽度仍非零（Symbol 5952 一直在）")
+	check(near(cont.position.x, -cw / 2.0, 0.5), "没有新成就时 eCont 按自身背景宽度居中（position.x=%.1f, 期望%.1f）" % [cont.position.x, -cw / 2.0])
 	VinDefPanelAchivesController.remove_events()
 	VinDefPanelAchivesController.init(panel, [0, 1, 2, 3, 4], no_new, left, right, cont, hint)
 	check(VinDefPanelAchivesController.a_pages == [[0, 1, 2, 3, 4]] and not left.visible, "exactly 5 -> a single page, no arrows")

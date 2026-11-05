@@ -7,6 +7,9 @@ extends RefCounted
 
 const LAYOUT_PATH := "res://data/level_layout.json"
 const MASK_DIR := "res://assets/paths/"
+# 用户要求的玩法改动（不是原版数据，和 assets/paths/ 分开存放）：地图的补充"空气墙"，
+# 见 docs/verification.md「用户要求的玩法改动」。由 GameUniverse.USE_EXTRA_OBSTACLES 控制是否生效。
+const EXTRA_MASK_DIR := "res://assets/paths_extra/"
 
 static var _layout: Dictionary = {}
 
@@ -56,6 +59,13 @@ static func parse(bg_name: String, param2: GameUniverse) -> void:
 			param2.def_flag_object = clip
 	if not has_obstacle:
 		param2.path_bd = null
+	# 用户要求的玩法改动：按像素把补充障碍（空气墙）和原版障碍"或"合并，USE_EXTRA_OBSTACLES=false 时
+	# 完全跳过，行为与原版一致。原版没有障碍层（path_bd 为 null）的背景，若补充层存在也要能正确建出掩码。
+	if GameUniverse.USE_EXTRA_OBSTACLES:
+		var extra_path := EXTRA_MASK_DIR + bg_name + ".png"
+		if ResourceLoader.exists(extra_path) or FileAccess.file_exists(extra_path):
+			var extra_bd := RWBitmapData.new(extra_path, GameUniverse.MAX_SCREEN_WIDTH, GameUniverse.MAX_SCREEN_HEIGHT)
+			param2.path_bd = MergedMask.new(GameUniverse.MAX_SCREEN_WIDTH, GameUniverse.MAX_SCREEN_HEIGHT, param2.path_bd, extra_bd)
 	# aPathMap.sortOn("numb", Array.NUMERIC)；GDScript 的 sort_custom 不稳定，同 numb 的相对次序原版也未定义
 	param2.a_path_map.sort_custom(func(a: MapRoute, b: MapRoute) -> bool: return a.numb < b.numb)
 
@@ -64,3 +74,28 @@ static func _as_int(s: String) -> int:
 	if s.is_valid_int():
 		return s.to_int()
 	return 0
+
+## 用户要求的玩法改动专用：把原版障碍（可能为 null）和补充障碍按像素"或"合并成一张新的只读掩码。
+## 不改 RWBitmapData 本体（它是原版 pathBD 的等价实现），避免混入原版数据与玩法改动的数据。
+class MergedMask extends RWBitmapData:
+	var _or_data: PackedByteArray
+
+	func _init(w: int, h: int, base: RWBitmapData, extra: RWBitmapData) -> void:
+		super("", w, h)
+		_or_data = PackedByteArray()
+		_or_data.resize(w * h * 3)
+		for y in range(h):
+			for x in range(w):
+				var base_px := 0 if base == null else base.get_pixel(x, y)
+				var extra_px := 0 if extra == null else extra.get_pixel(x, y)
+				var v: int = 0 if (base_px == 0 and extra_px == 0) else 255
+				var i := (y * w + x) * 3
+				_or_data[i] = v
+				_or_data[i + 1] = v
+				_or_data[i + 2] = v
+
+	func get_pixel(x: int, y: int) -> int:
+		if x < 0 or y < 0 or x >= width or y >= height:
+			return 0
+		var i := (y * width + x) * 3
+		return (_or_data[i] << 16) | (_or_data[i + 1] << 8) | _or_data[i + 2]

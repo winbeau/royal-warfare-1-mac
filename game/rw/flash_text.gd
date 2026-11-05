@@ -71,7 +71,12 @@ func _ready() -> void:
 	_rtl.focus_mode = Control.FOCUS_NONE
 	_rtl.clip_contents = false
 	_rtl.fit_content = false
-	_rtl.add_theme_constant_override(&"line_separation", int(round(leading)))
+	# AS3 的 leading 是加在"该字体的 ascent+descent"这个行高基准上的调整量；DefineFont3 导出字形配的
+	# 那个基准本来就比 RichTextLabel 用回退的系统字体/本地 ttf 算出来的行高宽松。两边基准不同，原版
+	# 的负值 leading（常见 -2～-4，用来把行距收紧）在这里再直接减到 Godot 本就更紧的基准上，多行文字
+	# 会被压成接近甚至完全重叠（例如单位面板 tLevelClass 的两行名字叠在一起）。这里只把 leading 当
+	# "最多收紧到贴合"处理：不下探到 0 以下，既避免重叠，也不改变非负 leading（原版偶尔的加宽）的效果。
+	_rtl.add_theme_constant_override(&"line_separation", maxi(0, int(round(leading))))
 	_rtl.add_theme_color_override(&"default_color", Color(color.r, color.g, color.b, 1.0))
 	_rtl.modulate.a = color.a
 	if shadow_color.a > 0.0:

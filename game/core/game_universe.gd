@@ -15,6 +15,10 @@ static var number_of_levels_reloaded: int = 0
 static var inst: GameUniverse
 static var MAX_SCREEN_WIDTH: int = 700
 static var MAX_SCREEN_HEIGHT: int = 600
+## 用户要求的玩法改动（不是原版数据）：是否叠加 assets/paths_extra/<背景>.png 的补充障碍
+## （地图边缘/天空/远山/水面等明显不可走的区域）。默认 true；设为 false 时行为与原版一致，
+## 仅用 assets/paths/<背景>.png，便于以后与原版对照。见 docs/verification.md「用户要求的玩法改动」。
+static var USE_EXTRA_OBSTACLES: bool = true
 const DEFEAT := "defeat"
 const VICTORY := "victory"
 static var need_to_show_intro: bool = true
