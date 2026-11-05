@@ -148,7 +148,8 @@ static var main_params = null
 static var end_game_flag = null
 
 ## 隔离模式：不读写 user://，序列化文本只保留在内存。
-static var isolated: bool = OS.get_cmdline_user_args().has("--isolated-profile")
+# 以 --script 运行的测试和截图脚本也一律隔离，防止漏带参数时写入玩家存档。
+static var isolated: bool = OS.get_cmdline_user_args().has("--isolated-profile") or OS.get_cmdline_args().has("--script")
 static var _isolated_blob: String = ""
 ## 测试可改写；默认 user://RoyalDefenderGame7.json。
 static var save_path: String = "user://" + SAVE_GAME_NAME + ".json"

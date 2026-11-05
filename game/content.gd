@@ -20,7 +20,7 @@ func read_json(path: String) -> Variant:
 	return JSON.parse_string(FileAccess.get_file_as_string("res://" + path))
 
 func _ready() -> void:
-	isolated_profile=OS.get_cmdline_user_args().has("--isolated-profile")
+	isolated_profile=OS.get_cmdline_user_args().has("--isolated-profile") or OS.get_cmdline_args().has("--script")
 	units = read_json("data/units.json").units
 	campaign = read_json("data/campaign.json").campaign
 	geometry = read_json("data/geometry.json")
