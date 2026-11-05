@@ -1,13 +1,19 @@
 {
   "version": 1,
   "created_at": "2026-11-05T07:07:47Z",
-  "updated_at": "2026-11-05T11:18:19Z",
+  "updated_at": "2026-11-05T19:22:06Z",
   "files": {
     ".claude/agents/sonnet-coder.md": {
       "role": "index",
-      "sha256": "f00e2eb5dc5219e2b939b2ccd06732f834feae527f64d9f2635ec7b5b176e820",
-      "size": 1803,
-      "normalized_sha256": "f00e2eb5dc5219e2b939b2ccd06732f834feae527f64d9f2635ec7b5b176e820"
+      "sha256": "e84f1acb105ae1f31fbe71d0ac3d5c6d5032f704601ecef95696a5a1030ece09",
+      "size": 2514,
+      "normalized_sha256": "e84f1acb105ae1f31fbe71d0ac3d5c6d5032f704601ecef95696a5a1030ece09"
+    },
+    ".claude/hooks/block-destructive-git.sh": {
+      "role": "index",
+      "sha256": "b1ad4c821b46754617a190387507c86cc1942931cd45795e878c37c0e9db519b",
+      "size": 661,
+      "normalized_sha256": "b1ad4c821b46754617a190387507c86cc1942931cd45795e878c37c0e9db519b"
     },
     ".gitattributes": {
       "role": "index",
@@ -17,27 +23,27 @@
     },
     ".gitignore": {
       "role": "index",
-      "sha256": "24e8c7ca86ba774aa06199e128a9f9fae81eaebec74b95dce4c18fa8f22152d5",
-      "size": 281,
-      "normalized_sha256": "24e8c7ca86ba774aa06199e128a9f9fae81eaebec74b95dce4c18fa8f22152d5"
+      "sha256": "185f0d174d0d75f47600f7037a47f579d08524253131e382ce15b5649443c64b",
+      "size": 309,
+      "normalized_sha256": "185f0d174d0d75f47600f7037a47f579d08524253131e382ce15b5649443c64b"
     },
     "AGENTS.md": {
       "role": "index",
-      "sha256": "ef19d51bd22bf859a98dadad637a973d14c1e930c2456669a359081b7aab839a",
-      "size": 16496,
-      "normalized_sha256": "ef19d51bd22bf859a98dadad637a973d14c1e930c2456669a359081b7aab839a"
+      "sha256": "324a52336ed12331a5671928d5f2339c6d809b7897aade8f8337c4a2953d89b8",
+      "size": 17628,
+      "normalized_sha256": "324a52336ed12331a5671928d5f2339c6d809b7897aade8f8337c4a2953d89b8"
     },
     "README.md": {
       "role": "index",
-      "sha256": "da3e7c3413f777631aec93248c7897b5d161ad77d240a72b3683f7eca808b7e2",
-      "size": 5089,
-      "normalized_sha256": "da3e7c3413f777631aec93248c7897b5d161ad77d240a72b3683f7eca808b7e2"
+      "sha256": "e1cd2614f233b7862af0100f67c1449bfaee1f5650218715b0a8401884454d1f",
+      "size": 5579,
+      "normalized_sha256": "e1cd2614f233b7862af0100f67c1449bfaee1f5650218715b0a8401884454d1f"
     },
     "aoci.code.txt": {
       "role": "index",
-      "sha256": "0faf1b48b88b5a97649a02529905514d0389b1765f8d35e55ad0e7711b45c69b",
-      "size": 162051,
-      "normalized_sha256": "0faf1b48b88b5a97649a02529905514d0389b1765f8d35e55ad0e7711b45c69b"
+      "sha256": "3a7dc427e50f27f683eb73d269b352a0534f8b548ac093c2815dfc8815b150fa",
+      "size": 162040,
+      "normalized_sha256": "3a7dc427e50f27f683eb73d269b352a0534f8b548ac093c2815dfc8815b150fa"
     },
     "aoci.meta.txt": {
       "role": "index",
@@ -4724,11 +4730,55 @@
       "size": 604,
       "normalized_sha256": "c059aa66f5ae9765298add191a1a4819a9b277ad0da6730c076cb2524e0768d6"
     },
+    "assets/clips/306/b0.png": {
+      "role": "observe",
+      "sha256": "486fa52c902ed0747fd1413edaf49d728e38798c0b945b138cbaf83f74878c3e",
+      "size": 5049
+    },
+    "assets/clips/306/b0.png.import": {
+      "role": "observe",
+      "sha256": "36831dece035bfaa8aaabe4fb3936e664e6912adf460c12f803706a9f9283810",
+      "size": 926,
+      "normalized_sha256": "36831dece035bfaa8aaabe4fb3936e664e6912adf460c12f803706a9f9283810"
+    },
+    "assets/clips/306/b1.png": {
+      "role": "observe",
+      "sha256": "69f33f053ce449304f1fbeeacbe001e9a6272c63f18b5c5fc2dca8ae96eb677d",
+      "size": 6345
+    },
+    "assets/clips/306/b1.png.import": {
+      "role": "observe",
+      "sha256": "c17f727d38485fd25cc304cf6d4dd05ae45cb1f4abaca7d37e05e28ad3a53a8e",
+      "size": 927,
+      "normalized_sha256": "c17f727d38485fd25cc304cf6d4dd05ae45cb1f4abaca7d37e05e28ad3a53a8e"
+    },
+    "assets/clips/306/b2.png": {
+      "role": "observe",
+      "sha256": "3095a39971a7c2d7b64914cf2eb69eb3fcce588268c739b4939dacd0ff054b19",
+      "size": 7048
+    },
+    "assets/clips/306/b2.png.import": {
+      "role": "observe",
+      "sha256": "459c8da681b66a71cfb0497f14d0d3a434a4d95205e67949279cf6567d8e6a78",
+      "size": 927,
+      "normalized_sha256": "459c8da681b66a71cfb0497f14d0d3a434a4d95205e67949279cf6567d8e6a78"
+    },
+    "assets/clips/306/b3.png": {
+      "role": "observe",
+      "sha256": "87370763c2bf8ef77db3df4a74cc9515be57240fa6152fd646dea4890ab4a9b2",
+      "size": 7418
+    },
+    "assets/clips/306/b3.png.import": {
+      "role": "observe",
+      "sha256": "dd641941f1bb577cf9164c2fbfa4248cda44170aefec2c245ac8d8a6c61553a9",
+      "size": 927,
+      "normalized_sha256": "dd641941f1bb577cf9164c2fbfa4248cda44170aefec2c245ac8d8a6c61553a9"
+    },
     "assets/clips/306/clip.tres": {
       "role": "observe",
-      "sha256": "b437d428cc7ad9138e034df9a7ded1d609638a0505e94c55a762ca61936d1c6a",
-      "size": 1225,
-      "normalized_sha256": "b437d428cc7ad9138e034df9a7ded1d609638a0505e94c55a762ca61936d1c6a"
+      "sha256": "d1e90855069bb57ee7844a2350a70c96ece9705bb138729d22796dcd9f41d011",
+      "size": 969,
+      "normalized_sha256": "d1e90855069bb57ee7844a2350a70c96ece9705bb138729d22796dcd9f41d011"
     },
     "assets/clips/306/f0.png": {
       "role": "observe",
@@ -4820,55 +4870,55 @@
       "size": 607,
       "normalized_sha256": "e10de16fbd6070ee2cbc5f0eeab88cae0ef7013e0088b5b2b4950ab1ffd7420c"
     },
+    "assets/clips/306f1/b0.png": {
+      "role": "observe",
+      "sha256": "6e5b27dd2b839db5ffadb3e4677ed742ce0aacb8890b4adbff81a661b7593ea5",
+      "size": 11758
+    },
+    "assets/clips/306f1/b0.png.import": {
+      "role": "observe",
+      "sha256": "691912a450166b62b451c82174e5f2cf1a714f24ea23dee49dd07c7f3d64e73c",
+      "size": 929,
+      "normalized_sha256": "691912a450166b62b451c82174e5f2cf1a714f24ea23dee49dd07c7f3d64e73c"
+    },
+    "assets/clips/306f1/b1.png": {
+      "role": "observe",
+      "sha256": "8c6062fb8f6215ad9b9704cd3213c050e049b6031ff948a8e7d6c8154b28af5c",
+      "size": 12741
+    },
+    "assets/clips/306f1/b1.png.import": {
+      "role": "observe",
+      "sha256": "de851c0d7576d0233533a28cf9b3e0aa6963b511ef2693ba603804e42d01858e",
+      "size": 929,
+      "normalized_sha256": "de851c0d7576d0233533a28cf9b3e0aa6963b511ef2693ba603804e42d01858e"
+    },
+    "assets/clips/306f1/b2.png": {
+      "role": "observe",
+      "sha256": "c4e1508bd479bcad9049aaf1f640c252402a0ffced1bc91999304a28a9a61700",
+      "size": 13173
+    },
+    "assets/clips/306f1/b2.png.import": {
+      "role": "observe",
+      "sha256": "671e4588bf374ad84223aebf9dacfb7f441ac88b613533bf60aa02abe78f280d",
+      "size": 929,
+      "normalized_sha256": "671e4588bf374ad84223aebf9dacfb7f441ac88b613533bf60aa02abe78f280d"
+    },
+    "assets/clips/306f1/b3.png": {
+      "role": "observe",
+      "sha256": "5c888c6ea2234473974d3824246e58aeaa4d501834d7cc806d416cddc63795d7",
+      "size": 13408
+    },
+    "assets/clips/306f1/b3.png.import": {
+      "role": "observe",
+      "sha256": "6e4a9033976deca3d13ae7a409d7345b86d2736b67583e767e38b72429aa89de",
+      "size": 928,
+      "normalized_sha256": "6e4a9033976deca3d13ae7a409d7345b86d2736b67583e767e38b72429aa89de"
+    },
     "assets/clips/306f1/clip.tres": {
       "role": "observe",
-      "sha256": "0d1872bdf27ce2370edace3a4fe9c063905ac01ed31a2d87064f0126a2b6fc54",
-      "size": 1239,
-      "normalized_sha256": "0d1872bdf27ce2370edace3a4fe9c063905ac01ed31a2d87064f0126a2b6fc54"
-    },
-    "assets/clips/306f1/f0.png": {
-      "role": "observe",
-      "sha256": "1243e1bd78f574358f8895963247fe024a870c9628f3a56ddd0af3e4254c4f36",
-      "size": 8971
-    },
-    "assets/clips/306f1/f0.png.import": {
-      "role": "observe",
-      "sha256": "cf6b329afd0845c8122405e0a3ae5100e70f32c0f1b2ab72bfa27e6c48e4a50e",
-      "size": 928,
-      "normalized_sha256": "cf6b329afd0845c8122405e0a3ae5100e70f32c0f1b2ab72bfa27e6c48e4a50e"
-    },
-    "assets/clips/306f1/f1.png": {
-      "role": "observe",
-      "sha256": "20cf7c7670f33366dbf12c98233a0be7df89edaa726d0e3dc0095142a7cef08e",
-      "size": 8435
-    },
-    "assets/clips/306f1/f1.png.import": {
-      "role": "observe",
-      "sha256": "24bb7358e405ebc7c64eb52d406c4c47a33042f16182ef3fd14222209ac5e244",
-      "size": 929,
-      "normalized_sha256": "24bb7358e405ebc7c64eb52d406c4c47a33042f16182ef3fd14222209ac5e244"
-    },
-    "assets/clips/306f1/f2.png": {
-      "role": "observe",
-      "sha256": "a9be085598d07f6550f21a12b5ee24b34564715a0a7dcfd53951690270151f70",
-      "size": 9364
-    },
-    "assets/clips/306f1/f2.png.import": {
-      "role": "observe",
-      "sha256": "d57fef4c773ea55247493128ef1c4faed79f7dbd292d3b57f1982b64ecbcdb53",
-      "size": 929,
-      "normalized_sha256": "d57fef4c773ea55247493128ef1c4faed79f7dbd292d3b57f1982b64ecbcdb53"
-    },
-    "assets/clips/306f1/f3.png": {
-      "role": "observe",
-      "sha256": "3cb5f4d28a40f10229d7d7e6af8da706825132441e3397999982218ce8d74250",
-      "size": 9720
-    },
-    "assets/clips/306f1/f3.png.import": {
-      "role": "observe",
-      "sha256": "ff293cab10077bedb137e8139892f4ea9c1dfd091194915892c31a322e01a305",
-      "size": 929,
-      "normalized_sha256": "ff293cab10077bedb137e8139892f4ea9c1dfd091194915892c31a322e01a305"
+      "sha256": "3f9707ded65d2f609e15d0ea7846d3e1a490a9a86ce869ea92f6e108e95f936f",
+      "size": 980,
+      "normalized_sha256": "3f9707ded65d2f609e15d0ea7846d3e1a490a9a86ce869ea92f6e108e95f936f"
     },
     "assets/clips/307/b0.png": {
       "role": "observe",
@@ -6320,11 +6370,55 @@
       "size": 712,
       "normalized_sha256": "b70c678956955446767ea3c1fa515dd0833091aa1125350edb78c9c5dbe07a4e"
     },
+    "assets/clips/401/b0.png": {
+      "role": "observe",
+      "sha256": "486fa52c902ed0747fd1413edaf49d728e38798c0b945b138cbaf83f74878c3e",
+      "size": 5049
+    },
+    "assets/clips/401/b0.png.import": {
+      "role": "observe",
+      "sha256": "7000763ed2be9d6f7f1483651dc0cd01c0d43f74a50a95d402c8199b33ed6440",
+      "size": 927,
+      "normalized_sha256": "7000763ed2be9d6f7f1483651dc0cd01c0d43f74a50a95d402c8199b33ed6440"
+    },
+    "assets/clips/401/b1.png": {
+      "role": "observe",
+      "sha256": "69f33f053ce449304f1fbeeacbe001e9a6272c63f18b5c5fc2dca8ae96eb677d",
+      "size": 6345
+    },
+    "assets/clips/401/b1.png.import": {
+      "role": "observe",
+      "sha256": "7a5ed25d24ccdf551ece7e33ef3c885c3ad12daab80d3262465b8d2ca5b026d8",
+      "size": 927,
+      "normalized_sha256": "7a5ed25d24ccdf551ece7e33ef3c885c3ad12daab80d3262465b8d2ca5b026d8"
+    },
+    "assets/clips/401/b2.png": {
+      "role": "observe",
+      "sha256": "3095a39971a7c2d7b64914cf2eb69eb3fcce588268c739b4939dacd0ff054b19",
+      "size": 7048
+    },
+    "assets/clips/401/b2.png.import": {
+      "role": "observe",
+      "sha256": "c593025999e9c99665cf780f1abd837e11e8f21d7cf390ea5257ee8776331704",
+      "size": 927,
+      "normalized_sha256": "c593025999e9c99665cf780f1abd837e11e8f21d7cf390ea5257ee8776331704"
+    },
+    "assets/clips/401/b3.png": {
+      "role": "observe",
+      "sha256": "87370763c2bf8ef77db3df4a74cc9515be57240fa6152fd646dea4890ab4a9b2",
+      "size": 7418
+    },
+    "assets/clips/401/b3.png.import": {
+      "role": "observe",
+      "sha256": "1602f6f342c680487b4c0906b70cbb052a538dbd81534a67ef698cfb479d2025",
+      "size": 927,
+      "normalized_sha256": "1602f6f342c680487b4c0906b70cbb052a538dbd81534a67ef698cfb479d2025"
+    },
     "assets/clips/401/clip.tres": {
       "role": "observe",
-      "sha256": "15e96d3a8e1426e0b3ffc8eca801edc67626c61650254abc0402685345d9e510",
-      "size": 1225,
-      "normalized_sha256": "15e96d3a8e1426e0b3ffc8eca801edc67626c61650254abc0402685345d9e510"
+      "sha256": "faaa61517f7ab04a271136554b2112b0b557d902102158e923eed5255143b26a",
+      "size": 969,
+      "normalized_sha256": "faaa61517f7ab04a271136554b2112b0b557d902102158e923eed5255143b26a"
     },
     "assets/clips/401/f0.png": {
       "role": "observe",
@@ -6370,55 +6464,55 @@
       "size": 927,
       "normalized_sha256": "c9d92ff37610ab8a6673b9ffdf199eb60ac7fd2b8951574afb23f7d9c2ac9aae"
     },
+    "assets/clips/401f1/b0.png": {
+      "role": "observe",
+      "sha256": "39e24d30acff516563db56eae5af45d570755bd4beb0d9873b31c00623c8ceb1",
+      "size": 9125
+    },
+    "assets/clips/401f1/b0.png.import": {
+      "role": "observe",
+      "sha256": "3d02ddfc6c13eacd193d8b0d3a2dbf9e76b557ab22ceeae8072d3778f68bfba5",
+      "size": 929,
+      "normalized_sha256": "3d02ddfc6c13eacd193d8b0d3a2dbf9e76b557ab22ceeae8072d3778f68bfba5"
+    },
+    "assets/clips/401f1/b1.png": {
+      "role": "observe",
+      "sha256": "6ffb9d05d584fd75af0af35a48065e944358838ea96bf3e19efba717f2cd4afa",
+      "size": 10098
+    },
+    "assets/clips/401f1/b1.png.import": {
+      "role": "observe",
+      "sha256": "134ed52622781814aaf86c0a3aac56c10635cc268c779ce3e41f461f644b14dc",
+      "size": 929,
+      "normalized_sha256": "134ed52622781814aaf86c0a3aac56c10635cc268c779ce3e41f461f644b14dc"
+    },
+    "assets/clips/401f1/b2.png": {
+      "role": "observe",
+      "sha256": "b32fb27119d28dd7ae859a7cd1ce0ec54fff3e08cc38dbeef36f0996c8a9b9fb",
+      "size": 10536
+    },
+    "assets/clips/401f1/b2.png.import": {
+      "role": "observe",
+      "sha256": "babc1e283e12021124e357e52ae7bf0e5d3d8735ee7672d693da594e20111e4e",
+      "size": 929,
+      "normalized_sha256": "babc1e283e12021124e357e52ae7bf0e5d3d8735ee7672d693da594e20111e4e"
+    },
+    "assets/clips/401f1/b3.png": {
+      "role": "observe",
+      "sha256": "a60b08fe12b55452a56e94c711dc5280d93ecdddd0e09d7b16fdce2aed6ebd24",
+      "size": 10719
+    },
+    "assets/clips/401f1/b3.png.import": {
+      "role": "observe",
+      "sha256": "abf4af5d72f75dffa3912de2caff41056ff900b8df9e41742e4c9a2d106286bd",
+      "size": 929,
+      "normalized_sha256": "abf4af5d72f75dffa3912de2caff41056ff900b8df9e41742e4c9a2d106286bd"
+    },
     "assets/clips/401f1/clip.tres": {
       "role": "observe",
-      "sha256": "88a45fa8259a529a45a23b08ae521f925a20521cc6a5377b3e37348916227792",
-      "size": 1239,
-      "normalized_sha256": "88a45fa8259a529a45a23b08ae521f925a20521cc6a5377b3e37348916227792"
-    },
-    "assets/clips/401f1/f0.png": {
-      "role": "observe",
-      "sha256": "fddadabbe286a93325d25376a9338e3cc963b955656b34ff12dd023deda022a2",
-      "size": 6471
-    },
-    "assets/clips/401f1/f0.png.import": {
-      "role": "observe",
-      "sha256": "d134adc037aa9ff1ce712a2b595a954774adcdc7e82bb45340010eb0c99a9e06",
-      "size": 929,
-      "normalized_sha256": "d134adc037aa9ff1ce712a2b595a954774adcdc7e82bb45340010eb0c99a9e06"
-    },
-    "assets/clips/401f1/f1.png": {
-      "role": "observe",
-      "sha256": "35136028024c88303e90f92d2aa8a9c690c66412aea249ea403074bf1e435916",
-      "size": 6250
-    },
-    "assets/clips/401f1/f1.png.import": {
-      "role": "observe",
-      "sha256": "995dfbc37c6e37c9b83a442634f6c4555daf1c87ae191fdc42155049aeffb0be",
-      "size": 929,
-      "normalized_sha256": "995dfbc37c6e37c9b83a442634f6c4555daf1c87ae191fdc42155049aeffb0be"
-    },
-    "assets/clips/401f1/f2.png": {
-      "role": "observe",
-      "sha256": "b8aa6c9c1fa0c6d4c70ed2bb711ac77dd9946f8a3df8120c19cb8d6bb7c4b555",
-      "size": 7173
-    },
-    "assets/clips/401f1/f2.png.import": {
-      "role": "observe",
-      "sha256": "63c2fd8f9ed3fc5c72cb2017978c17620f05acac393d2e83aa137a0a6eb1a7a0",
-      "size": 929,
-      "normalized_sha256": "63c2fd8f9ed3fc5c72cb2017978c17620f05acac393d2e83aa137a0a6eb1a7a0"
-    },
-    "assets/clips/401f1/f3.png": {
-      "role": "observe",
-      "sha256": "5ff2a2dd74fb9de5e7a70ccfff4ee12ef2f22409e62c5befc48c3b30c60b8776",
-      "size": 7474
-    },
-    "assets/clips/401f1/f3.png.import": {
-      "role": "observe",
-      "sha256": "03001147b36d5133d8a29e154d20b02dcc025b235b155a803c64e9e18eb4d1de",
-      "size": 929,
-      "normalized_sha256": "03001147b36d5133d8a29e154d20b02dcc025b235b155a803c64e9e18eb4d1de"
+      "sha256": "5f7a283097400c674444a80888c0b5c5fb17db94b68a4fba73696d561f2764b8",
+      "size": 980,
+      "normalized_sha256": "5f7a283097400c674444a80888c0b5c5fb17db94b68a4fba73696d561f2764b8"
     },
     "assets/clips/402/b0.png": {
       "role": "observe",
@@ -19135,6 +19229,23 @@
       "size": 928,
       "normalized_sha256": "f419b03203b5e8f4edd6af8716cbe153849a981e4161d6340368dfe2c7e13cfe"
     },
+    "assets/clips/604/b0.png": {
+      "role": "observe",
+      "sha256": "024c433dbbee584d2b8c305c300a1d10b94ec59d559fcf950fa5e3a14d9e207a",
+      "size": 236700
+    },
+    "assets/clips/604/b0.png.import": {
+      "role": "observe",
+      "sha256": "581851dbd9f8e260dfb914f1a8608ee008e91f6c2a818cfc26b4410c1607f5a1",
+      "size": 927,
+      "normalized_sha256": "581851dbd9f8e260dfb914f1a8608ee008e91f6c2a818cfc26b4410c1607f5a1"
+    },
+    "assets/clips/604/clip.tres": {
+      "role": "observe",
+      "sha256": "903fa3f8d3212e20c9dd7731079d85784fe26c56df261530dd45c76f23b71609",
+      "size": 556,
+      "normalized_sha256": "903fa3f8d3212e20c9dd7731079d85784fe26c56df261530dd45c76f23b71609"
+    },
     "assets/clips/6040/b0.png": {
       "role": "observe",
       "sha256": "dde9f8756f8ceca9553a93bf4f9a86b5db6a402f086ad145a914a190abd9b627",
@@ -19198,22 +19309,11 @@
       "size": 445,
       "normalized_sha256": "ddeb853f6c1a01752bc72f3b335ccccd465df5eafbfd73bf59f8b4f17b924c22"
     },
-    "assets/clips/607/b0.png": {
-      "role": "observe",
-      "sha256": "024c433dbbee584d2b8c305c300a1d10b94ec59d559fcf950fa5e3a14d9e207a",
-      "size": 236700
-    },
-    "assets/clips/607/b0.png.import": {
-      "role": "observe",
-      "sha256": "8c08a9a4a8ee345a977bf5347ddf3ffbe62f526552b40768d5348b31e4ea222d",
-      "size": 927,
-      "normalized_sha256": "8c08a9a4a8ee345a977bf5347ddf3ffbe62f526552b40768d5348b31e4ea222d"
-    },
     "assets/clips/607/clip.tres": {
       "role": "observe",
-      "sha256": "4e2820975a9c3fdd49941ae774dc4269875f765e441d4472ef48baed4734e904",
-      "size": 707,
-      "normalized_sha256": "4e2820975a9c3fdd49941ae774dc4269875f765e441d4472ef48baed4734e904"
+      "sha256": "8d4ea09ba94c95a92832f69aec49bd3c1005431b44bf09a8dddc4d92a9caa2f3",
+      "size": 733,
+      "normalized_sha256": "8d4ea09ba94c95a92832f69aec49bd3c1005431b44bf09a8dddc4d92a9caa2f3"
     },
     "assets/clips/6093/b0.png": {
       "role": "observe",
@@ -19266,6 +19366,23 @@
       "size": 1666,
       "normalized_sha256": "5e9d85ff716740c1d9fcb903430455b6a9201a9c07dcee963015eda4d790c3e9"
     },
+    "assets/clips/614/b0.png": {
+      "role": "observe",
+      "sha256": "82a916df30e83204da84deff394be17087e7a98483c1c7b352ad55bf108f66ed",
+      "size": 157283
+    },
+    "assets/clips/614/b0.png.import": {
+      "role": "observe",
+      "sha256": "0b105c3cd125ca600ab90719ef6bfffd07a1545f07aab704d8b88e56a81030c9",
+      "size": 927,
+      "normalized_sha256": "0b105c3cd125ca600ab90719ef6bfffd07a1545f07aab704d8b88e56a81030c9"
+    },
+    "assets/clips/614/clip.tres": {
+      "role": "observe",
+      "sha256": "9cd056916f04e94cc06965d36b876f54b1ba3cdf7988b0844a0aee57ff06029e",
+      "size": 571,
+      "normalized_sha256": "9cd056916f04e94cc06965d36b876f54b1ba3cdf7988b0844a0aee57ff06029e"
+    },
     "assets/clips/6141/b0.png": {
       "role": "observe",
       "sha256": "c8bdd70b51992c771ed530500ab07899707964a0b1022f46afd9ce3f2d164784",
@@ -19300,6 +19417,23 @@
       "size": 1834,
       "normalized_sha256": "36953391889c544caf069134a6a3ea839a6c50785545b4c154aeb4f65e3d273f"
     },
+    "assets/clips/618/b0.png": {
+      "role": "observe",
+      "sha256": "53621540d50241fc622b4b3d8a9387627a63d3448ec94cb077c248b7d6727d0b",
+      "size": 118260
+    },
+    "assets/clips/618/b0.png.import": {
+      "role": "observe",
+      "sha256": "845ad5ea7f9aaa02fe7cbed1efcee7d87cae35475d35281a56e8090fc87fb495",
+      "size": 927,
+      "normalized_sha256": "845ad5ea7f9aaa02fe7cbed1efcee7d87cae35475d35281a56e8090fc87fb495"
+    },
+    "assets/clips/618/clip.tres": {
+      "role": "observe",
+      "sha256": "630b6767a6c255282bac171c718436c3cec2a6b0bd9953ded6ccd8db639191d1",
+      "size": 571,
+      "normalized_sha256": "630b6767a6c255282bac171c718436c3cec2a6b0bd9953ded6ccd8db639191d1"
+    },
     "assets/clips/6184/b0.png": {
       "role": "observe",
       "sha256": "af7a66e127419469ce3f61b6bdfb9ab319a8baee89d1c1ddc0bd6b0e8fd56359",
@@ -19316,6 +19450,40 @@
       "sha256": "c15cfc7c159da218fc6931b73076219664bdcd16361e055c896c44fa4c67ec64",
       "size": 2102,
       "normalized_sha256": "c15cfc7c159da218fc6931b73076219664bdcd16361e055c896c44fa4c67ec64"
+    },
+    "assets/clips/620/b0.png": {
+      "role": "observe",
+      "sha256": "b2b42ea7eaa1f4f6df729fcc7325b763dfb525a1986019c9c7236177a0b772c6",
+      "size": 103562
+    },
+    "assets/clips/620/b0.png.import": {
+      "role": "observe",
+      "sha256": "fe704198f5f830ed0b74e461a4c8927d193b598c8ddb06e417fe4b1d98741702",
+      "size": 927,
+      "normalized_sha256": "fe704198f5f830ed0b74e461a4c8927d193b598c8ddb06e417fe4b1d98741702"
+    },
+    "assets/clips/620/clip.tres": {
+      "role": "observe",
+      "sha256": "ea83e7cfdd1df4133a142fafbbf42d764faab21131c6cda18e241653bcf67c16",
+      "size": 571,
+      "normalized_sha256": "ea83e7cfdd1df4133a142fafbbf42d764faab21131c6cda18e241653bcf67c16"
+    },
+    "assets/clips/622/b0.png": {
+      "role": "observe",
+      "sha256": "661ca0777ed62a550bd615a4b81d46c4922b01573b40f224c40352290f8d30f6",
+      "size": 84849
+    },
+    "assets/clips/622/b0.png.import": {
+      "role": "observe",
+      "sha256": "49638133a2707ffc8ce9cae9c26a3bbf73d83d30ee46dac3b302b6f1fe41e3b3",
+      "size": 927,
+      "normalized_sha256": "49638133a2707ffc8ce9cae9c26a3bbf73d83d30ee46dac3b302b6f1fe41e3b3"
+    },
+    "assets/clips/622/clip.tres": {
+      "role": "observe",
+      "sha256": "8873f29e92113bd3ea1bf8191f7e405c6c306420f697f13117fa16619f494118",
+      "size": 572,
+      "normalized_sha256": "8873f29e92113bd3ea1bf8191f7e405c6c306420f697f13117fa16619f494118"
     },
     "assets/clips/6221/b0.png": {
       "role": "observe",
@@ -19387,9 +19555,9 @@
     },
     "assets/clips/625/clip.tres": {
       "role": "observe",
-      "sha256": "613ac284f33ac3602cf522699a9b10a7bca92b69c709b91aced172f9ffd94fc8",
-      "size": 704,
-      "normalized_sha256": "613ac284f33ac3602cf522699a9b10a7bca92b69c709b91aced172f9ffd94fc8"
+      "sha256": "4d0cb2394a22da196c30c27ba8c42ff3ccd38ed99c2434bb9c412cd054a1183a",
+      "size": 1153,
+      "normalized_sha256": "4d0cb2394a22da196c30c27ba8c42ff3ccd38ed99c2434bb9c412cd054a1183a"
     },
     "assets/clips/6258/b0.png": {
       "role": "observe",
@@ -19698,8 +19866,8 @@
     },
     "assets/clips/651f1/b0.png": {
       "role": "observe",
-      "sha256": "2872e8852f09049a69e868e411ef4cf673fa5bf8c9c748d1b448974e5e326fce",
-      "size": 21902
+      "sha256": "78a97752babdd920949d6e9c92e3bd88dbb0e56ade8f1571b5709119f8e5896c",
+      "size": 21503
     },
     "assets/clips/651f1/b0.png.import": {
       "role": "observe",
@@ -20349,14 +20517,19 @@
     },
     "assets/clips/index.json": {
       "role": "observe",
-      "sha256": "907291c0bdbd8587e29c5c1f80c2afd696d5dcdf05467c95873caa12a9b3272e",
-      "size": 122055,
-      "normalized_sha256": "907291c0bdbd8587e29c5c1f80c2afd696d5dcdf05467c95873caa12a9b3272e"
+      "sha256": "e5fc28b457ed16a9ca26f5b382794eaad6b30a27ff0ab5fc58f32ee780d2bc87",
+      "size": 122842,
+      "normalized_sha256": "e5fc28b457ed16a9ca26f5b382794eaad6b30a27ff0ab5fc58f32ee780d2bc87"
+    },
+    "assets/icon.icns": {
+      "role": "observe",
+      "sha256": "447b8665ad99de9fb9fa26016f3ed676398fa565a0d7077e06aa96c25e68f675",
+      "size": 1184302
     },
     "assets/icon.png": {
       "role": "observe",
-      "sha256": "3cb5697202b59f6a7d17846483bdffc4a4644b1889617d4b01f85819137827ac",
-      "size": 11926
+      "sha256": "69e9fa6ef01dc8347e8ec35102beaa49b50df5bf2c06b37664ea28a7bf70c2e5",
+      "size": 606099
     },
     "assets/icon.png.import": {
       "role": "observe",
@@ -112318,6 +112491,72 @@
       "size": 953,
       "normalized_sha256": "176a0d88ab8531df06799479b30d8d5b05ed56887a44e3e3917af86a6e91bccc"
     },
+    "assets/paths_extra/level_field.png": {
+      "role": "observe",
+      "sha256": "c4d9dd883d6d1ca2d7fe0503e0a35a2c7b4f5bb450b2e5bf3fa94d619ee99069",
+      "size": 2865
+    },
+    "assets/paths_extra/level_field.png.import": {
+      "role": "observe",
+      "sha256": "d48f669c4e16a382653910db1dd9d892308173128559cd60313deff5982d6e8b",
+      "size": 956,
+      "normalized_sha256": "d48f669c4e16a382653910db1dd9d892308173128559cd60313deff5982d6e8b"
+    },
+    "assets/paths_extra/level_field_road.png": {
+      "role": "observe",
+      "sha256": "14dcccd032466642d42cb21808391df27b399a4eb6a9e9d1d2f9a7dbe78e2e49",
+      "size": 1347
+    },
+    "assets/paths_extra/level_field_road.png.import": {
+      "role": "observe",
+      "sha256": "1388fab01c166604ecbc057dfd1ec7d5ddaa8642c3fdad6c5442cb9b46c7e6b5",
+      "size": 971,
+      "normalized_sha256": "1388fab01c166604ecbc057dfd1ec7d5ddaa8642c3fdad6c5442cb9b46c7e6b5"
+    },
+    "assets/paths_extra/level_final.png": {
+      "role": "observe",
+      "sha256": "5ddd61f5d935614d408c0efbddf6bc69d819f5d34b610d2012f33f7280517c31",
+      "size": 2828
+    },
+    "assets/paths_extra/level_final.png.import": {
+      "role": "observe",
+      "sha256": "b66952a4b405dd1052ceacf4691a888883dbbf991eeb531ffddfbd86b4a4882c",
+      "size": 956,
+      "normalized_sha256": "b66952a4b405dd1052ceacf4691a888883dbbf991eeb531ffddfbd86b4a4882c"
+    },
+    "assets/paths_extra/level_grass_hills.png": {
+      "role": "observe",
+      "sha256": "0e56ab507fb8e348e38f54d48e72733d458dad4b8068102625144ce3df6de0fb",
+      "size": 2905
+    },
+    "assets/paths_extra/level_grass_hills.png.import": {
+      "role": "observe",
+      "sha256": "1b56f181d65351b6eb2851599ff612c66346a782f7d1fbd1b03cec083a513056",
+      "size": 974,
+      "normalized_sha256": "1b56f181d65351b6eb2851599ff612c66346a782f7d1fbd1b03cec083a513056"
+    },
+    "assets/paths_extra/level_shore.png": {
+      "role": "observe",
+      "sha256": "3d43bfe043345a66779095dc41f904cbac06ae149f63a806938b27b3bd7ed358",
+      "size": 1713
+    },
+    "assets/paths_extra/level_shore.png.import": {
+      "role": "observe",
+      "sha256": "0faef94eda3d7c45db06410210c94e3dfc51bc87a760b69feed379cb0b26b02f",
+      "size": 956,
+      "normalized_sha256": "0faef94eda3d7c45db06410210c94e3dfc51bc87a760b69feed379cb0b26b02f"
+    },
+    "assets/paths_extra/level_steppes.png": {
+      "role": "observe",
+      "sha256": "0d1680def48b74df9791a01316e6dfa276fc7f7fb295451ba847f1a7ba3cfe09",
+      "size": 2827
+    },
+    "assets/paths_extra/level_steppes.png.import": {
+      "role": "observe",
+      "sha256": "cc04b1be83510a97dbc675108a39f226a081c3ebdab1f6b0098ea6000fee2c14",
+      "size": 962,
+      "normalized_sha256": "cc04b1be83510a97dbc675108a39f226a081c3ebdab1f6b0098ea6000fee2c14"
+    },
     "data/anim_commands.json": {
       "role": "index",
       "sha256": "93558c977c82aaf3372cfb34e75b3d9c97c82c1c5f58cc11c82b465466dc4d22",
@@ -112686,9 +112925,9 @@
     },
     "dev/godot.sh": {
       "role": "index",
-      "sha256": "3cb9ae86b63e7c15f63cf10399c813f0bdda19c498048d8a3f3e688a80e6f8f9",
-      "size": 2331,
-      "normalized_sha256": "3cb9ae86b63e7c15f63cf10399c813f0bdda19c498048d8a3f3e688a80e6f8f9"
+      "sha256": "aa90cd195a259718ca37924a9c1d5b4c5f33359539da8be6c5422b34b9e07ef3",
+      "size": 2650,
+      "normalized_sha256": "aa90cd195a259718ca37924a9c1d5b4c5f33359539da8be6c5422b34b9e07ef3"
     },
     "docs/.gdignore": {
       "role": "index",
@@ -112697,9 +112936,9 @@
     },
     "docs/port-plan.md": {
       "role": "index",
-      "sha256": "1c4790cde6b544952ed26250e4f19c8fa26ff46a8b6825043e6a8ad0682c9c82",
-      "size": 10898,
-      "normalized_sha256": "1c4790cde6b544952ed26250e4f19c8fa26ff46a8b6825043e6a8ad0682c9c82"
+      "sha256": "764dc69398c0b7428af789de769cef155cba5aa652fdab3d399b877067ab5fa1",
+      "size": 11233,
+      "normalized_sha256": "764dc69398c0b7428af789de769cef155cba5aa652fdab3d399b877067ab5fa1"
     },
     "docs/screenshots/comic.png": {
       "role": "observe",
@@ -112723,9 +112962,9 @@
     },
     "docs/verification.md": {
       "role": "index",
-      "sha256": "6c446738e3aa803e7ff4f26baf5ae768031a9a0172acbf94f4c554c3cd0ce5f6",
-      "size": 10594,
-      "normalized_sha256": "6c446738e3aa803e7ff4f26baf5ae768031a9a0172acbf94f4c554c3cd0ce5f6"
+      "sha256": "8d15ebeaa6e020603c4b18f9a8fb7711b0121e5f239f4d3ea753bc26039f4ca8",
+      "size": 27261,
+      "normalized_sha256": "8d15ebeaa6e020603c4b18f9a8fb7711b0121e5f239f4d3ea753bc26039f4ca8"
     },
     "editable/assets/fonts/1056_Toonish.ttf": {
       "role": "observe",
@@ -112834,9 +113073,9 @@
     },
     "export_presets.cfg": {
       "role": "index",
-      "sha256": "7ff2404b7fa2c77236ab08cfd9a1437c38c01548318f1ab8cfc548a8b0d7c480",
-      "size": 1081,
-      "normalized_sha256": "7ff2404b7fa2c77236ab08cfd9a1437c38c01548318f1ab8cfc548a8b0d7c480"
+      "sha256": "881bba6a4e105355848c89727fddf48c2cef45328ac2f1ef8491c4f962ea41fc",
+      "size": 1147,
+      "normalized_sha256": "881bba6a4e105355848c89727fddf48c2cef45328ac2f1ef8491c4f962ea41fc"
     },
     "game/content.gd": {
       "role": "index",
@@ -112846,9 +113085,9 @@
     },
     "game/core/game_universe.gd": {
       "role": "index",
-      "sha256": "e28464fec14319cc511b345c708590d7dcdcc2d6e67f9f498c9c46fe9c2af256",
-      "size": 57174,
-      "normalized_sha256": "e28464fec14319cc511b345c708590d7dcdcc2d6e67f9f498c9c46fe9c2af256"
+      "sha256": "a6a28919fb0172c573f8a42ee4d3415f9bb58ed369ad7d5bfb0ac4c2aa814adf",
+      "size": 60987,
+      "normalized_sha256": "a6a28919fb0172c573f8a42ee4d3415f9bb58ed369ad7d5bfb0ac4c2aa814adf"
     },
     "game/core/global_data.gd": {
       "role": "index",
@@ -112936,9 +113175,9 @@
     },
     "game/ifaces/game_map_object.gd": {
       "role": "index",
-      "sha256": "53669347c2e3d4b01bef73b37ca8fb0762452ae23af1dbef8770110f535a686d",
-      "size": 15755,
-      "normalized_sha256": "53669347c2e3d4b01bef73b37ca8fb0762452ae23af1dbef8770110f535a686d"
+      "sha256": "892abb8f1fc84d725d76838ddd405360fd1c5631a19bdec27ab3714487e13f53",
+      "size": 16463,
+      "normalized_sha256": "892abb8f1fc84d725d76838ddd405360fd1c5631a19bdec27ab3714487e13f53"
     },
     "game/ifaces/health_bar_ex.gd": {
       "role": "index",
@@ -112972,9 +113211,9 @@
     },
     "game/ifaces/main_game_ui_ex.gd": {
       "role": "index",
-      "sha256": "f0b662c82e9312352d7f3249b3466f11d6235582ec6b48e6046c13f9d1281e54",
-      "size": 62646,
-      "normalized_sha256": "f0b662c82e9312352d7f3249b3466f11d6235582ec6b48e6046c13f9d1281e54"
+      "sha256": "7169e8094845ed095fdafaa26b8405a190add249993e9ccd29156dddab3e8b05",
+      "size": 62472,
+      "normalized_sha256": "7169e8094845ed095fdafaa26b8405a190add249993e9ccd29156dddab3e8b05"
     },
     "game/ifaces/main_menu_screen.gd": {
       "role": "index",
@@ -113002,27 +113241,27 @@
     },
     "game/ifaces/popup_mission_ex.gd": {
       "role": "index",
-      "sha256": "b2dc2f6ae71129fc59750c5fe471717c3148b45b3a9079d3e7537ca9cae817a4",
-      "size": 10285,
-      "normalized_sha256": "b2dc2f6ae71129fc59750c5fe471717c3148b45b3a9079d3e7537ca9cae817a4"
+      "sha256": "996fa1c255b6a72c8a2261baaa0ec85b981ee83d66b37c0cc1326dcfb65a72da",
+      "size": 11421,
+      "normalized_sha256": "996fa1c255b6a72c8a2261baaa0ec85b981ee83d66b37c0cc1326dcfb65a72da"
     },
     "game/ifaces/popup_reset_ex.gd": {
       "role": "index",
-      "sha256": "3abe718a0b361da32856064e0785599231fd6276785a18f2e1ccd0ba44c7de39",
-      "size": 3654,
-      "normalized_sha256": "3abe718a0b361da32856064e0785599231fd6276785a18f2e1ccd0ba44c7de39"
+      "sha256": "9483871d078a7404d0d472839ede625864a4e474b23ffd4d0ad6b03198d7cab9",
+      "size": 3814,
+      "normalized_sha256": "9483871d078a7404d0d472839ede625864a4e474b23ffd4d0ad6b03198d7cab9"
     },
     "game/ifaces/popup_save_load_ex.gd": {
       "role": "index",
-      "sha256": "aa8a9d3348ba3ccd71030594a078cb8ff7c347106ff0030f07c1b184aa134bce",
-      "size": 3587,
-      "normalized_sha256": "aa8a9d3348ba3ccd71030594a078cb8ff7c347106ff0030f07c1b184aa134bce"
+      "sha256": "b0928b0c493fbfe60e186fe08a4c08f4e52eea2f259f078efa5b5feca156fb97",
+      "size": 3810,
+      "normalized_sha256": "b0928b0c493fbfe60e186fe08a4c08f4e52eea2f259f078efa5b5feca156fb97"
     },
     "game/ifaces/popup_storage_failure_ex.gd": {
       "role": "index",
-      "sha256": "8b0d4a2f18c4d16ac673a82094c29380785f297ad4ec538441d6eac7e3809ce3",
-      "size": 3114,
-      "normalized_sha256": "8b0d4a2f18c4d16ac673a82094c29380785f297ad4ec538441d6eac7e3809ce3"
+      "sha256": "05465cbb5f7d75938704cf5dadba57c13579d064c09cfb07e79b3934ae325ae9",
+      "size": 3337,
+      "normalized_sha256": "05465cbb5f7d75938704cf5dadba57c13579d064c09cfb07e79b3934ae325ae9"
     },
     "game/ifaces/ramka_ex.gd": {
       "role": "index",
@@ -113050,9 +113289,9 @@
     },
     "game/ifaces/upgr_panel_ex.gd": {
       "role": "index",
-      "sha256": "e0f07b2ec538e72a50d33f30eb77c358f97473f127ae973b82dfdc17f15c5ccb",
-      "size": 49038,
-      "normalized_sha256": "e0f07b2ec538e72a50d33f30eb77c358f97473f127ae973b82dfdc17f15c5ccb"
+      "sha256": "e4876dfd1191c86a316a4b904e433fe488566d3806e5d9962c65d17efab7f130",
+      "size": 48113,
+      "normalized_sha256": "e4876dfd1191c86a316a4b904e433fe488566d3806e5d9962c65d17efab7f130"
     },
     "game/ifaces/upgrade_completed.gd": {
       "role": "index",
@@ -113068,9 +113307,9 @@
     },
     "game/ifaces/vin_def_panel_achives_controller.gd": {
       "role": "index",
-      "sha256": "e8b5c4a605a3ba482da4b31843814e5bdd3ad5c16e93217310ef009b58073803",
-      "size": 8523,
-      "normalized_sha256": "e8b5c4a605a3ba482da4b31843814e5bdd3ad5c16e93217310ef009b58073803"
+      "sha256": "5a028ee30171b1c24be619473e2e5ffbbfc1229f9876d3e6152c609ba247ae03",
+      "size": 9788,
+      "normalized_sha256": "5a028ee30171b1c24be619473e2e5ffbbfc1229f9876d3e6152c609ba247ae03"
     },
     "game/levels/level_1.gd": {
       "role": "index",
@@ -113116,15 +113355,15 @@
     },
     "game/levels/level_16.gd": {
       "role": "index",
-      "sha256": "039c8a0f9d8cca8975b4229136ad099e35a58f6558b09698847508047863a8c9",
-      "size": 961,
-      "normalized_sha256": "039c8a0f9d8cca8975b4229136ad099e35a58f6558b09698847508047863a8c9"
+      "sha256": "7922883d702ea5d3e283d8f13b6a620f73eacf4503aef4e3e6569877022ebb74",
+      "size": 962,
+      "normalized_sha256": "7922883d702ea5d3e283d8f13b6a620f73eacf4503aef4e3e6569877022ebb74"
     },
     "game/levels/level_17.gd": {
       "role": "index",
-      "sha256": "5b25307e0fd6704a9f0d404ab909250f4a2c2c2956e045168490370fa5bc6d5d",
-      "size": 1912,
-      "normalized_sha256": "5b25307e0fd6704a9f0d404ab909250f4a2c2c2956e045168490370fa5bc6d5d"
+      "sha256": "795c8c913609015cdd1591106eaaef2362aee75a49050bf17452520a7e2403f3",
+      "size": 1913,
+      "normalized_sha256": "795c8c913609015cdd1591106eaaef2362aee75a49050bf17452520a7e2403f3"
     },
     "game/levels/level_18.gd": {
       "role": "index",
@@ -113146,9 +113385,9 @@
     },
     "game/levels/level_20.gd": {
       "role": "index",
-      "sha256": "7dec3518c62e418c522ebfc06521e1d7865c954f7002ca829eeca9b8f89e37ac",
-      "size": 1003,
-      "normalized_sha256": "7dec3518c62e418c522ebfc06521e1d7865c954f7002ca829eeca9b8f89e37ac"
+      "sha256": "906dbc30632933a1faa95f9cbe1cf88e3ca993edc6789afb4ef3e37560285ff2",
+      "size": 1004,
+      "normalized_sha256": "906dbc30632933a1faa95f9cbe1cf88e3ca993edc6789afb4ef3e37560285ff2"
     },
     "game/levels/level_21.gd": {
       "role": "index",
@@ -113176,15 +113415,15 @@
     },
     "game/levels/level_3.gd": {
       "role": "index",
-      "sha256": "d38ef63434b5cd9f58e21b1feda6ce5be95d1653af835f11b3e5bcf0bc9fc64d",
-      "size": 3275,
-      "normalized_sha256": "d38ef63434b5cd9f58e21b1feda6ce5be95d1653af835f11b3e5bcf0bc9fc64d"
+      "sha256": "d80bc3ba2e25e62edd4f856ed4e856c76e173001b6241d536ccf4520a8921f60",
+      "size": 3553,
+      "normalized_sha256": "d80bc3ba2e25e62edd4f856ed4e856c76e173001b6241d536ccf4520a8921f60"
     },
     "game/levels/level_4.gd": {
       "role": "index",
-      "sha256": "0fb619fd03672c5c8f13ac8410b3d78b6692c294f16c079e0517580e3a0d5222",
-      "size": 2994,
-      "normalized_sha256": "0fb619fd03672c5c8f13ac8410b3d78b6692c294f16c079e0517580e3a0d5222"
+      "sha256": "88712f75ba0f302633d336da54d56dddef9ef0f330c4ad5129513a5cae3f71e8",
+      "size": 2995,
+      "normalized_sha256": "88712f75ba0f302633d336da54d56dddef9ef0f330c4ad5129513a5cae3f71e8"
     },
     "game/levels/level_5.gd": {
       "role": "index",
@@ -113284,9 +113523,9 @@
     },
     "game/living/friend_priest.gd": {
       "role": "index",
-      "sha256": "99a2ff4aad50abef70a5fa2f31afbc5e238b6fed68a51673355084f89d937209",
-      "size": 3199,
-      "normalized_sha256": "99a2ff4aad50abef70a5fa2f31afbc5e238b6fed68a51673355084f89d937209"
+      "sha256": "2913af34d2d942f83c2973b8bef34f9dcaa8b1571c28d19c5ce1285765ccfe2f",
+      "size": 3239,
+      "normalized_sha256": "2913af34d2d942f83c2973b8bef34f9dcaa8b1571c28d19c5ce1285765ccfe2f"
     },
     "game/living/friend_red_mage.gd": {
       "role": "index",
@@ -113338,9 +113577,9 @@
     },
     "game/living/living_object.gd": {
       "role": "index",
-      "sha256": "56e0e6393040ca7f68eabed4e7430e32c1d67274100c44fae9376d02673a789f",
-      "size": 89971,
-      "normalized_sha256": "56e0e6393040ca7f68eabed4e7430e32c1d67274100c44fae9376d02673a789f"
+      "sha256": "131f460e7939a95fc9a01991f79c6cb55c87a442fd480d96d9d4379d15592183",
+      "size": 92289,
+      "normalized_sha256": "131f460e7939a95fc9a01991f79c6cb55c87a442fd480d96d9d4379d15592183"
     },
     "game/living/mage_class.gd": {
       "role": "index",
@@ -113350,9 +113589,9 @@
     },
     "game/living/melee_fighter.gd": {
       "role": "index",
-      "sha256": "bc917743cd29b4824a7bd75436772d07a96089b6b70ba62855f42b778dc08f62",
-      "size": 10523,
-      "normalized_sha256": "bc917743cd29b4824a7bd75436772d07a96089b6b70ba62855f42b778dc08f62"
+      "sha256": "33c94878b681d3c8e2630c24546643899732bbcf9614d8fa49c60750640324d8",
+      "size": 10250,
+      "normalized_sha256": "33c94878b681d3c8e2630c24546643899732bbcf9614d8fa49c60750640324d8"
     },
     "game/living/melee_rogue.gd": {
       "role": "index",
@@ -113482,9 +113721,9 @@
     },
     "game/living/undead_shaman.gd": {
       "role": "index",
-      "sha256": "32f60b79164a91e10c96c30eb19017c10872c974f1aeff143cd150fafb2a4217",
-      "size": 3286,
-      "normalized_sha256": "32f60b79164a91e10c96c30eb19017c10872c974f1aeff143cd150fafb2a4217"
+      "sha256": "50168653818e9200037aea4caca577a4562e6e6a0f868476ac076a6ea351f08f",
+      "size": 3326,
+      "normalized_sha256": "50168653818e9200037aea4caca577a4562e6e6a0f868476ac076a6ea351f08f"
     },
     "game/living/undead_skeletion_archer.gd": {
       "role": "index",
@@ -113734,9 +113973,9 @@
     },
     "game/projectiles/ice_visual.gd": {
       "role": "index",
-      "sha256": "375a64c696d493d7dee229a2f3fadf2768fb23e0b4ce5b0a43bccef99c6bd1cc",
-      "size": 1716,
-      "normalized_sha256": "375a64c696d493d7dee229a2f3fadf2768fb23e0b4ce5b0a43bccef99c6bd1cc"
+      "sha256": "1e63f972f12edddfd3c3a26763f4b98500872085d309284884f534670590b96a",
+      "size": 2074,
+      "normalized_sha256": "1e63f972f12edddfd3c3a26763f4b98500872085d309284884f534670590b96a"
     },
     "game/projectiles/miss_visual.gd": {
       "role": "index",
@@ -113896,9 +114135,9 @@
     },
     "game/rw/as3.gd": {
       "role": "index",
-      "sha256": "e9329265b8d47c8c7b37c7b28757a01c46e449035c0b353c24948629f338c099",
-      "size": 1073,
-      "normalized_sha256": "e9329265b8d47c8c7b37c7b28757a01c46e449035c0b353c24948629f338c099"
+      "sha256": "54d84b444b6bd9278a9b759dd563379db81433f0ca7af2fb85fb84384e0ef9e5",
+      "size": 3397,
+      "normalized_sha256": "54d84b444b6bd9278a9b759dd563379db81433f0ca7af2fb85fb84384e0ef9e5"
     },
     "game/rw/bmp_frames.gd": {
       "role": "index",
@@ -113908,15 +114147,15 @@
     },
     "game/rw/button_class.gd": {
       "role": "index",
-      "sha256": "66561ea8d2594e8ebbb984d571001283ca3ea44cf70d87603ff014e5a70515cb",
-      "size": 14210,
-      "normalized_sha256": "66561ea8d2594e8ebbb984d571001283ca3ea44cf70d87603ff014e5a70515cb"
+      "sha256": "f8de6750ccb8490177653840990dc092a36c643fbbd2d6cdefdc6f1c00d0c7f9",
+      "size": 14339,
+      "normalized_sha256": "f8de6750ccb8490177653840990dc092a36c643fbbd2d6cdefdc6f1c00d0c7f9"
     },
     "game/rw/flash_clip.gd": {
       "role": "index",
-      "sha256": "6d6ee66b32078431922d342835387c55738b1b31d1421f912482166e1824c5a0",
-      "size": 11915,
-      "normalized_sha256": "6d6ee66b32078431922d342835387c55738b1b31d1421f912482166e1824c5a0"
+      "sha256": "549cc33d85ac721bec91e3b30cf5b779359a044db28799518f9a9d7d854f114a",
+      "size": 13055,
+      "normalized_sha256": "549cc33d85ac721bec91e3b30cf5b779359a044db28799518f9a9d7d854f114a"
     },
     "game/rw/flash_clip_data.gd": {
       "role": "index",
@@ -113926,9 +114165,9 @@
     },
     "game/rw/flash_text.gd": {
       "role": "index",
-      "sha256": "cc1f8b4bd8431fc92447449fdfc72419045ef34acbbeb3121ceae2160bceadf9",
-      "size": 8108,
-      "normalized_sha256": "cc1f8b4bd8431fc92447449fdfc72419045ef34acbbeb3121ceae2160bceadf9"
+      "sha256": "b3244f25a3263d11271cc60b63af9f04da9a1afdc30d58c94e981865424c2fae",
+      "size": 10640,
+      "normalized_sha256": "b3244f25a3263d11271cc60b63af9f04da9a1afdc30d58c94e981865424c2fae"
     },
     "game/rw/rw_bitmap_data.gd": {
       "role": "index",
@@ -113962,9 +114201,9 @@
     },
     "game/rw/rw_tween.gd": {
       "role": "index",
-      "sha256": "261bdd4b5d4b988965898557d8ecd744c4db1770340c6a41850369c753a31314",
-      "size": 25872,
-      "normalized_sha256": "261bdd4b5d4b988965898557d8ecd744c4db1770340c6a41850369c753a31314"
+      "sha256": "7022be77866d3ad1890695b876d127529327e0949e70b2ddfc7990f275d7b449",
+      "size": 26037,
+      "normalized_sha256": "7022be77866d3ad1890695b876d127529327e0949e70b2ddfc7990f275d7b449"
     },
     "game/rw/rw_tween_util.gd": {
       "role": "index",
@@ -113980,9 +114219,9 @@
     },
     "game/rw/simple_cache.gd": {
       "role": "index",
-      "sha256": "c6254f650f374f7b93764ed80ec0231773a537e313c069846dbcd8349fc778cf",
-      "size": 1295,
-      "normalized_sha256": "c6254f650f374f7b93764ed80ec0231773a537e313c069846dbcd8349fc778cf"
+      "sha256": "dbd807b767e67f25755b8a1fde70a27a1bb3c9b463fa17b00f26de87fa5e59de",
+      "size": 2283,
+      "normalized_sha256": "dbd807b767e67f25755b8a1fde70a27a1bb3c9b463fa17b00f26de87fa5e59de"
     },
     "game/rw/sounds.gd": {
       "role": "index",
@@ -114034,9 +114273,9 @@
     },
     "game/service/path_parser.gd": {
       "role": "index",
-      "sha256": "2d05f38aef16699cb085b946864504486f92fda29ef059e53baa3de060b75348",
-      "size": 2638,
-      "normalized_sha256": "2d05f38aef16699cb085b946864504486f92fda29ef059e53baa3de060b75348"
+      "sha256": "911bb8e16e8d2b3f5284700e45bc73afa67f88bc5acaea048827fbae782e93f7",
+      "size": 4644,
+      "normalized_sha256": "911bb8e16e8d2b3f5284700e45bc73afa67f88bc5acaea048827fbae782e93f7"
     },
     "game/service/sound_library.gd": {
       "role": "index",
@@ -114046,15 +114285,15 @@
     },
     "game/specials/arrow_swarm.gd": {
       "role": "index",
-      "sha256": "3552e47fe1d351ea0eab9d4c4af247194bf3c21851a847aff08f058073ee2889",
-      "size": 4035,
-      "normalized_sha256": "3552e47fe1d351ea0eab9d4c4af247194bf3c21851a847aff08f058073ee2889"
+      "sha256": "118ec207a6be5195bb55fd8ebcf637e6f24a384485fd16806149693ce0e0c780",
+      "size": 4691,
+      "normalized_sha256": "118ec207a6be5195bb55fd8ebcf637e6f24a384485fd16806149693ce0e0c780"
     },
     "game/specials/spec_back_stab.gd": {
       "role": "index",
-      "sha256": "3de4ae57edb7b0e0a4c5ecb513b4fff1e5b55dacf0785dd020e3ead412c83c33",
-      "size": 2825,
-      "normalized_sha256": "3de4ae57edb7b0e0a4c5ecb513b4fff1e5b55dacf0785dd020e3ead412c83c33"
+      "sha256": "662671f0b6024cd6f7d06d68b36f1d6449d4125c4801ee198c81cefc011a033b",
+      "size": 2954,
+      "normalized_sha256": "662671f0b6024cd6f7d06d68b36f1d6449d4125c4801ee198c81cefc011a033b"
     },
     "game/specials/spec_betray.gd": {
       "role": "index",
@@ -114130,9 +114369,9 @@
     },
     "game/specials/spec_flee.gd": {
       "role": "index",
-      "sha256": "5feabaa998fef5ddf9d01a5ef4907336c4eb351e9e33947311365374c17e0b89",
-      "size": 1129,
-      "normalized_sha256": "5feabaa998fef5ddf9d01a5ef4907336c4eb351e9e33947311365374c17e0b89"
+      "sha256": "d7b3dcc61e236f75f1b255eeb75972dce1441cf8303b51ef29fefbd52aa29b6c",
+      "size": 1161,
+      "normalized_sha256": "d7b3dcc61e236f75f1b255eeb75972dce1441cf8303b51ef29fefbd52aa29b6c"
     },
     "game/specials/spec_fmt.gd": {
       "role": "index",
@@ -114190,9 +114429,9 @@
     },
     "game/specials/spec_miss_ghost.gd": {
       "role": "index",
-      "sha256": "d7c2682361c86c345e2c5de9f8282e6fcb94f272c4f0c6f9f3531d71772c5e1c",
-      "size": 1285,
-      "normalized_sha256": "d7c2682361c86c345e2c5de9f8282e6fcb94f272c4f0c6f9f3531d71772c5e1c"
+      "sha256": "1d232a709c9713d6bca89745a75d4f9c0197d91238994f120a1e390c38dd732d",
+      "size": 1737,
+      "normalized_sha256": "1d232a709c9713d6bca89745a75d4f9c0197d91238994f120a1e390c38dd732d"
     },
     "game/specials/spec_miss_skeleton.gd": {
       "role": "index",
@@ -114208,9 +114447,9 @@
     },
     "game/specials/spec_parry.gd": {
       "role": "index",
-      "sha256": "834b8cc5e8d7b0721d2764f796cfb61bfd939d0a56e0fff0b7240fde3d6b6816",
-      "size": 2149,
-      "normalized_sha256": "834b8cc5e8d7b0721d2764f796cfb61bfd939d0a56e0fff0b7240fde3d6b6816"
+      "sha256": "1227df08e725a667aee9f480db00b164d398185acb309dee6e38b0b79ac554c6",
+      "size": 2606,
+      "normalized_sha256": "1227df08e725a667aee9f480db00b164d398185acb309dee6e38b0b79ac554c6"
     },
     "game/specials/spec_poison.gd": {
       "role": "index",
@@ -114322,9 +114561,9 @@
     },
     "project.godot": {
       "role": "index",
-      "sha256": "f381117ac0eb4346103edce767b5610db511bf7bf132b1759af85bdf77a29d6b",
-      "size": 1040,
-      "normalized_sha256": "f381117ac0eb4346103edce767b5610db511bf7bf132b1759af85bdf77a29d6b"
+      "sha256": "d4dec3fb87caa9a6e8b3f55b38d2b63c73bc9e255d593d37834c90e653732225",
+      "size": 1137,
+      "normalized_sha256": "d4dec3fb87caa9a6e8b3f55b38d2b63c73bc9e255d593d37834c90e653732225"
     },
     "reference/unused-reference-options/web/ruffle/core.ruffle.16d61072ac7fdc4d5013.js.map": {
       "role": "observe",
@@ -116666,6 +116905,12 @@
       "size": 371,
       "normalized_sha256": "92e40a2bb4838d10f00b85879dcb45c2539d7d86800ffb9966dc4ed636a7d9be"
     },
+    "scenes/clips/Symbol_604.tscn": {
+      "role": "observe",
+      "sha256": "abb5ac317bbb5d1a8844b7f1f36fed2a43222e3a184b6b6b039f65b5b15b6cf7",
+      "size": 367,
+      "normalized_sha256": "abb5ac317bbb5d1a8844b7f1f36fed2a43222e3a184b6b6b039f65b5b15b6cf7"
+    },
     "scenes/clips/Symbol_6040.tscn": {
       "role": "observe",
       "sha256": "bf9a473a6eb78281ad3dad290cac3fc7d0abc92cdf45073b91441c806aa80e67",
@@ -116690,6 +116935,30 @@
       "size": 367,
       "normalized_sha256": "ebb8e045bccbf3f6664fbd475512884741150b4215f2625901cd17ce55223ea9"
     },
+    "scenes/clips/Symbol_614.tscn": {
+      "role": "observe",
+      "sha256": "03064bf58783598d5099d61ed69a32b4251c466b608a97c5215be7d81120a0a0",
+      "size": 367,
+      "normalized_sha256": "03064bf58783598d5099d61ed69a32b4251c466b608a97c5215be7d81120a0a0"
+    },
+    "scenes/clips/Symbol_618.tscn": {
+      "role": "observe",
+      "sha256": "ef9045b05b93330e3727ffe8641ee8e5e8600798bfe0ed6565ac57206105056f",
+      "size": 367,
+      "normalized_sha256": "ef9045b05b93330e3727ffe8641ee8e5e8600798bfe0ed6565ac57206105056f"
+    },
+    "scenes/clips/Symbol_620.tscn": {
+      "role": "observe",
+      "sha256": "47ed3550538f32b91a314bbfd8666eb8c927d1d5ef9917edfc5bccea3bb2bc01",
+      "size": 367,
+      "normalized_sha256": "47ed3550538f32b91a314bbfd8666eb8c927d1d5ef9917edfc5bccea3bb2bc01"
+    },
+    "scenes/clips/Symbol_622.tscn": {
+      "role": "observe",
+      "sha256": "b2656ba0b419683450b4acfda754b22b60cc1e00e68227b364e3dd390c1c78ac",
+      "size": 367,
+      "normalized_sha256": "b2656ba0b419683450b4acfda754b22b60cc1e00e68227b364e3dd390c1c78ac"
+    },
     "scenes/clips/Symbol_624.tscn": {
       "role": "observe",
       "sha256": "b29e44b4669c8dbf43e6c9501bb8707c365117da528c4f183b0586f4b813aa5c",
@@ -116698,9 +116967,9 @@
     },
     "scenes/clips/Symbol_625.tscn": {
       "role": "observe",
-      "sha256": "ab9b3627208d2599ed133c8a02ea01cda4a904346679d64d85a3590e2b545a11",
-      "size": 596,
-      "normalized_sha256": "ab9b3627208d2599ed133c8a02ea01cda4a904346679d64d85a3590e2b545a11"
+      "sha256": "4c0fd7a1017924d0e4c31bdc6fb757ae4c8dfea25fa4c852426d563742124e7a",
+      "size": 1541,
+      "normalized_sha256": "4c0fd7a1017924d0e4c31bdc6fb757ae4c8dfea25fa4c852426d563742124e7a"
     },
     "scenes/clips/Symbol_630.tscn": {
       "role": "observe",
@@ -116836,21 +117105,21 @@
     },
     "scenes/clips/achivesHint.tscn": {
       "role": "observe",
-      "sha256": "ea4cea2eb684a00eeb608e196b57e7a92f361022b817f17a61806e5f113ea96c",
-      "size": 1253,
-      "normalized_sha256": "ea4cea2eb684a00eeb608e196b57e7a92f361022b817f17a61806e5f113ea96c"
+      "sha256": "3fb37947872d78908119d49373b6810b8454c9d702dc1ff3870683c3eade08e4",
+      "size": 1276,
+      "normalized_sha256": "3fb37947872d78908119d49373b6810b8454c9d702dc1ff3870683c3eade08e4"
     },
     "scenes/clips/achivesHint__f1.tscn": {
       "role": "observe",
-      "sha256": "52d7252bd157788abafbb72e015bef7fc4f5df0d26c568ee0eacfe014ce76ee8",
-      "size": 1259,
-      "normalized_sha256": "52d7252bd157788abafbb72e015bef7fc4f5df0d26c568ee0eacfe014ce76ee8"
+      "sha256": "75bdd2cbbe6e5d3f535c348947b5c9088252c1e45e7e8fbdf6a30475ed13b3ba",
+      "size": 1282,
+      "normalized_sha256": "75bdd2cbbe6e5d3f535c348947b5c9088252c1e45e7e8fbdf6a30475ed13b3ba"
     },
     "scenes/clips/achivesPanelMC.tscn": {
       "role": "observe",
-      "sha256": "479eef396d46a3842a5dd644ead0ebd37b0f316b1b619ecbb81336076b63ffc5",
-      "size": 13761,
-      "normalized_sha256": "479eef396d46a3842a5dd644ead0ebd37b0f316b1b619ecbb81336076b63ffc5"
+      "sha256": "ba8d49d9a6466612257f2cad82b5037b7657d50b901cf830cb7c0ddbd81e8690",
+      "size": 14037,
+      "normalized_sha256": "ba8d49d9a6466612257f2cad82b5037b7657d50b901cf830cb7c0ddbd81e8690"
     },
     "scenes/clips/achivesScreen.tscn": {
       "role": "observe",
@@ -116914,9 +117183,9 @@
     },
     "scenes/clips/buyHintPad.tscn": {
       "role": "observe",
-      "sha256": "c2b0fac9fa8e09ffe61a5983ff74a597c04f8c174ae72fe19b0bcc26470160de",
-      "size": 2041,
-      "normalized_sha256": "c2b0fac9fa8e09ffe61a5983ff74a597c04f8c174ae72fe19b0bcc26470160de"
+      "sha256": "3d624ea759f81d3e1386e85a1b2b0ff06424f7a4cde308caaf6caa9853afb7c2",
+      "size": 2087,
+      "normalized_sha256": "3d624ea759f81d3e1386e85a1b2b0ff06424f7a4cde308caaf6caa9853afb7c2"
     },
     "scenes/clips/canUpgrade.tscn": {
       "role": "observe",
@@ -116932,9 +117201,9 @@
     },
     "scenes/clips/chatEl.tscn": {
       "role": "observe",
-      "sha256": "4eb06739a24248bffd5c0901fa2ac3c3673752c94c6f366e301c8dc1010e9a02",
-      "size": 1025,
-      "normalized_sha256": "4eb06739a24248bffd5c0901fa2ac3c3673752c94c6f366e301c8dc1010e9a02"
+      "sha256": "c99f18eb7b97fdfedc8477152ec1bc2280837f74d8534bffbe181e4f91d2ab34",
+      "size": 1048,
+      "normalized_sha256": "c99f18eb7b97fdfedc8477152ec1bc2280837f74d8534bffbe181e4f91d2ab34"
     },
     "scenes/clips/chatFrame.tscn": {
       "role": "observe",
@@ -117232,9 +117501,9 @@
     },
     "scenes/clips/howtoPlayScreen.tscn": {
       "role": "observe",
-      "sha256": "8c18b61e20c4adb1725d50bde94ab57231f98894558fbf5ff5f3b08997c5a387",
-      "size": 5660,
-      "normalized_sha256": "8c18b61e20c4adb1725d50bde94ab57231f98894558fbf5ff5f3b08997c5a387"
+      "sha256": "da8aaaeb14a193dbaa007919d5df0cfaba49d633c66a5103107db7811cc389e6",
+      "size": 5729,
+      "normalized_sha256": "da8aaaeb14a193dbaa007919d5df0cfaba49d633c66a5103107db7811cc389e6"
     },
     "scenes/clips/introComics.tscn": {
       "role": "observe",
@@ -117454,15 +117723,15 @@
     },
     "scenes/clips/miscHint.tscn": {
       "role": "observe",
-      "sha256": "970a9f57ba7943bdeb2516a83d8f31cefc7214c4ccae8ee679391260a5a608b4",
-      "size": 1688,
-      "normalized_sha256": "970a9f57ba7943bdeb2516a83d8f31cefc7214c4ccae8ee679391260a5a608b4"
+      "sha256": "ae89c929a9fbd797d789b4a41f7bf62222a287bc9e42015e6f647a5f2ff0b1fa",
+      "size": 1711,
+      "normalized_sha256": "ae89c929a9fbd797d789b4a41f7bf62222a287bc9e42015e6f647a5f2ff0b1fa"
     },
     "scenes/clips/miscHint__f1.tscn": {
       "role": "observe",
-      "sha256": "15d9a35f0fcc8e6eec5e46bc5629964094cd5a8f3ba854ec6dda45c9dfb1ba56",
-      "size": 1694,
-      "normalized_sha256": "15d9a35f0fcc8e6eec5e46bc5629964094cd5a8f3ba854ec6dda45c9dfb1ba56"
+      "sha256": "75079ec3a9d51ef84c0e9daa7a2a9ed451a5884c99fda70274fcd37a69202e72",
+      "size": 1717,
+      "normalized_sha256": "75079ec3a9d51ef84c0e9daa7a2a9ed451a5884c99fda70274fcd37a69202e72"
     },
     "scenes/clips/mmAnimSoldiers.tscn": {
       "role": "observe",
@@ -117640,9 +117909,9 @@
     },
     "scenes/clips/starplsk.tscn": {
       "role": "observe",
-      "sha256": "f03846734c31f95f0431c90da3f8c9aaa68abcad5c4bc02742ba3a26022b0f05",
-      "size": 993,
-      "normalized_sha256": "f03846734c31f95f0431c90da3f8c9aaa68abcad5c4bc02742ba3a26022b0f05"
+      "sha256": "15fdd83d5a276d39a3b739c811ab817a155a7fcbd59a6248da3a4a00c0f260ad",
+      "size": 1016,
+      "normalized_sha256": "15fdd83d5a276d39a3b739c811ab817a155a7fcbd59a6248da3a4a00c0f260ad"
     },
     "scenes/clips/starsClass.tscn": {
       "role": "observe",
@@ -117658,9 +117927,9 @@
     },
     "scenes/clips/startTutorialMC.tscn": {
       "role": "observe",
-      "sha256": "2d21025195994cc09763b78cfbd4855468d5c5425b01acbcfad07c51ba5d1106",
-      "size": 5208,
-      "normalized_sha256": "2d21025195994cc09763b78cfbd4855468d5c5425b01acbcfad07c51ba5d1106"
+      "sha256": "511336994d6c3e61dcd4dfeba754ea2cad9d0119024101dd1f5c166b10c3c836",
+      "size": 5231,
+      "normalized_sha256": "511336994d6c3e61dcd4dfeba754ea2cad9d0119024101dd1f5c166b10c3c836"
     },
     "scenes/clips/strongHealAni.tscn": {
       "role": "observe",
@@ -117682,9 +117951,9 @@
     },
     "scenes/clips/unitHintMC.tscn": {
       "role": "observe",
-      "sha256": "e1f9c68a2ed4bafd6736e94f74280d8b0ce1967d6ddc260c7f313690b28bfd70",
-      "size": 9927,
-      "normalized_sha256": "e1f9c68a2ed4bafd6736e94f74280d8b0ce1967d6ddc260c7f313690b28bfd70"
+      "sha256": "37f24b890c5e8acca18187adcd3b0fd0d1e815cc7685c42100321bc6e6f07646",
+      "size": 9950,
+      "normalized_sha256": "37f24b890c5e8acca18187adcd3b0fd0d1e815cc7685c42100321bc6e6f07646"
     },
     "scenes/clips/unitIcons.tscn": {
       "role": "observe",
@@ -117724,9 +117993,9 @@
     },
     "scenes/clips/upgrPanel.tscn": {
       "role": "observe",
-      "sha256": "fcf32abacc50e0ca495957de58cfb00d723b5d8e6a21eeafe9da190b25127d41",
-      "size": 20127,
-      "normalized_sha256": "fcf32abacc50e0ca495957de58cfb00d723b5d8e6a21eeafe9da190b25127d41"
+      "sha256": "33ed44b4df4239cf557e9c3d327fd5598e26ac8ef9fe7d56cbfe6c7ada20713e",
+      "size": 20173,
+      "normalized_sha256": "33ed44b4df4239cf557e9c3d327fd5598e26ac8ef9fe7d56cbfe6c7ada20713e"
     },
     "scenes/clips/upgradeCompleted_mc.tscn": {
       "role": "observe",
@@ -117736,15 +118005,15 @@
     },
     "scenes/clips/upgradePanel_fla_Timeline_100.tscn": {
       "role": "observe",
-      "sha256": "1be2063cd2a13ef043a2273518270fa4013b1dc22ee98d53f683a9cb6019afd4",
-      "size": 662,
-      "normalized_sha256": "1be2063cd2a13ef043a2273518270fa4013b1dc22ee98d53f683a9cb6019afd4"
+      "sha256": "70248aecff4aa385a94bc3a2949f6dded734177329f87fba1ba46bb3257ea7c0",
+      "size": 386,
+      "normalized_sha256": "70248aecff4aa385a94bc3a2949f6dded734177329f87fba1ba46bb3257ea7c0"
     },
     "scenes/clips/upgradePanel_fla_Timeline_100__f1.tscn": {
       "role": "observe",
-      "sha256": "fe45c5e14f98ecdd5acabc08888e299de96a93e27bf2686a7f157f456b41df59",
-      "size": 668,
-      "normalized_sha256": "fe45c5e14f98ecdd5acabc08888e299de96a93e27bf2686a7f157f456b41df59"
+      "sha256": "4e7bcd8679ef042e032cb42ce2bee8218572a8edd59a066df156ec4e2ed509f9",
+      "size": 392,
+      "normalized_sha256": "4e7bcd8679ef042e032cb42ce2bee8218572a8edd59a066df156ec4e2ed509f9"
     },
     "scenes/clips/upgradePanel_fla_Timeline_40.tscn": {
       "role": "observe",
@@ -117754,15 +118023,15 @@
     },
     "scenes/clips/upgradePanel_fla_Timeline_46.tscn": {
       "role": "observe",
-      "sha256": "5bdcc82f4fe773ec0c0cbbcc390b8855703bedd2222e19b0748c0a7db8689c19",
-      "size": 661,
-      "normalized_sha256": "5bdcc82f4fe773ec0c0cbbcc390b8855703bedd2222e19b0748c0a7db8689c19"
+      "sha256": "69a20f3b8c32609c5a9f8c4e6ad84864c5090d4d1a1f26fa01e646ba59fff828",
+      "size": 385,
+      "normalized_sha256": "69a20f3b8c32609c5a9f8c4e6ad84864c5090d4d1a1f26fa01e646ba59fff828"
     },
     "scenes/clips/upgradePanel_fla_Timeline_46__f1.tscn": {
       "role": "observe",
-      "sha256": "29b5c178e8e1d21a6236e8c2830e37c1eb4363fc458df70fd4368a984c644a70",
-      "size": 667,
-      "normalized_sha256": "29b5c178e8e1d21a6236e8c2830e37c1eb4363fc458df70fd4368a984c644a70"
+      "sha256": "a03bc43fee2de85a7a8a58a75ef9878a9025ba3d8a822f8b87afa29ec7668403",
+      "size": 391,
+      "normalized_sha256": "a03bc43fee2de85a7a8a58a75ef9878a9025ba3d8a822f8b87afa29ec7668403"
     },
     "scenes/clips/upgradedUnitSelector.tscn": {
       "role": "observe",
@@ -117778,9 +118047,9 @@
     },
     "scenes/clips/zanavesUpgr.tscn": {
       "role": "observe",
-      "sha256": "96b6f756ff88b2050ae718e94d51c1e89d8c627c0c279f369b3d34349d1e860a",
-      "size": 598,
-      "normalized_sha256": "96b6f756ff88b2050ae718e94d51c1e89d8c627c0c279f369b3d34349d1e860a"
+      "sha256": "6f52f17557d46165b52006354a974382f092002edf211ee5c6ecb07bff1199e6",
+      "size": 829,
+      "normalized_sha256": "6f52f17557d46165b52006354a974382f092002edf211ee5c6ecb07bff1199e6"
     },
     "scenes/ifaces/achives_screen_ex.tscn": {
       "role": "observe",
@@ -117956,6 +118225,12 @@
       "size": 169,
       "normalized_sha256": "bbf0421220e38ca789de2ebb988886a03ccb00041935ccbd8f63abec9c6547d6"
     },
+    "tests/as3_abort.gd": {
+      "role": "observe",
+      "sha256": "08f71a6542305a6fb6a0951153c45f6b2045d3763564872592a2d4424fd623fe",
+      "size": 9803,
+      "normalized_sha256": "08f71a6542305a6fb6a0951153c45f6b2045d3763564872592a2d4424fd623fe"
+    },
     "tests/battle_all_levels.gd": {
       "role": "observe",
       "sha256": "595f74599c07939bfcf72c85e3c3fc53322c3e67221ca630c1f7695d47cd9b9f",
@@ -117964,9 +118239,9 @@
     },
     "tests/battle_ifaces.gd": {
       "role": "observe",
-      "sha256": "aec180497ea6a0e151c99730c666a5bd1056d638c09a3ba018b10bd96ef5aa9a",
-      "size": 27079,
-      "normalized_sha256": "aec180497ea6a0e151c99730c666a5bd1056d638c09a3ba018b10bd96ef5aa9a"
+      "sha256": "ef16ae9b91e5f405d7c61b9412cb66d35a79c152ecb3704e755eaa132b8f4ab5",
+      "size": 28604,
+      "normalized_sha256": "ef16ae9b91e5f405d7c61b9412cb66d35a79c152ecb3704e755eaa132b8f4ab5"
     },
     "tests/battle_level1.gd": {
       "role": "observe",
@@ -117982,9 +118257,9 @@
     },
     "tests/clips_runtime.gd": {
       "role": "observe",
-      "sha256": "0d05afd57510916597cf480a66fdd97797c7fa4aa880e02a56cf9e4368ce48d3",
-      "size": 5590,
-      "normalized_sha256": "0d05afd57510916597cf480a66fdd97797c7fa4aa880e02a56cf9e4368ce48d3"
+      "sha256": "41bab19004af736e33ac668225950dff9d266b1b33c19835293abe62cf2e9ae3",
+      "size": 6531,
+      "normalized_sha256": "41bab19004af736e33ac668225950dff9d266b1b33c19835293abe62cf2e9ae3"
     },
     "tests/comics.gd": {
       "role": "observe",
@@ -117998,17 +118273,47 @@
       "size": 8680,
       "normalized_sha256": "04f2a3410d41b6c6a1a9e0978019a7fdf0461f4cee48ed3e07da31dd104dd0b0"
     },
+    "tests/extra_obstacles.gd": {
+      "role": "observe",
+      "sha256": "75587d0b5ac78ce9b2615e02af920814eacd0bd4afe3ff72ea0902442d4ade17",
+      "size": 14789,
+      "normalized_sha256": "75587d0b5ac78ce9b2615e02af920814eacd0bd4afe3ff72ea0902442d4ade17"
+    },
+    "tests/f2_core.gd": {
+      "role": "observe",
+      "sha256": "8ba54cdb4e48a9c47b9c149561f83a0de0bfd1a2f265da29c8679235df57fcf5",
+      "size": 14290,
+      "normalized_sha256": "8ba54cdb4e48a9c47b9c149561f83a0de0bfd1a2f265da29c8679235df57fcf5"
+    },
     "tests/friend_units.gd": {
       "role": "observe",
       "sha256": "1b9e9c1aaaf2ddd9634bc694ac873d8ff587ffef1590aa8fe7dcc12ce9824b53",
       "size": 5597,
       "normalized_sha256": "1b9e9c1aaaf2ddd9634bc694ac873d8ff587ffef1590aa8fe7dcc12ce9824b53"
     },
+    "tests/ifaces_f3.gd": {
+      "role": "observe",
+      "sha256": "1c85f67972411662bc336cceaae32139fb01999cbab051bb0cfffc67ecb99ebb",
+      "size": 6492,
+      "normalized_sha256": "1c85f67972411662bc336cceaae32139fb01999cbab051bb0cfffc67ecb99ebb"
+    },
+    "tests/input_battle_flow.gd": {
+      "role": "observe",
+      "sha256": "f1ab2c69f8dec9ba802648a8735ac294292bb89de08dc0eb121149441fabe706",
+      "size": 18806,
+      "normalized_sha256": "f1ab2c69f8dec9ba802648a8735ac294292bb89de08dc0eb121149441fabe706"
+    },
     "tests/input_e2e.gd": {
       "role": "observe",
-      "sha256": "5d8e06c516f12aec2554b32a0564bf4c8097114eec32e6d48282fb350f8b90f7",
-      "size": 8675,
-      "normalized_sha256": "5d8e06c516f12aec2554b32a0564bf4c8097114eec32e6d48282fb350f8b90f7"
+      "sha256": "4106dba34eaaa18fd73ae72902896b922a19e529a5c157fdc67f19ee4aa8b071",
+      "size": 17975,
+      "normalized_sha256": "4106dba34eaaa18fd73ae72902896b922a19e529a5c157fdc67f19ee4aa8b071"
+    },
+    "tests/input_e2e_new_save.gd": {
+      "role": "observe",
+      "sha256": "3a4579ae0a5b0fc70a2ad0dff9a80851c53207882ae1de99d151d2fa7728703a",
+      "size": 5161,
+      "normalized_sha256": "3a4579ae0a5b0fc70a2ad0dff9a80851c53207882ae1de99d151d2fa7728703a"
     },
     "tests/level_intro.gd": {
       "role": "observe",
@@ -118028,6 +118333,12 @@
       "size": 15085,
       "normalized_sha256": "5c48b501bd4b2099338357bfefc700186b54ce91105c35c05f4ad478f493102c"
     },
+    "tests/living_units_audit.gd": {
+      "role": "observe",
+      "sha256": "04ce75f584aa6a9977a85f402996e923562109bb8a1ba576ee3257b7434667d0",
+      "size": 7021,
+      "normalized_sha256": "04ce75f584aa6a9977a85f402996e923562109bb8a1ba576ee3257b7434667d0"
+    },
     "tests/main_flow.gd": {
       "role": "observe",
       "sha256": "9d07f195ab524b0907304ff79ed8417fbbed06b5ba59f1499aac99fe977c9248",
@@ -118036,9 +118347,9 @@
     },
     "tests/main_game_ui.gd": {
       "role": "observe",
-      "sha256": "97f8788418e3f6452222a49e86b4e98c41bee3a7044b497ed830dd371956d6d7",
-      "size": 17556,
-      "normalized_sha256": "97f8788418e3f6452222a49e86b4e98c41bee3a7044b497ed830dd371956d6d7"
+      "sha256": "b1ce7b061d45b15828a58f940126fec6687a24ca2aada58aa9d95d08bd8fe396",
+      "size": 17557,
+      "normalized_sha256": "b1ce7b061d45b15828a58f940126fec6687a24ca2aada58aa9d95d08bd8fe396"
     },
     "tests/menu_screens.gd": {
       "role": "observe",
@@ -118048,9 +118359,9 @@
     },
     "tests/rw_runtime.gd": {
       "role": "observe",
-      "sha256": "1bab57c2d84e3e2e021e803b0477c411a32da2a8c12208f0c90b27228db90a50",
-      "size": 22107,
-      "normalized_sha256": "1bab57c2d84e3e2e021e803b0477c411a32da2a8c12208f0c90b27228db90a50"
+      "sha256": "0a349fd9c7edb127fbd9cfdf890dc59a4adc2cf95b06b7d4df4fc8fcda8d49ae",
+      "size": 23736,
+      "normalized_sha256": "0a349fd9c7edb127fbd9cfdf890dc59a4adc2cf95b06b7d4df4fc8fcda8d49ae"
     },
     "tests/smoke.gd": {
       "role": "observe",
@@ -118066,15 +118377,15 @@
     },
     "tests/specials_rules.gd": {
       "role": "observe",
-      "sha256": "b60dce6a5db1b71c9a01ab0db22c7e9afd44b987e27f18fef3efc0680c8c56b7",
-      "size": 24407,
-      "normalized_sha256": "b60dce6a5db1b71c9a01ab0db22c7e9afd44b987e27f18fef3efc0680c8c56b7"
+      "sha256": "bb5f56d5f09a01be328ee82e38363e5944ae1b5447ce0aa17ccd0c0f38eca25c",
+      "size": 25120,
+      "normalized_sha256": "bb5f56d5f09a01be328ee82e38363e5944ae1b5447ce0aa17ccd0c0f38eca25c"
     },
     "tests/support/battle_harness.gd": {
       "role": "observe",
-      "sha256": "6775334d4128b8437cdaadaa5ff11a7e3e20edd93bf5207cc678621300a2c4d1",
-      "size": 7739,
-      "normalized_sha256": "6775334d4128b8437cdaadaa5ff11a7e3e20edd93bf5207cc678621300a2c4d1"
+      "sha256": "f143d84ceb90916e1aa406585db90b6438e6f50d1894a4cd17daac16582492c4",
+      "size": 9934,
+      "normalized_sha256": "f143d84ceb90916e1aa406585db90b6438e6f50d1894a4cd17daac16582492c4"
     },
     "tests/support/king_probe.gd": {
       "role": "observe",
@@ -118090,9 +118401,9 @@
     },
     "tests/upgrade_panel.gd": {
       "role": "observe",
-      "sha256": "7ab5023f9d6b4b2fa398623d487bc0480515a3e37e4a31aaf38b73586053d5c0",
-      "size": 8773,
-      "normalized_sha256": "7ab5023f9d6b4b2fa398623d487bc0480515a3e37e4a31aaf38b73586053d5c0"
+      "sha256": "f58aeccd154798e02442952368272298c07f82a8bbcdbcbde4662538be776bbc",
+      "size": 13423,
+      "normalized_sha256": "f58aeccd154798e02442952368272298c07f82a8bbcdbcbde4662538be776bbc"
     },
     "tests/visual_effects.gd": {
       "role": "observe",
