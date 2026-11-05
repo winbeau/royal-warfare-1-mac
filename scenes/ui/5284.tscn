@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5284/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5284/2_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5284/4_0.png" id="t2_0"]
+
+[node name="Original_5284" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5284
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -16.8
+offset_top = -11.850000000000001
+offset_right = 17.2
+offset_bottom = 12.149999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 5280
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eIco" type="TextureRect" parent="."]
+offset_left = -13.3
+offset_top = -15.850000000000001
+offset_right = 14.7
+offset_bottom = 17.15
+mouse_filter = 2
+metadata/original_instance = "eIco"
+metadata/character_id = 5281
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_4" type="TextureRect" parent="."]
+offset_left = -19.3
+offset_top = -12.850000000000001
+offset_right = 19.7
+offset_bottom = 13.149999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_4"
+metadata/character_id = 5283
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0

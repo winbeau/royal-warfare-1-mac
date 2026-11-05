@@ -1,0 +1,3 @@
+Game menu. Use it to quit to Main menu, enable or 
+disable sound and music, restart current mission, or 
+return to Map

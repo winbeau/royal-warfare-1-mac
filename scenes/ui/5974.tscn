@@ -1,0 +1,407 @@
+[gd_scene load_steps=39 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/6_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/134_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/137_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/137_1.png" id="t3_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/137_2.png" id="t3_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/147_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/147_1.png" id="t4_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/147_2.png" id="t4_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/157_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/157_1.png" id="t5_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/157_2.png" id="t5_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/167_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/167_1.png" id="t6_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/167_2.png" id="t6_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/177_0.png" id="t7_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/179_0.png" id="t8_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/181_0.png" id="t9_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/182_0.png" id="t10_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/183_0.png" id="t11_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/184_0.png" id="t12_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/185_0.png" id="t13_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/187_0.png" id="t14_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/189_0.png" id="t15_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/191_0.png" id="t16_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/192_0.png" id="t17_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/193_0.png" id="t18_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/194_0.png" id="t19_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/195_0.png" id="t20_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/196_0.png" id="t21_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/197_0.png" id="t22_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/198_0.png" id="t23_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/200_0.png" id="t24_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/202_0.png" id="t25_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/204_0.png" id="t26_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/206_0.png" id="t27_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5974/208_0.png" id="t28_0"]
+
+[node name="Original_5974" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5974
+
+[node name="eMaxGames" type="TextureRect" parent="."]
+offset_left = -116.69999999999999
+offset_top = 271.7
+offset_right = 116.80000000000001
+offset_bottom = 334.2
+mouse_filter = 2
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 5908
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eBg" type="TextureRect" parent="."]
+offset_left = -288.7
+offset_top = -226.8
+offset_right = 298.3
+offset_bottom = 303.7
+mouse_filter = 2
+metadata/original_instance = "eBg"
+metadata/character_id = 5968
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_134" type="TextureRect" parent="."]
+offset_left = -190.2
+offset_top = -192.3
+offset_right = 199.3
+offset_bottom = -71.80000000000001
+mouse_filter = 2
+metadata/original_instance = "depth_134"
+metadata/character_id = 5971
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bRestart" type="TextureButton" parent="."]
+offset_left = -246.7
+offset_top = 147.7
+offset_right = -118.69999999999999
+offset_bottom = 199.2
+mouse_filter = 0
+metadata/original_instance = "bRestart"
+metadata/character_id = 5929
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t3_0")
+texture_hover = ExtResource("t3_1")
+texture_pressed = ExtResource("t3_2")
+
+[node name="bMore" type="TextureButton" parent="."]
+offset_left = 1.8000000000000114
+offset_top = 147.7
+offset_right = 129.8
+offset_bottom = 199.2
+mouse_filter = 0
+metadata/original_instance = "bMore"
+metadata/character_id = 5873
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t4_0")
+texture_hover = ExtResource("t4_1")
+texture_pressed = ExtResource("t4_2")
+
+[node name="bMenu" type="TextureButton" parent="."]
+offset_left = -122.69999999999999
+offset_top = 147.7
+offset_right = 5.800000000000011
+offset_bottom = 199.2
+mouse_filter = 0
+metadata/original_instance = "bMenu"
+metadata/character_id = 5931
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t5_0")
+texture_hover = ExtResource("t5_1")
+texture_pressed = ExtResource("t5_2")
+
+[node name="bMap" type="TextureButton" parent="."]
+offset_left = 126.30000000000001
+offset_top = 147.7
+offset_right = 254.3
+offset_bottom = 199.2
+mouse_filter = 0
+metadata/original_instance = "bMap"
+metadata/character_id = 5973
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t6_0")
+texture_hover = ExtResource("t6_1")
+texture_pressed = ExtResource("t6_2")
+
+[node name="depth_177" type="TextureRect" parent="."]
+offset_left = -237.2
+offset_top = 84.69999999999999
+offset_right = 237.8
+offset_bottom = 105.19999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_177"
+metadata/character_id = 5925
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_179" type="TextureRect" parent="."]
+offset_left = -237.2
+offset_top = 118.69999999999999
+offset_right = 237.8
+offset_bottom = 139.2
+mouse_filter = 2
+metadata/original_instance = "depth_179"
+metadata/character_id = 5925
+texture = ExtResource("t8_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tHired" type="TextureRect" parent="."]
+offset_left = -161.7
+offset_top = 87.19999999999999
+offset_right = -8.699999999999989
+offset_bottom = 103.19999999999999
+mouse_filter = 2
+metadata/original_instance = "tHired"
+metadata/character_id = 5943
+texture = ExtResource("t9_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tUpgraded" type="TextureRect" parent="."]
+offset_left = 15.300000000000011
+offset_top = 87.19999999999999
+offset_right = 203.3
+offset_bottom = 106.19999999999999
+mouse_filter = 2
+metadata/original_instance = "tUpgraded"
+metadata/character_id = 5944
+texture = ExtResource("t10_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tGotGold" type="TextureRect" parent="."]
+offset_left = -149.2
+offset_top = 122.19999999999999
+offset_right = -8.699999999999989
+offset_bottom = 141.7
+mouse_filter = 2
+metadata/original_instance = "tGotGold"
+metadata/character_id = 5945
+texture = ExtResource("t11_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tSpentGold" type="TextureRect" parent="."]
+offset_left = 15.300000000000011
+offset_top = 122.19999999999999
+offset_right = 148.3
+offset_bottom = 141.2
+mouse_filter = 2
+metadata/original_instance = "tSpentGold"
+metadata/character_id = 5946
+texture = ExtResource("t12_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_185" type="TextureRect" parent="."]
+offset_left = -239.2
+offset_top = -20.30000000000001
+offset_right = 235.8
+offset_bottom = 0.19999999999998863
+mouse_filter = 2
+metadata/original_instance = "depth_185"
+metadata/character_id = 5925
+texture = ExtResource("t13_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_187" type="TextureRect" parent="."]
+offset_left = -239.2
+offset_top = 14.699999999999989
+offset_right = 235.8
+offset_bottom = 35.19999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_187"
+metadata/character_id = 5925
+texture = ExtResource("t14_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_189" type="TextureRect" parent="."]
+offset_left = -239.2
+offset_top = 48.69999999999999
+offset_right = 235.8
+offset_bottom = 69.19999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_189"
+metadata/character_id = 5925
+texture = ExtResource("t15_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_191" type="TextureRect" parent="."]
+offset_left = -95.69999999999999
+offset_top = -54.80000000000001
+offset_right = 96.80000000000001
+offset_bottom = -30.30000000000001
+mouse_filter = 2
+metadata/original_instance = "depth_191"
+metadata/character_id = 5934
+texture = ExtResource("t16_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tNumKills" type="TextureRect" parent="."]
+offset_left = -168.2
+offset_top = -17.80000000000001
+offset_right = -10.699999999999989
+offset_bottom = -1.8000000000000114
+mouse_filter = 2
+metadata/original_instance = "tNumKills"
+metadata/character_id = 5935
+texture = ExtResource("t17_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tNumLost" type="TextureRect" parent="."]
+offset_left = 13.300000000000011
+offset_top = -17.80000000000001
+offset_right = 157.3
+offset_bottom = -1.8000000000000114
+mouse_filter = 2
+metadata/original_instance = "tNumLost"
+metadata/character_id = 5936
+texture = ExtResource("t18_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tDamageDealt" type="TextureRect" parent="."]
+offset_left = -165.7
+offset_top = 17.19999999999999
+offset_right = -10.699999999999989
+offset_bottom = 36.69999999999999
+mouse_filter = 2
+metadata/original_instance = "tDamageDealt"
+metadata/character_id = 5937
+texture = ExtResource("t19_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tDamageReceived" type="TextureRect" parent="."]
+offset_left = 12.800000000000011
+offset_top = 17.19999999999999
+offset_right = 193.8
+offset_bottom = 36.69999999999999
+mouse_filter = 2
+metadata/original_instance = "tDamageReceived"
+metadata/character_id = 5938
+texture = ExtResource("t20_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tTimeSpent" type="TextureRect" parent="."]
+offset_left = -145.7
+offset_top = 52.19999999999999
+offset_right = -10.699999999999989
+offset_bottom = 71.19999999999999
+mouse_filter = 2
+metadata/original_instance = "tTimeSpent"
+metadata/character_id = 5939
+texture = ExtResource("t21_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tNumUpgrades" type="TextureRect" parent="."]
+offset_left = 13.300000000000011
+offset_top = 52.19999999999999
+offset_right = 138.3
+offset_bottom = 71.69999999999999
+mouse_filter = 2
+metadata/original_instance = "tNumUpgrades"
+metadata/character_id = 5940
+texture = ExtResource("t22_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_198" type="TextureRect" parent="."]
+offset_left = -78.19999999999999
+offset_top = -74.30000000000001
+offset_right = 75.80000000000001
+offset_bottom = -61.30000000000001
+mouse_filter = 2
+metadata/original_instance = "depth_198"
+metadata/character_id = 5942
+texture = ExtResource("t23_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bLeft" type="TextureButton" parent="."]
+offset_left = -270.2
+offset_top = 224.7
+offset_right = -231.2
+offset_bottom = 247.7
+mouse_filter = 0
+metadata/original_instance = "bLeft"
+metadata/character_id = 5948
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t24_0")
+
+[node name="bRight" type="TextureButton" parent="."]
+offset_left = 237.3
+offset_top = 224.7
+offset_right = 276.8
+offset_bottom = 247.7
+mouse_filter = 0
+metadata/original_instance = "bRight"
+metadata/character_id = 5948
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t25_0")
+
+[node name="eNoNewAchives" type="TextureRect" parent="."]
+offset_left = -129.7
+offset_top = 230.7
+offset_right = 151.8
+offset_bottom = 256.7
+mouse_filter = 2
+metadata/original_instance = "eNoNewAchives"
+metadata/character_id = 5950
+texture = ExtResource("t26_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eCont" type="TextureRect" parent="."]
+offset_left = -188.2
+offset_top = 211.7
+offset_right = 215.3
+offset_bottom = 263.2
+mouse_filter = 2
+metadata/original_instance = "eCont"
+metadata/character_id = 5953
+texture = ExtResource("t27_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eHint" type="TextureRect" parent="."]
+offset_left = -176.7
+offset_top = 257.7
+offset_right = -60.69999999999999
+offset_bottom = 327.7
+mouse_filter = 2
+metadata/original_instance = "eHint"
+metadata/character_id = 5552
+texture = ExtResource("t28_0")
+expand_mode = 1
+stretch_mode = 0

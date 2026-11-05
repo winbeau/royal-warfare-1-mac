@@ -1,0 +1,1 @@
+Number of enemy waves passed and total number of enemy waves.

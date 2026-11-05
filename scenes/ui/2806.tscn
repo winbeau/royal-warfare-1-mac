@@ -1,0 +1,542 @@
+[gd_scene load_steps=43 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/2_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/5_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/6_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/8_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/10_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/13_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/14_0.png" id="t7_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/15_0.png" id="t8_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/16_0.png" id="t9_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/17_0.png" id="t10_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/18_0.png" id="t11_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/20_0.png" id="t12_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/21_0.png" id="t13_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/22_0.png" id="t14_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/23_0.png" id="t15_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/24_0.png" id="t16_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/26_0.png" id="t17_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/27_0.png" id="t18_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/29_0.png" id="t19_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/30_0.png" id="t20_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/31_0.png" id="t21_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/32_0.png" id="t22_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/33_0.png" id="t23_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/35_0.png" id="t24_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/36_0.png" id="t25_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/38_0.png" id="t26_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/40_0.png" id="t27_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/42_0.png" id="t28_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/44_0.png" id="t29_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/46_0.png" id="t30_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/48_0.png" id="t31_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/50_0.png" id="t32_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/52_0.png" id="t33_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/54_0.png" id="t34_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/56_0.png" id="t35_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/58_0.png" id="t36_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/60_0.png" id="t37_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/61_0.png" id="t38_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/62_0.png" id="t39_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/2806/63_0.png" id="t40_0"]
+
+[node name="Original_2806" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 2806
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 1015
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bClosebtn" type="TextureButton" parent="."]
+offset_left = 534.5
+offset_top = 399.0
+offset_right = 576.0
+offset_bottom = 465.5
+mouse_filter = 0
+metadata/original_instance = "bClosebtn"
+metadata/character_id = 1021
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t1_0")
+
+[node name="depth_5" type="TextureRect" parent="."]
+offset_left = 174.0
+offset_top = 344.0
+offset_right = 177.5
+offset_bottom = 348.5
+mouse_filter = 2
+metadata/original_instance = "depth_5"
+metadata/character_id = 2775
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eBg" type="TextureRect" parent="."]
+offset_left = 90.5
+offset_top = 134.0
+offset_right = 609.0
+offset_bottom = 412.0
+mouse_filter = 2
+metadata/original_instance = "eBg"
+metadata/character_id = 2776
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_8" type="TextureRect" parent="."]
+offset_left = 183.0
+offset_top = 155.5
+offset_right = 530.5
+offset_bottom = 182.5
+mouse_filter = 2
+metadata/original_instance = "depth_8"
+metadata/character_id = 2778
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ePicCont" type="TextureRect" parent="."]
+offset_left = 124.0
+offset_top = 228.5
+offset_right = 236.5
+offset_bottom = 341.5
+mouse_filter = 2
+metadata/original_instance = "ePicCont"
+metadata/character_id = 2780
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tDescr" type="TextureRect" parent="."]
+offset_left = 251.0
+offset_top = 237.0
+offset_right = 582.5
+offset_bottom = 346.5
+mouse_filter = 2
+metadata/original_instance = "tDescr"
+metadata/character_id = 2781
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tUnitName" type="TextureRect" parent="."]
+offset_left = 266.5
+offset_top = 201.0
+offset_right = 440.5
+offset_bottom = 230.0
+mouse_filter = 2
+metadata/original_instance = "tUnitName"
+metadata/character_id = 2782
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tHealth" type="TextureRect" parent="."]
+offset_left = 164.0
+offset_top = 356.0
+offset_right = 186.5
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tHealth"
+metadata/character_id = 2783
+texture = ExtResource("t8_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_16" type="TextureRect" parent="."]
+offset_left = 139.0
+offset_top = 349.5
+offset_right = 158.0
+offset_bottom = 371.5
+mouse_filter = 2
+metadata/original_instance = "depth_16"
+metadata/character_id = 2784
+texture = ExtResource("t9_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tShootDam" type="TextureRect" parent="."]
+offset_left = 318.5
+offset_top = 381.0
+offset_right = 341.0
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tShootDam"
+metadata/character_id = 2785
+texture = ExtResource("t10_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tSpeed" type="TextureRect" parent="."]
+offset_left = 246.5
+offset_top = 356.0
+offset_right = 268.5
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tSpeed"
+metadata/character_id = 2786
+texture = ExtResource("t11_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_20" type="TextureRect" parent="."]
+offset_left = 209.5
+offset_top = 351.0
+offset_right = 391.5
+offset_bottom = 397.0
+mouse_filter = 2
+metadata/original_instance = "depth_20"
+metadata/character_id = 2787
+texture = ExtResource("t12_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tShootSpeed" type="TextureRect" parent="."]
+offset_left = 396.5
+offset_top = 381.0
+offset_right = 418.5
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tShootSpeed"
+metadata/character_id = 2788
+texture = ExtResource("t13_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tDam" type="TextureRect" parent="."]
+offset_left = 319.0
+offset_top = 356.0
+offset_right = 341.5
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tDam"
+metadata/character_id = 2789
+texture = ExtResource("t14_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_23" type="TextureRect" parent="."]
+offset_left = 290.5
+offset_top = 348.5
+offset_right = 316.0
+offset_bottom = 369.0
+mouse_filter = 2
+metadata/original_instance = "depth_23"
+metadata/character_id = 2790
+texture = ExtResource("t15_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tAtSpd" type="TextureRect" parent="."]
+offset_left = 395.5
+offset_top = 356.0
+offset_right = 417.5
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tAtSpd"
+metadata/character_id = 2791
+texture = ExtResource("t16_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_26" type="TextureRect" parent="."]
+offset_left = 364.5
+offset_top = 353.5
+offset_right = 391.0
+offset_bottom = 373.0
+mouse_filter = 2
+metadata/original_instance = "depth_26"
+metadata/character_id = 2792
+texture = ExtResource("t17_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tProtection" type="TextureRect" parent="."]
+offset_left = 537.5
+offset_top = 381.0
+offset_right = 560.0
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tProtection"
+metadata/character_id = 2793
+texture = ExtResource("t18_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_29" type="TextureRect" parent="."]
+offset_left = 439.0
+offset_top = 348.5
+offset_right = 534.5
+offset_bottom = 395.5
+mouse_filter = 2
+metadata/original_instance = "depth_29"
+metadata/character_id = 2794
+texture = ExtResource("t19_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tPierce" type="TextureRect" parent="."]
+offset_left = 466.5
+offset_top = 356.0
+offset_right = 489.0
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tPierce"
+metadata/character_id = 2795
+texture = ExtResource("t20_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tMagicPierce" type="TextureRect" parent="."]
+offset_left = 467.5
+offset_top = 381.0
+offset_right = 489.5
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tMagicPierce"
+metadata/character_id = 2796
+texture = ExtResource("t21_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_32" type="TextureRect" parent="."]
+offset_left = 437.5
+offset_top = 377.0
+offset_right = 465.0
+offset_bottom = 394.0
+mouse_filter = 2
+metadata/original_instance = "depth_32"
+metadata/character_id = 2797
+texture = ExtResource("t22_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tArmor" type="TextureRect" parent="."]
+offset_left = 536.5
+offset_top = 356.0
+offset_right = 558.5
+offset_bottom = 366.0
+mouse_filter = 2
+metadata/original_instance = "tArmor"
+metadata/character_id = 2798
+texture = ExtResource("t23_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_35" type="TextureRect" parent="."]
+offset_left = 290.0
+offset_top = 350.0
+offset_right = 530.0
+offset_bottom = 397.5
+mouse_filter = 2
+metadata/original_instance = "depth_35"
+metadata/character_id = 2799
+texture = ExtResource("t24_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s1" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s1"
+metadata/character_id = 2801
+texture = ExtResource("t25_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s7" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s7"
+metadata/character_id = 2801
+texture = ExtResource("t26_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s2" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s2"
+metadata/character_id = 2801
+texture = ExtResource("t27_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s8" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s8"
+metadata/character_id = 2801
+texture = ExtResource("t28_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s3" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s3"
+metadata/character_id = 2801
+texture = ExtResource("t29_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s4" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s4"
+metadata/character_id = 2801
+texture = ExtResource("t30_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s10" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s10"
+metadata/character_id = 2801
+texture = ExtResource("t31_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s5" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s5"
+metadata/character_id = 2801
+texture = ExtResource("t32_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s11" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s11"
+metadata/character_id = 2801
+texture = ExtResource("t33_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s6" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s6"
+metadata/character_id = 2801
+texture = ExtResource("t34_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s12" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s12"
+metadata/character_id = 2801
+texture = ExtResource("t35_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="s9" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = -10.5
+offset_bottom = -10.5
+mouse_filter = 2
+metadata/original_instance = "s9"
+metadata/character_id = 2801
+texture = ExtResource("t36_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tCost" type="TextureRect" parent="."]
+offset_left = 164.0
+offset_top = 381.0
+offset_right = 186.5
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tCost"
+metadata/character_id = 2802
+texture = ExtResource("t37_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_61" type="TextureRect" parent="."]
+offset_left = 139.5
+offset_top = 375.0
+offset_right = 159.0
+offset_bottom = 393.5
+mouse_filter = 2
+metadata/original_instance = "depth_61"
+metadata/character_id = 2803
+texture = ExtResource("t38_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tAccuracy" type="TextureRect" parent="."]
+offset_left = 246.5
+offset_top = 381.0
+offset_right = 269.0
+offset_bottom = 391.0
+mouse_filter = 2
+metadata/original_instance = "tAccuracy"
+metadata/character_id = 2804
+texture = ExtResource("t39_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_63" type="TextureRect" parent="."]
+offset_left = 215.5
+offset_top = 374.0
+offset_right = 242.5
+offset_bottom = 396.5
+mouse_filter = 2
+metadata/original_instance = "depth_63"
+metadata/character_id = 2805
+texture = ExtResource("t40_0")
+expand_mode = 1
+stretch_mode = 0

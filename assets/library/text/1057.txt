@@ -1,0 +1,5 @@
+You can issue orders 
+--- RECORDSEPARATOR ---
+while the game is paused.
+--- RECORDSEPARATOR ---
+press Spacebar to pause.

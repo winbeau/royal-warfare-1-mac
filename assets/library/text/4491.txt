@@ -1,0 +1,4 @@
+are vulnerable to arrows. Also, they have some problems with enemies 
+wearing heavy armor: short swords don't have enough armor piercing 
+power. Unlike other warrior class fighters, swordmasters due to their 
+lightning reflexes have some magic resistance.

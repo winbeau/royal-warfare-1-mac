@@ -1,0 +1,2 @@
+If a unit withdraws from the fight, he will get an instant backstab 
+hit. It will not happen if two or more allies attack same enemy.

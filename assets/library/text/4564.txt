@@ -1,0 +1,3 @@
+are adepts of water and air, and can strike lightning flashes and freeze 
+their targets. They lack HP, movement, attack speed, but magic bolts 
+bypass any armor.

@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5146/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5146/3_0.png" id="t1_0"]
+
+[node name="Original_5146" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5146
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -8.350000000000001
+offset_right = 15.0
+offset_bottom = 11.649999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 3045
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tText" type="TextureRect" parent="."]
+offset_left = 12.5
+offset_top = -5.850000000000001
+offset_right = 33.0
+offset_bottom = 9.149999999999999
+mouse_filter = 2
+metadata/original_instance = "tText"
+metadata/character_id = 5145
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0

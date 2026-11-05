@@ -1,0 +1,1 @@
+Warrior class soldiers fight enemies in close combat. They are well armored and armed and can withstand lots of damage, but they can&apos;t move too quickly.Warriors will charge the incoming forces by themselves and get involved in combat.Use your warriors to protect archers and casters.

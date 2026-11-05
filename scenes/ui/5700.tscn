@@ -1,0 +1,910 @@
+[gd_scene load_steps=77 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/39_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/101_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/133_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/189_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/221_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/301_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/369_0.png" id="t7_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/419_0.png" id="t8_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/457_0.png" id="t9_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/489_0.png" id="t10_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/539_0.png" id="t11_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/601_0.png" id="t12_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/711_0.png" id="t13_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/767_0.png" id="t14_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/811_0.png" id="t15_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/867_0.png" id="t16_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/917_0.png" id="t17_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/985_0.png" id="t18_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1023_0.png" id="t19_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1073_0.png" id="t20_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1141_0.png" id="t21_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1203_0.png" id="t22_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1247_0.png" id="t23_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1279_0.png" id="t24_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1305_0.png" id="t25_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1310_0.png" id="t26_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1317_0.png" id="t27_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1371_0.png" id="t28_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1425_0.png" id="t29_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1479_0.png" id="t30_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1533_0.png" id="t31_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1587_0.png" id="t32_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1641_0.png" id="t33_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1695_0.png" id="t34_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1749_0.png" id="t35_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1803_0.png" id="t36_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1857_0.png" id="t37_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1911_0.png" id="t38_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/1965_0.png" id="t39_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2019_0.png" id="t40_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2073_0.png" id="t41_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2127_0.png" id="t42_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2181_0.png" id="t43_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2235_0.png" id="t44_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2289_0.png" id="t45_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2343_0.png" id="t46_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2397_0.png" id="t47_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2451_0.png" id="t48_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2505_0.png" id="t49_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2559_0.png" id="t50_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2613_0.png" id="t51_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2617_0.png" id="t52_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2625_0.png" id="t53_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2627_0.png" id="t54_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2627_1.png" id="t54_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2627_2.png" id="t54_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2638_0.png" id="t55_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2638_1.png" id="t55_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2638_2.png" id="t55_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2648_0.png" id="t56_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2648_1.png" id="t56_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2648_2.png" id="t56_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2658_0.png" id="t57_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2658_1.png" id="t57_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2658_2.png" id="t57_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2668_0.png" id="t58_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2668_1.png" id="t58_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2668_2.png" id="t58_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2678_0.png" id="t59_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2684_0.png" id="t60_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2690_0.png" id="t61_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2696_0.png" id="t62_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2703_0.png" id="t63_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5700/2708_0.png" id="t64_0"]
+
+[node name="Original_5700" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5700
+
+[node name="r1" type="TextureRect" parent="."]
+offset_left = 103.5
+offset_top = 86.5
+offset_right = 194.0
+offset_bottom = 105.5
+mouse_filter = 2
+metadata/original_instance = "r1"
+metadata/character_id = 5601
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r2" type="TextureRect" parent="."]
+offset_left = 71.0
+offset_top = 100.0
+offset_right = 194.5
+offset_bottom = 149.5
+mouse_filter = 2
+metadata/original_instance = "r2"
+metadata/character_id = 5602
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r3" type="TextureRect" parent="."]
+offset_left = 76.0
+offset_top = 145.5
+offset_right = 134.5
+offset_bottom = 177.0
+mouse_filter = 2
+metadata/original_instance = "r3"
+metadata/character_id = 5603
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r4" type="TextureRect" parent="."]
+offset_left = 136.5
+offset_top = 128.5
+offset_right = 226.0
+offset_bottom = 176.5
+mouse_filter = 2
+metadata/original_instance = "r4"
+metadata/character_id = 5604
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r5" type="TextureRect" parent="."]
+offset_left = 213.0
+offset_top = 149.5
+offset_right = 271.5
+offset_bottom = 186.0
+mouse_filter = 2
+metadata/original_instance = "r5"
+metadata/character_id = 5605
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r6" type="TextureRect" parent="."]
+offset_left = 270.5
+offset_top = 117.0
+offset_right = 390.0
+offset_bottom = 181.5
+mouse_filter = 2
+metadata/original_instance = "r6"
+metadata/character_id = 5606
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r7" type="TextureRect" parent="."]
+offset_left = 377.0
+offset_top = 125.5
+offset_right = 430.0
+offset_bottom = 211.0
+mouse_filter = 2
+metadata/original_instance = "r7"
+metadata/character_id = 5607
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r8" type="TextureRect" parent="."]
+offset_left = 300.0
+offset_top = 207.5
+offset_right = 382.5
+offset_bottom = 260.0
+mouse_filter = 2
+metadata/original_instance = "r8"
+metadata/character_id = 5608
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r9" type="TextureRect" parent="."]
+offset_left = 287.5
+offset_top = 255.5
+offset_right = 340.5
+offset_bottom = 305.0
+mouse_filter = 2
+metadata/original_instance = "r9"
+metadata/character_id = 5609
+texture = ExtResource("t8_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r10" type="TextureRect" parent="."]
+offset_left = 295.0
+offset_top = 299.0
+offset_right = 347.0
+offset_bottom = 341.0
+mouse_filter = 2
+metadata/original_instance = "r10"
+metadata/character_id = 5610
+texture = ExtResource("t9_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r11" type="TextureRect" parent="."]
+offset_left = 195.5
+offset_top = 330.5
+offset_right = 300.5
+offset_bottom = 346.5
+mouse_filter = 2
+metadata/original_instance = "r11"
+metadata/character_id = 5611
+texture = ExtResource("t10_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r12" type="TextureRect" parent="."]
+offset_left = 84.0
+offset_top = 333.0
+offset_right = 198.0
+offset_bottom = 371.5
+mouse_filter = 2
+metadata/original_instance = "r12"
+metadata/character_id = 5612
+texture = ExtResource("t11_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r13" type="TextureRect" parent="."]
+offset_left = 71.5
+offset_top = 361.5
+offset_right = 270.0
+offset_bottom = 440.0
+mouse_filter = 2
+metadata/original_instance = "r13"
+metadata/character_id = 5613
+texture = ExtResource("t12_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r14" type="TextureRect" parent="."]
+offset_left = 265.0
+offset_top = 411.5
+offset_right = 380.0
+offset_bottom = 466.0
+mouse_filter = 2
+metadata/original_instance = "r14"
+metadata/character_id = 5614
+texture = ExtResource("t13_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r15" type="TextureRect" parent="."]
+offset_left = 335.5
+offset_top = 462.0
+offset_right = 376.5
+offset_bottom = 533.0
+mouse_filter = 2
+metadata/original_instance = "r15"
+metadata/character_id = 5615
+texture = ExtResource("t14_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r16" type="TextureRect" parent="."]
+offset_left = 373.5
+offset_top = 481.0
+offset_right = 488.0
+offset_bottom = 533.0
+mouse_filter = 2
+metadata/original_instance = "r16"
+metadata/character_id = 5616
+texture = ExtResource("t15_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r17" type="TextureRect" parent="."]
+offset_left = 445.5
+offset_top = 422.0
+offset_right = 509.0
+offset_bottom = 504.5
+mouse_filter = 2
+metadata/original_instance = "r17"
+metadata/character_id = 5617
+texture = ExtResource("t16_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r18" type="TextureRect" parent="."]
+offset_left = 456.0
+offset_top = 347.0
+offset_right = 599.5
+offset_bottom = 426.5
+mouse_filter = 2
+metadata/original_instance = "r18"
+metadata/character_id = 5618
+texture = ExtResource("t17_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r19" type="TextureRect" parent="."]
+offset_left = 595.5
+offset_top = 265.0
+offset_right = 618.0
+offset_bottom = 347.5
+mouse_filter = 2
+metadata/original_instance = "r19"
+metadata/character_id = 5619
+texture = ExtResource("t18_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r20" type="TextureRect" parent="."]
+offset_left = 571.5
+offset_top = 191.5
+offset_right = 611.0
+offset_bottom = 270.0
+mouse_filter = 2
+metadata/original_instance = "r20"
+metadata/character_id = 5620
+texture = ExtResource("t19_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r21" type="TextureRect" parent="."]
+offset_left = 492.0
+offset_top = 182.0
+offset_right = 590.0
+offset_bottom = 258.0
+mouse_filter = 2
+metadata/original_instance = "r21"
+metadata/character_id = 5621
+texture = ExtResource("t20_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r22" type="TextureRect" parent="."]
+offset_left = 429.5
+offset_top = 253.0
+offset_right = 493.5
+offset_bottom = 334.5
+mouse_filter = 2
+metadata/original_instance = "r22"
+metadata/character_id = 5622
+texture = ExtResource("t21_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r23" type="TextureRect" parent="."]
+offset_left = 393.0
+offset_top = 333.5
+offset_right = 471.0
+offset_bottom = 392.0
+mouse_filter = 2
+metadata/original_instance = "r23"
+metadata/character_id = 5623
+texture = ExtResource("t22_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r24" type="TextureRect" parent="."]
+offset_left = 323.5
+offset_top = 381.5
+offset_right = 395.0
+offset_bottom = 405.0
+mouse_filter = 2
+metadata/original_instance = "r24"
+metadata/character_id = 5624
+texture = ExtResource("t23_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="r0" type="TextureRect" parent="."]
+offset_left = 57.5
+offset_top = 52.5
+offset_right = 104.5
+offset_bottom = 85.0
+mouse_filter = 2
+metadata/original_instance = "r0"
+metadata/character_id = 5625
+texture = ExtResource("t24_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bReset" type="TextureButton" parent="."]
+offset_left = 566.0
+offset_top = 65.5
+offset_right = 659.5
+offset_bottom = 102.0
+mouse_filter = 0
+metadata/original_instance = "bReset"
+metadata/character_id = 5630
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t25_0")
+
+[node name="bOnline" type="TextureButton" parent="."]
+offset_left = 47.0
+offset_top = 452.0
+offset_right = 149.5
+offset_bottom = 493.0
+mouse_filter = 0
+metadata/original_instance = "bOnline"
+metadata/character_id = 5633
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t26_0")
+
+[node name="f1" type="TextureButton" parent="."]
+offset_left = 82.5
+offset_top = 36.5
+offset_right = 142.5
+offset_bottom = 102.5
+mouse_filter = 0
+metadata/original_instance = "f1"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t27_0")
+
+[node name="f2" type="TextureButton" parent="."]
+offset_left = 161.5
+offset_top = 46.5
+offset_right = 222.0
+offset_bottom = 112.5
+mouse_filter = 0
+metadata/original_instance = "f2"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t28_0")
+
+[node name="f3" type="TextureButton" parent="."]
+offset_left = 39.5
+offset_top = 96.5
+offset_right = 100.0
+offset_bottom = 162.5
+mouse_filter = 0
+metadata/original_instance = "f3"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t29_0")
+
+[node name="f5" type="TextureButton" parent="."]
+offset_left = 192.0
+offset_top = 93.5
+offset_right = 252.5
+offset_bottom = 159.0
+mouse_filter = 0
+metadata/original_instance = "f5"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t30_0")
+
+[node name="f4" type="TextureButton" parent="."]
+offset_left = 105.0
+offset_top = 122.0
+offset_right = 165.5
+offset_bottom = 188.0
+mouse_filter = 0
+metadata/original_instance = "f4"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t31_0")
+
+[node name="f6" type="TextureButton" parent="."]
+offset_left = 236.5
+offset_top = 129.5
+offset_right = 297.0
+offset_bottom = 195.5
+mouse_filter = 0
+metadata/original_instance = "f6"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t32_0")
+
+[node name="f14" type="TextureButton" parent="."]
+offset_left = 228.0
+offset_top = 364.0
+offset_right = 288.5
+offset_bottom = 430.0
+mouse_filter = 0
+metadata/original_instance = "f14"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t33_0")
+
+[node name="f10" type="TextureButton" parent="."]
+offset_left = 313.0
+offset_top = 251.0
+offset_right = 373.5
+offset_bottom = 317.0
+mouse_filter = 0
+metadata/original_instance = "f10"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t34_0")
+
+[node name="f9" type="TextureButton" parent="."]
+offset_left = 275.0
+offset_top = 204.0
+offset_right = 335.0
+offset_bottom = 270.0
+mouse_filter = 0
+metadata/original_instance = "f9"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t35_0")
+
+[node name="f8" type="TextureButton" parent="."]
+offset_left = 349.5
+offset_top = 155.5
+offset_right = 410.0
+offset_bottom = 221.5
+mouse_filter = 0
+metadata/original_instance = "f8"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t36_0")
+
+[node name="f11" type="TextureButton" parent="."]
+offset_left = 269.0
+offset_top = 285.0
+offset_right = 329.5
+offset_bottom = 351.0
+mouse_filter = 0
+metadata/original_instance = "f11"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t37_0")
+
+[node name="f20" type="TextureButton" parent="."]
+offset_left = 572.0
+offset_top = 221.5
+offset_right = 632.5
+offset_bottom = 287.5
+mouse_filter = 0
+metadata/original_instance = "f20"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t38_0")
+
+[node name="f21" type="TextureButton" parent="."]
+offset_left = 567.5
+offset_top = 146.0
+offset_right = 628.0
+offset_bottom = 212.0
+mouse_filter = 0
+metadata/original_instance = "f21"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t39_0")
+
+[node name="f24" type="TextureButton" parent="."]
+offset_left = 372.0
+offset_top = 335.0
+offset_right = 432.5
+offset_bottom = 401.0
+mouse_filter = 0
+metadata/original_instance = "f24"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t40_0")
+
+[node name="f23" type="TextureButton" parent="."]
+offset_left = 440.5
+offset_top = 277.5
+offset_right = 500.5
+offset_bottom = 343.5
+mouse_filter = 0
+metadata/original_instance = "f23"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t41_0")
+
+[node name="f22" type="TextureButton" parent="."]
+offset_left = 469.0
+offset_top = 201.5
+offset_right = 529.5
+offset_bottom = 267.5
+mouse_filter = 0
+metadata/original_instance = "f22"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t42_0")
+
+[node name="f13" type="TextureButton" parent="."]
+offset_left = 56.5
+offset_top = 313.5
+offset_right = 117.0
+offset_bottom = 379.5
+mouse_filter = 0
+metadata/original_instance = "f13"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t43_0")
+
+[node name="f15" type="TextureButton" parent="."]
+offset_left = 348.0
+offset_top = 409.0
+offset_right = 408.5
+offset_bottom = 475.0
+mouse_filter = 0
+metadata/original_instance = "f15"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t44_0")
+
+[node name="f19" type="TextureButton" parent="."]
+offset_left = 565.0
+offset_top = 302.5
+offset_right = 625.5
+offset_bottom = 368.5
+mouse_filter = 0
+metadata/original_instance = "f19"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t45_0")
+
+[node name="f16" type="TextureButton" parent="."]
+offset_left = 341.5
+offset_top = 475.5
+offset_right = 402.0
+offset_bottom = 541.5
+mouse_filter = 0
+metadata/original_instance = "f16"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t46_0")
+
+[node name="f7" type="TextureButton" parent="."]
+offset_left = 356.5
+offset_top = 90.0
+offset_right = 417.0
+offset_bottom = 155.5
+mouse_filter = 0
+metadata/original_instance = "f7"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t47_0")
+
+[node name="f12" type="TextureButton" parent="."]
+offset_left = 171.5
+offset_top = 285.0
+offset_right = 232.0
+offset_bottom = 351.0
+mouse_filter = 0
+metadata/original_instance = "f12"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t48_0")
+
+[node name="f17" type="TextureButton" parent="."]
+offset_left = 454.0
+offset_top = 451.5
+offset_right = 514.5
+offset_bottom = 517.5
+mouse_filter = 0
+metadata/original_instance = "f17"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t49_0")
+
+[node name="f18" type="TextureButton" parent="."]
+offset_left = 419.5
+offset_top = 380.5
+offset_right = 480.0
+offset_bottom = 446.5
+mouse_filter = 0
+metadata/original_instance = "f18"
+metadata/character_id = 5598
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t50_0")
+
+[node name="eLogo" type="TextureRect" parent="."]
+offset_left = 202.5
+offset_top = 2.5
+offset_right = 519.5
+offset_bottom = 101.0
+mouse_filter = 2
+metadata/original_instance = "eLogo"
+metadata/character_id = 5637
+texture = ExtResource("t51_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eStarPlask" type="TextureRect" parent="."]
+offset_left = 541.5
+offset_top = 8.5
+offset_right = 684.0
+offset_bottom = 74.5
+mouse_filter = 2
+metadata/original_instance = "eStarPlask"
+metadata/character_id = 5646
+texture = ExtResource("t52_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eStorageFailure" type="TextureRect" parent="."]
+offset_left = 581.5
+offset_top = 445.5
+offset_right = 655.5
+offset_bottom = 528.5
+mouse_filter = 2
+metadata/original_instance = "eStorageFailure"
+metadata/character_id = 5654
+texture = ExtResource("t53_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bUpgrades" type="TextureButton" parent="."]
+offset_left = 154.0
+offset_top = 521.5
+offset_right = 285.5
+offset_bottom = 595.5
+mouse_filter = 0
+metadata/original_instance = "bUpgrades"
+metadata/character_id = 5675
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t54_0")
+texture_hover = ExtResource("t54_1")
+texture_pressed = ExtResource("t54_2")
+
+[node name="bMore" type="TextureButton" parent="."]
+offset_left = 418.5
+offset_top = 543.5
+offset_right = 550.0
+offset_bottom = 595.5
+mouse_filter = 0
+metadata/original_instance = "bMore"
+metadata/character_id = 5677
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t55_0")
+texture_hover = ExtResource("t55_1")
+texture_pressed = ExtResource("t55_2")
+
+[node name="bMenu" type="TextureButton" parent="."]
+offset_left = 286.0
+offset_top = 543.5
+offset_right = 418.0
+offset_bottom = 595.5
+mouse_filter = 0
+metadata/original_instance = "bMenu"
+metadata/character_id = 5679
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t56_0")
+texture_hover = ExtResource("t56_1")
+texture_pressed = ExtResource("t56_2")
+
+[node name="bNext" type="TextureButton" parent="."]
+offset_left = 550.5
+offset_top = 543.5
+offset_right = 682.5
+offset_bottom = 595.5
+mouse_filter = 0
+metadata/original_instance = "bNext"
+metadata/character_id = 5681
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t57_0")
+texture_hover = ExtResource("t57_1")
+texture_pressed = ExtResource("t57_2")
+
+[node name="bAchives" type="TextureButton" parent="."]
+offset_left = 21.5
+offset_top = 543.5
+offset_right = 153.5
+offset_bottom = 595.5
+mouse_filter = 0
+metadata/original_instance = "bAchives"
+metadata/character_id = 5683
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t58_0")
+texture_hover = ExtResource("t58_1")
+texture_pressed = ExtResource("t58_2")
+
+[node name="a1" type="TextureButton" parent="."]
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 62.0
+offset_bottom = 68.5
+mouse_filter = 0
+metadata/original_instance = "a1"
+metadata/character_id = 5689
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t59_0")
+
+[node name="a2" type="TextureButton" parent="."]
+offset_left = 308.5
+offset_top = 104.5
+offset_right = 339.0
+offset_bottom = 137.5
+mouse_filter = 0
+metadata/original_instance = "a2"
+metadata/character_id = 5691
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t60_0")
+
+[node name="a3" type="TextureButton" parent="."]
+offset_left = 126.0
+offset_top = 338.0
+offset_right = 156.0
+offset_bottom = 371.5
+mouse_filter = 0
+metadata/original_instance = "a3"
+metadata/character_id = 5693
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t61_0")
+
+[node name="a4" type="TextureButton" parent="."]
+offset_left = 491.5
+offset_top = 371.0
+offset_right = 522.0
+offset_bottom = 404.0
+mouse_filter = 0
+metadata/original_instance = "a4"
+metadata/character_id = 5695
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t62_0")
+
+[node name="a6" type="TextureButton" parent="."]
+offset_left = 310.0
+offset_top = 370.0
+offset_right = 340.5
+offset_bottom = 403.0
+mouse_filter = 0
+metadata/original_instance = "a6"
+metadata/character_id = 5697
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t63_0")
+
+[node name="a5" type="TextureButton" parent="."]
+offset_left = 524.5
+offset_top = 174.0
+offset_right = 554.5
+offset_bottom = 207.5
+mouse_filter = 0
+metadata/original_instance = "a5"
+metadata/character_id = 5699
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t64_0")

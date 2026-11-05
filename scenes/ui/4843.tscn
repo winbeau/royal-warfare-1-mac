@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/3_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/6_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/10_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/12_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/14_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4843/22_0.png" id="t6_0"]
+
+[node name="Original_4843" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 4843
+
+[node name="eBg" type="TextureRect" parent="."]
+offset_left = -40.099999999999994
+offset_top = -84.25
+offset_right = 40.400000000000006
+offset_bottom = 84.25
+mouse_filter = 2
+metadata/original_instance = "eBg"
+metadata/character_id = 4810
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bClose" type="TextureButton" parent="."]
+offset_left = -7.099999999999994
+offset_top = -83.25
+offset_right = 8.400000000000006
+offset_bottom = -63.75
+mouse_filter = 0
+metadata/original_instance = "bClose"
+metadata/character_id = 4812
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t1_0")
+
+[node name="eSelector" type="TextureRect" parent="."]
+offset_left = -27.599999999999994
+offset_top = -59.25
+offset_right = 28.900000000000006
+offset_bottom = 37.25
+mouse_filter = 2
+metadata/original_instance = "eSelector"
+metadata/character_id = 4831
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bTop" type="TextureButton" parent="."]
+offset_left = -76.6
+offset_top = -98.25
+offset_right = -76.1
+offset_bottom = -97.75
+mouse_filter = 0
+metadata/original_instance = "bTop"
+metadata/character_id = 4833
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t3_0")
+
+[node name="bDown" type="TextureButton" parent="."]
+offset_left = -76.6
+offset_top = -98.25
+offset_right = -76.1
+offset_bottom = -97.75
+mouse_filter = 0
+metadata/original_instance = "bDown"
+metadata/character_id = 4833
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t4_0")
+
+[node name="eUpgradeNotAllowedBottom" type="TextureRect" parent="."]
+offset_left = -31.599999999999994
+offset_top = -11.25
+offset_right = 31.900000000000006
+offset_bottom = 32.75
+mouse_filter = 2
+metadata/original_instance = "eUpgradeNotAllowedBottom"
+metadata/character_id = 4841
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eUpgradeNotAllowedTop" type="TextureRect" parent="."]
+offset_left = -32.099999999999994
+offset_top = -59.25
+offset_right = 32.400000000000006
+offset_bottom = -12.75
+mouse_filter = 2
+metadata/original_instance = "eUpgradeNotAllowedTop"
+metadata/character_id = 4842
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0

@@ -1,0 +1,314 @@
+{
+  "buttons": {
+    "uWarSwordA": {
+      "type": "ability",
+      "key": "A_ROUNDATTACK",
+      "index": 23,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarSwordB": {
+      "type": "ability",
+      "key": "A_PARRY",
+      "index": 20,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarWarriorA": {
+      "type": "ability",
+      "key": "A_BLOCK",
+      "index": 2,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarWarriorB": {
+      "type": "ability",
+      "key": "A_STUN",
+      "index": 28,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarKnightA": {
+      "type": "ability",
+      "key": "A_TAUNT",
+      "index": 30,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarKnightB": {
+      "type": "ability",
+      "key": "A_MASSSTUN",
+      "index": 18,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchArcherA": {
+      "type": "ability",
+      "key": "A_SLOW",
+      "index": 26,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchArcherB": {
+      "type": "ability",
+      "key": "A_SUPPRESS",
+      "index": 29,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchSniperA": {
+      "type": "ability",
+      "key": "A_HEADSHOT",
+      "index": 14,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchSniperB": {
+      "type": "ability",
+      "key": "A_WEAKSPOT",
+      "index": 21,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchCrossbA": {
+      "type": "ability",
+      "key": "A_CRITRANGED",
+      "index": 8,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchCrossbB": {
+      "type": "ability",
+      "key": "A_CORRUPT",
+      "index": 6,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefThiefA": {
+      "type": "ability",
+      "key": "A_COLLECTMONEY",
+      "index": 5,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefThiefB": {
+      "type": "ability",
+      "key": "A_POISON_THIEF",
+      "index": 34,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefAssasinA": {
+      "type": "ability",
+      "key": "A_BACKSTAB",
+      "index": 0,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefAssasinB": {
+      "type": "ability",
+      "key": "A_MISS_ASSASIN",
+      "index": 35,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefSabotA": {
+      "type": "ability",
+      "key": "A_HIDE",
+      "index": 15,
+      "cost": 1,
+      "max": 3
+    },
+    "uThiefSabotB": {
+      "type": "ability",
+      "key": "A_BREAKARROW",
+      "index": 4,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageBlueA": {
+      "type": "ability",
+      "key": "A_ICE",
+      "index": 16,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageBlueB": {
+      "type": "ability",
+      "key": "A_FLASH",
+      "index": 11,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageRedA": {
+      "type": "ability",
+      "key": "A_FIREHITSPLASH",
+      "index": 10,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageRedB": {
+      "type": "ability",
+      "key": "A_METHEOR",
+      "index": 19,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageBlackA": {
+      "type": "ability",
+      "key": "A_BETRAY",
+      "index": 1,
+      "cost": 1,
+      "max": 3
+    },
+    "uMageBlackB": {
+      "type": "ability",
+      "key": "A_CURSE_BLACK",
+      "index": 3,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestPriestA": {
+      "type": "ability",
+      "key": "A_STRONGHEAL",
+      "index": 27,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestPriestB": {
+      "type": "ability",
+      "key": "A_ENCHANT",
+      "index": 24,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestHealerA": {
+      "type": "ability",
+      "key": "A_MASSHEAL",
+      "index": 17,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestHealerB": {
+      "type": "ability",
+      "key": "A_RESURRECT",
+      "index": 22,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestBlesserA": {
+      "type": "ability",
+      "key": "A_CURSEBLESS",
+      "index": 9,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestBlesserB": {
+      "type": "ability",
+      "key": "A_HARMRESIST",
+      "index": 13,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarriorsAttack": {
+      "type": "bonus",
+      "index": 0,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarriorsDefend": {
+      "type": "bonus",
+      "index": 1,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchersAttack": {
+      "type": "bonus",
+      "index": 2,
+      "cost": 1,
+      "max": 3
+    },
+    "uArchersDefend": {
+      "type": "bonus",
+      "index": 3,
+      "cost": 1,
+      "max": 3
+    },
+    "uMagesAttack": {
+      "type": "bonus",
+      "index": 4,
+      "cost": 1,
+      "max": 3
+    },
+    "uMagesDefend": {
+      "type": "bonus",
+      "index": 5,
+      "cost": 1,
+      "max": 3
+    },
+    "uRoguesAttack": {
+      "type": "bonus",
+      "index": 6,
+      "cost": 1,
+      "max": 3
+    },
+    "uRoguessDefend": {
+      "type": "bonus",
+      "index": 7,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestsAttack": {
+      "type": "bonus",
+      "index": 8,
+      "cost": 1,
+      "max": 3
+    },
+    "uPriestsDefend": {
+      "type": "bonus",
+      "index": 9,
+      "cost": 1,
+      "max": 3
+    },
+    "uWarriorIcon": {},
+    "uWarSwordUnit": {},
+    "uWarKnightUnit": {
+      "type": "unit",
+      "index": 1,
+      "cost": 0,
+      "max": 1
+    },
+    "uArchCrossbUnit": {
+      "type": "unit",
+      "index": 3,
+      "cost": 0,
+      "max": 1
+    },
+    "uArcherIcon": {},
+    "uArchSniperUnit": {},
+    "uMageRedUnit": {},
+    "uMageBlackUnit": {
+      "type": "unit",
+      "index": 5,
+      "cost": 0,
+      "max": 1
+    },
+    "uBlueMageIcon": {},
+    "uThiefIcon": {},
+    "uThiefSabotUnit": {
+      "type": "unit",
+      "index": 9,
+      "cost": 0,
+      "max": 1
+    },
+    "uThiefAssasinUnit": {},
+    "uPriestIcon": {},
+    "uPriestHealerUnit": {},
+    "uPriestBlesserUnit": {
+      "type": "unit",
+      "index": 7,
+      "cost": 0,
+      "max": 1
+    }
+  }
+}

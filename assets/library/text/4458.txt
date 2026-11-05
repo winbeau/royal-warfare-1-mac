@@ -1,0 +1,2 @@
+Armor piercing. The higher this value, the less the 
+target's armor affects damage inflicted.

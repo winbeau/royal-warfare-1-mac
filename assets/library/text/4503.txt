@@ -1,0 +1,3 @@
+The Knights' armor causes very poor mobility, so position them carefully. 
+Also, protect Knights from magic bolts and enemies with high armor 
+piercing.

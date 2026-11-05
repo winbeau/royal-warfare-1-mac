@@ -1,0 +1,3 @@
+Units will act automatically on the battlefield. Priests heal injured 
+soldiers. Warriors block incoming enemies. Each soldier has two unique abilities, and soldiers decide 
+themselves when to use them.  

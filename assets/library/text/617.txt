@@ -1,0 +1,5 @@
+Locked abilities are colored gray. 
+--- RECORDSEPARATOR ---
+Click them to unlock. Each 
+--- RECORDSEPARATOR ---
+upgrade costs one star. 

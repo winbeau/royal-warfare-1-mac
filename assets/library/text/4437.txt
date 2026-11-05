@@ -1,0 +1,4 @@
+Avaliable abilities. You can unlock abilities between 
+battles in the Upgrade screen. Units use their ability 
+themselves, without any orders from the player. Some 
+abilities are passive, some need to recover after use.

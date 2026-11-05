@@ -1,0 +1,4 @@
+To upgrade a soldier to second tier, 
+select him and click the Upgrade 
+button above his icon. Then select 
+the second tier unit you need. 

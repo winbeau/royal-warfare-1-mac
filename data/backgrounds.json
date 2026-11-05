@@ -1,0 +1,98 @@
+{
+  "level11bg_elki2": {
+    "path": "assets/backgrounds/level11bg_elki2.png",
+    "source_symbol": 6127
+  },
+  "level7bg_sandy_rocky2": {
+    "path": "assets/backgrounds/level7bg_sandy_rocky2.png",
+    "source_symbol": 6307
+  },
+  "level8bg_swamp1": {
+    "path": "assets/backgrounds/level8bg_swamp1.png",
+    "source_symbol": 6141
+  },
+  "level9bg_elki": {
+    "path": "assets/backgrounds/level9bg_elki.png",
+    "source_symbol": 6493
+  },
+  "level9bg_swamp2": {
+    "path": "assets/backgrounds/level9bg_swamp2.png",
+    "source_symbol": 6112
+  },
+  "level_23greenroad": {
+    "path": "assets/backgrounds/level_23greenroad.png",
+    "source_symbol": 6319
+  },
+  "level_castle": {
+    "path": "assets/backgrounds/level_castle.png",
+    "source_symbol": 6397
+  },
+  "level_field": {
+    "path": "assets/backgrounds/level_field.png",
+    "source_symbol": 6283
+  },
+  "level_field_road": {
+    "path": "assets/backgrounds/level_field_road.png",
+    "source_symbol": 5748
+  },
+  "level_final": {
+    "path": "assets/backgrounds/level_final.png",
+    "source_symbol": 6093
+  },
+  "level_grass_hills": {
+    "path": "assets/backgrounds/level_grass_hills.png",
+    "source_symbol": 6184
+  },
+  "level_graves": {
+    "path": "assets/backgrounds/level_graves.png",
+    "source_symbol": 6463
+  },
+  "level_island": {
+    "path": "assets/backgrounds/level_island.png",
+    "source_symbol": 6571
+  },
+  "level_montBridge": {
+    "path": "assets/backgrounds/level_montBridge.png",
+    "source_symbol": 6233
+  },
+  "level_montGrassRocks": {
+    "path": "assets/backgrounds/level_montGrassRocks.png",
+    "source_symbol": 6477
+  },
+  "level_montTwo": {
+    "path": "assets/backgrounds/level_montTwo.png",
+    "source_symbol": 6258
+  },
+  "level_pierce": {
+    "path": "assets/backgrounds/level_pierce.png",
+    "source_symbol": 6246
+  },
+  "level_river_bridge": {
+    "path": "assets/backgrounds/level_river_bridge.png",
+    "source_symbol": 6409
+  },
+  "level_sands": {
+    "path": "assets/backgrounds/level_sands.png",
+    "source_symbol": 6450
+  },
+  "level_sandy_rocky_road": {
+    "path": "assets/backgrounds/level_sandy_rocky_road.png",
+    "source_symbol": 6589
+  },
+  "level_shore": {
+    "path": "assets/backgrounds/level_shore.png",
+    "source_symbol": 6166
+  },
+  "level_shore_two": {
+    "path": "assets/backgrounds/level_shore_two.png",
+    "source_symbol": 6427
+  },
+  "level_steppes": {
+    "path": "assets/backgrounds/level_steppes.png",
+    "source_symbol": 6221
+  },
+  "level_street": {
+    "path": "assets/backgrounds/level_street.png",
+    "source_symbol": 6561
+  }
+}

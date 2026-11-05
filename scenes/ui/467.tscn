@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/467/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/467/10_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/467/13_0.png" id="t2_0"]
+
+[node name="Original_467" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 467
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -23.700000000000003
+offset_top = -17.45
+offset_right = 26.799999999999997
+offset_bottom = 35.05
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 302
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_10" type="TextureRect" parent="."]
+offset_left = -10.700000000000003
+offset_top = -10.45
+offset_right = 10.799999999999997
+offset_bottom = 10.55
+mouse_filter = 2
+metadata/original_instance = "depth_10"
+metadata/character_id = 466
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eLock" type="TextureRect" parent="."]
+offset_left = -21.700000000000003
+offset_top = 12.55
+offset_right = 22.799999999999997
+offset_bottom = 35.55
+mouse_filter = 2
+metadata/original_instance = "eLock"
+metadata/character_id = 306
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0

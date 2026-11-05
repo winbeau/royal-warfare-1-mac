@@ -1,0 +1,1 @@
+Number of "Hearts". When it reaches zero, the mission is lost. You loose "Hearts" when your soldiers dies or when an enemy escapes the battlefield.

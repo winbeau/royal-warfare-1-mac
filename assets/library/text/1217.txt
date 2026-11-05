@@ -1,0 +1,1 @@
+To focus healing on a single unit, select priest, hold and then click the injured soldier. Priest will heal him untill he gets full health.

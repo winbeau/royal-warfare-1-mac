@@ -1,0 +1,177 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/13_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/14_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/15_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/16_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/17_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/18_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/19_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/20_0.png" id="t7_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/21_0.png" id="t8_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/22_0.png" id="t9_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/23_0.png" id="t10_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/24_0.png" id="t11_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/4699/25_0.png" id="t12_0"]
+
+[node name="Original_4699" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 4699
+
+[node name="depth_13" type="TextureRect" parent="."]
+offset_left = -237.55
+offset_top = -24.5
+offset_right = 157.95
+offset_bottom = 24.5
+mouse_filter = 2
+metadata/original_instance = "depth_13"
+metadata/character_id = 4687
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tHealth" type="TextureRect" parent="."]
+offset_left = -207.55
+offset_top = -16.5
+offset_right = -183.55
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tHealth"
+metadata/character_id = 4688
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tShootDam" type="TextureRect" parent="."]
+offset_left = -53.05000000000001
+offset_top = 8.5
+offset_right = -29.05000000000001
+offset_bottom = 20.0
+mouse_filter = 2
+metadata/original_instance = "tShootDam"
+metadata/character_id = 4689
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tSpeed" type="TextureRect" parent="."]
+offset_left = -125.05000000000001
+offset_top = -16.5
+offset_right = -101.05000000000001
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tSpeed"
+metadata/character_id = 4690
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tShootSpeed" type="TextureRect" parent="."]
+offset_left = 24.94999999999999
+offset_top = 8.5
+offset_right = 48.94999999999999
+offset_bottom = 20.0
+mouse_filter = 2
+metadata/original_instance = "tShootSpeed"
+metadata/character_id = 4691
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tDam" type="TextureRect" parent="."]
+offset_left = -52.55000000000001
+offset_top = -16.5
+offset_right = -28.55000000000001
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tDam"
+metadata/character_id = 4692
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tAtSpd" type="TextureRect" parent="."]
+offset_left = 23.94999999999999
+offset_top = -16.5
+offset_right = 47.94999999999999
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tAtSpd"
+metadata/character_id = 4693
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tProtection" type="TextureRect" parent="."]
+offset_left = 165.95
+offset_top = 8.5
+offset_right = 189.95
+offset_bottom = 20.0
+mouse_filter = 2
+metadata/original_instance = "tProtection"
+metadata/character_id = 4694
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tPierce" type="TextureRect" parent="."]
+offset_left = 94.94999999999999
+offset_top = -16.5
+offset_right = 118.94999999999999
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tPierce"
+metadata/character_id = 4695
+texture = ExtResource("t8_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tMagicPierce" type="TextureRect" parent="."]
+offset_left = 95.44999999999999
+offset_top = 8.5
+offset_right = 119.94999999999999
+offset_bottom = 20.0
+mouse_filter = 2
+metadata/original_instance = "tMagicPierce"
+metadata/character_id = 4696
+texture = ExtResource("t9_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tArmor" type="TextureRect" parent="."]
+offset_left = 164.95
+offset_top = -16.5
+offset_right = 188.95
+offset_bottom = -5.0
+mouse_filter = 2
+metadata/original_instance = "tArmor"
+metadata/character_id = 4693
+texture = ExtResource("t10_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tCost" type="TextureRect" parent="."]
+offset_left = -207.55
+offset_top = 8.5
+offset_right = -167.55
+offset_bottom = 24.0
+mouse_filter = 2
+metadata/original_instance = "tCost"
+metadata/character_id = 4697
+texture = ExtResource("t11_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tAccuracy" type="TextureRect" parent="."]
+offset_left = -125.05000000000001
+offset_top = 8.5
+offset_right = -101.05000000000001
+offset_bottom = 20.0
+mouse_filter = 2
+metadata/original_instance = "tAccuracy"
+metadata/character_id = 4698
+texture = ExtResource("t12_0")
+expand_mode = 1
+stretch_mode = 0

@@ -1,0 +1,1 @@
+Armor piercing reduces the armor effect. If a unit&apos;s AP is higher than the target&apos;s armor, no damage reduction will occur.

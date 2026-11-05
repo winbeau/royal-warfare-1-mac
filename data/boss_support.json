@@ -1,0 +1,320 @@
+[
+  [
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 1,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 1,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 1,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 1,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 2,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 2,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 2,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 2,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 3,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 3,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 3,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 3,
+      "summon": false
+    }
+  ],
+  [
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 4,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 4,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 4,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 4,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 5,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 5,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 5,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 5,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_DARTH_KNIGHT",
+      "level": 1,
+      "route": 1,
+      "summon": true
+    },
+    {
+      "kind": "UNDEAD_DARTH_KNIGHT",
+      "level": 1,
+      "route": 2,
+      "summon": true
+    }
+  ],
+  [
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 4,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 8,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON_CAPITAN",
+      "level": 1,
+      "route": 7,
+      "summon": false
+    },
+    {
+      "kind": "UNDEAD_SKELETON",
+      "level": 1,
+      "route": 6,
+      "summon": false
+    }
+  ]
+]

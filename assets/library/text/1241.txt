@@ -1,0 +1,1 @@
+Mages cast spells and magic bolts, which bypass any armor, but enemies with strong magic resistance can reduce magic damage.

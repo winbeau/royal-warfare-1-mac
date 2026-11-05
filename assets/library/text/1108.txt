@@ -1,0 +1,1 @@
+You can use hotkeys: Q to select Warriors, W - Archers, E - Mages, R - Priests, T - Thieves.

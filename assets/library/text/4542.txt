@@ -1,0 +1,4 @@
+Crossbowmen are well-equipped and armored soldiers, armed 
+with heavy crossbows. Their armor and HP grant them the 
+ability to survive in close combat, but their main task is 
+eliminating armored targets. Steel bolts pierce almost any 

@@ -1,0 +1,2 @@
+ground. Soldiers will move to the position and attack any 
+enemy they meet on their way.

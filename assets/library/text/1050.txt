@@ -1,0 +1,1 @@
+1. Select a unit and click on the ground. The unit will move to the position.

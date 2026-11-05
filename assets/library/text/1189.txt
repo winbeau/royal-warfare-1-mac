@@ -1,0 +1,2 @@
+and then click ground. Unit will attack any enemy it meets,  and 
+then proceed to a destination.

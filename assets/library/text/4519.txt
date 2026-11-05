@@ -1,0 +1,4 @@
+A bunch of arrows, a bow,and a little training - and the 
+royal army gets a new marksman. Archers are the cheapest 
+ranged fighters. They lack HP, armor, damage and 
+accuracy. But they have good mobility, shoot rapidly, and 

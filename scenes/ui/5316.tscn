@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5316/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5316/4_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5316/7_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5316/10_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5316/13_0.png" id="t4_0"]
+
+[node name="Original_5316" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5316
+
+[node name="t1" type="TextureRect" parent="."]
+offset_left = -252.55
+offset_top = 1.5
+offset_right = 6.949999999999989
+offset_bottom = 22.0
+mouse_filter = 2
+metadata/original_instance = "t1"
+metadata/character_id = 5315
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="t2" type="TextureRect" parent="."]
+offset_left = -252.55
+offset_top = -12.5
+offset_right = 6.949999999999989
+offset_bottom = 8.0
+mouse_filter = 2
+metadata/original_instance = "t2"
+metadata/character_id = 5315
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="t3" type="TextureRect" parent="."]
+offset_left = -252.55
+offset_top = -26.5
+offset_right = 6.949999999999989
+offset_bottom = -6.0
+mouse_filter = 2
+metadata/original_instance = "t3"
+metadata/character_id = 5315
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="t4" type="TextureRect" parent="."]
+offset_left = -252.55
+offset_top = -40.5
+offset_right = 6.949999999999989
+offset_bottom = -20.0
+mouse_filter = 2
+metadata/original_instance = "t4"
+metadata/character_id = 5315
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="t5" type="TextureRect" parent="."]
+offset_left = -252.55
+offset_top = -54.5
+offset_right = 6.949999999999989
+offset_bottom = -34.0
+mouse_filter = 2
+metadata/original_instance = "t5"
+metadata/character_id = 5315
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0

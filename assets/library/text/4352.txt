@@ -1,0 +1,2 @@
+When enemies come closer, warriors will charge and block the 
+incoming enemy warriors.

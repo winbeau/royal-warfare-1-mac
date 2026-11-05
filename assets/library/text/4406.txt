@@ -1,0 +1,1 @@
+Amount of Gold. Use gold to hire soldiers and upgrade them to tier 2 units. Get gold by killing enemies. Rogues can steal additional gold if their ability "Steal" is unlocked.

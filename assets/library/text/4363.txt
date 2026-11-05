@@ -1,0 +1,1 @@
+All units gain experience during fights. &nbsp;Experience affects the overal unit&apos;s stats: HP, damage, attack rate, etc.There are four levels: &nbsp;Regular, Hardened, Veteran, Elite. 

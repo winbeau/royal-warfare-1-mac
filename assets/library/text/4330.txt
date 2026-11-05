@@ -1,0 +1,1 @@
+You can use hotkeys: C for horizontal and V for vertical line.

@@ -1,0 +1,3 @@
+The hold ground order is best used for thieves class soldiers 
+while holding a line: due to their speed they are the first to 
+reach the enemy forces if hold ground is not ordered.

@@ -1,0 +1,5 @@
+Game paused.
+--- RECORDSEPARATOR ---
+You can issue orders 
+--- RECORDSEPARATOR ---
+to your troops.

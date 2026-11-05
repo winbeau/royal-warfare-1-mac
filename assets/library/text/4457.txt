@@ -1,0 +1,3 @@
+Current armor. The higher this value, the less damage 
+units receive from swords and arrows. Armor doesn't 
+affect magic damage.

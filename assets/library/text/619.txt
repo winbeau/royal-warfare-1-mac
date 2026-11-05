@@ -1,0 +1,5 @@
+Class bonuses. Use them to 
+--- RECORDSEPARATOR ---
+improve parameters of all units of 
+--- RECORDSEPARATOR ---
+this type.

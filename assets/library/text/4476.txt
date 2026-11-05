@@ -1,0 +1,4 @@
+Knights. Swordsmen have moderate armor and attack at a slow speed. 
+Each of them has round shield and can block incoming damage in hand-
+to-hand fighting. Also, heavy shields are good at stunning enemy with 
+shield bash.

@@ -1,0 +1,2 @@
+Unit's icon, veterancy status, and unit type. There are 
+three veterancy statuses: Regular, Veteran, and Elite. Elite tier 1 units can be upgraded to tier 2.

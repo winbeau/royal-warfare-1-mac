@@ -1,0 +1,3 @@
+Black mages are the most expensive soldiers you can hire, but their skills 
+strongly affect the battle results. Among their skills are the ability to take 
+control of an enemy and cursing enemy groups, lowering their total HP.

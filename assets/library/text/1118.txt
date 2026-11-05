@@ -1,0 +1,1 @@
+In Deployment mode you can hire new units. Select unit&apos;s class, then select the soldier.

@@ -1,0 +1,1 @@
+ Second tier soldiers cost much more, but their price doesn&apos;t change. First tier soldiers cost much less, but each time you hire a unit, it will increase the price by 50%.

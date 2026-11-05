@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/3_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/5_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/7_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/9_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/11_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/13_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5140/15_0.png" id="t7_0"]
+
+[node name="Original_5140" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5140
+
+[node name="sHealth" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sHealth"
+metadata/character_id = 5139
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sExp" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sExp"
+metadata/character_id = 5139
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sDmg" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sDmg"
+metadata/character_id = 5139
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sDmgSpeed" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sDmgSpeed"
+metadata/character_id = 5139
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sArmor" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sArmor"
+metadata/character_id = 5139
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sResist" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sResist"
+metadata/character_id = 5139
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sArmorPierce" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sArmorPierce"
+metadata/character_id = 5139
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="sMagicPierce" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -17.5
+offset_right = -33.5
+offset_bottom = -17.0
+mouse_filter = 2
+metadata/original_instance = "sMagicPierce"
+metadata/character_id = 5139
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0

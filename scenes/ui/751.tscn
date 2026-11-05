@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/2_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/3_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/7_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/11_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/310_0.png" id="t5_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/311_0.png" id="t6_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/751/313_0.png" id="t7_0"]
+
+[node name="Original_751" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 751
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -85.9
+offset_top = 132.35
+offset_right = 85.1
+offset_bottom = 164.85
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 727
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_2" type="TextureRect" parent="."]
+offset_left = 5.599999999999994
+offset_top = -99.65
+offset_right = 210.6
+offset_bottom = -30.150000000000006
+mouse_filter = 2
+metadata/original_instance = "depth_2"
+metadata/character_id = 728
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eMessage" type="TextureButton" parent="."]
+offset_left = -178.9
+offset_top = -10.650000000000006
+offset_right = 215.6
+offset_bottom = 41.349999999999994
+mouse_filter = 0
+metadata/original_instance = "eMessage"
+metadata/character_id = 734
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t2_0")
+
+[node name="eFb" type="TextureButton" parent="."]
+offset_left = -123.9
+offset_top = 50.849999999999994
+offset_right = 99.6
+offset_bottom = 99.85
+mouse_filter = 0
+metadata/original_instance = "eFb"
+metadata/character_id = 738
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t3_0")
+
+[node name="eMaxGames" type="TextureRect" parent="."]
+offset_left = -109.4
+offset_top = 167.35
+offset_right = 141.1
+offset_bottom = 216.85
+mouse_filter = 2
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 744
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_310" type="TextureRect" parent="."]
+offset_left = -226.4
+offset_top = -102.15
+offset_right = -12.400000000000006
+offset_bottom = -39.150000000000006
+mouse_filter = 2
+metadata/original_instance = "depth_310"
+metadata/character_id = 745
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eIdenLogo" type="TextureRect" parent="."]
+offset_left = -106.9
+offset_top = -164.15
+offset_right = 113.6
+offset_bottom = -117.65
+mouse_filter = 2
+metadata/original_instance = "eIdenLogo"
+metadata/character_id = 749
+texture = ExtResource("t6_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_313" type="TextureRect" parent="."]
+offset_left = -86.9
+offset_top = -201.65
+offset_right = 85.6
+offset_bottom = -169.15
+mouse_filter = 2
+metadata/original_instance = "depth_313"
+metadata/character_id = 750
+texture = ExtResource("t7_0")
+expand_mode = 1
+stretch_mode = 0

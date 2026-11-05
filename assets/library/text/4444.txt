@@ -1,0 +1,1 @@
+Unit's health points. A unit dies when its HP reaches zero.

@@ -1,0 +1,1 @@
+Some units can be upgraded to second tier, when they gain Elite status. Such soldiers are marked with a &nbsp;little star in their HP bar.

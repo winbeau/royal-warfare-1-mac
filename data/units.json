@@ -1,0 +1,7408 @@
+{
+  "units": {
+    "UNDEAD_DARTH_KNIGHT": {
+      "id": 0,
+      "class": "undeadDarthKnight",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Darth Knight",
+        "money": 100,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 30,
+          "two": 40,
+          "three": 50
+        },
+        "Health": {
+          "one": 220,
+          "two": 230,
+          "three": 240
+        },
+        "Armor": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.8
+        },
+        "Resist": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 12,
+          "two": 13,
+          "three": 14
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "darth_knight",
+      "animations": {
+        "Stay": "undeadDarthKnightStayAni",
+        "Walk": "undeadDarthKnightWalkAni",
+        "Attack": "undeadDarthKnightAttackAni",
+        "Dead": "undeadDarthKnightDeadAni"
+      },
+      "unit_cost": 100,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMassStun"
+      ]
+    },
+    "FR_WARRIOR": {
+      "id": 1,
+      "class": "friendWarrior",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Swordsman",
+        "money": 100,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 80,
+          "two": 85,
+          "three": 90
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.35,
+          "three": 0.4
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 6,
+          "two": 8,
+          "three": 10
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "warrior",
+      "animations": {
+        "Stay": "warriorStayAni",
+        "Walk": "warriorWalkAni",
+        "Attack": "warriorAttackAni",
+        "Dead": "warriorDeadAni"
+      },
+      "unit_cost": 100,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": [
+        "specBlock",
+        "specStun"
+      ]
+    },
+    "FR_ARCHER": {
+      "id": 2,
+      "class": "friendArcher",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Archer",
+        "money": 120,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 30
+        },
+        "Health": {
+          "one": 35,
+          "two": 40,
+          "three": 45
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 40,
+          "three": 35
+        },
+        "attackSpeedRanged": {
+          "one": 45,
+          "two": 40,
+          "three": 40
+        },
+        "accuracy": {
+          "one": 0.7,
+          "two": 0.8,
+          "three": 0.85
+        },
+        "damageMelee": {
+          "one": 1,
+          "two": 2,
+          "three": 3
+        },
+        "damageRanged": {
+          "one": 6,
+          "two": 7,
+          "three": 8
+        },
+        "walkSpeed": {
+          "one": 1.4,
+          "two": 1.4,
+          "three": 1.4
+        }
+      },
+      "xml_tag": "archer",
+      "animations": {
+        "Stay": "archerStandAni",
+        "Walk": "archerMoveAni",
+        "Attack": "archerAttackAni",
+        "Dead": "archerDeadAni",
+        "Ranged": "archerShootAni"
+      },
+      "unit_cost": 120,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_ARCHER",
+      "specials": [
+        "specSlow",
+        "specSuppress"
+      ]
+    },
+    "UNDEAD_SKELETON_ARCHER": {
+      "id": 3,
+      "class": "undeadSkeletionArcher",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Skeleton Archer",
+        "money": 20,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 45,
+          "two": 50,
+          "three": 50
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 60,
+          "two": 55,
+          "three": 55
+        },
+        "accuracy": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.75
+        },
+        "damageMelee": {
+          "one": 2,
+          "two": 2,
+          "three": 3
+        },
+        "damageRanged": {
+          "one": 5,
+          "two": 6,
+          "three": 6
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "skeleton_archer",
+      "animations": {
+        "Stay": "skeletonArcherStandAni",
+        "Walk": "skeletonArcherMoveAni",
+        "Attack": "skeletonArcherAttackAni",
+        "Dead": "skeletonArcherDeadAni",
+        "Ranged": "skeletonArcherShootAni"
+      },
+      "unit_cost": 20,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMissSkeleton"
+      ]
+    },
+    "FR_PRIEST": {
+      "id": 4,
+      "class": "friendPriest",
+      "base": "priestClass",
+      "stats": {
+        "className": "Priest",
+        "money": 180,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 30,
+          "two": 35,
+          "three": 40
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 55
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 3,
+          "two": 3,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 8,
+          "two": 10,
+          "three": 12
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "priest",
+      "animations": {
+        "Stay": "priestStayAni",
+        "Walk": "priestWalkAni",
+        "Attack": "priestAttackAni",
+        "Dead": "priestDeadAni",
+        "Ranged": "priestShootAni",
+        "Cast": "priestCastAni"
+      },
+      "unit_cost": 180,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_PRIEST",
+      "specials": [
+        "specStrongHeal",
+        "specEnchantWeapon"
+      ]
+    },
+    "FR_BLUEMAGE": {
+      "id": 5,
+      "class": "friendBlueMage",
+      "base": "mageClass",
+      "stats": {
+        "className": "Blue mage",
+        "money": 200,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 10,
+          "two": 15,
+          "three": 20
+        },
+        "Health": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "magicPierce": {
+          "one": 0.1,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 75,
+          "two": 70,
+          "three": 70
+        },
+        "accuracy": {
+          "one": 0.75,
+          "two": 0.8,
+          "three": 0.85
+        },
+        "damageMelee": {
+          "one": 2,
+          "two": 3,
+          "three": 3
+        },
+        "damageRanged": {
+          "one": 16,
+          "two": 17,
+          "three": 18
+        },
+        "walkSpeed": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        }
+      },
+      "xml_tag": "bluemage",
+      "animations": {
+        "Stay": "wizardStayAni",
+        "Walk": "wizardWalkAni",
+        "Attack": "wizardAttackAni",
+        "Dead": "wizardDeadAni",
+        "Ranged": "wizardShootAni",
+        "Cast": "wizardCastAni"
+      },
+      "unit_cost": 200,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_MAGE",
+      "specials": [
+        "specIce",
+        "specFlash"
+      ]
+    },
+    "UNDEAD_ZOMBIE": {
+      "id": 6,
+      "class": "undeadZombie",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Zombie",
+        "money": 12,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 30,
+          "two": 40,
+          "three": 50
+        },
+        "Health": {
+          "one": 30,
+          "two": 35,
+          "three": 40
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.4,
+          "two": 0.4,
+          "three": 0.5
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 45,
+          "three": 45
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 3,
+          "two": 3,
+          "three": 3
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        }
+      },
+      "xml_tag": "zombie",
+      "animations": {
+        "Stay": "zombieStayAni",
+        "Walk": "zombieWalkAni",
+        "Attack": "zombieAttackAni",
+        "Dead": "zombieDeadAni"
+      },
+      "unit_cost": 12,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": []
+    },
+    "FR_SWORDMASTER": {
+      "id": 7,
+      "class": "friendSwordMaster",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Swordmaster",
+        "money": 800,
+        "money_upgrade": 150,
+        "Experience": {
+          "one": 30,
+          "two": 40,
+          "three": 50
+        },
+        "Health": {
+          "one": 140,
+          "two": 150,
+          "three": 160
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "Resist": {
+          "one": 0.3,
+          "two": 0.35,
+          "three": 0.4
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 35,
+          "three": 35
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 9,
+          "two": 10,
+          "three": 11
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "swordmaster",
+      "animations": {
+        "Stay": "swordMasterStayAni",
+        "Walk": "swordMasterWalkAni",
+        "Attack": "swordMasterAttackAni",
+        "Dead": "swordMasterDeadAni"
+      },
+      "unit_cost": 800,
+      "upgrade_cost": 150,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": [
+        "specParry",
+        "specRoundAttack"
+      ]
+    },
+    "FR_REDMAGE": {
+      "id": 8,
+      "class": "friendRedMage",
+      "base": "mageClass",
+      "stats": {
+        "className": "Red mage",
+        "money": 1000,
+        "money_upgrade": 200,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 60,
+          "two": 65,
+          "three": 70
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "magicPierce": {
+          "one": 0.15,
+          "two": 0.15,
+          "three": 0.15
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 65,
+          "two": 60,
+          "three": 60
+        },
+        "accuracy": {
+          "one": 0.8,
+          "two": 0.85,
+          "three": 0.9
+        },
+        "damageMelee": {
+          "one": 4,
+          "two": 4,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 17,
+          "two": 18,
+          "three": 19
+        },
+        "walkSpeed": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        }
+      },
+      "xml_tag": "redmage",
+      "animations": {
+        "Stay": "redWizardStayAni",
+        "Walk": "redWizardWalkAni",
+        "Attack": "redWizardAttackAni",
+        "Dead": "redWizardDeadAni",
+        "Ranged": "redWizardShootAni",
+        "Cast": "redWizardCastAni"
+      },
+      "unit_cost": 1000,
+      "upgrade_cost": 200,
+      "class_kind": "CLASS_MAGE",
+      "specials": [
+        "specMetheor",
+        "specFireHitSplash"
+      ]
+    },
+    "FR_BLACKMAGE": {
+      "id": 9,
+      "class": "friendBlackMage",
+      "base": "mageClass",
+      "stats": {
+        "className": "Black mage",
+        "money": 1200,
+        "money_upgrade": 240,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 75,
+          "two": 75,
+          "three": 75
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.8
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "magicPierce": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 85,
+          "two": 80,
+          "three": 75
+        },
+        "accuracy": {
+          "one": 0.9,
+          "two": 0.95,
+          "three": 0.98
+        },
+        "damageMelee": {
+          "one": 4,
+          "two": 5,
+          "three": 6
+        },
+        "damageRanged": {
+          "one": 30,
+          "two": 32,
+          "three": 34
+        },
+        "walkSpeed": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        }
+      },
+      "xml_tag": "blackmage",
+      "animations": {
+        "Stay": "blackWizardStayAni",
+        "Walk": "blackWizardWalkAni",
+        "Attack": "blackWizardAttackAni",
+        "Dead": "blackWizardDeadAni",
+        "Ranged": "blackWizardShootAni",
+        "Cast": "blackWizardCastAni"
+      },
+      "unit_cost": 1200,
+      "upgrade_cost": 240,
+      "class_kind": "CLASS_MAGE",
+      "specials": [
+        "specBetray",
+        "specCurse"
+      ]
+    },
+    "FR_HEALER": {
+      "id": 10,
+      "class": "friendHealer",
+      "base": "priestClass",
+      "stats": {
+        "className": "Cleric",
+        "money": 800,
+        "money_upgrade": 200,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 45,
+          "two": 50,
+          "three": 55
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 55
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 3,
+          "two": 4,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 26,
+          "two": 28,
+          "three": 30
+        },
+        "walkSpeed": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        }
+      },
+      "xml_tag": "healer",
+      "animations": {
+        "Stay": "healerStayAni",
+        "Walk": "healerWalkAni",
+        "Attack": "healerAttackAni",
+        "Dead": "healerDeadAni",
+        "Ranged": "healerShootAni",
+        "Cast": "healerCastAni"
+      },
+      "unit_cost": 800,
+      "upgrade_cost": 200,
+      "class_kind": "CLASS_PRIEST",
+      "specials": [
+        "specMassHeal",
+        "specRessurect"
+      ]
+    },
+    "FR_BLESSER": {
+      "id": 11,
+      "class": "friendBlesser",
+      "base": "priestClass",
+      "stats": {
+        "className": "Monk",
+        "money": 900,
+        "money_upgrade": 250,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 50,
+          "two": 55,
+          "three": 60
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.4,
+          "two": 0.5,
+          "three": 0.6
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 4,
+          "two": 5,
+          "three": 6
+        },
+        "damageRanged": {
+          "one": 20,
+          "two": 23,
+          "three": 25
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "blesser",
+      "animations": {
+        "Stay": "blesserStayAni",
+        "Walk": "blesserWalkAni",
+        "Attack": "blesserAttackAni",
+        "Dead": "blesserDeadAni",
+        "Ranged": "blesserShootAni",
+        "Cast": "blesserCastAni"
+      },
+      "unit_cost": 900,
+      "upgrade_cost": 250,
+      "class_kind": "CLASS_PRIEST",
+      "specials": [
+        "specCurseBless",
+        "specHarmResist"
+      ]
+    },
+    "FR_SNIPER": {
+      "id": 12,
+      "class": "friendSniper",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Sniper",
+        "money": 800,
+        "money_upgrade": 180,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 65,
+          "two": 70,
+          "three": 75
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 35,
+          "two": 35,
+          "three": 35
+        },
+        "accuracy": {
+          "one": 0.95,
+          "two": 0.98,
+          "three": 0.99
+        },
+        "damageMelee": {
+          "one": 4,
+          "two": 4,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 8,
+          "two": 9,
+          "three": 10
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "sniper",
+      "animations": {
+        "Stay": "sniperStandAni",
+        "Walk": "sniperMoveAni",
+        "Attack": "sniperAttackAni",
+        "Dead": "sniperDeadAni",
+        "Ranged": "sniperShootAni"
+      },
+      "unit_cost": 800,
+      "upgrade_cost": 180,
+      "class_kind": "CLASS_ARCHER",
+      "specials": [
+        "specHeadShot",
+        "specWeakSpot"
+      ]
+    },
+    "FR_KNIGHT": {
+      "id": 13,
+      "class": "friendKnight",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Knight",
+        "money": 1000,
+        "money_upgrade": 300,
+        "Experience": {
+          "one": 35,
+          "two": 40,
+          "three": 45
+        },
+        "Health": {
+          "one": 150,
+          "two": 160,
+          "three": 170
+        },
+        "Armor": {
+          "one": 0.6,
+          "two": 0.65,
+          "three": 0.7
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0.3,
+          "two": 0.35,
+          "three": 0.4
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 14,
+          "two": 15,
+          "three": 16
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "knight",
+      "animations": {
+        "Stay": "knightStayAni",
+        "Walk": "knightWalkAni",
+        "Attack": "knightAttackAni",
+        "Dead": "knightDeadAni"
+      },
+      "unit_cost": 1000,
+      "upgrade_cost": 300,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": [
+        "specTaunt",
+        "specMassStun"
+      ]
+    },
+    "FR_CROSSBOW": {
+      "id": 14,
+      "class": "friendCrossBowMan",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Crossbowman",
+        "money": 850,
+        "money_upgrade": 150,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 80,
+          "two": 85,
+          "three": 90
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.8
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 85,
+          "two": 80,
+          "three": 75
+        },
+        "accuracy": {
+          "one": 0.85,
+          "two": 0.88,
+          "three": 0.9
+        },
+        "damageMelee": {
+          "one": 5,
+          "two": 5,
+          "three": 5
+        },
+        "damageRanged": {
+          "one": 26,
+          "two": 28,
+          "three": 30
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "crossbowman",
+      "animations": {
+        "Stay": "crossbowStandAni",
+        "Walk": "crossbowMoveAni",
+        "Attack": "crossbowAttackAni",
+        "Dead": "crossbowDeadAni",
+        "Ranged": "crossbowShootAni"
+      },
+      "unit_cost": 850,
+      "upgrade_cost": 150,
+      "class_kind": "CLASS_ARCHER",
+      "specials": [
+        "specCritRanged",
+        "specCorrupt"
+      ]
+    },
+    "UNDEAD_SKELETON_ARM": {
+      "id": 15,
+      "class": "undeadSkeletonArmored",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Armored Skeleton",
+        "money": 30,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 60,
+          "two": 70,
+          "three": 80
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.4,
+          "three": 0.4
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 50,
+          "two": 45,
+          "three": 45
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 6,
+          "two": 8,
+          "three": 9
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "skeleton_arm",
+      "animations": {
+        "Stay": "undeadSkeletonArmoredStayAni",
+        "Walk": "undeadSkeletonArmoredWalkAni",
+        "Attack": "undeadSkeletonArmoredAttackAni",
+        "Dead": "undeadSkeletonArmoredDeadAni"
+      },
+      "unit_cost": 30,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMissSkeleton"
+      ]
+    },
+    "UNDEAD_SKELETON": {
+      "id": 16,
+      "class": "undeadSkeleton",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Skeleton",
+        "money": 25,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 45,
+          "two": 52,
+          "three": 60
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 50,
+          "two": 45,
+          "three": 45
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 5,
+          "two": 5,
+          "three": 6
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "skeleton",
+      "animations": {
+        "Stay": "undeadSkeletonStayAni",
+        "Walk": "undeadSkeletonWalkAni",
+        "Attack": "undeadSkeletonAttackAni",
+        "Dead": "undeadSkeletonDeadAni"
+      },
+      "unit_cost": 25,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMissSkeleton"
+      ]
+    },
+    "UNDEAD_SKELETON_CAPITAN": {
+      "id": 17,
+      "class": "undeadSkeletonCapitan",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Skeleton Captain",
+        "money": 40,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 110,
+          "two": 120,
+          "three": 125
+        },
+        "Armor": {
+          "one": 0.5,
+          "two": 0.5,
+          "three": 0.6
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 9,
+          "two": 10,
+          "three": 11
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "skeleton_cap",
+      "animations": {
+        "Stay": "undeadSkeletonCapitanStayAni",
+        "Walk": "undeadSkeletonCapitanWalkAni",
+        "Attack": "undeadSkeletonCapitanAttackAni",
+        "Dead": "undeadSkeletonCapitanDeadAni"
+      },
+      "unit_cost": 40,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMissSkeleton"
+      ]
+    },
+    "FR_ROGUE": {
+      "id": 18,
+      "class": "friendScoutRogue",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Rogue",
+        "money": 100,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 80,
+          "two": 85,
+          "three": 90
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 6,
+          "two": 7,
+          "three": 8
+        },
+        "damageRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "walkSpeed": {
+          "one": 1.7,
+          "two": 1.7,
+          "three": 1.7
+        }
+      },
+      "xml_tag": "rogue",
+      "animations": {
+        "Stay": "rogueStandAni",
+        "Walk": "rogueMoveAni",
+        "Attack": "rogueAttackAni",
+        "Dead": "rogueDeadAni"
+      },
+      "unit_cost": 100,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_THIEF",
+      "specials": [
+        "specPoisonRogue",
+        "specCollectMoney"
+      ]
+    },
+    "FR_ASSASIN": {
+      "id": 19,
+      "class": "friendScoutAssasin",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Assassin",
+        "money": 700,
+        "money_upgrade": 150,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 100,
+          "two": 110,
+          "three": 120
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.4,
+          "two": 0.4,
+          "three": 0.4
+        },
+        "armorPierceMelee": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 35,
+          "three": 30
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 10,
+          "two": 11,
+          "three": 12
+        },
+        "damageRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "walkSpeed": {
+          "one": 1.7,
+          "two": 1.7,
+          "three": 1.7
+        }
+      },
+      "xml_tag": "assassin",
+      "animations": {
+        "Stay": "assasinStandAni",
+        "Walk": "assasinMoveAni",
+        "Attack": "assasinAttackAni",
+        "Dead": "assasinDeadAni"
+      },
+      "unit_cost": 700,
+      "upgrade_cost": 150,
+      "class_kind": "CLASS_THIEF",
+      "specials": [
+        "specBackStab",
+        "specMissAssasin"
+      ]
+    },
+    "FR_SABOTEUR": {
+      "id": 20,
+      "class": "friendScoutSaboteur",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Spy",
+        "money": 650,
+        "money_upgrade": 170,
+        "Experience": {
+          "one": 20,
+          "two": 25,
+          "three": 30
+        },
+        "Health": {
+          "one": 110,
+          "two": 115,
+          "three": 120
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "Resist": {
+          "one": 0.5,
+          "two": 0.6,
+          "three": 0.7
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 38,
+          "three": 35
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 10,
+          "two": 11,
+          "three": 12
+        },
+        "damageRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "walkSpeed": {
+          "one": 1.6,
+          "two": 1.6,
+          "three": 1.6
+        }
+      },
+      "xml_tag": "saboteur",
+      "animations": {
+        "Stay": "sabotStandAni",
+        "Walk": "sabotMoveAni",
+        "Attack": "sabotAttackAni",
+        "Dead": "sabotDeadAni"
+      },
+      "unit_cost": 650,
+      "upgrade_cost": 170,
+      "class_kind": "CLASS_THIEF",
+      "specials": [
+        "specBreakArrows",
+        "specHide"
+      ]
+    },
+    "UNDEAD_GRAY_ZOMBIE": {
+      "id": 21,
+      "class": "undeadGrayZombie",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Grey Zombie",
+        "money": 18,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 30,
+          "two": 40,
+          "three": 50
+        },
+        "Health": {
+          "one": 40,
+          "two": 45,
+          "three": 50
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.4,
+          "two": 0.4,
+          "three": 0.4
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 70,
+          "two": 65,
+          "three": 65
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 8,
+          "two": 8,
+          "three": 8
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        }
+      },
+      "xml_tag": "grey_zombie",
+      "animations": {
+        "Stay": "woodZombieStayAni",
+        "Walk": "woodZombieWalkAni",
+        "Attack": "woodZombieAttackAni",
+        "Dead": "woodZombieDeadAni"
+      },
+      "unit_cost": 18,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": []
+    },
+    "MONSTER_OGRE": {
+      "id": 22,
+      "class": "monsterOgre",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Ogre",
+        "money": 500,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 900,
+          "two": 950,
+          "three": 999
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.2,
+          "three": 0.4
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.3,
+          "three": 0.4
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 90,
+          "two": 80,
+          "three": 70
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "ogre",
+      "animations": {
+        "Stay": "OgreStayAni",
+        "Walk": "OgreWalkAni",
+        "Attack": "OgreAttackAni",
+        "Dead": "OgreDeadAni"
+      },
+      "unit_cost": 500,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specOgreStun"
+      ]
+    },
+    "UNDEAD_WITCH": {
+      "id": 23,
+      "class": "undeadWitch",
+      "base": "mageClass",
+      "stats": {
+        "className": "Witch",
+        "money": 150,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 50,
+          "two": 55,
+          "three": 60
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.5,
+          "two": 0.6,
+          "three": 0.7
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "magicPierce": {
+          "one": 0.1,
+          "two": 0.2,
+          "three": 0.3
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "accuracy": {
+          "one": 0.85,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "damageMelee": {
+          "one": 2,
+          "two": 2,
+          "three": 2
+        },
+        "damageRanged": {
+          "one": 16,
+          "two": 17,
+          "three": 17
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "witch",
+      "animations": {
+        "Stay": "undeadWitchStayAni",
+        "Walk": "undeadWitchWalkAni",
+        "Attack": "undeadWitchAttackAni",
+        "Dead": "undeadWitchDeadAni",
+        "Ranged": "undeadWitchShootAni",
+        "Cast": "undeadWitchCastAni"
+      },
+      "unit_cost": 150,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specIce",
+        "specCurse"
+      ]
+    },
+    "UNDEAD_VAMPIRE": {
+      "id": 24,
+      "class": "undeadVampire",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Vampire",
+        "money": 80,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 180,
+          "two": 190,
+          "three": 200
+        },
+        "Armor": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.2
+        },
+        "Resist": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        },
+        "armorPierceMelee": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.2
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 45,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 15,
+          "two": 18,
+          "three": 18
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "vampire",
+      "animations": {
+        "Stay": "VampireStayAni",
+        "Walk": "VampireWalkAni",
+        "Attack": "VampireAttackAni",
+        "Dead": "VampireDeadAni"
+      },
+      "unit_cost": 80,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specVampirizm"
+      ]
+    },
+    "MONSTER_KAMIKAZE": {
+      "id": 25,
+      "class": "monsterKamikaze",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Bomberman",
+        "money": 10,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 16,
+          "two": 22,
+          "three": 26
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 30,
+          "two": 30,
+          "three": 30
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 100,
+          "two": 110,
+          "three": 120
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.9,
+          "two": 1,
+          "three": 1.1
+        }
+      },
+      "xml_tag": "kamikaze",
+      "animations": {
+        "Stay": "KamikazeStayAni",
+        "Walk": "KamikazeWalkAni",
+        "Attack": "KamikazeAttackAni",
+        "Dead": "KamikazeDeadAni"
+      },
+      "unit_cost": 10,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specSelfDestruct"
+      ]
+    },
+    "UNDEAD_SHAMAN": {
+      "id": 26,
+      "class": "undeadShaman",
+      "base": "priestClass",
+      "stats": {
+        "className": "Shaman",
+        "money": 70,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 45,
+          "two": 55,
+          "three": 65
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.5,
+          "two": 0.5,
+          "three": 0.5
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 110,
+          "two": 110,
+          "three": 110
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 3,
+          "two": 4,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 12,
+          "two": 14,
+          "three": 16
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "shaman",
+      "animations": {
+        "Stay": "undeadShamanStayAni",
+        "Walk": "undeadShamanWalkAni",
+        "Attack": "undeadShamanAttackAni",
+        "Dead": "undeadShamanDeadAni",
+        "Cast": "undeadShamanCastAni",
+        "Ranged": "undeadShamanShootAni"
+      },
+      "unit_cost": 70,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specStrongHeal",
+        "specSmallRessurect"
+      ]
+    },
+    "UNDEAD_STORMGUARDIAN": {
+      "id": 27,
+      "class": "undeadDarthGuardian",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Darth Guardian",
+        "money": 80,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 200,
+          "two": 225,
+          "three": 250
+        },
+        "Armor": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.7
+        },
+        "Resist": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        },
+        "armorPierceMelee": {
+          "one": 0.4,
+          "two": 0.4,
+          "three": 0.5
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 90,
+          "two": 90,
+          "three": 90
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 20,
+          "two": 20,
+          "three": 20
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "storm_guardian",
+      "animations": {
+        "Stay": "darthGuardStandAni",
+        "Walk": "darthGuardMoveAni",
+        "Attack": "darthGuardAttackAni",
+        "Dead": "darthGuardDeadAni"
+      },
+      "unit_cost": 80,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specCorrupt"
+      ]
+    },
+    "UNDEAD_STORMTROOPER": {
+      "id": 28,
+      "class": "undeadStormTrooper",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Darth Slayer",
+        "money": 80,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 120,
+          "two": 125,
+          "three": 130
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.4
+        },
+        "Resist": {
+          "one": 0.8,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 8,
+          "two": 10,
+          "three": 12
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "darth_trooper",
+      "animations": {
+        "Stay": "darthStormTrooperStandAni",
+        "Walk": "darthStormTrooperMoveAni",
+        "Attack": "darthStormTrooperAttackAni",
+        "Dead": "darthStormTrooperDeadAni"
+      },
+      "unit_cost": 80,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specParry"
+      ]
+    },
+    "UNDEAD_STORMARCHER": {
+      "id": 29,
+      "class": "undeadDarthArcher",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Darth Archer",
+        "money": 60,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 80,
+          "two": 90,
+          "three": 100
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.8,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 40,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 50,
+          "two": 50,
+          "three": 45
+        },
+        "accuracy": {
+          "one": 0.85,
+          "two": 0.9,
+          "three": 0.92
+        },
+        "damageMelee": {
+          "one": 6,
+          "two": 7,
+          "three": 8
+        },
+        "damageRanged": {
+          "one": 6,
+          "two": 7,
+          "three": 8
+        },
+        "walkSpeed": {
+          "one": 1.2,
+          "two": 1.2,
+          "three": 1.2
+        }
+      },
+      "xml_tag": "storm_archer",
+      "animations": {
+        "Stay": "darthStormArcherStandAni",
+        "Walk": "darthStormArcherMoveAni",
+        "Attack": "darthStormArcherAttackAni",
+        "Dead": "darthStormArcherDeadAni",
+        "Ranged": "darthStormArcherShootAni"
+      },
+      "unit_cost": 60,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specPoison"
+      ]
+    },
+    "UNDEAD_SEEKER": {
+      "id": 30,
+      "class": "undeadSeeker",
+      "base": "meleeRogue",
+      "stats": {
+        "className": "Seeker",
+        "money": 90,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 110,
+          "two": 115,
+          "three": 120
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.4
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 50,
+          "two": 45,
+          "three": 45
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 5,
+          "two": 5,
+          "three": 5
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.5,
+          "two": 1.5,
+          "three": 1.5
+        }
+      },
+      "xml_tag": "seeker",
+      "animations": {
+        "Stay": "undeadAssasinStandAni",
+        "Walk": "undeadAssasinMoveAni",
+        "Attack": "undeadAssasinAttackAni",
+        "Dead": "undeadAssasinDeadAni"
+      },
+      "unit_cost": 90,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specCrit"
+      ]
+    },
+    "MONSTER_GREEN_HOUND": {
+      "id": 31,
+      "class": "monsterHound",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Grey Hound",
+        "money": 20,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 25,
+          "two": 28,
+          "three": 31
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.5,
+          "two": 0.5,
+          "three": 0.5
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 40,
+          "two": 38,
+          "three": 38
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 6,
+          "two": 7,
+          "three": 8
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 2.5,
+          "two": 2.6,
+          "three": 2.6
+        }
+      },
+      "xml_tag": "hound",
+      "animations": {
+        "Stay": "mosterHoundStandAni",
+        "Walk": "mosterHoundMoveAni",
+        "Attack": "mosterHoundAttackAni",
+        "Dead": "mosterHoundDeadAni"
+      },
+      "unit_cost": 20,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": []
+    },
+    "MONSTER_HOUND": {
+      "id": 32,
+      "class": "monsterGreenHound",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Green Hound",
+        "money": 6,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 14,
+          "two": 15,
+          "three": 16
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 30,
+          "two": 30,
+          "three": 30
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 4,
+          "two": 5,
+          "three": 6
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 3,
+          "two": 3.1,
+          "three": 3.2
+        }
+      },
+      "xml_tag": "green_hound",
+      "animations": {
+        "Stay": "mosterSmallHoundStandAni",
+        "Walk": "mosterSmallHoundMoveAni",
+        "Attack": "mosterSmallHoundAttackAni",
+        "Dead": "mosterSmallHoundDeadAni"
+      },
+      "unit_cost": 6,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": []
+    },
+    "UNDEAD_PLAGUE_ZOMBIE": {
+      "id": 33,
+      "class": "undeadPlagueZombie",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Plague Zombie",
+        "money": 20,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 30,
+          "two": 40,
+          "three": 50
+        },
+        "Health": {
+          "one": 40,
+          "two": 45,
+          "three": 50
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 5,
+          "two": 6,
+          "three": 6
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        }
+      },
+      "xml_tag": "plague_zombie",
+      "animations": {
+        "Stay": "plagueZombieStayAni",
+        "Walk": "plagueZombieWalkAni",
+        "Attack": "plagueZombieAttackAni",
+        "Dead": "plagueZombieDeadAni"
+      },
+      "unit_cost": 20,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specWeakness"
+      ]
+    },
+    "UNDEAD_RANGER": {
+      "id": 34,
+      "class": "undeadRanger",
+      "base": "rangedFighter",
+      "stats": {
+        "className": "Undead Ranger",
+        "money": 100,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 65,
+          "two": 70,
+          "three": 75
+        },
+        "Armor": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 45,
+          "two": 45,
+          "three": 40
+        },
+        "attackSpeedRanged": {
+          "one": 110,
+          "two": 110,
+          "three": 110
+        },
+        "accuracy": {
+          "one": 0.9,
+          "two": 0.93,
+          "three": 0.95
+        },
+        "damageMelee": {
+          "one": 2,
+          "two": 3,
+          "three": 4
+        },
+        "damageRanged": {
+          "one": 23,
+          "two": 24,
+          "three": 25
+        },
+        "walkSpeed": {
+          "one": 1.1,
+          "two": 1.1,
+          "three": 1.1
+        }
+      },
+      "xml_tag": "ranger",
+      "animations": {
+        "Stay": "undeadRangerStandAni",
+        "Walk": "undeadRangerMoveAni",
+        "Attack": "undeadRangerAttackAni",
+        "Dead": "undeadRangerDeadAni",
+        "Ranged": "undeadRangerShootAni"
+      },
+      "unit_cost": 100,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": []
+    },
+    "MONSTER_TROLL": {
+      "id": 35,
+      "class": "monsterTroll",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Troll",
+        "money": 70,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 130,
+          "two": 140,
+          "three": 150
+        },
+        "Armor": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "Resist": {
+          "one": 0.2,
+          "two": 0.2,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 70,
+          "two": 65,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 15,
+          "two": 16,
+          "three": 17
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "troll",
+      "animations": {
+        "Stay": "monsterTrollStayAni",
+        "Walk": "monsterTrollWalkAni",
+        "Attack": "monsterTrollAttackAni",
+        "Dead": "monsterTrollDeadAni"
+      },
+      "unit_cost": 70,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specRegen"
+      ]
+    },
+    "UNDEAD_VAMPIRE_LORD": {
+      "id": 36,
+      "class": "undeadVampireLord",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Undead Lord",
+        "money": 150,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 400,
+          "two": 430,
+          "three": 450
+        },
+        "Armor": {
+          "one": 0.7,
+          "two": 0.8,
+          "three": 0.8
+        },
+        "Resist": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.8
+        },
+        "armorPierceMelee": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.4
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 70,
+          "two": 70,
+          "three": 70
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 22,
+          "two": 24,
+          "three": 24
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "vampire_lord",
+      "animations": {
+        "Stay": "VampireLordStayAni",
+        "Walk": "VampireLordWalkAni",
+        "Attack": "VampireLordAttackAni",
+        "Dead": "VampireLordDeadAni"
+      },
+      "unit_cost": 150,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specVampirizm",
+        "specWeakness"
+      ]
+    },
+    "UNDEAD_VAMPIRE_KING": {
+      "id": 37,
+      "class": "undeadVampireKing",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Vampire King",
+        "money": 2500,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 999,
+          "two": 999,
+          "three": 999
+        },
+        "Armor": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "Resist": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "armorPierceMelee": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.9
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 50,
+          "two": 50,
+          "three": 50
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        }
+      },
+      "xml_tag": "vampire_king",
+      "animations": {
+        "Stay": "VampireKingStayAni",
+        "Walk": "VampireKingWalkAni",
+        "Attack": "VampireKingAttackAni",
+        "Dead": "VampireKingDeadAni"
+      },
+      "unit_cost": 2500,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specVampirizm",
+        "specOgreStun"
+      ]
+    },
+    "UNDEAD_SUMMONER": {
+      "id": 38,
+      "class": "undeadSummoner",
+      "base": "mageClass",
+      "stats": {
+        "className": "Summoner",
+        "money": 350,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 350,
+          "two": 360,
+          "three": 370
+        },
+        "Armor": {
+          "one": 0.5,
+          "two": 0.5,
+          "three": 0.5
+        },
+        "Resist": {
+          "one": 0.6,
+          "two": 0.7,
+          "three": 0.7
+        },
+        "armorPierceMelee": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.1
+        },
+        "attackSpeedMelee": {
+          "one": 75,
+          "two": 70,
+          "three": 70
+        },
+        "attackSpeedRanged": {
+          "one": 75,
+          "two": 75,
+          "three": 75
+        },
+        "accuracy": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        },
+        "damageMelee": {
+          "one": 14,
+          "two": 17,
+          "three": 20
+        },
+        "damageRanged": {
+          "one": 20,
+          "two": 20,
+          "three": 20
+        },
+        "walkSpeed": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        }
+      },
+      "xml_tag": "Summoner",
+      "animations": {
+        "Stay": "summonerStayAni",
+        "Walk": "summonerWalkAni",
+        "Attack": "summonerAttackAni",
+        "Dead": "summonerDeadAni",
+        "Ranged": "summonerShootAni",
+        "Cast": "summonerCastAni"
+      },
+      "unit_cost": 350,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specSummonSkeletons"
+      ]
+    },
+    "UNDEAD_GHOST": {
+      "id": 39,
+      "class": "undeadGhost",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Ghost",
+        "money": 90,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 40,
+          "two": 50,
+          "three": 60
+        },
+        "Health": {
+          "one": 50,
+          "two": 60,
+          "three": 70
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.4,
+          "two": 0.5,
+          "three": 0.6
+        },
+        "armorPierceMelee": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 50,
+          "two": 50,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 8,
+          "two": 9,
+          "three": 10
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 1.5,
+          "two": 1.5,
+          "three": 1.5
+        }
+      },
+      "xml_tag": "ghost",
+      "animations": {
+        "Stay": "undeadGhostStayAni",
+        "Walk": "undeadGhostWalkAni",
+        "Attack": "undeadGhostAttackAni",
+        "Dead": "undeadGhostDeadAni"
+      },
+      "unit_cost": 90,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specMissGhost"
+      ]
+    },
+    "MONSTER_KAMI_SHIELD": {
+      "id": 40,
+      "class": "monsterShieldKamikaze",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "Shielded Bomberman",
+        "money": 15,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 20,
+          "two": 30,
+          "three": 40
+        },
+        "Health": {
+          "one": 30,
+          "two": 35,
+          "three": 40
+        },
+        "Armor": {
+          "one": 0.7,
+          "two": 0.8,
+          "three": 0.9
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 30,
+          "two": 30,
+          "three": 30
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 100,
+          "two": 110,
+          "three": 120
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.9,
+          "three": 1
+        }
+      },
+      "xml_tag": "shieldKamikaze",
+      "animations": {
+        "Stay": "sKamikazeStayAni",
+        "Walk": "sKamikazeWalkAni",
+        "Attack": "sKamikazeAttackAni",
+        "Dead": "sKamikazeDeadAni"
+      },
+      "unit_cost": 15,
+      "upgrade_cost": 0,
+      "class_kind": "",
+      "specials": [
+        "specSelfDestruct"
+      ]
+    },
+    "FR_KING": {
+      "id": 41,
+      "class": "friendKing",
+      "base": "meleeFighter",
+      "stats": {
+        "className": "King Aldric",
+        "money": 900,
+        "money_upgrade": 300,
+        "Experience": {
+          "one": 35,
+          "two": 40,
+          "three": 45
+        },
+        "Health": {
+          "one": 260,
+          "two": 270,
+          "three": 280
+        },
+        "Armor": {
+          "one": 0.7,
+          "two": 0.7,
+          "three": 0.7
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0.3,
+          "two": 0.3,
+          "three": 0.3
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 50
+        },
+        "attackSpeedRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 15,
+          "two": 16,
+          "three": 17
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.8,
+          "two": 0.8,
+          "three": 0.8
+        }
+      },
+      "xml_tag": "king",
+      "animations": {
+        "Stay": "kingStayAni",
+        "Walk": "kingWalkAni",
+        "Attack": "kingAttackAni",
+        "Dead": "kingDeadAni"
+      },
+      "unit_cost": 900,
+      "upgrade_cost": 300,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": [
+        "specTaunt",
+        "specMassStun"
+      ]
+    },
+    "FR_WISEMAN": {
+      "id": 42,
+      "class": "friendWiseman",
+      "base": "priestClass",
+      "stats": {
+        "className": "Wiseman",
+        "money": 600,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 50,
+          "two": 55,
+          "three": 60
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0.1,
+          "two": 0.1,
+          "three": 0.2
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 55,
+          "three": 55
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 3,
+          "two": 3,
+          "three": 3
+        },
+        "damageRanged": {
+          "one": 12,
+          "two": 12,
+          "three": 12
+        },
+        "walkSpeed": {
+          "one": 0.9,
+          "two": 0.9,
+          "three": 0.9
+        }
+      },
+      "xml_tag": "wiseman",
+      "animations": {
+        "Stay": "wisemanStayAni",
+        "Walk": "wisemanWalkAni",
+        "Attack": "wisemanAttackAni",
+        "Dead": "wisemanDeadAni",
+        "Ranged": "wisemanShootAni"
+      },
+      "unit_cost": 600,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_PRIEST",
+      "specials": []
+    },
+    "NPC_OLDMAN": {
+      "id": 43,
+      "class": "npcOldman",
+      "base": "npcClass",
+      "stats": {
+        "className": "Old man",
+        "money": 10,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 9,
+          "two": 9,
+          "three": 9
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        }
+      },
+      "xml_tag": "npc_oldman",
+      "animations": {
+        "Stay": "npcStayAni",
+        "Walk": "npcWalkAni",
+        "Attack": "npcAttackAni",
+        "Dead": "npcDeadAni"
+      },
+      "unit_cost": 10,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": []
+    },
+    "NPC_MAN": {
+      "id": 44,
+      "class": "npcMan",
+      "base": "npcClass",
+      "stats": {
+        "className": "Man",
+        "money": 10,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 11,
+          "two": 11,
+          "three": 11
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        }
+      },
+      "xml_tag": "npc_man",
+      "animations": {
+        "Stay": "npcYoungStayAni",
+        "Walk": "npcYoungWalkAni",
+        "Attack": "npcYoungAttackAni",
+        "Dead": "npcYoungDeadAni"
+      },
+      "unit_cost": 10,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": []
+    },
+    "NPC_WOMAN": {
+      "id": 45,
+      "class": "npcWoman",
+      "base": "npcClass",
+      "stats": {
+        "className": "Woman",
+        "money": 10,
+        "money_upgrade": 0,
+        "Experience": {
+          "one": 15,
+          "two": 20,
+          "three": 25
+        },
+        "Health": {
+          "one": 7,
+          "two": 7,
+          "three": 7
+        },
+        "Armor": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "Resist": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceMelee": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "armorPierceRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "magicPierce": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "attackSpeedMelee": {
+          "one": 60,
+          "two": 60,
+          "three": 60
+        },
+        "attackSpeedRanged": {
+          "one": 100,
+          "two": 100,
+          "three": 100
+        },
+        "accuracy": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageMelee": {
+          "one": 1,
+          "two": 1,
+          "three": 1
+        },
+        "damageRanged": {
+          "one": 0,
+          "two": 0,
+          "three": 0
+        },
+        "walkSpeed": {
+          "one": 0.6,
+          "two": 0.6,
+          "three": 0.6
+        }
+      },
+      "xml_tag": "npc_woman",
+      "animations": {
+        "Stay": "npcWomanStayAni",
+        "Walk": "npcWomanWalkAni",
+        "Attack": "npcWomanAttackAni",
+        "Dead": "npcWomanDeadAni"
+      },
+      "unit_cost": 10,
+      "upgrade_cost": 0,
+      "class_kind": "CLASS_WARRIOR",
+      "specials": []
+    }
+  },
+  "xml_records": {
+    "archer": {
+      "className": "Archer",
+      "money": 120,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 30
+      },
+      "Health": {
+        "one": 35,
+        "two": 40,
+        "three": 45
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 40,
+        "three": 35
+      },
+      "attackSpeedRanged": {
+        "one": 45,
+        "two": 40,
+        "three": 40
+      },
+      "accuracy": {
+        "one": 0.7,
+        "two": 0.8,
+        "three": 0.85
+      },
+      "damageMelee": {
+        "one": 1,
+        "two": 2,
+        "three": 3
+      },
+      "damageRanged": {
+        "one": 6,
+        "two": 7,
+        "three": 8
+      },
+      "walkSpeed": {
+        "one": 1.4,
+        "two": 1.4,
+        "three": 1.4
+      }
+    },
+    "crossbowman": {
+      "className": "Crossbowman",
+      "money": 850,
+      "money_upgrade": 150,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 80,
+        "two": 85,
+        "three": 90
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.8
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 85,
+        "two": 80,
+        "three": 75
+      },
+      "accuracy": {
+        "one": 0.85,
+        "two": 0.88,
+        "three": 0.9
+      },
+      "damageMelee": {
+        "one": 5,
+        "two": 5,
+        "three": 5
+      },
+      "damageRanged": {
+        "one": 26,
+        "two": 28,
+        "three": 30
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "sniper": {
+      "className": "Sniper",
+      "money": 800,
+      "money_upgrade": 180,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 65,
+        "two": 70,
+        "three": 75
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 35,
+        "two": 35,
+        "three": 35
+      },
+      "accuracy": {
+        "one": 0.95,
+        "two": 0.98,
+        "three": 0.99
+      },
+      "damageMelee": {
+        "one": 4,
+        "two": 4,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 8,
+        "two": 9,
+        "three": 10
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "warrior": {
+      "className": "Swordsman",
+      "money": 100,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 80,
+        "two": 85,
+        "three": 90
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.35,
+        "three": 0.4
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 6,
+        "two": 8,
+        "three": 10
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "swordmaster": {
+      "className": "Swordmaster",
+      "money": 800,
+      "money_upgrade": 150,
+      "Experience": {
+        "one": 30,
+        "two": 40,
+        "three": 50
+      },
+      "Health": {
+        "one": 140,
+        "two": 150,
+        "three": 160
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "Resist": {
+        "one": 0.3,
+        "two": 0.35,
+        "three": 0.4
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 35,
+        "three": 35
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 9,
+        "two": 10,
+        "three": 11
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "knight": {
+      "className": "Knight",
+      "money": 1000,
+      "money_upgrade": 300,
+      "Experience": {
+        "one": 35,
+        "two": 40,
+        "three": 45
+      },
+      "Health": {
+        "one": 150,
+        "two": 160,
+        "three": 170
+      },
+      "Armor": {
+        "one": 0.6,
+        "two": 0.65,
+        "three": 0.7
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0.3,
+        "two": 0.35,
+        "three": 0.4
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 14,
+        "two": 15,
+        "three": 16
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      }
+    },
+    "king": {
+      "className": "King Aldric",
+      "money": 900,
+      "money_upgrade": 300,
+      "Experience": {
+        "one": 35,
+        "two": 40,
+        "three": 45
+      },
+      "Health": {
+        "one": 260,
+        "two": 270,
+        "three": 280
+      },
+      "Armor": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 15,
+        "two": 16,
+        "three": 17
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      }
+    },
+    "bluemage": {
+      "className": "Blue mage",
+      "money": 200,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 10,
+        "two": 15,
+        "three": 20
+      },
+      "Health": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "magicPierce": {
+        "one": 0.1,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 75,
+        "two": 70,
+        "three": 70
+      },
+      "accuracy": {
+        "one": 0.75,
+        "two": 0.8,
+        "three": 0.85
+      },
+      "damageMelee": {
+        "one": 2,
+        "two": 3,
+        "three": 3
+      },
+      "damageRanged": {
+        "one": 16,
+        "two": 17,
+        "three": 18
+      },
+      "walkSpeed": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      }
+    },
+    "redmage": {
+      "className": "Red mage",
+      "money": 1000,
+      "money_upgrade": 200,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 60,
+        "two": 65,
+        "three": 70
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "magicPierce": {
+        "one": 0.15,
+        "two": 0.15,
+        "three": 0.15
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 65,
+        "two": 60,
+        "three": 60
+      },
+      "accuracy": {
+        "one": 0.8,
+        "two": 0.85,
+        "three": 0.9
+      },
+      "damageMelee": {
+        "one": 4,
+        "two": 4,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 17,
+        "two": 18,
+        "three": 19
+      },
+      "walkSpeed": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      }
+    },
+    "blackmage": {
+      "className": "Black mage",
+      "money": 1200,
+      "money_upgrade": 240,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 75,
+        "two": 75,
+        "three": 75
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.8
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "magicPierce": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 85,
+        "two": 80,
+        "three": 75
+      },
+      "accuracy": {
+        "one": 0.9,
+        "two": 0.95,
+        "three": 0.98
+      },
+      "damageMelee": {
+        "one": 4,
+        "two": 5,
+        "three": 6
+      },
+      "damageRanged": {
+        "one": 30,
+        "two": 32,
+        "three": 34
+      },
+      "walkSpeed": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      }
+    },
+    "rogue": {
+      "className": "Rogue",
+      "money": 100,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 80,
+        "two": 85,
+        "three": 90
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 6,
+        "two": 7,
+        "three": 8
+      },
+      "damageRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "walkSpeed": {
+        "one": 1.7,
+        "two": 1.7,
+        "three": 1.7
+      }
+    },
+    "assassin": {
+      "className": "Assassin",
+      "money": 700,
+      "money_upgrade": 150,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 100,
+        "two": 110,
+        "three": 120
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.4,
+        "two": 0.4,
+        "three": 0.4
+      },
+      "armorPierceMelee": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 35,
+        "three": 30
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 10,
+        "two": 11,
+        "three": 12
+      },
+      "damageRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "walkSpeed": {
+        "one": 1.7,
+        "two": 1.7,
+        "three": 1.7
+      }
+    },
+    "saboteur": {
+      "className": "Spy",
+      "money": 650,
+      "money_upgrade": 170,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 110,
+        "two": 115,
+        "three": 120
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "Resist": {
+        "one": 0.5,
+        "two": 0.6,
+        "three": 0.7
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 38,
+        "three": 35
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 10,
+        "two": 11,
+        "three": 12
+      },
+      "damageRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "walkSpeed": {
+        "one": 1.6,
+        "two": 1.6,
+        "three": 1.6
+      }
+    },
+    "wiseman": {
+      "className": "Wiseman",
+      "money": 600,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 50,
+        "two": 55,
+        "three": 60
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 55
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 3,
+        "two": 3,
+        "three": 3
+      },
+      "damageRanged": {
+        "one": 12,
+        "two": 12,
+        "three": 12
+      },
+      "walkSpeed": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      }
+    },
+    "priest": {
+      "className": "Priest",
+      "money": 180,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 30,
+        "two": 35,
+        "three": 40
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 55
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 3,
+        "two": 3,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 8,
+        "two": 10,
+        "three": 12
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "healer": {
+      "className": "Cleric",
+      "money": 800,
+      "money_upgrade": 200,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 45,
+        "two": 50,
+        "three": 55
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 55
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 3,
+        "two": 4,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 26,
+        "two": 28,
+        "three": 30
+      },
+      "walkSpeed": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      }
+    },
+    "blesser": {
+      "className": "Monk",
+      "money": 900,
+      "money_upgrade": 250,
+      "Experience": {
+        "one": 20,
+        "two": 25,
+        "three": 30
+      },
+      "Health": {
+        "one": 50,
+        "two": 55,
+        "three": 60
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.4,
+        "two": 0.5,
+        "three": 0.6
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 4,
+        "two": 5,
+        "three": 6
+      },
+      "damageRanged": {
+        "one": 20,
+        "two": 23,
+        "three": 25
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "green_hound": {
+      "className": "Green Hound",
+      "money": 6,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 14,
+        "two": 15,
+        "three": 16
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 30,
+        "two": 30,
+        "three": 30
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 4,
+        "two": 5,
+        "three": 6
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 3,
+        "two": 3.1,
+        "three": 3.2
+      }
+    },
+    "hound": {
+      "className": "Grey Hound",
+      "money": 20,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 25,
+        "two": 28,
+        "three": 31
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.5,
+        "two": 0.5,
+        "three": 0.5
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 38,
+        "three": 38
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 6,
+        "two": 7,
+        "three": 8
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 2.5,
+        "two": 2.6,
+        "three": 2.6
+      }
+    },
+    "kamikaze": {
+      "className": "Bomberman",
+      "money": 10,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 16,
+        "two": 22,
+        "three": 26
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 30,
+        "two": 30,
+        "three": 30
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 100,
+        "two": 110,
+        "three": 120
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.9,
+        "two": 1,
+        "three": 1.1
+      }
+    },
+    "shieldKamikaze": {
+      "className": "Shielded Bomberman",
+      "money": 15,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 30,
+        "two": 35,
+        "three": 40
+      },
+      "Armor": {
+        "one": 0.7,
+        "two": 0.8,
+        "three": 0.9
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 30,
+        "two": 30,
+        "three": 30
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 100,
+        "two": 110,
+        "three": 120
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.9,
+        "three": 1
+      }
+    },
+    "ogre": {
+      "className": "Ogre",
+      "money": 500,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 900,
+        "two": 950,
+        "three": 999
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.2,
+        "three": 0.4
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.3,
+        "three": 0.4
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 90,
+        "two": 80,
+        "three": 70
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.8
+      }
+    },
+    "troll": {
+      "className": "Troll",
+      "money": 70,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 130,
+        "two": 140,
+        "three": 150
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "Resist": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 70,
+        "two": 65,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 15,
+        "two": 16,
+        "three": 17
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "storm_archer": {
+      "className": "Darth Archer",
+      "money": 60,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 80,
+        "two": 90,
+        "three": 100
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.8,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.2
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 50,
+        "two": 50,
+        "three": 45
+      },
+      "accuracy": {
+        "one": 0.85,
+        "two": 0.9,
+        "three": 0.92
+      },
+      "damageMelee": {
+        "one": 6,
+        "two": 7,
+        "three": 8
+      },
+      "damageRanged": {
+        "one": 6,
+        "two": 7,
+        "three": 8
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "storm_guardian": {
+      "className": "Darth Guardian",
+      "money": 80,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 20,
+        "two": 30,
+        "three": 40
+      },
+      "Health": {
+        "one": 200,
+        "two": 225,
+        "three": 250
+      },
+      "Armor": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.7
+      },
+      "Resist": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      },
+      "armorPierceMelee": {
+        "one": 0.4,
+        "two": 0.4,
+        "three": 0.5
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 90,
+        "two": 90,
+        "three": 90
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 20,
+        "two": 20,
+        "three": 20
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      }
+    },
+    "darth_trooper": {
+      "className": "Darth Slayer",
+      "money": 80,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 120,
+        "two": 125,
+        "three": 130
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.4
+      },
+      "Resist": {
+        "one": 0.8,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "armorPierceMelee": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 8,
+        "two": 10,
+        "three": 12
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "darth_knight": {
+      "className": "Darth Knight",
+      "money": 100,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 30,
+        "two": 40,
+        "three": 50
+      },
+      "Health": {
+        "one": 220,
+        "two": 230,
+        "three": 240
+      },
+      "Armor": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.8
+      },
+      "Resist": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.2
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 12,
+        "two": 13,
+        "three": 14
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      }
+    },
+    "zombie": {
+      "className": "Zombie",
+      "money": 12,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 30,
+        "two": 40,
+        "three": 50
+      },
+      "Health": {
+        "one": 30,
+        "two": 35,
+        "three": 40
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.4,
+        "two": 0.4,
+        "three": 0.5
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 45,
+        "three": 45
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 3,
+        "two": 3,
+        "three": 3
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      }
+    },
+    "grey_zombie": {
+      "className": "Grey Zombie",
+      "money": 18,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 30,
+        "two": 40,
+        "three": 50
+      },
+      "Health": {
+        "one": 40,
+        "two": 45,
+        "three": 50
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.4,
+        "two": 0.4,
+        "three": 0.4
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 70,
+        "two": 65,
+        "three": 65
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 8,
+        "two": 8,
+        "three": 8
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      }
+    },
+    "plague_zombie": {
+      "className": "Plague Zombie",
+      "money": 20,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 30,
+        "two": 40,
+        "three": 50
+      },
+      "Health": {
+        "one": 40,
+        "two": 45,
+        "three": 50
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 5,
+        "two": 6,
+        "three": 6
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.7,
+        "two": 0.7,
+        "three": 0.7
+      }
+    },
+    "ranger": {
+      "className": "Undead Ranger",
+      "money": 100,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 65,
+        "two": 70,
+        "three": 75
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 45,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 110,
+        "two": 110,
+        "three": 110
+      },
+      "accuracy": {
+        "one": 0.9,
+        "two": 0.93,
+        "three": 0.95
+      },
+      "damageMelee": {
+        "one": 2,
+        "two": 3,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 23,
+        "two": 24,
+        "three": 25
+      },
+      "walkSpeed": {
+        "one": 1.1,
+        "two": 1.1,
+        "three": 1.1
+      }
+    },
+    "seeker": {
+      "className": "Seeker",
+      "money": 90,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 110,
+        "two": 115,
+        "three": 120
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.4
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 50,
+        "two": 45,
+        "three": 45
+      },
+      "attackSpeedRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 5,
+        "two": 5,
+        "three": 5
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.5,
+        "two": 1.5,
+        "three": 1.5
+      }
+    },
+    "shaman": {
+      "className": "Shaman",
+      "money": 70,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 45,
+        "two": 55,
+        "three": 65
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.5,
+        "two": 0.5,
+        "three": 0.5
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 110,
+        "two": 110,
+        "three": 110
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 3,
+        "two": 4,
+        "three": 4
+      },
+      "damageRanged": {
+        "one": 12,
+        "two": 14,
+        "three": 16
+      },
+      "walkSpeed": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      }
+    },
+    "witch": {
+      "className": "Witch",
+      "money": 150,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 50,
+        "two": 55,
+        "three": 60
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.5,
+        "two": 0.6,
+        "three": 0.7
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "magicPierce": {
+        "one": 0.1,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "attackSpeedMelee": {
+        "one": 40,
+        "two": 40,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "accuracy": {
+        "one": 0.85,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "damageMelee": {
+        "one": 2,
+        "two": 2,
+        "three": 2
+      },
+      "damageRanged": {
+        "one": 16,
+        "two": 17,
+        "three": 17
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "skeleton_archer": {
+      "className": "Skeleton Archer",
+      "money": 20,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 45,
+        "two": 50,
+        "three": 50
+      },
+      "Armor": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 55,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 60,
+        "two": 55,
+        "three": 55
+      },
+      "accuracy": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.75
+      },
+      "damageMelee": {
+        "one": 2,
+        "two": 2,
+        "three": 3
+      },
+      "damageRanged": {
+        "one": 5,
+        "two": 6,
+        "three": 6
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "skeleton": {
+      "className": "Skeleton",
+      "money": 25,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 45,
+        "two": 52,
+        "three": 60
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 50,
+        "two": 45,
+        "three": 45
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 5,
+        "two": 5,
+        "three": 6
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "skeleton_arm": {
+      "className": "Armored Skeleton",
+      "money": 30,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 60,
+        "two": 70,
+        "three": 80
+      },
+      "Armor": {
+        "one": 0.3,
+        "two": 0.4,
+        "three": 0.4
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 50,
+        "two": 45,
+        "three": 45
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 6,
+        "two": 8,
+        "three": 9
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "skeleton_cap": {
+      "className": "Skeleton Captain",
+      "money": 40,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 110,
+        "two": 120,
+        "three": 125
+      },
+      "Armor": {
+        "one": 0.5,
+        "two": 0.5,
+        "three": 0.6
+      },
+      "Resist": {
+        "one": 0.1,
+        "two": 0.2,
+        "three": 0.3
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0.1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 9,
+        "two": 10,
+        "three": 11
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "vampire": {
+      "className": "Vampire",
+      "money": 80,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 180,
+        "two": 190,
+        "three": 200
+      },
+      "Armor": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.2
+      },
+      "Resist": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.8
+      },
+      "armorPierceMelee": {
+        "one": 0.2,
+        "two": 0.2,
+        "three": 0.2
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 45,
+        "two": 45,
+        "three": 40
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 15,
+        "two": 18,
+        "three": 18
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.2,
+        "two": 1.2,
+        "three": 1.2
+      }
+    },
+    "vampire_lord": {
+      "className": "Undead Lord",
+      "money": 150,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 400,
+        "two": 430,
+        "three": 450
+      },
+      "Armor": {
+        "one": 0.7,
+        "two": 0.8,
+        "three": 0.8
+      },
+      "Resist": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.8
+      },
+      "armorPierceMelee": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.4
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 70,
+        "two": 70,
+        "three": 70
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 22,
+        "two": 24,
+        "three": 24
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "vampire_king": {
+      "className": "Vampire King",
+      "money": 2500,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 999,
+        "two": 999,
+        "three": 999
+      },
+      "Armor": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "Resist": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "armorPierceMelee": {
+        "one": 0.8,
+        "two": 0.8,
+        "three": 0.9
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 50,
+        "two": 50,
+        "three": 50
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      }
+    },
+    "ghost": {
+      "className": "Ghost",
+      "money": 90,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 50,
+        "two": 60,
+        "three": 70
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0.4,
+        "two": 0.5,
+        "three": 0.6
+      },
+      "armorPierceMelee": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 50,
+        "two": 50,
+        "three": 50
+      },
+      "attackSpeedRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 8,
+        "two": 9,
+        "three": 10
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 1.5,
+        "two": 1.5,
+        "three": 1.5
+      }
+    },
+    "Summoner": {
+      "className": "Summoner",
+      "money": 350,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 40,
+        "two": 50,
+        "three": 60
+      },
+      "Health": {
+        "one": 350,
+        "two": 360,
+        "three": 370
+      },
+      "Armor": {
+        "one": 0.5,
+        "two": 0.5,
+        "three": 0.5
+      },
+      "Resist": {
+        "one": 0.6,
+        "two": 0.7,
+        "three": 0.7
+      },
+      "armorPierceMelee": {
+        "one": 0.3,
+        "two": 0.3,
+        "three": 0.3
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0.1,
+        "two": 0.1,
+        "three": 0.1
+      },
+      "attackSpeedMelee": {
+        "one": 75,
+        "two": 70,
+        "three": 70
+      },
+      "attackSpeedRanged": {
+        "one": 75,
+        "two": 75,
+        "three": 75
+      },
+      "accuracy": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      },
+      "damageMelee": {
+        "one": 14,
+        "two": 17,
+        "three": 20
+      },
+      "damageRanged": {
+        "one": 20,
+        "two": 20,
+        "three": 20
+      },
+      "walkSpeed": {
+        "one": 0.9,
+        "two": 0.9,
+        "three": 0.9
+      }
+    },
+    "npc_woman": {
+      "className": "Woman",
+      "money": 10,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 7,
+        "two": 7,
+        "three": 7
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      }
+    },
+    "npc_man": {
+      "className": "Man",
+      "money": 10,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 11,
+        "two": 11,
+        "three": 11
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      }
+    },
+    "npc_oldman": {
+      "className": "Old man",
+      "money": 10,
+      "money_upgrade": 0,
+      "Experience": {
+        "one": 15,
+        "two": 20,
+        "three": 25
+      },
+      "Health": {
+        "one": 9,
+        "two": 9,
+        "three": 9
+      },
+      "Armor": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "Resist": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceMelee": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "armorPierceRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "magicPierce": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "attackSpeedMelee": {
+        "one": 60,
+        "two": 60,
+        "three": 60
+      },
+      "attackSpeedRanged": {
+        "one": 100,
+        "two": 100,
+        "three": 100
+      },
+      "accuracy": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageMelee": {
+        "one": 1,
+        "two": 1,
+        "three": 1
+      },
+      "damageRanged": {
+        "one": 0,
+        "two": 0,
+        "three": 0
+      },
+      "walkSpeed": {
+        "one": 0.6,
+        "two": 0.6,
+        "three": 0.6
+      }
+    }
+  },
+  "kind_constants": {
+    "NONE": -1,
+    "BUTTON_WARRIORS": -10,
+    "BUTTON_MAGES": -11,
+    "BUTTON_ARCHERS": -12,
+    "BUTTON_PRIESTS": -13,
+    "BUTTON_THIEVES": -14,
+    "FR_WARRIOR": 1,
+    "FR_SWORDMASTER": 7,
+    "FR_KNIGHT": 13,
+    "FR_ARCHER": 2,
+    "FR_CROSSBOW": 14,
+    "FR_SNIPER": 12,
+    "FR_BLUEMAGE": 5,
+    "FR_REDMAGE": 8,
+    "FR_BLACKMAGE": 9,
+    "FR_PRIEST": 4,
+    "FR_WISEMAN": 42,
+    "NPC_OLDMAN": 43,
+    "NPC_MAN": 44,
+    "NPC_WOMAN": 45,
+    "FR_HEALER": 10,
+    "FR_BLESSER": 11,
+    "FR_ROGUE": 18,
+    "FR_ASSASIN": 19,
+    "FR_SABOTEUR": 20,
+    "FR_KING": 41,
+    "CLASS_WARRIOR": 100,
+    "CLASS_ARCHER": 200,
+    "CLASS_MAGE": 300,
+    "CLASS_PRIEST": 400,
+    "CLASS_THIEF": 500,
+    "UNDEAD_ZOMBIE": 6,
+    "UNDEAD_SKELETON": 16,
+    "UNDEAD_SKELETON_ARM": 15,
+    "UNDEAD_SKELETON_CAPITAN": 17,
+    "UNDEAD_SKELETON_ARCHER": 3,
+    "UNDEAD_DARTH_KNIGHT": 0,
+    "UNDEAD_GRAY_ZOMBIE": 21,
+    "MONSTER_OGRE": 22,
+    "UNDEAD_WITCH": 23,
+    "UNDEAD_VAMPIRE": 24,
+    "MONSTER_KAMIKAZE": 25,
+    "UNDEAD_SHAMAN": 26,
+    "UNDEAD_STORMGUARDIAN": 27,
+    "UNDEAD_STORMTROOPER": 28,
+    "UNDEAD_STORMARCHER": 29,
+    "UNDEAD_SEEKER": 30,
+    "MONSTER_HOUND": 32,
+    "MONSTER_GREEN_HOUND": 31,
+    "UNDEAD_PLAGUE_ZOMBIE": 33,
+    "UNDEAD_RANGER": 34,
+    "MONSTER_TROLL": 35,
+    "UNDEAD_VAMPIRE_LORD": 36,
+    "UNDEAD_VAMPIRE_KING": 37,
+    "UNDEAD_SUMMONER": 38,
+    "UNDEAD_GHOST": 39,
+    "MONSTER_KAMI_SHIELD": 40,
+    "STAND": 1,
+    "WALKING": 2,
+    "FIGHTING": 3,
+    "ROOTED": 4,
+    "DEAD": 5,
+    "RANGED_SHOOT": 6,
+    "CASTING": 7,
+    "GLOBAL_SEARCH_COUNTER": 10,
+    "C_DEATH_TIME_AVALIABLE": 300,
+    "PLAYING": 0,
+    "STOPPED": 1,
+    "MAX_PURSUIT_DISTANCE": 150,
+    "MAX_DISTANCE_BEFORE_MAKING_BATTLE": 40,
+    "unit_numWarriors": 0,
+    "unit_numMages": 0,
+    "unit_numArchers": 0,
+    "unit_numPriests": 0,
+    "unit_numRogues": 0,
+    "MAX_TIME_PURSUE": 280,
+    "MAX_DIST_FROM_MASS_CENTER": 160,
+    "direction": 1,
+    "searchCounter": 0,
+    "deathTime": 0,
+    "curFrame": 0,
+    "stunCounter": 0,
+    "scounter": 0,
+    "curseCounter": 0,
+    "maxDamage": 0,
+    "confusedCounter": 0,
+    "classKind": -1,
+    "_loc10_": 0,
+    "_loc11_": 0,
+    "_loc13_": 0,
+    "_loc14_": 0,
+    "_loc4_": 0,
+    "_loc6_": 0,
+    "tm": 0,
+    "_loc2_": 0,
+    "_loc9_": 0,
+    "_loc5_": 0,
+    "_loc7_": 0,
+    "_loc3_": 0,
+    "_loc16_": 0,
+    "_loc17_": 0,
+    "_loc18_": 0,
+    "_loc20_": 0,
+    "_loc23_": 0,
+    "_loc1_": 0
+  }
+}

@@ -1,0 +1,2 @@
+Magic resistance. The higher this value, the less damage 
+a unit receives from magic attacks.

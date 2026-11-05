@@ -1,0 +1,4 @@
+headshots that deal immense damage. Unlike regular archers, 
+snipers will not die from a few hits in close combat, but they also 
+need strong cover. Use snipers to eliminate archers and casters, and to kill or weaken 
+enemies: headshots will kill any enemy with few hitpoints.

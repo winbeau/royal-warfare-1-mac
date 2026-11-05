@@ -1,0 +1,3 @@
+Gained experience and XP until next veterancy status. 
+Units get experience attacking enemies and receiving 
+hits. Priests get XP healing friendly units.

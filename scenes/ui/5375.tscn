@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5375/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5375/3_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5375/4_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5375/5_0.png" id="t3_0"]
+
+[node name="Original_5375" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5375
+
+[node name="eBack" type="TextureRect" parent="."]
+offset_left = -56.5
+offset_top = -15.0
+offset_right = 22.5
+offset_bottom = 25.5
+mouse_filter = 2
+metadata/original_instance = "eBack"
+metadata/character_id = 5371
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tName" type="TextureRect" parent="."]
+offset_left = -53.0
+offset_top = -12.5
+offset_right = 20.5
+offset_bottom = 0.5
+mouse_filter = 2
+metadata/original_instance = "tName"
+metadata/character_id = 5373
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tCost" type="TextureRect" parent="."]
+offset_left = -29.0
+offset_top = 0.5
+offset_right = -6.5
+offset_bottom = 13.5
+mouse_filter = 2
+metadata/original_instance = "tCost"
+metadata/character_id = 5374
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eCoins" type="TextureRect" parent="."]
+offset_left = -45.5
+offset_top = 1.5
+offset_right = -32.0
+offset_bottom = 12.0
+mouse_filter = 2
+metadata/original_instance = "eCoins"
+metadata/character_id = 4878
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0

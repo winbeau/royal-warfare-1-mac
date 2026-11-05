@@ -1,0 +1,1 @@
+Place archers at the first line, and warriors at the second, right behind them. When enemies come closer, warriors will charge and block the incoming enemy warriors.

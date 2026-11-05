@@ -1,0 +1,1 @@
+Select a group of soldiers. Press SHIFT+number or CTRL+number to assign a group. &nbsp;You can use numbers from 0 to 9.

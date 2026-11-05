@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/2_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/4_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/5_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/7_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/3259/8_0.png" id="t5_0"]
+
+[node name="Original_3259" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 3259
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -23.85
+offset_top = -0.05000000000000071
+offset_right = 84.65
+offset_bottom = 52.95
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 3250
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_2" type="TextureRect" parent="."]
+offset_left = -24.85
+offset_top = -0.5500000000000007
+offset_right = 88.65
+offset_bottom = 56.45
+mouse_filter = 2
+metadata/original_instance = "depth_2"
+metadata/character_id = 3252
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_4" type="TextureRect" parent="."]
+offset_left = -15.850000000000001
+offset_top = 16.95
+offset_right = 37.65
+offset_bottom = 29.95
+mouse_filter = 2
+metadata/original_instance = "depth_4"
+metadata/character_id = 3253
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_5" type="TextureRect" parent="."]
+offset_left = -19.35
+offset_top = 44.95
+offset_right = 79.65
+offset_bottom = 49.45
+mouse_filter = 2
+metadata/original_instance = "depth_5"
+metadata/character_id = 3255
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="tText" type="TextureRect" parent="."]
+offset_left = -12.850000000000001
+offset_top = 29.95
+offset_right = 82.65
+offset_bottom = 44.95
+mouse_filter = 2
+metadata/original_instance = "tText"
+metadata/character_id = 3256
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eBar" type="TextureRect" parent="."]
+offset_left = -19.85
+offset_top = 44.95
+offset_right = 80.15
+offset_bottom = 49.95
+mouse_filter = 2
+metadata/original_instance = "eBar"
+metadata/character_id = 3258
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0

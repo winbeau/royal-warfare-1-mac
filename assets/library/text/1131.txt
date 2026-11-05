@@ -1,0 +1,6 @@
+Archers deal immense damage using their arrows to 
+unarmored targets, and their mobility grants them 
+an ability to evade enemy attackers. But they are 
+weak in close combat, and all marksmen, except 
+crossbowmen, can do almost nothing to armored 
+targets.

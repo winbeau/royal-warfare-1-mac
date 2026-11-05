@@ -1,0 +1,482 @@
+{
+  "FR_WARRIOR": {
+    "attack_index": 0,
+    "defense_index": 1,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 1.0
+      },
+      {
+        "bonusDamage": 1.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusArmor": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusArmor": 0.15
+      }
+    ]
+  },
+  "FR_SWORDMASTER": {
+    "attack_index": 0,
+    "defense_index": 1,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 3.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 15.0
+      },
+      {
+        "bonusHP": 15.0,
+        "bonusArmor": 0.1
+      },
+      {
+        "bonusHP": 30.0,
+        "bonusArmor": 0.15
+      }
+    ]
+  },
+  "FR_KNIGHT": {
+    "attack_index": 0,
+    "defense_index": 1,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 20.0
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusArmor": 0.1
+      },
+      {
+        "bonusHP": 40.0,
+        "bonusArmor": 0.15
+      }
+    ]
+  },
+  "FR_ARCHER": {
+    "attack_index": 2,
+    "defense_index": 3,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 1.0
+      },
+      {
+        "bonusDamage": 1.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 5.0
+      },
+      {
+        "bonusHP": 5.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ]
+  },
+  "FR_CROSSBOW": {
+    "attack_index": 2,
+    "defense_index": 3,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 3.0
+      },
+      {
+        "bonusDamage": 3.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusArmorPierce": 0.2
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 15.0
+      },
+      {
+        "bonusHP": 15.0,
+        "bonusArmor": 0.1
+      },
+      {
+        "bonusHP": 30.0,
+        "bonusArmor": 0.15
+      }
+    ]
+  },
+  "FR_SNIPER": {
+    "attack_index": 2,
+    "defense_index": 3,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 1.0
+      },
+      {
+        "bonusDamage": 1.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ]
+  },
+  "FR_BLUEMAGE": {
+    "attack_index": 4,
+    "defense_index": 5,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusMagicPierce": 0.1
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusMagicPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 5.0
+      },
+      {
+        "bonusHP": 5.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.2
+      }
+    ]
+  },
+  "FR_REDMAGE": {
+    "attack_index": 4,
+    "defense_index": 5,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 3.0
+      },
+      {
+        "bonusDamage": 3.0,
+        "bonusMagicPierce": 0.1
+      },
+      {
+        "bonusDamage": 5.0,
+        "bonusMagicPierce": 0.2
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusResist": 0.15
+      }
+    ]
+  },
+  "FR_BLACKMAGE": {
+    "attack_index": 4,
+    "defense_index": 5,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 4.0
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusMagicPierce": 0.1
+      },
+      {
+        "bonusDamage": 6.0,
+        "bonusMagicPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusResist": 0.15
+      }
+    ]
+  },
+  "FR_PRIEST": {
+    "attack_index": 8,
+    "defense_index": 9,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 1.0
+      },
+      {
+        "bonusDamage": 1.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 5.0
+      },
+      {
+        "bonusHP": 5.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.2
+      }
+    ]
+  },
+  "FR_HEALER": {
+    "attack_index": 8,
+    "defense_index": 9,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusResist": 0.15
+      }
+    ]
+  },
+  "FR_BLESSER": {
+    "attack_index": 8,
+    "defense_index": 9,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusDamage": 3.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusResist": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusResist": 0.15
+      }
+    ]
+  },
+  "FR_ROGUE": {
+    "attack_index": 6,
+    "defense_index": 7,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 1.0
+      },
+      {
+        "bonusDamage": 1.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 7.0
+      },
+      {
+        "bonusHP": 7.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusHP": 15.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ]
+  },
+  "FR_SABOTEUR": {
+    "attack_index": 6,
+    "defense_index": 7,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 3.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ]
+  },
+  "FR_ASSASIN": {
+    "attack_index": 6,
+    "defense_index": 7,
+    "attack": [
+      {},
+      {
+        "bonusDamage": 2.0
+      },
+      {
+        "bonusDamage": 2.0,
+        "bonusArmorPierce": 0.1
+      },
+      {
+        "bonusDamage": 4.0,
+        "bonusArmorPierce": 0.15
+      }
+    ],
+    "defense": [
+      {},
+      {
+        "bonusHP": 10.0
+      },
+      {
+        "bonusHP": 10.0,
+        "bonusMoveSpeed": 0.1
+      },
+      {
+        "bonusHP": 20.0,
+        "bonusMoveSpeed": 0.15
+      }
+    ]
+  }
+}

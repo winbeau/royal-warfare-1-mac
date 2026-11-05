@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/30_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/30_1.png" id="t1_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/30_2.png" id="t1_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/40_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/44_0.png" id="t3_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/358_0.png" id="t4_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/763/370_0.png" id="t5_0"]
+
+[node name="Original_763" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 763
+
+[node name="eBg" type="TextureRect" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 700.0
+offset_bottom = 600.0
+mouse_filter = 2
+metadata/original_instance = "eBg"
+metadata/character_id = 724
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="bMenu" type="TextureButton" parent="."]
+offset_left = 293.5
+offset_top = 531.5
+offset_right = 421.5
+offset_bottom = 584.0
+mouse_filter = 0
+metadata/original_instance = "bMenu"
+metadata/character_id = 538
+focus_mode = 0
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("t1_0")
+texture_hover = ExtResource("t1_1")
+texture_pressed = ExtResource("t1_2")
+
+[node name="eLogo" type="TextureRect" parent="."]
+offset_left = 236.0
+offset_top = 0.5
+offset_right = 469.5
+offset_bottom = 75.0
+mouse_filter = 2
+metadata/original_instance = "eLogo"
+metadata/character_id = 726
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eText" type="TextureRect" parent="."]
+offset_left = 120.5
+offset_top = 98.0
+offset_right = 562.5
+offset_bottom = 516.0
+mouse_filter = 2
+metadata/original_instance = "eText"
+metadata/character_id = 751
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eAchievement" type="TextureRect" parent="."]
+offset_left = 605.0
+offset_top = 17.5
+offset_right = 680.5
+offset_bottom = 104.5
+mouse_filter = 2
+metadata/original_instance = "eAchievement"
+metadata/character_id = 762
+texture = ExtResource("t4_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eAchievementFinal" type="TextureRect" parent="."]
+offset_left = 526.5
+offset_top = 17.5
+offset_right = 602.0
+offset_bottom = 108.0
+mouse_filter = 2
+metadata/original_instance = "eAchievementFinal"
+metadata/character_id = 657
+texture = ExtResource("t5_0")
+expand_mode = 1
+stretch_mode = 0

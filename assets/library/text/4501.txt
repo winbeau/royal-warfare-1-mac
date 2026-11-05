@@ -1,0 +1,5 @@
+Knights are the elite soldiers of any royal army. They wear 
+heavy armor and carry heavy long swords. Knights' attacks 
+doesn't cause huge damage, but their long sword has  
+armor-piercing capacity, and their armor gives them a 
+chance to survive under a swarm of arrows and swords. 

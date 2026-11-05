@@ -1,0 +1,1 @@
+Each soldier has two unique abilities, and soldiers decide themselves when to use them. These abilities can be unlocked and improved between missions.

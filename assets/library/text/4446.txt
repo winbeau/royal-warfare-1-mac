@@ -1,0 +1,4 @@
+Base attack damage. Real damage can be different due to 
+target's armor values and armor piercing amount (magic 
+resistance and magic piercing for Mages). Note that some 
+units strike twice per attack (e.g. Swordmasters).

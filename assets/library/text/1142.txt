@@ -1,0 +1,1 @@
+Select your ranged units and hold Z button to see their range.

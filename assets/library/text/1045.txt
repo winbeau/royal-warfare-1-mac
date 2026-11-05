@@ -1,0 +1,1 @@
+To select a single unit, just click it.Select several units by dragging a frame over an area.

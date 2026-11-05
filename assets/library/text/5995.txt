@@ -1,0 +1,5 @@
+Looks like local storage is disabled. You can loose your 
+--- RECORDSEPARATOR ---
+progress after you close the web page. Watch this video 
+--- RECORDSEPARATOR ---
+to get information on how you can fix it.

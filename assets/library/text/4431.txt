@@ -1,0 +1,2 @@
+Pause the game. You can issue orders to your troops 
+while the game is paused. Use 

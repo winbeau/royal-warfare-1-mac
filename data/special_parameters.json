@@ -1,0 +1,771 @@
+{
+  "specBackStab": {
+    "tables": {
+      "_loc2_": [
+        3,
+        5,
+        7
+      ],
+      "aTimeUntilUpdate": [
+        20,
+        17,
+        15
+      ]
+    },
+    "key": "A_BACKSTAB",
+    "cooldown": 0,
+    "description": "Backstab\nBackstabs enemy. If target is fighting with allied soldier, can perform an instant kill.",
+    "icon": 2
+  },
+  "specCurseBless": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        40,
+        35,
+        30
+      ],
+      "aBlessTime": [
+        10,
+        12,
+        14
+      ],
+      "aArea": [
+        100,
+        120,
+        140
+      ],
+      "aCurseBlessPower": [
+        0.25,
+        0.35,
+        0.45
+      ]
+    },
+    "key": "A_CURSEBLESS",
+    "cooldown": 0,
+    "description": "Bless\nBlesses friendly units in area, increasing their attack abilities",
+    "icon": 10
+  },
+  "specStrongHeal": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        35,
+        30,
+        25
+      ],
+      "_loc2_": [
+        6,
+        7,
+        8
+      ]
+    },
+    "key": "A_STRONGHEAL",
+    "cooldown": 0,
+    "description": "Blessed Healing\nHeals huge amount of health",
+    "icon": 31
+  },
+  "specVampirizm": {
+    "tables": {
+      "aRatio": [
+        1,
+        1,
+        1
+      ]
+    },
+    "key": "",
+    "cooldown": 0,
+    "description": "Vampirism\nRecovers some health after any attack",
+    "icon": 30
+  },
+  "specBetray": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        70,
+        65,
+        60
+      ],
+      "aTimeToPossess": [
+        12,
+        20,
+        26
+      ]
+    },
+    "key": "A_BETRAY",
+    "cooldown": 0,
+    "description": "Mind Control\nTarget turns to your side for some time",
+    "icon": 3
+  },
+  "specRoundAttack": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        20,
+        16,
+        12
+      ]
+    },
+    "key": "A_ROUNDATTACK",
+    "cooldown": 0,
+    "description": "Circle strike\nRound attack damages all enemies in range",
+    "icon": 23
+  },
+  "specSlow": {
+    "tables": {
+      "aTimeToSlow": [
+        4,
+        5,
+        6
+      ],
+      "aArea": [
+        40,
+        50,
+        60
+      ],
+      "aTimeUntilUpdate": [
+        22,
+        20,
+        18
+      ]
+    },
+    "key": "A_SLOW",
+    "cooldown": 0,
+    "description": "Slow\nReduces all enemies' movement speed in small AOE",
+    "icon": 26
+  },
+  "specSilence": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        50,
+        46,
+        43,
+        40
+      ],
+      "aArea": [
+        80,
+        90,
+        100,
+        110
+      ],
+      "aActionTime": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "key": "A_SILENCE",
+    "cooldown": 0,
+    "description": "Confusion\nSaboteur spreads special gas in an area. Confused enemies are forced to attack each other.",
+    "icon": 25
+  },
+  "specMissSkeleton": {
+    "tables": {},
+    "key": "",
+    "cooldown": 0,
+    "description": "Bones\nGives a 15% chance of evading arrows",
+    "icon": 42
+  },
+  "specEnchantWeapon": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        30,
+        26,
+        22
+      ],
+      "aBlessTime": [
+        10,
+        11,
+        12
+      ],
+      "aBonusAP": [
+        2,
+        2.3,
+        2.5
+      ]
+    },
+    "key": "A_ENCHANT",
+    "cooldown": 0,
+    "description": "Enchant weapon\nBlesses target's melee weapon, increasing damage.",
+    "icon": 43
+  },
+  "specOgreStun": {
+    "tables": {
+      "aStunTime": [
+        1,
+        1,
+        1
+      ]
+    },
+    "key": "",
+    "cooldown": 0,
+    "description": "Mass stun\nStuns all enemies in an area",
+    "icon": 18
+  },
+  "specParry": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        9,
+        7,
+        5
+      ]
+    },
+    "key": "A_PARRY",
+    "cooldown": 0,
+    "description": "Parry\nEvade enemy damage and counterattack with a chance of a critical strike.",
+    "icon": 20
+  },
+  "specHide": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        12,
+        8,
+        5
+      ]
+    },
+    "key": "A_HIDE",
+    "cooldown": 0,
+    "description": "Hide\nHides in shadows, no one can attack hidden unit.",
+    "icon": 38
+  },
+  "specCrit": {
+    "tables": {
+      "aProbability": [
+        0.15,
+        0.175,
+        0.2,
+        0.225
+      ]
+    },
+    "key": "A_CRIT",
+    "cooldown": 0,
+    "description": "Critical hit\nGives a chance to cause additional damage",
+    "icon": 1
+  },
+  "specBlock": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        8,
+        6,
+        4
+      ]
+    },
+    "key": "A_BLOCK",
+    "cooldown": 0,
+    "description": "Block\nBlocks incoming melee or ranged attack",
+    "icon": 4
+  },
+  "specBreakArrows": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        18,
+        16,
+        14
+      ],
+      "aArea": [
+        100,
+        110,
+        120
+      ],
+      "aActionTime": [
+        7,
+        9,
+        11
+      ]
+    },
+    "key": "A_BREAKARROW",
+    "cooldown": 0,
+    "description": "Diversion\nDisables enemy archers' and mages' ability to shoot for some time.",
+    "icon": 6
+  },
+  "specTaunt": {
+    "tables": {
+      "aNumToCall": [
+        3,
+        4,
+        5
+      ],
+      "aArea": [
+        100,
+        110,
+        120
+      ],
+      "aTimeUntilUpdate": [
+        30,
+        25,
+        20
+      ]
+    },
+    "key": "A_TAUNT",
+    "cooldown": 0,
+    "description": "Taunt\nCauses closest enemies to forget current targets and attack a knight",
+    "icon": 29
+  },
+  "specRegen": {
+    "tables": {
+      "aRatio": [
+        23,
+        23,
+        23
+      ]
+    },
+    "key": "",
+    "cooldown": 5,
+    "description": "Regeneration\nRegenerates health over time",
+    "icon": 34
+  },
+  "specCurse": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        28,
+        24,
+        20
+      ],
+      "aCurseTime": [
+        6,
+        8,
+        10
+      ],
+      "aArea": [
+        60,
+        75,
+        90
+      ],
+      "aCurseBlessPower": [
+        0.25,
+        0.35,
+        0.45
+      ]
+    },
+    "key": "A_CURSE_BLACK",
+    "cooldown": 0,
+    "description": "Curse\nCurses enemies, lowering their maximum health",
+    "icon": 35
+  },
+  "specFlash": {
+    "tables": {
+      "aDamage": [
+        70,
+        80,
+        90
+      ],
+      "aNumFlash": [
+        1,
+        2,
+        3
+      ],
+      "aTimeUntilUpdate": [
+        46,
+        43,
+        40
+      ]
+    },
+    "key": "A_FLASH",
+    "cooldown": 0,
+    "description": "Lightning strike\nShoot a number of flashes on the battlefield",
+    "icon": 12
+  },
+  "specPoison": {
+    "tables": {
+      "aTimeToPoison": [
+        8,
+        12,
+        14
+      ],
+      "aPoisonStrength": [
+        3,
+        3,
+        4
+      ],
+      "aTimeUntilUpdate": [
+        25,
+        25,
+        25
+      ]
+    },
+    "key": "",
+    "cooldown": 0,
+    "description": "Poison\nPoisoned enemy looses health over time",
+    "icon": 21
+  },
+  "specialTemplate": {
+    "tables": {},
+    "key": "",
+    "cooldown": 0,
+    "icon": 0
+  },
+  "specCollectMoney": {
+    "tables": {
+      "aMoneyProp": [
+        3,
+        6,
+        9
+      ]
+    },
+    "key": "A_COLLECTMONEY",
+    "cooldown": 0,
+    "description": "Steal\nEach attack steals money from enemy.",
+    "icon": 7
+  },
+  "specMissGhost": {
+    "tables": {},
+    "key": "",
+    "cooldown": 0,
+    "description": "Evasion\nGives a chance to evade enemy damage",
+    "icon": 41
+  },
+  "specFlee": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        60,
+        50,
+        40,
+        30
+      ]
+    },
+    "key": "A_FLEE",
+    "cooldown": 0,
+    "description": "Flee\nSave unit's life hiding in shadows when suffering damage",
+    "icon": 13
+  },
+  "specHeadShot": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        24,
+        19,
+        14
+      ],
+      "_loc2_": [
+        4,
+        5,
+        6
+      ]
+    },
+    "key": "A_HEADSHOT",
+    "cooldown": 0,
+    "description": "Headshot\nKills weak unit or causes immense damage",
+    "icon": 40
+  },
+  "specMetheor": {
+    "tables": {
+      "aDamage": [
+        100,
+        130,
+        160
+      ],
+      "aTimeUntilUpdate": [
+        40,
+        35,
+        30
+      ],
+      "_loc2_": [
+        60,
+        65,
+        70
+      ]
+    },
+    "key": "A_METHEOR",
+    "cooldown": 0,
+    "description": "Meteor\nFalling rock damages area and causes immense damage",
+    "icon": 19
+  },
+  "specMissAssasin": {
+    "tables": {
+      "aProbability": [
+        0.2,
+        0.25,
+        0.3
+      ]
+    },
+    "key": "A_MISS_ASSASIN",
+    "cooldown": 0,
+    "description": "Evasion\nGives a chance to evade enemy damage",
+    "icon": 37
+  },
+  "specWeakSpot": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        24,
+        20,
+        16
+      ],
+      "aWeakModifier": [
+        1.6,
+        1.8,
+        2
+      ],
+      "aTimeToWeakSpot": [
+        8,
+        9,
+        10
+      ]
+    },
+    "key": "A_WEAKSPOT",
+    "cooldown": 0,
+    "description": "Weak spot\nTarget that was hit in the weakspot suffers extra damage from attacks",
+    "icon": 15
+  },
+  "specWeakness": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "aWeakTime": [
+        5,
+        7,
+        10,
+        13
+      ]
+    },
+    "key": "A_WEAKNESS",
+    "cooldown": 0,
+    "description": "Weakness\nWeakens enemy and lowers its attack speed",
+    "icon": 33
+  },
+  "specSummonSkeletons": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        12
+      ]
+    },
+    "key": "",
+    "cooldown": 0,
+    "description": "Summon\nSummons a pack of skeletons",
+    "icon": 39
+  },
+  "specMassHeal": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        18,
+        14,
+        10
+      ]
+    },
+    "key": "A_MASSHEAL",
+    "cooldown": 0,
+    "description": "Mass heal\nHeals all friends in an area",
+    "icon": 17
+  },
+  "specSmallRessurect": {
+    "tables": {},
+    "key": "A_RESURRECT",
+    "cooldown": 25,
+    "description": "Resurrect\nResurrects one fallen ally in close area",
+    "icon": 22
+  },
+  "specCorrupt": {
+    "tables": {
+      "aTimeToCorrupt": [
+        6,
+        7,
+        8
+      ],
+      "aCorruptRatio": [
+        0.3,
+        0.5,
+        0.7
+      ],
+      "aTimeUntilUpdate": [
+        24,
+        20,
+        16
+      ]
+    },
+    "key": "A_CORRUPT",
+    "cooldown": 0,
+    "description": "Break armor\nMighty shot breaks target's armor",
+    "icon": 8
+  },
+  "specPoisonRogue": {
+    "tables": {
+      "aTimeToPoison": [
+        10,
+        10,
+        10
+      ],
+      "aPoisonStrength": [
+        3,
+        5,
+        8
+      ],
+      "aTimeUntilUpdate": [
+        26,
+        22,
+        18
+      ]
+    },
+    "key": "A_POISON_THIEF",
+    "cooldown": 0,
+    "description": "Poison\nPoisoned enemy loses health over time",
+    "icon": 36
+  },
+  "specCritRanged": {
+    "tables": {
+      "aProbability": [
+        0.2,
+        0.22,
+        0.25
+      ],
+      "_loc2_": [
+        3,
+        4,
+        5
+      ]
+    },
+    "key": "A_CRITRANGED",
+    "cooldown": 0,
+    "description": "Critical hit\nGives a chance to cause additional damage",
+    "icon": 9
+  },
+  "arrowSwarm": {
+    "tables": {},
+    "key": "",
+    "cooldown": 0,
+    "icon": 0
+  },
+  "specFireHitSplash": {
+    "tables": {
+      "aArea": [
+        70,
+        80,
+        90
+      ]
+    },
+    "key": "A_FIREHITSPLASH",
+    "cooldown": 0,
+    "description": "Splash attack\nDamages all enemies in small AOE with main target",
+    "icon": 11
+  },
+  "specSuppress": {
+    "tables": {
+      "aTimeToSuppress": [
+        5,
+        6,
+        7
+      ],
+      "aSuppressRatio": [
+        1.5,
+        2,
+        2.5
+      ],
+      "aTimeUntilUpdate": [
+        20,
+        16,
+        12
+      ]
+    },
+    "key": "A_SUPPRESS",
+    "cooldown": 0,
+    "description": "Suppress\nReduces target's attack speed",
+    "icon": 28
+  },
+  "specRessurect": {
+    "tables": {
+      "aTimeUntilUpdate": [
+        140,
+        120,
+        100
+      ]
+    },
+    "key": "A_RESURRECT",
+    "cooldown": 0,
+    "description": "Resurrect\nResurrects all fallen allies in range",
+    "icon": 22
+  },
+  "specStun": {
+    "tables": {
+      "aStunTime": [
+        2,
+        3,
+        4
+      ],
+      "aTimeUntilUpdate": [
+        24,
+        19,
+        14
+      ]
+    },
+    "key": "A_STUN",
+    "cooldown": 0,
+    "description": "Stun\nStuns current target",
+    "icon": 27
+  },
+  "specIce": {
+    "tables": {
+      "_loc2_": [
+        1,
+        2,
+        2
+      ],
+      "aTimeUntilUpdate": [
+        34,
+        28,
+        23
+      ],
+      "aFreezeTime": [
+        4,
+        7,
+        10
+      ]
+    },
+    "key": "A_ICE",
+    "cooldown": 0,
+    "description": "Ice\nTraps enemy in ice",
+    "icon": 16
+  },
+  "specHarmResist": {
+    "tables": {
+      "aHarmResistTime": [
+        6,
+        8,
+        10
+      ],
+      "aTimeUntilUpdate": [
+        40,
+        33,
+        25
+      ],
+      "aArea": [
+        125,
+        125,
+        125
+      ]
+    },
+    "key": "A_HARMRESIST",
+    "cooldown": 0,
+    "description": "Defence sphere\nProtects friendly units from almost any harm",
+    "icon": 14
+  },
+  "specSelfDestruct": {
+    "tables": {
+      "aRadius": [
+        80,
+        100,
+        120,
+        140
+      ]
+    },
+    "key": "",
+    "cooldown": 0,
+    "description": "Kamikaze\nSelf-destruction",
+    "icon": -2
+  },
+  "specMassStun": {
+    "tables": {
+      "aStunTime": [
+        2,
+        3,
+        4
+      ],
+      "aTimeUntilUpdate": [
+        22,
+        17,
+        12
+      ]
+    },
+    "key": "A_MASSSTUN",
+    "cooldown": 0,
+    "description": "Mass stun\nStuns all enemies in an area",
+    "icon": 18
+  }
+}

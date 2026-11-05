@@ -1,0 +1,1 @@
+Use CTRL+Click to add a unit to a selected group. You can also use this combination to remove selection from unit.

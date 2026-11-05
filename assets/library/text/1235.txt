@@ -1,0 +1,1 @@
+All units have armor ratings. Units with better armor receive less damage from swords and arrows. The higher the value, the less damage it receives.

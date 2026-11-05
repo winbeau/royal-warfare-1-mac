@@ -1,0 +1,2 @@
+Some spells have area of effect, so for a better result target the 
+center of a group of enemies.

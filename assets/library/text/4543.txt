@@ -1,0 +1,3 @@
+armor, and a high precision shot can even break a target's armor, 
+increasing incoming damage. They shoot slowly, but damage is great. 
+However, their armor and heavy crossbow reduce their mobility.

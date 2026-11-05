@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/original_scene.gd" id="s"]
+[ext_resource type="Texture2D" path="res://assets/ui/5675/1_0.png" id="t0_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5675/7_0.png" id="t1_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5675/9_0.png" id="t2_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/5675/10_0.png" id="t3_0"]
+
+[node name="Original_5675" type="Control"]
+mouse_filter = 2
+script = ExtResource("s")
+symbol_id = 5675
+
+[node name="depth_1" type="TextureRect" parent="."]
+offset_left = -40.85
+offset_top = -14.350000000000001
+offset_right = 44.65
+offset_bottom = 18.15
+mouse_filter = 2
+metadata/original_instance = "depth_1"
+metadata/character_id = 5661
+texture = ExtResource("t0_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eLight" type="TextureRect" parent="."]
+offset_left = -43.35
+offset_top = -15.850000000000001
+offset_right = 37.15
+offset_bottom = 17.15
+mouse_filter = 2
+metadata/original_instance = "eLight"
+metadata/character_id = 528
+texture = ExtResource("t1_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="depth_9" type="TextureRect" parent="."]
+offset_left = -22.85
+offset_top = -5.350000000000001
+offset_right = 27.15
+offset_bottom = 10.649999999999999
+mouse_filter = 2
+metadata/original_instance = "depth_9"
+metadata/character_id = 5662
+texture = ExtResource("t2_0")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="eGotFree" type="TextureRect" parent="."]
+offset_left = -18.35
+offset_top = -30.85
+offset_right = 19.15
+offset_bottom = -11.350000000000001
+mouse_filter = 2
+metadata/original_instance = "eGotFree"
+metadata/character_id = 5668
+texture = ExtResource("t3_0")
+expand_mode = 1
+stretch_mode = 0

@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": 2569,
+    "pages": [
+      "eOne",
+      "eTwo",
+      "eThree",
+      "eFour",
+      "eFive"
+    ],
+    "flag": "comix_intro",
+    "after_mission": 0
+  },
+  {
+    "symbol": 3323,
+    "pages": [
+      "eOne",
+      "eTwo"
+    ],
+    "flag": "comix_two",
+    "after_mission": 6
+  },
+  {
+    "symbol": 3511,
+    "pages": [
+      "eOne",
+      "eTwo"
+    ],
+    "flag": "comix_three",
+    "after_mission": 12
+  },
+  {
+    "symbol": 3287,
+    "pages": [
+      "eOne",
+      "eTwo"
+    ],
+    "flag": "comix_four",
+    "after_mission": 18
+  },
+  {
+    "symbol": 2251,
+    "pages": [
+      "eOne"
+    ],
+    "flag": "comix_five",
+    "after_mission": 21
+  },
+  {
+    "symbol": 2014,
+    "pages": [
+      "eOne",
+      "eTwo"
+    ],
+    "flag": "comix_end",
+    "after_mission": 24
+  }
+]

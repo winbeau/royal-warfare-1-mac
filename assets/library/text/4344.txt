@@ -1,0 +1,2 @@
+Each killed soldier or escaped enemy will cost one heart. The 
+remaining number of hearts affects the reward after the battle.

@@ -1,0 +1,1 @@
+Damage received: 12345

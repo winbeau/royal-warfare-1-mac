@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Royal Warfare 1 — Mac"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/icon.png"
+
+[autoload]
+
+Content="*res://game/content.gd"
+
+[display]
+
+window/size/viewport_width=700
+window/size/viewport_height=600
+window/size/window_width_override=1050
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
+[physics]
+
+common/physics_ticks_per_second=30
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.03, 0.04, 0.04, 1)

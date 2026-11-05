@@ -1,0 +1,1 @@
+Click friendly or enemy unit to get unit's information bar.

@@ -1,0 +1,1 @@
+A unit can't withdraw from battle, if he is surrounded by fast-moving enemies.

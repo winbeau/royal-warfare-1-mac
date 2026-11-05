@@ -1,0 +1,1 @@
+You can also use hotkeys: press X to form horizontal line, and C to form vertical line.
