@@ -24,6 +24,8 @@ case "$action" in
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
         "$godot_bin" --headless --path "$project_dir" --script tests/smoke.gd -- --isolated-profile
         "$godot_bin" --headless --path "$project_dir" --script tests/combat_rules.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/rw_runtime.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/sounds_runtime.gd -- --isolated-profile
         exec "$godot_bin" --headless --path "$project_dir" --script tests/campaign_flow.gd -- --isolated-profile
         ;;
     export)
