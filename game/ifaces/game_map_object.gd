@@ -1,5 +1,5 @@
 # 移植自 S/gameCore/ifaces/gameMapObject.as
-# 世界地图：静态共享的地图位图（mapBitmap）+ 动画元素（anims，缺陷见下）+ 24 个 flagMap 旗帜与路线
+# 世界地图：静态共享的地图位图（mapBitmap）+ 动画元素（anims）+ 24 个 flagMap 旗帜与路线
 # （markers，character 5700）。旗帜按存档星级显示已访问/未访问/星数，未访问的第一关用 redRotatingCircle
 # 红圈标出；bNext/bUpgrades/bMore/bMenu/bAchives/bReset 等按钮，F+Shift+Alt+Ctrl 赞助商解锁秘籍。
 #
@@ -7,11 +7,10 @@
 # - gameMapObject 本身在原版没有对应的 fla 符号（直接继承 MovieClip，构造函数/init() 里用代码把
 #   mapBitmap、anims、markers 加到显示列表），所以 scenes/ifaces/game_map_object.tscn 同 popup_mission_ex
 #   一样不走"继承符号场景"的套路。
-# - gameMapAnimatedElems（character 5565，地图上的装饰性动画，如旗帜飘动、篝火等）没有被
-#   pipeline/clips.py 导出到 scenes/clips/，assets/clips/ 也没有 5565 这个 id；这里用一个空 Control
-#   占位（保持 mapBitmap 与 markers 之间的层级顺序），不播放任何动画，记入汇报。因为原版构造函数里
-#   对 anims 每个子剪辑调用一次 Utility.randRange(1,totalFrames)，这里完全跳过，RNG 调用序列相应
-#   少了未知次数（数量未知，因为符号缺失），如果后续需要和原版逐帧对拍 RNG，需要先补上这个符号的导出。
+# - gameMapAnimatedElems（character 5565）已由 pipeline 导出：8 个未命名子剪辑（character 5564）在导出时按显示列表
+#   顺序命名为 e0..e7。符号 5564 自身只有 1 帧，里面嵌套的 5563（160 帧）自行循环，导出时 5564 展开为 160 帧
+#   循环。因此原版 randRange(1, totalFrames) 的 totalFrames 恒为 1（结果恒为 1），这里仍按原版调用 8 次
+#   RWRandom.rand_range(1, 1)，保持 RNG 序列一致，然后从第 1 帧开始播放（嵌套动画在原版里也都是同步的）。
 # - popupReset_ex / popupSaveLoad_ex / popupStorageFailure_ex 由 S1 负责，移植完成前通过
 #   IfaceUtil.global_script() 动态获取；没有就绪时相关按钮静默跳过（不报错，记入汇报）。
 # - Main.isArmor（静态布尔，是否 Armor Games 站点）、Main.inst.check_armor_quests() 当前 Main 没有提供，
@@ -22,7 +21,7 @@ extends FlashClip
 const SCENE := "res://scenes/ifaces/game_map_object.tscn"
 
 static var map_bitmap: FlashClip
-static var anims: Control  # gameMapAnimatedElems 的占位（见上方注释），原版类型是 MovieClip
+static var anims: FlashClip  # gameMapAnimatedElems
 static var markers: FlashClip  # allMarkers
 static var _inited_once: bool = false
 
@@ -61,9 +60,7 @@ static func init_once() -> void:
 		return
 	_inited_once = true
 	map_bitmap = (load("res://scenes/clips/gameMap.tscn") as PackedScene).instantiate()
-	anims = Control.new()
-	anims.name = "gameMapAnimatedElems"
-	anims.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	anims = (load("res://scenes/clips/gameMapAnimatedElems.tscn") as PackedScene).instantiate()
 	markers = (load("res://scenes/clips/allMarkers.tscn") as PackedScene).instantiate()
 	IfaceUtil.when_ready(markers, func() -> void:
 		(markers.get_node("bNext") as FlashClip).stop()
@@ -73,13 +70,18 @@ static func init_once() -> void:
 		(markers.get_node("bMenu") as FlashClip).stop())
 
 
-## 原版构造函数：建三个弹窗、给 anims 的每个子剪辑随机起始帧（anims 缺失，跳过，见文件头注释），建红圈，
+## 原版构造函数：建三个弹窗、给 anims 的每个子剪辑随机起始帧，建红圈，
 ## 从 markers 收集 aActs/aFlagsBeforeActScrolls/aMarkers/aRoutes。
 func _construct() -> void:
 	pop = PopupMissionEx.new()
 	reset_pop = _make_popup("PopupResetEx")
 	armor_save_pop = _make_popup("PopupSaveLoadEx")
 	storage_popup = _make_popup("PopupStorageFailureEx")
+	for i in anims.get_child_count():
+		var elem := anims.get_child(i) as FlashClip
+		# 原版 gotoAndPlay(Utility.randRange(1, totalFrames))；符号 5564 的原始 totalFrames 为 1，见文件头注释
+		RWRandom.rand_range(1, 1)
+		elem.goto_and_play(1)
 	red_circle = (load("res://scenes/clips/redRotatingCircle.tscn") as PackedScene).instantiate()
 	IfaceUtil.when_ready(red_circle, func() -> void:
 		(red_circle.get_node("eAnim") as FlashClip).stop())
@@ -121,30 +123,36 @@ func _added() -> void:
 	if _attached:
 		return
 	_attached = true
-	var main: Variant = IfaceUtil.main()
-	var is_armor: bool = bool(main.get("is_armor")) if main != null and main.get("is_armor") != null else false
-	var b_online: FlashClip = markers.get_node("bOnline")
-	if is_armor:
-		b_online.visible = true
-		ButtonClass.add_button_scale(b_online, button_clicked)
-		if RWRandom.rand() > 0.8 and main != null and main.has_method("check_armor_quests"):
-			main.check_armor_quests()
-	else:
-		b_online.visible = false
-	var e_storage_failure: FlashClip = markers.get_node("eStorageFailure")
-	if not StoredData.is_save_ok:
-		StoredData.save_data(StoredData.COM_SAVE_DATA_TO_SHARED, null)
-		if not StoredData.is_save_ok:
-			e_storage_failure.visible = true
-			ButtonClass.add_button_scale(e_storage_failure, button_clicked)
-		else:
-			e_storage_failure.visible = false
-	else:
-		e_storage_failure.visible = false
 	s = SoundLibrary.inst
 	add_child(map_bitmap)
 	add_child(anims)
 	add_child(markers)
+	# 偏离/缺陷：原版 markers（MovieClip）构造完成即可同步改子节点属性；这里 markers 是 FlashClip，
+	# 要等它随 add_child 真正进入场景树、_ready() 按符号帧 1 的默认状态重设过一遍子节点可见性之后，
+	# 再改 bOnline/eStorageFailure 才不会被覆盖（IfaceUtil.when_ready 等就绪后再读写，同文件开头
+	# init_once() 对 bNext 等按钮 stop() 的处理一致）。原版这两段逻辑在 addChild(markers) 之前，这里
+	# 调整到 add_child(markers) 之后 + when_ready，只是时序上的适配，不改变最终显示结果。
+	IfaceUtil.when_ready(markers, func() -> void:
+		var main: Variant = IfaceUtil.main()
+		var is_armor: bool = bool(main.get("is_armor")) if main != null and main.get("is_armor") != null else false
+		var b_online: FlashClip = markers.get_node("bOnline")
+		if is_armor:
+			b_online.visible = true
+			ButtonClass.add_button_scale(b_online, button_clicked)
+			if RWRandom.rand() > 0.8 and main != null and main.has_method("check_armor_quests"):
+				main.check_armor_quests()
+		else:
+			b_online.visible = false
+		var e_storage_failure: FlashClip = markers.get_node("eStorageFailure")
+		if not StoredData.is_save_ok:
+			StoredData.save_data(StoredData.COM_SAVE_DATA_TO_SHARED, null)
+			if not StoredData.is_save_ok:
+				e_storage_failure.visible = true
+				ButtonClass.add_button_scale(e_storage_failure, button_clicked)
+			else:
+				e_storage_failure.visible = false
+		else:
+			e_storage_failure.visible = false)
 	var e_logo: FlashClip = markers.get_node("eLogo")
 	RWTween.from(e_logo, 0.5, {"y": "-100", "delay": 0.1, "ease": RWEase.cubic_ease_out})
 	ButtonClass.add_button_scale(markers.get_node("bReset"), button_clicked)

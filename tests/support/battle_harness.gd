@@ -6,21 +6,12 @@ extends RefCounted
 ## 捕获引擎日志中的脚本错误（SCRIPT ERROR / push_error）。警告不计。
 class ErrorCatcher extends Logger:
 	var errors: Array = []
-	## 发生在界面层文件里的错误（HUD 子代理移植中的 game/ifaces、game/rw/flash_*、button_class）单独统计，不计入核心错误。
+	## 界面层错误不再放过，全部计入 errors；ui_errors 仅为兼容旧输出，恒为空。
 	var ui_errors: Dictionary = {}
 	func _log_error(function: String, file: String, line: int, code: String, rationale: String, _editor_notify: bool, error_type: int, script_backtraces: Array) -> void:
 		if error_type == Logger.ERROR_TYPE_WARNING:
 			return
 		var msg := "%s:%d %s %s %s" % [file, line, function, code, rationale]
-		var origin := file
-		if not file.begins_with("res://") and script_backtraces.size() > 0:
-			# 引擎内部报错（如 Rect2.has_point）：以最内层脚本帧所在文件归属
-			var bt: ScriptBacktrace = script_backtraces[0]
-			if bt.get_frame_count() > 0:
-				origin = bt.get_frame_file(0)
-		if origin.begins_with("res://game/ifaces/") or origin.begins_with("res://game/rw/flash_") or origin.begins_with("res://game/rw/button_class"):
-			ui_errors[msg] = int(ui_errors.get(msg, 0)) + 1
-			return
 		errors.append(msg)
 
 var catcher := ErrorCatcher.new()
@@ -48,8 +39,6 @@ func boot() -> void:
 		ExtDataManager.new().init()
 	if GameUniverse.selection_ramka == null:
 		GameUniverse.init_once()
-	if ChatController.inst == null:
-		ChatController.inst = ChatController.new()  # 原版由 mainGameUI_ex 创建 chatController；HUD 未接入前给核心一个非空实例
 	if Main.inst == null:
 		Main.new()  # 原版 Main.self（关卡钩子 Main.inst.addTutorial 等）
 	var tw := RWTween.inst_()

@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5565/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5564.tscn" id="c7"]
+
+[node name="gameMapAnimatedElems" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5565
+total_frames = 1
+metadata/character_id = 5565
+
+[node name="e0" parent="." instance=ExtResource("c0")]
+position = Vector2(201.65, 84.2)
+metadata/original_instance = "e0"
+metadata/character_id = 5564
+
+[node name="e1" parent="." instance=ExtResource("c1")]
+position = Vector2(407.65, 191.2)
+metadata/original_instance = "e1"
+metadata/character_id = 5564
+
+[node name="e2" parent="." instance=ExtResource("c2")]
+position = Vector2(566.65, 250.2)
+metadata/original_instance = "e2"
+metadata/character_id = 5564
+
+[node name="e3" parent="." instance=ExtResource("c3")]
+position = Vector2(499.65, 259.2)
+metadata/original_instance = "e3"
+metadata/character_id = 5564
+
+[node name="e4" parent="." instance=ExtResource("c4")]
+position = Vector2(655.65, 180.2)
+metadata/original_instance = "e4"
+metadata/character_id = 5564
+
+[node name="e5" parent="." instance=ExtResource("c5")]
+position = Vector2(317.65, 359.15)
+metadata/original_instance = "e5"
+metadata/character_id = 5564
+
+[node name="e6" parent="." instance=ExtResource("c6")]
+position = Vector2(432.65, 375.15)
+metadata/original_instance = "e6"
+metadata/character_id = 5564
+
+[node name="e7" parent="." instance=ExtResource("c7")]
+position = Vector2(395.65, 417.15)
+metadata/original_instance = "e7"
+metadata/character_id = 5564

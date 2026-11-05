@@ -31,7 +31,7 @@
 | `gameCore/serviceUtils/` | `game/service/` |
 | `gameCore/Memory/` | `game/memory/` |
 | `gameCore/ifaces/` | `game/ifaces/` |
-| `Main.as` | `game/main.gd`（ifaces 阶段改写） |
+| `Main.as` | `game/core/main.gd`（含启动流程、切屏），`game/core/preloader.gd`（预载/开始按钮/片头） |
 
 - 每个原类对应一个文件。文件名用原类名的 snake_case（`livingObject` → `living_object.gd`），`class_name` 用 PascalCase（`LivingObject`、`ArrowEx`、`SpecStun`）。文件首行注释写 `# 移植自 S/gameCore/living/livingObject.as`。
 - 字段、方法、局部常量统一取原名的 snake_case，**保留原拼写和错字**：`curStanse` → `cur_stanse`，`mainAlgUpdateSprite` → `main_alg_update_sprite`，`achives` 不改成 achieves。常量保持原名，例如 `C_DEATH_TIME_AVALIABLE`。这样任何一个 Godot 符号都能机械地反查原版，分头移植的文件之间也不需要额外约定接口。
@@ -87,8 +87,8 @@
 - [ ] **P2 战斗核心**（类已移植，端到端集成中）：`GameUniverse` 主循环、事件调度、查询 API、输入；`LivingObject`；`battle`；寻路；`meleeFighter`/`rangedFighter`/`mageClass`/`priestClass`/`meleeRogue`/`npcClass`；`arrow_ex`、`smallFireball_ex`、`visualsTemplate`；`levelTemplate` 和第 1–3 关。以第 1 关可完整游玩作为切换节点。
 - [ ] **P3 兵种与技能**（类已移植，集成验证中）：其余 40 余个具体兵种、45 个技能、各类特效。
 - [ ] **P4 关卡**：第 4–24 关的子类钩子、`levelIntro` 教学关。
-- [ ] **P5 界面**（层级剪辑场景已导出，战斗界面移植中）：`mainGameUI_ex`、胜负面板、地图、升级面板、成就、手册、漫画、弹窗、主菜单、暂停菜单，按实例名对应节点，补齐图标多帧状态、提示、动画和滤镜效果。
-- [ ] **P6 存档与统计**：按 `storedData` 的槽位结构存档，移植 `globalData` 的 48 项成就统计和 `bonusCalculator`。
+- [ ] **P5 界面**（层级剪辑场景已导出，`Main` 已切换为入口并驱动全部切屏）：`mainGameUI_ex`、胜负面板、地图、升级面板、成就、手册、漫画、弹窗、主菜单、暂停菜单，按实例名对应节点，补齐图标多帧状态、提示、动画和滤镜效果。M1 已完成 `Main.as` 本体移植（启动流程、`fadeClearLoadUnfade`、各 `loadX`、音乐切换）并删除旧的 `game/main.gd` 等近似实现，入口场景 `scenes/main.tscn` 已指向新 `Main`；地图 `bOnline`/`eStorageFailure` 的显隐状态与 `is_armor`/`is_save_ok` 不一致，待排查（见 docs/verification.md）。
+- [ ] **P6 存档与统计**：按 `storedData` 的槽位结构存档，移植 `globalData` 的 48 项成就统计和 `bonusCalculator`（已有实现，尚未逐项验收）。M1 新增 `game/memory/legacy_save.gd`：首次启动把旧近似实现的 `user://campaign.json` 迁移到新存档 `user://RoyalDefenderGame7.json`（二次开发，原版没有对应逻辑）。
 - [ ] **P7 验收**：逐项与原版 Flash 并排对照；固定种子回归测试；更新 `docs/verification.md`。
 
 ## 6. 验证

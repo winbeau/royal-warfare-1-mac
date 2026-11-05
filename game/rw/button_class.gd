@@ -111,8 +111,12 @@ class _Hub extends RefCounted:
 			var was_pressed := pressed
 			pressed = false
 			dispatch(MOUSE_UP, event)
-			# CLICK：在同一对象上按下并抬起
-			if was_pressed and clip._has_point(clip.get_local_mouse_position()):
+			# CLICK：在同一对象上按下并抬起。用事件自带的 position（Godot 派发 _gui_input 时已经转换到
+			# 这个 Control 的局部坐标系）判断，不要用 get_local_mouse_position()——后者另外读取
+			# Viewport 自己缓存的"当前鼠标位置"，这个缓存在一些场景下（合成输入、多显示器、焦点切换、
+			# 舞台 700x600 与窗口缩放之间的换算时机）可能与刚处理的这个事件本身对不上，导致明明点在按钮
+			# 上却因为取到的坐标是别处而判定为没点中、CLICK 发不出去。
+			if was_pressed and clip._has_point(mb.position):
 				dispatch(CLICK, event)
 			clip.accept_event()
 
@@ -139,7 +143,16 @@ static func remove_event_listener(mc: FlashClip, type: StringName, cb: Callable)
 
 
 static func _set_button_mode(mc: FlashClip, on: bool) -> void:
-	mc.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND if on else Control.CURSOR_ARROW
+	var shape := Control.CURSOR_POINTING_HAND if on else Control.CURSOR_ARROW
+	# Control.set_default_cursor_shape 内部取 get_global_rect()；祖先链的行列式为负（镜像，Flash 矩阵 a*d-b*c < 0）时
+	# 其 size 为负，Rect2.has_point 会报 "Rect2 size is negative"。设置期间临时翻回符号，再还原。
+	if mc.is_inside_tree() and mc.get_global_transform().determinant() < 0.0:
+		var sc := mc.scale
+		mc.scale = Vector2(sc.x, -sc.y)
+		mc.mouse_default_cursor_shape = shape
+		mc.scale = sc
+	else:
+		mc.mouse_default_cursor_shape = shape
 
 
 static func _target_of(e: ButtonEvent) -> FlashClip:

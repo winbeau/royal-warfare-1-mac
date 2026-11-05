@@ -6,9 +6,7 @@
 # 只是个空壳场景（根节点挂本脚本），两个子节点在 _init() 里按原版构造函数的顺序建出来。
 #
 # 偏离/缺陷：
-# - 原版背景遮罩是符号 symbol5978（mapBlack），但 pipeline/clips.py 的导出结果里完全没有这个符号
-#   （assets/clips/index.json 里没有 5978，scenes/clips 下也没有 mapBlack.tscn）——剪辑场景缺陷，记入汇报。
-#   这里用一个纯色 ColorRect(700x600, 黑色) 代替，透明度动画与原版一致，视觉上等价（原图很可能也只是纯黑矩形）。
+# - 背景遮罩使用真实符号 mapBlack（character 5978，scenes/clips/mapBlack.tscn），透明度动画与原版一致。
 # - DropShadowFilter（popup 的投影）不移植：Control 没有对应滤镜，纯视觉效果。
 # - 原版 init() 只注册 ADDED_TO_STAGE 监听，真正的建立逻辑在 added() 里；这里直接用 _enter_tree/_exit_tree
 #   驱动 _added()/_removed()（同 MainGameUIEx 的写法），init() 保留为空函数，兼容"构造后调用 .init()"的原版调用方式。
@@ -17,7 +15,7 @@ extends Control
 
 const SCENE := "res://scenes/ifaces/popup_reset_ex.tscn"
 
-var big_shadow: ColorRect
+var big_shadow: FlashClip  # mapBlack (character 5978)
 var popup: FlashClip
 var pos: int = 0  # 原版字段，全工程未见读取，原样保留
 var _instance: PopupResetEx
@@ -30,10 +28,7 @@ static func create() -> PopupResetEx:
 
 func _init() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	big_shadow = ColorRect.new()
-	big_shadow.color = Color.BLACK
-	big_shadow.position = Vector2.ZERO
-	big_shadow.size = Vector2(Main.GAME_WIDTH, Main.GAME_HEIGHT)
+	big_shadow = (load("res://scenes/clips/mapBlack.tscn") as PackedScene).instantiate()
 	big_shadow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(big_shadow)
 	big_shadow.modulate.a = 0.35

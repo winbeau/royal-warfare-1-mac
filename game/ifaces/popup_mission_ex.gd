@@ -6,9 +6,7 @@
 # - popupMission_ex 本身在原版没有对应的 fla 符号（直接继承 MovieClip，自己用代码拼出 bigShadow/popup），
 #   所以 scenes/ifaces/popup_mission_ex.tscn 不走"继承 scenes/clips/<符号>.tscn"的一般套路，而是手工
 #   拼出同样的子节点（见该场景文件的注释）。
-# - bigShadow 对应的符号 mapBlack（character 5978）没有被 pipeline/clips.py 导出到 scenes/clips/，
-#   资产库 assets/clips/ 里也没有 5978 这个 id；这里用一个纯色 ColorRect 代替（它在原版里就是整屏的
-#   半透明黑色遮罩，没有更多细节），记入汇报，若之后补上该符号的导出可以换回真正的剪辑。
+# - bigShadow 使用真实符号 mapBlack（character 5978，scenes/clips/mapBlack.tscn）。
 # - DropShadowFilter（popup 外阴影）、.mask 遮罩（eMapSymbol.eCont 的遮罩、tMissionDesc 的文字遮罩）
 #   FlashClip 没有对应机制，不移植，记入汇报（与 upgr_panel_ex.gd 对同类问题的处理一致）。
 # - gameUniverse.aLevelsBackGroundsSmallImages（预渲染的关卡缩略图）没有被移植（只有
@@ -22,7 +20,7 @@ const SCROLL_STEP := 1.0 / 30.0  # 原版按 ENTER_FRAME（舞台 30fps）驱动
 
 var pos: int = 0
 var popup: FlashClip  # popupMission
-var big_shadow: Control  # mapBlack 的替代（见上方注释）
+var big_shadow: FlashClip  # mapBlack (character 5978)
 var text_start_coords: float = 0.0
 var text_start_scroll_counter: int = 0
 var s: SoundLibrary
@@ -49,10 +47,8 @@ func _init() -> void:
 		return
 	# 原版没有对应符号，构造函数直接 new mapBlack()/new popupMission() 并 addChild；这里等价地
 	# 手工建出同样的子节点（docs/port-plan.md 第 2 节 adopt() 套路的对应，只是没有符号可 adopt）。
-	var shadow := ColorRect.new()
+	var shadow := (load("res://scenes/clips/mapBlack.tscn") as PackedScene).instantiate() as FlashClip
 	shadow.name = "bigShadow"
-	shadow.color = Color(0, 0, 0, 1)
-	shadow.size = Vector2(700, 600)
 	shadow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(shadow)
 	var p := (load("res://scenes/clips/popupMission.tscn") as PackedScene).instantiate()
@@ -83,6 +79,11 @@ func _construct() -> void:
 	e_text_mask = popup.get_node("eTextMask")
 	e_map_symbol = popup.get_node("eMapSymbol")
 	e_cont = e_map_symbol.get_node("eCont")
+	# .mask = eTextMask / eMapSymbol.eCont.mask = eMapSymbol.eMask：按 FlashClip.set_mask 接上
+	# （见该方法注释）。e_cont 原本在 e_map_symbol 下与 e_mask 平级，裁切后改挂到 e_mask 下面。
+	var e_mask: Control = e_map_symbol.get_node("eMask")
+	FlashClip.set_mask(t_mission_desc, e_text_mask)
+	FlashClip.set_mask(e_cont, e_mask)
 	big_shadow.modulate.a = 0.35
 	IfaceUtil.goto_and_stop(b_playbtn, 1)
 	IfaceUtil.goto_and_stop(b_closebtn, 1)

@@ -121,7 +121,12 @@ func _added() -> void:
 	ButtonClass.add_button_on_frames_rd(b_credits, button_clicked)
 	ButtonClass.add_button_on_frames_rd(b_how_to, button_clicked)
 	add_child(mm_anim)
-	move_child(mm_anim, 1)
+	# 偏离/缺陷：原版 addChildAt(mmAnim, 1) 假定 eBg 是索引 0（最底层）的子对象，插在索引 1 即紧贴
+	# 在 eBg 之上。这里的 FlashClip 根节点自带一个内部光栅子节点 _back（原版没有对应的显示对象），
+	# 使 eBg 的实际索引变成 1，若仍写死 move_child(mm_anim, 1) 会插到 _back 和 eBg 之间，结果是
+	# eBg 盖住了 mmAnim（士兵动画完全看不见）。改为紧跟在 eBg 当前索引之后，效果等价于原版的
+	# "叠在 eBg 之上、其余按钮之下"。
+	move_child(mm_anim, e_bg.get_index() + 1)
 	mm_anim.init()
 	draw_main_buttons()
 	ButtonClass.add_button_scale(e_strategy_guide, button_clicked)

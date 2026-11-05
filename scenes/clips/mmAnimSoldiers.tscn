@@ -13,7 +13,6 @@ total_frames = 1
 metadata/character_id = 5835
 
 [node name="anim" parent="." instance=ExtResource("c0")]
-visible = false
 position = Vector2(0, 0)
 metadata/original_instance = "anim"
 metadata/character_id = 5834

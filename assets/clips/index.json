@@ -846,15 +846,6 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "5835": {
-   "scene": "scenes/clips/mmAnimSoldiers.tscn",
-   "name": "mmAnimSoldiers",
-   "character_id": 5835,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "5879": {
    "scene": "scenes/clips/hbclass.tscn",
    "name": "hbclass",
@@ -5109,6 +5100,60 @@
    "character_id": 4428,
    "frames": 1,
    "variant": true,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "5727": {
+   "scene": "scenes/clips/clickToSkipMC.tscn",
+   "name": "clickToSkipMC",
+   "character_id": 5727,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "5978": {
+   "scene": "scenes/clips/mapBlack.tscn",
+   "name": "mapBlack",
+   "character_id": 5978,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "6595": {
+   "scene": "scenes/clips/hintTip.tscn",
+   "name": "hintTip",
+   "character_id": 6595,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "5565": {
+   "scene": "scenes/clips/gameMapAnimatedElems.tscn",
+   "name": "gameMapAnimatedElems",
+   "character_id": 5565,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "5564": {
+   "scene": "scenes/clips/Symbol_5564.tscn",
+   "name": "Symbol_5564",
+   "character_id": 5564,
+   "frames": 160,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "5835": {
+   "scene": "scenes/clips/mmAnimSoldiers.tscn",
+   "name": "mmAnimSoldiers",
+   "character_id": 5835,
+   "frames": 1,
+   "variant": false,
    "reuse_frames": false,
    "interleaved_frames": 0
   }

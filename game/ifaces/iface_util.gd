@@ -34,9 +34,18 @@ static func adopt(node: FlashClip, clip_name: String) -> void:
 	node.mouse_filter = base.mouse_filter
 	for c in base.get_children():
 		base.remove_child(c)
-		c.owner = null  # 场景实例化时 owner 是 base，并入新父节点前清掉
+		_clear_owner_recursive(c)  # 场景实例化时整棵子树的 owner 都是 base，并入新父节点前要递归清掉
 		node.add_child(c)
 	base.free()
+
+
+## owner 不清会导致后续 add_child 报 "owner inconsistent"：
+## 场景实例化把整个子场景的后代节点 owner 都设成根节点（这里是 base），remove_child/add_child 只搬动了
+## 直接子节点，孙辈节点的 owner 仍然指向已经不是其祖先的 base，所以要递归清到整棵子树。
+static func _clear_owner_recursive(n: Node) -> void:
+	n.owner = null
+	for c in n.get_children():
+		_clear_owner_recursive(c)
 
 
 ## flash.events.MouseEvent.target。
@@ -64,7 +73,7 @@ static func clip_bounds(clip: FlashClip) -> Rect2:
 	for layer: Sprite2D in [clip.get("_back"), clip.get("_front")]:
 		if layer == null or not layer.visible or layer.texture == null:
 			continue
-		var tr := Rect2(layer.position, layer.texture.get_size() * layer.scale)
+		var tr := Rect2(layer.position, layer.texture.get_size() * layer.scale).abs()
 		r = tr if not has else r.merge(tr)
 		has = true
 	for c in clip.get_children():
@@ -80,8 +89,13 @@ static func clip_bounds(clip: FlashClip) -> Rect2:
 			cr = Rect2(c.position + c.box.position * c.scale, c.box.size * c.scale)
 		else:
 			continue
+		cr = cr.abs()  # 子节点可能负缩放（Flash 镜像），Rect2.merge 要求两边 size 非负
 		r = cr if not has else r.merge(cr)
 		has = true
+	if not has and clip.data != null and clip.data.rect.size != Vector2.ZERO:
+		# 纯"命中形状"符号（没有自己的位图、没有子节点，只有一个非零的声明包围盒，见
+		# FlashClip._has_point 同一处注释）：退回符号自己声明的 rect，而不是报一个全零的包围盒。
+		return clip.data.rect
 	return r
 
 

@@ -1907,7 +1907,8 @@ func after_health_below_zero_handler() -> void:
 		var cache: SimpleCache = UnitKilledVisual.cached_data
 		var visual: UnitKilledVisual = cache.get_data() as UnitKilledVisual
 		visual.added_to_stage(_instance.sens.position.x, _instance.sens.position.y, Callable(), _instance)
-		ChatController.inst.message(class_name_ + " was killed.")
+		if ChatController.inst != null:
+			ChatController.inst.message(class_name_ + " was killed.")
 
 func give_frag() -> void:
 	num_killed += 1

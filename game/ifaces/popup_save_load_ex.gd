@@ -10,7 +10,7 @@ extends Control
 
 const SCENE := "res://scenes/ifaces/popup_save_load_ex.tscn"
 
-var big_shadow: ColorRect
+var big_shadow: FlashClip  # mapBlack (character 5978)
 var popup: FlashClip
 var pos: int = 0  # 原版字段，全工程未见读取，原样保留
 var _instance: PopupSaveLoadEx
@@ -23,10 +23,7 @@ static func create() -> PopupSaveLoadEx:
 
 func _init() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	big_shadow = ColorRect.new()
-	big_shadow.color = Color.BLACK
-	big_shadow.position = Vector2.ZERO
-	big_shadow.size = Vector2(Main.GAME_WIDTH, Main.GAME_HEIGHT)
+	big_shadow = (load("res://scenes/clips/mapBlack.tscn") as PackedScene).instantiate()
 	big_shadow.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(big_shadow)
 	big_shadow.modulate.a = 0.35

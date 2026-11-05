@@ -15,16 +15,16 @@ func near(a: float, b: float, eps: float = 1e-3) -> bool:
 
 class SpyMain extends Main:
 	var calls: Array = []
-	func load_game() -> void: calls.append("load_game")
+	func load_game(_level: int = -1, _play_music: bool = true) -> void: calls.append("load_game")
 	func load_map() -> void: calls.append("load_map")
-	func load_main_menu() -> void: calls.append("load_main_menu")
-	func load_more_games() -> void: calls.append("load_more_games")
+	func load_main_menu(_e = null) -> void: calls.append("load_main_menu")
+	func load_more_games(_e = null) -> void: calls.append("load_more_games")
 	func load_upgrade_panel() -> void: calls.append("load_upgrade_panel")
 	func stop_music_ingame() -> void: calls.append("stop_music_ingame")
-	func pause_music(n: String) -> void: calls.append("pause_music:" + n)
-	func unpause_music(n: String) -> void: calls.append("unpause_music:" + n)
+	func pause_music(n = null) -> void: calls.append("pause_music:" + n)
+	func unpause_music(n = null) -> void: calls.append("unpause_music:" + n)
 	func play_map_music() -> void: calls.append("play_map_music")
-	func add_unit_hint(n: float) -> void: calls.append("add_unit_hint:%d" % int(n))
+	func add_unit_hint(n: int) -> void: calls.append("add_unit_hint:%d" % int(n))
 	func add_tutorial(n: float) -> void: calls.append("add_tutorial:%d" % int(n))
 
 class SpyUniverse extends GameUniverse:

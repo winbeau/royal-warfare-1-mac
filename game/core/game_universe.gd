@@ -1697,7 +1697,11 @@ func hit_test_unit(stage_point: Vector2) -> LivingObject:
 
 
 func _make_mouse_event(ev: InputEventMouse) -> RWMouseEvent:
-	var p := _mouse_pos()
+	# 不用 _mouse_pos()（它读 get_local_mouse_position()，也就是 Viewport 自己缓存的"当前鼠标位置"）：
+	# 这里是按下/抬起这一具体事件本身要落点在哪，直接用 make_input_local() 把事件自带的坐标转换到
+	# 本节点的局部坐标系最直接，不依赖任何另外维护、可能与这个事件本身对不上的缓存状态
+	# （ButtonClass._on_gui_input 的 CLICK 判定也是同一类问题，参见那边的改法和注释）。
+	var p: Vector2 = (mouse_override if mouse_override != null else (make_input_local(ev) as InputEventMouse).position)
 	# macOS 上 Ctrl+左键会被系统当作右键，故 Cmd 也按 ctrlKey 处理（与 Flash 里 Ctrl+点击的用法对应）
 	return RWMouseEvent.new(p.x, p.y, ev.shift_pressed, ev.ctrl_pressed or ev.meta_pressed, ev.alt_pressed)
 

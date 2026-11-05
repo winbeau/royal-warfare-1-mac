@@ -1,7 +1,8 @@
 # 移植自 S/gameCore/ifaces/hintsManager.as
 # 右下角"新提示 / 新敌人"两个图标的弹出管理。update() 由 GameUniverse 每 30 帧（hintsUpdateCounter > 30）调一次，
 # 图标在上次被点掉 5 秒（提示）/ 4 秒（敌人）之后才会再弹出。
-# 偏离：hintTip 符号（6595）没有导出为 scenes/clips 场景，找不到时临时提示不显示（见汇报）。
+# hintTip（符号 6595，"Click here!" 指示条）导出在 res://scenes/clips/hintTip.tscn：根节点是 FlashClip，
+# total_frames=1、无具名子节点、整层光栅图，对应原版 `new hintTip()`，这里直接 instantiate，不需要 _ex 子类。
 class_name HintsManager
 extends RefCounted
 
@@ -20,7 +21,7 @@ static var a_hints_list: Array = []
 static var when_removed_hint: int = 0
 static var when_removed_units: int = 0
 static var a_units_list: Array = []
-static var hint: Node = null  # hintTip
+static var hint: FlashClip = null  # hintTip
 static var temp_hint_added: bool = false
 static var need_to_show_temp_hint: bool = false
 static var o_hint_callback: Variant = null
@@ -38,12 +39,9 @@ static func init(param1: FlashClip, param2: FlashClip) -> void:
 	top_position = Vector2(param1.position.x, param1.position.y)
 	bottom_position = Vector2(param2.position.x, param2.position.y)
 	hided_position = 757
-	if ResourceLoader.exists(HINT_TIP_SCENE):
-		hint = (load(HINT_TIP_SCENE) as PackedScene).instantiate()
-		hint.mouse_children = false
-		hint.mouse_enabled = false
-	else:
-		hint = null
+	hint = (load(HINT_TIP_SCENE) as PackedScene).instantiate() as FlashClip
+	hint.mouse_children = false
+	hint.mouse_enabled = false
 
 static func update() -> void:
 	var _loc1_: int
@@ -94,8 +92,7 @@ static func need_to_show_units(param1: int) -> void:
 
 static func removed() -> void:
 	if temp_hint_added:
-		if hint != null and hint.get_parent() != null:
-			GameUniverse.inst.remove_child(hint)
+		_remove_hint()
 		temp_hint_added = false
 	IfaceUtil.goto_and_stop(e_new_enemy, 1)
 	IfaceUtil.goto_and_stop(e_new_hint, 1)
@@ -126,8 +123,19 @@ static func show_temp_hint() -> void:
 static func hide_temp_hint() -> void:
 	if temp_hint_added == true:
 		temp_hint_added = false
-		if hint != null and hint.get_parent() != null:
-			GameUniverse.inst.remove_child(hint)
+		_remove_hint()
+
+## removed()/hide_temp_hint() 可能发生在祖先节点（mainGameUI_ex 所在的 GameUniverse 子树）正在被
+## 批量移除/销毁的过程中（Godot 的 remove_child 在那期间会报 "Parent node is busy..."，原版 Flash
+## 的 removeChild 没有这个限制）。用 call_deferred 把真正的移除挪到当前这轮子树操作结束之后；
+## hint 节点本身是常驻单例（跨显示/隐藏复用，不会被 free），deferred 执行时若它已随父节点一起被
+## 释放，Godot 的消息队列会安全地丢弃这次调用。
+static func _remove_hint() -> void:
+	if hint == null:
+		return
+	var p := hint.get_parent()
+	if p != null:
+		p.remove_child.call_deferred(hint)
 
 static func call_back_button_clicked(param1: String, param2: Callable) -> void:
 	if param1 == HINT:

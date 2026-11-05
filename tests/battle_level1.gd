@@ -49,7 +49,7 @@ func run() -> void:
 	var ui_total := 0
 	for m in h.catcher.ui_errors:
 		ui_total += int(h.catcher.ui_errors[m])
-	print("UI_ERRORS %d distinct, %d total (界面层文件内的报错，HUD 移植中，不计入核心)" % [h.catcher.ui_errors.size(), ui_total])
+	print("UI_ERRORS %d distinct, %d total " % [h.catcher.ui_errors.size(), ui_total])
 	for m in h.catcher.ui_errors.keys().slice(0, 8):
 		print("  UI ", m)
 	h.shutdown()

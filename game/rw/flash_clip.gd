@@ -34,6 +34,9 @@ var _child_state := {}   # name -> index of the active state
 var _child_vis := {}
 var _script_depth := 0
 var _ready_done := false
+## goto_and_* / play / stop called before _ready (图层尚未建好，例如挂在未入树节点下的选择环)：记下，ready 时套用。
+var _pending_frame := -1
+var _pending_play := -1  # -1 未指定，0 停，1 播
 
 func _init() -> void:
 	mouse_filter = Control.MOUSE_FILTER_PASS
@@ -68,26 +71,46 @@ func _ready() -> void:
 	for cname in data.children:
 		_child_state[cname] = -1
 	playing = total_frames > 1
+	if _pending_play >= 0:
+		playing = _pending_play == 1 and total_frames > 1
 	set_process(playing)
 	_ready_done = true
 	_apply_mouse_children()
-	_enter_frame(1, true)
+	var first := _pending_frame if _pending_frame >= 1 else 1
+	_pending_frame = -1
+	_enter_frame(first, true)
 
 func goto_and_stop(frame: int) -> void:
+	if not _ready_done:
+		_pending_frame = frame
+		current_frame = clampi(frame, 1, maxi(total_frames, 1))
+		_pending_play = 0
+		return
 	playing = false
 	set_process(false)
 	_enter_frame(frame)
 
 func goto_and_play(frame: int) -> void:
+	if not _ready_done:
+		_pending_frame = frame
+		current_frame = clampi(frame, 1, maxi(total_frames, 1))
+		_pending_play = 1
+		return
 	playing = total_frames > 1
 	set_process(playing)
 	_enter_frame(frame)
 
 func play() -> void:
+	if not _ready_done:
+		_pending_play = 1
+		return
 	playing = total_frames > 1
 	set_process(playing)
 
 func stop() -> void:
+	if not _ready_done:
+		_pending_play = 0
+		return
 	playing = false
 	set_process(false)
 
@@ -109,6 +132,43 @@ func back_texture() -> Texture2D:
 
 func front_texture() -> Texture2D:
 	return _front.texture if _front else null
+
+## Flash 的 `target.mask = mask`：mask 本身在舞台上不可见，只用它的形状裁切 target 的渲染；遮罩
+## 只影响绘制，不影响点击命中测试（Flash 的 hitTestPoint 不看 mask），所以这里不需要、也不应该改
+## target 自身的命中范围。两处已知用例（popupMission 的 eTextMask / eMapSymbol.eMask）都是矩形遮罩，
+## 用 Control.clip_contents（按 mask.size 的矩形裁切）实现，等价于 Flash 遮罩在这两处的效果。
+## 把 target 重新挂到 mask 下面，并按两者当前的全局变换换算 target 的新局部变换，保证视觉位置不变；
+## mask 自己的图层（_back/_front）隐藏掉（否则会被当成普通可见内容画出来，且默认 mouse_filter=PASS
+## 还会拦截点击——这正是当前界面上遮罩被画成实心矩形、同时吞掉点击的根因）。
+static func set_mask(target: Control, mask: Control) -> void:
+	if not is_instance_valid(target) or not is_instance_valid(mask):
+		return
+	if target.get_parent() != mask:
+		var g := mask.get_global_transform().affine_inverse() * target.get_global_transform()
+		var old := target.get_parent()
+		if old != null:
+			old.remove_child(target)
+		_clear_owner_recursive(target)  # 场景实例化后 target 子树的 owner 仍指向旧场景根；IfaceUtil.adopt() 同类问题
+		mask.add_child(target)
+		target.position = g.get_origin()
+		target.rotation = g.get_rotation()
+		target.scale = g.get_scale()
+	mask.move_child(target, mask.get_child_count() - 1)  # target 画在 mask 自己的图层之上
+	mask.clip_contents = true
+	mask.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if mask is FlashClip:
+		var mc := mask as FlashClip
+		if mc._back != null:
+			mc._back.visible = false
+		if mc._front != null:
+			mc._front.visible = false
+
+## 同 IfaceUtil._clear_owner_recursive：跨场景搬家的子树要递归清 owner，否则后续 add_child 会报
+## "owner inconsistent"。
+static func _clear_owner_recursive(n: Node) -> void:
+	n.owner = null
+	for c in n.get_children():
+		_clear_owner_recursive(c)
 
 func _process(delta: float) -> void:
 	_acc += delta
@@ -233,9 +293,11 @@ func _apply_mouse_children() -> void:
 func _has_point(point: Vector2) -> bool:
 	if data == null:
 		return false
+	var any_texture := false
 	for sprite: Sprite2D in [_front, _back]:
 		if sprite == null or not sprite.visible or sprite.texture == null:
 			continue
+		any_texture = true
 		var local := (point - sprite.position) / sprite.scale
 		var tex := sprite.texture
 		var w := tex.get_width()
@@ -254,4 +316,21 @@ func _has_point(point: Vector2) -> bool:
 			var img2 := data.hit_image(tex)
 			if img2 == null or img2.get_pixelv(Vector2i(local)).a > 0.05:
 				return true
+	if not any_texture and data.children.is_empty() and not _has_content_children() and data.rect.size != Vector2.ZERO:
+		# 纯"命中形状"符号（Flash 里常见做法：填充 alpha=0 的矢量形状专门用来当点击热区，例如地图旗帜/
+		# 单位的 sens：Symbol_5595 这类，总帧数 1、没有子对象、back/front 纹理都是空的，只有一个非零
+		# rect）。栅格化管线不会为完全透明的填充导出任何位图，所以上面的纹理检测永远找不到东西，点击
+		# 因此永远落空。Flash 的 hitTestPoint 对这种形状本来就是按矢量几何判定，不看渲染出的像素
+		# alpha；这里退化为按符号的声明包围盒（data.rect，导出时就是该矢量形状的包围盒）做矩形命中，
+		# 是能从已导出数据里拿到的最接近的等价物。只在完全没有子节点/子图层时才这样做，避免把正常的
+		# 容器剪辑（自己没有位图、但靠子节点显示内容）也误判成热区。
+		return data.rect.has_point(point)
+	return false
+
+## get_child_count() 总是至少数到 _back/_front（_ready() 无条件创建的两个图层 Sprite2D），
+## 这里只看除它们之外还有没有别的子节点（具名子剪辑/文本）。
+func _has_content_children() -> bool:
+	for c in get_children():
+		if c != _back and c != _front:
+			return true
 	return false

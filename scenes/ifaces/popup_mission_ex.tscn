@@ -1,16 +1,14 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://game/ifaces/popup_mission_ex.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/clips/popupMission.tscn" id="2_popup"]
+[ext_resource type="PackedScene" path="res://scenes/clips/mapBlack.tscn" id="3_black"]
 
 [node name="popupMissionEx" type="Control"]
 mouse_filter = 1
 script = ExtResource("1_script")
 
-[node name="bigShadow" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 1)
-offset_right = 700.0
-offset_bottom = 600.0
+[node name="bigShadow" parent="." instance=ExtResource("3_black")]
 mouse_filter = 2
 
 [node name="popup" parent="." instance=ExtResource("2_popup")]

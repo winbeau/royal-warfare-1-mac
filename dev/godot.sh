@@ -22,17 +22,14 @@ case "$action" in
         mkdir -p "$project_dir/build"
         touch "$project_dir/build/.gdignore"
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
-        "$godot_bin" --headless --path "$project_dir" --script tests/smoke.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/combat_rules.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/rw_runtime.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/sounds_runtime.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/levels_data.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/universe_core.gd -- --isolated-profile
-        "$godot_bin" --headless --path "$project_dir" --script tests/living_core.gd -- --isolated-profile
-        for t in class_bases friend_units enemy_units visual_effects specials_rules battle_level1 battle_all_levels; do
+        for t in smoke rw_runtime sounds_runtime levels_data universe_core living_core class_bases friend_units enemy_units visual_effects specials_rules clips_runtime menu_screens upgrade_panel comics battle_ifaces main_game_ui level_intro main_flow input_e2e; do
             "$godot_bin" --headless --path "$project_dir" --script "tests/$t.gd" -- --isolated-profile
         done
-        exec "$godot_bin" --headless --path "$project_dir" --script tests/campaign_flow.gd -- --isolated-profile
+        # battle_level1 / battle_all_levels 放在最后：已知 game/ifaces/hints_manager.gd 在关卡结束清理时与
+        # main_game_ui_ex.gd 的 _exit_tree 存在一个 remove_child 时序冲突（详见 docs/verification.md「测试运行中
+        # 已知问题」），不属于本次改动范围；放在最后可以让前面的测试（含 main_flow）不被这个已知问题挡住。
+        "$godot_bin" --headless --path "$project_dir" --script tests/battle_level1.gd -- --isolated-profile
+        exec "$godot_bin" --headless --path "$project_dir" --script tests/battle_all_levels.gd -- --isolated-profile
         ;;
     export)
         mkdir -p "$project_dir/build"

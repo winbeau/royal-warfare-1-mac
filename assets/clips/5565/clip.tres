@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5565
+total_frames = 1
+rect = Rect2(187.75, 65.75, 481.3, 361.3)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"e0": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 201.65, 84.2, 1, 1, 1, 1)}, "e1": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 407.65, 191.2, 1, 1, 1, 1)}, "e2": {"kind": "clip", "depth": 9, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 566.65, 250.2, 1, 1, 1, 1)}, "e3": {"kind": "clip", "depth": 13, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 499.65, 259.2, 1, 1, 1, 1)}, "e4": {"kind": "clip", "depth": 17, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 655.65, 180.2, 1, 1, 1, 1)}, "e5": {"kind": "clip", "depth": 21, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 317.65, 359.15, 1, 1, 1, 1)}, "e6": {"kind": "clip", "depth": 25, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 432.65, 375.15, 1, 1, 1, 1)}, "e7": {"kind": "clip", "depth": 29, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 395.65, 417.15, 1, 1, 1, 1)}}
