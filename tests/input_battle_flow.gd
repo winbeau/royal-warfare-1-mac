@@ -300,5 +300,29 @@ func run_level2_global_wave_recruit() -> void:
 	await wait_until(func() -> bool: return gu2.a_all_units.size() > units_before, 1500, "5.20 第 2 关 GLOBAL_WAVE 期间真实点击招募战士成功")
 	check(gu2.current_money < money_before, "5.21 招募按原版扣钱")
 
+	# 同一个 GameUniverse/MainGameUIEx 在整个游戏运行期间复用：回地图再进下一关、重玩时，界面只能
+	# 走一次 _added()。曾经因 continue_loading_level_data 先 remove_child 再 add_child 让 _added() 执行
+	# 两次，招募按钮的相对 from 补间叠加 42 像素停在舞台外（玩家第二次进关起看不到招募图标）。
+	var base_y: Array = []
+	for b in ui2.a_buttons:
+		base_y.append((b as Control).position.y)
+	var wait_real := func(ms: int) -> void:
+		var t := Time.get_ticks_msec()
+		while Time.get_ticks_msec() - t < ms:
+			await process_frame
+	var buttons_home := func(tag: String) -> void:
+		for i in ui2.a_buttons.size():
+			var b: Control = ui2.a_buttons[i]
+			check(near(b.position.y, base_y[i], 0.5) and b.position.y < 600.0,
+				"5.22 %s：招募按钮 %s 回到原位 y=%.2f（期望 %.2f）" % [tag, b.name, b.position.y, base_y[i]])
+	main2.load_map()
+	await wait_real.call(2000)
+	main2.load_game(2)
+	await wait_real.call(2500)
+	await buttons_home.call("回地图后进第 3 关")
+	main2.load_game(2)
+	await wait_real.call(2500)
+	await buttons_home.call("第 3 关重玩")
+
 	main2.queue_free()
 	await process_frame

@@ -773,11 +773,10 @@ func continue_loading_level_data() -> void:
 	else:
 		bg_name = level_info.level_bg
 	# 清理上一局遗留的容器（原版同一个 gameUniverse 反复使用时旧容器已不在显示列表中）
-	for old: Node in [bg_mc, bottom_effects_cont, units_cont, healt_bar_cont, effects_cont, ingame_ui]:
+	for old: Node in [bg_mc, bottom_effects_cont, units_cont, healt_bar_cont, effects_cont]:
 		if old != null and old.get_parent() == self:
 			remove_child(old)
-			if old != ingame_ui:
-				old.queue_free()
+			old.queue_free()
 	bg_mc = _make_background(bg_name)
 	add_child(bg_mc)
 	PathParser.parse(bg_name, self)
@@ -790,7 +789,13 @@ func continue_loading_level_data() -> void:
 	effects_cont = _new_container("effects_cont")
 	add_child(effects_cont)
 	ingame_ui.name = "ingame_ui"
-	add_child(ingame_ui)
+	# 原版 addChild(ingameUI) 对已在本容器里的界面只把它移到最上层，不会再派发 ADDED_TO_STAGE。
+	# 这里若先 remove_child 再 add_child，界面会多走一次离树/进树，_added() 执行两次，招募按钮的
+	# 相对 from 补间叠加 42 像素后停在舞台外（第二次及以后进关看不到招募图标）。
+	if ingame_ui.get_parent() == self:
+		move_child(ingame_ui, get_child_count() - 1)
+	else:
+		add_child(ingame_ui)
 	ingame_ui.hide_red_button()
 	_update_enabled = true
 	_bg_click_enabled = true
