@@ -184,6 +184,28 @@
         "created_by": "claude",
         "order": 204,
         "enabled": true
+      },
+      {
+        "rule_id": "rw-clip-scenes",
+        "action": "observe",
+        "pattern": "scenes/clips/**",
+        "pattern_kind": "glob",
+        "reason": "pipeline/clips.py 生成的 573 个层级剪辑场景，机器生成的布局数据，只观察变化不建条目",
+        "source": "user",
+        "created_by": "claude",
+        "order": 205,
+        "enabled": true
+      },
+      {
+        "rule_id": "rw-iface-scenes",
+        "action": "observe",
+        "pattern": "scenes/ifaces/**",
+        "pattern_kind": "glob",
+        "reason": "28 个继承剪辑场景的界面场景壳，仅替换根脚本，逻辑在 game/ifaces 对应的 .gd 中，只观察变化",
+        "source": "user",
+        "created_by": "claude",
+        "order": 206,
+        "enabled": true
       }
     ]
   },
