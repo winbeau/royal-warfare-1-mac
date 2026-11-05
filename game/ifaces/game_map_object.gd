@@ -11,8 +11,6 @@
 #   顺序命名为 e0..e7。符号 5564 自身只有 1 帧，里面嵌套的 5563（160 帧）自行循环，导出时 5564 展开为 160 帧
 #   循环。因此原版 randRange(1, totalFrames) 的 totalFrames 恒为 1（结果恒为 1），这里仍按原版调用 8 次
 #   RWRandom.rand_range(1, 1)，保持 RNG 序列一致，然后从第 1 帧开始播放（嵌套动画在原版里也都是同步的）。
-# - popupReset_ex / popupSaveLoad_ex / popupStorageFailure_ex 由 S1 负责，移植完成前通过
-#   IfaceUtil.global_script() 动态获取；没有就绪时相关按钮静默跳过（不报错，记入汇报）。
 # - Main.isArmor（静态布尔，是否 Armor Games 站点）、Main.inst.check_armor_quests() 当前 Main 没有提供，
 #   这里通过动态属性/方法探测，缺失时按 Main.isArmor == false 处理（不显示 bOnline，不检测任务）。
 class_name GameMapObject
@@ -29,13 +27,13 @@ var a_markers: Array = []
 var next_unvisited: int = 0
 var a_routes: Array = []
 var pop: PopupMissionEx
-var reset_pop: Variant  # PopupResetEx（S1）
+var reset_pop: PopupResetEx
 var red_circle: FlashClip  # redRotatingCircle
 var a_acts: Array = []
 var a_flags_before_act_scrolls: Array = []
 var s: SoundLibrary
-var armor_save_pop: Variant  # PopupSaveLoadEx（S1）
-var storage_popup: Variant  # PopupStorageFailureEx（S1）
+var armor_save_pop: PopupSaveLoadEx
+var storage_popup: PopupStorageFailureEx
 
 var _attached: bool = false
 
@@ -74,9 +72,9 @@ static func init_once() -> void:
 ## 从 markers 收集 aActs/aFlagsBeforeActScrolls/aMarkers/aRoutes。
 func _construct() -> void:
 	pop = PopupMissionEx.new()
-	reset_pop = _make_popup("PopupResetEx")
-	armor_save_pop = _make_popup("PopupSaveLoadEx")
-	storage_popup = _make_popup("PopupStorageFailureEx")
+	reset_pop = PopupResetEx.new()
+	armor_save_pop = PopupSaveLoadEx.new()
+	storage_popup = PopupStorageFailureEx.new()
 	for i in anims.get_child_count():
 		var elem := anims.get_child(i) as FlashClip
 		# 原版 gotoAndPlay(Utility.randRange(1, totalFrames))；符号 5564 的原始 totalFrames 为 1，见文件头注释
@@ -100,13 +98,6 @@ func _collect_markers() -> void:
 	for i in range(1, 25):
 		a_markers.append(markers.get_node("f%d" % i))
 		a_routes.append(markers.get_node("r%d" % i))
-
-
-func _make_popup(cls: String) -> Variant:
-	var scr := IfaceUtil.global_script(cls)
-	if scr == null:
-		return null
-	return scr.new()
 
 
 func _enter_tree() -> void:
@@ -215,7 +206,8 @@ func _build_flags() -> void:
 					parent.move_child(red_circle, flag_index)
 				red_circle.scale = Vector2.ONE
 				red_circle.position = Vector2(flag.position.x, flag.position.y + 12)
-				RWTween.from(red_circle, 1.2, {"scaleX": 1.5, "scaleY": 1.5})
+				# 原版对象字面量写了两次 "scaleX":1.5（疑似笔误，本应是 scaleY），实际只补间 scaleX，照原样保留
+				RWTween.from(red_circle, 1.2, {"scaleX": 1.5})
 				(red_circle.get_node("eAnim") as FlashClip).play()
 				RWTween.from(flag, 2, {"scaleX": 3.5, "scaleY": 3.5, "y": "-20", "ease": RWEase.elastic_ease_out})
 			else:

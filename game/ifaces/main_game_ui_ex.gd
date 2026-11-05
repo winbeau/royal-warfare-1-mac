@@ -590,11 +590,6 @@ func update_b_archers_cooldown(param1: int) -> void:
 				{"colorMatrixFilter": {"contrast": 1, "saturation": 1, "brightness": 1}})
 
 
-## level_17/level_20 里的写法（按 bArchers 拆词的另一种 snake_case）。
-func update_barchers_cooldown(param1: int) -> void:
-	update_b_archers_cooldown(param1)
-
-
 func enable_archers_button() -> void:
 	b_archers.visible = true
 

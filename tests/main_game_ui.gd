@@ -181,7 +181,7 @@ func test_cool_downs(ui: MainGameUIEx, gu: GameUniverse) -> void:
 	ui.b_archers_cooldown = true
 	ui.update_b_archers_cooldown(40)
 	check(ui.b_archers.get_node("eCoolDown").current_frame == 40 and ui.b_archers_cooldown, "bArchers disc follows the status")
-	ui.update_barchers_cooldown(100)
+	ui.update_b_archers_cooldown(100)
 	check(ui.b_archers_cooldown == false and ui.b_archers.get_node("eCoolDown").current_frame == 100, "bArchers ready at 100")
 	await settle(1)
 

@@ -6,10 +6,7 @@
 #   scenes/ifaces/upgr_panel_ex.tscn 实例化时由 NOTIFICATION_SCENE_INSTANTIATED 触发 _bind。
 # - 原版构造函数体 → _construct()；ADDED_TO_STAGE 的 added() → _added()；REMOVED_FROM_STAGE 的 removed() → _removed()，
 #   分别由 _ready/_enter_tree 和 _exit_tree 驱动（同 MainGameUIEx）。
-# - gameUniverse.aSpecials 在核心里尚未移植（game/core/game_universe.gd 的注释：P3 才和技能类一并处理），
-#   这里按原版 aSpecials 字面量数组同样的下标关系（StoredData.A_* 常量 == 数组下标）本地建一张小表 _SPEC_CTORS，
-#   只覆盖升级面板用到的技能（friendly=true 的只读说明文本），不依赖 GameUniverse 的状态。以后 GameUniverse 补上
-#   a_specials 后，可以把这张表换成直接引用 GameUniverse.inst.a_specials。
+# - gameUniverse.aSpecials 直接用 GameUniverse.a_specials[idx]（静态数组，下标即 StoredData.A_*；A_WEAKNESS=33 为 null，同原版）。
 # - Rasterizer.rasterize / cacheAsBitmap（initOnce 里的位图缓存）不移植：纯渲染优化，不影响行为。
 # - zanavesUpgr 的 getChildAt(0).mask = msk：zanavesUpgr（607）里 getChildAt(0) 是没有实例名的子剪辑 604，
 #   管线（ClipExporter.INDEXED_CHILD_IDS 含 607）把它导出为可寻址节点 e0（按显示列表下标命名）。init_once() 用
@@ -508,7 +505,7 @@ func icon_rovered(e: Variant, forced: FlashClip = null) -> void:
 	var spec: SpecialTemplate = null
 	var abil_const := _abil_pad_const(target)
 	if abil_const >= 0:
-		spec = _spec_for_abil(abil_const)
+		spec = GameUniverse.a_specials[abil_const]
 	elif _bonus_pads().has(target):
 		html = _bonus_html(target)
 		set_icon_glow(target)
@@ -821,44 +818,6 @@ static func zanaves_child(z: FlashClip) -> FlashClip:
 
 
 # ================================================================ 内部辅助（原版没有对应符号，供本文件复用）
-
-## 等价于原版 gameUniverse.aSpecials[idx]：按 StoredData.A_* 常量取对应技能原型的只读说明文本。
-## 见文件头注释：GameUniverse.a_specials 尚未移植，这里本地构造，只覆盖升级面板用到的技能。
-## 下标与原版 aSpecials 字面量数组一致（已核对：数组字面量第 N 项正好对应 StoredData.A_* == N 的技能类）。
-static func _spec_for_abil(abil_const: int) -> SpecialTemplate:
-	match abil_const:
-		StoredData.A_BACKSTAB: return SpecBackStab.new(true)
-		StoredData.A_MISS_ASSASIN: return SpecMissAssasin.new(true)
-		StoredData.A_COLLECTMONEY: return SpecCollectMoney.new(true)
-		StoredData.A_POISON_THIEF: return SpecPoisonRogue.new(true)
-		StoredData.A_HIDE: return SpecHide.new(true)
-		StoredData.A_BREAKARROW: return SpecBreakArrows.new(true)
-		StoredData.A_BLOCK: return SpecBlock.new(true)
-		StoredData.A_STUN: return SpecStun.new(true)
-		StoredData.A_ROUNDATTACK: return SpecRoundAttack.new(true)
-		StoredData.A_PARRY: return SpecParry.new(true)
-		StoredData.A_TAUNT: return SpecTaunt.new(true)
-		StoredData.A_MASSSTUN: return SpecMassStun.new(true)
-		StoredData.A_SLOW: return SpecSlow.new(true)
-		StoredData.A_SUPPRESS: return SpecSuppress.new(true)
-		StoredData.A_CRITRANGED: return SpecCritRanged.new(true)
-		StoredData.A_CORRUPT: return SpecCorrupt.new(true)
-		StoredData.A_HEADSHOT: return SpecHeadShot.new(true)
-		StoredData.A_WEAKSPOT: return SpecWeakSpot.new(true)
-		StoredData.A_ICE: return SpecIce.new(true)
-		StoredData.A_FLASH: return SpecFlash.new(true)
-		StoredData.A_FIREHITSPLASH: return SpecFireHitSplash.new(true)
-		StoredData.A_METHEOR: return SpecMetheor.new(true)
-		StoredData.A_BETRAY: return SpecBetray.new(true)
-		StoredData.A_CURSE_BLACK: return SpecCurse.new(true)
-		StoredData.A_STRONGHEAL: return SpecStrongHeal.new(true)
-		StoredData.A_ENCHANT: return SpecEnchantWeapon.new(true)
-		StoredData.A_MASSHEAL: return SpecMassHeal.new(true)
-		StoredData.A_RESURRECT: return SpecRessurect.new(true)
-		StoredData.A_CURSEBLESS: return SpecCurseBless.new(true)
-		StoredData.A_HARMRESIST: return SpecHarmResist.new(true)
-	return null
-
 
 ## 原版 iconRovered switch 里技能加点按钮的分支：按钮 -> StoredData.A_* 常量；非技能按钮返回 -1。
 func _abil_pad_const(c: FlashClip) -> int:

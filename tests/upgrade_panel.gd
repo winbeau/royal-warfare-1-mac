@@ -26,6 +26,7 @@ func run() -> void:
 		return
 	StoredData.test_wipe()
 	StoredData.init()
+	GameUniverse.init_once()  # 原版 Main.loadResources 先 gameUniverse.initOnce()，aSpecials 才有内容
 	if SoundLibrary.inst == null:
 		SoundLibrary.new().init()
 	if Sounds.inst == null:

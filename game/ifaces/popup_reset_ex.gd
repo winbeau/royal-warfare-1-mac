@@ -8,8 +8,8 @@
 # 偏离/缺陷：
 # - 背景遮罩使用真实符号 mapBlack（character 5978，scenes/clips/mapBlack.tscn），透明度动画与原版一致。
 # - DropShadowFilter（popup 的投影）不移植：Control 没有对应滤镜，纯视觉效果。
-# - 原版 init() 只注册 ADDED_TO_STAGE 监听，真正的建立逻辑在 added() 里；这里直接用 _enter_tree/_exit_tree
-#   驱动 _added()/_removed()（同 MainGameUIEx 的写法），init() 保留为空函数，兼容"构造后调用 .init()"的原版调用方式。
+# - 原版 init() 只注册 ADDED_TO_STAGE 监听，真正的建立逻辑在 added() 里；这里 init() 通过 IfaceUtil.when_ready
+#   安排 _added()（同 PopupMissionEx），_exit_tree 对应原版 removed()。
 class_name PopupResetEx
 extends Control
 
@@ -38,14 +38,15 @@ func _init() -> void:
 	popup.child_clip("bClose").stop()
 
 
-## 原版 init()：只注册 ADDED_TO_STAGE；这里保留为空函数，实际建立逻辑见 _ready。
+## 原版 init()：每次展示前调用一次，注册一次性的 ADDED_TO_STAGE 监听，added() 里再摘掉。
+## 同一个弹窗实例会被地图反复 init() + addChild 复用（关闭时只是 removeChild，不销毁），所以每次
+## init() 都要重新安排一次 _added()：首次等 ready（子树建好图层）后触发，之后节点已 ready，立即执行。
+## 以前只在 _ready() 里做一次，第二次打开时按钮监听已被 _exit_tree 摘掉且不会再挂，弹窗打开后点不动。
 func init() -> void:
-	pass
+	IfaceUtil.when_ready(self, _added)
 
 
-## 用 _ready（子树全部就绪后自底向上触发）而不是 _enter_tree（自顶向下，子节点此时还没 ready）：
-## popup 的 FlashClip 子节点此时才真正建好图层，可以安全 goto_and_stop。
-func _ready() -> void:
+func _added() -> void:
 	if _attached:
 		return
 	_attached = true

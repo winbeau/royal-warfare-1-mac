@@ -55,4 +55,4 @@ func level_custom_actions() -> void:
 		HintsManager.need_to_show_hint(9)
 		HintsManager.need_to_show_hint(10)
 	cd_status = ar_swarm.update_arrow_swarm()
-	game_uni.ingame_ui.update_barchers_cooldown(cd_status)
+	game_uni.ingame_ui.update_b_archers_cooldown(cd_status)

@@ -24,4 +24,4 @@ func loading_completed_handler() -> void:
 
 func level_custom_actions() -> void:
 	cd_status = ar_swarm.update_arrow_swarm()
-	game_uni.ingame_ui.update_barchers_cooldown(cd_status)
+	game_uni.ingame_ui.update_b_archers_cooldown(cd_status)
