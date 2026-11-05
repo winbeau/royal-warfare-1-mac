@@ -22,7 +22,10 @@ func get_spec_level(param1: bool, param2: int) -> int:
 		is_active = true
 		return 2
 	var loc3: Array = (StoredData.local_game_data[StoredData.NUMPAN_ABILS] as Array).duplicate()
-	var loc4: int = int(loc3[param2])
+	# AS3 越界/负下标读到 undefined，int(undefined) == 0；GDScript 负下标会读到末尾元素，越界则报错，故显式处理。
+	var loc4: int = 0
+	if param2 >= 0 and param2 < loc3.size():
+		loc4 = int(loc3[param2])
 	if externally_unlocked == true:
 		loc4 = 3
 	if loc4 == 0:

@@ -864,6 +864,11 @@ func check_flee_battle() -> void:
 		var i: int = 0
 		while i < num_attackers:
 			if cur_health > 0:
+				# 原版 numAttackers 在循环前取一次；strikeBackStab 击杀攻击者会让 aMeleeAttackers 缩短，随后 aMeleeAttackers[i]
+				# 为 undefined，原版在 getStance 处抛 TypeError #1009，函数（连同本帧处理器）中止，fleeBattle 不再执行。
+				# GDScript 无法抛出，改为静默中止本函数（剩余语句同样被跳过）。
+				if i >= cur_battle.a_melee_attackers.size():
+					return
 				var attacker: LivingObject = cur_battle.a_melee_attackers[i]
 				if attacker.get_stance == FIGHTING:
 					if attacker.walk_speed > max_speed:
@@ -1288,6 +1293,10 @@ func check_obstacles(param1: Vector2, param2: Vector2, param3: Vector2 = Vector2
 					var idx: int = start_num
 					var screen := Rect2(0, 0, GAME_WIDTH, GAME_HEIGHT)
 					while idx != end_num:
+						# 原版数据缺陷：level_23greenroad 的 ring 4 编号为 1..12 且只有 12 个点，ringPoints[12] 为 undefined，
+						# 原版在 p.x 处抛 TypeError #1009 使本帧处理器中止。GDScript 无法抛出异常，退化为放弃绕障、直线前进。
+						if idx >= ring_points.size():
+							return param2
 						var p: RWLayoutClip = ring_points[idx]
 						forward.push_back(Vector2(p.x, p.y))
 						idx += 1
@@ -1299,6 +1308,8 @@ func check_obstacles(param1: Vector2, param2: Vector2, param3: Vector2 = Vector2
 							break
 					idx = start_num
 					while idx != end_num:
+						if idx >= ring_points.size():
+							return param2  # 同上：原版此处 TypeError #1009
 						var p2: RWLayoutClip = ring_points[idx]
 						backward.push_back(Vector2(p2.x, p2.y))
 						idx -= 1
@@ -1750,6 +1761,10 @@ func attack_done(_e: Variant = null) -> void:
 			enemy_hit_sound()
 
 func enemy_hit_sound() -> void:
+	# 原版 enemyHitSound 在 curTarget 为 null 时抛 TypeError #1009（bringDamage 的副作用可能清空 curTarget，
+	# 如 SpecMissAssasin 之类）；Flash 播放器中该函数随即中止，此后没有任何语句，所以这里直接返回，可观察行为相同。
+	if cur_target == null:
+		return
 	if cur_target.cur_armor > 0.5:
 		Sounds.inst.play(s.get_sound_from_stack(SoundLibrary.IMPACT_ARMOR), false, RWRandom.rand_range(0, 12) / 100.0, 0.28, position.x, SoundLibrary.IMPACT)
 	else:

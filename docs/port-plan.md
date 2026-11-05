@@ -39,6 +39,21 @@
 - AS3 的 getter/setter 改为同名 GDScript 属性（`var cur_damage: float: get = ..., set = ...`）。
 - 单位和特效是 `Node2D`，自身没有 `_process`。分析脚本（统计、站点 API、域名锁、`bLoader`、预载进度）不移植。
 
+### 运行时接口约定
+
+- `RWTween` 是静态外观（autoload 节点名为 `RWTweenRunner`），代码中一律直接写 `RWTween.to(...)`、`RWTween.delayed_call(...)`，测试中也一样。
+- 声音节点的 autoload 名为 `SoundSystem`，代码通过 `Sounds.inst`、`SoundLibrary.inst` 访问。
+
+### 界面类与剪辑场景
+
+原版界面类继承符号类，例如 `mainGameUI_ex extends mainGameUI`。Godot 中的对应做法如下：
+
+- `pipeline/clips.py` 生成的 `scenes/clips/<符号类名>.tscn`，其根节点是 `FlashClip`。子节点名保留原实例名（如 `eUnitPanel`），文本框是 `FlashText`。
+- 界面类写成 `class_name XxxEx extends FlashClip`，放在 `game/ifaces/`。为它建一个继承场景 `scenes/ifaces/<snake>.tscn`：继承对应的 `scenes/clips/<符号类名>.tscn`，并把根节点脚本换成该界面类。创建实例时用 `preload("res://scenes/ifaces/<snake>.tscn").instantiate()`。
+- 符号类上声明的实例字段（`public var eUnitPanel`）写成 `@onready var e_unit_panel: FlashClip = $eUnitPanel`。更深层的访问直接用原实例名路径，如 `$eUnitPanel/sSensPanel/sArmor`。
+- `gotoAndStop(n)` 写成 `goto_and_stop(n)`，帧号从 1 开始。`TextField.text`、`htmlText` 分别写成 `FlashText.text`、`html_text`。
+- 按钮行为（悬停提亮、点击音）由 `utils/buttonClass` 移植而来的 `ButtonClass` 提供。
+
 ## 3. AS3 → GDScript 语义规则
 
 1. **除法**：AS3 的 `/` 总是浮点除法，GDScript 中 int/int 会整除。两边可能都是 int 时，必须写 `float(a) / b`。
@@ -67,12 +82,12 @@
 
 新核心与旧实现并存于各自目录，等新核心能跑通战斗后再切换入口，随后删除旧的 `battle.gd`、`unit.gd`、`specials.gd`。资源编号、`assets/` 和 UI 场景保持不变。
 
-- [ ] **P0 数据准备**：导出动画命令码表 `data/anim_commands.json`、障碍掩码 `assets/paths/`、路点环和路线校验；导出破损类的 P-code；在本地固化导出命令。
-- [ ] **P1 运行时基础**（`game/rw/`）：`RWRandom`、AS3 数值工具、`RWTween`、`RWXml`、`BmpFrames`、`Sounds`/`soundLibrary`，并配套单元测试。
-- [ ] **P2 战斗核心**：`GameUniverse` 主循环、事件调度、查询 API、输入；`LivingObject`；`battle`；寻路；`meleeFighter`/`rangedFighter`/`mageClass`/`priestClass`/`meleeRogue`/`npcClass`；`arrow_ex`、`smallFireball_ex`、`visualsTemplate`；`levelTemplate` 和第 1–3 关。以第 1 关可完整游玩作为切换节点。
-- [ ] **P3 兵种与技能**：其余 40 余个具体兵种、45 个技能、各类特效。
+- [x] **P0 数据准备**：导出动画命令码表 `data/anim_commands.json`、障碍掩码 `assets/paths/`、路点环和路线校验；导出破损类的 P-code；在本地固化导出命令。
+- [x] **P1 运行时基础**（`game/rw/`）：`RWRandom`、AS3 数值工具、`RWTween`、`RWXml`、`BmpFrames`、`Sounds`/`soundLibrary`，并配套单元测试。
+- [ ] **P2 战斗核心**（类已移植，端到端集成中）：`GameUniverse` 主循环、事件调度、查询 API、输入；`LivingObject`；`battle`；寻路；`meleeFighter`/`rangedFighter`/`mageClass`/`priestClass`/`meleeRogue`/`npcClass`；`arrow_ex`、`smallFireball_ex`、`visualsTemplate`；`levelTemplate` 和第 1–3 关。以第 1 关可完整游玩作为切换节点。
+- [ ] **P3 兵种与技能**（类已移植，集成验证中）：其余 40 余个具体兵种、45 个技能、各类特效。
 - [ ] **P4 关卡**：第 4–24 关的子类钩子、`levelIntro` 教学关。
-- [ ] **P5 界面**：`mainGameUI_ex`、胜负面板、地图、升级面板、成就、手册、漫画、弹窗、主菜单、暂停菜单，按实例名对应节点，补齐图标多帧状态、提示、动画和滤镜效果。
+- [ ] **P5 界面**（层级剪辑场景已导出，战斗界面移植中）：`mainGameUI_ex`、胜负面板、地图、升级面板、成就、手册、漫画、弹窗、主菜单、暂停菜单，按实例名对应节点，补齐图标多帧状态、提示、动画和滤镜效果。
 - [ ] **P6 存档与统计**：按 `storedData` 的槽位结构存档，移植 `globalData` 的 48 项成就统计和 `bonusCalculator`。
 - [ ] **P7 验收**：逐项与原版 Flash 并排对照；固定种子回归测试；更新 `docs/verification.md`。
 

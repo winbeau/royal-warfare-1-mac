@@ -43,6 +43,11 @@ func run() -> void:
 	var universe := GameUniverse.new()
 	GameUniverse.inst = universe
 	root.add_child(universe)
+	# 容器原版在 continueLoadingLevelData 中创建；这里不加载关卡，直接补上。
+	universe.effects_cont = Node2D.new()
+	universe.bottom_effects_cont = Node2D.new()
+	universe.add_child(universe.bottom_effects_cont)
+	universe.add_child(universe.effects_cont)
 	for entry in classes:
 		test_class(entry[0], entry[1])
 	test_flee()

@@ -47,6 +47,9 @@ func run() -> void:
 	if not content.isolated_profile:
 		quit(2)
 		return
+	# 技能类的 getSpecLevel 读取 StoredData.localGameData；原版由 Main 启动时 storedData.init() 填充。
+	StoredData.test_wipe()
+	StoredData.init()
 	var units := RWXml.load_file("res://data/xml/6611_extDataManager_units.xml")
 	check(units != null, "units.xml loads")
 	var gu: Variant = null

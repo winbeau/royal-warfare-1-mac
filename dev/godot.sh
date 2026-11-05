@@ -29,6 +29,9 @@ case "$action" in
         "$godot_bin" --headless --path "$project_dir" --script tests/levels_data.gd -- --isolated-profile
         "$godot_bin" --headless --path "$project_dir" --script tests/universe_core.gd -- --isolated-profile
         "$godot_bin" --headless --path "$project_dir" --script tests/living_core.gd -- --isolated-profile
+        for t in class_bases friend_units enemy_units visual_effects specials_rules battle_level1 battle_all_levels; do
+            "$godot_bin" --headless --path "$project_dir" --script "tests/$t.gd" -- --isolated-profile
+        done
         exec "$godot_bin" --headless --path "$project_dir" --script tests/campaign_flow.gd -- --isolated-profile
         ;;
     export)

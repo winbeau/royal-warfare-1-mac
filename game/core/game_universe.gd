@@ -264,7 +264,8 @@ func _set_unit_static(cls: String, field: String, v: float) -> void:
 	var scr := _living_script(cls)
 	if scr == null:
 		return
-	scr.set(field, int(v) if v == floorf(v) else v)
+	# AS3 静态字段为 int，赋值 XMLList 时按 int() 截断；Script.set 对静态变量有效（tests/battle_level1 校验）。
+	scr.set(field, int(v))
 
 
 static func _living_script(cls: String) -> Script:
@@ -376,10 +377,13 @@ func _new_unit(kind: int) -> LivingObject:
 	if scr == null:
 		push_error("GameUniverse: living class %s is not ported yet" % A_LIVING_CLASSES[kind])
 		return null
+	# 原版 addSoldier/loadEnemy：aLivingClasses[kind].cachedUnitData.getData()，对象池由 Main.loadResources 预建，
+	# 池取空时 getData 新建并调用 init()。池尚未建立（未走 Main.loadResources）时按 cache(0) 懒建，同样经 SimpleCache 调 init()。
 	var cache: Variant = scr.get("cached_unit_data")
-	if cache is SimpleCache:
-		return cache.get_data() as LivingObject
-	return scr.new() as LivingObject
+	if not (cache is SimpleCache):
+		scr.call("cache", 0)
+		cache = scr.get("cached_unit_data")
+	return (cache as SimpleCache).get_data() as LivingObject
 
 
 func add_soldier(param1: int, param2: LivingObject = null, param3: int = 1, param4: bool = false) -> LivingObject:
@@ -1393,6 +1397,13 @@ func _exit_tree() -> void:
 		return
 	clear_data_before_remove()
 	level_info.clear_data()
+	# 飞行中的箭/火球在子节点的 tree_exiting（先于本节点）里已回池。AS3 的对象池实例脱离显示列表后仍存活；
+	# Godot 里它们仍是容器的子节点，容器被 free 时会连带释放池中实例，所以这里把它们从容器摘下来。
+	for cont: Node in [units_cont, effects_cont, bottom_effects_cont, healt_bar_cont]:
+		if cont != null and is_instance_valid(cont):
+			for child in cont.get_children():
+				if child is ArrowEx or child is SmallFireballEx:
+					cont.remove_child(child)
 	_bg_click_enabled = false
 	_update_enabled = false
 	_sel_move_enabled = false
