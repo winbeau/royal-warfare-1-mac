@@ -1,9 +1,35 @@
-# Royal Warfare 1 — Mac
+# Royal Warfare 一代 · Godot Mac 重写
 
-This repository is exclusively the first game's native Godot port. Keep it independent of Royal Warfare 2. Preserve the original content, interface and mechanics unless the user explicitly authorizes changes.
+## 目标与仓库边界
 
-Use `/Applications/Godot.app/Contents/MacOS/Godot`. Do not add bundled editors, Flash runtimes, SWF files, reverse engineering sources or conversion tools. All runtime assets belong in this repository. Local recovery material is ignored.
+保留一代的完整内容、玩法、美术、角色、背景、按钮和界面布局，使用 Godot 原生代码逐步对齐，再按用户要求进行二次开发。不得混入二代，不能为降低工作量而删减原内容、简化界面或擅改数值。
 
-Run `dev/godot.sh test` for content and gameplay changes. Tests use `-- --isolated-profile`; never change a player's saved campaign for testing. Run `tests/campaign_flow.gd` when changing event dispatch. Check rendered screens when altering interface or font placement.
+- 本仓库是可独立运行和开发的 **Godot 游戏**。运行逻辑必须使用原生代码，不通过 Flash、Ruffle、Wine 或原程序完成游戏行为。
+- 固定原版对照仓库：`https://github.com/winbeau/royal-warfare-1-flash-reference`，本机通常位于同级目录 `../royal-warfare-1-flash-reference`。
+- 只对照其中唯一的 `game/royal-warfare-1-armorgames.swf`，SHA-256 为 `8bd54a011e49fa6bff0aa89080f783c993206fe5425cc77748a35bde3a3ae997`；播放器为 Adobe Flash Player 32.0.0.465。
+- 游戏运行所需的完整资源都应在本仓库中。原始下载包、反编译源码、转换工具、过程日志及来源研究只留本地，不提交，不导出。
+- 使用 `/Applications/Godot.app/Contents/MacOS/Godot`；不要在 `tools/` 或仓库内另放 Godot 编辑器。
 
-Do not describe resource coverage or accelerated event tests as full gameplay parity. Keep `docs/verification.md` accurate about unresolved differences and manual playthrough coverage.
+## 每次任务的做法
+
+1. 先读 `docs/verification.md`，确认哪些部分已经验证、哪些仍是近似实现，不把未验证项当作原版事实。
+2. 按用户本次任务选择一个明确差异或功能，先记录原版的关卡、难度、升级、兵种、等级、操作顺序和观察结果，再检查本实现。
+3. 在本仓库修复相关代码、数据或可编辑场景，尽量保留既有资源编号和数据关联。碰到原始数值中的异常，先核对原版，不能擅自当作笔误改掉。
+4. 区分“还原修复”和“用户要求的玩法改动”。先以原版为准；二次开发的行为变化单独记录，便于以后追溯。
+5. 完成相应验证，更新 `docs/verification.md` 的实际范围和剩余差异，再按已有用户授权提交、推送。无需为普通实现选择反复确认。
+
+不要顺手大改不相关模块，不以整套重新搭建替代具体修复。随机战斗应多次观察并核对确定公式，不能仅凭一次胜负调平衡。
+
+## 运行与验证
+
+- `./dev/godot.sh editor` 打开已安装的 Godot IDE；主场景是 `scenes/main.tscn`。
+- 内容或战斗变动运行 `./dev/godot.sh test`。测试一律使用 `-- --isolated-profile`，不修改玩家存档。
+- 关卡事件变动必须检查 `tests/campaign_flow.gd`；UI、字体、坐标变动必须检查实际渲染；战斗规则应验证能复现该差异的行为。
+- 测试已经通过后，不为无关原因重复扩大测试。仅文档变更不必重跑完整资源导入。
+- 导出使用 `./dev/godot.sh export`，成品应在离开工程目录后运行，不依赖本地研究工具或二代仓库。
+
+## 如实记录
+
+资源齐全、25 个场景可创建、313 个事件加速测试通过，都不代表战役可以正常通关或达到原版等价。对全关卡、三种难度、全部技能、AI 和动画命中时机，只报告实际验证过的范围。
+
+当前剩余差异以 `docs/verification.md` 为准。后续逐项缩小它们；未经实际对照，不宣称“100% 无损”或“完全还原”。
