@@ -205,9 +205,8 @@ func play(param1: AudioStream, param2: bool = false, param3: float = 0, param4: 
 			ch.type_key = param6
 			d_channels[ch] = param6
 			ch.sound_complete.connect(sound_completed)
-		elif param6 != "" and o_types.has(param6):
-			# 偏离原版：Flash 在声道耗尽时 play 返回 null 且计数泄漏；这里回退计数避免该类永久静音。
-			o_types[param6] -= 1
+		# 原版行为：声道耗尽时 Sound.play 返回 null，分类计数已先加 1 且不回退（计数泄漏，该类可能因此永久静音）。
+		# 此处不回退，忠实保持。
 	return res
 
 

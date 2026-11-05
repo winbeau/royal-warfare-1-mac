@@ -1,5 +1,5 @@
 extends Node2D
-const Battle = preload("res://game/battle.gd")
+const OldBattle = preload("res://game/battle.gd")
 var screen: Control
 var popup: Control
 var world: Node2D
@@ -321,7 +321,7 @@ func start_mission(number: int) -> void:
 		return
 	clear_screen()
 	mission = number
-	world = Battle.new()
+	world = OldBattle.new()
 	world.host = self
 	world.mission = Content.campaign[number].duplicate(true)
 	add_child(world)

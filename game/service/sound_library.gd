@@ -403,10 +403,10 @@ func init() -> void:
 		lib[key] = load(path) if path != "" and ResourceLoader.exists(path) else null
 
 
-# 反编译破损：switch 末尾带 §§goto，且 BIG_CREATURE_ATTACK 分支只有 `this.a;` 而没有赋值，
-# 随后落入 ARROW_IMPACT 分支。无 P-code 可核对，按反编译结果保留：
-# BIG_CREATURE_ATTACK 实际使用 ARROW_IMPACT 的候选列表（记入 docs/verification.md 待查）。
-# 未匹配的键不改写 a，沿用上一次的值。随机数：Utility.randRange(0, n-1) -> floor(rand*n)。
+# 反编译破损，按 P-code 重建：switch 是 lookupswitch，BIG_CREATURE_ATTACK（索引 7，ofs0123）只执行
+# `getproperty a; pop`（反编译的 `this.a;`），随后 jump 到 ARROW_IMPACT 分支（ofs010e）赋值 soundObj.ARROW_IMPACT。
+# 因此原版 BIG_CREATURE_ATTACK 使用 ARROW_IMPACT 的候选列表（已用 P-code 确认，是原版行为）。
+# 未匹配的键（lookupswitch 默认 ofs01ce）不改写 a，沿用上一次的值。随机数：Utility.randRange(0, n-1)。
 func get_sound_from_stack(param1: String) -> AudioStream:
 	match param1:
 		MONSTERS: a = sound_obj["MONSTERS"]
@@ -416,7 +416,7 @@ func get_sound_from_stack(param1: String) -> AudioStream:
 		MAN_DIED: a = sound_obj["MAN_DIED"]
 		HEAL_CAST: a = sound_obj["HEAL_CAST"]
 		CREATURE_ATTACK: a = sound_obj["CREATURE_ATTACK"]
-		BIG_CREATURE_ATTACK: a = sound_obj["ARROW_IMPACT"]
+		BIG_CREATURE_ATTACK: a = sound_obj["ARROW_IMPACT"]  # P-code：落入 ARROW_IMPACT 分支
 		ARROW_IMPACT: a = sound_obj["ARROW_IMPACT"]
 		IMPACT_FLESH: a = sound_obj["IMPACT_FLESH"]
 		IMPACT_HANDS: a = sound_obj["IMPACT_HANDS"]
