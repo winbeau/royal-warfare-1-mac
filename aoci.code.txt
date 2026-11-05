@@ -1,0 +1,49 @@
+#AOCI-CODE-VOLUME: 1
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/===
+.gitattributes[FV2T]: F:Git 换行与二进制属性：默认 text=auto，.gd/.tscn/.tres/.json/.svg 强制 LF，png/jpg/mp3/wav/ttf 标为 binary | R:- | A:- | S:-
+.gitignore[FV4T]: F:忽略本地研究与构建产物及机器绑定的 AOCI 主机配置 | R:code:AGENTS.md | A:忽略 /original/ /editable/（反编译源码）/tools/ /pipeline/ /analysis/ /reference/ /build/ /data/xml/raw/、.godot/、*.swf/*.fla/*.exe/*.dll、.mcp.json | S:-
+AGENTS.md[SG7S]: F:仓库级开发规则：Godot 原生重写一代的目标与边界、每次任务流程、运行验证要求、如实记录原则，末尾含 AOCI 托管区块 | R:code:docs/verification.md,code:dev/godot.sh,code:README.md | A:原版对照仅唯一 SWF（固定 SHA-256）且位于同级参考仓库；用 /Applications/Godot.app，不另放编辑器；测试一律带 -- --isolated-profile；战斗或内容变动跑 ./dev/godot.sh test；未经对照不宣称无损；aoci:begin/end 区块由 AOCI 管理 | S:-
+README.md[SG5T]: F:项目说明：Godot 4 原生重写定位、运行与导出命令、内容与编辑入口表、操作键位，并声明尚未与原作逐项等价 | R:code:docs/verification.md,code:dev/godot.sh | A:当前版本 0.1.0；入口 ./dev/godot.sh run/editor/test/export，推荐 Godot 4.7.2；存档在 user://campaign.json；美术与内容权利归原权利人，不含商业发行授权 | S:-
+export_presets.cfg[OV6T]: F:macOS 导出预设：通用 .app，版本 0.1.0，未签名未公证 | R:code:dev/godot.sh,code:project.godot | A:include_filter 附带 data 的 json/xml、scenes.json 与文本；exclude_filter 排除 original/editable/tools/pipeline/analysis/reference/dev/tests/docs/build 与 data/xml/raw；bundle id 为 com.winbeau.royalwarfare1.native | S:-
+project.godot[FC7T]: F:Godot 4.7 工程配置：主场景、autoload Content、700x600 视口（窗口 1050x900）、30 物理帧、GL Compatibility | R:code:scenes/main.tscn,code:game/content.gd | A:主场景为 scenes/main.tscn；Content 以 autoload 注册；canvas_items 拉伸；physics_ticks_per_second=30 与原版帧率对应，战斗帧计时依赖它 | S:-
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/.claude/agents/===
+sonnet-coder.md[XG4T]: F:编码实现子代理定义（model: sonnet）：接收主会话已定方案的边界明确的移植或修改任务，按原版 AS3 行为实现并汇报 | R:code:AGENTS.md | A:约束为按原版保留数值、帧数与判定顺序，看似笔误的原值照搬并在汇报注明；GDScript 缩进用 tab 并加静态类型；经 ./dev/godot.sh 测试且带 -- --isolated-profile；不执行 git commit/push/reset；不重新设计方案 | S:-
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/data/===
+achievement_rules.json[FB5S]: F:成就计数规则表：32 条 {counter, threshold, achievement(0 基索引)}，累计计数达阈值即授予 | R:code:game/achievements.gd,code:data/save_schema.json | A:counter 名对应 slots[5] 计数键；同一 counter 可对应多个阈值（如 a25_28_totalKilled 对应 4 个成就）；阈值与映射保留原版数值，跳号（如 41→42）不是笔误修正对象 | S:-
+arrows.json[FB5S]: F:6 个关卡（4,6,16,17,20,22）的箭雨参数：side,count,probability,damage,splash,area,cooldown,player | R:code:game/battle.gd | A:battle._ready 按 mission.number 取条目；玩家按钮或 ARROWS_SWARM 事件经 arrow_strike 触发；player 字段与 battle.gd 硬编码的 4/16/17/20 一致，但代码并不读取该字段 | S:-
+backgrounds.json[FB4S]: F:24 张关卡背景名到 PNG 路径与来源符号 ID 的映射 | R:code:data/geometry.json | A:键与 campaign 的 background 名和 geometry.json 键一致；当前 game/ 未读取本文件，battle 直接按 assets/backgrounds/<名>.png 加载 | S:-
+bonuses.json[FB6M]: F:15 种可招募单位的星级加成表，攻击与防御各 0 至 3 级 | R:code:game/unit.gd,code:data/upgrades.json | A:attack_index/defense_index 指向 profile.slots[6]；unit.stat 仅对 original_friendly 单位按已购等级叠加 bonusDamage、bonusHP、bonusArmor、bonusArmorPierce 等数值 | S:-
+boss_support.json[FB5M]: F:吸血鬼王援军波次表：3 波，每波一组 {kind, level, route, summon} | R:code:game/battle.gd,code:game/unit.gd | A:unit.hurt 在 UNDEAD_VAMPIRE_KING 生命低于 650 时触发一次 king_support，按 support_phase 取波；当前只会用到第 1 波，多阶段援军未还原；summon=true 走带眩晕的召唤，否则沿路线生成 | S:-
+bounds.json[FD6L]: F:符号 ID 到 [x,y,w,h] 包围盒的表（6449 项），用于动画精灵偏移 | R:code:game/content.gd,code:data/symbols.json | A:键为符号 ID 字符串；content.sprite、unit.play_state、main.replace_sprite 取前两项设为 AnimatedSprite2D.offset，缺项回退 [0,0,1,1]；文件为单行大 JSON，勿整读 | S:-
+campaign.json[FB8L]: F:战役数据：序章（number 0）加 24 关共 25 条记录、313 个事件，含对白、敌友军、召唤、箭雨与初始配置 | R:code:game/battle.gd,code:data/geometry.json,code:game/main.gd | A:每条含 caption/description/background/events/initial_units/set_lives_calls/set_money_calls/locked_units；事件类型六种，time 单位为秒（战斗中乘 30 帧）；battle 取 set_lives_calls 与 set_money_calls 的最后一项；locked_units 同时含 BUTTON_* 类别与具体单位；event_types 为各类型计数 | S:-
+encyclopedia.json[FB5S]: F:手册文本：26 种敌人的种类与说明、48 项成就说明 | R:code:game/main.gd,code:data/units.json | A:main.show_help_page 从第 50 页起每页展示 2 种敌人，按 enemy_kinds 顺序且仅显示 profile.slots[11] 已遇敌人；achievement_descriptions 下标即成就索引，每页 12 项共 4 页 | S:-
+geometry.json[FD7L]: F:24 张背景的路线 routes、guides、elements 与 obstacle_polygons，来自原版关卡符号 | R:code:game/battle.gd,code:data/campaign.json | A:键为背景名；routes 为路线 id 到屏幕坐标点序列，友军招募固定走路线 "0"；obstacle_polygons 经奇偶规则驱动 is_blocked 与 AStarGrid2D 网格；约 6 万行，勿整读 | S:-
+names.json[FB2S]: F:119 个角色名字符串列表 | R:- | A:当前 game/ 与 tests/ 均无读取 | S:-
+recruitment.json[FB7S]: F:五个兵种族的招募冷却表（秒），按场上存活同族数量索引 | R:code:game/battle.gd | A:battle.recruit 用存活数减 1 作下标并截断到表尾；FR_KING 计入战士族 | S:A_ARCHER_COOLDOWN_TAB 第 17 项 2223 为保留的原值，改动属玩法变更须单独记录
+save_schema.json[FD7M]: F:存档默认结构：15 个 slots 初值、121 个原版常量名到索引的表、存档位置 user://campaign.json | R:code:game/content.gd | A:slots 含 [0] 关卡星级 24、[1] 进阶解锁 10、[2] 技能等级 41、[4] 成就 48、[5] 成就计数、[6] 星级加成 10、[7] 漫画标记、[9] 教程标志、[11] 已遇敌人、[12] 难度、[13][14] 难度星级；ability_level 经 constants 查索引 | S:constants 中 _loc1_ 至 _loc3_ 是反编译临时名，值为 0，不是有效索引
+special_parameters.json[FB7M]: F:45 个技能 spec* 的等级参数表、冷却、说明与图标索引，取自一代类 | R:code:game/specials.gd,code:data/save_schema.json | A:tables 各字段按技能 3 档取值；key 为 A_* 技能常量；aTimeUntilUpdate 为冷却秒；main 升级界面提示读取 description；少数字段名为 _loc2_ 等反编译名 | S:_loc2_ 含义随技能而异（倍率、半径或幅度），须按 specials.gd 调用处理解
+story.json[FB5T]: F:六段章节漫画：场景符号 ID、页元素名、存档标志、触发关卡 | R:code:game/main.gd | A:battle_finished 通关 after_mission 后把 slots[7][flag] 由 -1 置 0；进入地图时首个为 0 的段落先播放，看完置 1 | S:-
+symbols.json[FC7M]: F:597 个原版符号名到资源 ID 的映射表 | R:code:game/content.gd,code:data/bounds.json | A:Content.frames/sprite 由符号名取 ID 再加载 assets/library/sprites/<id>/frames.tres；含 gameCore.serviceUtils.soundLibrary_<名> 声音符号与 flagMap 等界面符号 | S:-
+units.json[FB8L]: F:单位数据：46 种单位定义 units、原始 XML 记录 xml_records、105 个种类常量 kind_constants | R:code:game/unit.gd,code:game/specials.gd,code:data/bonuses.json | A:units[kind] 含 id/class/base/stats/animations/specials/unit_cost/upgrade_cost/xml_tag；stats 数值按 one/two/three 三个等级给出；FR_* 为友军，NPC_ 开头为平民；数值取自原版 XML，保留原值 | S:-
+upgrades.json[FB6M]: F:升级界面 55 个按钮定义：ability 30、bonus 10、unit 5、无类型 10 | R:code:game/main.gd,code:data/save_schema.json | A:type 决定写入 slots[2]、slots[6] 或 slots[1]；index/cost/max 供 buy_upgrade；键前缀 uArch/uPriest/uMage/uThief 等决定所需通关数，进阶解锁标志不足时拒绝购买 | S:-
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/dev/===
+godot.sh[XV7T]: F:Godot 命令包装脚本：run、editor、test、export 四个动作 | R:code:project.godot,code:export_presets.cfg | A:自动查找 /Applications/Godot.app 或 GODOT_BIN；test 先 --import 再依次运行 smoke、combat_rules、campaign_flow；export 输出 build/Royal Warfare 1.app | S:test 不含 first_mission.gd 与 capture.gd；测试必须带 -- --isolated-profile，否则会改写玩家存档
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/docs/===
+verification.md[SQ7T]: F:运行验证与还原状态记录：已验证范围、尚未完成的等价验收、保留的原数据异常 | R:code:AGENTS.md,code:dev/godot.sh | A:已验证项含资源齐全、25 关场景可建、313 事件调度、规则与技能分派测试；明确未验证：动画判定时机、近战围攻、三种难度通关、48 项成就、首领多阶段、部分界面动画；每次任务后更新 | S:-
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/game/===
+achievements.gd[DB5T]: F:成就计数与授予：战斗中累加计数器，结算时按规则表授予成就并存档 | R:code:data/achievement_rules.json,code:game/content.gd | A:killed 按单位种类累加击杀计数；finish 把战斗统计并入 profile.slots[5]，按规则表授予，另硬编码三星关数、特定关通关、失败与总星数成就；award 写 slots[4][index]=1 | S:-
+battle.gd[DB9L]: F:战斗场景主控：单位生成与逐帧 tick、关卡事件调度、招募冷却、箭雨、对白、HUD 与胜负结算；近似实现，未与原版逐项等价 | R:code:game/unit.gd,code:game/specials.gd,code:game/achievements.gd,code:game/content.gd,code:data/campaign.json,code:data/geometry.json,code:data/recruitment.json,code:data/arrows.json | A:物理 tick 30Hz，事件按 time×30 帧推进；unit_died、corpse_expired、unit_escaped 扣生命，lives≤0 失败，事件耗尽且无敌人则胜利；recruit 按存活同族数查冷却表；custom_level_actions 硬编码教程提示；寻路为 AStarGrid2D，与原算法不同 | S:ENEMY_SPAWN 的 spawnProb 与箭雨 probability 均按 randf()>值 才触发，值越大越少；玩家箭雨仅关卡 4/16/17/20；国王死亡扣 20 生命，友军尸体 10 秒后消失并各扣 1
+content.gd[CD8S]: F:autoload 单例 Content：加载全部 JSON 数据、管理存档 profile、提供场景/精灵/帧工厂与进度计算 | R:code:project.godot,code:data/save_schema.json,code:data/units.json,code:data/campaign.json,code:data/symbols.json,code:data/bounds.json,code:data/geometry.json,code:data/upgrades.json | A:_ready 读入 data/*.json、assets/ui/scenes.json 与 data/resources.json；存档读写 user://campaign.json，先写 .tmp 再 rename；stars、next_mission、unlock_progression、ability_level 计算进度；scene(id) 实例化 scenes/ui/<id>.tscn | S:命令行含 --isolated-profile 时启动即重置内存存档且 save_profile 不写盘；缺该参数的测试会改写玩家存档
+main.gd[AU7L]: F:游戏外壳与界面流程：菜单、地图、漫画、手册、成就、升级、致谢、暂停和战斗结算，创建并宿主 battle.gd | R:code:game/battle.gd,code:game/content.gd,code:game/original_scene.gd,code:data/story.json,code:data/upgrades.json,code:data/encyclopedia.json | A:on_action 按界面符号 ID 与按钮名分派；start_mission 创建 Battle 并设 host；battle_finished 按损失生命算 1 至 3 星，写入 slots[0] 与难度星级并解锁漫画；buy_upgrade 校验通关数与进阶解锁后扣星；致谢页打开外部链接 | S:-
+original_scene.gd[CU7T]: F:原 Flash 界面场景的 Godot 控件基类：隐藏默认元素、按钮点击遮罩、按原文本矩阵重建 Label | R:code:game/content.gd,code:game/main.gd | A:被 scenes/ui/<id>.tscn 挂载；按钮 pressed 时发出 activated(symbol_id, instance)；element、conceal、set_text 供 main 与 battle 使用；字体按 face 名匹配 data 资源中的 ttf | S:-
+specials.gd[DB8M]: F:技能效果分派：按单位 record.specials 中的 spec* 在 update/defend/strike/support 施加效果与状态，参数读自 special_parameters | R:code:data/special_parameters.json,code:game/unit.gd,code:game/battle.gd | A:update 在冷却就绪后按技能分派治疗、复活、召唤、陨石、冰冻、叛变、诅咒、群体控制；defend 判定格挡与闪避；strike 改写伤害并附加状态；support 为牧师强效治疗；consume 清零计时并累加成就计数 | S:rank 对敌方或 all_abilities 单位恒取最高档；友军取 ability_level-1，-1 表示未解锁则不触发；部分数值硬编码，未核对原版
+unit.gd[DB8M]: F:RoyalUnit 单位节点：属性、状态效果、移动寻路、普攻与治疗、受伤死亡复活及经验升级 | R:code:game/battle.gd,code:game/specials.gd,code:data/units.json,code:data/bonuses.json | A:setup 按 kind 读 units.json；stat 取一二三级数值并叠加星级加成；tick 处理状态、冷却、目标选择与攻击；hurt/heal/revive；诅咒按比例缩放生命上限；经验满则升级并重算生命 | S:攻击距离 28/266/147、探敌半径 85/266 与尸体 10 秒均为硬编码近似，未对照原版；星级加成仅作用于 original_friendly
+
+===/Users/winbeau/Developer/personal/royal-warfare-1-mac/scenes/===
+main.tscn[EU7T]: F:主场景入口：仅一个挂 game/main.gd 的 Node2D | R:code:game/main.gd | A:其余界面由 main.gd 在运行时从 scenes/ui/*.tscn 实例化 | S:-

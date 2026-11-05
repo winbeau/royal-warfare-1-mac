@@ -19,3 +19,7 @@ export_credentials.cfg
 
 __pycache__/
 *.pyc
+
+# AOCI agent host integration (machine-bound; do not commit)
+.mcp.json
+.mcp.json.backup.*
