@@ -62,5 +62,6 @@ func check_wave(param1: LivingObject) -> void:
 	if can_use_special():
 		var loc2: SimpleCache = StunnedSmallWaveVisual.cached_data
 		var loc3: StunnedSmallWaveVisual = loc2.get_data() as StunnedSmallWaveVisual
-		loc3.added_to_stage(param1.sens.position.x, param1.sens.position.y, Callable(), param1)
+		# 原版 addedToStage(sens.x, sens.y + sens.height / 2, null, param1)，与 specStun.checkWave 相同
+		loc3.added_to_stage(param1.sens.position.x, param1.sens.position.y + param1.sens_height / 2, Callable(), param1)
 		loc3.scale.x = param1.get_view_direction

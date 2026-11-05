@@ -21,6 +21,8 @@ func check_flee(param1: LivingObject) -> void:
 				var loc_x: int = RWRandom.rand_range(30, 650)
 				var loc_y: int = RWRandom.rand_range(30, 570)
 				param1.set_destination(Vector2(loc_x, loc_y), true)
+				if AS3.aborted:
+					return
 				var loc2: SimpleCache = FleeVisual.cached_data
 				var loc3: FleeVisual = loc2.get_data() as FleeVisual
 				loc3.added_to_stage(param1.sens.position.x, param1.sens.position.y, Callable(), param1)

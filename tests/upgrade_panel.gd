@@ -36,9 +36,85 @@ func run() -> void:
 	await test_not_enough_stars()
 	await test_reset_returns_stars()
 	await test_ability_description()
+	await test_zanaves_mask()
+	await test_help_hint_click_closes()
 
 	print(JSON.stringify({"checks": checks, "failures": failures}))
 	quit(0 if failures.is_empty() else 1)
+
+
+## 幕布遮罩：initOnce 对五个 zanavesX 执行 getChildAt(0).mask = msk；动画移动的是 getChildAt(0)（e0），不是幕布本身。
+func test_zanaves_mask() -> void:
+	StoredData.reset_data()
+	var panel := UpgrPanelEx.create()
+	panel.init_once()
+	root.add_child(panel)
+	await settle()
+	for z: FlashClip in [panel.zanaves_warriors, panel.zanaves_archers, panel.zanaves_priests, panel.zanaves_mages, panel.zanaves_thieves]:
+		var msk := z.get_node_or_null("msk") as Control
+		check(msk != null and msk.clip_contents, "%s.msk 已接成遮罩（clip_contents）" % z.name)
+		var e0 := UpgrPanelEx.zanaves_child(z)
+		check(e0 != null and e0.get_parent() == msk, "%s.getChildAt(0) 导出为 e0 并挂在 msk 下" % z.name)
+		check(z.get_node_or_null("e0") == null, "%s 本身不再承载动画子图形" % z.name)
+	# 全新存档：战士幕布未看过，added() 把 e0.y 置 0，1 秒（0.6 延迟 + 1 秒补间）后升到 -height，幕布节点本身不动
+	var z := panel.zanaves_warriors
+	var zy := z.position.y
+	var e0 := UpgrPanelEx.zanaves_child(z)
+	var h := IfaceUtil.clip_bounds(e0).size.y
+	check(h > 100.0, "e0.height 取自子图形自身 (got %f)" % h)
+	check(is_equal_approx(e0.position.y, 0.0), "added() 后 e0.y == 0 (got %f)" % e0.position.y)
+	RWTween.step(0.6 + 1.0 + 0.05)
+	check(is_equal_approx(e0.position.y, -h), "补间结束 e0.y == -height (got %f vs %f)" % [e0.position.y, -h])
+	check(is_equal_approx(z.position.y, zy), "幕布节点位置不变")
+	RWTween.kill_all()
+	root.remove_child(panel)
+	panel.free()
+
+
+## 点击"?"显示提示；点击提示面板（原版 eHint 的点击监听，这里用真实鼠标事件，不直接调用 hide_hint）应关闭。
+## 覆盖此前的 bug：eHint 内 4 个说明面板原是未命名子图形，aHintCoords 收集为空数组，hideHint 的 for 循环
+## 什么也不做，点击后无法关闭（见 pipeline/ClipExporter.java 的 INDEXED_CHILD_IDS 625 注释）。
+func test_help_hint_click_closes() -> void:
+	StoredData.reset_data()
+	var panel := UpgrPanelEx.create()
+	root.add_child(panel)
+	root.size = Vector2(700, 600)
+	await settle()
+	check(not panel.e_hint.visible, "初始不显示帮助提示")
+	await click_at(panel.b_help.get_global_transform() * IfaceUtil.clip_bounds(panel.b_help).get_center())
+	check(panel.e_hint.visible, "点击 ? 后显示帮助提示")
+	check(panel.a_hint_coords.size() == 4, "aHintCoords 收集到 4 个说明面板（不再是空数组）")
+	# 点在其中一个说明面板的可见像素上（取各面板自身包围盒中心，不是整个 eHint 的包围盒）
+	var el: FlashClip = panel.a_hint_coords[0][0]
+	await click_at(el.get_global_transform() * IfaceUtil.clip_bounds(el).get_center())
+	RWTween.step(0.35)  # hideHint 的 TweenMax.to(...0.3...) 用墙钟驱动；紧跟着立刻断言，
+	# 避免真实帧的 _process 用很小的墙钟增量覆盖 step() 推进的 root_time
+	check(not panel.e_hint.visible, "点击说明面板后帮助提示关闭")
+	root.remove_child(panel)
+	panel.free()
+
+
+func click_at(pos: Vector2) -> void:
+	var mm := InputEventMouseMotion.new()
+	mm.position = pos
+	mm.global_position = pos
+	root.push_input(mm)
+	await process_frame
+	var down := InputEventMouseButton.new()
+	down.position = pos
+	down.global_position = pos
+	down.button_index = MOUSE_BUTTON_LEFT
+	down.pressed = true
+	root.push_input(down)
+	await process_frame
+	var up := InputEventMouseButton.new()
+	up.position = pos
+	up.global_position = pos
+	up.button_index = MOUSE_BUTTON_LEFT
+	up.pressed = false
+	root.push_input(up)
+	await process_frame
+	await process_frame
 
 
 ## 1. 给定存档下的星数计算（StoredData.get_num_gained/busy/free_stars 与面板读到的 num_free_stars 一致）。
@@ -92,6 +168,19 @@ func test_unlock_and_ability_writes() -> void:
 		"uWarWarriorB 点击一次后 abils[A_STUN] == 2")
 	check(panel.num_free_stars == free_before - 1, "点击技能加点后 numFreeStars 减 1")
 	check(panel.u_war_warrior_b.child_clip("eLock").current_frame == 4, "eLock 帧号随等级前进（1级->2级 = 第4帧）")
+
+	# 星级进度图标（eLock 的内部 3 颗同名 "eStar"）：原版每颗星靠滤镜区分暗/亮（锁定/未点亮只有发光，
+	# 点亮后发光+斜角），管线之前只把其中一颗追踪成活动子节点、永远冻结成创建时（暗）的贴图，导致
+	# "第一颗星永远不亮"；现在三颗星都按帧栅格化。断言 1/2/3 级对应三张不同纹理（每级新点亮一颗）。
+	var lock := panel.u_war_warrior_b.child_clip("eLock")
+	var tex_by_level := {}
+	for lvl in [1, 2, 3]:
+		lock.goto_and_stop(lvl + 2)
+		await settle(1)
+		tex_by_level[lvl] = lock.back_texture()
+		check(tex_by_level[lvl] != null, "等级 %d 的 eLock 有纹理" % lvl)
+	check(tex_by_level[1] != tex_by_level[2] and tex_by_level[2] != tex_by_level[3] and tex_by_level[1] != tex_by_level[3],
+		"1/2/3 级（1/2/3 颗星点亮）各自对应不同纹理，不再冻结成同一张")
 
 	# uWarriorsAttack（奖励加点，下标 0）：从 0 级解锁到 1 级
 	var e2 := ButtonClass.ButtonEvent.new()

@@ -85,10 +85,12 @@ class _Hub extends RefCounted:
 		for cb: Callable in (listeners[type] as Array).duplicate():
 			if not cb.is_valid():
 				continue
+			AS3.begin_entry()  # 每个监听是独立入口：一个监听抛错不影响其余监听（见 as3.gd）
 			if cb.get_argument_count() == 0:
 				cb.call()
 			else:
 				cb.call(e)
+			AS3.end_entry()
 
 	func _on_entered() -> void:
 		dispatch(ROLL_OVER)

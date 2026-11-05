@@ -22,7 +22,7 @@ case "$action" in
         mkdir -p "$project_dir/build"
         touch "$project_dir/build/.gdignore"
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
-        for t in smoke rw_runtime sounds_runtime levels_data universe_core living_core class_bases friend_units enemy_units visual_effects specials_rules clips_runtime menu_screens upgrade_panel comics battle_ifaces main_game_ui level_intro main_flow input_e2e; do
+        for t in smoke rw_runtime sounds_runtime levels_data universe_core living_core class_bases friend_units enemy_units visual_effects specials_rules as3_abort clips_runtime menu_screens upgrade_panel comics battle_ifaces main_game_ui level_intro main_flow input_e2e input_e2e_new_save living_units_audit f2_core; do
             "$godot_bin" --headless --path "$project_dir" --script "tests/$t.gd" -- --isolated-profile
         done
         # battle_level1 / battle_all_levels 放在最后：已知 game/ifaces/hints_manager.gd 在关卡结束清理时与

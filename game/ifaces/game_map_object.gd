@@ -349,6 +349,16 @@ func banner_rover(param1: ButtonClass.ButtonEvent) -> void:
 
 func _removed() -> void:
 	_attached = false
+	# 关卡弹窗 pop 是单例、反复 init()+addChild 复用（见文件头注释），不会在点 X/点 Start Battle 以外
+	# 的路径自己清场：如果玩家在弹窗开着的时候就点了 bUpgrades/bMenu 离开地图（bigShadow 本身
+	# mouseEnabled=false，点击会穿透到它后面的地图按钮，原版、这里都是如此），pop 作为 self 的子节点会
+	# 跟着 self 一起被摘下，但不会被置空——下次回到地图，同一个 pop 实例仍然挂在 self 下面，
+	# banner_clicked 再 add_child(pop) 就会报"已有父节点"，地图从此再也点不开任何关卡旗。这里按原版
+	# "整个画面从显示列表移除时，挂在它下面的东西跟着下树"的语义，显式地也把还开着的 pop 摘掉，
+	# 保证下次回到地图时处于关闭状态（不自动调用 _removed()/销毁，只是摘下，和它平时点 X 关闭的
+	# 效果一致：下次点旗帜会重新 init() 再 add_child 回来）。
+	if pop.get_parent() == self:
+		remove_child(pop)
 	var e_storage_failure: FlashClip = markers.get_node("eStorageFailure")
 	var b_online: FlashClip = markers.get_node("bOnline")
 	ButtonClass.remove_button_scale(e_storage_failure, button_clicked)

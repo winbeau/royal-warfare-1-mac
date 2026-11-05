@@ -89,7 +89,7 @@ func check_strong_heal() -> bool:
 		if a_friends.size() > 0:
 			# aFriends.sortOn("curHealth", Array.NUMERIC)：升序。AS3 的 sortOn 不保证稳定，
 			# 此处用 GDScript 的 sort_custom（同样不保证稳定），血量相同的单位次序可能与原版不同。
-			a_friends.sort_custom(func(a, b): return a.cur_health < b.cur_health)
+			MeleeFighter.sort_on(a_friends, "cur_health")  # 与 PriestClass.search_target 的 compare 同一稳定排序
 			var loc2: LivingObject = a_friends[0] as LivingObject
 			var loc3: SpecStrongHeal = special_one as SpecStrongHeal
 			loc1 = loc3.check_strong_heal(loc2, _instance as PriestClass, cur_ranged_damage)

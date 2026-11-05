@@ -35,8 +35,9 @@ leading = -2
 multiline = true
 word_wrap = true
 is_html = true
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(2.99972, 0.04112)
+shadow_color = Color(0, 0, 0, 0.69922)
+shadow_offset = Vector2(2.12134, 2.1213)
+shadow_blur = 5.0
 initial_text = "<p align=\"center\"><font face=\"Roboto\" size=\"16\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">&lt;b&gt;bold&lt;/b&gt;</font></p>"
 metadata/original_instance = "tText"
 metadata/character_id = 5380

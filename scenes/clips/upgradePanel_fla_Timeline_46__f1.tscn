@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
 [ext_resource type="Resource" path="res://assets/clips/306f1/clip.tres" id="data"]
-[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_279__f1.tscn" id="c0"]
 
 [node name="upgradePanel_fla_Timeline_46__f1" type="Control"]
 mouse_filter = 1
@@ -11,9 +10,3 @@ data = ExtResource("data")
 character_id = 306
 total_frames = 5
 metadata/character_id = 306
-
-[node name="eStar" parent="." instance=ExtResource("c0")]
-position = Vector2(-1.05, 50.9)
-scale = Vector2(1.9146, 1.9146)
-metadata/original_instance = "eStar"
-metadata/character_id = 279

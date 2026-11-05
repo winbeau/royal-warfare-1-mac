@@ -36,6 +36,16 @@ func set_data(param1: Object) -> void:
 	param1.position = Vector2.ZERO
 	param1.modulate.a = 1.0
 	param1.visible = true
+	# 防御性去重：部分 VisualsTemplate 子类（如 GroundDefFlag.update()，见其文件头注释"原版疑点"）在动画
+	# 结束后没有自己的"正在回收"标记，会在同一实例彻底处理完之前的连续多帧里反复新建淡出补间，每个补间
+	# 各自的 onComplete 都调用一次 set_data(同一个实例)；原版 TweenMax 的 AUTO 覆盖本意是让同一目标同一
+	# 属性的补间互斥，但调用处仍可能出现同一实例被 set_data 两次、中间没有 get_data() 取出过。不去重的话
+	# _instances 里会出现同一引用的重复槽位：这个对象一旦被别处释放（例如关卡切换时容器整体 free()），
+	# 其余槽位就变成悬挂引用，get_data() 迟早把它当"可用实例"交出去，报 "Trying to return a previously
+	# freed instance"。这里按引用去重，已经在"可用"区间里的实例不重复插入。
+	for i in range(_current_index + 1):
+		if _instances[i] == param1:
+			return
 	_current_index += 1
 	if _current_index == _instances.size():
 		_instances.append(param1)

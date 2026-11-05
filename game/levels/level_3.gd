@@ -32,7 +32,8 @@ func get_locked_units() -> void:
 # 反编译把 `curStrikeNumber == 1 || 4 || 7 ...` 的第一段写成了 §§push/while(true)，并丢掉了 `== 8`。
 # P-code 的比较链依次是 1、4、7、8、9、10，所以出口 A 的条件是 {1, 4, 7, 8, 9, 10}（含 8）。
 # 出口 B 的条件 {2, 3, 5, 6}。两者都不满足时 _loc1_ 为 null，原版在 setExternalPosition(null) 处抛 TypeError
-# （addSoldier 已执行），这里在 add_soldier 之后直接 return。
+# （addSoldier 已执行）：异常穿透 levelCustomActions -> mainUpdateFunction -> globalUpdate，本帧其余内容全部跳过
+# （AS3.throw_error，见 game/rw/as3.gd），GameUniverse.main_update_function 在 level_custom_actions 之后检查标志。
 # RNG 调用顺序：rand > 0.98 -> [出口点 y 的 randRange -> 目标点 x、y 的 randRange] -> rand（类型）。
 func level_custom_actions() -> void:
 	var _loc1_ = null  # Point
@@ -60,6 +61,7 @@ func level_custom_actions() -> void:
 				_loc4_ = LivingObject.NPC_WOMAN
 			_loc3_ = game_uni.add_soldier(_loc4_, null, 1, true)
 			if _loc1_ == null:
+				AS3.throw_error("TypeError #1009: Level3.levelCustomActions setExternalPosition(null)")
 				return  # 原版此处抛 TypeError
 			_loc3_.set_external_position(_loc1_)
 			_loc3_.set_ext_route([_loc2_, Vector2(775, 343)])

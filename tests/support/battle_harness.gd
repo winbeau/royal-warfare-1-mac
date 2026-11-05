@@ -69,6 +69,42 @@ func reset_unit_pools() -> void:
 					inst.free()
 		scr.set("cached_unit_data", null)
 
+## 与 reset_unit_pools 同类问题，但对象是 VisualsTemplate 的特效/投射物静态对象池（SimpleCache），
+## 例如 GroundDefFlag：battle_all_levels 在同一进程里连续跑 24 关，stop_level() 的 gu.free() 会把当时
+## 仍挂在场景树上（尚未经 alpha_and_remove/set_data 正式"归还"）的池化实例一并递归释放掉，但它们在各自
+## 类的静态 SimpleCache._instances 里仍有引用——下次 get_data() 翻到那个槽位就会命中已释放实例
+## （"Trying to return a previously freed instance"）。每局开始前把这些类的池清空重建，和 reset_unit_pools
+## 对单位池的处理一致。
+const A_EFFECT_CLASSES: Array[String] = [
+	"ArrowEx", "BackstabVisual", "BetrayVisual", "BlessVisual", "BlockedVisual", "BloodEx",
+	"BrokenArrowVisual", "CallConfusionVisual", "CantMoveVisual", "CoinVisual", "CorpseExplosionVisual",
+	"CorruptVisual", "CritVisual", "CurseVisual", "EnchantVisual", "FbSmokeVisual", "FlashVisual",
+	"FleeVisual", "FreeMoveVisual", "GitGlowVisual", "GroundDefFlag", "GroundFlagAttack",
+	"GroundFlagHeal", "GroundFlagMove", "HarmResistVisual", "HeadShotEffectVisual", "HealEffectEx",
+	"HoldGroundVisual", "IceVisual", "MissVisual", "ParryVisual", "PoisonEffectVisual", "RegenVisual",
+	"RessurectEffectVisual", "RockFallingVisual", "RoundAttackEffectVisual", "RoundAttackVisual",
+	"SilencedVisual", "SlowEffectVisual", "SmallFireballEx", "StrongHealVisual", "StunnedEffectVisual",
+	"StunnedSmallWaveVisual", "StunnedWaveVisual", "SummonKingVisual", "SummonSingleVisual",
+	"SummonVisual", "SuppressVisual", "TauntedVisual", "TauntVisual", "UnitKilledVisual",
+	"WeaknessVisual", "WeakSpotEffectVisual",
+]
+
+func reset_effect_pools() -> void:
+	for cls_name in A_EFFECT_CLASSES:
+		var scr: Script = null
+		for d in ProjectSettings.get_global_class_list():
+			if d["class"] == cls_name:
+				scr = load(d["path"])
+				break
+		if scr == null:
+			continue
+		var old: Variant = scr.get("_cached_data")
+		if old is SimpleCache:
+			for inst in (old as SimpleCache)._instances:
+				if is_instance_valid(inst) and inst.get_parent() == null:
+					inst.free()
+		scr.set("_cached_data", null)
+
 ## 对应 Main.loadGame(level) -> fadeClearLoadUnfade：killAll、加入舞台、gameUni.init(level)。level 为 0 基下标（第 1 关 = 0）。
 func start_level(level: int, rng_seed: int, difficulty: int = 1, fresh_pools: bool = true) -> GameUniverse:
 	stop_level()
@@ -76,6 +112,7 @@ func start_level(level: int, rng_seed: int, difficulty: int = 1, fresh_pools: bo
 	StoredData.local_game_data[StoredData.NUMPAN_DIFFICULTY] = difficulty
 	if fresh_pools:
 		reset_unit_pools()
+		reset_effect_pools()
 	RWRandom.set_seed(rng_seed)
 	LivingObject.unit_num_warriors = 0
 	gu = GameUniverse.new()

@@ -23,6 +23,10 @@ func cur_level_params() -> String:
 		return "Ability locked. Spend a star to unlock."
 	return "Cooldown: <font color='#F6F581'>" + SpecFmt.n(time_until_update / 30.0) + "s</font> " + "Critical strike chance: <font color='#F6F581'>" + SpecFmt.n(crit_chance * 100) + "%</font> " + "Damage multiplier: <font color='#F6F581'>x3</font>"
 
+# P-code 核实（specParry.pcode checkParry，约 ofs008e~ofs00b2）：伤害倍率先设 1.5，随后
+#   getlex Utility.rand; getproperty critChance; ifngt -> 跳过；否则 pushbyte 3 -> 倍率 = 3
+# 即 `if (Utility.rand > critChance) 倍率 = 3`。critChance = 0.2，所以 80% 概率三倍、20% 概率 1.5 倍，
+# 与说明文字 "chance of a critical strike ... Critical strike chance: 20%" 相反。这是原版的真实行为，保持不变。
 func check_parry(param1: LivingObject, _param2: int, param3: LivingObject) -> bool:
 	if can_use_special():
 		reset_counter()

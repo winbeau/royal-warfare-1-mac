@@ -84,7 +84,7 @@ func check_strong_heal() -> bool:
 	if special_one != null:
 		if a_friends.size() > 0:
 			# 原版 aFriends.sortOn("curHealth", Array.NUMERIC)；AS3 sortOn 不保证稳定，同血量顺序原版也不确定
-			a_friends.sort_custom(func(a, b): return a.cur_health < b.cur_health)
+			MeleeFighter.sort_on(a_friends, "cur_health")  # 与 PriestClass.search_target 的 compare 同一稳定排序
 			var weakest: LivingObject = a_friends[0] as LivingObject
 			var spec: SpecStrongHeal = special_one as SpecStrongHeal
 			result = spec.check_strong_heal(weakest, _instance as PriestClass, cur_ranged_damage)

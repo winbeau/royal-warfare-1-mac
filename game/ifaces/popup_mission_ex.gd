@@ -146,7 +146,18 @@ func _added() -> void:
 	t_mission_name.text = tmpl.level_caption
 	t_mission_desc.text = tmpl.level_description
 	# .mask = eTextMask：FlashClip 无遮罩机制，不移植（见文件头注释）
+	# 原版这里是 `while(eCont.numChildren) eCont.removeChildAt(0)`：AS3 的 eCont 除了上一次 init()
+	# 加进去的背景位图以外没有别的子节点，清空重来是安全的。移植后 e_cont 本身是 FlashClip（Symbol_67，
+	# 一个空符号），FlashClip._ready() 会给自己建 _back/_front 两个栅格图层 Sprite2D 作为"自己的子节点"
+	# ——这两个图层和 AS3 没有对应物，纯粹是这边渲染管线的实现细节。如果照抄原版"清空所有子节点"，
+	# 会把 e_cont 自己的 _back/_front 也一并 queue_free 掉：第一次 init() 就会发生（这两个图层在
+	# _ready() 时已经存在），之后任何读 e_map_symbol 包围盒的地方（IfaceUtil.clip_bounds，这里
+	# clip_width 用来算背景图缩放比例）再碰到 e_cont 就会踩到已经被释放的节点而报错，长期也会让
+	# e_cont 自己的渲染层永久消失。只清掉我们自己动态加的那张背景位图（按名字认，不碰 _back/_front），
+	# 效果和原版一致又不会误删 FlashClip 自身的图层。
 	for c in e_cont.get_children():
+		if c.name == "_back" or c.name == "_front":
+			continue
 		e_cont.remove_child(c)
 		c.queue_free()
 	t_mission_desc.position.y = text_start_coords

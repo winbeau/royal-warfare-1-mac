@@ -8,6 +8,7 @@ extends Node2D
 # --- 静态 ---
 static var a_level_templates: Array = []  # 各关模板脚本路径（原版为类数组）
 static var a_levels_templates_inited: Array = []
+static var a_specials: Array = []  # 原版 aSpecials（见 init_once）
 static var a_levels_back_grounds: Array = []  # 原版为背景 MovieClip；这里存背景类名（assets/backgrounds/<名>.png）
 static var selection_ramka: RamkaEx
 static var number_of_levels_reloaded: int = 0
@@ -155,12 +156,22 @@ func _notification(what: int) -> void:
 
 
 # 原版 initOnce：aLevelTemplates / aSpecials / selectionRamka / new globalData()。
-# aSpecials（45 个技能原型）只在 gameUniverse 内部声明、全工程无其他引用，随技能类在 P3 移植时一并处理。
+# aSpecials 为 36 项（StoredData.A_* 常量即下标，A_WEAKNESS=33 处为 null），元素均为 new specXxx(true)
+# 的只读说明原型，升级面板按存档下标查找。
 static func init_once() -> void:
 	a_level_templates = []
 	for i in range(1, 25):
 		a_level_templates.append("res://game/levels/level_%d.gd" % i)
 	a_levels_templates_inited = []
+	a_specials = [SpecBackStab.new(true), SpecBetray.new(true), SpecBlock.new(true), SpecCurse.new(true),
+		SpecBreakArrows.new(true), SpecCollectMoney.new(true), SpecCorrupt.new(true), SpecCrit.new(true),
+		SpecCritRanged.new(true), SpecCurseBless.new(true), SpecFireHitSplash.new(true), SpecFlash.new(true),
+		SpecFlee.new(true), SpecHarmResist.new(true), SpecHeadShot.new(true), SpecHide.new(true),
+		SpecIce.new(true), SpecMassHeal.new(true), SpecMassStun.new(true), SpecMetheor.new(true),
+		SpecParry.new(true), SpecWeakSpot.new(true), SpecRessurect.new(true), SpecRoundAttack.new(true),
+		SpecEnchantWeapon.new(true), SpecSilence.new(true), SpecSlow.new(true), SpecStrongHeal.new(true),
+		SpecStun.new(true), SpecSuppress.new(true), SpecTaunt.new(true), SpecVampirizm.new(true),
+		SpecSelfDestruct.new(true), null, SpecPoisonRogue.new(true), SpecMissAssasin.new(true)]
 	a_levels_back_grounds = []
 	number_of_levels_reloaded = 0
 	selection_ramka = RamkaEx.new()
@@ -618,6 +629,8 @@ func stroy_clicked(param1: int, _param2: RWMouseEvent = null) -> void:
 	var first: LivingObject = a_selected_units[0]
 	first.is_defence_stance = not attack_clicked
 	first.set_destination(res_point, true)
+	if AS3.aborted:
+		return  # 原版异常穿透整个点击处理（见 as3.gd）
 	if attack_clicked == true:
 		flag_attack = _flag_data(GroundFlagAttack)
 		flag_attack.added_to_stage(res_point.x, res_point.y)
@@ -642,6 +655,8 @@ func stroy_clicked(param1: int, _param2: RWMouseEvent = null) -> void:
 				if p8 > 0:
 					p9 += 1
 				u.set_destination(Vector2(px, py), true)
+				if AS3.aborted:
+					return  # 原版异常穿透整个点击处理（见 as3.gd）
 				if attack_clicked == true:
 					flag_attack = _flag_data(GroundFlagAttack)
 					flag_attack.added_to_stage(px, py)
@@ -660,6 +675,8 @@ func stroy_clicked(param1: int, _param2: RWMouseEvent = null) -> void:
 				if p8 > 0:
 					p9 += 1
 				u.set_destination(Vector2(px2, py2), true)
+				if AS3.aborted:
+					return  # 原版异常穿透整个点击处理（见 as3.gd）
 				if first.is_defence_stance == false:
 					flag_attack = _flag_data(GroundFlagAttack)
 					flag_attack.added_to_stage(px2, py2)
@@ -744,7 +761,11 @@ func continue_loading_level_data() -> void:
 	cur_wave_info = level_info.a_waves.duplicate()  # concat()：浅拷贝，内层波次对象仍共享（原版如此）
 	var bg_name: String
 	if cur_level_num == -2:
-		bg_name = _new_level_template(0).level_bg
+		# 原版 aLevelsBackGrounds[0]（loadLevels 阶段已缓存第 1 关背景）；未缓存时退回新建第 1 关模板取背景名。
+		if a_levels_back_grounds.size() > 0:
+			bg_name = a_levels_back_grounds[0]
+		else:
+			bg_name = _new_level_template(0).level_bg
 	else:
 		bg_name = level_info.level_bg
 	# 清理上一局遗留的容器（原版同一个 gameUniverse 反复使用时旧容器已不在显示列表中）
@@ -1028,6 +1049,8 @@ func ground_clicked(param1: RWMouseEvent, param2: LivingObject = null) -> void:
 			var p7 := Vector2(mouse_x, mouse_y)
 			dests.append(p7)
 			lead.set_destination(p7, true)
+			if AS3.aborted:
+				return  # 原版异常穿透整个点击处理（见 as3.gd）
 			lead.archer_goto_target = false
 		elif lead.can_attack_enemy(param2) == true:
 			lead.set_target(param2)
@@ -1076,6 +1099,8 @@ func ground_clicked(param1: RWMouseEvent, param2: LivingObject = null) -> void:
 						j += 1
 					dests.append(p19)
 					u.set_destination(p19, true)
+					if AS3.aborted:
+						return  # 原版异常穿透整个点击处理（见 as3.gd）
 					lead.archer_goto_target = false
 					fx = p19.x
 					fy = p19.y
@@ -1106,12 +1131,26 @@ func ground_clicked(param1: RWMouseEvent, param2: LivingObject = null) -> void:
 		ingame_ui.show_unit_panel()
 
 
+# globalUpdate 是单个 ENTER_FRAME 监听：其中任何一处未捕获的异常（AS3.throw_error，见 game/rw/as3.gd）都会
+# 中止本次监听调用的全部剩余内容，包括 updateEffects 和 2x 速度的第二遍；下一帧照常运行。
 func global_update() -> void:
+	AS3.begin_entry()
+	_global_update_body()
+	AS3.end_entry()
+
+
+func _global_update_body() -> void:
 	if is_controlled_pause == false:
 		main_update_function()
+		if AS3.aborted:
+			return
 		update_effects()
+		if AS3.aborted:
+			return
 		if cur_speed == 2:
 			main_update_function()
+			if AS3.aborted:
+				return
 			update_effects()
 	else:
 		update_flag_effects()
@@ -1167,6 +1206,8 @@ func main_update_function() -> void:
 				cur_time = 0
 			elif wtype == LevelTemplate.ARROWS_SWARM:
 				level_info.arrow_strike_called()
+				if AS3.aborted:
+					return
 				cur_wave_info.remove_at(0)
 				cur_time = 0
 			elif wtype == LevelTemplate.SUMMON:
@@ -1178,6 +1219,8 @@ func main_update_function() -> void:
 					var lvl: int = int(o.get("level", 0))
 					var route: int = int(o.get("route", 0))
 					call_summoned_enemy(kind, lvl, route)
+					if AS3.aborted:
+						return
 					cur_wave_info[0][1].remove_at(0)
 					k += 1
 				cur_wave_info.remove_at(0)
@@ -1226,6 +1269,8 @@ func main_update_function() -> void:
 							load_enemy(kind2, lvl2, route2)
 						else:
 							add_soldier(kind2, null, lvl2, true)
+						if AS3.aborted:
+							return
 						number -= 1
 						if number > 0:
 							o2["number"] = number
@@ -1246,7 +1291,11 @@ func main_update_function() -> void:
 			cur_time += 1
 	else:
 		check_end()
+	if AS3.aborted:
+		return
 	level_info.level_custom_actions()
+	if AS3.aborted:
+		return
 	cur_num_enemies = 0
 	var sum_x: float = 0
 	var sum_y: float = 0
@@ -1261,6 +1310,8 @@ func main_update_function() -> void:
 			sum_y += u.position.y
 			friends += 1
 		u.update()
+		if AS3.aborted:
+			return  # 单位 update() 抛错：后面所有单位的更新、质心、z 排序、尸体处理、UI 全部跳过（见 as3.gd）
 		i += 1
 	if friends > 0:
 		var mc: Vector2 = LivingObject.mass_center
@@ -1280,7 +1331,11 @@ func main_update_function() -> void:
 			if d.real_friendly == true and d.is_npc == false:
 				minus_health()
 				level_info.friendly_unit_dead()
+				if AS3.aborted:
+					return
 		d.update_dead()
+		if AS3.aborted:
+			return
 		w += 1
 	if a_selected_units.size() > 0:
 		ingame_ui.update_soldier_data()
@@ -1296,16 +1351,24 @@ func main_update_function() -> void:
 		HintsManager.update()
 
 
+## 注意：updateEffects 本身不是独立的 ENTER_FRAME 监听（它由 globalUpdate 直接调用），但每个特效的
+## update() 在原版里各自是互不影响的调用（不会因为一个特效抛错就让同一帧里其余特效、fireball 烟雾、
+## 待删除清理全部停摆）——这与单位的 update() 共享“整帧中止”语义不同，按 game/rw/as3.gd 文件头注释
+## 的分类，这里对每个特效单独 begin_entry/end_entry。
 func update_effects() -> void:
 	var i := 0
 	while i < a_effects.size():
 		var e: VisualsTemplate = a_effects[i]
+		AS3.begin_entry()
 		e.update()
+		AS3.end_entry()
 		i += 1
 	var j := 0
 	while j < a_fireballs.size():
 		var f: SmallFireballEx = a_fireballs[j]
+		AS3.begin_entry()
 		f.smoke_generator()
+		AS3.end_entry()
 		j += 1
 	_flush_effects_to_delete()
 
@@ -1651,6 +1714,8 @@ func enable_hold_ground() -> void:
 		var u: LivingObject = a_selected_units[i]
 		if u.friendly:
 			u.set_destination(Vector2(u.position.x, u.position.y), true)
+			if AS3.aborted:
+				return  # 原版异常穿透整个点击处理（见 as3.gd）
 			u.set_hold_ground_move()
 		i += 1
 
@@ -1737,11 +1802,23 @@ func mouse_up(evt: RWMouseEvent) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	AS3.begin_entry()  # 鼠标/键盘监听是独立入口：抛错只中止这一次处理（见 as3.gd）
+	_unhandled_input_impl(event)
+	AS3.end_entry()
+
+
+func _unhandled_input_impl(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		mouse_down(_make_mouse_event(event))
 
 
 func _input(event: InputEvent) -> void:
+	AS3.begin_entry()
+	_input_impl(event)
+	AS3.end_entry()
+
+
+func _input_impl(event: InputEvent) -> void:
 	if not _stage_listeners:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:

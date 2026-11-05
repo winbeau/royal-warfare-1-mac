@@ -6,7 +6,8 @@
 #   每收满 5 个且不是最后一个元素时，把当前页入 aPages 并 totalNumOfPages++，循环结束后再把余下的一页入 aPages 并 totalNumOfPages++。
 #   所以 totalNumOfPages 始终比实际页数大 1（原版如此，没有修正）。
 # 原版疑点（照搬）：bLeft 在第 1 页点击时 curpage 变成 totalNumOfPages，showPage 访问 aPages[totalNumOfPages-1]
-#   越界，原版此处抛 TypeError（事件回调里被吞掉），此时容器已被清空。这里同样清空后直接返回，不报错。
+#   越界，原版此处抛 TypeError（事件回调里被吞掉），此时容器已被清空。这里同样清空后用 AS3.throw_error 记录并返回
+#   （show_page 是 buttonClicked/init 的最后一条语句，调用链上没有后续语句；按钮监听是独立入口，见 game/rw/as3.gd）。
 # 偏离：Sprite 无鼠标事件，sprite1..5 用 Control 包住 eIconsAchives，ROLL_OVER/OUT 对应 mouse_entered/mouse_exited；
 #   图标描述来自 achivesScreen_ex.aAchivesDescription（由界面移植的其他部分负责，按 class_name 动态取）。
 class_name VinDefPanelAchivesController
@@ -187,6 +188,7 @@ static func show_page(param1: float) -> void:
 			e_cont.remove_child(c)
 	var page_index := int(param1 - 1)
 	if page_index < 0 or page_index >= a_pages.size():
+		AS3.throw_error("TypeError #1009: VinDefPanelAchivesController.showPage aPages[%d] is undefined" % page_index)
 		return  # 原版此处 aPages[...] 为 undefined，下一行抛 TypeError
 	var _loc2_: Array = a_pages[page_index]
 	s1descr = _descr(_loc2_[0] if _loc2_.size() > 0 else null)

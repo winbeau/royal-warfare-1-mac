@@ -11,7 +11,9 @@
 #   只覆盖升级面板用到的技能（friendly=true 的只读说明文本），不依赖 GameUniverse 的状态。以后 GameUniverse 补上
 #   a_specials 后，可以把这张表换成直接引用 GameUniverse.inst.a_specials。
 # - Rasterizer.rasterize / cacheAsBitmap（initOnce 里的位图缓存）不移植：纯渲染优化，不影响行为。
-# - zanavesUpgr 的 .mask = ...msk（AS3 的遮罩裁剪）：FlashClip 没有遮罩机制，不移植，记入汇报。
+# - zanavesUpgr 的 getChildAt(0).mask = msk：zanavesUpgr（607）里 getChildAt(0) 是没有实例名的子剪辑 604，
+#   管线（ClipExporter.INDEXED_CHILD_IDS 含 607）把它导出为可寻址节点 e0（按显示列表下标命名）。init_once() 用
+#   FlashClip.set_mask(e0, msk) 接上遮罩（e0 改挂到 msk 下，msk 裁剪），幕布动画移动 e0 自身的 y（见 zanaves_child）。
 # - 站点统计、Kongregate 相关：原版这个类没有，不涉及。
 class_name UpgrPanelEx
 extends FlashClip
@@ -33,7 +35,6 @@ var self_: UpgrPanelEx
 var default_text: String = "Spend your stars to get new abilities and to improve already gained. Hold SHIFT and click ability to downgrade it. Click \"Reset\" button to reset all your stars and reassign in a different way."
 var a_hint_coords: Array = []
 var element_to_blink: FlashClip
-var _zanaves_base_y: Dictionary = {}  # 非原版符号：见 _added() 内对 getChildAt(0) 缺陷的说明
 var s: SoundLibrary
 
 var _attached: bool = false
@@ -257,6 +258,15 @@ func _construct() -> void:
 	for c in e_hint.get_children():
 		if c is FlashClip and c.name != "eBg":
 			a_hint_coords.append([c, c.position])
+	# 原版 eHint 自身没有任何自带位图，点击命中完全靠点到某个说明面板（614/618/620/622，导出成 e0..e3，
+	# 见 pipeline/ClipExporter.java 的 INDEXED_CHILD_IDS 625 注释）；FlashClip._has_point 对只有子节点、
+	# 自己没有位图的容器永远判 false（见该方法注释），所以 eHint 本身收不到 CLICK。按原版"点哪个面板都能
+	# 关闭"的效果，直接在每个面板上也挂 hide_hint，不依赖 eHint 容器自身的命中测试。
+	for pair in a_hint_coords:
+		ButtonClass.add_button_lite(pair[0], _hint_element_clicked)
+	var e_bg := e_hint.get_node_or_null("eBg") as FlashClip
+	if e_bg != null:
+		ButtonClass.add_button_lite(e_bg, _hint_element_clicked)
 	a_all_locked_buttons = [
 		u_arch_archer_a, u_arch_archer_b, u_arch_crossb_a, u_arch_crossb_b, u_arch_crossb_unit,
 		u_arch_sniper_a, u_arch_sniper_b, u_arch_sniper_unit, u_mage_black_a, u_mage_black_b,
@@ -280,9 +290,6 @@ func _construct() -> void:
 		e_ico.stop()
 	e_unit_unlocked_bar.mouse_enabled = false
 	e_unit_unlocked_bar.mouse_children = false
-	for z: FlashClip in [zanaves_warriors, zanaves_thieves, zanaves_priests, zanaves_mages, zanaves_archers]:
-		if not _zanaves_base_y.has(z):
-			_zanaves_base_y[z] = z.position.y
 
 
 ## 原版 added()（Event.ADDED_TO_STAGE）。
@@ -312,6 +319,11 @@ func _added() -> void:
 	e_unit_unlocked_bar.visible = false
 	e_hint.visible = false
 	ButtonClass.add_button_lite(e_hint, button_clicked)
+	# buttonClass.addButtonLite 会把 e_hint.mouseChildren 设为 false（原版意图：没有子节点各自可点，
+	# 整个 eHint 当一个按钮）。但现在 eHint 的说明面板（e0..e3/eBg）已导出成独立节点并各自挂了点击
+	# 监听（见 _construct），需要改回 true 才能收到点击；e_hint 容器自身仍然没有自己的位图，不接收
+	# 点击，靠这些子节点各自命中测试关闭提示，等效于原版"点到 eHint 范围内任意一处都能关闭"。
+	e_hint.mouse_children = true
 	num_free_stars = StoredData.get_num_free_stars()
 	t_free_stars.text = str(num_free_stars)
 
@@ -381,13 +393,11 @@ func _added() -> void:
 			unlock_ability(clip3, lvl3)
 		icon_rover_rout_init(clip3)
 
-	# 原版 self.zanavesWarriors.getChildAt(0).y = 0：getChildAt(0) 是幕布符号里一个没有实例名的子对象
-	# （原始 FLA 里未命名），pipeline/clips.py 把它烘成 zanavesUpgr 自身的背景位图，没有导出成可寻址的节点
-	# （剪辑场景缺陷，见文件头注释）。这里改成把 zanavesUpgr 节点自身复位到 _construct() 记下的初始槽位
-	# （_zanaves_base_y）：命名子节点只有 "msk"（遮罩形状，本身不绘制任何纹理，见 assets/clips/606/clip.tres
-	# 空纹理表），随整个节点一起移动没有可见差异。
+	# 原版 self.zanavesX.getChildAt(0).y = 0（getChildAt(0) 即导出节点 e0）
 	for z: FlashClip in [zanaves_warriors, zanaves_thieves, zanaves_priests, zanaves_mages, zanaves_archers]:
-		z.position.y = _zanaves_base_y.get(z, z.position.y)
+		var zc := zanaves_child(z)
+		if zc != null:
+			zc.position.y = 0.0
 	check_zanaves_and_tier_three()
 
 
@@ -397,18 +407,17 @@ func _added() -> void:
 func check_zanaves_and_tier_three() -> void:
 	var o_zanaves: Dictionary = StoredData.local_game_data[StoredData.NUMPAN_ZANAVES]
 
-	# clip 本身就是 getChildAt(0)（见 _construct/_added 的说明：幕布图形没有导出成独立节点，
-	# 动画对象改成 zanavesUpgr 节点自身，围绕 _zanaves_base_y 记的初始槽位偏移）。
+	# clip 即 zanavesX；动画对象是 getChildAt(0)（zanaves_child）
 	var reveal := func(zanaves_num: int, clip: FlashClip, watched: bool, auto_hint: bool) -> void:
-		var base_y: float = _zanaves_base_y.get(clip, clip.position.y)
-		var h := IfaceUtil.clip_bounds(clip).size.y
+		var zc := zanaves_child(clip)
+		var h := IfaceUtil.clip_bounds(zc).size.y  # 原版 getChildAt(0).height
 		if not watched:
 			StoredData.save_data(StoredData.ZANAVES_WATCHED, {"zanavesNumber": zanaves_num})
-			RWTween.to(clip, 1, {"y": base_y - h, "delay": 0.6, "ease": RWEase.linear_ease_in})
+			RWTween.to(zc, 1, {"y": -h, "delay": 0.6, "ease": RWEase.linear_ease_in})
 			if auto_hint:
 				RWTween.delayed_call(1, show_hint)
 		else:
-			clip.position.y = base_y - h
+			zc.position.y = -h
 
 	var show_warrior := func() -> void:
 		reveal.call(1, zanaves_warriors, int(o_zanaves.get("zWarriors", 0)) != 0, true)
@@ -535,6 +544,11 @@ func button_clicked(e: ButtonClass.ButtonEvent) -> void:
 			show_hint()
 		e_hint:
 			hide_hint()
+
+
+## 非原版符号：挂在每个说明面板上的点击监听（见 _construct 注释），效果等同原版点 eHint 关闭提示。
+func _hint_element_clicked(_e: ButtonClass.ButtonEvent) -> void:
+	hide_hint()
 
 
 func hide_hint() -> void:
@@ -782,11 +796,28 @@ func _removed() -> void:
 	ButtonClass.remove_button_on_frames(b_reset, button_clicked)
 	ButtonClass.remove_button_on_frames(b_help, button_clicked)
 	ButtonClass.remove_button_lite(e_hint, button_clicked)
+	for pair in a_hint_coords:
+		ButtonClass.remove_button_lite(pair[0], _hint_element_clicked)
+	var e_bg2 := e_hint.get_node_or_null("eBg") as FlashClip
+	if e_bg2 != null:
+		ButtonClass.remove_button_lite(e_bg2, _hint_element_clicked)
 
 
-## 原版 initOnce()：Rasterizer.rasterize + 遮罩赋值，纯渲染优化/剪辑限制，这里不移植（见文件头注释）。
+## 原版 initOnce()：Rasterizer.rasterize（纯渲染优化，不移植）+ 五个幕布 getChildAt(0).mask = msk。
 func init_once() -> void:
-	pass
+	for z: FlashClip in [zanaves_warriors, zanaves_thieves, zanaves_priests, zanaves_mages, zanaves_archers]:
+		var zc := zanaves_child(z)
+		var msk := z.get_node_or_null("msk") as Control
+		if zc != null and msk != null:
+			FlashClip.set_mask(zc, msk)
+
+
+## 原版 zanavesX.getChildAt(0)：导出节点 e0（接遮罩前挂在幕布下，接遮罩后挂在 msk 下）。
+static func zanaves_child(z: FlashClip) -> FlashClip:
+	var n := z.get_node_or_null("msk/e0")
+	if n == null:
+		n = z.get_node_or_null("e0")
+	return n as FlashClip
 
 
 # ================================================================ 内部辅助（原版没有对应符号，供本文件复用）

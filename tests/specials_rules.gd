@@ -319,6 +319,26 @@ func test_triggers() -> void:
 	check(ok and call[0] == "bring_damage" and call[2] == attacker and call[3] == true, "parry counterattacks melee")
 	# param3.curArmor 是被反击者（me）的护甲 0.3，穿甲取 param1（attacker）的 0.1 -> 0.2
 	check(call[1] == int(20 * (1 - 0.2) * mult), "parry damage = curDamage*(1-(armor-piercing))*%s (got %s)" % [mult, call[1]])
+	# 招架两个分支：rand > 0.2 -> 3 倍（80%），否则 1.5 倍（20%），与说明文字相反（P-code 核实）
+	var hi_seed := -1
+	var lo_seed := -1
+	for sd in range(1, 400):
+		RWRandom.set_seed(sd)
+		var rv := RWRandom.rand()
+		if rv > 0.2 and hi_seed < 0:
+			hi_seed = sd
+		if rv <= 0.2 and lo_seed < 0:
+			lo_seed = sd
+	for pair in [[hi_seed, 3.0], [lo_seed, 1.5]]:
+		var pk := SpecParry.new(false)
+		pk.reset_counter()
+		for i in pk.time_until_update:
+			pk.update()
+		me.calls.clear()
+		RWRandom.set_seed(pair[0])
+		pk.check_parry(attacker, 20, me)
+		check(me.calls[0][1] == int(20 * (1 - 0.2) * pair[1]), "parry rand %s 0.2 -> x%s" % [">" if pair[1] == 3.0 else "<=", pair[1]])
+	me.calls.clear()
 	# --- 背刺：低血直接 600；否则 curDamage*(1-armor)*系数 ---
 	var bs := SpecBackStab.new(false)
 	bs.reset_counter()

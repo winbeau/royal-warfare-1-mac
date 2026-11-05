@@ -47,6 +47,11 @@ func update() -> void:
 	freeze_counter -= 1
 	if freeze_counter <= 0:
 		release_ice()
+	elif enemy == null:
+		# 原版 enemy.curHealth 在 enemy 为 null 时抛 TypeError #1009：异常穿透 update -> updateEffects -> globalUpdate，
+		# super.update()（帧推进）不执行，本帧监听中止（见 game/rw/as3.gd；updateEffects 在循环里检查标志）。
+		AS3.throw_error("TypeError #1009: IceVisual.update enemy is null")
+		return
 	elif enemy.cur_health <= 0:
 		if cur_frame < 40:
 			cur_frame = 40

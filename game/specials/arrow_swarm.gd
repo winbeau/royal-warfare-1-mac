@@ -38,7 +38,14 @@ func reset() -> void:
 	gameuni = GameUniverse.inst
 	s = SoundLibrary.inst
 
-# 注意：原版 param3（probability）是 int，关卡传入 0.88 会被截断成 0；其余整型参数同理。这里按 int 声明并显式截断。
+# P-code 核实（arrowSwarm.pcode addSwarm / updateArrowSwarm）：addSwarm 的签名是 param3:int = 0，
+# AVM2 在方法入口按声明类型把实参 convert_i（ToInt32，向零截断），所以关卡传入 0.88 得到 0；
+# 方法体里 `swarmCont.probability = param3` 存的就是 0。updateArrowSwarm 中
+# `getlex Utility.rand; getproperty swarmCont.probability; ifngt -> 跳过` 即 `if (rand > probability)` 才放箭，
+# probability = 0 时 rand > 0 恒成立（xorshift 不产生 0），因此每次调用必放一支箭、amount 每帧减 1，
+# 不会出现 0.88 本意的"12% 概率放箭"。保持原版行为。
+# （构造函数里 swarmCont 的初值是类对象 String/int 本身，addSwarm 之前 gotSwarm 为 false，不会被读到。）
+# 其余整型参数同理按 int 截断。
 func add_swarm(param1: String, param2: int = 50, param3: int = 0, param4: int = 10, param5: int = 9, param6: int = 350, param7: int = 300, param8: int = 600, param9: int = 500) -> void:
 	got_swarm = true
 	swarm_cont["direction"] = param1

@@ -18,18 +18,7 @@ var a_ranged: Array = []
 
 ## Array.sortOn(prop, Array.NUMERIC [| Array.DESCENDING])。prop 为 snake_case 属性名。
 static func sort_on(arr: Array, prop: String, descending: bool = false) -> void:
-	for i in range(1, arr.size()):
-		var item: Variant = arr[i]
-		var key: float = float(item.get(prop))
-		var j := i - 1
-		while j >= 0:
-			var other: float = float(arr[j].get(prop))
-			var swap: bool = other < key if descending else other > key
-			if not swap:
-				break
-			arr[j + 1] = arr[j]
-			j -= 1
-		arr[j + 1] = item
+	LivingObject.sort_on_prop(arr, prop, descending)
 
 ## Array.sort(Utility.randomSort)：每次比较消耗一次 rand（comparator 返回 -1 或 1）。
 static func random_sort_array(arr: Array) -> void:

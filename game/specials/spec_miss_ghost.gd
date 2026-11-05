@@ -11,6 +11,10 @@ func _init(param1: bool) -> void:
 	time_until_update = -10
 	set_params(param1)
 
+# P-code 核实（specMissGhost.pcode）：setParams 方法体只有 `getlocal0; pushscope; returnvoid`，整个类里
+# curProbability 只在 curLevelParams 里被读取（getproperty），没有任何 setproperty/initproperty，
+# 所以它保持 Number 默认值 NaN，说明文字显示 "NaN%"。同时 is_missed 完全不使用概率：canUseSpecial()
+# （timeUntilUpdate = -10，counter 恒为 -1）为真即必定闪避。保持原版行为。
 func set_params(_param1: bool = true) -> void:
 	pass
 

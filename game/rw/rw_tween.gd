@@ -596,7 +596,9 @@ class Handle:
 		if not suppress:
 			var cb: Variant = vars.get("onComplete")
 			if cb is Callable and (cb as Callable).is_valid() and cached_time == duration:
+				AS3.begin_entry()  # Tween 回调是独立入口：回调里抛错只中止该回调（见 as3.gd）
 				(cb as Callable).callv(_params("onCompleteParams"))
+				AS3.end_entry()
 
 	func _params(key: String) -> Array:
 		var p: Variant = vars.get(key)
@@ -645,7 +647,9 @@ class Handle:
 			else:
 				RWTweenUtil.set_prop(pt.target, pt.prop, v)
 		if vars.get("onUpdate") is Callable and not suppress:
+			AS3.begin_entry()
 			(vars["onUpdate"] as Callable).callv(_params("onUpdateParams"))
+			AS3.end_entry()
 		if is_complete:
 			_complete(suppress)
 

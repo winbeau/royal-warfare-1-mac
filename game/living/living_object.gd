@@ -706,6 +706,21 @@ func proportional_reset_int(param1: int, param2: int, param3: int, param4: int) 
 		result = param4
 	return result
 
+## Array.sortOn(prop, Array.NUMERIC [| Array.DESCENDING])：稳定插入排序（Flash 的排序对平局次序未公开）。prop 为 snake_case 属性名。
+static func sort_on_prop(arr: Array, prop: String, descending: bool = false) -> void:
+	for i in range(1, arr.size()):
+		var item: Variant = arr[i]
+		var key: float = float(item.get(prop))
+		var j := i - 1
+		while j >= 0:
+			var other: float = float(arr[j].get(prop))
+			var swap: bool = other < key if descending else other > key
+			if not swap:
+				break
+			arr[j + 1] = arr[j]
+			j -= 1
+		arr[j + 1] = item
+
 func unlock_specials() -> void:
 	pass
 
@@ -735,6 +750,8 @@ func clicked(event: RWMouseEvent) -> void:
 				else:
 					GameUniverse.inst.friendly_unit_clicked(self)
 				last_click_time = now
+		else:
+			GameUniverse.inst.enemy_unit_clicked(_instance)
 
 ## sens 的包围盒（舞台/全局坐标），对应 Flash 的 sens.hitTestObject 所用的显示对象边界。
 func get_sens_rect() -> Rect2:
@@ -814,6 +831,8 @@ func set_destination(param1: Vector2, param2: bool = false) -> void:
 			is_archer_shooting_its_target_while_is_needed_to_move = true
 		elif is_defence_stance == true:
 			check_flee_battle()
+			if AS3.aborted:
+				return
 		if a_obstacle_route.size() == 0:
 			zero_point = loc3
 		dest_point = loc3
@@ -847,6 +866,8 @@ func check_flee_battle() -> void:
 			if defender_unit != null:
 				if defender_unit.get_stance == FIGHTING:
 					strike = defender_unit.strike_back_stab(_instance)
+					if AS3.aborted:
+						return
 			if cur_health > 0:
 				if defender_unit == null:
 					flee_battle()
@@ -865,15 +886,17 @@ func check_flee_battle() -> void:
 		while i < num_attackers:
 			if cur_health > 0:
 				# 原版 numAttackers 在循环前取一次；strikeBackStab 击杀攻击者会让 aMeleeAttackers 缩短，随后 aMeleeAttackers[i]
-				# 为 undefined，原版在 getStance 处抛 TypeError #1009，函数（连同本帧处理器）中止，fleeBattle 不再执行。
-				# GDScript 无法抛出，改为静默中止本函数（剩余语句同样被跳过）。
+				# 为 undefined，原版在 getStance 处抛 TypeError #1009，异常穿透调用链，fleeBattle 不再执行。
 				if i >= cur_battle.a_melee_attackers.size():
+					AS3.throw_error("TypeError #1009: LivingObject.checkFleeBattle aMeleeAttackers[%d] is undefined" % i)
 					return
 				var attacker: LivingObject = cur_battle.a_melee_attackers[i]
 				if attacker.get_stance == FIGHTING:
 					if attacker.walk_speed > max_speed:
 						max_speed = attacker.walk_speed
 					strike = attacker.strike_back_stab(_instance)
+					if AS3.aborted:
+						return
 					if strike:
 						any_strike = true
 			i += 1
@@ -916,6 +939,9 @@ func strike_back_stab(targt: LivingObject) -> bool:
 						wave.added_to_stage(sens.position.x, sens.position.y + sens_height / 2, Callable(), _instance)
 						wave.scale.x = _instance.get_view_direction
 						targt.last_backstab = tm
+						if cur_target == null:
+							AS3.throw_error("TypeError #1009: LivingObject.strikeBackStab curTarget is null")
+							return striked
 						cur_target.bring_damage(cur_damage * 3, _instance, true)
 						striked = true
 	return striked
@@ -950,12 +976,17 @@ func flee_battle() -> void:
 #   checkTargetExistence、checkBattleExistence、目标分支、specialOne/Two/Zero.update] -> mainAlgUpdateHealthBar；
 #   DEAD：仅在尸体动画最后一帧置 canRemoveFromUnitsArray；
 #   最后（两种情况都执行）：curHealth <= 0 则 inAction = true；mainAlgUpdateSprite。
+# 抛错语义：update() 内任何一层抛出的未捕获异常（as3.gd）使本函数剩余语句都不执行，立即返回。
 func update() -> void:
 	if cur_stanse != DEAD:
 		main_alg_check_all_buffs_and_penalties()
+		if AS3.aborted:
+			return
 		if in_action == true:
 			before_updating_active_unit()
 			search_target()
+			if AS3.aborted:
+				return
 			if is_archer_shooting_its_target_while_is_needed_to_move == true:
 				if cur_frame == 0:
 					is_archer_shooting_its_target_while_is_needed_to_move = false
@@ -970,9 +1001,15 @@ func update() -> void:
 			if cur_target == null:
 				if cur_stanse != CASTING and cur_stanse != RANGED_SHOOT:
 					manage_walk_normal()
+					if AS3.aborted:
+						return
 				elif current_bm.num_frames - cur_frame < 2 or cur_frame < 2:
 					manage_walk_normal()
+					if AS3.aborted:
+						return
 				check_abilities()
+				if AS3.aborted:
+					return
 			elif cur_target != null:
 				if attacking_with_ranged_weapon == true:
 					if archer_goto_target == false:
@@ -982,15 +1019,23 @@ func update() -> void:
 								is_defence_stance = false
 								turn_to_attacker()
 								manage_attack()
+								if AS3.aborted:
+									return
 							else:
 								manage_attack()
+								if AS3.aborted:
+									return
 					else:
 						var dist: float = MiscUtils.get_distance(_instance, cur_target)
 						if dist > search_radius * search_radius_ranged_modifier:
 							if a_obstacle_route.size() == 0:
 								manage_walk_to_battle(dist, Vector2(_x, _y), Vector2(cur_target._x, cur_target._y))
+								if AS3.aborted:
+									return
 							else:
 								main_alg_move_soldier_to_route_way_point(a_obstacle_route[0])
+								if AS3.aborted:
+									return
 						else:
 							archer_goto_target = false
 				else:
@@ -1012,8 +1057,12 @@ func update() -> void:
 							if may_walk == true:
 								if a_obstacle_route.size() == 0:
 									manage_walk_to_battle(dist2, cur_pos, Vector2(cur_target._x, cur_target._y))
+									if AS3.aborted:
+										return
 								else:
 									main_alg_move_soldier_to_route_way_point(a_obstacle_route[0])
+									if AS3.aborted:
+										return
 								if not friendly:
 									if cur_target.class_kind == CLASS_WARRIOR or cur_target.class_kind == CLASS_THIEF:
 										var pursue: int = int(o_pursue_counter.get(pursue_key(cur_target), 0))
@@ -1077,8 +1126,12 @@ func update() -> void:
 								set_stance(FIGHTING)
 								is_defence_stance = false
 								manage_attack()
+								if AS3.aborted:
+									return
 							else:
 								manage_attack()
+								if AS3.aborted:
+									return
 					elif not main_alg_move_to_point(battle_point, false):
 						if cur_target.get_cur_battle == _instance.get_cur_battle:
 							turn_to_attacker()
@@ -1090,16 +1143,26 @@ func update() -> void:
 								set_stance(FIGHTING)
 								is_defence_stance = false
 								manage_attack()
+								if AS3.aborted:
+									return
 							else:
 								manage_attack()
+								if AS3.aborted:
+									return
 						else:
 							cur_battle = null
 			if special_one != null:
 				special_one.update()
+				if AS3.aborted:
+					return
 			if special_two != null:
 				special_two.update()
+				if AS3.aborted:
+					return
 			if special_zero != null:
 				special_zero.update()
+				if AS3.aborted:
+					return
 		main_alg_update_health_bar()
 	elif current_bm == bmp_dead:
 		if current_bm.num_frames - 1 == cur_frame:
@@ -1158,8 +1221,7 @@ func main_alg_check_battle_existence() -> void:
 							var attacker: LivingObject = cur_battle.a_melee_attackers[i] as LivingObject
 							attacker.temp_dist_to_attacker = cur_pos.distance_to(Vector2(attacker._x, attacker._y))
 							i += 1
-						# 原版 sortOn("tempDistToAttacker", Array.NUMERIC)；AS3 排序不保证稳定，距离相同时顺序可能不同
-						cur_battle.a_melee_attackers.sort_custom(func(a, b): return a.temp_dist_to_attacker < b.temp_dist_to_attacker)
+						sort_on_prop(cur_battle.a_melee_attackers, "temp_dist_to_attacker")
 						cur_target = cur_battle.a_melee_attackers[0]
 						dist = MiscUtils.get_distance(_instance, cur_target)
 						if dist > MAX_DISTANCE_BEFORE_MAKING_BATTLE * 1.5:
@@ -1227,6 +1289,8 @@ func main_alg_move_to_point(param1: Vector2, param2: bool = true) -> bool:
 			var moved: Vector2
 			if param2 == true:
 				moved = check_obstacles(cur_pos, next_pos, param1)
+				if AS3.aborted:
+					return false
 			else:
 				moved = next_pos
 			if moved.x < _x:
@@ -1294,8 +1358,11 @@ func check_obstacles(param1: Vector2, param2: Vector2, param3: Vector2 = Vector2
 					var screen := Rect2(0, 0, GAME_WIDTH, GAME_HEIGHT)
 					while idx != end_num:
 						# 原版数据缺陷：level_23greenroad 的 ring 4 编号为 1..12 且只有 12 个点，ringPoints[12] 为 undefined，
-						# 原版在 p.x 处抛 TypeError #1009 使本帧处理器中止。GDScript 无法抛出异常，退化为放弃绕障、直线前进。
+						# 原版在 p.x 处抛 TypeError #1009，异常穿透 checkObstacles -> mainAlgMoveToPoint/manageWalkToBattle ->
+						# update -> 单位更新循环 -> globalUpdate，本帧其余内容全部跳过（见 as3.gd；第 20 关会出现）。
+						# 此时 aObstacleRoute 已被置为 []（抛错前的状态保留）。
 						if idx >= ring_points.size():
+							AS3.throw_error("TypeError #1009: LivingObject.checkObstacles ringPoints[%d] is undefined" % idx)
 							return param2
 						var p: RWLayoutClip = ring_points[idx]
 						forward.push_back(Vector2(p.x, p.y))
@@ -1309,6 +1376,7 @@ func check_obstacles(param1: Vector2, param2: Vector2, param3: Vector2 = Vector2
 					idx = start_num
 					while idx != end_num:
 						if idx >= ring_points.size():
+							AS3.throw_error("TypeError #1009: LivingObject.checkObstacles ringPoints[%d] is undefined (backward)" % idx)
 							return param2  # 同上：原版此处 TypeError #1009
 						var p2: RWLayoutClip = ring_points[idx]
 						backward.push_back(Vector2(p2.x, p2.y))
@@ -1337,6 +1405,8 @@ func get_direction() -> int:
 
 func main_alg_move_soldier_to_route_way_point(param1: Vector2) -> void:
 	var moving: bool = main_alg_move_to_point(param1)
+	if AS3.aborted:
+		return
 	if not moving:
 		if a_obstacle_route.size() > 0:
 			if cur_target == null:
@@ -1390,6 +1460,8 @@ func main_alg_update_sprite() -> void:
 				on_play_head_done()
 			elif cmd == 3:
 				on_play_head_action()
+			if AS3.aborted:
+				return  # 钩子里抛了错（例如 enemy_hit_sound）：原版异常穿透，帧推进与收尾都不执行
 			play_flag = false
 			if cur_frame != current_bm.num_frames - 1:
 				cur_frame += 1
@@ -1528,10 +1600,14 @@ func bp_possess() -> void:
 				set_target(null)
 				set_stance_after_upgrade(LivingObject.STAND)
 				clear_route()
+				if AS3.aborted:
+					return
 				GameUniverse.inst.remove_from_selected_array(_instance)
 				a_soldier_main_route = old_route.duplicate()
 				old_route = []
 				set_destination(Vector2(position.x, position.y))
+				if AS3.aborted:
+					return
 				cur_stanse = NONE
 			remove_from_buff_pen(BP_POSSESS)
 			ui_health_bar.remove_icon(MiniIcons.cMINDCONTROL)
@@ -1622,6 +1698,8 @@ func main_alg_check_all_buffs_and_penalties() -> void:
 			var bp_name: String = a_buffs_and_penalties[i]
 			var fn: Callable = o_bp[bp_name]
 			fn.call()
+			if AS3.aborted:
+				return
 			i += 1
 
 func rogue_close_to_target() -> void:
@@ -1633,6 +1711,8 @@ func manage_walk_to_battle(param1: float, param2: Vector2, param3: Vector2) -> v
 	var ratio: float = 1 - walk_speed / param1
 	var interpolated: Vector2 = AS3.point_interpolate(param2, param3, ratio)
 	var moved: Vector2 = check_obstacles(param2, interpolated, param3)
+	if AS3.aborted:
+		return
 	var target_point: Vector2 = param3
 	if interpolated.length() != moved.length():
 		if target_point.x < _x:
@@ -1714,8 +1794,7 @@ func manage_attack() -> void:
 							var attacker: LivingObject = cur_battle.a_melee_attackers[i] as LivingObject
 							attacker.temp_dist_to_attacker = cur_pos.distance_to(Vector2(attacker.position.x, attacker.position.y))
 							i += 1
-						# 原版 sortOn("tempDistToAttacker", Array.NUMERIC)（不保证稳定）
-						cur_battle.a_melee_attackers.sort_custom(func(a, b): return a.temp_dist_to_attacker < b.temp_dist_to_attacker)
+						sort_on_prop(cur_battle.a_melee_attackers, "temp_dist_to_attacker")
 						cur_target = cur_battle.a_melee_attackers[0]
 						dist = cur_pos.distance_to(Vector2(cur_target.position.x, cur_target.position.y))
 						if dist < 35:
@@ -1762,8 +1841,10 @@ func attack_done(_e: Variant = null) -> void:
 
 func enemy_hit_sound() -> void:
 	# 原版 enemyHitSound 在 curTarget 为 null 时抛 TypeError #1009（bringDamage 的副作用可能清空 curTarget，
-	# 如 SpecMissAssasin 之类）；Flash 播放器中该函数随即中止，此后没有任何语句，所以这里直接返回，可观察行为相同。
+	# 如 SpecMissAssasin 之类）。异常穿透 attackDone -> onPlayHeadDone -> mainAlgUpdateSprite -> update ->
+	# 单位更新循环 -> globalUpdate：本帧其余内容全部跳过（见 as3.gd）。
 	if cur_target == null:
+		AS3.throw_error("TypeError #1009: LivingObject.enemyHitSound curTarget is null")
 		return
 	if cur_target.cur_armor > 0.5:
 		Sounds.inst.play(s.get_sound_from_stack(SoundLibrary.IMPACT_ARMOR), false, RWRandom.rand_range(0, 12) / 100.0, 0.28, position.x, SoundLibrary.IMPACT)
@@ -2147,6 +2228,8 @@ func clear_route() -> void:
 	a_soldier_main_route.clear()  # splice(0)
 	can_be_selected = true
 	set_destination(Vector2(_x, _y), true)
+	if AS3.aborted:
+		return
 
 func blessed(param1: int, param2: float) -> void:
 	is_blessed = true
@@ -2221,10 +2304,14 @@ func can_attack_enemy(param1: LivingObject = null) -> bool:
 					can_attack = true
 				else:
 					check_flee_battle()
+					if AS3.aborted:
+						return false
 					if cur_health > 0:
 						can_attack = true
 			else:
 				check_flee_battle()
+				if AS3.aborted:
+					return false
 				if cur_health > 0:
 					can_attack = true
 	if can_attack == true:

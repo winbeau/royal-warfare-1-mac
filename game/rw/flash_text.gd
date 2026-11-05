@@ -7,6 +7,7 @@ const GUTTER := 2.0
 const FONT_MAP_PATH := "res://assets/clips/fonts.json"
 static var _font_map: Dictionary = {}
 static var _font_cache: Dictionary = {}
+static var _merged_cache: Dictionary = {}
 
 @export var box := Rect2(0, 0, 100, 20)
 @export var font_id := -1
@@ -29,6 +30,9 @@ static var _font_cache: Dictionary = {}
 		_relayout()
 @export var shadow_color := Color(0, 0, 0, 0)
 @export var shadow_offset := Vector2.ZERO
+## AS3 DropShadowFilter/GlowFilter 的 blurX≈blurY（像素，1x）。RichTextLabel 没有真正的高斯模糊阴影，
+## 用 shadow_outline_size 在阴影字形外加一圈描边来近似模糊扩散，避免偏移量直接画出一份清晰的重影。
+@export var shadow_blur := 0.0
 @export var initial_text := ""
 
 var text: String:
@@ -74,6 +78,11 @@ func _ready() -> void:
 		_rtl.add_theme_color_override(&"font_shadow_color", shadow_color)
 		_rtl.add_theme_constant_override(&"shadow_offset_x", int(round(shadow_offset.x)))
 		_rtl.add_theme_constant_override(&"shadow_offset_y", int(round(shadow_offset.y)))
+		# blurX/blurY 没有直接对应项：shadow_outline_size 给阴影字形套一圈同色描边，视觉上把硬边的
+		# 偏移拷贝"胖"开成模糊过渡，而不是清晰的第二份文字（即用户反馈的"重影"）。半径取 blur/2，
+		# 和偏移量同数量级时足够盖住两份文字之间的缝隙又不至于糊成一团。
+		if shadow_blur > 0.0:
+			_rtl.add_theme_constant_override(&"shadow_outline_size", maxi(1, int(round(shadow_blur / 2.0))))
 	var f := get_font()
 	if f:
 		for key in [&"normal_font", &"bold_font", &"italics_font", &"bold_italics_font", &"mono_font"]:
@@ -93,7 +102,22 @@ func _ready() -> void:
 	else:
 		_refresh()
 
+## 文本框实际使用的字体。
+## 原版 DefineEditText 的 fontId 指向一个只嵌入了编辑器里初始文字所用字形的 DefineFont3 子集
+## （例如 tMissionDesc：fontId 6028 "Minion Pro" 只含 27 个字形 `!',.MTWabcdeghijlmnorstuvy`，没有 w、f 等）。
+## 运行时 `.text = ...` 的文字按字体名在嵌入字体里查找（同名的 Minion Pro 有 268/596/598 等全字符集版本），
+## 所以子集缺的字形来自同名的完整字体：这里把按名字映射到的字体（fonts.json）挂成该子集字体的字形回退，
+## 子集已有的字形（轮廓相同）和行高仍取自 fontId 指定的字体。
 func get_font() -> Font:
+	if font is FontFile and font_face != "":
+		var full := font_for_face(font_face)
+		if full != null and full != font and full.resource_path != font.resource_path:
+			var key := font.resource_path + "|" + full.resource_path
+			if not _merged_cache.has(key):
+				var m := (font as FontFile).duplicate() as FontFile
+				m.fallbacks = [full]
+				_merged_cache[key] = m
+			return _merged_cache[key]
 	return font
 
 ## Resolves a Flash face name (as used in <font face="...">) to a ttf in assets/library/font.

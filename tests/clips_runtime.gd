@@ -107,6 +107,18 @@ func run() -> void:
 	check(bb == "[color=#00ff00][font_size=20]a\nb[/font_size][/color][i]c[/i]" or bb.contains("[font_size=20]"), "bbcode: " + bb)
 	t.auto_size = "center"
 	t.text = "x"
+	# 6. 嵌入字体子集：tMissionDesc 的 fontId 6028 只嵌入初始文字用到的 27 个字形（无 w、f），
+	#    运行时文字缺的字形必须取自同名完整字体（268），而不是系统回退字体
+	var popup := (load("res://scenes/clips/popupMission.tscn") as PackedScene).instantiate()
+	root.add_child(popup)
+	await process_frame
+	var desc: FlashText = popup.get_node("tMissionDesc")
+	check(not desc.font.has_char(119) and desc.font.has_char(87), "6028 子集有 W 无 w")
+	var mf := desc.get_font()
+	check(mf.has_char(119) and mf.has_char(102), "get_font() 对缺的字形回退到同名完整字体")
+	check(mf.get_string_size("w", 0, -1, 23).x < mf.get_string_size("W", 0, -1, 23).x - 3.0, "小写 w 比大写 W 窄（不是 W 的形状）")
+	check(mf.get_string_size("We", 0, -1, 23).x == desc.font.get_string_size("We", 0, -1, 23).x, "子集已有的字形仍取自 fontId 指定的字体")
+	popup.queue_free()
 	ui.queue_free()
 	await process_frame
 	print("clips_runtime: %d checks, %d failures" % [checks, failures.size()])

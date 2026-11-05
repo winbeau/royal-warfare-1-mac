@@ -45,46 +45,10 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "306": {
-   "scene": "scenes/clips/upgradePanel_fla_Timeline_46.tscn",
-   "name": "upgradePanel_fla_Timeline_46",
-   "character_id": 306,
-   "frames": 5,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "401": {
-   "scene": "scenes/clips/upgradePanel_fla_Timeline_100.tscn",
-   "name": "upgradePanel_fla_Timeline_100",
-   "character_id": 401,
-   "frames": 5,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "607": {
-   "scene": "scenes/clips/zanavesUpgr.tscn",
-   "name": "zanavesUpgr",
-   "character_id": 607,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "636": {
    "scene": "scenes/clips/uobar.tscn",
    "name": "uobar",
    "character_id": 636,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "658": {
-   "scene": "scenes/clips/upgrPanel.tscn",
-   "name": "upgrPanel",
-   "character_id": 658,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -1287,15 +1251,6 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "279f1": {
-   "scene": "scenes/clips/Symbol_279__f1.tscn",
-   "name": "Symbol_279__f1",
-   "character_id": 279,
-   "frames": 1,
-   "variant": true,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "606": {
    "scene": "scenes/clips/Symbol_606.tscn",
    "name": "Symbol_606",
@@ -1350,64 +1305,10 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "307": {
-   "scene": "scenes/clips/Symbol_307.tscn",
-   "name": "Symbol_307",
-   "character_id": 307,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "313": {
-   "scene": "scenes/clips/Symbol_313.tscn",
-   "name": "Symbol_313",
-   "character_id": 313,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "316": {
-   "scene": "scenes/clips/Symbol_316.tscn",
-   "name": "Symbol_316",
-   "character_id": 316,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "328": {
-   "scene": "scenes/clips/Symbol_328.tscn",
-   "name": "Symbol_328",
-   "character_id": 328,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "331": {
    "scene": "scenes/clips/Symbol_331.tscn",
    "name": "Symbol_331",
    "character_id": 331,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "337": {
-   "scene": "scenes/clips/Symbol_337.tscn",
-   "name": "Symbol_337",
-   "character_id": 337,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "345": {
-   "scene": "scenes/clips/Symbol_345.tscn",
-   "name": "Symbol_345",
-   "character_id": 345,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -1422,82 +1323,10 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "361": {
-   "scene": "scenes/clips/Symbol_361.tscn",
-   "name": "Symbol_361",
-   "character_id": 361,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "366": {
-   "scene": "scenes/clips/Symbol_366.tscn",
-   "name": "Symbol_366",
-   "character_id": 366,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "372": {
-   "scene": "scenes/clips/Symbol_372.tscn",
-   "name": "Symbol_372",
-   "character_id": 372,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "380": {
-   "scene": "scenes/clips/Symbol_380.tscn",
-   "name": "Symbol_380",
-   "character_id": 380,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "384": {
    "scene": "scenes/clips/Symbol_384.tscn",
    "name": "Symbol_384",
    "character_id": 384,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "388": {
-   "scene": "scenes/clips/Symbol_388.tscn",
-   "name": "Symbol_388",
-   "character_id": 388,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "393": {
-   "scene": "scenes/clips/Symbol_393.tscn",
-   "name": "Symbol_393",
-   "character_id": 393,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "402": {
-   "scene": "scenes/clips/Symbol_402.tscn",
-   "name": "Symbol_402",
-   "character_id": 402,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "405": {
-   "scene": "scenes/clips/Symbol_405.tscn",
-   "name": "Symbol_405",
-   "character_id": 405,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -1512,64 +1341,10 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "415": {
-   "scene": "scenes/clips/Symbol_415.tscn",
-   "name": "Symbol_415",
-   "character_id": 415,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "424": {
-   "scene": "scenes/clips/Symbol_424.tscn",
-   "name": "Symbol_424",
-   "character_id": 424,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "436": {
-   "scene": "scenes/clips/Symbol_436.tscn",
-   "name": "Symbol_436",
-   "character_id": 436,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "442": {
-   "scene": "scenes/clips/Symbol_442.tscn",
-   "name": "Symbol_442",
-   "character_id": 442,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "447": {
    "scene": "scenes/clips/Symbol_447.tscn",
    "name": "Symbol_447",
    "character_id": 447,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "449": {
-   "scene": "scenes/clips/Symbol_449.tscn",
-   "name": "Symbol_449",
-   "character_id": 449,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "453": {
-   "scene": "scenes/clips/Symbol_453.tscn",
-   "name": "Symbol_453",
-   "character_id": 453,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -1584,42 +1359,6 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "461": {
-   "scene": "scenes/clips/Symbol_461.tscn",
-   "name": "Symbol_461",
-   "character_id": 461,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "464": {
-   "scene": "scenes/clips/Symbol_464.tscn",
-   "name": "Symbol_464",
-   "character_id": 464,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "467": {
-   "scene": "scenes/clips/Symbol_467.tscn",
-   "name": "Symbol_467",
-   "character_id": 467,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "469": {
-   "scene": "scenes/clips/Symbol_469.tscn",
-   "name": "Symbol_469",
-   "character_id": 469,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "472": {
    "scene": "scenes/clips/Symbol_472.tscn",
    "name": "Symbol_472",
@@ -1629,64 +1368,10 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "475": {
-   "scene": "scenes/clips/Symbol_475.tscn",
-   "name": "Symbol_475",
-   "character_id": 475,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "488": {
-   "scene": "scenes/clips/Symbol_488.tscn",
-   "name": "Symbol_488",
-   "character_id": 488,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "499": {
-   "scene": "scenes/clips/Symbol_499.tscn",
-   "name": "Symbol_499",
-   "character_id": 499,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "502": {
-   "scene": "scenes/clips/Symbol_502.tscn",
-   "name": "Symbol_502",
-   "character_id": 502,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "505": {
    "scene": "scenes/clips/Symbol_505.tscn",
    "name": "Symbol_505",
    "character_id": 505,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "509": {
-   "scene": "scenes/clips/Symbol_509.tscn",
-   "name": "Symbol_509",
-   "character_id": 509,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "517": {
-   "scene": "scenes/clips/Symbol_517.tscn",
-   "name": "Symbol_517",
-   "character_id": 517,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -1773,78 +1458,6 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "558": {
-   "scene": "scenes/clips/Symbol_558.tscn",
-   "name": "Symbol_558",
-   "character_id": 558,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "559": {
-   "scene": "scenes/clips/Symbol_559.tscn",
-   "name": "Symbol_559",
-   "character_id": 559,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "560": {
-   "scene": "scenes/clips/Symbol_560.tscn",
-   "name": "Symbol_560",
-   "character_id": 560,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "563": {
-   "scene": "scenes/clips/Symbol_563.tscn",
-   "name": "Symbol_563",
-   "character_id": 563,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "566": {
-   "scene": "scenes/clips/Symbol_566.tscn",
-   "name": "Symbol_566",
-   "character_id": 566,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "569": {
-   "scene": "scenes/clips/Symbol_569.tscn",
-   "name": "Symbol_569",
-   "character_id": 569,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "572": {
-   "scene": "scenes/clips/Symbol_572.tscn",
-   "name": "Symbol_572",
-   "character_id": 572,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "575": {
-   "scene": "scenes/clips/Symbol_575.tscn",
-   "name": "Symbol_575",
-   "character_id": 575,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "581f1": {
    "scene": "scenes/clips/Symbol_581__f1.tscn",
    "name": "Symbol_581__f1",
@@ -1858,33 +1471,6 @@
    "scene": "scenes/clips/Symbol_585.tscn",
    "name": "Symbol_585",
    "character_id": 585,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "591": {
-   "scene": "scenes/clips/Symbol_591.tscn",
-   "name": "Symbol_591",
-   "character_id": 591,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "595": {
-   "scene": "scenes/clips/Symbol_595.tscn",
-   "name": "Symbol_595",
-   "character_id": 595,
-   "frames": 1,
-   "variant": false,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "625": {
-   "scene": "scenes/clips/Symbol_625.tscn",
-   "name": "Symbol_625",
-   "character_id": 625,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
@@ -4473,24 +4059,6 @@
    "reuse_frames": false,
    "interleaved_frames": 0
   },
-  "306f1": {
-   "scene": "scenes/clips/upgradePanel_fla_Timeline_46__f1.tscn",
-   "name": "upgradePanel_fla_Timeline_46__f1",
-   "character_id": 306,
-   "frames": 5,
-   "variant": true,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
-  "401f1": {
-   "scene": "scenes/clips/upgradePanel_fla_Timeline_100__f1.tscn",
-   "name": "upgradePanel_fla_Timeline_100__f1",
-   "character_id": 401,
-   "frames": 5,
-   "variant": true,
-   "reuse_frames": false,
-   "interleaved_frames": 0
-  },
   "579": {
    "scene": "scenes/clips/Symbol_579.tscn",
    "name": "Symbol_579",
@@ -5152,6 +4720,474 @@
    "scene": "scenes/clips/mmAnimSoldiers.tscn",
    "name": "mmAnimSoldiers",
    "character_id": 5835,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "607": {
+   "scene": "scenes/clips/zanavesUpgr.tscn",
+   "name": "zanavesUpgr",
+   "character_id": 607,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "604": {
+   "scene": "scenes/clips/Symbol_604.tscn",
+   "name": "Symbol_604",
+   "character_id": 604,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "306": {
+   "scene": "scenes/clips/upgradePanel_fla_Timeline_46.tscn",
+   "name": "upgradePanel_fla_Timeline_46",
+   "character_id": 306,
+   "frames": 5,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "401": {
+   "scene": "scenes/clips/upgradePanel_fla_Timeline_100.tscn",
+   "name": "upgradePanel_fla_Timeline_100",
+   "character_id": 401,
+   "frames": 5,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "307": {
+   "scene": "scenes/clips/Symbol_307.tscn",
+   "name": "Symbol_307",
+   "character_id": 307,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "313": {
+   "scene": "scenes/clips/Symbol_313.tscn",
+   "name": "Symbol_313",
+   "character_id": 313,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "316": {
+   "scene": "scenes/clips/Symbol_316.tscn",
+   "name": "Symbol_316",
+   "character_id": 316,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "328": {
+   "scene": "scenes/clips/Symbol_328.tscn",
+   "name": "Symbol_328",
+   "character_id": 328,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "337": {
+   "scene": "scenes/clips/Symbol_337.tscn",
+   "name": "Symbol_337",
+   "character_id": 337,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "345": {
+   "scene": "scenes/clips/Symbol_345.tscn",
+   "name": "Symbol_345",
+   "character_id": 345,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "361": {
+   "scene": "scenes/clips/Symbol_361.tscn",
+   "name": "Symbol_361",
+   "character_id": 361,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "366": {
+   "scene": "scenes/clips/Symbol_366.tscn",
+   "name": "Symbol_366",
+   "character_id": 366,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "372": {
+   "scene": "scenes/clips/Symbol_372.tscn",
+   "name": "Symbol_372",
+   "character_id": 372,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "380": {
+   "scene": "scenes/clips/Symbol_380.tscn",
+   "name": "Symbol_380",
+   "character_id": 380,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "388": {
+   "scene": "scenes/clips/Symbol_388.tscn",
+   "name": "Symbol_388",
+   "character_id": 388,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "393": {
+   "scene": "scenes/clips/Symbol_393.tscn",
+   "name": "Symbol_393",
+   "character_id": 393,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "402": {
+   "scene": "scenes/clips/Symbol_402.tscn",
+   "name": "Symbol_402",
+   "character_id": 402,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "405": {
+   "scene": "scenes/clips/Symbol_405.tscn",
+   "name": "Symbol_405",
+   "character_id": 405,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "415": {
+   "scene": "scenes/clips/Symbol_415.tscn",
+   "name": "Symbol_415",
+   "character_id": 415,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "424": {
+   "scene": "scenes/clips/Symbol_424.tscn",
+   "name": "Symbol_424",
+   "character_id": 424,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "436": {
+   "scene": "scenes/clips/Symbol_436.tscn",
+   "name": "Symbol_436",
+   "character_id": 436,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "442": {
+   "scene": "scenes/clips/Symbol_442.tscn",
+   "name": "Symbol_442",
+   "character_id": 442,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "449": {
+   "scene": "scenes/clips/Symbol_449.tscn",
+   "name": "Symbol_449",
+   "character_id": 449,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "453": {
+   "scene": "scenes/clips/Symbol_453.tscn",
+   "name": "Symbol_453",
+   "character_id": 453,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "461": {
+   "scene": "scenes/clips/Symbol_461.tscn",
+   "name": "Symbol_461",
+   "character_id": 461,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "464": {
+   "scene": "scenes/clips/Symbol_464.tscn",
+   "name": "Symbol_464",
+   "character_id": 464,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "467": {
+   "scene": "scenes/clips/Symbol_467.tscn",
+   "name": "Symbol_467",
+   "character_id": 467,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "469": {
+   "scene": "scenes/clips/Symbol_469.tscn",
+   "name": "Symbol_469",
+   "character_id": 469,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "475": {
+   "scene": "scenes/clips/Symbol_475.tscn",
+   "name": "Symbol_475",
+   "character_id": 475,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "488": {
+   "scene": "scenes/clips/Symbol_488.tscn",
+   "name": "Symbol_488",
+   "character_id": 488,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "499": {
+   "scene": "scenes/clips/Symbol_499.tscn",
+   "name": "Symbol_499",
+   "character_id": 499,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "502": {
+   "scene": "scenes/clips/Symbol_502.tscn",
+   "name": "Symbol_502",
+   "character_id": 502,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "509": {
+   "scene": "scenes/clips/Symbol_509.tscn",
+   "name": "Symbol_509",
+   "character_id": 509,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "517": {
+   "scene": "scenes/clips/Symbol_517.tscn",
+   "name": "Symbol_517",
+   "character_id": 517,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "558": {
+   "scene": "scenes/clips/Symbol_558.tscn",
+   "name": "Symbol_558",
+   "character_id": 558,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "559": {
+   "scene": "scenes/clips/Symbol_559.tscn",
+   "name": "Symbol_559",
+   "character_id": 559,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "560": {
+   "scene": "scenes/clips/Symbol_560.tscn",
+   "name": "Symbol_560",
+   "character_id": 560,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "563": {
+   "scene": "scenes/clips/Symbol_563.tscn",
+   "name": "Symbol_563",
+   "character_id": 563,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "566": {
+   "scene": "scenes/clips/Symbol_566.tscn",
+   "name": "Symbol_566",
+   "character_id": 566,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "569": {
+   "scene": "scenes/clips/Symbol_569.tscn",
+   "name": "Symbol_569",
+   "character_id": 569,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "572": {
+   "scene": "scenes/clips/Symbol_572.tscn",
+   "name": "Symbol_572",
+   "character_id": 572,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "575": {
+   "scene": "scenes/clips/Symbol_575.tscn",
+   "name": "Symbol_575",
+   "character_id": 575,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "591": {
+   "scene": "scenes/clips/Symbol_591.tscn",
+   "name": "Symbol_591",
+   "character_id": 591,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "595": {
+   "scene": "scenes/clips/Symbol_595.tscn",
+   "name": "Symbol_595",
+   "character_id": 595,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "306f1": {
+   "scene": "scenes/clips/upgradePanel_fla_Timeline_46__f1.tscn",
+   "name": "upgradePanel_fla_Timeline_46__f1",
+   "character_id": 306,
+   "frames": 5,
+   "variant": true,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "401f1": {
+   "scene": "scenes/clips/upgradePanel_fla_Timeline_100__f1.tscn",
+   "name": "upgradePanel_fla_Timeline_100__f1",
+   "character_id": 401,
+   "frames": 5,
+   "variant": true,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "658": {
+   "scene": "scenes/clips/upgrPanel.tscn",
+   "name": "upgrPanel",
+   "character_id": 658,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "625": {
+   "scene": "scenes/clips/Symbol_625.tscn",
+   "name": "Symbol_625",
+   "character_id": 625,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "614": {
+   "scene": "scenes/clips/Symbol_614.tscn",
+   "name": "Symbol_614",
+   "character_id": 614,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "618": {
+   "scene": "scenes/clips/Symbol_618.tscn",
+   "name": "Symbol_618",
+   "character_id": 618,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "620": {
+   "scene": "scenes/clips/Symbol_620.tscn",
+   "name": "Symbol_620",
+   "character_id": 620,
+   "frames": 1,
+   "variant": false,
+   "reuse_frames": false,
+   "interleaved_frames": 0
+  },
+  "622": {
+   "scene": "scenes/clips/Symbol_622.tscn",
+   "name": "Symbol_622",
+   "character_id": 622,
    "frames": 1,
    "variant": false,
    "reuse_frames": false,
