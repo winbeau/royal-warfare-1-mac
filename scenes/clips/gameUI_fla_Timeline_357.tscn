@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5371/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5366__f1.tscn" id="c0"]
+
+[node name="gameUI_fla_Timeline_357" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5371
+total_frames = 2
+metadata/character_id = 5371
+
+[node name="eHint" parent="." instance=ExtResource("c0")]
+position = Vector2(25.3, 66.15)
+scale = Vector2(1, -1)
+metadata/original_instance = "eHint"
+metadata/character_id = 5366

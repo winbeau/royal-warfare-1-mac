@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4997/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4840.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4865.tscn" id="c1"]
+
+[node name="gameUI_fla_eAbility_57" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4997
+total_frames = 44
+metadata/character_id = 4997
+
+[node name="eNotAllowed" parent="." instance=ExtResource("c0")]
+position = Vector2(1.45, 1.2)
+scale = Vector2(0.9803, 1.12613)
+metadata/original_instance = "eNotAllowed"
+metadata/character_id = 4840
+
+[node name="xtree" parent="." instance=ExtResource("c1")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "xtree"
+metadata/character_id = 4865

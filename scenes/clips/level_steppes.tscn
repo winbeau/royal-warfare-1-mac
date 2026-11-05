@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6221/clip.tres" id="data"]
+
+[node name="level_steppes" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6221
+total_frames = 1
+metadata/character_id = 6221
+
+[node name="obstacle" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "obstacle"
+metadata/character_id = 6210
+
+[node name="eObstacleWP" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "eObstacleWP"
+metadata/character_id = 6211
+
+[node name="route0" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(4, -18)
+metadata/original_instance = "route0"
+metadata/character_id = 6212
+
+[node name="route2" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route2"
+metadata/character_id = 6215
+
+[node name="route5" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route5"
+metadata/character_id = 6216
+
+[node name="route1" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(3, 0)
+metadata/original_instance = "route1"
+metadata/character_id = 6217
+
+[node name="route3" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route3"
+metadata/character_id = 6218
+
+[node name="eDefFlagPlace" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(657, 22.95)
+scale = Vector2(0.20833, 2.43805)
+metadata/original_instance = "eDefFlagPlace"
+metadata/character_id = 6161
+
+[node name="route6" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(3, 0)
+metadata/original_instance = "route6"
+metadata/character_id = 6219
+
+[node name="route4" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(3, 0)
+metadata/original_instance = "route4"
+metadata/character_id = 6220

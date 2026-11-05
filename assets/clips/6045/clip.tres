@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 6045
+total_frames = 1
+rect = Rect2(-264.85, -157.15, 530.2, 329.25)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"bPlaybtn": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0.15, 116.35, 1, 1, 1, 1)}, "bClosebtn": {"kind": "clip", "depth": 8, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 188.7, 107.1, 1, 1, 1, 1)}, "eBg": {"kind": "clip", "depth": 11, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -250.85, -143.2, 1, 1, 1, 1)}, "tMissionName": {"kind": "text", "depth": 22, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.74892, 0, 0, 0.74892, -211.5, -118.1, 1, 1, 1, 1)}, "tMissionDesc": {"kind": "text", "depth": 23, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.74892, 0, 0, 0.74892, -62.5, -64.5, 1, 1, 1, 1)}, "eTextMask": {"kind": "clip", "depth": 24, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -67.25, -66.6, 1, 1, 1, 1)}, "eMapSymbol": {"kind": "clip", "depth": 26, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -209.05, -70.95, 1, 1, 1, 1)}, "d1": {"kind": "clip", "depth": 32, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -184, 54.3, 1, 1, 1, 1)}, "d2": {"kind": "clip", "depth": 38, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -140, 54.3, 1, 1, 1, 1)}, "d3": {"kind": "clip", "depth": 52, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -94.55, 54.3, 1, 1, 1, 1)}}

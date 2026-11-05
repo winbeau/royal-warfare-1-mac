@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5900/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_528.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_489.tscn" id="c1"]
+
+[node name="mbclass" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5900
+total_frames = 3
+metadata/character_id = 5900
+
+[node name="eLight" parent="." instance=ExtResource("c0")]
+position = Vector2(-2.9, 0.7)
+scale = Vector2(0.65552, 0.73087)
+metadata/original_instance = "eLight"
+metadata/character_id = 528
+
+[node name="eIco" parent="." instance=ExtResource("c1")]
+position = Vector2(0, 0)
+metadata/original_instance = "eIco"
+metadata/character_id = 5899

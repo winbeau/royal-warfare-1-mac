@@ -1,0 +1,87 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5907/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5842.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5853.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5871__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5873__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5875__f1.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/hbclass__f1.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5881__f1.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/sbclass__f1.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/mbclass__f1.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5902__f1.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/bautopauz__f1.tscn" id="c10"]
+
+[node name="pauseMenu" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5907
+total_frames = 1
+metadata/character_id = 5907
+
+[node name="eMaxGames" parent="." instance=ExtResource("c0")]
+position = Vector2(2.5, 186.9)
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 5842
+
+[node name="eBg" parent="." instance=ExtResource("c1")]
+position = Vector2(-175.95, -200.75)
+metadata/original_instance = "eBg"
+metadata/character_id = 5853
+
+[node name="bToMap" parent="." instance=ExtResource("c2")]
+position = Vector2(69, -68.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bToMap"
+metadata/character_id = 5871
+
+[node name="bMore" parent="." instance=ExtResource("c3")]
+position = Vector2(69, -13.15)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMore"
+metadata/character_id = 5873
+
+[node name="bClose" parent="." instance=ExtResource("c4")]
+position = Vector2(0.05, 115.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bClose"
+metadata/character_id = 5875
+
+[node name="bHints" parent="." instance=ExtResource("c5")]
+position = Vector2(-69.95, 43.75)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bHints"
+metadata/character_id = 5879
+
+[node name="bMenu" parent="." instance=ExtResource("c6")]
+position = Vector2(-69.95, -13.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 5881
+
+[node name="bSound" parent="." instance=ExtResource("c7")]
+position = Vector2(-105, 101.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bSound"
+metadata/character_id = 5894
+
+[node name="bMusic" parent="." instance=ExtResource("c8")]
+position = Vector2(103.1, 101.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMusic"
+metadata/character_id = 5900
+
+[node name="bRestart" parent="." instance=ExtResource("c9")]
+position = Vector2(-69.95, -69.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bRestart"
+metadata/character_id = 5902
+
+[node name="bAutopause" parent="." instance=ExtResource("c10")]
+position = Vector2(71.05, 43.75)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bAutopause"
+metadata/character_id = 5906

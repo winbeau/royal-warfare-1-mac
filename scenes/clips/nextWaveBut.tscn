@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5167/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5163__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/autostartsin.tscn" id="c1"]
+
+[node name="nextWaveBut" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5167
+total_frames = 1
+metadata/character_id = 5167
+
+[node name="bStart" parent="." instance=ExtResource("c0")]
+position = Vector2(-1.8, -6.1)
+rotation = 3.14159
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bStart"
+metadata/character_id = 5163
+
+[node name="eAutostartPad" parent="." instance=ExtResource("c1")]
+position = Vector2(-0.5, 40.65)
+metadata/original_instance = "eAutostartPad"
+metadata/character_id = 5166

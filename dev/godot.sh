@@ -26,6 +26,9 @@ case "$action" in
         "$godot_bin" --headless --path "$project_dir" --script tests/combat_rules.gd -- --isolated-profile
         "$godot_bin" --headless --path "$project_dir" --script tests/rw_runtime.gd -- --isolated-profile
         "$godot_bin" --headless --path "$project_dir" --script tests/sounds_runtime.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/levels_data.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/universe_core.gd -- --isolated-profile
+        "$godot_bin" --headless --path "$project_dir" --script tests/living_core.gd -- --isolated-profile
         exec "$godot_bin" --headless --path "$project_dir" --script tests/campaign_flow.gd -- --isolated-profile
         ;;
     export)

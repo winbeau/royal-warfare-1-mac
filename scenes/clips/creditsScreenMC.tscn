@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/763/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_724.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_538__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_726__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/checkClick.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_762.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_657.tscn" id="c5"]
+
+[node name="creditsScreenMC" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 763
+total_frames = 1
+metadata/character_id = 763
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eBg"
+metadata/character_id = 724
+
+[node name="bMenu" parent="." instance=ExtResource("c1")]
+position = Vector2(353.7, 556)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 538
+
+[node name="eLogo" parent="." instance=ExtResource("c2")]
+position = Vector2(236.45, 0.7)
+scale = Vector2(0.72865, 0.72865)
+metadata/original_instance = "eLogo"
+metadata/character_id = 726
+
+[node name="eText" parent="." instance=ExtResource("c3")]
+position = Vector2(347, 299.25)
+metadata/original_instance = "eText"
+metadata/character_id = 751
+
+[node name="eAchievement" parent="." instance=ExtResource("c4")]
+position = Vector2(640.35, 51.3)
+metadata/original_instance = "eAchievement"
+metadata/character_id = 762
+
+[node name="eAchievementFinal" parent="." instance=ExtResource("c5")]
+position = Vector2(561.35, 54.3)
+metadata/original_instance = "eAchievementFinal"
+metadata/character_id = 657

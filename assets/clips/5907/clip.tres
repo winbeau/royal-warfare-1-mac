@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5907/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5907
+total_frames = 1
+rect = Rect2(-366, -317, 731.95, 634.05)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-350, -300)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eMaxGames": {"kind": "clip", "depth": 2, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 2.5, 186.9, 1, 1, 1, 1)}, "eBg": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -175.95, -200.75, 1, 1, 1, 1)}, "bToMap": {"kind": "clip", "depth": 13, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 69, -68.95, 1, 1, 1, 1)}, "bMore": {"kind": "clip", "depth": 23, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 69, -13.15, 1, 1, 1, 1)}, "bClose": {"kind": "clip", "depth": 33, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 0.05, 115.05, 1, 1, 1, 1)}, "bHints": {"kind": "clip", "depth": 43, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, -69.95, 43.75, 1, 1, 1, 1)}, "bMenu": {"kind": "clip", "depth": 53, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, -69.95, -13.05, 1, 1, 1, 1)}, "bSound": {"kind": "clip", "depth": 63, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, -105, 101.95, 1, 1, 1, 1)}, "bMusic": {"kind": "clip", "depth": 74, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 103.1, 101.95, 1, 1, 1, 1)}, "bRestart": {"kind": "clip", "depth": 85, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, -69.95, -69.95, 1, 1, 1, 1)}, "bAutopause": {"kind": "clip", "depth": 95, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 71.05, 43.75, 1, 1, 1, 1)}}

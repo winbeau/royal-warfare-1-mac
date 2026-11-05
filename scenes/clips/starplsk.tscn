@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5646/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5644_Minion Pro.ttf" id="f5644"]
+
+[node name="starplsk" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5646
+total_frames = 1
+metadata/character_id = 5646
+
+[node name="tFreeStars" type="Control" parent="."]
+position = Vector2(-42.15, -11.65)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 91.75, 31.7)
+font = ExtResource("f5644")
+font_face = "Minion Pro"
+font_id = 5644
+font_size = 20
+color = Color(1, 1, 1, 1)
+align = "center"
+leading = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "120/120"
+metadata/original_instance = "tFreeStars"
+metadata/character_id = 5645

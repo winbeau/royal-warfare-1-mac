@@ -1,0 +1,290 @@
+[gd_scene load_steps=44 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5384/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4778.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/unitPanel.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/moneyUI.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5146.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5154.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/nextWaveBut.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5174.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5175.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5177.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5179.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5185.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5197.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5202.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5207.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/tipMC.tscn" id="c14"]
+[ext_resource type="PackedScene" path="res://scenes/clips/monsterMC.tscn" id="c15"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5240.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5257.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5261.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5266.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5267.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5275.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5279.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5284.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5287.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5290.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5293.tscn" id="c26"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5175.tscn" id="c27"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5174.tscn" id="c28"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5302.tscn" id="c29"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5309.tscn" id="c30"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5312.tscn" id="c31"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatBox.tscn" id="c32"]
+[ext_resource type="PackedScene" path="res://scenes/clips/archersBtn__f1.tscn" id="c33"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5328__f1.tscn" id="c34"]
+[ext_resource type="PackedScene" path="res://scenes/clips/fader.tscn" id="c35"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatFrame.tscn" id="c36"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5360.tscn" id="c37"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5364.tscn" id="c38"]
+[ext_resource type="PackedScene" path="res://scenes/clips/buyHintPad.tscn" id="c39"]
+[ext_resource type="PackedScene" path="res://scenes/clips/miscHint__f1.tscn" id="c40"]
+
+[node name="mainGameUI" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5384
+total_frames = 1
+metadata/character_id = 5384
+
+[node name="arrowTargetCircle" parent="." instance=ExtResource("c0")]
+position = Vector2(501.5, 293.9)
+metadata/original_instance = "arrowTargetCircle"
+metadata/character_id = 4778
+
+[node name="eUnitPanel" parent="." instance=ExtResource("c1")]
+position = Vector2(3.5, 594.25)
+metadata/original_instance = "eUnitPanel"
+metadata/character_id = 5141
+
+[node name="eMoney" parent="." instance=ExtResource("c2")]
+position = Vector2(166.85, 12)
+scale = Vector2(0.56078, 0.56078)
+metadata/original_instance = "eMoney"
+metadata/character_id = 5144
+
+[node name="eHp" parent="." instance=ExtResource("c3")]
+position = Vector2(50.25, 11.85)
+scale = Vector2(0.92, 0.92)
+metadata/original_instance = "eHp"
+metadata/character_id = 5146
+
+[node name="eWave" parent="." instance=ExtResource("c4")]
+position = Vector2(97.95, 11.75)
+scale = Vector2(0.92, 0.92)
+metadata/original_instance = "eWave"
+metadata/character_id = 5154
+
+[node name="eNextWavePad" parent="." instance=ExtResource("c5")]
+position = Vector2(349.4, -11)
+metadata/original_instance = "eNextWavePad"
+metadata/character_id = 5167
+
+[node name="smallVert" parent="." instance=ExtResource("c6")]
+position = Vector2(588, 542)
+scale = Vector2(0.86111, 0.85985)
+metadata/original_instance = "smallVert"
+metadata/character_id = 5174
+
+[node name="smallHoriz" parent="." instance=ExtResource("c7")]
+position = Vector2(545, 542)
+scale = Vector2(0.86111, 0.86081)
+metadata/original_instance = "smallHoriz"
+metadata/character_id = 5175
+
+[node name="eGamePausedMessage" parent="." instance=ExtResource("c8")]
+position = Vector2(349.4, 24.1)
+scale = Vector2(0.93399, 0.93399)
+metadata/original_instance = "eGamePausedMessage"
+metadata/character_id = 5177
+
+[node name="eSensArchers" parent="." instance=ExtResource("c9")]
+position = Vector2(350, 300)
+metadata/original_instance = "eSensArchers"
+metadata/character_id = 5179
+
+[node name="eMenu" parent="." instance=ExtResource("c10")]
+position = Vector2(15.05, 14.1)
+rotation = 1.5708
+scale = Vector2(1.53729, -1.53729)
+metadata/original_instance = "eMenu"
+metadata/character_id = 5185
+
+[node name="eHelp" parent="." instance=ExtResource("c11")]
+position = Vector2(685.9, 14.2)
+rotation = 1.5708
+scale = Vector2(1.45488, 1.45488)
+metadata/original_instance = "eHelp"
+metadata/character_id = 5197
+
+[node name="ePause" parent="." instance=ExtResource("c12")]
+position = Vector2(654.3, 14.2)
+rotation = 1.5708
+scale = Vector2(1.45488, 1.45488)
+metadata/original_instance = "ePause"
+metadata/character_id = 5202
+
+[node name="eSpeedUp" parent="." instance=ExtResource("c13")]
+position = Vector2(15.05, 47.35)
+rotation = 1.5708
+scale = Vector2(1.53729, -1.53729)
+metadata/original_instance = "eSpeedUp"
+metadata/character_id = 5207
+
+[node name="eNewHint" parent="." instance=ExtResource("c14")]
+position = Vector2(675, 130.85)
+metadata/original_instance = "eNewHint"
+metadata/character_id = 5228
+
+[node name="eNewEnemy" parent="." instance=ExtResource("c15")]
+position = Vector2(674, 75.6)
+metadata/original_instance = "eNewEnemy"
+metadata/character_id = 5237
+
+[node name="eLeftPanel" parent="." instance=ExtResource("c16")]
+position = Vector2(540, 581.45)
+metadata/original_instance = "eLeftPanel"
+metadata/character_id = 5240
+
+[node name="e1" parent="." instance=ExtResource("c17")]
+position = Vector2(501, 582.95)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "e1"
+metadata/character_id = 5257
+
+[node name="e4" parent="." instance=ExtResource("c18")]
+position = Vector2(544.75, 582.9)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "e4"
+metadata/character_id = 5261
+
+[node name="e2" parent="." instance=ExtResource("c19")]
+position = Vector2(588.5, 582.9)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "e2"
+metadata/character_id = 5266
+
+[node name="e3" parent="." instance=ExtResource("c20")]
+position = Vector2(632.75, 582.9)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "e3"
+metadata/character_id = 5267
+
+[node name="e5" parent="." instance=ExtResource("c21")]
+position = Vector2(676.75, 582.9)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "e5"
+metadata/character_id = 5275
+
+[node name="eSubDown" parent="." instance=ExtResource("c22")]
+position = Vector2(503.8, 581.7)
+scale = Vector2(1.46356, 1.49121)
+metadata/original_instance = "eSubDown"
+metadata/character_id = 5279
+
+[node name="eSubOne" parent="." instance=ExtResource("c23")]
+position = Vector2(560, 581.7)
+scale = Vector2(1.46355, 1.49121)
+metadata/original_instance = "eSubOne"
+metadata/character_id = 5284
+
+[node name="eSubTwo" parent="." instance=ExtResource("c24")]
+position = Vector2(615.7, 581.7)
+scale = Vector2(1.46355, 1.49121)
+metadata/original_instance = "eSubTwo"
+metadata/character_id = 5287
+
+[node name="eSubThree" parent="." instance=ExtResource("c25")]
+position = Vector2(671.9, 581.7)
+scale = Vector2(1.46355, 1.49121)
+metadata/original_instance = "eSubThree"
+metadata/character_id = 5290
+
+[node name="eGotUpgrade" parent="." instance=ExtResource("c26")]
+position = Vector2(457.2, 582.85)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eGotUpgrade"
+metadata/character_id = 5293
+
+[node name="eHoriz" parent="." instance=ExtResource("c27")]
+position = Vector2(501.15, 582.8)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eHoriz"
+metadata/character_id = 5175
+
+[node name="eVert" parent="." instance=ExtResource("c28")]
+position = Vector2(544.9, 582.8)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eVert"
+metadata/character_id = 5174
+
+[node name="eFormation" parent="." instance=ExtResource("c29")]
+position = Vector2(588.8, 582.85)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eFormation"
+metadata/character_id = 5302
+
+[node name="eAttackDef" parent="." instance=ExtResource("c30")]
+position = Vector2(632.75, 582.8)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eAttackDef"
+metadata/character_id = 5309
+
+[node name="eDefend" parent="." instance=ExtResource("c31")]
+position = Vector2(676.75, 582.8)
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eDefend"
+metadata/character_id = 5312
+
+[node name="eChat" parent="." instance=ExtResource("c32")]
+position = Vector2(694.4, 511.85)
+metadata/original_instance = "eChat"
+metadata/character_id = 5316
+
+[node name="bArchers" parent="." instance=ExtResource("c33")]
+position = Vector2(466, 28.9)
+rotation = 3.14159
+scale = Vector2(1.79736, 1.79736)
+metadata/original_instance = "bArchers"
+metadata/character_id = 5324
+
+[node name="eMaxGames" parent="." instance=ExtResource("c34")]
+position = Vector2(561.65, 14.5)
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 5328
+
+[node name="eFader" parent="." instance=ExtResource("c35")]
+position = Vector2(0, 0)
+metadata/original_instance = "eFader"
+metadata/character_id = 5332
+
+[node name="tChatBox" parent="." instance=ExtResource("c36")]
+position = Vector2(211.5, 411.2)
+metadata/original_instance = "tChatBox"
+metadata/character_id = 5357
+
+[node name="tPauseMessage" parent="." instance=ExtResource("c37")]
+position = Vector2(211.5, 411.2)
+metadata/original_instance = "tPauseMessage"
+metadata/character_id = 5360
+
+[node name="eFocus" parent="." instance=ExtResource("c38")]
+position = Vector2(785.1, 600.85)
+scale = Vector2(1.32477, 1.3242)
+metadata/original_instance = "eFocus"
+metadata/character_id = 5364
+
+[node name="eHint" parent="." instance=ExtResource("c39")]
+position = Vector2(134.55, 419)
+metadata/original_instance = "eHint"
+metadata/character_id = 5375
+
+[node name="eSmallHint" parent="." instance=ExtResource("c40")]
+position = Vector2(229.6, 564.3)
+metadata/original_instance = "eSmallHint"
+metadata/character_id = 5383

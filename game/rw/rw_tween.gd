@@ -1,7 +1,7 @@
 # 移植自 S/com/greensock/{TweenLite,TweenMax,OverwriteManager}.as、core/{TweenCore,SimpleTimeline,PropTween}.as、
 # plugins/{TweenPlugin,BezierPlugin,BezierThroughPlugin,AutoAlphaPlugin,TintPlugin,ColorTransformPlugin,ColorMatrixFilterPlugin}.as
 #
-# 自动加载单例 RWTween。props 的键沿用 TweenMax 原名，例如：
+# class_name RWTween，API 全是静态函数，转发给 RWTween.inst（autoload RWTweenRunner 的实例）。props 的键沿用 TweenMax 原名，例如：
 #   RWTween.to(node, 0.3, {"alpha": 0, "onComplete": Callable(self, "remove")})
 #   RWTween.to(arrow, t, {"bezierThrough": [{"x": mx, "y": my}, {"x": tx, "y": ty}], "orientToBezier": true,
 #                         "ease": RWEase.linear_ease_none, "onComplete": cb})
@@ -22,7 +22,11 @@
 # - 目标节点被释放后其 tween 静默丢弃（不调用 onComplete）。
 # - width/height 对 Control 用 size，对 Sprite2D 用纹理尺寸*scale；其他对象可实现
 #   rw_tween_get(prop) / rw_tween_set(prop, value) -> bool 接管任意属性。
+class_name RWTween
 extends Node
+
+## 运行节点（autoload RWTweenRunner 的实例；--script 模式下若未实例化则首次调用时懒创建）。
+static var inst: RWTween = null
 
 const OVERWRITE_NONE := 0
 const OVERWRITE_ALL_IMMEDIATE := 1
@@ -51,6 +55,12 @@ var _master: Dictionary = {}  # target -> Array[Handle]
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	if inst == null:
+		inst = self
+
+func _exit_tree() -> void:
+	if inst == self:
+		inst = null
 
 func _ready() -> void:
 	_t0_usec = Time.get_ticks_usec()
@@ -62,12 +72,12 @@ func _process(_delta: float) -> void:
 	_render_root()
 
 ## 手动推进时钟（测试用，需 manual_clock = true）。
-func step(dt: float) -> void:
+func i_step(dt: float) -> void:
 	root_time += dt
 	_render_root()
 
 ## 清空全部并复位时钟（测试用）。
-func reset() -> void:
+func i_reset() -> void:
 	for h: Handle in _timeline.duplicate():
 		h.set_enabled(false)
 	_timeline.clear()
@@ -90,30 +100,30 @@ func _render_root() -> void:
 # 公共 API（对应 TweenMax 静态方法）
 # ---------------------------------------------------------------------------------------------
 
-func to(target: Variant, duration: float, props: Dictionary) -> Handle:
+func i_to(target: Variant, duration: float, props: Dictionary) -> Handle:
 	return Handle.new(self, target, duration, props.duplicate())
 
-func from(target: Variant, duration: float, props: Dictionary) -> Handle:
+func i_from(target: Variant, duration: float, props: Dictionary) -> Handle:
 	var v := props.duplicate()
 	v["runBackwards"] = true
 	if not v.has("immediateRender"):
 		v["immediateRender"] = true
 	return Handle.new(self, target, duration, v)
 
-func from_to(target: Variant, duration: float, from_props: Dictionary, to_props: Dictionary) -> Handle:
+func i_from_to(target: Variant, duration: float, from_props: Dictionary, to_props: Dictionary) -> Handle:
 	var v := to_props.duplicate()
 	v["startAt"] = from_props.duplicate()
 	if from_props.get("immediateRender", false):
 		v["immediateRender"] = true
 	return Handle.new(self, target, duration, v)
 
-func delayed_call(delay: float, callable: Callable, params: Array = []) -> Handle:
+func i_delayed_call(delay: float, callable: Callable, params: Array = []) -> Handle:
 	return Handle.new(self, callable, 0.0, {
 		"delay": delay, "onComplete": callable, "onCompleteParams": params,
 		"immediateRender": false, "overwrite": 0,
 	})
 
-func all_to(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
+func i_all_to(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
 		on_complete_all: Callable = Callable(), on_complete_all_params: Array = []) -> Array:
 	var out: Array = []
 	var cur_delay: float = float(props.get("delay", 0.0))
@@ -133,7 +143,7 @@ func all_to(targets: Array, duration: float, props: Dictionary, stagger: float =
 		cur_delay += stagger
 	return out
 
-func all_from(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
+func i_all_from(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
 		on_complete_all: Callable = Callable(), on_complete_all_params: Array = []) -> Array:
 	var v := props.duplicate()
 	v["runBackwards"] = true
@@ -141,7 +151,7 @@ func all_from(targets: Array, duration: float, props: Dictionary, stagger: float
 		v["immediateRender"] = true
 	return all_to(targets, duration, v, stagger, on_complete_all, on_complete_all_params)
 
-func kill_tweens_of(target: Variant, complete: bool = false) -> void:
+func i_kill_tweens_of(target: Variant, complete: bool = false) -> void:
 	if not _master.has(target):
 		return
 	for h: Handle in _master[target].duplicate():
@@ -153,17 +163,17 @@ func kill_tweens_of(target: Variant, complete: bool = false) -> void:
 			h.set_enabled(false)
 	_master.erase(target)
 
-func kill_delayed_calls_to(callable: Callable) -> void:
+func i_kill_delayed_calls_to(callable: Callable) -> void:
 	kill_tweens_of(callable)
 
-func get_tweens_of(target: Variant) -> Array:
+func i_get_tweens_of(target: Variant) -> Array:
 	var out: Array = []
 	for h: Handle in _master.get(target, []):
 		if not h.gc:
 			out.append(h)
 	return out
 
-func get_all_tweens() -> Array:
+func i_get_all_tweens() -> Array:
 	var out: Array = []
 	for h: Handle in _timeline:
 		if not h.gc:
@@ -171,7 +181,7 @@ func get_all_tweens() -> Array:
 	return out
 
 ## TweenMax.killAll(complete, tweens, delayedCalls)：Main 切屏时调用的是 (false, false, true)，即只杀 delayedCall。
-func kill_all(complete: bool = false, tweens: bool = true, delayed_calls: bool = true) -> void:
+func i_kill_all(complete: bool = false, tweens: bool = true, delayed_calls: bool = true) -> void:
 	var all := get_all_tweens()
 	for i in range(all.size() - 1, -1, -1):
 		var h: Handle = all[i]
@@ -181,10 +191,10 @@ func kill_all(complete: bool = false, tweens: bool = true, delayed_calls: bool =
 			else:
 				h.set_enabled(false)
 
-func pause_all(tweens: bool = true, delayed_calls: bool = true) -> void:
+func i_pause_all(tweens: bool = true, delayed_calls: bool = true) -> void:
 	_change_pause(true, tweens, delayed_calls)
 
-func resume_all(tweens: bool = true, delayed_calls: bool = true) -> void:
+func i_resume_all(tweens: bool = true, delayed_calls: bool = true) -> void:
 	_change_pause(false, tweens, delayed_calls)
 
 func _change_pause(p: bool, tweens: bool, delayed_calls: bool) -> void:
@@ -193,6 +203,63 @@ func _change_pause(p: bool, tweens: bool, delayed_calls: bool) -> void:
 		var h: Handle = all[i]
 		if h.is_delayed_call == delayed_calls or h.is_delayed_call != tweens:
 			h.set_paused(p)
+
+
+## 取运行节点；autoload 未实例化（--script 模式）时懒创建并挂到 SceneTree root。
+static func inst_() -> RWTween:
+	if inst == null or not is_instance_valid(inst):
+		var n := RWTween.new()
+		(Engine.get_main_loop() as SceneTree).root.add_child.call_deferred(n)
+		inst = n
+	return inst
+
+static func to(target: Variant, duration: float, props: Dictionary) -> Handle:
+	return inst_().i_to(target, duration, props)
+
+static func from(target: Variant, duration: float, props: Dictionary) -> Handle:
+	return inst_().i_from(target, duration, props)
+
+static func from_to(target: Variant, duration: float, from_props: Dictionary, to_props: Dictionary) -> Handle:
+	return inst_().i_from_to(target, duration, from_props, to_props)
+
+static func delayed_call(delay: float, callable: Callable, params: Array = []) -> Handle:
+	return inst_().i_delayed_call(delay, callable, params)
+
+static func all_to(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
+		on_complete_all: Callable = Callable(), on_complete_all_params: Array = []) -> Array:
+	return inst_().i_all_to(targets, duration, props, stagger, on_complete_all, on_complete_all_params)
+
+static func all_from(targets: Array, duration: float, props: Dictionary, stagger: float = 0.0,
+		on_complete_all: Callable = Callable(), on_complete_all_params: Array = []) -> Array:
+	return inst_().i_all_from(targets, duration, props, stagger, on_complete_all, on_complete_all_params)
+
+static func kill_tweens_of(target: Variant, complete: bool = false) -> void:
+	inst_().i_kill_tweens_of(target, complete)
+
+static func kill_delayed_calls_to(callable: Callable) -> void:
+	inst_().i_kill_delayed_calls_to(callable)
+
+static func get_tweens_of(target: Variant) -> Array:
+	return inst_().i_get_tweens_of(target)
+
+static func get_all_tweens() -> Array:
+	return inst_().i_get_all_tweens()
+
+static func kill_all(complete: bool = false, tweens: bool = true, delayed_calls: bool = true) -> void:
+	inst_().i_kill_all(complete, tweens, delayed_calls)
+
+static func pause_all(tweens: bool = true, delayed_calls: bool = true) -> void:
+	inst_().i_pause_all(tweens, delayed_calls)
+
+static func resume_all(tweens: bool = true, delayed_calls: bool = true) -> void:
+	inst_().i_resume_all(tweens, delayed_calls)
+
+## 测试钩子（转发）
+static func step(dt: float) -> void:
+	inst_().i_step(dt)
+
+static func reset() -> void:
+	inst_().i_reset()
 
 # ---------------------------------------------------------------------------------------------
 # 插件

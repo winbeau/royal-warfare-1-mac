@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/3287/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1976.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3277.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3286.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2005__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2013__f1.tscn" id="c4"]
+
+[node name="comixFour" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 3287
+total_frames = 1
+metadata/character_id = 3287
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eBg"
+metadata/character_id = 1976
+
+[node name="eOne" parent="." instance=ExtResource("c1")]
+position = Vector2(37.75, 51.7)
+metadata/original_instance = "eOne"
+metadata/character_id = 3277
+
+[node name="eTwo" parent="." instance=ExtResource("c2")]
+position = Vector2(36.75, 45.7)
+metadata/original_instance = "eTwo"
+metadata/character_id = 3286
+
+[node name="bRight" parent="." instance=ExtResource("c3")]
+position = Vector2(631.95, 544.6)
+rotation = 3.14159
+scale = Vector2(1.84665, -1.84665)
+metadata/original_instance = "bRight"
+metadata/character_id = 2005
+
+[node name="bSkip" parent="." instance=ExtResource("c4")]
+position = Vector2(75.95, 545)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bSkip"
+metadata/character_id = 2013

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6005/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5987__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5992__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5999__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6001__f1.tscn" id="c3"]
+
+[node name="popupSaveLoad" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6005
+total_frames = 1
+metadata/character_id = 6005
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(-217.85, -133.2)
+metadata/original_instance = "eBg"
+metadata/character_id = 5987
+
+[node name="bClose" parent="." instance=ExtResource("c1")]
+position = Vector2(131.8, 23.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bClose"
+metadata/character_id = 5992
+
+[node name="bLoad" parent="." instance=ExtResource("c2")]
+position = Vector2(-128.8, 23.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bLoad"
+metadata/character_id = 5999
+
+[node name="bSave" parent="." instance=ExtResource("c3")]
+position = Vector2(1.5, 23.95)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bSave"
+metadata/character_id = 6001

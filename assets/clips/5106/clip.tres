@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=49 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b2.png" id="back2"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b3.png" id="back3"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b4.png" id="back4"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b5.png" id="back5"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b6.png" id="back6"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b7.png" id="back7"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b8.png" id="back8"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b9.png" id="back9"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b10.png" id="back10"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b11.png" id="back11"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b12.png" id="back12"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b13.png" id="back13"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b14.png" id="back14"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b15.png" id="back15"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b16.png" id="back16"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b17.png" id="back17"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b18.png" id="back18"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b19.png" id="back19"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b20.png" id="back20"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b21.png" id="back21"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b22.png" id="back22"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b23.png" id="back23"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b24.png" id="back24"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b25.png" id="back25"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b26.png" id="back26"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b27.png" id="back27"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b28.png" id="back28"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b29.png" id="back29"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b30.png" id="back30"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b31.png" id="back31"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b32.png" id="back32"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b33.png" id="back33"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b34.png" id="back34"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b35.png" id="back35"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b36.png" id="back36"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b37.png" id="back37"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b38.png" id="back38"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b39.png" id="back39"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b40.png" id="back40"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b41.png" id="back41"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b42.png" id="back42"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b43.png" id="back43"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b44.png" id="back44"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b45.png" id="back45"]
+[ext_resource type="Texture2D" path="res://assets/clips/5106/b46.png" id="back46"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5106
+total_frames = 47
+rect = Rect2(-79.35, -67.85, 136.05, 110.3)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2"), ExtResource("back3"), ExtResource("back4"), ExtResource("back5"), ExtResource("back6"), ExtResource("back7"), ExtResource("back8"), ExtResource("back9"), ExtResource("back10"), ExtResource("back11"), ExtResource("back12"), ExtResource("back13"), ExtResource("back14"), ExtResource("back15"), ExtResource("back16"), ExtResource("back17"), ExtResource("back18"), ExtResource("back19"), ExtResource("back20"), ExtResource("back21"), ExtResource("back22"), ExtResource("back23"), ExtResource("back24"), ExtResource("back25"), ExtResource("back26"), ExtResource("back27"), ExtResource("back28"), ExtResource("back29"), ExtResource("back30"), ExtResource("back31"), ExtResource("back32"), ExtResource("back33"), ExtResource("back34"), ExtResource("back35"), ExtResource("back36"), ExtResource("back37"), ExtResource("back38"), ExtResource("back39"), ExtResource("back40"), ExtResource("back41"), ExtResource("back42"), ExtResource("back43"), ExtResource("back44"), ExtResource("back45"), ExtResource("back46")]
+back_offsets = PackedVector2Array(-58.35, -58.85, -46.35, -58.35, -46.35, -57.35, -44.85, -59.85, -43.35, -55.85, -45.35, -59.35, -43.35, -55.35, -43.85, -55.85, -43.85, -57.85, -43.35, -56.85, -38.85, -54.35, -44.35, -53.35, -55.85, -52.35, -54.85, -54.35, -51.35, -54.85, -34.85, -55.35, -39.35, -55.35, -33.35, -55.35, -43.85, -54.35, -46.35, -53.85, -48.35, -55.85, -32.85, -53.85, -51.35, -57.85, -54.85, -58.85, -37.85, -56.85, -50.85, -55.35, -54.85, -58.35, -45.85, -55.35, -51.85, -53.85, -52.35, -55.35, -48.35, -53.35, -59.35, -41.85, -59.35, -41.35, -41.85, -57.35, -70.35, -55.85, -52.35, -50.85, -44.35, -61.85, -49.35, -57.35, -47.85, -56.85, -79.35, -53.35, -46.85, -56.85, -55.85, -67.85, -54.35, -56.85, -49.85, -63.35, -46.35, -60.85, -40.85, -64.35, -41.85, -57.35)
+back_index = PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+scripts = {1: [["stop"]]}

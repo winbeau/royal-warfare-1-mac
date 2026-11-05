@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/6397/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 6397
+total_frames = 1
+rect = Rect2(-156.6, -74.7, 1085.2, 754.65)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-8.1, -51.7)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"route0": {"kind": "guide", "depth": 1148, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 4, -18, 1, 1, 1, 1)}, "eDefFlagPlace": {"kind": "guide", "depth": 1162, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.20833, 0, 0, 1.80746, 30, 187.95, 1, 1, 1, 1)}, "obstacle": {"kind": "guide", "depth": 1164, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "eObstacleWP": {"kind": "guide", "depth": 1166, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route3": {"kind": "guide", "depth": 1206, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route2": {"kind": "guide", "depth": 1222, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route4": {"kind": "guide", "depth": 1242, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 3, 0, 1, 1, 1, 1)}, "route1": {"kind": "guide", "depth": 1258, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route5": {"kind": "guide", "depth": 1274, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 3, 0, 1, 1, 1, 1)}, "route6": {"kind": "guide", "depth": 1290, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route7": {"kind": "guide", "depth": 1306, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}

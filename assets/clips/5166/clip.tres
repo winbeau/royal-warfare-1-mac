@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5166/f0.png" id="front0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5166
+total_frames = 1
+rect = Rect2(-64.8, -31.35, 139.75, 69.5)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = [ExtResource("front0")]
+front_offsets = PackedVector2Array(-53.3, -17.85)
+front_index = PackedInt32Array(0)
+children = {"tCounter": {"kind": "text", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -85.25, -3.1, 1, 1, 1, 1)}}

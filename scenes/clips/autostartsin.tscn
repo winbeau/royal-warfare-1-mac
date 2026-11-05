@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5166/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5142_Minion Pro.ttf" id="f5142"]
+
+[node name="autostartsin" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5166
+total_frames = 1
+metadata/character_id = 5166
+
+[node name="tCounter" type="Control" parent="."]
+position = Vector2(-85.25, -3.1)
+script = ExtResource("txt")
+box = Rect2(61.25, -2, 44, 31.25)
+font = ExtResource("f5142")
+font_face = "Minion Pro"
+font_id = 5142
+font_size = 20
+color = Color(1, 1, 1, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "99"
+metadata/original_instance = "tCounter"
+metadata/character_id = 5164

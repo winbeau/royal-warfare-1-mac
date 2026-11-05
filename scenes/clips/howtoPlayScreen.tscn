@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4731/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4295.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_536__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2934__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2936__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2936__f1.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4299__f1.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4301__f1.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4685.tscn" id="c7"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/268_Minion Pro.ttf" id="f268"]
+[ext_resource type="PackedScene" path="res://scenes/clips/tutorialHintsPad.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/tutorialHintsPad.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2780.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2780.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/cntnts.tscn" id="c14"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+
+[node name="howtoPlayScreen" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4731
+total_frames = 1
+metadata/character_id = 4731
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eBg"
+metadata/character_id = 4295
+
+[node name="bMore" parent="." instance=ExtResource("c1")]
+position = Vector2(617.25, 556)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMore"
+metadata/character_id = 536
+
+[node name="bMenu" parent="." instance=ExtResource("c2")]
+position = Vector2(82.7, 556)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 2934
+
+[node name="bLeft" parent="." instance=ExtResource("c3")]
+position = Vector2(249, 557)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bLeft"
+metadata/character_id = 2936
+
+[node name="bRight" parent="." instance=ExtResource("c4")]
+position = Vector2(449, 557)
+rotation = 3.14159
+scale = Vector2(1.47247, -1.47247)
+metadata/original_instance = "bRight"
+metadata/character_id = 2936
+
+[node name="bContents" parent="." instance=ExtResource("c5")]
+position = Vector2(349.7, 556)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bContents"
+metadata/character_id = 4299
+
+[node name="eLogo" parent="." instance=ExtResource("c6")]
+position = Vector2(237.45, -0.3)
+scale = Vector2(0.72865, 0.72865)
+metadata/original_instance = "eLogo"
+metadata/character_id = 4301
+
+[node name="eContent" parent="." instance=ExtResource("c7")]
+position = Vector2(348.5, 109.35)
+metadata/original_instance = "eContent"
+metadata/character_id = 4685
+
+[node name="t1" type="Control" parent="."]
+position = Vector2(202.8, 170.35)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 398.15, 98.65)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 16
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "10 / 10"
+metadata/original_instance = "t1"
+metadata/character_id = 4686
+
+[node name="tIco1" parent="." instance=ExtResource("c9")]
+position = Vector2(354.5, 291.95)
+metadata/original_instance = "tIco1"
+metadata/character_id = 4699
+
+[node name="tIco2" parent="." instance=ExtResource("c10")]
+position = Vector2(354.5, 466.95)
+metadata/original_instance = "tIco2"
+metadata/character_id = 4699
+
+[node name="t2" type="Control" parent="."]
+position = Vector2(202.8, 342.3)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 398.15, 113)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 16
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "Plague zombie. Unlike other zombies, this one has moderate HP and magic resist. Strikes with his own hands, and can not inflict great damage, but plague weakens your soldiers, lowering attack speed.\r"
+metadata/original_instance = "t2"
+metadata/character_id = 4700
+
+[node name="p1" parent="." instance=ExtResource("c12")]
+position = Vector2(143.45, 215.95)
+scale = Vector2(0.89087, 0.89087)
+metadata/original_instance = "p1"
+metadata/character_id = 2780
+
+[node name="p2" parent="." instance=ExtResource("c13")]
+position = Vector2(145.45, 384.9)
+scale = Vector2(0.89087, 0.89087)
+metadata/original_instance = "p2"
+metadata/character_id = 2780
+
+[node name="eMenu" parent="." instance=ExtResource("c14")]
+position = Vector2(349.5, 319.95)
+metadata/original_instance = "eMenu"
+metadata/character_id = 4730
+
+[node name="tPicsCounter" type="Control" parent="."]
+position = Vector2(576.8, 493.3)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 71.4, 25.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 16
+color = Color(1, 1, 1, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "10 / 10"
+metadata/original_instance = "tPicsCounter"
+metadata/character_id = 1291

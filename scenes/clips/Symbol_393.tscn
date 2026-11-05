@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/393/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/upgradePanel_fla_Timeline_46__f1.tscn" id="c0"]
+
+[node name="Symbol_393" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 393
+total_frames = 1
+metadata/character_id = 393
+
+[node name="eLock" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+scale = Vector2(0.49893, 0.49893)
+metadata/original_instance = "eLock"
+metadata/character_id = 306

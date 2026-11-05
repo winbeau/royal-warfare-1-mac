@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=23 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f0.png" id="front0"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f1.png" id="front1"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f2.png" id="front2"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f3.png" id="front3"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f4.png" id="front4"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f5.png" id="front5"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f6.png" id="front6"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f7.png" id="front7"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f8.png" id="front8"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f9.png" id="front9"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f10.png" id="front10"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f11.png" id="front11"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f12.png" id="front12"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f13.png" id="front13"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f14.png" id="front14"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f15.png" id="front15"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f16.png" id="front16"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f17.png" id="front17"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f18.png" id="front18"]
+[ext_resource type="Texture2D" path="res://assets/clips/4795/f19.png" id="front19"]
+
+[resource]
+script = ExtResource("1")
+character_id = 4795
+total_frames = 70
+rect = Rect2(-46.1, -19.85, 98.5, 50.25)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-16.6, 5.15)
+back_index = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+front_textures = [ExtResource("front0"), ExtResource("front1"), ExtResource("front2"), ExtResource("front3"), ExtResource("front4"), ExtResource("front5"), ExtResource("front6"), ExtResource("front7"), ExtResource("front8"), ExtResource("front9"), ExtResource("front10"), ExtResource("front11"), ExtResource("front12"), ExtResource("front13"), ExtResource("front14"), ExtResource("front15"), ExtResource("front16"), ExtResource("front17"), ExtResource("front18"), ExtResource("front19")]
+front_offsets = PackedVector2Array(-10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35, -10.1, -3.35)
+front_index = PackedInt32Array(0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+children = {"eGotUpgrade": {"kind": "clip", "depth": 3, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0, 1.297, -1.297, 0, -0.35, 6.7, 1, 1, 1, 1)}}

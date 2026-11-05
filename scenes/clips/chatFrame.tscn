@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5357/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5334.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5349.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/unitIcons__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5352.tscn" id="c3"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5353_Roboto Lt.ttf" id="f5353"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_67.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5356.tscn" id="c6"]
+
+[node name="chatFrame" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5357
+total_frames = 1
+metadata/character_id = 5357
+
+[node name="eBlack" parent="." instance=ExtResource("c0")]
+position = Vector2(-220.5, -413.2)
+metadata/original_instance = "eBlack"
+metadata/character_id = 5334
+
+[node name="eBg" parent="." instance=ExtResource("c1")]
+position = Vector2(-36.05, -133.45)
+metadata/original_instance = "eBg"
+metadata/character_id = 5349
+
+[node name="eIco" parent="." instance=ExtResource("c2")]
+position = Vector2(16.55, -87.95)
+scale = Vector2(0.57475, 0.57475)
+metadata/original_instance = "eIco"
+metadata/character_id = 5106
+
+[node name="tClickToCont" parent="." instance=ExtResource("c3")]
+position = Vector2(281.2, 25.25)
+modulate = Color(1, 1, 1, 0.67188)
+metadata/original_instance = "tClickToCont"
+metadata/character_id = 5352
+
+[node name="tText" type="Control" parent="."]
+position = Vector2(-22, -46.45)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 340, 87.4)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 16
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = -2
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "I cannot believe, that this game can be ever be done! Master has spent so much time developing it, and still there's lots of things to do!"
+metadata/original_instance = "tText"
+metadata/character_id = 5354
+
+[node name="eAlternateTextContent" parent="." instance=ExtResource("c5")]
+position = Vector2(-23, -49.7)
+metadata/original_instance = "eAlternateTextContent"
+metadata/character_id = 67
+
+[node name="clickSens" parent="." instance=ExtResource("c6")]
+position = Vector2(150, -10.75)
+metadata/original_instance = "clickSens"
+metadata/character_id = 5356

@@ -1,0 +1,355 @@
+[gd_scene load_steps=52 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5706/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2959.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2973.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2980.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2965.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2986.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2992.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2996.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3008.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3015.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3023.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3032.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3019.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3048.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3040.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3055.tscn" id="c14"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3062.tscn" id="c15"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_645.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3066.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3074.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3081.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3108.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3090.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3096.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3102.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3114.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3123.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3127.tscn" id="c26"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3131.tscn" id="c27"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3149.tscn" id="c28"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3157.tscn" id="c29"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3153.tscn" id="c30"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3162.tscn" id="c31"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_656.tscn" id="c32"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3179.tscn" id="c33"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3169.tscn" id="c34"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3166.tscn" id="c35"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3221.tscn" id="c36"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3184.tscn" id="c37"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3231.tscn" id="c38"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3234.tscn" id="c39"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3195.tscn" id="c40"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3222.tscn" id="c41"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3240.tscn" id="c42"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3215.tscn" id="c43"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3206.tscn" id="c44"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3226.tscn" id="c45"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3202.tscn" id="c46"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3246.tscn" id="c47"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f2.tscn" id="c48"]
+
+[node name="eIconsAchives" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5706
+total_frames = 48
+metadata/character_id = 5706
+
+[node name="a1" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "a1"
+metadata/character_id = 2959
+
+[node name="a2" parent="." instance=ExtResource("c1")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a2"
+metadata/character_id = 2973
+
+[node name="a3" parent="." instance=ExtResource("c2")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a3"
+metadata/character_id = 2980
+
+[node name="a4" parent="." instance=ExtResource("c3")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a4"
+metadata/character_id = 2965
+
+[node name="a5" parent="." instance=ExtResource("c4")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a5"
+metadata/character_id = 2986
+
+[node name="a6" parent="." instance=ExtResource("c5")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a6"
+metadata/character_id = 2992
+
+[node name="a7" parent="." instance=ExtResource("c6")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a7"
+metadata/character_id = 2996
+
+[node name="a8" parent="." instance=ExtResource("c7")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a8"
+metadata/character_id = 3008
+
+[node name="a9" parent="." instance=ExtResource("c8")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a9"
+metadata/character_id = 3015
+
+[node name="a10" parent="." instance=ExtResource("c9")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a10"
+metadata/character_id = 3023
+
+[node name="a11" parent="." instance=ExtResource("c10")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a11"
+metadata/character_id = 3032
+
+[node name="a12" parent="." instance=ExtResource("c11")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a12"
+metadata/character_id = 3019
+
+[node name="a1__3048" parent="." instance=ExtResource("c12")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a1__3048"
+metadata/character_id = 3048
+
+[node name="a2__3040" parent="." instance=ExtResource("c13")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a2__3040"
+metadata/character_id = 3040
+
+[node name="a3__3055" parent="." instance=ExtResource("c14")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a3__3055"
+metadata/character_id = 3055
+
+[node name="a4__3062" parent="." instance=ExtResource("c15")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a4__3062"
+metadata/character_id = 3062
+
+[node name="a5__645" parent="." instance=ExtResource("c16")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a5__645"
+metadata/character_id = 645
+
+[node name="a6__3066" parent="." instance=ExtResource("c17")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a6__3066"
+metadata/character_id = 3066
+
+[node name="a7__3074" parent="." instance=ExtResource("c18")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a7__3074"
+metadata/character_id = 3074
+
+[node name="a8__3081" parent="." instance=ExtResource("c19")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a8__3081"
+metadata/character_id = 3081
+
+[node name="a9__3108" parent="." instance=ExtResource("c20")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a9__3108"
+metadata/character_id = 3108
+
+[node name="a10__3090" parent="." instance=ExtResource("c21")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a10__3090"
+metadata/character_id = 3090
+
+[node name="a11__3096" parent="." instance=ExtResource("c22")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a11__3096"
+metadata/character_id = 3096
+
+[node name="a12__3102" parent="." instance=ExtResource("c23")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a12__3102"
+metadata/character_id = 3102
+
+[node name="a1__3114" parent="." instance=ExtResource("c24")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a1__3114"
+metadata/character_id = 3114
+
+[node name="a2__3123" parent="." instance=ExtResource("c25")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a2__3123"
+metadata/character_id = 3123
+
+[node name="a3__3127" parent="." instance=ExtResource("c26")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a3__3127"
+metadata/character_id = 3127
+
+[node name="a4__3131" parent="." instance=ExtResource("c27")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a4__3131"
+metadata/character_id = 3131
+
+[node name="a5__3149" parent="." instance=ExtResource("c28")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a5__3149"
+metadata/character_id = 3149
+
+[node name="a6__3157" parent="." instance=ExtResource("c29")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a6__3157"
+metadata/character_id = 3157
+
+[node name="a7__3153" parent="." instance=ExtResource("c30")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a7__3153"
+metadata/character_id = 3153
+
+[node name="a8__3162" parent="." instance=ExtResource("c31")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a8__3162"
+metadata/character_id = 3162
+
+[node name="a9__656" parent="." instance=ExtResource("c32")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a9__656"
+metadata/character_id = 656
+
+[node name="a10__3179" parent="." instance=ExtResource("c33")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a10__3179"
+metadata/character_id = 3179
+
+[node name="a11__3169" parent="." instance=ExtResource("c34")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a11__3169"
+metadata/character_id = 3169
+
+[node name="a12__3166" parent="." instance=ExtResource("c35")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a12__3166"
+metadata/character_id = 3166
+
+[node name="a1__3221" parent="." instance=ExtResource("c36")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a1__3221"
+metadata/character_id = 3221
+
+[node name="a2__3184" parent="." instance=ExtResource("c37")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a2__3184"
+metadata/character_id = 3184
+
+[node name="a3__3231" parent="." instance=ExtResource("c38")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a3__3231"
+metadata/character_id = 3231
+
+[node name="a4__3234" parent="." instance=ExtResource("c39")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a4__3234"
+metadata/character_id = 3234
+
+[node name="a5__3195" parent="." instance=ExtResource("c40")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a5__3195"
+metadata/character_id = 3195
+
+[node name="a6__3222" parent="." instance=ExtResource("c41")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a6__3222"
+metadata/character_id = 3222
+
+[node name="a7__3240" parent="." instance=ExtResource("c42")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a7__3240"
+metadata/character_id = 3240
+
+[node name="a8__3215" parent="." instance=ExtResource("c43")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a8__3215"
+metadata/character_id = 3215
+
+[node name="a9__3206" parent="." instance=ExtResource("c44")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a9__3206"
+metadata/character_id = 3206
+
+[node name="a10__3226" parent="." instance=ExtResource("c45")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a10__3226"
+metadata/character_id = 3226
+
+[node name="a11__3202" parent="." instance=ExtResource("c46")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a11__3202"
+metadata/character_id = 3202
+
+[node name="a12__3246" parent="." instance=ExtResource("c47")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "a12__3246"
+metadata/character_id = 3246
+
+[node name="m1" parent="." instance=ExtResource("c48")]
+position = Vector2(36.4, 56.25)
+rotation = -0.08728
+scale = Vector2(0.48467, 0.48467)
+metadata/original_instance = "m1"
+metadata/character_id = 651

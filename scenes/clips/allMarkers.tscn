@@ -1,0 +1,408 @@
+[gd_scene load_steps=68 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5700/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5601__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5602__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5603__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5604__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5605__f1.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5606__f1.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5607__f1.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5608__f1.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5609__f1.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5610__f1.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5611__f1.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5612__f1.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5613__f1.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5614__f1.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5615__f1.tscn" id="c14"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5616__f1.tscn" id="c15"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5617__f1.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5618__f1.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5619__f1.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5620__f1.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5621__f1.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5622__f1.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5623__f1.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5624__f1.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5625__f1.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5630__f1.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5633__f1.tscn" id="c26"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c27"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c28"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c29"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c30"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c31"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c32"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c33"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c34"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c35"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c36"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c37"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c38"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c39"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c40"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c41"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c42"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c43"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c44"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c45"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c46"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c47"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c48"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c49"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagMap.tscn" id="c50"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5637__f1.tscn" id="c51"]
+[ext_resource type="PackedScene" path="res://scenes/clips/starplsk.tscn" id="c52"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5654.tscn" id="c53"]
+[ext_resource type="PackedScene" path="res://scenes/clips/upgButtonClass__f1.tscn" id="c54"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5677__f1.tscn" id="c55"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5679__f1.tscn" id="c56"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5681__f1.tscn" id="c57"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5683__f1.tscn" id="c58"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5689.tscn" id="c59"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5691.tscn" id="c60"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5693.tscn" id="c61"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5695.tscn" id="c62"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5697.tscn" id="c63"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5699.tscn" id="c64"]
+
+[node name="allMarkers" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5700
+total_frames = 1
+metadata/character_id = 5700
+
+[node name="r1" parent="." instance=ExtResource("c0")]
+position = Vector2(104.55, 85.3)
+metadata/original_instance = "r1"
+metadata/character_id = 5601
+
+[node name="r2" parent="." instance=ExtResource("c1")]
+position = Vector2(169.05, 98.3)
+metadata/original_instance = "r2"
+metadata/character_id = 5602
+
+[node name="r3" parent="." instance=ExtResource("c2")]
+position = Vector2(81.05, 139.8)
+metadata/original_instance = "r3"
+metadata/character_id = 5603
+
+[node name="r4" parent="." instance=ExtResource("c3")]
+position = Vector2(205.8, 133.55)
+metadata/original_instance = "r4"
+metadata/character_id = 5604
+
+[node name="r5" parent="." instance=ExtResource("c4")]
+position = Vector2(157.8, 157.8)
+metadata/original_instance = "r5"
+metadata/character_id = 5605
+
+[node name="r6" parent="." instance=ExtResource("c5")]
+position = Vector2(261.8, 187.8)
+metadata/original_instance = "r6"
+metadata/character_id = 5606
+
+[node name="r7" parent="." instance=ExtResource("c6")]
+position = Vector2(287.8, 241.55)
+metadata/original_instance = "r7"
+metadata/character_id = 5607
+
+[node name="r8" parent="." instance=ExtResource("c7")]
+position = Vector2(377.3, 206.55)
+metadata/original_instance = "r8"
+metadata/character_id = 5608
+
+[node name="r9" parent="." instance=ExtResource("c8")]
+position = Vector2(392.3, 318.25)
+metadata/original_instance = "r9"
+metadata/character_id = 5609
+
+[node name="r10" parent="." instance=ExtResource("c9")]
+position = Vector2(306.55, 243.25)
+metadata/original_instance = "r10"
+metadata/character_id = 5610
+
+[node name="r11" parent="." instance=ExtResource("c10")]
+position = Vector2(271, 319.15)
+metadata/original_instance = "r11"
+metadata/character_id = 5611
+
+[node name="r12" parent="." instance=ExtResource("c11")]
+position = Vector2(194, 332.6)
+metadata/original_instance = "r12"
+metadata/character_id = 5612
+
+[node name="r13" parent="." instance=ExtResource("c12")]
+position = Vector2(280.25, 397.1)
+metadata/original_instance = "r13"
+metadata/character_id = 5613
+
+[node name="r14" parent="." instance=ExtResource("c13")]
+position = Vector2(339.95, 419.65)
+metadata/original_instance = "r14"
+metadata/character_id = 5614
+
+[node name="r15" parent="." instance=ExtResource("c14")]
+position = Vector2(233.5, 474.6)
+metadata/original_instance = "r15"
+metadata/character_id = 5615
+
+[node name="r16" parent="." instance=ExtResource("c15")]
+position = Vector2(500.45, 466.15)
+metadata/original_instance = "r16"
+metadata/character_id = 5616
+
+[node name="r17" parent="." instance=ExtResource("c16")]
+position = Vector2(454.7, 430.15)
+metadata/original_instance = "r17"
+metadata/character_id = 5617
+
+[node name="r18" parent="." instance=ExtResource("c17")]
+position = Vector2(502.65, 430.4)
+metadata/original_instance = "r18"
+metadata/character_id = 5618
+
+[node name="r19" parent="." instance=ExtResource("c18")]
+position = Vector2(490.2, 332.65)
+metadata/original_instance = "r19"
+metadata/character_id = 5619
+
+[node name="r20" parent="." instance=ExtResource("c19")]
+position = Vector2(551.45, 184.65)
+metadata/original_instance = "r20"
+metadata/character_id = 5620
+
+[node name="r21" parent="." instance=ExtResource("c20")]
+position = Vector2(471.45, 147.2)
+metadata/original_instance = "r21"
+metadata/character_id = 5621
+
+[node name="r22" parent="." instance=ExtResource("c21")]
+position = Vector2(396.65, 405.45)
+metadata/original_instance = "r22"
+metadata/character_id = 5622
+
+[node name="r23" parent="." instance=ExtResource("c22")]
+position = Vector2(461.2, 435.9)
+metadata/original_instance = "r23"
+metadata/character_id = 5623
+
+[node name="r24" parent="." instance=ExtResource("c23")]
+position = Vector2(275.4, 436.1)
+metadata/original_instance = "r24"
+metadata/character_id = 5624
+
+[node name="r0" parent="." instance=ExtResource("c24")]
+position = Vector2(17.6, 66.3)
+metadata/original_instance = "r0"
+metadata/character_id = 5625
+
+[node name="bReset" parent="." instance=ExtResource("c25")]
+position = Vector2(610.95, 82)
+metadata/original_instance = "bReset"
+metadata/character_id = 5630
+
+[node name="bOnline" parent="." instance=ExtResource("c26")]
+position = Vector2(94.45, 468.35)
+metadata/original_instance = "bOnline"
+metadata/character_id = 5633
+
+[node name="f1" parent="." instance=ExtResource("c27")]
+position = Vector2(109.5, 69.35)
+metadata/original_instance = "f1"
+metadata/character_id = 5598
+
+[node name="f2" parent="." instance=ExtResource("c28")]
+position = Vector2(188.95, 79.35)
+metadata/original_instance = "f2"
+metadata/character_id = 5598
+
+[node name="f3" parent="." instance=ExtResource("c29")]
+position = Vector2(66.95, 129.35)
+metadata/original_instance = "f3"
+metadata/character_id = 5598
+
+[node name="f5" parent="." instance=ExtResource("c30")]
+position = Vector2(219.25, 126.1)
+metadata/original_instance = "f5"
+metadata/character_id = 5598
+
+[node name="f4" parent="." instance=ExtResource("c31")]
+position = Vector2(132.2, 155.1)
+metadata/original_instance = "f4"
+metadata/character_id = 5598
+
+[node name="f6" parent="." instance=ExtResource("c32")]
+position = Vector2(263.95, 162.35)
+metadata/original_instance = "f6"
+metadata/character_id = 5598
+
+[node name="f14" parent="." instance=ExtResource("c33")]
+position = Vector2(255.45, 396.75)
+metadata/original_instance = "f14"
+metadata/character_id = 5598
+
+[node name="f10" parent="." instance=ExtResource("c34")]
+position = Vector2(340.45, 283.8)
+metadata/original_instance = "f10"
+metadata/character_id = 5598
+
+[node name="f9" parent="." instance=ExtResource("c35")]
+position = Vector2(302, 236.85)
+metadata/original_instance = "f9"
+metadata/character_id = 5598
+
+[node name="f8" parent="." instance=ExtResource("c36")]
+position = Vector2(376.95, 188.35)
+metadata/original_instance = "f8"
+metadata/character_id = 5598
+
+[node name="f11" parent="." instance=ExtResource("c37")]
+position = Vector2(296.2, 317.85)
+metadata/original_instance = "f11"
+metadata/character_id = 5598
+
+[node name="f20" parent="." instance=ExtResource("c38")]
+position = Vector2(599.45, 254.35)
+metadata/original_instance = "f20"
+metadata/character_id = 5598
+
+[node name="f21" parent="." instance=ExtResource("c39")]
+position = Vector2(594.7, 179.1)
+metadata/original_instance = "f21"
+metadata/character_id = 5598
+
+[node name="f24" parent="." instance=ExtResource("c40")]
+position = Vector2(399.45, 368.1)
+metadata/original_instance = "f24"
+metadata/character_id = 5598
+
+[node name="f23" parent="." instance=ExtResource("c41")]
+position = Vector2(467.5, 310.4)
+metadata/original_instance = "f23"
+metadata/character_id = 5598
+
+[node name="f22" parent="." instance=ExtResource("c42")]
+position = Vector2(496.45, 234.4)
+metadata/original_instance = "f22"
+metadata/character_id = 5598
+
+[node name="f13" parent="." instance=ExtResource("c43")]
+position = Vector2(83.7, 346.55)
+metadata/original_instance = "f13"
+metadata/character_id = 5598
+
+[node name="f15" parent="." instance=ExtResource("c44")]
+position = Vector2(375.4, 441.85)
+metadata/original_instance = "f15"
+metadata/character_id = 5598
+
+[node name="f19" parent="." instance=ExtResource("c45")]
+position = Vector2(592.4, 335.35)
+metadata/original_instance = "f19"
+metadata/character_id = 5598
+
+[node name="f16" parent="." instance=ExtResource("c46")]
+position = Vector2(368.7, 508.3)
+metadata/original_instance = "f16"
+metadata/character_id = 5598
+
+[node name="f7" parent="." instance=ExtResource("c47")]
+position = Vector2(383.95, 122.65)
+metadata/original_instance = "f7"
+metadata/character_id = 5598
+
+[node name="f12" parent="." instance=ExtResource("c48")]
+position = Vector2(198.95, 318.1)
+metadata/original_instance = "f12"
+metadata/character_id = 5598
+
+[node name="f17" parent="." instance=ExtResource("c49")]
+position = Vector2(481.45, 484.3)
+metadata/original_instance = "f17"
+metadata/character_id = 5598
+
+[node name="f18" parent="." instance=ExtResource("c50")]
+position = Vector2(446.95, 413.3)
+metadata/original_instance = "f18"
+metadata/character_id = 5598
+
+[node name="eLogo" parent="." instance=ExtResource("c51")]
+position = Vector2(202.7, 2.7)
+metadata/original_instance = "eLogo"
+metadata/character_id = 5637
+
+[node name="eStarPlask" parent="." instance=ExtResource("c52")]
+position = Vector2(610.15, 41.85)
+scale = Vector2(1.18396, 1.18396)
+metadata/original_instance = "eStarPlask"
+metadata/character_id = 5646
+
+[node name="eStorageFailure" parent="." instance=ExtResource("c53")]
+position = Vector2(620.95, 488.5)
+metadata/original_instance = "eStorageFailure"
+metadata/character_id = 5654
+
+[node name="bUpgrades" parent="." instance=ExtResource("c54")]
+position = Vector2(217.95, 567)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bUpgrades"
+metadata/character_id = 5675
+
+[node name="bMore" parent="." instance=ExtResource("c55")]
+position = Vector2(482.45, 567)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMore"
+metadata/character_id = 5677
+
+[node name="bMenu" parent="." instance=ExtResource("c56")]
+position = Vector2(350.2, 567)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 5679
+
+[node name="bNext" parent="." instance=ExtResource("c57")]
+position = Vector2(614.7, 567)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bNext"
+metadata/character_id = 5681
+
+[node name="bAchives" parent="." instance=ExtResource("c58")]
+position = Vector2(85.7, 567)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bAchives"
+metadata/character_id = 5683
+
+[node name="a1" parent="." instance=ExtResource("c59")]
+position = Vector2(46.9, 51.8)
+metadata/original_instance = "a1"
+metadata/character_id = 5689
+
+[node name="a2" parent="." instance=ExtResource("c60")]
+position = Vector2(323.65, 121)
+metadata/original_instance = "a2"
+metadata/character_id = 5691
+
+[node name="a3" parent="." instance=ExtResource("c61")]
+position = Vector2(140.9, 354.8)
+metadata/original_instance = "a3"
+metadata/character_id = 5693
+
+[node name="a4" parent="." instance=ExtResource("c62")]
+position = Vector2(506.65, 387.5)
+metadata/original_instance = "a4"
+metadata/character_id = 5695
+
+[node name="a6" parent="." instance=ExtResource("c63")]
+position = Vector2(325.15, 386.5)
+metadata/original_instance = "a6"
+metadata/character_id = 5697
+
+[node name="a5" parent="." instance=ExtResource("c64")]
+position = Vector2(539.5, 190.95)
+metadata/original_instance = "a5"
+metadata/character_id = 5699

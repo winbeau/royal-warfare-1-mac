@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5360/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5334.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5356.tscn" id="c1"]
+
+[node name="Symbol_5360" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5360
+total_frames = 1
+metadata/character_id = 5360
+
+[node name="eBlack" parent="." instance=ExtResource("c0")]
+position = Vector2(-220.5, -413.2)
+metadata/original_instance = "eBlack"
+metadata/character_id = 5334
+
+[node name="clickSens" parent="." instance=ExtResource("c1")]
+position = Vector2(150, -10.75)
+metadata/original_instance = "clickSens"
+metadata/character_id = 5356

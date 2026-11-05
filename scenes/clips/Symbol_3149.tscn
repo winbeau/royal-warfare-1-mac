@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/3149/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3148.tscn" id="c0"]
+
+[node name="Symbol_3149" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 3149
+total_frames = 1
+metadata/character_id = 3149
+
+[node name="a36" parent="." instance=ExtResource("c0")]
+position = Vector2(-1.55, -14.4)
+metadata/original_instance = "a36"
+metadata/character_id = 3148

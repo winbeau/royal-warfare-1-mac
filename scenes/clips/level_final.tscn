@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6093/clip.tres" id="data"]
+
+[node name="level_final" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6093
+total_frames = 1
+metadata/character_id = 6093
+
+[node name="obstacle" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "obstacle"
+metadata/character_id = 6076
+
+[node name="eObstacleWP" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "eObstacleWP"
+metadata/character_id = 6079
+
+[node name="route0" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route0"
+metadata/character_id = 6082
+
+[node name="route1" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route1"
+metadata/character_id = 6085
+
+[node name="route2" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route2"
+metadata/character_id = 6086
+
+[node name="route3" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route3"
+metadata/character_id = 6087
+
+[node name="route4" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route4"
+metadata/character_id = 6088
+
+[node name="route5" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route5"
+metadata/character_id = 6089
+
+[node name="route6" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route6"
+metadata/character_id = 6090
+
+[node name="route7" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route7"
+metadata/character_id = 6091
+
+[node name="route8" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route8"
+metadata/character_id = 6092

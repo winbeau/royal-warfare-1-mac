@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5267/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5267/f0.png" id="front0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5267
+total_frames = 1
+rect = Rect2(-35, -34.2, 70, 67.6)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-17, -14.2)
+back_index = PackedInt32Array(0)
+front_textures = [ExtResource("front0")]
+front_offsets = PackedVector2Array(-19, -16.2)
+front_index = PackedInt32Array(0)
+children = {"eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.07224, 0, 0, 0.11391, -0.65, -3.3, 1, 1, 1, 1)}, "eLocked": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.83626, 0, 0, 0.83626, -0.05, -1, 1, 1, 1, 1)}, "eCoolDown": {"kind": "clip", "depth": 10, "frames": PackedInt32Array(1), "states": PackedFloat32Array(0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}

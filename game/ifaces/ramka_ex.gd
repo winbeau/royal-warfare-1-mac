@@ -21,7 +21,7 @@ func set_coords_and_size(param1: Vector2, param2: Vector2) -> void:
 
 func destroy() -> void:
 	# 原版：TweenMax.delayedCall(0.05, gameUniverse.self.addClickHandler)；alpha 0.2s 淡出后从父节点移除
-	GameUniverse.tween_node().delayed_call(0.05, GameUniverse.inst.add_click_handler)
+	RWTween.delayed_call(0.05, GameUniverse.inst.add_click_handler)
 	var parent := get_parent()
 	if parent != null:
 		parent.remove_child(self)

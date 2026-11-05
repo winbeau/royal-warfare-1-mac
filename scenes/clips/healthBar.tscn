@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4773/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4764.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4767.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4770.tscn" id="c2"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/4771_Minion Pro.ttf" id="f4771"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_67.tscn" id="c4"]
+
+[node name="healthBar" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4773
+total_frames = 1
+metadata/character_id = 4773
+
+[node name="bottom" parent="." instance=ExtResource("c0")]
+position = Vector2(-12, -3.6)
+scale = Vector2(1, 1.32141)
+metadata/original_instance = "bottom"
+metadata/character_id = 4764
+
+[node name="top" parent="." instance=ExtResource("c1")]
+position = Vector2(-12, -3.2)
+scale = Vector2(1, 0.88095)
+metadata/original_instance = "top"
+metadata/character_id = 4767
+
+[node name="eLevelup" parent="." instance=ExtResource("c2")]
+position = Vector2(17.25, -2.75)
+scale = Vector2(0.64844, 0.64844)
+metadata/original_instance = "eLevelup"
+metadata/character_id = 4770
+
+[node name="tGroup" type="Control" parent="."]
+position = Vector2(-19.05, -8.25)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 11.05, 16.45)
+font = ExtResource("f4771")
+font_face = "Minion Pro"
+font_id = 4771
+font_size = 9
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "center"
+leading = 2
+initial_text = "0"
+metadata/original_instance = "tGroup"
+metadata/character_id = 4772
+
+[node name="cont" parent="." instance=ExtResource("c4")]
+position = Vector2(0, 0)
+metadata/original_instance = "cont"
+metadata/character_id = 67

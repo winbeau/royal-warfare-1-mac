@@ -135,11 +135,6 @@ var cur_level_num: int:
 		_cur_level_num = v
 
 
-## RWTween 自动加载节点。经场景树取得，使 `--script` 测试（自动加载尚未注册标识符时即编译本脚本）也能解析。
-static func tween_node() -> Node:
-	return (Engine.get_main_loop() as SceneTree).root.get_node("RWTween")
-
-
 func _init() -> void:
 	inst = self
 	ingame_ui = MainGameUIEx.new()
@@ -147,6 +142,16 @@ func _init() -> void:
 	def_panel = DefeatPanelEx.new()
 	pause_panel = PauseMenuEx.new()
 	res_point = Vector2(0, 0)
+
+
+## 界面面板只被本对象引用、不在场景树里时，随本对象一起释放（避免泄漏）。
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		for n: Node in [ingame_ui, vic_panel, def_panel, pause_panel]:
+			if n != null and is_instance_valid(n) and n.get_parent() == null:
+				n.free()
+		if inst == self:
+			inst = null
 
 
 # 原版 initOnce：aLevelTemplates / aSpecials / selectionRamka / new globalData()。
@@ -160,6 +165,13 @@ static func init_once() -> void:
 	number_of_levels_reloaded = 0
 	selection_ramka = RamkaEx.new()
 	GlobalData.new()
+
+
+## 释放 init_once 创建的静态节点（测试收尾用）。
+static func free_statics() -> void:
+	if selection_ramka != null and is_instance_valid(selection_ramka) and selection_ramka.get_parent() == null:
+		selection_ramka.free()
+	selection_ramka = null
 
 
 ## 原版 loadLevels(from, to)：实例化关卡模板并栅格化背景。位图烘焙由 Godot 纹理替代，这里只记录背景类名。
@@ -429,9 +441,9 @@ func make_battle(param1: LivingObject, param2: LivingObject) -> void:
 		var b := Battle.new()
 		b.init(param1, param2)
 		if not param1.friendly:
-			param1.o_pursue_counter[param2] = 1
+			param1.o_pursue_counter[LivingObject.pursue_key(param2)] = 1
 		else:
-			param2.o_pursue_counter[param1] = 1
+			param2.o_pursue_counter[LivingObject.pursue_key(param1)] = 1
 
 
 func remove_battle(_param1: Battle) -> void:
@@ -538,7 +550,7 @@ func end_game(param1: String) -> void:
 			elif result == VICTORY:
 				add_child(vic_panel)
 				vic_panel.init(num_lifes, cur_level_num)
-		tween_node().delayed_call(2.0, delayed_remover)
+		RWTween.delayed_call(2.0, delayed_remover)
 
 
 func enemy_unit_clicked(param1: LivingObject) -> void:
@@ -769,7 +781,7 @@ func continue_loading_level_data() -> void:
 	ingame_ui.draw_current_wave(cur_wave, total_waves)
 	set_lives(20)
 	if def_flag_object != null:
-		tween_node().delayed_call(2.0, func() -> void:
+		RWTween.delayed_call(2.0, func() -> void:
 			var d := def_flag_object
 			var f: Node2D
 			f = _flag_data(GroundDefFlag)
@@ -943,15 +955,9 @@ func selection_box_move(_param1: RWMouseEvent = null) -> void:
 		selection_ramka.set_coords_and_size(selection_box_start_coords, Vector2(mouse_x, mouse_y))
 
 
-## 选择框与单位 sens 的 hitTestObject（两个显示对象的包围盒相交，含边界）。
-## sens 是单位下的 Sprite2D，取其全局包围盒；LivingObject 另提供 hit_test_sens_rect 时优先使用。
+## 选择框与单位 sens 的 hitTestObject：两个显示对象包围盒相交（舞台坐标，含边界）。
 func _sens_hits_rect(u: LivingObject, r: Rect2) -> bool:
-	if u.has_method("hit_test_sens_rect"):
-		return u.hit_test_sens_rect(r)
-	if u.sens != null and u.sens.texture != null:
-		var gr: Rect2 = u.sens.get_global_transform() * u.sens.get_rect()
-		return gr.intersects(r, true)
-	return r.has_point(u.position)
+	return u.get_sens_rect().intersects(r, true)
 
 
 # 反编译破损（while(true) 包裹），按 P-code 重建：对每个满足条件的单位只执行一次 push + setSelected，

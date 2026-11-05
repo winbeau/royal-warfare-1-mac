@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/2569/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1976.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2537.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2544.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2551.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2558.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2568.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2005__f1.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2013__f1.tscn" id="c7"]
+
+[node name="introComics" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 2569
+total_frames = 1
+metadata/character_id = 2569
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eBg"
+metadata/character_id = 1976
+
+[node name="eOne" parent="." instance=ExtResource("c1")]
+position = Vector2(37.05, 38.25)
+metadata/original_instance = "eOne"
+metadata/character_id = 2537
+
+[node name="eTwo" parent="." instance=ExtResource("c2")]
+position = Vector2(38.05, 16.25)
+metadata/original_instance = "eTwo"
+metadata/character_id = 2544
+
+[node name="eThree" parent="." instance=ExtResource("c3")]
+position = Vector2(51.05, 30.25)
+metadata/original_instance = "eThree"
+metadata/character_id = 2551
+
+[node name="eFour" parent="." instance=ExtResource("c4")]
+position = Vector2(30.05, 32.25)
+metadata/original_instance = "eFour"
+metadata/character_id = 2558
+
+[node name="eFive" parent="." instance=ExtResource("c5")]
+position = Vector2(43.05, 21.25)
+metadata/original_instance = "eFive"
+metadata/character_id = 2568
+
+[node name="bRight" parent="." instance=ExtResource("c6")]
+position = Vector2(631.95, 544.6)
+rotation = 3.14159
+scale = Vector2(1.84665, -1.84665)
+metadata/original_instance = "bRight"
+metadata/character_id = 2005
+
+[node name="bSkip" parent="." instance=ExtResource("c7")]
+position = Vector2(75.95, 545)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bSkip"
+metadata/character_id = 2013

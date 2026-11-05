@@ -1,0 +1,482 @@
+[gd_scene load_steps=77 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/658/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_230.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_270__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_295.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_307.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_313.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_316.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_328.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_331.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_337.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_345.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_349.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_361.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_366.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_372.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_380.tscn" id="c14"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_384.tscn" id="c15"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_388.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_393.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_402.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_405.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_409.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_415.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_424.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_436.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_442.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_447.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_449.tscn" id="c26"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_453.tscn" id="c27"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_456.tscn" id="c28"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_461.tscn" id="c29"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_464.tscn" id="c30"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_467.tscn" id="c31"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_469.tscn" id="c32"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_472.tscn" id="c33"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_475.tscn" id="c34"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_488.tscn" id="c35"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_499.tscn" id="c36"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_502.tscn" id="c37"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_505.tscn" id="c38"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_509.tscn" id="c39"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_517.tscn" id="c40"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_536__f1.tscn" id="c41"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_538__f1.tscn" id="c42"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_540__f1.tscn" id="c43"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_543.tscn" id="c44"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_546.tscn" id="c45"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_549.tscn" id="c46"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_552.tscn" id="c47"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_555.tscn" id="c48"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_557__f1.tscn" id="c49"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_558.tscn" id="c50"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_559.tscn" id="c51"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_560.tscn" id="c52"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_563.tscn" id="c53"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_566.tscn" id="c54"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_569.tscn" id="c55"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_572.tscn" id="c56"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_575.tscn" id="c57"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_581__f1.tscn" id="c58"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_585.tscn" id="c59"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_591.tscn" id="c60"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_595.tscn" id="c61"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/596_Minion Pro.ttf" id="f596"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+[ext_resource type="PackedScene" path="res://scenes/clips/zanavesUpgr.tscn" id="c64"]
+[ext_resource type="PackedScene" path="res://scenes/clips/zanavesUpgr.tscn" id="c65"]
+[ext_resource type="PackedScene" path="res://scenes/clips/zanavesUpgr.tscn" id="c66"]
+[ext_resource type="PackedScene" path="res://scenes/clips/zanavesUpgr.tscn" id="c67"]
+[ext_resource type="PackedScene" path="res://scenes/clips/zanavesUpgr.tscn" id="c68"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_625.tscn" id="c69"]
+[ext_resource type="PackedScene" path="res://scenes/clips/uobar.tscn" id="c70"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_652.tscn" id="c71"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_657.tscn" id="c72"]
+
+[node name="upgrPanel" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 658
+total_frames = 1
+metadata/character_id = 658
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eBg"
+metadata/character_id = 230
+
+[node name="eLogo" parent="." instance=ExtResource("c1")]
+position = Vector2(237.45, -1.3)
+scale = Vector2(0.72865, 0.72865)
+metadata/original_instance = "eLogo"
+metadata/character_id = 270
+
+[node name="uWarSwordUnit" parent="." instance=ExtResource("c2")]
+position = Vector2(101.2, 68.35)
+metadata/original_instance = "uWarSwordUnit"
+metadata/character_id = 295
+
+[node name="uWarSwordA" parent="." instance=ExtResource("c3")]
+position = Vector2(116.45, 133.65)
+metadata/original_instance = "uWarSwordA"
+metadata/character_id = 307
+
+[node name="uWarSwordB" parent="." instance=ExtResource("c4")]
+position = Vector2(116.45, 185.25)
+metadata/original_instance = "uWarSwordB"
+metadata/character_id = 313
+
+[node name="uWarWarriorA" parent="." instance=ExtResource("c5")]
+position = Vector2(56.95, 133.65)
+metadata/original_instance = "uWarWarriorA"
+metadata/character_id = 316
+
+[node name="uWarWarriorB" parent="." instance=ExtResource("c6")]
+position = Vector2(56.95, 185.25)
+metadata/original_instance = "uWarWarriorB"
+metadata/character_id = 328
+
+[node name="uWarKnightUnit" parent="." instance=ExtResource("c7")]
+position = Vector2(176.5, 88.4)
+metadata/original_instance = "uWarKnightUnit"
+metadata/character_id = 331
+
+[node name="uWarKnightA" parent="." instance=ExtResource("c8")]
+position = Vector2(178.5, 134.8)
+metadata/original_instance = "uWarKnightA"
+metadata/character_id = 337
+
+[node name="uWarKnightB" parent="." instance=ExtResource("c9")]
+position = Vector2(179.5, 185.25)
+metadata/original_instance = "uWarKnightB"
+metadata/character_id = 345
+
+[node name="uArchCrossbUnit" parent="." instance=ExtResource("c10")]
+position = Vector2(410.4, 138.2)
+metadata/original_instance = "uArchCrossbUnit"
+metadata/character_id = 349
+
+[node name="uArchCrossbA" parent="." instance=ExtResource("c11")]
+position = Vector2(410.7, 185.5)
+metadata/original_instance = "uArchCrossbA"
+metadata/character_id = 361
+
+[node name="uArchCrossbB" parent="." instance=ExtResource("c12")]
+position = Vector2(410.7, 237.45)
+metadata/original_instance = "uArchCrossbB"
+metadata/character_id = 366
+
+[node name="uArchArcherA" parent="." instance=ExtResource("c13")]
+position = Vector2(288.45, 185.45)
+metadata/original_instance = "uArchArcherA"
+metadata/character_id = 372
+
+[node name="uArchArcherB" parent="." instance=ExtResource("c14")]
+position = Vector2(288.45, 238.05)
+metadata/original_instance = "uArchArcherB"
+metadata/character_id = 380
+
+[node name="uArchSniperUnit" parent="." instance=ExtResource("c15")]
+position = Vector2(352.75, 138.2)
+metadata/original_instance = "uArchSniperUnit"
+metadata/character_id = 384
+
+[node name="uArchSniperA" parent="." instance=ExtResource("c16")]
+position = Vector2(352.05, 185.45)
+metadata/original_instance = "uArchSniperA"
+metadata/character_id = 388
+
+[node name="uArchSniperB" parent="." instance=ExtResource("c17")]
+position = Vector2(352.05, 237.5)
+metadata/original_instance = "uArchSniperB"
+metadata/character_id = 393
+
+[node name="uRoguesAttack" parent="." instance=ExtResource("c18")]
+position = Vector2(94, 498.25)
+metadata/original_instance = "uRoguesAttack"
+metadata/character_id = 402
+
+[node name="uRoguessDefend" parent="." instance=ExtResource("c19")]
+position = Vector2(143, 498.25)
+metadata/original_instance = "uRoguessDefend"
+metadata/character_id = 405
+
+[node name="uThiefAssasinUnit" parent="." instance=ExtResource("c20")]
+position = Vector2(121.4, 354.55)
+metadata/original_instance = "uThiefAssasinUnit"
+metadata/character_id = 409
+
+[node name="uThiefAssasinA" parent="." instance=ExtResource("c21")]
+position = Vector2(121.7, 403.5)
+metadata/original_instance = "uThiefAssasinA"
+metadata/character_id = 415
+
+[node name="uThiefAssasinB" parent="." instance=ExtResource("c22")]
+position = Vector2(121.7, 455.75)
+metadata/original_instance = "uThiefAssasinB"
+metadata/character_id = 424
+
+[node name="uThiefThiefB" parent="." instance=ExtResource("c23")]
+position = Vector2(57.25, 456.75)
+metadata/original_instance = "uThiefThiefB"
+metadata/character_id = 436
+
+[node name="uThiefThiefA" parent="." instance=ExtResource("c24")]
+position = Vector2(57.25, 404.5)
+metadata/original_instance = "uThiefThiefA"
+metadata/character_id = 442
+
+[node name="uThiefSabotUnit" parent="." instance=ExtResource("c25")]
+position = Vector2(179.25, 355.7)
+metadata/original_instance = "uThiefSabotUnit"
+metadata/character_id = 447
+
+[node name="uThiefSabotA" parent="." instance=ExtResource("c26")]
+position = Vector2(179.55, 404.4)
+metadata/original_instance = "uThiefSabotA"
+metadata/character_id = 449
+
+[node name="uThiefSabotB" parent="." instance=ExtResource("c27")]
+position = Vector2(179.55, 456.65)
+metadata/original_instance = "uThiefSabotB"
+metadata/character_id = 453
+
+[node name="uPriestBlesserUnit" parent="." instance=ExtResource("c28")]
+position = Vector2(642.8, 355.3)
+metadata/original_instance = "uPriestBlesserUnit"
+metadata/character_id = 456
+
+[node name="uPriestBlesserA" parent="." instance=ExtResource("c29")]
+position = Vector2(643.1, 404.55)
+metadata/original_instance = "uPriestBlesserA"
+metadata/character_id = 461
+
+[node name="uPriestBlesserB" parent="." instance=ExtResource("c30")]
+position = Vector2(643.1, 456.7)
+metadata/original_instance = "uPriestBlesserB"
+metadata/character_id = 464
+
+[node name="uPriestPriestA" parent="." instance=ExtResource("c31")]
+position = Vector2(522.3, 404.35)
+metadata/original_instance = "uPriestPriestA"
+metadata/character_id = 467
+
+[node name="uPriestPriestB" parent="." instance=ExtResource("c32")]
+position = Vector2(522.3, 456.7)
+metadata/original_instance = "uPriestPriestB"
+metadata/character_id = 469
+
+[node name="uMageRedUnit" parent="." instance=ExtResource("c33")]
+position = Vector2(580.5, 88.2)
+metadata/original_instance = "uMageRedUnit"
+metadata/character_id = 472
+
+[node name="uMageRedA" parent="." instance=ExtResource("c34")]
+position = Vector2(580.8, 185.2)
+metadata/original_instance = "uMageRedA"
+metadata/character_id = 475
+
+[node name="uMageRedB" parent="." instance=ExtResource("c35")]
+position = Vector2(580.8, 134.9)
+metadata/original_instance = "uMageRedB"
+metadata/character_id = 488
+
+[node name="uMageBlueA" parent="." instance=ExtResource("c36")]
+position = Vector2(518.45, 134.8)
+metadata/original_instance = "uMageBlueA"
+metadata/character_id = 499
+
+[node name="uMageBlueB" parent="." instance=ExtResource("c37")]
+position = Vector2(518.45, 185.05)
+metadata/original_instance = "uMageBlueB"
+metadata/character_id = 502
+
+[node name="uMageBlackUnit" parent="." instance=ExtResource("c38")]
+position = Vector2(641.85, 88.2)
+metadata/original_instance = "uMageBlackUnit"
+metadata/character_id = 505
+
+[node name="uMageBlackA" parent="." instance=ExtResource("c39")]
+position = Vector2(642.15, 134.9)
+metadata/original_instance = "uMageBlackA"
+metadata/character_id = 509
+
+[node name="uMageBlackB" parent="." instance=ExtResource("c40")]
+position = Vector2(642.15, 185.2)
+metadata/original_instance = "uMageBlackB"
+metadata/character_id = 517
+
+[node name="bMore" parent="." instance=ExtResource("c41")]
+position = Vector2(453, 566)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMore"
+metadata/character_id = 536
+
+[node name="bMenu" parent="." instance=ExtResource("c42")]
+position = Vector2(322, 566)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 538
+
+[node name="bNext" parent="." instance=ExtResource("c43")]
+position = Vector2(584, 566)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bNext"
+metadata/character_id = 540
+
+[node name="uWarriorIcon" parent="." instance=ExtResource("c44")]
+position = Vector2(56.65, 92.4)
+metadata/original_instance = "uWarriorIcon"
+metadata/character_id = 543
+
+[node name="uArcherIcon" parent="." instance=ExtResource("c45")]
+position = Vector2(288.05, 143.1)
+metadata/original_instance = "uArcherIcon"
+metadata/character_id = 546
+
+[node name="uThiefIcon" parent="." instance=ExtResource("c46")]
+position = Vector2(58.35, 360.45)
+metadata/original_instance = "uThiefIcon"
+metadata/character_id = 549
+
+[node name="uPriestIcon" parent="." instance=ExtResource("c47")]
+position = Vector2(522, 360.45)
+metadata/original_instance = "uPriestIcon"
+metadata/character_id = 552
+
+[node name="uBlueMageIcon" parent="." instance=ExtResource("c48")]
+position = Vector2(518.15, 91.25)
+metadata/original_instance = "uBlueMageIcon"
+metadata/character_id = 555
+
+[node name="bReset" parent="." instance=ExtResource("c49")]
+position = Vector2(191, 566)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bReset"
+metadata/character_id = 557
+
+[node name="uWarriorsAttack" parent="." instance=ExtResource("c50")]
+position = Vector2(94, 229.75)
+metadata/original_instance = "uWarriorsAttack"
+metadata/character_id = 558
+
+[node name="uWarriorsDefend" parent="." instance=ExtResource("c51")]
+position = Vector2(143, 229.75)
+metadata/original_instance = "uWarriorsDefend"
+metadata/character_id = 559
+
+[node name="uArchersAttack" parent="." instance=ExtResource("c52")]
+position = Vector2(326, 279.75)
+metadata/original_instance = "uArchersAttack"
+metadata/character_id = 560
+
+[node name="uArchersDefend" parent="." instance=ExtResource("c53")]
+position = Vector2(375, 279.75)
+metadata/original_instance = "uArchersDefend"
+metadata/character_id = 563
+
+[node name="uMagesAttack" parent="." instance=ExtResource("c54")]
+position = Vector2(556, 230.85)
+metadata/original_instance = "uMagesAttack"
+metadata/character_id = 566
+
+[node name="uMagesDefend" parent="." instance=ExtResource("c55")]
+position = Vector2(605, 230.85)
+metadata/original_instance = "uMagesDefend"
+metadata/character_id = 569
+
+[node name="uPriestsAttack" parent="." instance=ExtResource("c56")]
+position = Vector2(556, 498.15)
+metadata/original_instance = "uPriestsAttack"
+metadata/character_id = 572
+
+[node name="uPriestsDefend" parent="." instance=ExtResource("c57")]
+position = Vector2(605, 498.15)
+metadata/original_instance = "uPriestsDefend"
+metadata/character_id = 575
+
+[node name="bHelp" parent="." instance=ExtResource("c58")]
+position = Vector2(90, 566)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bHelp"
+metadata/character_id = 581
+
+[node name="uPriestHealerUnit" parent="." instance=ExtResource("c59")]
+position = Vector2(583.1, 355.45)
+metadata/original_instance = "uPriestHealerUnit"
+metadata/character_id = 585
+
+[node name="uPriestHealerB" parent="." instance=ExtResource("c60")]
+position = Vector2(583.4, 456.7)
+metadata/original_instance = "uPriestHealerB"
+metadata/character_id = 591
+
+[node name="uPriestHealerA" parent="." instance=ExtResource("c61")]
+position = Vector2(583.4, 404.5)
+metadata/original_instance = "uPriestHealerA"
+metadata/character_id = 595
+
+[node name="tFreeStars" type="Control" parent="."]
+position = Vector2(346.85, 339.85)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 42.05, 31.7)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 20
+color = Color(1, 1, 1, 1)
+align = "left"
+leading = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "121"
+metadata/original_instance = "tFreeStars"
+metadata/character_id = 597
+
+[node name="tHintText" type="Control" parent="."]
+position = Vector2(241, 390.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 219.95, 142)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 15
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "Spend your stars to get new abilities and to improve already gained. Click \"Reset\" button to reset all your stars and reassign in a different way."
+metadata/original_instance = "tHintText"
+metadata/character_id = 599
+
+[node name="zanavesPriests" parent="." instance=ExtResource("c64")]
+position = Vector2(488.65, 315.45)
+metadata/original_instance = "zanavesPriests"
+metadata/character_id = 607
+
+[node name="zanavesMages" parent="." instance=ExtResource("c65")]
+position = Vector2(488.65, 48)
+metadata/original_instance = "zanavesMages"
+metadata/character_id = 607
+
+[node name="zanavesThieves" parent="." instance=ExtResource("c66")]
+position = Vector2(27.65, 315.45)
+metadata/original_instance = "zanavesThieves"
+metadata/character_id = 607
+
+[node name="zanavesWarriors" parent="." instance=ExtResource("c67")]
+position = Vector2(23.65, 48)
+metadata/original_instance = "zanavesWarriors"
+metadata/character_id = 607
+
+[node name="zanavesArchers" parent="." instance=ExtResource("c68")]
+position = Vector2(262.6, 99)
+metadata/original_instance = "zanavesArchers"
+metadata/character_id = 607
+
+[node name="eHint" parent="." instance=ExtResource("c69")]
+position = Vector2(0, 0)
+metadata/original_instance = "eHint"
+metadata/character_id = 625
+
+[node name="eUnitUnlockedBar" parent="." instance=ExtResource("c70")]
+position = Vector2(348.85, 279.3)
+metadata/original_instance = "eUnitUnlockedBar"
+metadata/character_id = 636
+
+[node name="eAchievement" parent="." instance=ExtResource("c71")]
+position = Vector2(443.4, 341.75)
+metadata/original_instance = "eAchievement"
+metadata/character_id = 652
+
+[node name="eAchievementFinal" parent="." instance=ExtResource("c72")]
+position = Vector2(255.9, 345.85)
+metadata/original_instance = "eAchievementFinal"
+metadata/character_id = 657

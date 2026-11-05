@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5598/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagUnvisit.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/flagVisit.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5595.tscn" id="c2"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5596_Minion Pro.ttf" id="f5596"]
+
+[node name="flagMap" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5598
+total_frames = 1
+metadata/character_id = 5598
+
+[node name="eUnvisited" parent="." instance=ExtResource("c0")]
+position = Vector2(-0.85, 2.7)
+scale = Vector2(1.30612, 1.30612)
+metadata/original_instance = "eUnvisited"
+metadata/character_id = 5576
+
+[node name="eVisited" parent="." instance=ExtResource("c1")]
+position = Vector2(-0.7, 3.35)
+metadata/original_instance = "eVisited"
+metadata/character_id = 5593
+
+[node name="sens" parent="." instance=ExtResource("c2")]
+position = Vector2(0, -3.5)
+scale = Vector2(1.18518, 1.18518)
+metadata/original_instance = "sens"
+metadata/character_id = 5595
+
+[node name="tLevelName" type="Control" parent="."]
+position = Vector2(-89.15, 11.9)
+script = ExtResource("txt")
+box = Rect2(51.15, -2, 76, 28.5)
+font = ExtResource("f5596")
+font_face = "Minion Pro"
+font_id = 5596
+font_size = 18
+color = Color(1, 1, 1, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Level 24"
+metadata/original_instance = "tLevelName"
+metadata/character_id = 5597

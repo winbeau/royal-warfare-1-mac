@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5140/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5139.tscn" id="c7"]
+
+[node name="sensPanel" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5140
+total_frames = 1
+metadata/character_id = 5140
+
+[node name="sHealth" parent="." instance=ExtResource("c0")]
+position = Vector2(0, -8.75)
+metadata/original_instance = "sHealth"
+metadata/character_id = 5139
+
+[node name="sExp" parent="." instance=ExtResource("c1")]
+position = Vector2(0, 8.75)
+metadata/original_instance = "sExp"
+metadata/character_id = 5139
+
+[node name="sDmg" parent="." instance=ExtResource("c2")]
+position = Vector2(63, -8.25)
+scale = Vector2(0.73572, 1)
+metadata/original_instance = "sDmg"
+metadata/character_id = 5139
+
+[node name="sDmgSpeed" parent="." instance=ExtResource("c3")]
+position = Vector2(63, 9.25)
+scale = Vector2(0.73572, 1)
+metadata/original_instance = "sDmgSpeed"
+metadata/character_id = 5139
+
+[node name="sArmor" parent="." instance=ExtResource("c4")]
+position = Vector2(120.85, -8.75)
+scale = Vector2(0.87614, 1)
+metadata/original_instance = "sArmor"
+metadata/character_id = 5139
+
+[node name="sResist" parent="." instance=ExtResource("c5")]
+position = Vector2(120.85, 8.75)
+scale = Vector2(0.87614, 1)
+metadata/original_instance = "sResist"
+metadata/character_id = 5139
+
+[node name="sArmorPierce" parent="." instance=ExtResource("c6")]
+position = Vector2(178, -8.25)
+scale = Vector2(0.73572, 1)
+metadata/original_instance = "sArmorPierce"
+metadata/character_id = 5139
+
+[node name="sMagicPierce" parent="." instance=ExtResource("c7")]
+position = Vector2(178, 9.25)
+scale = Vector2(0.73572, 1)
+metadata/original_instance = "sMagicPierce"
+metadata/character_id = 5139

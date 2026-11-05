@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/636/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_630.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_635.tscn" id="c1"]
+
+[node name="uobar" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 636
+total_frames = 1
+metadata/character_id = 636
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(-104.5, -77.75)
+scale = Vector2(0.35519, 0.40533)
+metadata/original_instance = "eBg"
+metadata/character_id = 630
+
+[node name="eIco" parent="." instance=ExtResource("c1")]
+position = Vector2(-37.5, -64.7)
+metadata/original_instance = "eIco"
+metadata/character_id = 635

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/652/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_645.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f2.tscn" id="c1"]
+
+[node name="Symbol_652" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 652
+total_frames = 1
+metadata/character_id = 652
+
+[node name="a5" parent="." instance=ExtResource("c0")]
+position = Vector2(-34.2, -29.65)
+metadata/original_instance = "a5"
+metadata/character_id = 645
+
+[node name="m1" parent="." instance=ExtResource("c1")]
+position = Vector2(-14.4, 21.85)
+rotation = -0.08728
+scale = Vector2(0.48467, 0.48467)
+metadata/original_instance = "m1"
+metadata/character_id = 651

@@ -1,0 +1,310 @@
+[gd_scene load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/2806/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1021__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2776__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2780.tscn" id="c2"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+[ext_resource type="FontFile" path="res://assets/library/font/596_Minion Pro.ttf" id="f596"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c15"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2801.tscn" id="c26"]
+
+[node name="unitHintMC" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 2806
+total_frames = 1
+metadata/character_id = 2806
+
+[node name="bClosebtn" parent="." instance=ExtResource("c0")]
+position = Vector2(553.5, 430.9)
+metadata/original_instance = "bClosebtn"
+metadata/character_id = 1021
+
+[node name="eBg" parent="." instance=ExtResource("c1")]
+position = Vector2(87.9, 131.35)
+metadata/original_instance = "eBg"
+metadata/character_id = 2776
+
+[node name="ePicCont" parent="." instance=ExtResource("c2")]
+position = Vector2(180.25, 285.05)
+metadata/original_instance = "ePicCont"
+metadata/character_id = 2780
+
+[node name="tDescr" type="Control" parent="."]
+position = Vector2(251, 232.3)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 330, 127)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 18
+color = Color(1, 0.96863, 0.94118, 1)
+align = "left"
+leading = -2
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Plague zombie. Unlike other zombies, this one has moderate HP and magic resist. Strikes with his own hands, and can not inflict great damage, but plague weakens your soldiers, lowering attack speed."
+metadata/original_instance = "tDescr"
+metadata/character_id = 2781
+
+[node name="tUnitName" type="Control" parent="."]
+position = Vector2(129, 194.3)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 444, 38.05)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 25
+color = Color(1, 1, 0.71765, 1)
+align = "center"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "Skeleton Captain"
+metadata/original_instance = "tUnitName"
+metadata/character_id = 2782
+
+[node name="tHealth" type="Control" parent="."]
+position = Vector2(164, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 49, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tHealth"
+metadata/character_id = 2783
+
+[node name="tShootDam" type="Control" parent="."]
+position = Vector2(318.5, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 45.45, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tShootDam"
+metadata/character_id = 2785
+
+[node name="tSpeed" type="Control" parent="."]
+position = Vector2(246.25, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 45.2, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tSpeed"
+metadata/character_id = 2786
+
+[node name="tShootSpeed" type="Control" parent="."]
+position = Vector2(396.25, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 43.7, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tShootSpeed"
+metadata/character_id = 2788
+
+[node name="tDam" type="Control" parent="."]
+position = Vector2(319, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 45.95, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tDam"
+metadata/character_id = 2789
+
+[node name="tAtSpd" type="Control" parent="."]
+position = Vector2(395.4, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 43.05, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tAtSpd"
+metadata/character_id = 2791
+
+[node name="tProtection" type="Control" parent="."]
+position = Vector2(537.6, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 44.35, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tProtection"
+metadata/character_id = 2793
+
+[node name="tPierce" type="Control" parent="."]
+position = Vector2(466.5, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 47.45, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tPierce"
+metadata/character_id = 2795
+
+[node name="tMagicPierce" type="Control" parent="."]
+position = Vector2(467.2, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 44.25, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tMagicPierce"
+metadata/character_id = 2796
+
+[node name="tArmor" type="Control" parent="."]
+position = Vector2(536.4, 350.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 45.55, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tArmor"
+metadata/character_id = 2798
+
+[node name="s1" parent="." instance=ExtResource("c15")]
+position = Vector2(166, 360.75)
+metadata/original_instance = "s1"
+metadata/character_id = 2801
+
+[node name="s7" parent="." instance=ExtResource("c16")]
+position = Vector2(319.5, 385.75)
+metadata/original_instance = "s7"
+metadata/character_id = 2801
+
+[node name="s2" parent="." instance=ExtResource("c17")]
+position = Vector2(244.8, 360.75)
+metadata/original_instance = "s2"
+metadata/character_id = 2801
+
+[node name="s8" parent="." instance=ExtResource("c18")]
+position = Vector2(394.8, 385.75)
+metadata/original_instance = "s8"
+metadata/character_id = 2801
+
+[node name="s3" parent="." instance=ExtResource("c19")]
+position = Vector2(319.7, 360.75)
+metadata/original_instance = "s3"
+metadata/character_id = 2801
+
+[node name="s4" parent="." instance=ExtResource("c20")]
+position = Vector2(392.1, 360.75)
+metadata/original_instance = "s4"
+metadata/character_id = 2801
+
+[node name="s10" parent="." instance=ExtResource("c21")]
+position = Vector2(535.1, 385.75)
+metadata/original_instance = "s10"
+metadata/character_id = 2801
+
+[node name="s5" parent="." instance=ExtResource("c22")]
+position = Vector2(465.45, 360.75)
+metadata/original_instance = "s5"
+metadata/character_id = 2801
+
+[node name="s11" parent="." instance=ExtResource("c23")]
+position = Vector2(469.45, 384.75)
+metadata/original_instance = "s11"
+metadata/character_id = 2801
+
+[node name="s6" parent="." instance=ExtResource("c24")]
+position = Vector2(538.9, 360.75)
+metadata/original_instance = "s6"
+metadata/character_id = 2801
+
+[node name="s12" parent="." instance=ExtResource("c25")]
+position = Vector2(167.95, 385.75)
+metadata/original_instance = "s12"
+metadata/character_id = 2801
+
+[node name="s9" parent="." instance=ExtResource("c26")]
+position = Vector2(246.7, 385.75)
+metadata/original_instance = "s9"
+metadata/character_id = 2801
+
+[node name="tCost" type="Control" parent="."]
+position = Vector2(163.95, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 49.55, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tCost"
+metadata/character_id = 2802
+
+[node name="tAccuracy" type="Control" parent="."]
+position = Vector2(246.55, 375.15)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 45.9, 24.75)
+font = ExtResource("f596")
+font_face = "Minion Pro"
+font_id = 596
+font_size = 15
+color = Color(0.11765, 0.11765, 0.06275, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tAccuracy"
+metadata/character_id = 2804

@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6450/clip.tres" id="data"]
+
+[node name="level_sands" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6450
+total_frames = 1
+metadata/character_id = 6450
+
+[node name="route0" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(4, -18)
+metadata/original_instance = "route0"
+metadata/character_id = 6441
+
+[node name="obstacle" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "obstacle"
+metadata/character_id = 6443
+
+[node name="eObstacleWP" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "eObstacleWP"
+metadata/character_id = 6444
+
+[node name="route3" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route3"
+metadata/character_id = 6445
+
+[node name="route5" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route5"
+metadata/character_id = 6446
+
+[node name="route2" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route2"
+metadata/character_id = 6447
+
+[node name="route1" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route1"
+metadata/character_id = 6448
+
+[node name="route4" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route4"
+metadata/character_id = 6449
+
+[node name="eDefFlagPlace" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(46, 89)
+scale = Vector2(0.20833, 1.80746)
+metadata/original_instance = "eDefFlagPlace"
+metadata/character_id = 6161

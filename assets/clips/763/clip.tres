@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 763
+total_frames = 1
+rect = Rect2(0, 0, 700, 600)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eBg": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "bMenu": {"kind": "clip", "depth": 30, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 353.7, 556, 1, 1, 1, 1)}, "eLogo": {"kind": "clip", "depth": 40, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.72865, 0, 0, 0.72865, 236.45, 0.7, 1, 1, 1, 1)}, "eText": {"kind": "clip", "depth": 44, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 347, 299.25, 1, 1, 1, 1)}, "eAchievement": {"kind": "clip", "depth": 358, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 640.35, 51.3, 1, 1, 1, 1)}, "eAchievementFinal": {"kind": "clip", "depth": 370, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 561.35, 54.3, 1, 1, 1, 1)}}

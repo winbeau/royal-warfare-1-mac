@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/751/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/751/f0.png" id="front0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 751
+total_frames = 1
+rect = Rect2(-233.9, -211.15, 479.8, 431.15)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-226.4, -102.15)
+back_index = PackedInt32Array(0)
+front_textures = [ExtResource("front0")]
+front_offsets = PackedVector2Array(-86.9, -201.65)
+front_index = PackedInt32Array(0)
+children = {"eMessage": {"kind": "clip", "depth": 3, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -122.9, -13.85, 1, 1, 1, 1)}, "eFb": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -124, 47.15, 1, 1, 1, 1)}, "eMaxGames": {"kind": "clip", "depth": 11, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 13.5, 189.9, 1, 1, 1, 1)}, "eIdenLogo": {"kind": "clip", "depth": 311, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.59207, 0, 0, 1.59207, 2.05, -142.1, 1, 1, 1, 1)}}

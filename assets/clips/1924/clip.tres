@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b2.png" id="back2"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b3.png" id="back3"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b4.png" id="back4"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b5.png" id="back5"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b6.png" id="back6"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b7.png" id="back7"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b8.png" id="back8"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b9.png" id="back9"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b10.png" id="back10"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b11.png" id="back11"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b12.png" id="back12"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b13.png" id="back13"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b14.png" id="back14"]
+[ext_resource type="Texture2D" path="res://assets/clips/1924/b15.png" id="back15"]
+
+[resource]
+script = ExtResource("1")
+character_id = 1924
+total_frames = 31
+rect = Rect2(-36.9, -53.45, 63, 47.2)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2"), ExtResource("back3"), ExtResource("back4"), ExtResource("back5"), ExtResource("back6"), ExtResource("back7"), ExtResource("back8"), ExtResource("back9"), ExtResource("back10"), ExtResource("back11"), ExtResource("back12"), ExtResource("back13"), ExtResource("back14"), ExtResource("back15")]
+back_offsets = PackedVector2Array(-35.9, -53.45, -21.4, -38.95, -15.4, -33.45, -12.4, -30.95, -14.9, -32.95, -18.9, -36.95, -12.4, -31.45, -13.4, -33.45, -14.9, -35.95, -15.9, -38.45, -17.4, -40.45, -18.4, -42.95, -19.4, -45.45, -20.9, -47.95, -22.4, -49.95, -23.4, -52.45)
+back_index = PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)

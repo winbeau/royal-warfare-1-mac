@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/751/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_734.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_738.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_744__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_749.tscn" id="c3"]
+
+[node name="checkClick" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 751
+total_frames = 1
+metadata/character_id = 751
+
+[node name="eMessage" parent="." instance=ExtResource("c0")]
+position = Vector2(-122.9, -13.85)
+metadata/original_instance = "eMessage"
+metadata/character_id = 734
+
+[node name="eFb" parent="." instance=ExtResource("c1")]
+position = Vector2(-124, 47.15)
+metadata/original_instance = "eFb"
+metadata/character_id = 738
+
+[node name="eMaxGames" parent="." instance=ExtResource("c2")]
+position = Vector2(13.5, 189.9)
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 744
+
+[node name="eIdenLogo" parent="." instance=ExtResource("c3")]
+position = Vector2(2.05, -142.1)
+scale = Vector2(1.59207, 1.59207)
+metadata/original_instance = "eIdenLogo"
+metadata/character_id = 749

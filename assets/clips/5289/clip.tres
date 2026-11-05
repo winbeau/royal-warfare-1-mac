@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b2.png" id="back2"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b3.png" id="back3"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b4.png" id="back4"]
+[ext_resource type="Texture2D" path="res://assets/clips/5289/b5.png" id="back5"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5289
+total_frames = 6
+rect = Rect2(-20.25, -29.05, 54.05, 40.45)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2"), ExtResource("back3"), ExtResource("back4"), ExtResource("back5")]
+back_offsets = PackedVector2Array(-8.75, -22.55, -8.25, -22.55, -5.25, -21.05, -5.75, -21.55, -7.25, -22.55, -15.75, -24.05)
+back_index = PackedInt32Array(0, 1, 2, 3, 4, 5)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+scripts = {1: [["stop"]]}

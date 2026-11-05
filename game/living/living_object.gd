@@ -323,36 +323,12 @@ static func _to_int(v: float) -> int:
 		return 0
 	return int(v)
 
-## RWTween 自动加载。经节点树取用而不直接写标识符：--script 模式下测试脚本先于自动加载编译，直接写会编译失败。
-static func _tween() -> Node:
-	return (Engine.get_main_loop() as SceneTree).root.get_node("RWTween")
-
 static func _content() -> Node:
 	return (Engine.get_main_loop() as SceneTree).root.get_node("Content")
 
-## 在 GlobalData.inst 上读写统计字段：同时兼容 snake_case 与原名（A2 的 GlobalData 当前沿用原名）。
-func _g_field(snake: String, camel: String) -> String:
-	return snake if snake in g else camel
-
-func _g_add(snake: String, camel: String, delta: int) -> void:
-	var f := _g_field(snake, camel)
-	g.set(f, int(g.get(f)) + delta)
-
-## BonusCalculator.calculateBonus 返回的 Object：按原名或 snake_case 键读取。
-static func _bonus_get(bonus: Variant, camel: String) -> float:
-	if bonus is Dictionary:
-		if bonus.has(camel):
-			return float(bonus[camel])
-		var snake := ""
-		for ch in camel:
-			if ch == ch.to_upper() and ch != ch.to_lower():
-				snake += "_" + ch.to_lower()
-			else:
-				snake += ch
-		if bonus.has(snake):
-			return float(bonus[snake])
-		return 0.0
-	return float((bonus as Object).get(camel))
+## GlobalData.inst 统计字段累加（字段名 snake_case）。
+func _g_add(field: String, delta: int) -> void:
+	g.set(field, int(g.get(field)) + delta)
 
 # ---------------------------------------------------------------------------------------------
 # 生命周期
@@ -665,14 +641,14 @@ func upgrade(param1: int = -1) -> void:
 			cur_level = param1
 		cur_experience = 0
 		exp_to_next_level = int(a_exp_levels[cur_level - 1])
-		var bonus: Variant = BonusCalculator.calculate_bonus(kind)
-		var bonus_damage: float = _bonus_get(bonus, "bonusDamage")
-		var bonus_hp: float = _bonus_get(bonus, "bonusHP")
-		var bonus_armor_pierce: float = _bonus_get(bonus, "bonusArmorPierce")
-		var bonus_armor: float = _bonus_get(bonus, "bonusArmor")
-		var bonus_resist: float = _bonus_get(bonus, "bonusResist")
-		var bonus_move_speed: float = _bonus_get(bonus, "bonusMoveSpeed")
-		var bonus_magic_pierce: float = _bonus_get(bonus, "bonusMagicPierce")
+		var bonus: Dictionary = BonusCalculator.calculate_bonus(kind)
+		var bonus_damage: float = bonus["bonus_damage"]
+		var bonus_hp: float = bonus["bonus_hp"]
+		var bonus_armor_pierce: float = bonus["bonus_armor_pierce"]
+		var bonus_armor: float = bonus["bonus_armor"]
+		var bonus_resist: float = bonus["bonus_resist"]
+		var bonus_move_speed: float = bonus["bonus_move_speed"]
+		var bonus_magic_pierce: float = bonus["bonus_magic_pierce"]
 		var old_cur_health: int = cur_health
 		var old_health: int = _health
 		health = int(a_health_levels[cur_level - 1] + bonus_hp)
@@ -759,6 +735,12 @@ func clicked(event: RWMouseEvent) -> void:
 				else:
 					GameUniverse.inst.friendly_unit_clicked(self)
 				last_click_time = now
+
+## sens 的包围盒（舞台/全局坐标），对应 Flash 的 sens.hitTestObject 所用的显示对象边界。
+func get_sens_rect() -> Rect2:
+	if sens == null or sens.texture == null:
+		return Rect2(global_position, Vector2.ZERO)
+	return sens.get_global_transform() * sens.get_rect()
 
 ## 点击热区：用 sens 图像的 alpha（> 0）结合单位当前位置判定。stage_point 为舞台（全局）坐标。
 ## sens 是 this 的子节点而不是 sprite 的，原版不随 sprite.scaleX 翻转，这里同样不翻转。
@@ -1789,7 +1771,7 @@ func got_experience(_param1: float) -> void:
 		else:
 			if ui_health_bar.friendly:
 				if cur_level == 2:
-					_g_add("a48_get_elite", "a48_getElite", 1)
+					_g_add("a48_get_elite", 1)
 			if basic_unit == true:
 				upgrade_clicked()
 			elif cur_level < 3:
@@ -1857,12 +1839,12 @@ func bring_damage(param1: int, param2: LivingObject, param3: bool = false, param
 			blood.added_to_stage(sens.position.x - 2 + 4 * RWRandom.rand(), sens.position.y - 5 + 10 * RWRandom.rand(), Callable(), _instance)
 		got_experience(1)
 		if friendly:
-			_g_add("damage_received", "damageReceived", param1)
+			_g_add("damage_received", param1)
 		else:
-			_g_add("damage_dealt", "damageDealt", param1)
+			_g_add("damage_dealt", param1)
 	elif param1 < 0:
 		if friendly:
-			_g_add("num_healed", "numHealed", param1 * -1)
+			_g_add("num_healed", param1 * -1)
 	if cur_health > 0:
 		if cur_health > health:
 			cur_health = health
@@ -1873,7 +1855,7 @@ func bring_damage(param1: int, param2: LivingObject, param3: bool = false, param
 	can_remove_from_units_array = false
 	if ui_health_bar.friendly:
 		if is_npc == false:
-			_g_add("num_soldiers_dead", "numSoldiersDead", 1)
+			_g_add("num_soldiers_dead", 1)
 			MainGameUIEx.inst.hide_has_upgrade_button(_instance)
 		else:
 			GameUniverse.inst.minus_health()
@@ -1882,7 +1864,7 @@ func bring_damage(param1: int, param2: LivingObject, param3: bool = false, param
 	else:
 		if RWRandom.rand() > 0.9:
 			Sounds.inst.play(s.get_sound_from_stack(SoundLibrary.MONSTERS), false, 0, 0.4, position.x, SoundLibrary.MONSTERS)
-		_g_add("num_killed", "numKilled", 1)
+		_g_add("num_killed", 1)
 	if param2 != null:
 		if param2.friendly == true:
 			param2.calculate_death_cost(_instance)
@@ -2019,7 +2001,7 @@ func set_self_destruct() -> void:
 		a_friend_ranged.remove_at(idx)
 	GameUniverse.inst.remove_from_death_array(_instance)
 	unit_removed_from_death_array()
-	_tween().to(sprite, 0.3, {"alpha": 0, "onComplete": unit_remover})
+	RWTween.to(sprite, 0.3, {"alpha": 0, "onComplete": unit_remover})
 	kill_ring()
 
 func unit_removed_from_death_array() -> void:
@@ -2028,7 +2010,7 @@ func unit_removed_from_death_array() -> void:
 func set_selected() -> void:
 	Sounds.inst.play(s.get_sound(SoundLibrary.SELECTION), false, 0, 0.4, position.x, SoundLibrary.SELECTION)
 	selected = true
-	_tween().from(sprite, 0.3, {"scaleY": 0.9})
+	RWTween.from(sprite, 0.3, {"scaleY": 0.9})
 	if ring == null:
 		ring = RingSelectorEx.new(_instance)
 		sprite.add_child(ring)
@@ -2126,7 +2108,7 @@ func reanimate_dead() -> void:
 	reset_current_frame()
 	if friendly:
 		if is_npc == false:
-			_g_add("num_soldiers_dead", "numSoldiersDead", -1)
+			_g_add("num_soldiers_dead", -1)
 		set_stance(STAND)
 	else:
 		set_stance(STAND)
@@ -2705,19 +2687,19 @@ func update_health_bar() -> void:
 # 尺寸 searchRadius * searchRadiusRangedModifier * 2，可见，TweenMax.from(0.2s, width/height 10, Elastic.easeOut)。
 func show_circle() -> void:
 	if ranged_circle != null:
-		_tween().kill_tweens_of(ranged_circle)
+		RWTween.kill_tweens_of(ranged_circle)
 		ranged_circle.modulate.a = 0.6
 		ranged_circle.scale = Vector2.ONE
 		var diameter: float = search_radius * search_radius_ranged_modifier * 2
 		ranged_circle.visible = true
 		_set_circle_size(diameter, diameter)
-		_tween().from(ranged_circle, 0.2, {"width": 10, "height": 10, "ease": RWEase.elastic_ease_out})
+		RWTween.from(ranged_circle, 0.2, {"width": 10, "height": 10, "ease": RWEase.elastic_ease_out})
 
 func hide_circle() -> void:
 	if ranged_circle != null:
-		_tween().kill_tweens_of(ranged_circle)
+		RWTween.kill_tweens_of(ranged_circle)
 		ranged_circle.visible = true
-		_tween().to(ranged_circle, 0.2, {"width": 1, "height": 1, "autoAlpha": 0})
+		RWTween.to(ranged_circle, 0.2, {"width": 1, "height": 1, "autoAlpha": 0})
 
 func set_free_move() -> void:
 	if stand_still == true:

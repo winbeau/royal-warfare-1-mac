@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4730/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4704.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4707.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4710.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4713.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4716.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4719.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4722.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4726.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4729.tscn" id="c8"]
+
+[node name="cntnts" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4730
+total_frames = 1
+metadata/character_id = 4730
+
+[node name="i3" parent="." instance=ExtResource("c0")]
+position = Vector2(1.35, -54.2)
+metadata/original_instance = "i3"
+metadata/character_id = 4704
+
+[node name="i10" parent="." instance=ExtResource("c1")]
+position = Vector2(0.3, 119.55)
+metadata/original_instance = "i10"
+metadata/character_id = 4707
+
+[node name="i8" parent="." instance=ExtResource("c2")]
+position = Vector2(5.05, 75)
+metadata/original_instance = "i8"
+metadata/character_id = 4710
+
+[node name="i9" parent="." instance=ExtResource("c3")]
+position = Vector2(115.45, 76.4)
+metadata/original_instance = "i9"
+metadata/character_id = 4713
+
+[node name="i7" parent="." instance=ExtResource("c4")]
+position = Vector2(-110.6, 74.25)
+metadata/original_instance = "i7"
+metadata/character_id = 4716
+
+[node name="i6" parent="." instance=ExtResource("c5")]
+position = Vector2(71.8, 30.6)
+metadata/original_instance = "i6"
+metadata/character_id = 4719
+
+[node name="i5" parent="." instance=ExtResource("c6")]
+position = Vector2(-59.8, 31.6)
+metadata/original_instance = "i5"
+metadata/character_id = 4722
+
+[node name="i2" parent="." instance=ExtResource("c7")]
+position = Vector2(0.6, -92.75)
+metadata/original_instance = "i2"
+metadata/character_id = 4726
+
+[node name="i4" parent="." instance=ExtResource("c8")]
+position = Vector2(1.25, -10.85)
+metadata/original_instance = "i4"
+metadata/character_id = 4729

@@ -1,6 +1,44 @@
-# STUB: 待移植（P3/P5）
-# 移植自 S/gameCore/projectiles/groundFlagHeal.as，仅声明 LivingObject 实际调用的成员。
+# 移植自 S/gameCore/projectiles/groundFlagHeal.as
 class_name GroundFlagHeal
 extends VisualsTemplate
 
-static var cached_data: SimpleCache
+static var bmp_data: BmpFrames
+static var _cached_data: SimpleCache
+# 原版在 Main.loadResources 中预建；此处首次访问时懒加载（等效）。
+static var cached_data: SimpleCache:
+	get:
+		if _cached_data == null:
+			init_resources()
+		return _cached_data
+	set(v):
+		_cached_data = v
+
+## 对应 Main.as loadResources：groundFlagHeal.bmpData = BmpFrames.createBmpFramesFromMC(healFlagPlaced); groundFlagHeal.cache();
+static func init_resources() -> void:
+	bmp_data = BmpFrames.from_symbol("healFlagPlaced")
+	cache()
+
+static func cache(param1: int = 30) -> void:
+	_cached_data = SimpleCache.new(GroundFlagHeal, param1, true)
+
+func _init() -> void:
+	is_map_flag = true
+
+func on_play_head_end() -> void:
+	cached_data.set_data(_instance)
+	super.on_play_head_end()
+
+func after_added_to_stage() -> void:
+	play_head_stance = STOPPED
+	visible = false
+
+func update() -> void:
+	if play_head_stance == STOPPED:
+		if RWRandom.rand() > 0.4:
+			visible = true
+			play_head_stance = PLAYING
+	super.update()
+
+func init() -> void:
+	bmp_list = bmp_data
+	super.init()

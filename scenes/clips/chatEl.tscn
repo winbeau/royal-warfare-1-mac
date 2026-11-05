@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5315/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/4771_Minion Pro.ttf" id="f4771"]
+
+[node name="chatEl" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5315
+total_frames = 1
+metadata/character_id = 5315
+
+[node name="tText" type="Control" parent="."]
+position = Vector2(-208.75, -7.25)
+scale = Vector2(0.6351, 0.6351)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 504.8, 33.05)
+font = ExtResource("f4771")
+font_face = "Minion Pro"
+font_id = 4771
+font_size = 21
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "Not enough gold to recruit Mage"
+metadata/original_instance = "tText"
+metadata/character_id = 5314

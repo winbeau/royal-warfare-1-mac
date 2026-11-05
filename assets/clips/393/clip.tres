@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/393/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 393
+total_frames = 1
+rect = Rect2(-38.2, -31.95, 75.85, 77.9)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-24.2, -17.45)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eLock": {"kind": "clip", "depth": 16, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.49893, 0, 0, 0.49893, 0, 0, 1, 1, 1, 1)}}

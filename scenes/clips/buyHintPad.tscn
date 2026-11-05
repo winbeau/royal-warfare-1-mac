@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5375/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_357.tscn" id="c0"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5372_Roboto.ttf" id="f5372"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4878.tscn" id="c3"]
+
+[node name="buyHintPad" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5375
+total_frames = 1
+metadata/character_id = 5375
+
+[node name="eBack" parent="." instance=ExtResource("c0")]
+position = Vector2(17.1, -14.95)
+rotation = 3.14159
+scale = Vector2(0.67616, -0.58122)
+metadata/original_instance = "eBack"
+metadata/character_id = 5371
+
+[node name="tName" type="Control" parent="."]
+position = Vector2(-54.75, -13.75)
+scale = Vector2(0.6351, 0.6351)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 115.8, 49.6)
+font = ExtResource("f5372")
+font_face = "Roboto"
+font_id = 5372
+font_size = 17
+color = Color(1, 1, 1, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "Crossbowman"
+metadata/original_instance = "tName"
+metadata/character_id = 5373
+
+[node name="tCost" type="Control" parent="."]
+position = Vector2(-29.1, -1.65)
+scale = Vector2(0.6351, 0.6351)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 49, 28.3)
+font = ExtResource("f5372")
+font_face = "Roboto"
+font_id = 5372
+font_size = 18
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "999"
+metadata/original_instance = "tCost"
+metadata/character_id = 5374
+
+[node name="eCoins" parent="." instance=ExtResource("c3")]
+position = Vector2(-37.65, 5.35)
+scale = Vector2(0.31213, 0.31213)
+metadata/original_instance = "eCoins"
+metadata/character_id = 4878

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6036/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_67.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6033.tscn" id="c1"]
+
+[node name="mapSymbol" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6036
+total_frames = 1
+metadata/character_id = 6036
+
+[node name="eCont" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eCont"
+metadata/character_id = 67
+
+[node name="eMask" parent="." instance=ExtResource("c1")]
+position = Vector2(0, 0)
+metadata/original_instance = "eMask"
+metadata/character_id = 6033

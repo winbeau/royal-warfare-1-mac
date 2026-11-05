@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/4731/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 4731
+total_frames = 1
+rect = Rect2(0, 0, 700, 600)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(40.5, 47.5)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eBg": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "bMore": {"kind": "clip", "depth": 24, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 617.25, 556, 1, 1, 1, 1)}, "bMenu": {"kind": "clip", "depth": 34, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 82.7, 556, 1, 1, 1, 1)}, "bLeft": {"kind": "clip", "depth": 44, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 249, 557, 1, 1, 1, 1)}, "bRight": {"kind": "clip", "depth": 58, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, -1.47247, 0, 0, 1.47247, 449, 557, 1, 1, 1, 1)}, "bContents": {"kind": "clip", "depth": 72, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 349.7, 556, 1, 1, 1, 1)}, "eLogo": {"kind": "clip", "depth": 82, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.72865, 0, 0, 0.72865, 237.45, -0.3, 1, 1, 1, 1)}, "eContent": {"kind": "clip", "depth": 86, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 348.5, 109.35, 1, 1, 1, 1)}, "t1": {"kind": "text", "depth": 153, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 202.8, 170.35, 1, 1, 1, 1)}, "tIco1": {"kind": "clip", "depth": 154, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 354.5, 291.95, 1, 1, 1, 1)}, "tIco2": {"kind": "clip", "depth": 180, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 354.5, 466.95, 1, 1, 1, 1)}, "t2": {"kind": "text", "depth": 206, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 202.8, 342.3, 1, 1, 1, 1)}, "p1": {"kind": "clip", "depth": 207, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.89087, 0, 0, 0.89087, 143.45, 215.95, 1, 1, 1, 1)}, "p2": {"kind": "clip", "depth": 210, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.89087, 0, 0, 0.89087, 145.45, 384.9, 1, 1, 1, 1)}, "eMenu": {"kind": "clip", "depth": 213, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 349.5, 319.95, 1, 1, 1, 1)}, "tPicsCounter": {"kind": "text", "depth": 237, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 576.8, 493.3, 1, 1, 1, 1)}}

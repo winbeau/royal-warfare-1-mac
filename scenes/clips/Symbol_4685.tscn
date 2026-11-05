@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4685/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/upgradePanel_fla_Timeline_40.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2780.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4429.tscn" id="c2"]
+
+[node name="Symbol_4685" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4685
+total_frames = 62
+metadata/character_id = 4685
+
+[node name="eLock" parent="." instance=ExtResource("c0")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eLock"
+metadata/character_id = 294
+
+[node name="ePicCont" parent="." instance=ExtResource("c1")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "ePicCont"
+metadata/character_id = 2780
+
+[node name="ePause" parent="." instance=ExtResource("c2")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "ePause"
+metadata/character_id = 4429

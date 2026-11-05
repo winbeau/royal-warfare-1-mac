@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5668/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5596_Minion Pro.ttf" id="f5596"]
+
+[node name="gotFreeClass" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5668
+total_frames = 1
+metadata/character_id = 5668
+
+[node name="tMore" type="Control" parent="."]
+position = Vector2(-89.15, -10.75)
+script = ExtResource("txt")
+box = Rect2(63.85, -2, 47.1, 24.45)
+font = ExtResource("f5596")
+font_face = "Minion Pro"
+font_id = 5596
+font_size = 13
+color = Color(1, 1, 1, 1)
+align = "center"
+initial_text = "+120"
+metadata/original_instance = "tMore"
+metadata/character_id = 5667

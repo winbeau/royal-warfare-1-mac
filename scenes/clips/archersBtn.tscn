@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5324/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5298.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5161.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5256.tscn" id="c2"]
+
+[node name="archersBtn" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5324
+total_frames = 3
+metadata/character_id = 5324
+
+[node name="eIco" parent="." instance=ExtResource("c0")]
+position = Vector2(1, 5.5)
+scale = Vector2(0.68698, 0.71834)
+metadata/original_instance = "eIco"
+metadata/character_id = 5298
+
+[node name="eLight" parent="." instance=ExtResource("c1")]
+position = Vector2(0.6, 5.8)
+scale = Vector2(0.54099, 0.67273)
+metadata/original_instance = "eLight"
+metadata/character_id = 5161
+
+[node name="eCoolDown" parent="." instance=ExtResource("c2")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eCoolDown"
+metadata/character_id = 5256

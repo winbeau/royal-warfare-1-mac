@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/1292/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 1292
+total_frames = 1
+rect = Rect2(-19, -18, 1025.8, 652.9)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(573, 102)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"bClosebtn": {"kind": "clip", "depth": 2, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 589, 424.95, 1, 1, 1, 1)}, "bRight": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 408, 435.95, 1, 1, 1, 1)}, "bLeft": {"kind": "clip", "depth": 9, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, -1, 0, 0, 1, 269, 436.95, 1, 1, 1, 1)}, "eBg": {"kind": "clip", "depth": 13, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 57.55, 93.65, 1, 1, 1, 1)}, "eContentWarr1": {"kind": "clip", "depth": 20, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 168.95, 103.2, 1, 1, 1, 1)}, "eContentWarr2": {"kind": "clip", "depth": 94, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentGroupsManagement": {"kind": "clip", "depth": 112, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentHireHint": {"kind": "clip", "depth": 148, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentArchers": {"kind": "clip", "depth": 162, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContent_upgrade": {"kind": "clip", "depth": 176, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContent_formation": {"kind": "clip", "depth": 212, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentPriests": {"kind": "clip", "depth": 255, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentMages": {"kind": "clip", "depth": 281, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContent_strike": {"kind": "clip", "depth": 297, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentThieves": {"kind": "clip", "depth": 335, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "eContentSpies": {"kind": "clip", "depth": 355, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 148.95, 103.2, 1, 1, 1, 1)}, "tPicsCounter": {"kind": "text", "depth": 366, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 569.6, 109.55, 1, 1, 1, 1)}}

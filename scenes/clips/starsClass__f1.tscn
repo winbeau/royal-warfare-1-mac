@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5958f1/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_448.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_452.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_453.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5957.tscn" id="c3"]
+
+[node name="starsClass__f1" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5958
+total_frames = 1
+metadata/character_id = 5958
+
+[node name="eOneStar" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "eOneStar"
+metadata/character_id = 5954
+
+[node name="eTwoStars" parent="." instance=ExtResource("c1")]
+position = Vector2(0, 0)
+metadata/original_instance = "eTwoStars"
+metadata/character_id = 5955
+
+[node name="eThreeStars" parent="." instance=ExtResource("c2")]
+position = Vector2(0, 0)
+metadata/original_instance = "eThreeStars"
+metadata/character_id = 5956
+
+[node name="eDelete" parent="." instance=ExtResource("c3")]
+position = Vector2(0, 0)
+metadata/original_instance = "eDelete"
+metadata/character_id = 5957

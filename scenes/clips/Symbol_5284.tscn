@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5284/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_305__f1.tscn" id="c0"]
+
+[node name="Symbol_5284" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5284
+total_frames = 1
+metadata/character_id = 5284
+
+[node name="eIco" parent="." instance=ExtResource("c0")]
+position = Vector2(1.2, 27.4)
+scale = Vector2(0.87511, 0.87511)
+metadata/original_instance = "eIco"
+metadata/character_id = 5281

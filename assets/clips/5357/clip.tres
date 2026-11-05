@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5357
+total_frames = 1
+rect = Rect2(-227.5, -420.2, 735.95, 643.95)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eBlack": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -220.5, -413.2, 1, 1, 1, 1)}, "eBg": {"kind": "clip", "depth": 3, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -36.05, -133.45, 1, 1, 1, 1)}, "eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.57475, 0, 0, 0.57475, 16.55, -87.95, 1, 1, 1, 1)}, "tClickToCont": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 281.2, 25.25, 1, 1, 1, 0.67188)}, "tText": {"kind": "text", "depth": 9, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -22, -46.45, 1, 1, 1, 1)}, "eAlternateTextContent": {"kind": "clip", "depth": 10, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -23, -49.7, 1, 1, 1, 1)}, "clickSens": {"kind": "clip", "depth": 12, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 150, -10.75, 1, 1, 1, 1)}}

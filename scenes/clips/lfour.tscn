@@ -1,0 +1,90 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/3247/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3181.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3184.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3195.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3202.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3206.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3215.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3221.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3222.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3226.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3231.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3234.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3240.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3246.tscn" id="c12"]
+
+[node name="lfour" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 3247
+total_frames = 1
+metadata/character_id = 3247
+
+[node name="ePlasksBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "ePlasksBg"
+metadata/character_id = 3181
+
+[node name="a2" parent="." instance=ExtResource("c1")]
+position = Vector2(236.95, 14.2)
+metadata/original_instance = "a2"
+metadata/character_id = 3184
+
+[node name="a5" parent="." instance=ExtResource("c2")]
+position = Vector2(236.9, 116.9)
+metadata/original_instance = "a5"
+metadata/character_id = 3195
+
+[node name="a11" parent="." instance=ExtResource("c3")]
+position = Vector2(237.25, 322.7)
+metadata/original_instance = "a11"
+metadata/character_id = 3202
+
+[node name="a9" parent="." instance=ExtResource("c4")]
+position = Vector2(463.6, 220.45)
+metadata/original_instance = "a9"
+metadata/character_id = 3206
+
+[node name="a8" parent="." instance=ExtResource("c5")]
+position = Vector2(236.95, 220.7)
+metadata/original_instance = "a8"
+metadata/character_id = 3215
+
+[node name="a1" parent="." instance=ExtResource("c6")]
+position = Vector2(12.45, 14.5)
+metadata/original_instance = "a1"
+metadata/character_id = 3221
+
+[node name="a6" parent="." instance=ExtResource("c7")]
+position = Vector2(463.65, 117)
+metadata/original_instance = "a6"
+metadata/character_id = 3222
+
+[node name="a10" parent="." instance=ExtResource("c8")]
+position = Vector2(12.75, 322.85)
+metadata/original_instance = "a10"
+metadata/character_id = 3226
+
+[node name="a3" parent="." instance=ExtResource("c9")]
+position = Vector2(463.65, 14.35)
+metadata/original_instance = "a3"
+metadata/character_id = 3231
+
+[node name="a4" parent="." instance=ExtResource("c10")]
+position = Vector2(12.7, 116.75)
+metadata/original_instance = "a4"
+metadata/character_id = 3234
+
+[node name="a7" parent="." instance=ExtResource("c11")]
+position = Vector2(12.8, 220.25)
+metadata/original_instance = "a7"
+metadata/character_id = 3240
+
+[node name="a12" parent="." instance=ExtResource("c12")]
+position = Vector2(463.75, 323.15)
+metadata/original_instance = "a12"
+metadata/character_id = 3246

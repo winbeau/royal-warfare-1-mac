@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6409/clip.tres" id="data"]
+
+[node name="level_river_bridge" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6409
+total_frames = 1
+metadata/character_id = 6409
+
+[node name="obstacle" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "obstacle"
+metadata/character_id = 6402
+
+[node name="route0" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route0"
+metadata/character_id = 6403
+
+[node name="route3" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route3"
+metadata/character_id = 6404
+
+[node name="route2" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route2"
+metadata/character_id = 6405
+
+[node name="route1" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route1"
+metadata/character_id = 6406
+
+[node name="eDefFlagPlace" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(661.95, 190.45)
+scale = Vector2(0.20833, 1.72205)
+metadata/original_instance = "eDefFlagPlace"
+metadata/character_id = 6161
+
+[node name="eObstacleWP" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "eObstacleWP"
+metadata/character_id = 6407
+
+[node name="route4" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route4"
+metadata/character_id = 6408

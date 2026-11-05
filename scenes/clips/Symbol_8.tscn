@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/8/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/6_Minion Pro Med.ttf" id="f6"]
+
+[node name="Symbol_8" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 8
+total_frames = 1
+metadata/character_id = 8
+
+[node name="tText" type="Control" parent="."]
+position = Vector2(-172, 23)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 351, 95.95)
+font = ExtResource("f6")
+font_face = "Minion Pro Med"
+font_id = 6
+font_size = 26
+color = Color(1, 1, 1, 1)
+align = "center"
+leading = -3
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Loading..."
+metadata/original_instance = "tText"
+metadata/character_id = 7

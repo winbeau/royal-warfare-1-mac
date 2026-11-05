@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/6589/b0.png" id="back0"]
+
+[resource]
+script = ExtResource("1")
+character_id = 6589
+total_frames = 1
+rect = Rect2(-49, -23.5, 829.7, 665)
+back_textures = [ExtResource("back0")]
+back_offsets = PackedVector2Array(-16, -2.5)
+back_index = PackedInt32Array(0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"route0": {"kind": "guide", "depth": 24, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "obstacle": {"kind": "guide", "depth": 42, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "eDefFlagPlace": {"kind": "guide", "depth": 44, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.20833, 0, 0, 1.19763, 655.95, 195.95, 1, 1, 1, 1)}, "eObstacleWP": {"kind": "guide", "depth": 46, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route1": {"kind": "guide", "depth": 154, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route2": {"kind": "guide", "depth": 172, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route4": {"kind": "guide", "depth": 192, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route5": {"kind": "guide", "depth": 208, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "route3": {"kind": "guide", "depth": 228, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}

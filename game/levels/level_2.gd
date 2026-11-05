@@ -87,7 +87,7 @@ func upgrade_sign_showed() -> void:
 		is_upgrade_hint_shown = true
 		MainGameUIEx.inst.select_next_unit_with_upgrade()
 		# TweenMax.delayedCall；经节点路径取 RWTween 自动加载，使 --script/--check-only 模式下也能解析本文件。
-		(Engine.get_main_loop() as SceneTree).root.get_node("RWTween").delayed_call(0.3, call_hint_upgrade)
+		RWTween.delayed_call(0.3, call_hint_upgrade)
 
 func call_hint_upgrade() -> void:
 	Main.inst.add_tutorial(6)

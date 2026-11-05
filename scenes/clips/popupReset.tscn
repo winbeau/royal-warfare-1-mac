@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6012/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5987__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6009__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6011__f1.tscn" id="c2"]
+
+[node name="popupReset" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6012
+total_frames = 1
+metadata/character_id = 6012
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(-217.85, -133.2)
+metadata/original_instance = "eBg"
+metadata/character_id = 5987
+
+[node name="bClose" parent="." instance=ExtResource("c1")]
+position = Vector2(67.85, 14.45)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bClose"
+metadata/character_id = 6009
+
+[node name="bReset" parent="." instance=ExtResource("c2")]
+position = Vector2(-67.8, 14.45)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bReset"
+metadata/character_id = 6011

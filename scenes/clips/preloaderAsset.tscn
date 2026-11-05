@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/47/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_8.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_11__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/prelBarAsset.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_19__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_29.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/preloaderScreen_fla_Timeline_16__f1.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/preloaderScreen_fla_Timeline_19__f1.tscn" id="c6"]
+
+[node name="preloaderAsset" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 47
+total_frames = 1
+metadata/character_id = 47
+
+[node name="tLoadingText" parent="." instance=ExtResource("c0")]
+position = Vector2(349, 411.9)
+metadata/original_instance = "tLoadingText"
+metadata/character_id = 8
+
+[node name="eMainLogo" parent="." instance=ExtResource("c1")]
+position = Vector2(206.35, 209)
+scale = Vector2(0.96001, 0.96001)
+metadata/original_instance = "eMainLogo"
+metadata/character_id = 11
+
+[node name="bPrelBar" parent="." instance=ExtResource("c2")]
+position = Vector2(138.9, 548.3)
+scale = Vector2(1.15398, 1.15398)
+metadata/original_instance = "bPrelBar"
+metadata/character_id = 17
+
+[node name="bPlayCoords" parent="." instance=ExtResource("c3")]
+position = Vector2(350.1, 456.9)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bPlayCoords"
+metadata/character_id = 19
+
+[node name="eMaxLogo" parent="." instance=ExtResource("c4")]
+position = Vector2(357.55, 164.1)
+metadata/original_instance = "eMaxLogo"
+metadata/character_id = 29
+
+[node name="bSound" parent="." instance=ExtResource("c5")]
+position = Vector2(55.75, 64.05)
+metadata/original_instance = "bSound"
+metadata/character_id = 39
+
+[node name="bMusic" parent="." instance=ExtResource("c6")]
+position = Vector2(54.65, 110.15)
+metadata/original_instance = "bMusic"
+metadata/character_id = 46

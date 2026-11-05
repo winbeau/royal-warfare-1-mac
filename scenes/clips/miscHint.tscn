@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5383/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5379.tscn" id="c0"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5372_Roboto.ttf" id="f5372"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5382.tscn" id="c2"]
+
+[node name="miscHint" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5383
+total_frames = 1
+metadata/character_id = 5383
+
+[node name="eBack" parent="." instance=ExtResource("c0")]
+position = Vector2(-55.75, -36.6)
+metadata/original_instance = "eBack"
+metadata/character_id = 5379
+
+[node name="tText" type="Control" parent="."]
+position = Vector2(-87.5, -31.4)
+scale = Vector2(0.6351, 0.6351)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 165.35, 28.3)
+font = ExtResource("f5372")
+font_face = "Roboto"
+font_id = 5372
+font_size = 16
+color = Color(1, 1, 1, 1)
+align = "center"
+leading = -2
+multiline = true
+word_wrap = true
+is_html = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "<p align=\"center\"><font face=\"Roboto\" size=\"16\" color=\"#ffffff\" letterSpacing=\"0.000000\" kerning=\"0\">&lt;b&gt;bold&lt;/b&gt;</font></p>"
+metadata/original_instance = "tText"
+metadata/character_id = 5380
+
+[node name="eBottom" parent="." instance=ExtResource("c2")]
+position = Vector2(-55.75, -10.8)
+metadata/original_instance = "eBottom"
+metadata/character_id = 5382

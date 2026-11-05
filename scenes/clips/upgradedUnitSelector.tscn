@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4843/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4810.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4812__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_22__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4833.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4833.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4841.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4842.tscn" id="c6"]
+
+[node name="upgradedUnitSelector" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4843
+total_frames = 1
+metadata/character_id = 4843
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(-39.95, -84.25)
+metadata/original_instance = "eBg"
+metadata/character_id = 4810
+
+[node name="bClose" parent="." instance=ExtResource("c1")]
+position = Vector2(-1.75, -74.25)
+scale = Vector2(1.91142, 1.91142)
+metadata/original_instance = "bClose"
+metadata/character_id = 4812
+
+[node name="eSelector" parent="." instance=ExtResource("c2")]
+position = Vector2(-2.85, -10.9)
+scale = Vector2(1.91142, 1.91142)
+metadata/original_instance = "eSelector"
+metadata/character_id = 4831
+
+[node name="bTop" parent="." instance=ExtResource("c3")]
+position = Vector2(0.7, -35.05)
+scale = Vector2(1.11765, 1)
+metadata/original_instance = "bTop"
+metadata/character_id = 4833
+
+[node name="bDown" parent="." instance=ExtResource("c4")]
+position = Vector2(0.7, 11.95)
+scale = Vector2(1.11765, 1)
+metadata/original_instance = "bDown"
+metadata/character_id = 4833
+
+[node name="eUpgradeNotAllowedBottom" parent="." instance=ExtResource("c5")]
+position = Vector2(-0.4, -12.2)
+metadata/original_instance = "eUpgradeNotAllowedBottom"
+metadata/character_id = 4841
+
+[node name="eUpgradeNotAllowedTop" parent="." instance=ExtResource("c6")]
+position = Vector2(-0.4, -12.2)
+metadata/original_instance = "eUpgradeNotAllowedTop"
+metadata/character_id = 4842

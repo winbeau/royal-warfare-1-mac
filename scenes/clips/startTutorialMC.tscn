@@ -1,0 +1,128 @@
+[gd_scene load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/1292/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1021__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1030__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1030__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1033.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1075.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1095.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1115.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1128.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1145.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1177.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1207.tscn" id="c10"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1219.tscn" id="c11"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1252.tscn" id="c12"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1266.tscn" id="c13"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1283.tscn" id="c14"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1289.tscn" id="c15"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+
+[node name="startTutorialMC" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 1292
+total_frames = 1
+metadata/character_id = 1292
+
+[node name="bClosebtn" parent="." instance=ExtResource("c0")]
+position = Vector2(589, 424.95)
+metadata/original_instance = "bClosebtn"
+metadata/character_id = 1021
+
+[node name="bRight" parent="." instance=ExtResource("c1")]
+position = Vector2(408, 435.95)
+metadata/original_instance = "bRight"
+metadata/character_id = 1030
+
+[node name="bLeft" parent="." instance=ExtResource("c2")]
+position = Vector2(269, 436.95)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/original_instance = "bLeft"
+metadata/character_id = 1030
+
+[node name="eBg" parent="." instance=ExtResource("c3")]
+position = Vector2(57.55, 93.65)
+metadata/original_instance = "eBg"
+metadata/character_id = 1033
+
+[node name="eContentWarr1" parent="." instance=ExtResource("c4")]
+position = Vector2(168.95, 103.2)
+metadata/original_instance = "eContentWarr1"
+metadata/character_id = 1075
+
+[node name="eContentWarr2" parent="." instance=ExtResource("c5")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentWarr2"
+metadata/character_id = 1095
+
+[node name="eContentGroupsManagement" parent="." instance=ExtResource("c6")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentGroupsManagement"
+metadata/character_id = 1115
+
+[node name="eContentHireHint" parent="." instance=ExtResource("c7")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentHireHint"
+metadata/character_id = 1128
+
+[node name="eContentArchers" parent="." instance=ExtResource("c8")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentArchers"
+metadata/character_id = 1145
+
+[node name="eContent_upgrade" parent="." instance=ExtResource("c9")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContent_upgrade"
+metadata/character_id = 1177
+
+[node name="eContent_formation" parent="." instance=ExtResource("c10")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContent_formation"
+metadata/character_id = 1207
+
+[node name="eContentPriests" parent="." instance=ExtResource("c11")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentPriests"
+metadata/character_id = 1219
+
+[node name="eContentMages" parent="." instance=ExtResource("c12")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentMages"
+metadata/character_id = 1252
+
+[node name="eContent_strike" parent="." instance=ExtResource("c13")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContent_strike"
+metadata/character_id = 1266
+
+[node name="eContentThieves" parent="." instance=ExtResource("c14")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentThieves"
+metadata/character_id = 1283
+
+[node name="eContentSpies" parent="." instance=ExtResource("c15")]
+position = Vector2(148.95, 103.2)
+metadata/original_instance = "eContentSpies"
+metadata/character_id = 1289
+
+[node name="tPicsCounter" type="Control" parent="."]
+position = Vector2(569.6, 109.55)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 71.4, 25.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 16
+color = Color(1, 1, 1, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "10 / 10"
+metadata/original_instance = "tPicsCounter"
+metadata/character_id = 1291

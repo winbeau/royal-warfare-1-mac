@@ -4,6 +4,7 @@ extends SceneTree
 var checks := 0
 var failures: Array = []
 var skipped: Array = []
+var _made: Array = []
 
 func check(ok: bool, message: String) -> void:
 	checks += 1
@@ -28,6 +29,7 @@ func run() -> void:
 	test_battle_slots()
 	test_waves()
 	test_helpers()
+	GameUniverse.free_statics()
 	print(JSON.stringify({"checks": checks, "failures": failures, "skipped": skipped}))
 	quit(0 if failures.is_empty() else 1)
 
@@ -135,6 +137,7 @@ func make_unit(x: float, y: float) -> FakeUnit:
 	var u := FakeUnit.new()
 	u.position = Vector2(x, y)
 	u.cur_health = 10
+	_made.append(u)
 	return u
 
 func test_battle_slots() -> void:
@@ -177,8 +180,11 @@ func test_battle_slots() -> void:
 	# 替换攻击者槽
 	b2.update_defender_coordinates()
 	check(b2.rt.dest == Vector2(326, 208), "update_defender_coordinates re-targets rt")
-	for n in [d, a1, extra, d2, r1]:
+	for n in _made:
 		n.free()
+	_made.clear()
+	b._instance = null  # 打破自引用环
+	b2._instance = null
 
 func test_waves() -> void:
 	var path := "res://game/levels/level_template.gd"

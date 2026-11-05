@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=29 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b2.png" id="back2"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b3.png" id="back3"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b4.png" id="back4"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b5.png" id="back5"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b6.png" id="back6"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b7.png" id="back7"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b8.png" id="back8"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b9.png" id="back9"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b10.png" id="back10"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b11.png" id="back11"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b12.png" id="back12"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b13.png" id="back13"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b14.png" id="back14"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b15.png" id="back15"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b16.png" id="back16"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b17.png" id="back17"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b18.png" id="back18"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b19.png" id="back19"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b20.png" id="back20"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b21.png" id="back21"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b22.png" id="back22"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b23.png" id="back23"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b24.png" id="back24"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b25.png" id="back25"]
+[ext_resource type="Texture2D" path="res://assets/clips/5955/b26.png" id="back26"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5955
+total_frames = 49
+rect = Rect2(-41.55, -31, 83.1, 62)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2"), ExtResource("back3"), ExtResource("back4"), ExtResource("back5"), ExtResource("back6"), ExtResource("back7"), ExtResource("back8"), ExtResource("back9"), ExtResource("back10"), ExtResource("back11"), ExtResource("back12"), ExtResource("back13"), ExtResource("back14"), ExtResource("back15"), ExtResource("back16"), ExtResource("back17"), ExtResource("back18"), ExtResource("back19"), ExtResource("back20"), ExtResource("back21"), ExtResource("back22"), ExtResource("back23"), ExtResource("back24"), ExtResource("back25"), ExtResource("back26")]
+back_offsets = PackedVector2Array(-28.05, -26.5, -27.05, -26, -25.05, -24.5, -23.55, -23, -23.55, -22, -22.05, -21, -20.05, -19.5, -20.05, -19, -18.55, -17.5, -18.05, -17, -17.55, -16.5, -16.05, -15, -15.55, -15, -15.55, -15, -15.55, -14.5, -14.55, -14, -14.55, -14, -15.05, -14, -16.05, -14, -18.05, -14, -21.05, -14, -24.05, -14, -27.55, -14, -30.55, -14, -33.05, -14, -34.05, -14, -34.55, -14)
+back_index = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+scripts = {49: [["stop"]]}

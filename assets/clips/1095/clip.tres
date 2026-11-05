@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/1095/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/1095/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/1095/b2.png" id="back2"]
+
+[resource]
+script = ExtResource("1")
+character_id = 1095
+total_frames = 3
+rect = Rect2(-71.4, 17, 599.5, 282.45)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2")]
+back_offsets = PackedVector2Array(-40.4, 24.5, -28.9, 25, -44.4, 25)
+back_index = PackedInt32Array(0, 1, 2)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1)

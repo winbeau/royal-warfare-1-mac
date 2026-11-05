@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/2301/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_2297.tscn" id="c0"]
+
+[node name="maxgLogoIntro" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 2301
+total_frames = 546
+metadata/character_id = 2301
+
+[node name="eIdenLogo" parent="." instance=ExtResource("c0")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eIdenLogo"
+metadata/character_id = 2297

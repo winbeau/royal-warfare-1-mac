@@ -97,3 +97,10 @@ func enable_archers_button() -> void:
 func update_b_archers_cooldown(_status: int) -> void:
 	pass
 
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		if e_fader != null and is_instance_valid(e_fader) and e_fader.get_parent() == null:
+			e_fader.free()
+		if inst == self:
+			inst = null

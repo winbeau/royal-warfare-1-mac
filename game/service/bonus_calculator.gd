@@ -1,10 +1,10 @@
 # 移植自 S/gameCore/serviceUtils/bonusCalculator.as
 # 兵种加点加成：从 StoredData 的 NUMPAN_UNIT_BONUSES 读两个等级（每个职业 2 个槽位：[伤害槽, 生命槽]），
-# 返回 bonusDamage / bonusHP / bonusArmorPierce / bonusArmor / bonusResist / bonusMagicPierce / bonusMoveSpeed。
+# 返回 bonus_damage / bonus_hp / bonus_armor_pierce / bonus_armor / bonus_resist / bonus_magic_pierce / bonus_move_speed。
 #
 # 原版是逐兵种的 switch，每个兵种有 3 级伤害加点（1 级、2 级相同，3 级更高）和 3 级生命加点：
-#   伤害槽：1 级 -> bonusDamage = d1；2 级 -> bonusDamage = d1 且 extra = e2；3 级 -> bonusDamage = d3 且 extra = e3
-#   生命槽：同理，作用于 bonusHP 与另一项 extra
+#   伤害槽：1 级 -> bonus_damage = d1；2 级 -> bonus_damage = d1 且 extra = e2；3 级 -> bonus_damage = d3 且 extra = e3
+#   生命槽：同理，作用于 bonus_hp 与另一项 extra
 # 本文件把 switch 压缩为数据表 TABLE（由原文件逐分支机械提取并核对：每个兵种都满足“2 级主值同 1 级”）。
 # 表项：[d1, d3, 伤害 extra 键, e2, e3, h1, h3, 生命 extra 键, e2, e3]
 # 偏离：原版 FR_ASSASIN 末分支的 `while(_loc12_ == 3){...break;}` 等价于 if，已按此处理。
@@ -12,21 +12,21 @@ class_name BonusCalculator
 extends RefCounted
 
 static var TABLE: Dictionary = {
-	LivingObject.FR_WARRIOR: [1, 2, "bonusArmorPierce", 0.1, 0.15,  10, 20, "bonusArmor", 0.1, 0.15],
-	LivingObject.FR_SWORDMASTER: [2, 3, "bonusArmorPierce", 0.1, 0.15,  15, 30, "bonusArmor", 0.1, 0.15],
-	LivingObject.FR_KNIGHT: [2, 4, "bonusArmorPierce", 0.1, 0.15,  20, 40, "bonusArmor", 0.1, 0.15],
-	LivingObject.FR_ARCHER: [1, 2, "bonusArmorPierce", 0.1, 0.15,  5, 10, "bonusMoveSpeed", 0.1, 0.15],
-	LivingObject.FR_CROSSBOW: [3, 4, "bonusArmorPierce", 0.1, 0.2,  15, 30, "bonusArmor", 0.1, 0.15],
-	LivingObject.FR_SNIPER: [1, 2, "bonusArmorPierce", 0.1, 0.15,  10, 20, "bonusMoveSpeed", 0.1, 0.15],
-	LivingObject.FR_BLUEMAGE: [2, 4, "bonusMagicPierce", 0.1, 0.15,  5, 10, "bonusResist", 0.1, 0.2],
-	LivingObject.FR_REDMAGE: [3, 5, "bonusMagicPierce", 0.1, 0.2,  10, 20, "bonusResist", 0.1, 0.15],
-	LivingObject.FR_BLACKMAGE: [4, 6, "bonusMagicPierce", 0.1, 0.15,  10, 20, "bonusResist", 0.1, 0.15],
-	LivingObject.FR_PRIEST: [1, 2, "bonusMoveSpeed", 0.1, 0.15,  5, 10, "bonusResist", 0.1, 0.2],
-	LivingObject.FR_HEALER: [2, 4, "bonusMoveSpeed", 0.1, 0.15,  10, 20, "bonusResist", 0.1, 0.15],
-	LivingObject.FR_BLESSER: [2, 3, "bonusMoveSpeed", 0.1, 0.15,  10, 20, "bonusResist", 0.1, 0.15],
-	LivingObject.FR_ROGUE: [1, 2, "bonusArmorPierce", 0.1, 0.15,  7, 15, "bonusMoveSpeed", 0.1, 0.15],
-	LivingObject.FR_SABOTEUR: [2, 3, "bonusArmorPierce", 0.1, 0.15,  10, 20, "bonusMoveSpeed", 0.1, 0.15],
-	LivingObject.FR_ASSASIN: [2, 4, "bonusArmorPierce", 0.1, 0.15,  10, 20, "bonusMoveSpeed", 0.1, 0.15],
+	LivingObject.FR_WARRIOR: [1, 2, "bonus_armor_pierce", 0.1, 0.15,  10, 20, "bonus_armor", 0.1, 0.15],
+	LivingObject.FR_SWORDMASTER: [2, 3, "bonus_armor_pierce", 0.1, 0.15,  15, 30, "bonus_armor", 0.1, 0.15],
+	LivingObject.FR_KNIGHT: [2, 4, "bonus_armor_pierce", 0.1, 0.15,  20, 40, "bonus_armor", 0.1, 0.15],
+	LivingObject.FR_ARCHER: [1, 2, "bonus_armor_pierce", 0.1, 0.15,  5, 10, "bonus_move_speed", 0.1, 0.15],
+	LivingObject.FR_CROSSBOW: [3, 4, "bonus_armor_pierce", 0.1, 0.2,  15, 30, "bonus_armor", 0.1, 0.15],
+	LivingObject.FR_SNIPER: [1, 2, "bonus_armor_pierce", 0.1, 0.15,  10, 20, "bonus_move_speed", 0.1, 0.15],
+	LivingObject.FR_BLUEMAGE: [2, 4, "bonus_magic_pierce", 0.1, 0.15,  5, 10, "bonus_resist", 0.1, 0.2],
+	LivingObject.FR_REDMAGE: [3, 5, "bonus_magic_pierce", 0.1, 0.2,  10, 20, "bonus_resist", 0.1, 0.15],
+	LivingObject.FR_BLACKMAGE: [4, 6, "bonus_magic_pierce", 0.1, 0.15,  10, 20, "bonus_resist", 0.1, 0.15],
+	LivingObject.FR_PRIEST: [1, 2, "bonus_move_speed", 0.1, 0.15,  5, 10, "bonus_resist", 0.1, 0.2],
+	LivingObject.FR_HEALER: [2, 4, "bonus_move_speed", 0.1, 0.15,  10, 20, "bonus_resist", 0.1, 0.15],
+	LivingObject.FR_BLESSER: [2, 3, "bonus_move_speed", 0.1, 0.15,  10, 20, "bonus_resist", 0.1, 0.15],
+	LivingObject.FR_ROGUE: [1, 2, "bonus_armor_pierce", 0.1, 0.15,  7, 15, "bonus_move_speed", 0.1, 0.15],
+	LivingObject.FR_SABOTEUR: [2, 3, "bonus_armor_pierce", 0.1, 0.15,  10, 20, "bonus_move_speed", 0.1, 0.15],
+	LivingObject.FR_ASSASIN: [2, 4, "bonus_armor_pierce", 0.1, 0.15,  10, 20, "bonus_move_speed", 0.1, 0.15],
 }
 
 
@@ -47,8 +47,8 @@ static func _slots(kind: int) -> Array:
 
 static func calculate_bonus(param1: int) -> Dictionary:
 	var result := {
-		"bonusDamage": 0.0, "bonusHP": 0.0, "bonusArmorPierce": 0.0, "bonusArmor": 0.0,
-		"bonusResist": 0.0, "bonusMagicPierce": 0.0, "bonusMoveSpeed": 0.0,
+		"bonus_damage": 0.0, "bonus_hp": 0.0, "bonus_armor_pierce": 0.0, "bonus_armor": 0.0,
+		"bonus_resist": 0.0, "bonus_magic_pierce": 0.0, "bonus_move_speed": 0.0,
 	}
 	var bonuses: Array = (StoredData.local_game_data[StoredData.NUMPAN_UNIT_BONUSES] as Array).duplicate()
 	var slots := _slots(param1)
@@ -61,19 +61,19 @@ static func calculate_bonus(param1: int) -> Dictionary:
 		return result
 	var t: Array = TABLE[param1]
 	if lvl_dmg == 1:
-		result["bonusDamage"] = float(t[0])
+		result["bonus_damage"] = float(t[0])
 	if lvl_dmg == 2:
-		result["bonusDamage"] = float(t[0])
+		result["bonus_damage"] = float(t[0])
 		result[t[2]] = t[3]
 	if lvl_dmg == 3:
-		result["bonusDamage"] = float(t[1])
+		result["bonus_damage"] = float(t[1])
 		result[t[2]] = t[4]
 	if lvl_hp == 1:
-		result["bonusHP"] = float(t[5])
+		result["bonus_hp"] = float(t[5])
 	if lvl_hp == 2:
-		result["bonusHP"] = float(t[5])
+		result["bonus_hp"] = float(t[5])
 		result[t[7]] = t[8]
 	if lvl_hp == 3:
-		result["bonusHP"] = float(t[6])
+		result["bonus_hp"] = float(t[6])
 		result[t[7]] = t[9]
 	return result

@@ -1,0 +1,182 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4699/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/268_Minion Pro.ttf" id="f268"]
+
+[node name="tutorialHintsPad" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4699
+total_frames = 1
+metadata/character_id = 4699
+
+[node name="tHealth" type="Control" parent="."]
+position = Vector2(-208, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 44, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tHealth"
+metadata/character_id = 4688
+
+[node name="tShootDam" type="Control" parent="."]
+position = Vector2(-53.5, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 40.5, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tShootDam"
+metadata/character_id = 4689
+
+[node name="tSpeed" type="Control" parent="."]
+position = Vector2(-125.75, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 42.75, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tSpeed"
+metadata/character_id = 4690
+
+[node name="tShootSpeed" type="Control" parent="."]
+position = Vector2(24.25, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 41.75, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tShootSpeed"
+metadata/character_id = 4691
+
+[node name="tDam" type="Control" parent="."]
+position = Vector2(-53, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 37, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tDam"
+metadata/character_id = 4692
+
+[node name="tAtSpd" type="Control" parent="."]
+position = Vector2(23.4, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 42.6, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tAtSpd"
+metadata/character_id = 4693
+
+[node name="tProtection" type="Control" parent="."]
+position = Vector2(165.6, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.4, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tProtection"
+metadata/character_id = 4694
+
+[node name="tPierce" type="Control" parent="."]
+position = Vector2(94.5, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.5, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tPierce"
+metadata/character_id = 4695
+
+[node name="tMagicPierce" type="Control" parent="."]
+position = Vector2(95.2, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 41.8, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tMagicPierce"
+metadata/character_id = 4696
+
+[node name="tArmor" type="Control" parent="."]
+position = Vector2(164.4, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 42.6, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tArmor"
+metadata/character_id = 4693
+
+[node name="tCost" type="Control" parent="."]
+position = Vector2(-208.05, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 48.05, 40)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "9999g"
+metadata/original_instance = "tCost"
+metadata/character_id = 4697
+
+[node name="tAccuracy" type="Control" parent="."]
+position = Vector2(-125.45, 2.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.45, 27.15)
+font = ExtResource("f268")
+font_face = "Minion Pro"
+font_id = 268
+font_size = 17
+color = Color(0.2, 0.2, 0.2, 1)
+align = "left"
+initial_text = "999"
+metadata/original_instance = "tAccuracy"
+metadata/character_id = 4698

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 3109
+total_frames = 1
+rect = Rect2(-59.9, -59.9, 771.45, 528.2)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"ePlasksBg": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "a2": {"kind": "clip", "depth": 399, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 237.05, 14.5, 1, 1, 1, 1)}, "a1": {"kind": "clip", "depth": 401, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 12.7, 14.75, 1, 1, 1, 1)}, "a3": {"kind": "clip", "depth": 403, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 463.35, 14.8, 1, 1, 1, 1)}, "a4": {"kind": "clip", "depth": 405, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 12.8, 117.3, 1, 1, 1, 1)}, "a5": {"kind": "clip", "depth": 407, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 236.8, 117.35, 1, 1, 1, 1)}, "a6": {"kind": "clip", "depth": 409, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 463.55, 117.25, 1, 1, 1, 1)}, "a7": {"kind": "clip", "depth": 411, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 12.45, 220.25, 1, 1, 1, 1)}, "a8": {"kind": "clip", "depth": 413, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 237.15, 220.3, 1, 1, 1, 1)}, "a10": {"kind": "clip", "depth": 415, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 12.4, 322.85, 1, 1, 1, 1)}, "a11": {"kind": "clip", "depth": 417, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 237.15, 322.85, 1, 1, 1, 1)}, "a12": {"kind": "clip", "depth": 419, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 463.45, 322.85, 1, 1, 1, 1)}, "a9": {"kind": "clip", "depth": 421, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 463.35, 220.2, 1, 1, 1, 1)}}

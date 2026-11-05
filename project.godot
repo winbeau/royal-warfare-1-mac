@@ -18,7 +18,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 Content="*res://game/content.gd"
-RWTween="*res://game/rw/rw_tween.gd"
+RWTweenRunner="*res://game/rw/rw_tween.gd"
 SoundSystem="*res://game/rw/sounds.gd"
 
 [display]

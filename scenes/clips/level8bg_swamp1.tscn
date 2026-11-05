@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6141/clip.tres" id="data"]
+
+[node name="level8bg_swamp1" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6141
+total_frames = 1
+metadata/character_id = 6141
+
+[node name="route0" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route0"
+metadata/character_id = 6131
+
+[node name="route2" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route2"
+metadata/character_id = 6134
+
+[node name="route4" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route4"
+metadata/character_id = 6135
+
+[node name="route1" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route1"
+metadata/character_id = 6136
+
+[node name="route3" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "route3"
+metadata/character_id = 6137
+
+[node name="obstacle" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "obstacle"
+metadata/character_id = 6139
+
+[node name="eObstacleWP" type="Control" parent="."]
+visible = false
+mouse_filter = 2
+position = Vector2(0, 0)
+metadata/original_instance = "eObstacleWP"
+metadata/character_id = 6140

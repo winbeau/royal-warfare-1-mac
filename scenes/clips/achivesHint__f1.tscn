@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/3259f1/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3258__f1.tscn" id="c1"]
+
+[node name="achivesHint__f1" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 3259
+total_frames = 1
+metadata/character_id = 3259
+
+[node name="tText" type="Control" parent="."]
+position = Vector2(-22.85, 25.9)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 109.85, 22.9)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "center"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "100000 / 100000"
+metadata/original_instance = "tText"
+metadata/character_id = 3256
+
+[node name="eBar" parent="." instance=ExtResource("c1")]
+position = Vector2(-19.5, 45)
+metadata/original_instance = "eBar"
+metadata/character_id = 3258

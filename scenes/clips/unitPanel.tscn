@@ -1,0 +1,205 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5141/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4795.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/upgradedUnitSelector.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/abilityPad.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/abilityPad.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5028.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/unitIcons__f1.tscn" id="c5"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5107_Minion Pro.ttf" id="f5107"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_Timeline_221.tscn" id="c9"]
+[ext_resource type="PackedScene" path="res://scenes/clips/sensPanel.tscn" id="c16"]
+
+[node name="unitPanel" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5141
+total_frames = 1
+metadata/character_id = 5141
+
+[node name="eUpgrade" parent="." instance=ExtResource("c0")]
+position = Vector2(36.35, -62)
+scale = Vector2(1.71739, 1.71739)
+metadata/original_instance = "eUpgrade"
+metadata/character_id = 4795
+
+[node name="eUnitSelect" parent="." instance=ExtResource("c1")]
+position = Vector2(37.75, -138.7)
+metadata/original_instance = "eUnitSelect"
+metadata/character_id = 4843
+
+[node name="eOne" parent="." instance=ExtResource("c2")]
+position = Vector2(102.2, -11.45)
+scale = Vector2(0.96677, 0.96677)
+metadata/original_instance = "eOne"
+metadata/character_id = 5019
+
+[node name="eTwo" parent="." instance=ExtResource("c3")]
+position = Vector2(152.4, -10.9)
+metadata/original_instance = "eTwo"
+metadata/character_id = 5019
+
+[node name="uWarSwordUnit" parent="." instance=ExtResource("c4")]
+position = Vector2(15.4, -59.35)
+scale = Vector2(1.51071, 1.51071)
+metadata/original_instance = "uWarSwordUnit"
+metadata/character_id = 5028
+
+[node name="eIco" parent="." instance=ExtResource("c5")]
+position = Vector2(34.95, -43.2)
+scale = Vector2(0.38457, 0.38457)
+metadata/original_instance = "eIco"
+metadata/character_id = 5106
+
+[node name="tLevelClass" type="Control" parent="."]
+position = Vector2(0.5, -22.5)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 74, 36.8)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 12
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "center"
+leading = -4
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Veteran \rClassname"
+metadata/original_instance = "tLevelClass"
+metadata/character_id = 5108
+
+[node name="tHp" type="Control" parent="."]
+position = Vector2(205.55, -26)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 53.75, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "999/999"
+metadata/original_instance = "tHp"
+metadata/character_id = 5109
+
+[node name="tAttack" type="Control" parent="."]
+position = Vector2(277.95, -25.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 29.05, 23.15)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "10"
+metadata/original_instance = "tAttack"
+metadata/character_id = 5110
+
+[node name="eAttackType" parent="." instance=ExtResource("c9")]
+position = Vector2(269.3, -17.4)
+metadata/original_instance = "eAttackType"
+metadata/character_id = 5120
+
+[node name="tXp" type="Control" parent="."]
+position = Vector2(212.9, -10.85)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.25, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "10/30"
+metadata/original_instance = "tXp"
+metadata/character_id = 5121
+
+[node name="tSpeed" type="Control" parent="."]
+position = Vector2(273.2, -10.8)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 34.25, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "Slow"
+metadata/original_instance = "tSpeed"
+metadata/character_id = 5124
+
+[node name="tArmor" type="Control" parent="."]
+position = Vector2(328.75, -25.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.25, 23.15)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "99%"
+metadata/original_instance = "tArmor"
+metadata/character_id = 5125
+
+[node name="tResist" type="Control" parent="."]
+position = Vector2(331.2, -10.9)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 39.25, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "99%"
+metadata/original_instance = "tResist"
+metadata/character_id = 5126
+
+[node name="tArmorPiercing" type="Control" parent="."]
+position = Vector2(388.1, -26)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 33.4, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "80%"
+metadata/original_instance = "tArmorPiercing"
+metadata/character_id = 5127
+
+[node name="tMagicPiercing" type="Control" parent="."]
+position = Vector2(388.9, -11.1)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 33.6, 22.9)
+font = ExtResource("f5107")
+font_face = "Minion Pro"
+font_id = 5107
+font_size = 14
+color = Color(0.97647, 0.97647, 0.97647, 1)
+align = "left"
+leading = 2
+initial_text = "99%"
+metadata/original_instance = "tMagicPiercing"
+metadata/character_id = 5129
+
+[node name="sSensPanel" parent="." instance=ExtResource("c16")]
+position = Vector2(221.5, -9.75)
+metadata/original_instance = "sSensPanel"
+metadata/character_id = 5140

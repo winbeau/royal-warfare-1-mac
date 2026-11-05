@@ -1,0 +1,428 @@
+[gd_scene load_steps=34 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/3262/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/lone.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/lthree.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/ltwo.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/lfour.tscn" id="c3"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/598_Minion Pro.ttf" id="f598"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c23"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c24"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c25"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c26"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_651__f1.tscn" id="c27"]
+[ext_resource type="PackedScene" path="res://scenes/clips/achivesHint__f1.tscn" id="c28"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c29"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c30"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c31"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c32"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c33"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c34"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c35"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c36"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c37"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c38"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c39"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_3261.tscn" id="c40"]
+
+[node name="achivesPanelMC" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 3262
+total_frames = 1
+metadata/character_id = 3262
+
+[node name="l1" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+metadata/original_instance = "l1"
+metadata/character_id = 3033
+
+[node name="l2" parent="." instance=ExtResource("c1")]
+position = Vector2(0, 0)
+metadata/original_instance = "l2"
+metadata/character_id = 3109
+
+[node name="l3" parent="." instance=ExtResource("c2")]
+position = Vector2(0, 0)
+metadata/original_instance = "l3"
+metadata/character_id = 3180
+
+[node name="l4" parent="." instance=ExtResource("c3")]
+position = Vector2(0, 0)
+metadata/original_instance = "l4"
+metadata/character_id = 3247
+
+[node name="t1" type="Control" parent="."]
+position = Vector2(87.9, 10.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 71.2)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext"
+metadata/original_instance = "t1"
+metadata/character_id = 3248
+
+[node name="t2" type="Control" parent="."]
+position = Vector2(315.9, 10.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t2"
+metadata/character_id = 3249
+
+[node name="t3" type="Control" parent="."]
+position = Vector2(540.9, 10.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t3"
+metadata/character_id = 3249
+
+[node name="t4" type="Control" parent="."]
+position = Vector2(87.9, 112.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t4"
+metadata/character_id = 3249
+
+[node name="t5" type="Control" parent="."]
+position = Vector2(315.9, 112.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t5"
+metadata/character_id = 3249
+
+[node name="t6" type="Control" parent="."]
+position = Vector2(540.9, 112.75)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t6"
+metadata/character_id = 3249
+
+[node name="t7" type="Control" parent="."]
+position = Vector2(87.9, 217.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t7"
+metadata/character_id = 3249
+
+[node name="t8" type="Control" parent="."]
+position = Vector2(315.9, 217.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t8"
+metadata/character_id = 3249
+
+[node name="t9" type="Control" parent="."]
+position = Vector2(540.9, 217.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t9"
+metadata/character_id = 3249
+
+[node name="t10" type="Control" parent="."]
+position = Vector2(87.9, 319.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t10"
+metadata/character_id = 3249
+
+[node name="t11" type="Control" parent="."]
+position = Vector2(315.9, 319.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t11"
+metadata/character_id = 3249
+
+[node name="t12" type="Control" parent="."]
+position = Vector2(540.9, 319.7)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 100.1, 79.6)
+font = ExtResource("f598")
+font_face = "Minion Pro"
+font_id = 598
+font_size = 14
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.99972, 0.04112)
+initial_text = "text\rtext\rtext\rtext"
+metadata/original_instance = "t12"
+metadata/character_id = 3249
+
+[node name="m1" parent="." instance=ExtResource("c16")]
+position = Vector2(159.25, 67.05)
+rotation = -0.08727
+scale = Vector2(0.69446, 0.69446)
+metadata/original_instance = "m1"
+metadata/character_id = 651
+
+[node name="m2" parent="." instance=ExtResource("c17")]
+position = Vector2(386.9, 67.05)
+rotation = 0.10515
+scale = Vector2(0.67484, 0.67484)
+metadata/original_instance = "m2"
+metadata/character_id = 651
+
+[node name="m3" parent="." instance=ExtResource("c18")]
+position = Vector2(609.2, 63.2)
+rotation = 0.07362
+scale = Vector2(0.71591, 0.71591)
+metadata/original_instance = "m3"
+metadata/character_id = 651
+
+[node name="m6" parent="." instance=ExtResource("c19")]
+position = Vector2(614.85, 174.15)
+rotation = -0.05183
+scale = Vector2(0.6297, 0.6297)
+metadata/original_instance = "m6"
+metadata/character_id = 651
+
+[node name="m9" parent="." instance=ExtResource("c20")]
+position = Vector2(610.8, 275)
+rotation = -0.05182
+scale = Vector2(0.66757, 0.66757)
+metadata/original_instance = "m9"
+metadata/character_id = 651
+
+[node name="m12" parent="." instance=ExtResource("c21")]
+position = Vector2(610.05, 379.15)
+rotation = 0.04391
+scale = Vector2(0.73111, 0.73111)
+metadata/original_instance = "m12"
+metadata/character_id = 651
+
+[node name="m11" parent="." instance=ExtResource("c22")]
+position = Vector2(384.55, 381.75)
+rotation = -0.178
+scale = Vector2(0.69848, 0.69848)
+metadata/original_instance = "m11"
+metadata/character_id = 651
+
+[node name="m10" parent="." instance=ExtResource("c23")]
+position = Vector2(159.2, 371.65)
+rotation = 0.14816
+scale = Vector2(0.75162, 0.75162)
+metadata/original_instance = "m10"
+metadata/character_id = 651
+
+[node name="m7" parent="." instance=ExtResource("c24")]
+position = Vector2(162.6, 275.6)
+rotation = 0.05676
+scale = Vector2(0.68189, 0.68189)
+metadata/original_instance = "m7"
+metadata/character_id = 651
+
+[node name="m4" parent="." instance=ExtResource("c25")]
+position = Vector2(159.2, 175.35)
+rotation = -0.05184
+scale = Vector2(0.72242, 0.72242)
+metadata/original_instance = "m4"
+metadata/character_id = 651
+
+[node name="m8" parent="." instance=ExtResource("c26")]
+position = Vector2(382.8, 270.95)
+rotation = -0.05183
+scale = Vector2(0.73701, 0.73701)
+metadata/original_instance = "m8"
+metadata/character_id = 651
+
+[node name="m5" parent="." instance=ExtResource("c27")]
+position = Vector2(378.3, 169.55)
+rotation = 0.01783
+scale = Vector2(0.73761, 0.73761)
+metadata/original_instance = "m5"
+metadata/character_id = 651
+
+[node name="eHint" parent="." instance=ExtResource("c28")]
+position = Vector2(500.55, 379.7)
+metadata/original_instance = "eHint"
+metadata/character_id = 3259
+
+[node name="s1" parent="." instance=ExtResource("c29")]
+position = Vector2(12.1, 15.25)
+metadata/original_instance = "s1"
+metadata/character_id = 3261
+
+[node name="s2" parent="." instance=ExtResource("c30")]
+position = Vector2(238.05, 15.25)
+metadata/original_instance = "s2"
+metadata/character_id = 3261
+
+[node name="s3" parent="." instance=ExtResource("c31")]
+position = Vector2(465.05, 15.25)
+metadata/original_instance = "s3"
+metadata/character_id = 3261
+
+[node name="s4" parent="." instance=ExtResource("c32")]
+position = Vector2(12.1, 116.2)
+metadata/original_instance = "s4"
+metadata/character_id = 3261
+
+[node name="s5" parent="." instance=ExtResource("c33")]
+position = Vector2(238.05, 116.2)
+metadata/original_instance = "s5"
+metadata/character_id = 3261
+
+[node name="s6" parent="." instance=ExtResource("c34")]
+position = Vector2(465.05, 116.2)
+metadata/original_instance = "s6"
+metadata/character_id = 3261
+
+[node name="s7" parent="." instance=ExtResource("c35")]
+position = Vector2(12.1, 221.2)
+metadata/original_instance = "s7"
+metadata/character_id = 3261
+
+[node name="s8" parent="." instance=ExtResource("c36")]
+position = Vector2(238.05, 221.2)
+metadata/original_instance = "s8"
+metadata/character_id = 3261
+
+[node name="s9" parent="." instance=ExtResource("c37")]
+position = Vector2(465.05, 221.2)
+metadata/original_instance = "s9"
+metadata/character_id = 3261
+
+[node name="s10" parent="." instance=ExtResource("c38")]
+position = Vector2(12.1, 322.2)
+metadata/original_instance = "s10"
+metadata/character_id = 3261
+
+[node name="s11" parent="." instance=ExtResource("c39")]
+position = Vector2(238.05, 322.2)
+metadata/original_instance = "s11"
+metadata/character_id = 3261
+
+[node name="s12" parent="." instance=ExtResource("c40")]
+position = Vector2(465.05, 322.2)
+metadata/original_instance = "s12"
+metadata/character_id = 3261

@@ -1,0 +1,14 @@
+{
+ "faces": {
+  "minion pro med": "res://assets/library/font/6_Minion Pro Med.ttf",
+  "minion pro": "res://assets/library/font/268_Minion Pro.ttf",
+  "pf agora sans pro medium": "res://assets/library/font/351_PF Agora Sans Pro Medium.ttf",
+  "ebrima": "res://assets/library/font/612_Ebrima.ttf",
+  "toonish": "res://assets/library/font/1056_Toonish.ttf",
+  "pristina": "res://assets/library/font/1983_Pristina.ttf",
+  "arial black": "res://assets/library/font/2253_Arial Black.ttf",
+  "roboto": "res://assets/library/font/3085_Roboto.ttf",
+  "minion pro cond": "res://assets/library/font/5350_Minion Pro Cond.ttf",
+  "roboto lt": "res://assets/library/font/5353_Roboto Lt.ttf"
+ }
+}

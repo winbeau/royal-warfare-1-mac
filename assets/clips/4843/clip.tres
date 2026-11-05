@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 4843
+total_frames = 1
+rect = Rect2(-76.6, -98.25, 159.15, 195.85)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eBg": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -39.95, -84.25, 1, 1, 1, 1)}, "bClose": {"kind": "clip", "depth": 3, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.91142, 0, 0, 1.91142, -1.75, -74.25, 1, 1, 1, 1)}, "eSelector": {"kind": "clip", "depth": 6, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.91142, 0, 0, 1.91142, -2.85, -10.9, 1, 1, 1, 1)}, "bTop": {"kind": "clip", "depth": 10, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.11765, 0, 0, 1, 0.7, -35.05, 1, 1, 1, 1)}, "bDown": {"kind": "clip", "depth": 12, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.11765, 0, 0, 1, 0.7, 11.95, 1, 1, 1, 1)}, "eUpgradeNotAllowedBottom": {"kind": "clip", "depth": 14, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -0.4, -12.2, 1, 1, 1, 1)}, "eUpgradeNotAllowedTop": {"kind": "clip", "depth": 22, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, -0.4, -12.2, 1, 1, 1, 1)}}

@@ -1,0 +1,275 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5967/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5908.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5923.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5929__f1.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5873__f1.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5931__f1.tscn" id="c4"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5933__f1.tscn" id="c5"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5353_Roboto Lt.ttf" id="f5353"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5948.tscn" id="c16"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5948.tscn" id="c17"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5950.tscn" id="c18"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5953.tscn" id="c19"]
+[ext_resource type="PackedScene" path="res://scenes/clips/starsClass__f1.tscn" id="c20"]
+[ext_resource type="PackedScene" path="res://scenes/clips/hintAchivesStats__f1.tscn" id="c21"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5964.tscn" id="c22"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5966.tscn" id="c23"]
+
+[node name="victoryPanel" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5967
+total_frames = 1
+metadata/character_id = 5967
+
+[node name="eMaxGames" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 302.9)
+metadata/original_instance = "eMaxGames"
+metadata/character_id = 5908
+
+[node name="eBg" parent="." instance=ExtResource("c1")]
+position = Vector2(-285.3, -225.8)
+metadata/original_instance = "eBg"
+metadata/character_id = 5923
+
+[node name="bRestart" parent="." instance=ExtResource("c2")]
+position = Vector2(-186.3, 170.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bRestart"
+metadata/character_id = 5929
+
+[node name="bMore" parent="." instance=ExtResource("c3")]
+position = Vector2(62.3, 170.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMore"
+metadata/character_id = 5873
+
+[node name="bMenu" parent="." instance=ExtResource("c4")]
+position = Vector2(-62, 170.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bMenu"
+metadata/character_id = 5931
+
+[node name="bNext" parent="." instance=ExtResource("c5")]
+position = Vector2(186.6, 170.05)
+scale = Vector2(1.47247, 1.47247)
+metadata/original_instance = "bNext"
+metadata/character_id = 5933
+
+[node name="tNumKills" type="Control" parent="."]
+position = Vector2(-235.5, -16.4)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Enemies killed: 12345"
+metadata/original_instance = "tNumKills"
+metadata/character_id = 5935
+
+[node name="tNumLost" type="Control" parent="."]
+position = Vector2(14.5, -16.4)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Soldiers lost: 12345"
+metadata/original_instance = "tNumLost"
+metadata/character_id = 5936
+
+[node name="tDamageDealt" type="Control" parent="."]
+position = Vector2(-235.5, 18.55)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Damage dealt: 12345"
+metadata/original_instance = "tDamageDealt"
+metadata/character_id = 5937
+
+[node name="tDamageReceived" type="Control" parent="."]
+position = Vector2(14.5, 18.55)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Damage received: 12345"
+metadata/original_instance = "tDamageReceived"
+metadata/character_id = 5938
+
+[node name="tTimeSpent" type="Control" parent="."]
+position = Vector2(-235.5, 53.5)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Time spent: 12345"
+metadata/original_instance = "tTimeSpent"
+metadata/character_id = 5939
+
+[node name="tNumUpgrades" type="Control" parent="."]
+position = Vector2(14.5, 53.5)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Upgrades: 12345"
+metadata/original_instance = "tNumUpgrades"
+metadata/character_id = 5940
+
+[node name="tHired" type="Control" parent="."]
+position = Vector2(-235.5, 84.55)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Soldiers hired: 12345"
+metadata/original_instance = "tHired"
+metadata/character_id = 5943
+
+[node name="tUpgraded" type="Control" parent="."]
+position = Vector2(14.5, 84.55)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Soldiers promoted: 12345"
+metadata/original_instance = "tUpgraded"
+metadata/character_id = 5944
+
+[node name="tGotGold" type="Control" parent="."]
+position = Vector2(-235.5, 119.5)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "right"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Gold gained: 12345"
+metadata/original_instance = "tGotGold"
+metadata/character_id = 5945
+
+[node name="tSpentGold" type="Control" parent="."]
+position = Vector2(14.5, 119.5)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 300.35, 34.1)
+font = ExtResource("f5353")
+font_face = "Roboto Lt"
+font_id = 5353
+font_size = 22
+color = Color(1, 1, 1, 1)
+align = "left"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Gold spent: 12345"
+metadata/original_instance = "tSpentGold"
+metadata/character_id = 5946
+
+[node name="bLeft" parent="." instance=ExtResource("c16")]
+position = Vector2(-253.85, 236.6)
+metadata/original_instance = "bLeft"
+metadata/character_id = 5948
+
+[node name="bRight" parent="." instance=ExtResource("c17")]
+position = Vector2(260.1, 236.6)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/original_instance = "bRight"
+metadata/character_id = 5948
+
+[node name="eNoNewAchives" parent="." instance=ExtResource("c18")]
+position = Vector2(-143.25, 215)
+metadata/original_instance = "eNoNewAchives"
+metadata/character_id = 5950
+
+[node name="eCont" parent="." instance=ExtResource("c19")]
+position = Vector2(-188, 211.95)
+metadata/original_instance = "eCont"
+metadata/character_id = 5953
+
+[node name="eStars" parent="." instance=ExtResource("c20")]
+position = Vector2(0, -104.95)
+scale = Vector2(1.9679, 1.9679)
+metadata/original_instance = "eStars"
+metadata/character_id = 5958
+
+[node name="eHint" parent="." instance=ExtResource("c21")]
+position = Vector2(-149.35, 256.55)
+metadata/original_instance = "eHint"
+metadata/character_id = 5552
+
+[node name="eStarsHint" parent="." instance=ExtResource("c22")]
+position = Vector2(-68.95, -99.85)
+metadata/original_instance = "eStarsHint"
+metadata/character_id = 5964
+
+[node name="eAchivesHint" parent="." instance=ExtResource("c23")]
+position = Vector2(-60.95, 244.1)
+metadata/original_instance = "eAchivesHint"
+metadata/character_id = 5966

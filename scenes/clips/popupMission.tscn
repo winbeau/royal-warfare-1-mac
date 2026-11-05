@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/6045/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6018__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6021__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6026__f1.tscn" id="c2"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5596_Minion Pro.ttf" id="f5596"]
+[ext_resource type="FontFile" path="res://assets/library/font/6028_Minion Pro.ttf" id="f6028"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6031.tscn" id="c5"]
+[ext_resource type="PackedScene" path="res://scenes/clips/mapSymbol.tscn" id="c6"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6040.tscn" id="c7"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6042.tscn" id="c8"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_6044.tscn" id="c9"]
+
+[node name="popupMission" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 6045
+total_frames = 1
+metadata/character_id = 6045
+
+[node name="bPlaybtn" parent="." instance=ExtResource("c0")]
+position = Vector2(0.15, 116.35)
+metadata/original_instance = "bPlaybtn"
+metadata/character_id = 6018
+
+[node name="bClosebtn" parent="." instance=ExtResource("c1")]
+position = Vector2(188.7, 107.1)
+metadata/original_instance = "bClosebtn"
+metadata/character_id = 6021
+
+[node name="eBg" parent="." instance=ExtResource("c2")]
+position = Vector2(-250.85, -143.2)
+metadata/original_instance = "eBg"
+metadata/character_id = 6026
+
+[node name="tMissionName" type="Control" parent="."]
+position = Vector2(-211.5, -118.1)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 562.05, 65.3)
+font = ExtResource("f5596")
+font_face = "Minion Pro"
+font_id = 5596
+font_size = 45
+color = Color(0.96471, 0.96078, 0.50588, 1)
+align = "center"
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "Leviathan bay"
+metadata/original_instance = "tMissionName"
+metadata/character_id = 6027
+
+[node name="tMissionDesc" type="Control" parent="."]
+position = Vector2(-62.5, -64.5)
+scale = Vector2(0.74892, 0.74892)
+script = ExtResource("txt")
+box = Rect2(-2, -2, 372.45, 174.85)
+font = ExtResource("f6028")
+font_face = "Minion Pro"
+font_id = 6028
+font_size = 23
+color = Color(1, 1, 1, 1)
+align = "left"
+multiline = true
+word_wrap = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "We have made a long journey, but there's no time to rest. Monsters are coming, again. To the arms, brothers!"
+metadata/original_instance = "tMissionDesc"
+metadata/character_id = 6029
+
+[node name="eTextMask" parent="." instance=ExtResource("c5")]
+position = Vector2(-67.25, -66.6)
+metadata/original_instance = "eTextMask"
+metadata/character_id = 6031
+
+[node name="eMapSymbol" parent="." instance=ExtResource("c6")]
+position = Vector2(-209.05, -70.95)
+metadata/original_instance = "eMapSymbol"
+metadata/character_id = 6036
+
+[node name="d1" parent="." instance=ExtResource("c7")]
+position = Vector2(-184, 54.3)
+metadata/original_instance = "d1"
+metadata/character_id = 6040
+
+[node name="d2" parent="." instance=ExtResource("c8")]
+position = Vector2(-140, 54.3)
+metadata/original_instance = "d2"
+metadata/character_id = 6042
+
+[node name="d3" parent="." instance=ExtResource("c9")]
+position = Vector2(-94.55, 54.3)
+metadata/original_instance = "d3"
+metadata/character_id = 6044

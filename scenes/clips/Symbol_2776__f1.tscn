@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/2776f1/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_1033.tscn" id="c0"]
+
+[node name="Symbol_2776__f1" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 2776
+total_frames = 1
+metadata/character_id = 2776
+
+[node name="eBg" parent="." instance=ExtResource("c0")]
+position = Vector2(0, 0)
+scale = Vector2(0.89256, 0.89256)
+metadata/original_instance = "eBg"
+metadata/character_id = 1033

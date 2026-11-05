@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/4795/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4790.tscn" id="c0"]
+
+[node name="Symbol_4795" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 4795
+total_frames = 70
+metadata/character_id = 4795
+
+[node name="eGotUpgrade" parent="." instance=ExtResource("c0")]
+position = Vector2(-0.35, 6.7)
+rotation = 1.5708
+scale = Vector2(1.297, 1.297)
+metadata/original_instance = "eGotUpgrade"
+metadata/character_id = 4790

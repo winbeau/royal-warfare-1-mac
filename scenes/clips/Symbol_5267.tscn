@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5267/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_589__f1.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_4839__f1.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5256.tscn" id="c2"]
+
+[node name="Symbol_5267" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5267
+total_frames = 1
+metadata/character_id = 5267
+
+[node name="eIco" parent="." instance=ExtResource("c0")]
+position = Vector2(-0.65, -3.3)
+scale = Vector2(0.07224, 0.11391)
+metadata/original_instance = "eIco"
+metadata/character_id = 589
+
+[node name="eLocked" parent="." instance=ExtResource("c1")]
+position = Vector2(-0.05, -1)
+scale = Vector2(0.83626, 0.83626)
+metadata/original_instance = "eLocked"
+metadata/character_id = 4839
+
+[node name="eCoolDown" parent="." instance=ExtResource("c2")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eCoolDown"
+metadata/character_id = 5256

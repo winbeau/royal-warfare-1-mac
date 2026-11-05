@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5144/clip.tres" id="data"]
+[ext_resource type="Script" path="res://game/rw/flash_text.gd" id="txt"]
+[ext_resource type="FontFile" path="res://assets/library/font/5142_Minion Pro.ttf" id="f5142"]
+
+[node name="moneyUI" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5144
+total_frames = 1
+metadata/character_id = 5144
+
+[node name="tMoney" type="Control" parent="."]
+position = Vector2(-17.15, -18.65)
+script = ExtResource("txt")
+box = Rect2(41.2, -2, 91.85, 41.35)
+font = ExtResource("f5142")
+font_face = "Minion Pro"
+font_id = 5142
+font_size = 27
+color = Color(1, 1, 1, 1)
+align = "left"
+leading = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1.99981, 0.02741)
+initial_text = "10000"
+metadata/original_instance = "tMoney"
+metadata/character_id = 5143

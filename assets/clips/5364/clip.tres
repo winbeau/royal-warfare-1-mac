@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b2.png" id="back2"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b3.png" id="back3"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b4.png" id="back4"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b5.png" id="back5"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b6.png" id="back6"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b7.png" id="back7"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b8.png" id="back8"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b9.png" id="back9"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b10.png" id="back10"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b11.png" id="back11"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b12.png" id="back12"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b13.png" id="back13"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b14.png" id="back14"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b15.png" id="back15"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b16.png" id="back16"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b17.png" id="back17"]
+[ext_resource type="Texture2D" path="res://assets/clips/5364/b18.png" id="back18"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5364
+total_frames = 20
+rect = Rect2(-8.15, -68.35, 16.25, 41.6)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2"), ExtResource("back3"), ExtResource("back4"), ExtResource("back5"), ExtResource("back6"), ExtResource("back7"), ExtResource("back8"), ExtResource("back9"), ExtResource("back10"), ExtResource("back11"), ExtResource("back12"), ExtResource("back13"), ExtResource("back14"), ExtResource("back15"), ExtResource("back16"), ExtResource("back17"), ExtResource("back18")]
+back_offsets = PackedVector2Array(-8.15, -54.35, -8.15, -54.35, -8.15, -55.85, -8.15, -57.35, -8.15, -59.85, -8.15, -62.85, -8.15, -65.35, -8.15, -67.35, -8.15, -68.35, -8.15, -68.35, -8.15, -68.35, -8.15, -67.35, -8.15, -65.85, -8.15, -63.85, -8.15, -61.85, -8.15, -59.35, -8.15, -57.35, -8.15, -55.85, -8.15, -54.85)
+back_index = PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 0)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)

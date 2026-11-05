@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5894/b0.png" id="back0"]
+[ext_resource type="Texture2D" path="res://assets/clips/5894/b1.png" id="back1"]
+[ext_resource type="Texture2D" path="res://assets/clips/5894/b2.png" id="back2"]
+
+[resource]
+script = ExtResource("1")
+character_id = 5894
+total_frames = 3
+rect = Rect2(-32, -27.95, 64, 55.9)
+back_textures = [ExtResource("back0"), ExtResource("back1"), ExtResource("back2")]
+back_offsets = PackedVector2Array(-19, -14.45, -19, -14.45, -19, -14.45)
+back_index = PackedInt32Array(0, 1, 2)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1, -1, -1)
+children = {"eLight": {"kind": "clip", "depth": 8, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.65552, 0, 0, 0.73087, -2.9, 0.7, 1, 1, 1, 1)}, "eIco": {"kind": "clip", "depth": 10, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}

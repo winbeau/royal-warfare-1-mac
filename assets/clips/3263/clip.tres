@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+character_id = 3263
+total_frames = 1
+rect = Rect2(0, 0, 700, 600)
+back_textures = []
+back_offsets = PackedVector2Array()
+back_index = PackedInt32Array(-1)
+front_textures = []
+front_offsets = PackedVector2Array()
+front_index = PackedInt32Array(-1)
+children = {"eBg": {"kind": "clip", "depth": 1, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}, "bMore": {"kind": "clip", "depth": 37, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 594.25, 556, 1, 1, 1, 1)}, "bMenu": {"kind": "clip", "depth": 47, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 105.7, 556, 1, 1, 1, 1)}, "bLeft": {"kind": "clip", "depth": 57, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 257.95, 557, 1, 1, 1, 1)}, "bRight": {"kind": "clip", "depth": 71, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, -1.47247, 0, 0, 1.47247, 441.95, 557, 1, 1, 1, 1)}, "bDot1": {"kind": "clip", "depth": 85, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 308.65, 557, 1, 1, 1, 1)}, "bDot2": {"kind": "clip", "depth": 89, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 336.2, 557, 1, 1, 1, 1)}, "bDot3": {"kind": "clip", "depth": 93, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 363.75, 557, 1, 1, 1, 1)}, "bDot4": {"kind": "clip", "depth": 97, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.47247, 0, 0, 1.47247, 391.3, 557, 1, 1, 1, 1)}, "eLogo": {"kind": "clip", "depth": 101, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.72865, 0, 0, 0.72865, 236.45, 0.7, 1, 1, 1, 1)}, "eAchives": {"kind": "clip", "depth": 105, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 23.9, 96.75, 1, 1, 1, 1)}}

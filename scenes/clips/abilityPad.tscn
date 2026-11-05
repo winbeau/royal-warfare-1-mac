@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5019/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/gameUI_fla_eAbility_57.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/Symbol_5018.tscn" id="c1"]
+
+[node name="abilityPad" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5019
+total_frames = 1
+metadata/character_id = 5019
+
+[node name="eAbility" parent="." instance=ExtResource("c0")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eAbility"
+metadata/character_id = 4997
+
+[node name="eCoolDown" parent="." instance=ExtResource("c1")]
+visible = false
+position = Vector2(0, 0)
+metadata/original_instance = "eCoolDown"
+metadata/character_id = 5018

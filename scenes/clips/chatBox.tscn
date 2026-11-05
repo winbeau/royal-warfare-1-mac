@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://game/rw/flash_clip.gd" id="clip"]
+[ext_resource type="Resource" path="res://assets/clips/5316/clip.tres" id="data"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatEl.tscn" id="c0"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatEl.tscn" id="c1"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatEl.tscn" id="c2"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatEl.tscn" id="c3"]
+[ext_resource type="PackedScene" path="res://scenes/clips/chatEl.tscn" id="c4"]
+
+[node name="chatBox" type="Control"]
+mouse_filter = 1
+script = ExtResource("clip")
+data = ExtResource("data")
+character_id = 5316
+total_frames = 1
+metadata/character_id = 5316
+
+[node name="t1" parent="." instance=ExtResource("c0")]
+position = Vector2(-110.55, 8.5)
+metadata/original_instance = "t1"
+metadata/character_id = 5315
+
+[node name="t2" parent="." instance=ExtResource("c1")]
+position = Vector2(-110.55, -5.5)
+metadata/original_instance = "t2"
+metadata/character_id = 5315
+
+[node name="t3" parent="." instance=ExtResource("c2")]
+position = Vector2(-110.55, -19.5)
+metadata/original_instance = "t3"
+metadata/character_id = 5315
+
+[node name="t4" parent="." instance=ExtResource("c3")]
+position = Vector2(-110.55, -33.5)
+metadata/original_instance = "t4"
+metadata/character_id = 5315
+
+[node name="t5" parent="." instance=ExtResource("c4")]
+position = Vector2(-110.55, -47.5)
+metadata/original_instance = "t5"
+metadata/character_id = 5315
