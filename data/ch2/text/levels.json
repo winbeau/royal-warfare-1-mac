@@ -1,0 +1,573 @@
+{
+  "_note": "Chapter 2 in-game level text, English. Translated from design/levels.json. Proper nouns follow data/ch2/text/glossary.json. name_zh is kept for traceability; the runtime reads only the English fields. Objective text may contain the placeholders {n}, {min} and {total}.",
+  "sections": [
+    { "number": 1, "name": "The Tide Coast" },
+    { "number": 2, "name": "The Grain Roads" },
+    { "number": 3, "name": "The Iron Pass" },
+    { "number": 4, "name": "Relief of the North Isle" },
+    { "number": 5, "name": "Up the Shadow River" },
+    { "number": 6, "name": "The Allied Fleet" }
+  ],
+  "levels": [
+    {
+      "number": 1,
+      "section": 1,
+      "name": "Landing at Mist Bay",
+      "name_zh": "雾湾登陆",
+      "briefing": "The shipping mark on the necromancer's belongings led us across the sea to a bay none of us had ever seen. We came ashore on the west beach and found two ferrymen hiding by the wrecked boats. The dead were already on the inland road east, and they walked the same way they had back home. We had to get the ferrymen to the shelter on the far side.",
+      "objectives": [
+        { "id": "escort_ferrymen", "text": "Escort the ferrymen ({n}/{min})", "optional": false },
+        { "id": "clear_exit", "text": "Clear the road east", "optional": false },
+        { "id": "medicine_chest", "text": "Recover the medicine chest", "optional": true }
+      ],
+      "victory": "Both ferrymen reached the shelter and the road behind them was clear.",
+      "failure": "A ferryman was lost, or the squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 2,
+      "section": 1,
+      "name": "The Windmill Saltpans",
+      "name_zh": "风车盐田",
+      "briefing": "People were still working this stretch of coast. A windmill turned over the salt pools and the villagers were hauling salt as if nothing had changed. The dead came up through the pans while the workers were out in the open, so we moved them to the houses in the northeast in two batches and kept the windmill shed standing. The shallow pools could not be crossed, which left the dry banks and the wide yard in the middle.",
+      "objectives": [
+        { "id": "escort_workers", "text": "Escort the salt workers ({n}/{min})", "optional": false },
+        { "id": "hold_shed", "text": "Keep the windmill shed standing", "optional": false },
+        { "id": "outer_shed", "text": "Keep the outer salt shed", "optional": true }
+      ],
+      "victory": "Enough salt workers reached the village and the windmill shed still stood.",
+      "failure": "The windmill shed came down, or too few workers got in.",
+      "unlock_note": ""
+    },
+    {
+      "number": 3,
+      "section": 1,
+      "name": "Twin Bridges",
+      "name_zh": "芦汊双桥",
+      "briefing": "A rider named Lu Ling met us at the reed fork carrying word from the North Isle, which was how we learned the islands and this coast had been trading soldiers for years. Villagers were stranded on the east bank with the dead behind them. Two bridges crossed the river, one wide and one narrow, and we brought the villagers over both of them in two groups. Lu Ling must survive the battle.",
+      "objectives": [
+        { "id": "escort_villagers", "text": "Escort the villagers ({n}/{min})", "optional": false },
+        { "id": "lu_ling_out", "text": "Get Lu Ling to the west bank", "optional": false },
+        { "id": "bridges_intact", "text": "Keep both bridges intact", "optional": true }
+      ],
+      "victory": "The villagers crossed to the ferry shed and Lu Ling got away.",
+      "failure": "The ferry shed was lost, too few villagers crossed, or Lu Ling did not survive.",
+      "unlock_note": ""
+    },
+    {
+      "number": 4,
+      "section": 1,
+      "name": "The Bamboo Road",
+      "name_zh": "竹村粮道",
+      "briefing": "A grain cart was due at the granary and no one would move it without an escort. We took the bend road east out of the fields, stopping at three points along the way. Something new was waiting in the bamboo: guards that threw weighted rope and dragged our flankers out of line one at a time. The rope ties could be cut, so we kept a few swords on the edges and the rest on the cart.",
+      "objectives": [
+        { "id": "escort_cart", "text": "Escort the grain cart ({n}/{total})", "optional": false },
+        { "id": "medicine_bag", "text": "Find the medicine bag", "optional": true }
+      ],
+      "victory": "The grain cart reached the granary yard in one piece.",
+      "failure": "The grain cart was destroyed, or the squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 5,
+      "section": 1,
+      "name": "Shrine of the Tides",
+      "name_zh": "听潮古祠",
+      "briefing": "An exorcist named Huizhao was waiting at the old shrine above the tide line. He could lay a body to rest so that nothing would raise it again, and three old corpse heaps in the grounds needed it. We walked him out to the graveyard and the far edges of the forecourt, then back to the shrine steps. Huizhao must survive the battle.",
+      "objectives": [
+        { "id": "seal_heaps", "text": "Seal the corpse heaps ({n}/{total})", "optional": false },
+        { "id": "return_shrine", "text": "Bring Huizhao back to the shrine", "optional": false },
+        { "id": "apprentice", "text": "Protect the shrine apprentice", "optional": true }
+      ],
+      "victory": "All three heaps were sealed and Huizhao was back at the shrine.",
+      "failure": "Huizhao did not survive, or the shrine altar was destroyed.",
+      "unlock_note": "Exorcists with the Wooden Bell can now be hired."
+    },
+    {
+      "number": 6,
+      "section": 1,
+      "name": "Night Watch at Seagate",
+      "name_zh": "海门守夜",
+      "briefing": "Seagate let us inside for one night, and that was as far as their trust went. Skeleton archers formed up outside the gate under an overseer who called their volleys. We held the command post in the inner yard, with Qinghe reading the arrows and the garrison holding the gate passage. Bringing down the overseer cancelled the volley he had not called yet.",
+      "objectives": [
+        { "id": "hold_post", "text": "Hold the inner yard command post", "optional": false },
+        { "id": "kill_overseer", "text": "Defeat the Shore Overseer", "optional": false },
+        { "id": "wounded_allies", "text": "Pull the wounded allies inside", "optional": true }
+      ],
+      "victory": "The command post held, the overseer fell and the gate was clear.",
+      "failure": "The command post was destroyed, or the squad could no longer fight.",
+      "unlock_note": "Wardens with the Sword and Shield and Elementalists with the Wind Staff can now be hired."
+    },
+    {
+      "number": 7,
+      "section": 2,
+      "name": "South Fork Ferry",
+      "name_zh": "南汊渡场",
+      "briefing": "We followed Seagate's grain line upriver to the south fork, where both ferry landings had been taken. The dead had learned something here, putting shield-bearers in front with the archers behind them. A causeway ran between the two landings and a longer road looped north. We took both landings back and held them while the grain boat was unloaded.",
+      "objectives": [
+        { "id": "take_landings", "text": "Take both ferry landings ({n}/{total})", "optional": false },
+        { "id": "unload_boat", "text": "Unload the grain boat", "optional": false },
+        { "id": "trapped_sailors", "text": "Free the trapped sailors", "optional": true }
+      ],
+      "victory": "Both landings were ours and the grain boat was unloaded.",
+      "failure": "The grain boat was destroyed, or too few dockhands were left to unload it.",
+      "unlock_note": ""
+    },
+    {
+      "number": 8,
+      "section": 2,
+      "name": "The Waterwheel Granary",
+      "name_zh": "水轮粮仓",
+      "briefing": "The granary upriver was still filling sacks, and its waterwheel was the only thing keeping the mill turning. The dead brought carts up the causeways and lobbed clay firepots into the forecourt, leaving burning ground where they landed. The carts had to plant their feet to throw, so we pushed in from the side they were not facing. The hands needed three loads out, and the wheel frame had to stay up.",
+      "objectives": [
+        { "id": "carry_grain", "text": "Carry out the grain ({n}/{total})", "optional": false },
+        { "id": "hold_granary", "text": "Keep the granary and wheel standing", "optional": false },
+        { "id": "outer_sacks", "text": "Save the outer grain sacks", "optional": true }
+      ],
+      "victory": "All three loads were out, with the granary and the wheel still standing.",
+      "failure": "The granary or the wheel frame was destroyed, or too few hands survived.",
+      "unlock_note": "Elementalists can now take the River Staff."
+    },
+    {
+      "number": 9,
+      "section": 2,
+      "name": "The Canal Post",
+      "name_zh": "运河驿站",
+      "briefing": "The canal post kept the records for every cart on this road, so we took it. Three roads met at the post house, with a signal tower to the east and a staging shed to the west. A herald among the dead was trying to send for reinforcements from the tower, and stopping him meant fewer enemies later. We came for the shipping ledger, and for a post with no garrison left in it.",
+      "objectives": [
+        { "id": "clear_post", "text": "Clear the canal post", "optional": false },
+        { "id": "take_ledger", "text": "Recover the shipping ledger", "optional": false },
+        { "id": "stop_herald", "text": "Stop the herald sending word", "optional": true }
+      ],
+      "victory": "The ledger was in our hands and no enemy held the post.",
+      "failure": "The ledger burned, or the squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 10,
+      "section": 2,
+      "name": "The Burning Gunworks",
+      "name_zh": "失火铳坊",
+      "briefing": "The gunworks was already burning when we got there, and Xu Heng, the ordnance officer, was still inside with his craftsmen and his ledger box. The fire kept to the north buildings, so the well yard in the south stayed clear to fall back to. We brought the craftsmen out in two groups and carried the ledger box to the shed. Xu Heng must survive the battle.",
+      "objectives": [
+        { "id": "rescue_xu_heng", "text": "Get Xu Heng out of the gunworks", "optional": false },
+        { "id": "rescue_craftsmen", "text": "Rescue the craftsmen ({n}/{min})", "optional": false },
+        { "id": "carry_ledger_box", "text": "Carry the ledger box to the well", "optional": false },
+        { "id": "spare_machinery", "text": "Save the spare machinery", "optional": true }
+      ],
+      "victory": "Xu Heng, his craftsmen and the ledger box all reached the well yard.",
+      "failure": "The ledger box burned, Xu Heng did not survive, or too few craftsmen got out.",
+      "unlock_note": "Musketeers with the Matchlock can now be hired."
+    },
+    {
+      "number": 11,
+      "section": 2,
+      "name": "Siege at Stone Wharf",
+      "name_zh": "石埠解围",
+      "briefing": "An ordnance train was penned in at Stone Wharf with the dead ringed around the outer dyke. Xu Heng's new guns had come out of the workshop, and the unloading yard was wide enough to stagger two lines of them and keep one firing while the other reloaded. We pushed down the slopes to the trapped column, took the dock lift and walked them out. Their engines sat in plain sight on the dyke, where they could hit us and we could hit them.",
+      "objectives": [
+        { "id": "take_lift", "text": "Take the dock lift", "optional": false },
+        { "id": "evacuate_train", "text": "Walk out the ordnance train", "optional": false },
+        { "id": "medicine_wagon", "text": "Save the medicine wagon", "optional": true }
+      ],
+      "victory": "The lift was ours and the ordnance train walked out of the wharf.",
+      "failure": "The ordnance wagons were destroyed, or the squad could no longer fight.",
+      "unlock_note": ""
+    },
+    {
+      "number": 12,
+      "section": 2,
+      "name": "Rally at the River City",
+      "name_zh": "江城会援",
+      "briefing": "The River City garrison was pinned on its own docks. A drowned thing the locals called Yinggou worked the shallows, and the tide it dragged in made the low ground along the water unsafe to stand on. Two dry docks and a back street gave us roads that stayed dry. We took the docks back, kept the main manifest out of the water and put Yinggou down.",
+      "objectives": [
+        { "id": "kill_yinggou", "text": "Defeat Yinggou the Drowned", "optional": false },
+        { "id": "keep_manifest", "text": "Keep the main manifest safe", "optional": false },
+        { "id": "retake_docks", "text": "Retake both docks ({n}/{total})", "optional": false },
+        { "id": "civilian_boat", "text": "Get the civilian boat clear", "optional": true }
+      ],
+      "victory": "Yinggou was dead, the manifest was safe and both docks were clear.",
+      "failure": "The manifest was destroyed, or the squad had nothing left to fight with.",
+      "unlock_note": "Musketeers can now take the Five Thunders or the Heavy Musket, and Exorcists the Lotus Lantern."
+    },
+    {
+      "number": 13,
+      "section": 3,
+      "name": "The Stone Path Outpost",
+      "name_zh": "石径前哨",
+      "briefing": "The road east was closed at the Iron Pass, so we went up to the outpost that watched it. Darth troops held the place, armored the way we remembered from the old war, and nothing we carried hurt them until we opened that armor first. Two stone roads met in front of the guard shed, with a longer slope running around to the north. We took both banners and cleared the garrison out.",
+      "objectives": [
+        { "id": "take_banners", "text": "Raise your banners ({n}/{total})", "optional": false },
+        { "id": "clear_garrison", "text": "Clear the outpost garrison", "optional": false },
+        { "id": "missing_porters", "text": "Find the missing porters", "optional": true }
+      ],
+      "victory": "Both banners were ours and the garrison was gone.",
+      "failure": "The squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 14,
+      "section": 3,
+      "name": "The Old Mine Fork",
+      "name_zh": "旧矿岔道",
+      "briefing": "The outpost pointed us at a sealed mine road, and there were still men working inside it. Two mine roads ran down to the hoist yard, and both of them fed back to an open cave mouth when the tunnels got tight. The dead down there carried charges and lit them on a count, so standing in one place around the scrap carts was a bad habit. We worked the two winches and brought the miners up.",
+      "objectives": [
+        { "id": "work_winches", "text": "Work both winches ({n}/{total})", "optional": false },
+        { "id": "escort_miners", "text": "Bring up the miners ({n}/{min})", "optional": false },
+        { "id": "powder_chest", "text": "Save the spare powder chest", "optional": true }
+      ],
+      "victory": "Both winches were worked and enough miners reached the surface.",
+      "failure": "Too few miners got out, or a winch was wrecked beyond repair.",
+      "unlock_note": ""
+    },
+    {
+      "number": 15,
+      "section": 3,
+      "name": "Holding the Forge",
+      "name_zh": "铁炉保卫",
+      "briefing": "The forge beyond the mine still had fire in it and a garrison that fought with long glaives. Xu Heng wanted their ordnance drawings, and the forgemaster wanted three runs finished before he handed anything over. Roads came in from the mine, the mountain and the haulage track, all three into one wide forecourt, and the main furnace had to stay lit. Xu Heng must survive the battle.",
+      "objectives": [
+        { "id": "forging_runs", "text": "Finish the forging runs ({n}/{total})", "optional": false },
+        { "id": "hold_furnace", "text": "Keep the main furnace standing", "optional": false },
+        { "id": "xu_heng_out", "text": "Get Xu Heng and the drawings out", "optional": false },
+        { "id": "stock_shed", "text": "Keep the outer stock shed", "optional": true }
+      ],
+      "victory": "Three runs were finished, the furnace was lit and Xu Heng left with the drawings.",
+      "failure": "The main furnace was destroyed, Xu Heng did not survive, or too few craftsmen were left.",
+      "unlock_note": "Wardens can now take the Great Glaive, and Elementalists the Stone Staff."
+    },
+    {
+      "number": 16,
+      "section": 3,
+      "name": "Taking the Cliff Road",
+      "name_zh": "栈道夺隘",
+      "briefing": "The last road to the Iron Gate ran along a cliff, and we needed a messenger on the other side of it to set a time with the garrison inside. Pale giants held the platform between the two sections, throwing rock at range and swinging at anything that closed. Their armor opened at the seams for a moment after a throw, and a stone slope below gave us a long way round. The messenger must survive the battle.",
+      "objectives": [
+        { "id": "take_platform", "text": "Take the cliff road platform", "optional": false },
+        { "id": "escort_messenger", "text": "Escort the messenger through", "optional": false },
+        { "id": "stone_pile", "text": "Destroy the enemy stone pile", "optional": true }
+      ],
+      "victory": "The platform was ours and the messenger reached the Iron Gate.",
+      "failure": "The messenger did not survive, or the squad could no longer fight.",
+      "unlock_note": ""
+    },
+    {
+      "number": 17,
+      "section": 3,
+      "name": "The Breach at Long Pass",
+      "name_zh": "长关缺口",
+      "briefing": "The wall at Long Pass had one hole in it, and it was wide enough for a full front rank to stand in. Three haulage teams had to come through with the supplies for the attack on the Iron Gate. We put the Wardens in the gap and rotated them out as their shields gave, with slopes on both sides for anyone who got flanked. The inner banner had to be standing when the last team was through.",
+      "objectives": [
+        { "id": "take_breach", "text": "Take the breach", "optional": false },
+        { "id": "hold_banner", "text": "Hold the inner banner", "optional": false },
+        { "id": "pass_haulage", "text": "Pass the haulage teams ({n}/{total})", "optional": false },
+        { "id": "wounded_allies", "text": "Carry in the wounded allies", "optional": true }
+      ],
+      "victory": "Enough haulers passed the breach and the inner banner was still standing.",
+      "failure": "The inner banner was destroyed, or too few haulers got through.",
+      "unlock_note": ""
+    },
+    {
+      "number": 18,
+      "section": 3,
+      "name": "The Iron Gate",
+      "name_zh": "铁门合围",
+      "briefing": "The garrison inside opened the Iron Gate at the hour we had agreed, and we met their commander in the middle of it. The locals called him a corpse general. He fought like a Darth captain in old armor, with one great blade that committed to a direction before it fell, and he could order a squad of guards forward, so we hit him while they changed lines. The port road behind us had to stay open.",
+      "objectives": [
+        { "id": "open_gate", "text": "Open the Iron Gate", "optional": false },
+        { "id": "kill_jiangchen", "text": "Defeat General Jiangchen", "optional": false },
+        { "id": "hold_road", "text": "Hold the road to the port", "optional": false },
+        { "id": "infirmary", "text": "Protect the infirmary inside", "optional": true }
+      ],
+      "victory": "Jiangchen fell, the Iron Gate opened and the port road was clear.",
+      "failure": "The relief banner inside the pass was destroyed, or the squad could no longer fight.",
+      "unlock_note": "Wardens can now take the Horsecleaver."
+    },
+    {
+      "number": 19,
+      "section": 4,
+      "name": "Landing at East Shoal",
+      "name_zh": "东汀靠岸",
+      "briefing": "The North Isle had never answered our letters, and the reason was on the beach: the dead had taken the east landing before any of those letters arrived. We came in over the shoal with Lu Ling, who was born on this island, and pushed them off the unloading ground. Three loads of supplies had to go up to the stone ridge. Lu Ling must survive the battle.",
+      "objectives": [
+        { "id": "take_landing", "text": "Retake the landing point", "optional": false },
+        { "id": "carry_supplies", "text": "Carry the supplies up ({n}/{total})", "optional": false },
+        { "id": "lu_ling", "text": "Keep Lu Ling alive", "optional": false },
+        { "id": "trapped_boatmen", "text": "Free the trapped boatmen", "optional": true }
+      ],
+      "victory": "All three loads reached the ridge and Lu Ling came through it.",
+      "failure": "A supply load or the unloading point was destroyed, or Lu Ling did not survive.",
+      "unlock_note": ""
+    },
+    {
+      "number": 20,
+      "section": 4,
+      "name": "The Shore Pastures",
+      "name_zh": "海牧长堤",
+      "briefing": "The island's horses were still out on the shore pastures with the herders. Hounds were running the causeway, faster than anything on foot and happy to chase our riders instead of fighting the line. We drove the herders and the horses west to the pen in two batches, using the two slopes to pull our own fast squads back out of trouble.",
+      "objectives": [
+        { "id": "herders_in", "text": "Drive the herders in ({n}/{min})", "optional": false },
+        { "id": "horses_in", "text": "Drive the horses in ({n}/{min})", "optional": false },
+        { "id": "strays", "text": "Bring back the strays", "optional": true }
+      ],
+      "victory": "Enough herders and horses reached the west pen.",
+      "failure": "Too few herders or horses got in, or the squad could no longer fight.",
+      "unlock_note": ""
+    },
+    {
+      "number": 21,
+      "section": 4,
+      "name": "The Lone Beacon",
+      "name_zh": "北烽孤台",
+      "briefing": "No signal had come off the north coast in days, and we found out why on the ridge. The dead were running lamp carts along the roads, and where a cart stopped, fog closed over the road and nothing got through it. We put out two lamps, lit the beacon and held the ridge while the signal went out. The fog only sat where the lamps sat, so there was always a way around.",
+      "objectives": [
+        { "id": "douse_lamps", "text": "Put out the fog lanterns ({n}/{total})", "optional": false },
+        { "id": "light_beacon", "text": "Light the beacon", "optional": false },
+        { "id": "hold_signal", "text": "Hold while the signal goes out", "optional": false },
+        { "id": "signalmen", "text": "Free the trapped signalmen", "optional": true }
+      ],
+      "victory": "Both lamps were out, the signal went through and the beacon still stood.",
+      "failure": "The beacon was destroyed, or the squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 22,
+      "section": 4,
+      "name": "The Windgrass Ranch",
+      "name_zh": "风草马场",
+      "briefing": "The ranch behind the beacon was the island's remount yard, and the raiders knew it. Darth riders came in along the open pasture, tried a flank, pulled back when we met them and came again on another road. Their spiders had staked tripwires across the grass, which hurt our own riders worse than anyone. The herders needed two release gates open to move the horses back, and the main shed had to hold.",
+      "objectives": [
+        { "id": "hold_shed", "text": "Keep the main shed standing", "optional": false },
+        { "id": "open_gates", "text": "Open the release gates ({n}/{total})", "optional": false },
+        { "id": "herders_back", "text": "Get the herders back ({n}/{min})", "optional": false },
+        { "id": "horses_back", "text": "Get the horses back ({n}/{min})", "optional": false },
+        { "id": "feed_stacks", "text": "Save the feed stacks", "optional": true }
+      ],
+      "victory": "Both gates were open, the shed held and enough herders and horses reached the back field.",
+      "failure": "The main shed came down, or too few herders or horses got back.",
+      "unlock_note": "Outriders with the Cavalry Saber can now be hired."
+    },
+    {
+      "number": 23,
+      "section": 4,
+      "name": "Ride to West Cape",
+      "name_zh": "西岬驰援",
+      "briefing": "West Cape was the last harbor the island garrison still held, and the Darth had put armored horse in front of it. We watched them form up at the south end, pick a line and commit to it, and that was the only warning we got. A glaive planted and facing the right way took the charge out of a rider, and anything else just got pushed aside. We held the harbor gate through two of their runs.",
+      "objectives": [
+        { "id": "hold_gate", "text": "Hold the harbor gate", "optional": false },
+        { "id": "repel_cavalry", "text": "Repel the cavalry runs ({n}/{total})", "optional": false },
+        { "id": "wounded_in", "text": "Carry the wounded into the shed", "optional": true }
+      ],
+      "victory": "The harbor gate held through both runs of cavalry.",
+      "failure": "The harbor gate was destroyed, or the squad could no longer fight.",
+      "unlock_note": "Outriders can now take the Lance."
+    },
+    {
+      "number": 24,
+      "section": 4,
+      "name": "Banners of the North Isle",
+      "name_zh": "朔岛会旗",
+      "briefing": "Yue Cen agreed to meet us under one banner at the island's west harbor, and the hexer came to break it up. Houqing planted cursed standards that slowed how fast our wounded recovered, sent Darth horse around the flanks and tried to raise his own dead again. We cut the standards down, laid the bodies to rest and killed him on the banner ground. The fleet had to be afloat when it was over.",
+      "objectives": [
+        { "id": "kill_houqing", "text": "Defeat Houqing the Hexer", "optional": false },
+        { "id": "keep_ship", "text": "Keep the main ship afloat", "optional": false },
+        { "id": "hold_banner", "text": "Hold the banner ground", "optional": false },
+        { "id": "medicine_boat", "text": "Save the medicine boat", "optional": true }
+      ],
+      "victory": "Houqing fell, the banner ground was clear and the fleet was still afloat.",
+      "failure": "The main ship was lost, both docks were destroyed, or the squad could no longer fight.",
+      "unlock_note": "Outriders can now take the Three-Eyed Gun."
+    },
+    {
+      "number": 25,
+      "section": 5,
+      "name": "The Old Ferry",
+      "name_zh": "阴江旧渡",
+      "briefing": "The ship accounts from the island pointed back across the water to an old ferry on the Shadow River. Our courier carried them, and we had to get him down the south road to the checkpoint shed. The dead here gathered on a visible mark, jumped over our front line in one arc and landed on the open ground behind it, where we could shoot them down. The courier must survive the battle.",
+      "objectives": [
+        { "id": "hold_ferry", "text": "Hold the old ferry", "optional": false },
+        { "id": "escort_courier", "text": "Escort the courier to the shed", "optional": false },
+        { "id": "keep_ledger", "text": "Keep the ship ledger safe", "optional": false },
+        { "id": "ferryman", "text": "Free the ferryman outside", "optional": true }
+      ],
+      "victory": "The courier and the ship ledger reached the checkpoint shed.",
+      "failure": "The ledger was destroyed, or the courier did not survive.",
+      "unlock_note": ""
+    },
+    {
+      "number": 26,
+      "section": 5,
+      "name": "Embers of the Sunken Village",
+      "name_zh": "沉村余烬",
+      "briefing": "Upriver the village had gone under, and there were still people alive on its three raised courtyards. The dead there carried the same plague we had seen in the old war, and the low ground between the yards was foul enough to sicken anyone who stood in it. Poison could be treated, so we rotated the sick back and kept the two dry roads clear. All three yards had people to bring to the infirmary.",
+      "objectives": [
+        { "id": "survivors", "text": "Bring in the survivors ({n}/{min})", "optional": false },
+        { "id": "hold_infirmary", "text": "Keep the infirmary standing", "optional": false },
+        { "id": "village_register", "text": "Recover the village register", "optional": true }
+      ],
+      "victory": "Enough survivors came out of all three yards and the infirmary stood.",
+      "failure": "Too few survivors were brought in, or the infirmary was destroyed.",
+      "unlock_note": ""
+    },
+    {
+      "number": 27,
+      "section": 5,
+      "name": "The Old Weir",
+      "name_zh": "古堰止水",
+      "briefing": "The weir upstream was still running two winches, hauling cargo that was not grain. A soul-calling focus had been set up beside the sluice, and the dead were guarding it with bearers who dropped an anchor and ran a line to it. A bearer on its line could not move or swing, and the line could be cut. We stopped both winches, got the operators out and broke the focus.",
+      "objectives": [
+        { "id": "stop_winches", "text": "Stop both winches ({n}/{total})", "optional": false },
+        { "id": "break_focus", "text": "Break the soul-calling focus", "optional": false },
+        { "id": "operators_out", "text": "Get the operators out ({n}/{min})", "optional": false },
+        { "id": "gauge_books", "text": "Save the water gauge and books", "optional": true }
+      ],
+      "victory": "Both winches were stopped, the focus was broken and the operators got out.",
+      "failure": "The operators were lost, or a winch was wrecked beyond repair.",
+      "unlock_note": ""
+    },
+    {
+      "number": 28,
+      "section": 5,
+      "name": "Temple of the Broken Stele",
+      "name_zh": "断碑寺",
+      "briefing": "The weir road led to a temple with its stele broken into three pieces, and Huizhao could read what was on them. Two corridors ran between the forecourt and the rear hall, so we could reach all three sections without leaving him alone for long. By the time he closed the altar in the back, he could silence a caster in the middle of its work and seal several bodies at once. Huizhao must survive the battle.",
+      "objectives": [
+        { "id": "read_steles", "text": "Read the stele sections ({n}/{total})", "optional": false },
+        { "id": "close_altar", "text": "Close the soul-calling altar", "optional": false },
+        { "id": "huizhao_back", "text": "Bring Huizhao back to the front", "optional": false },
+        { "id": "scrolls", "text": "Save the scattered scrolls", "optional": true }
+      ],
+      "victory": "All three inscriptions were read, the altar was closed and Huizhao came back.",
+      "failure": "Huizhao did not survive, or an inscription was destroyed.",
+      "unlock_note": "Exorcists can now take the Bronze Spirit Bell."
+    },
+    {
+      "number": 29,
+      "section": 5,
+      "name": "The Witness in the Tower",
+      "name_zh": "孤塔证言",
+      "briefing": "The stele named a man who had kept Gu Tingzhou's river accounts for years, and the Candle Ferry Company had him locked in a tower. We came up the two slope roads, got him out at the tower base and walked him and his ledger seal down to the wagon waiting at the south exit. The Old Weir-Keeper must survive the battle.",
+      "objectives": [
+        { "id": "rescue_keeper", "text": "Get the Old Weir-Keeper out", "optional": false },
+        { "id": "deliver_witness", "text": "Bring the witness to the wagon", "optional": false },
+        { "id": "keep_seal", "text": "Keep the ledger seal safe", "optional": false },
+        { "id": "loose_accounts", "text": "Save the loose accounts", "optional": true }
+      ],
+      "victory": "The witness and the ledger seal reached the wagon.",
+      "failure": "The ledger seal burned, or the Old Weir-Keeper did not survive.",
+      "unlock_note": ""
+    },
+    {
+      "number": 30,
+      "section": 5,
+      "name": "Breaking the Source",
+      "name_zh": "溯源破阵",
+      "briefing": "The inner river had been pulled dry, and the thing doing it was sitting at the middle focus. Hanba burned lines across the open ground, each one marked before it lit, and they cut the riverbed into pieces we had to move between. Anchor bearers kept it protected while it crossed from one dry patch to the other. We broke all three foci and put it down.",
+      "objectives": [
+        { "id": "break_foci", "text": "Break the river foci ({n}/{total})", "optional": false },
+        { "id": "kill_hanba", "text": "Defeat Hanba", "optional": false },
+        { "id": "waterwheel", "text": "Save the downstream waterwheel", "optional": true }
+      ],
+      "victory": "All three foci were broken and Hanba was dead.",
+      "failure": "The squad had nothing left to fight with.",
+      "unlock_note": ""
+    },
+    {
+      "number": 31,
+      "section": 6,
+      "name": "West Coast Rendezvous",
+      "name_zh": "西岸接应",
+      "briefing": "Closing the inner river did not clear the coast, because the harbor still had anchors of its own and troops to go with them. We moved the witness, the original ledgers and the townspeople down the cross street to the relief camp at the harbor gate. The column kept to the wide street while we cleared the warehouse yard and the dyke ahead of it. The witness must survive the battle.",
+      "objectives": [
+        { "id": "witness_in", "text": "Get the witness to the camp", "optional": false },
+        { "id": "townspeople", "text": "Bring in the townspeople ({n}/{min})", "optional": false },
+        { "id": "keep_box", "text": "Keep the ledger box safe", "optional": false },
+        { "id": "ships_doctor", "text": "Free the ship's doctor", "optional": true }
+      ],
+      "victory": "The witness, the ledgers and enough townspeople reached the relief camp.",
+      "failure": "The ledger box was destroyed, the witness did not survive, or too few townspeople got in.",
+      "unlock_note": ""
+    },
+    {
+      "number": 32,
+      "section": 6,
+      "name": "Lighting the Beacons",
+      "name_zh": "三镇连烽",
+      "briefing": "Everyone had agreed to sail together, but no two towns knew where to meet. Three beacons stood around the near country, on the west platform, the north ridge and the east post, with a ring road between them and a farm track through the middle. We took all three, lit them, and saw a runner from each one reach the post house. The post house itself had to survive the day.",
+      "objectives": [
+        { "id": "light_beacons", "text": "Light the beacons ({n}/{total})", "optional": false },
+        { "id": "runners_in", "text": "Get a runner in from each beacon", "optional": false },
+        { "id": "hold_post", "text": "Keep the post house standing", "optional": false },
+        { "id": "grain_shed", "text": "Save the grain shed", "optional": true }
+      ],
+      "victory": "All three beacons were lit and a runner from each reached the post house.",
+      "failure": "The post house was destroyed, or a beacon's runners were all lost.",
+      "unlock_note": ""
+    },
+    {
+      "number": 33,
+      "section": 6,
+      "name": "The Shipyard",
+      "name_zh": "船坞抢修",
+      "briefing": "The ships were in the yard and none of them could sail. The shipwrights needed three jobs finished: the hull seams caulked, the mast frames braced and the ordnance loaded. The dead came over the outer dykes in small crews to break the work rather than fight us. Three slipways opened onto one yard, which gave us room to re-form, and we could not afford to lose the shipwrights.",
+      "objectives": [
+        { "id": "hold_core", "text": "Keep the shipyard standing", "optional": false },
+        { "id": "repairs", "text": "Finish the repairs ({n}/{total})", "optional": false },
+        { "id": "shipwrights", "text": "Keep the shipwrights alive ({n}/{min})", "optional": false },
+        { "id": "rigging", "text": "Recover the spare rigging", "optional": true }
+      ],
+      "victory": "All three repairs were finished and the shipyard still stood.",
+      "failure": "The shipyard core was destroyed, or too few shipwrights were left to work.",
+      "unlock_note": ""
+    },
+    {
+      "number": 34,
+      "section": 6,
+      "name": "The Sea Wall",
+      "name_zh": "海防并阵",
+      "briefing": "A repaired ship was no use while the outer harbor was still closed. The troops from the three towns arrived and we took the sea wall with them, one banner point at each end of the shore road. The slope in the north let us go around their archers and the dock in the south let us shift along the line. Once the shore road was clear, we could reach the loading point at the causeway.",
+      "objectives": [
+        { "id": "hold_banners", "text": "Hold both sea wall banners ({n}/{total})", "optional": false },
+        { "id": "open_road", "text": "Open the shore road", "optional": false },
+        { "id": "old_ballista", "text": "Save the old ballista", "optional": true }
+      ],
+      "victory": "Both banner points held and the shore road was open.",
+      "failure": "The supply staging point was destroyed, or the squad could no longer fight.",
+      "unlock_note": ""
+    },
+    {
+      "number": 35,
+      "section": 6,
+      "name": "Dead Tide at the Causeway",
+      "name_zh": "长堤尸潮",
+      "briefing": "This was the one we had been forming up for. Everyone we had stood below the harbor wall: six fighters across the middle, guns behind them, riders on the flanks and the gate open at our backs for anyone who had to come out of the line. Refugees, wounded and supply wagons loaded in three columns while the dead came down the causeway. The command post had to stand until the last wagon was aboard.",
+      "objectives": [
+        { "id": "hold_post", "text": "Hold the loading command post", "optional": false },
+        { "id": "board_refugees", "text": "Board the refugees ({n}/{min})", "optional": false },
+        { "id": "board_wounded", "text": "Board the wounded ({n}/{min})", "optional": false },
+        { "id": "board_wagons", "text": "Board the supply wagons ({n}/{min})", "optional": false },
+        { "id": "outer_infirmary", "text": "Keep the outer infirmary standing", "optional": true }
+      ],
+      "victory": "All three columns boarded and the command post was still standing.",
+      "failure": "The command post was destroyed, or a column fell short of its boarding count.",
+      "unlock_note": ""
+    },
+    {
+      "number": 36,
+      "section": 6,
+      "name": "Setting Sail",
+      "name_zh": "会盟出海",
+      "briefing": "The fleet was away and a small party stayed behind to finish the work. Gu Tingzhou kept three soul anchors in the outer harbor: one in the north yard, one in the east warehouse and one on a hull at the berth, reachable along the gangway. The anchors fed him protection we could not cut through any other way, and the harbor street kept two roads open to him at all times. We broke all three, killed him and went back to the boats.",
+      "objectives": [
+        { "id": "land_anchors", "text": "Destroy the land anchors ({n}/{total})", "optional": false },
+        { "id": "ship_anchor", "text": "Destroy the ship anchor", "optional": false },
+        { "id": "kill_gu_tingzhou", "text": "Defeat Gu Tingzhou", "optional": false },
+        { "id": "regroup", "text": "Fall back to the sailing point", "optional": false },
+        { "id": "outer_accounts", "text": "Recover the shipping accounts", "optional": true }
+      ],
+      "victory": "All three anchors were broken, Gu Tingzhou was dead and the rear guard reached the boats.",
+      "failure": "The sailing point was destroyed, or the squad could no longer fight.",
+      "unlock_note": ""
+    }
+  ]
+}

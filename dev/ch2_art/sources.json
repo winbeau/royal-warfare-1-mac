@@ -1,0 +1,217 @@
+{
+	"_note": "第二章美术处理管线的来源到输出映射。脚本不写死文件名，一律从这里读。",
+	"bodies": [
+		{
+			"id": "warden_sword_shield",
+			"raw": "warden_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 37,
+			"has_disc": true,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "attack", "row": 2, "done": 4},
+				{"name": "skill", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "musketeer_gun",
+			"raw": "musketeer_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 36,
+			"has_disc": false,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "attack", "row": 2, "done": 4},
+				{"name": "reload", "row": 3, "done": null},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "outrider_saber",
+			"raw": "outrider_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 45,
+			"has_disc": false,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "run", "row": 2, "done": null},
+				{"name": "attack", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "elementalist_staff",
+			"raw": "elementalist_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 37,
+			"has_disc": false,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "attack", "row": 2, "done": 4},
+				{"name": "skill", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "exorcist_bell",
+			"raw": "exorcist_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 35,
+			"has_disc": false,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "attack", "row": 2, "done": 4},
+				{"name": "skill", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "warden_glaive",
+			"raw": "warden_glaive_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 37,
+			"has_disc": false,
+			"actions": [
+				{"name": "idle", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "attack", "row": 2, "done": 4},
+				{"name": "brace", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "darth_lancer",
+			"_note": "用户否决了这套造型，和一代达思差太远。改用 iron_skeleton_horse + darth_rider 的拼合方案，这条保留仅作来源记录，不再生成/维护。",
+			"unused": true,
+			"raw": "darth_lancer_body_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 46,
+			"has_disc": false,
+			"has_rod": false,
+			"lance_tip_actions": ["charge", "attack"],
+			"actions": [
+				{"name": "form", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "charge", "row": 2, "done": null},
+				{"name": "attack", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		},
+		{
+			"id": "iron_skeleton_horse",
+			"raw": "iron_skeleton_horse_v1.png",
+			"rows": 5,
+			"cols": 8,
+			"logical_height": 32,
+			"has_disc": false,
+			"has_rod": false,
+			"marker_point": true,
+			"actions": [
+				{"name": "form", "row": 0, "done": null},
+				{"name": "walk", "row": 1, "done": null},
+				{"name": "charge", "row": 2, "done": null},
+				{"name": "fight", "row": 3, "done": 4},
+				{"name": "death", "row": 4, "done": null}
+			]
+		}
+	],
+	"weapon_sheets": {
+		"weapons_v3.png": {"rows": 4, "cols": 4},
+		"five_thunders_v6.png": {"rows": 1, "cols": 3},
+		"three_eyed_v5.png": {"rows": 1, "cols": 1}
+	},
+	"weapons": [
+		{"id": "dao", "sheet": "weapons_v3.png", "row": 0, "col": 0, "logical_length": 15, "kind": "blade"},
+		{"id": "round_shield", "sheet": "weapons_v3.png", "row": 0, "col": 1, "logical_length": 12, "kind": "shield"},
+		{"id": "great_glaive", "sheet": "weapons_v3.png", "row": 0, "col": 2, "logical_length": 42, "kind": "blade"},
+		{"id": "horse_cleaver", "sheet": "weapons_v3.png", "row": 0, "col": 3, "logical_length": 30, "kind": "blade"},
+		{"id": "matchlock", "sheet": "weapons_v3.png", "row": 1, "col": 0, "logical_length": 30, "kind": "gun"},
+		{"id": "heavy_musket", "sheet": "weapons_v3.png", "row": 1, "col": 2, "logical_length": 34, "kind": "gun"},
+		{"id": "cavalry_saber", "sheet": "weapons_v3.png", "row": 2, "col": 0, "logical_length": 17, "kind": "blade"},
+		{"id": "lance", "sheet": "weapons_v3.png", "row": 2, "col": 1, "logical_length": 44, "kind": "blade"},
+		{"id": "wind_staff", "sheet": "weapons_v3.png", "row": 2, "col": 2, "logical_length": 38, "kind": "staff"},
+		{"id": "stone_staff", "sheet": "weapons_v3.png", "row": 2, "col": 3, "logical_length": 38, "kind": "staff"},
+		{"id": "river_staff", "sheet": "weapons_v3.png", "row": 3, "col": 0, "logical_length": 38, "kind": "staff"},
+		{"id": "wood_bell", "sheet": "weapons_v3.png", "row": 3, "col": 1, "logical_length": 9, "kind": "bell"},
+		{"id": "bronze_bell", "sheet": "weapons_v3.png", "row": 3, "col": 2, "logical_length": 11, "kind": "bell"},
+		{"id": "lotus_lantern", "sheet": "weapons_v3.png", "row": 3, "col": 3, "logical_length": 22, "kind": "staff"},
+		{"id": "five_thunders", "sheet": "five_thunders_v6.png", "row": 0, "col": 0, "logical_length": 28, "kind": "gun"},
+		{"id": "three_eyed", "sheet": "three_eyed_v5.png", "row": 0, "col": 0, "logical_length": 30, "kind": "gun"}
+	],
+	"vfx": {
+		"raw": "vfx_v1.png",
+		"rows": 8,
+		"cols": 6,
+		"entries": [
+			{"row": 0, "name": "muzzle_flash", "blend": "add", "anchor": "left"},
+			{"row": 1, "name": "powder_smoke", "blend": "alpha", "anchor": "center"},
+			{"row": 2, "name": "ball_tracer", "blend": "add", "anchor": "left"},
+			{"row": 3, "name": "ball_impact", "blend": "add", "anchor": "center"},
+			{"row": 4, "name": "wind_wall", "blend": "add", "anchor": "center"},
+			{"row": 5, "name": "gale_blade", "blend": "add", "anchor": "center"},
+			{"row": 6, "name": "bell_wave", "blend": "add", "anchor": "center"},
+			{"row": 7, "name": "corpse_seal", "blend": "add", "anchor": "center"}
+		]
+	},
+	"vfx2": {
+		"raw": "vfx2_v1.png",
+		"rows": 6,
+		"cols": 6,
+		"entries": [
+			{"row": 0, "name": "wide_sweep", "blend": "add", "anchor": "center"},
+			{"row": 1, "name": "brace_clash", "blend": "add", "anchor": "center"},
+			{"row": 2, "name": "hoof_dust", "blend": "alpha", "anchor": "center", "color": [170, 140, 100]},
+			{"row": 3, "name": "scattershot", "blend": "add", "anchor": "left", "trim_bottom": 0.22},
+			{"row": 4, "name": "concussion_round", "blend": "add", "anchor": "center", "trim_bottom": 0.18},
+			{"row": 5, "name": "burst_shell", "blend": "add", "anchor": "center"}
+		]
+	},
+	"backgrounds": [
+		{"raw": "bf_11_stone_wharf_v1.png", "out": "11-stone-wharf.png"},
+		{"raw": "bf_23_west_cape_v1.png", "out": "23-west-cape.png"}
+	],
+	"icons": {
+		"raw": "rw1style_icons_v1.png",
+		"rows": 6,
+		"cols": 6,
+		"portraits": ["warden", "musketeer", "outrider", "elementalist", "exorcist", "captain"],
+		"portrait_height": 180,
+		"skill_max_edge": 96,
+		"skill_rows": [
+			["dao-shield:0", "dao-shield:1", "modao:0", "modao:1", "horse-cleaver:0", "horse-cleaver:1"],
+			["standard-gun:0", "standard-gun:1", "five-thunder:0", "five-thunder:1", "heavy-gun:0", "heavy-gun:1"],
+			["scout-saber:0", "scout-saber:1", "long-lance:0", "long-lance:1", "three-eye:0", "three-eye:1"],
+			["wind-staff:0", "wind-staff:1", "earth-staff:0", "earth-staff:1", "water-staff:0", "water-staff:1"],
+			["wood-bell:0", "wood-bell:1", "soul-bell:0", "soul-bell:1", "lotus-staff:0", "lotus-staff:1"]
+		]
+	},
+	"weapon_icons": {
+		"_note": "第 5b 节：武器图标，三格面板用，一代扁平卡通风格。按行优先从 rw1style_weapon_icons_v1.png（3 行 5 列）取，five_thunders/three_eyed 两格不用，改从 five_thunders_v6.png（1x3）取第 1/2 格。",
+		"raw": "rw1style_weapon_icons_v1.png",
+		"rows": 3,
+		"cols": 5,
+		"max_edge": 140,
+		"ids": [
+			"dao_shield", "great_glaive", "horse_cleaver", "matchlock", null,
+			"heavy_musket", "cavalry_saber", "lance", null, "wind_staff",
+			"stone_staff", "river_staff", "wood_bell", "bronze_bell", "lotus_lantern"
+		],
+		"overrides": {
+			"five_thunders": {"sheet": "five_thunders_v6.png", "rows": 1, "cols": 3, "row": 0, "col": 1},
+			"three_eyed": {"sheet": "five_thunders_v6.png", "rows": 1, "cols": 3, "row": 0, "col": 2}
+		}
+	}
+}

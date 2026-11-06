@@ -1,0 +1,689 @@
+{
+ "id": "darth_lancer",
+ "scale_note": "2x, draw at 0.5",
+ "logical_height": 46,
+ "cell": [
+  101,
+  101
+ ],
+ "actions": {
+  "form": {
+   "row": 0,
+   "frames": [
+    {
+     "region": [
+      0,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      101,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      202,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      303,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      404,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      505,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      606,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      707,
+      0,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    }
+   ],
+   "done": null
+  },
+  "walk": {
+   "row": 1,
+   "frames": [
+    {
+     "region": [
+      0,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      101,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      202,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      303,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      404,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      505,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      606,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      707,
+      101,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    }
+   ],
+   "done": null
+  },
+  "charge": {
+   "row": 2,
+   "frames": [
+    {
+     "region": [
+      0,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -41.0
+     ]
+    },
+    {
+     "region": [
+      101,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -40.0
+     ]
+    },
+    {
+     "region": [
+      202,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -36.0
+     ]
+    },
+    {
+     "region": [
+      303,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -35.0
+     ]
+    },
+    {
+     "region": [
+      404,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -40.0
+     ]
+    },
+    {
+     "region": [
+      505,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -37.5
+     ]
+    },
+    {
+     "region": [
+      606,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -38.0
+     ]
+    },
+    {
+     "region": [
+      707,
+      202,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.22433181342147,
+      -40.5
+     ]
+    }
+   ],
+   "done": null
+  },
+  "attack": {
+   "row": 3,
+   "frames": [
+    {
+     "region": [
+      0,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      46.46549569741107,
+      -74.5
+     ]
+    },
+    {
+     "region": [
+      101,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      38.46549569741107,
+      -87.0
+     ]
+    },
+    {
+     "region": [
+      202,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      39.46549569741107,
+      -90.5
+     ]
+    },
+    {
+     "region": [
+      303,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      56.46549569741107,
+      -34.0
+     ]
+    },
+    {
+     "region": [
+      404,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      55.46549569741107,
+      -22.0
+     ]
+    },
+    {
+     "region": [
+      505,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      54.46549569741107,
+      -50.0
+     ]
+    },
+    {
+     "region": [
+      606,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      54.46549569741107,
+      -43.0
+     ]
+    },
+    {
+     "region": [
+      707,
+      303,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": [
+      51.46549569741107,
+      -40.5
+     ]
+    }
+   ],
+   "done": 4
+  },
+  "death": {
+   "row": 4,
+   "frames": [
+    {
+     "region": [
+      0,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      101,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      202,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      303,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      404,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      505,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      606,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    },
+    {
+     "region": [
+      707,
+      404,
+      101,
+      101
+     ],
+     "origin": [
+      50.5,
+      99.0
+     ],
+     "rod": null,
+     "disc": null,
+     "lance_tip": null
+    }
+   ],
+   "done": null
+  }
+ }
+}

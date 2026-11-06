@@ -1,0 +1,1535 @@
+{
+ "_note": "Chapter 2 dialogue, zh source kept for traceability; runtime reads en.",
+ "events": [
+  {
+   "id": "D01-a",
+   "level": 1,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "登陆整队，敌军尚未接近",
+   "lines": [
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "船板上的刻记，和那件遗物一样。",
+     "en": "That mark on the hull's the same as the one on the relic."
+    },
+    {
+     "speaker_zh": "渡夫",
+     "speaker": "Ferryman",
+     "zh": "先帮我们把岸上的人接回来。你们要找的船，我见过。",
+     "en": "Help us get our people off the beach first. I've seen that ship you're after."
+    }
+   ]
+  },
+  {
+   "id": "D01-b",
+   "level": 1,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "两名渡夫救助完成、最后追兵清除",
+   "lines": [
+    {
+     "speaker_zh": "渡夫",
+     "speaker": "Ferryman",
+     "zh": "就是这道刻记。船不进海门，只在盐田换货。",
+     "en": "That's the mark. Those ships never put in at Seagate, they just trade at the saltpans."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你能带我们去吗？",
+     "en": "Can you take us there?"
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "他要先回家。盐田那边也不是给外人查案的地方。",
+     "en": "He's going home first, and the saltpans aren't open to outsiders asking questions anyway."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那边还有人没撤出来，我们能帮忙。",
+     "en": "You've still got people out there, and we can help."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "我只给你们沿岸通行的旗，不给你们调兵的权。",
+     "en": "I'll give you a flag for the coast road. You don't get to order my soldiers around."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "够了。先把人接回来。",
+     "en": "That'll do. Let's get those people back first."
+    }
+   ]
+  },
+  {
+   "id": "D03-a",
+   "level": 3,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "首次与陆绫会合、尚未进入桥上接战",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "上桥还能走，下桥的芦苇里有东西。",
+     "en": "The upper bridge is still clear, but there's something in the reeds past the lower one."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你替我们看住下游，人先过河。",
+     "en": "Watch the downstream side. We'll get the people across."
+    }
+   ]
+  },
+  {
+   "id": "D03-b",
+   "level": 3,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "渡民已安全、追兵清除",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "我是朔岛的骑哨，岛上的回信断了半个月。",
+     "en": "I'm an outrider out of the North Isle. I haven't had word from home in two weeks."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你回不去？",
+     "en": "You can't get back?"
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "海门不给船。那边若还守着，等的就是我这封信。",
+     "en": "Seagate won't give me a boat. So if the isle's still holding, they're waiting on a letter I can't deliver."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们先追粮车。找到航路，就替你把信送到。",
+     "en": "We're chasing the grain carts first. Once we find a sea lane, we'll get your letter through."
+    }
+   ]
+  },
+  {
+   "id": "D05-a",
+   "level": 5,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "祠前清场后，首次仪式前",
+   "lines": [
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "这些尸体不是自己醒的。有人在远处牵着。",
+     "en": "These bodies didn't wake on their own. Someone's pulling them from a distance."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们挡住来路，你先救还能救的人。",
+     "en": "We'll hold the approach. Get to the ones you can still save."
+    }
+   ]
+  },
+  {
+   "id": "D05-b",
+   "level": 5,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "三处封尸完成并清场",
+   "lines": [
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "你们带来的刻记，和这些魂印的接法很像。",
+     "en": "That mark of yours is tied off the same way these soul-seals are."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "是同一个法师？",
+     "en": "The same necromancer?"
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "只凭这个还认不得。教过同一种术，也能留下同样的线。",
+     "en": "I can't tell from this alone. Anyone trained in the same craft leaves the same threads."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那就先查运它们的人。船总要靠岸，货总要入账。",
+     "en": "Then we start with whoever ships them. Boats have to land somewhere, and cargo has to go in a ledger."
+    }
+   ]
+  },
+  {
+   "id": "D06-a",
+   "level": 6,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "准备期，风术师到位且技能可用",
+   "lines": [
+    {
+     "speaker_zh": "清禾",
+     "speaker": "Qinghe",
+     "zh": "看弓队的朝向。我能接住这一面的来箭，另一侧得靠你们。",
+     "en": "Watch which way their archers face. I can stop the arrows on this side, but the other side's yours."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "守住内院，别追出门去。南面的路也留人。",
+     "en": "Hold the inner yard and don't chase them out the gate. Leave some men on the south road too."
+    }
+   ]
+  },
+  {
+   "id": "D06-b",
+   "level": 6,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "首次箭雨演示结束且当前敌人清除",
+   "lines": [
+    {
+     "speaker_zh": "清禾",
+     "speaker": "Qinghe",
+     "zh": "风障散了就移位，别在原地等下一轮。",
+     "en": "When the Wind Wall drops, move. Don't stand there waiting for the next volley."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "弓队交给侧翼；前排先收回来。",
+     "en": "Flanks, take the archers. Front rank, pull back."
+    }
+   ]
+  },
+  {
+   "id": "D06-c",
+   "level": 6,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "胜利结算前",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "海门守住了。你们要的通行文书，在这里。",
+     "en": "Seagate held. Here's the pass you wanted."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "只到江城？",
+     "en": "Only as far as the River City?"
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "我守的是这座门，不能替所有人许诺援军。",
+     "en": "I only hold this gate, so I can't promise you other men's soldiers."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们也不是来借走你们最后一支兵的。",
+     "en": "We didn't come to take your last company either."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "那就把粮路接上。江城若能喘口气，才谈得上出海。",
+     "en": "Then get the grain moving again. Once the River City can breathe, we can talk about ships."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "好。明早沿河走。",
+     "en": "Good. We'll go upriver at first light."
+    }
+   ]
+  },
+  {
+   "id": "D07-a",
+   "level": 7,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "渡场准备期",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "两边的船都得卸，别把人全压在一个口子。",
+     "en": "Both boats have to be unloaded, so don't bunch everyone at one landing."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先清靠岸这边，再接另一船。",
+     "en": "Clear this side first, then bring the other one in."
+    }
+   ]
+  },
+  {
+   "id": "D07-b",
+   "level": 7,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "两船卸载完成并清场",
+   "lines": [
+    {
+     "speaker_zh": "船工",
+     "speaker": "Boatman",
+     "zh": "这几天运来的箱子，封泥和粮箱一样，分量却不对。",
+     "en": "Crates came in all week. They're sealed like grain, but the weight's wrong."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "留下封泥，去上游粮仓核账。",
+     "en": "Keep one of those seals. We'll check the books at the granary upriver."
+    }
+   ]
+  },
+  {
+   "id": "D08-a",
+   "level": 8,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "进入水车粮仓，尚未开工",
+   "lines": [
+    {
+     "speaker_zh": "粮仓管事",
+     "speaker": "Granary Steward",
+     "zh": "水轮还转得动，停的是运粮的船。",
+     "en": "The wheel still turns. It's the grain boats that stopped coming."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "工人分批走，我们留住磨坊。",
+     "en": "Move the workers out in groups. We'll keep the mill."
+    }
+   ]
+  },
+  {
+   "id": "D08-b",
+   "level": 8,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "工人与粮物送达安全点",
+   "lines": [
+    {
+     "speaker_zh": "粮仓管事",
+     "speaker": "Granary Steward",
+     "zh": "有人在驿站换过运单，连军粮也被划去了铳坊。",
+     "en": "Someone swapped the manifests at the post. Even army grain got signed over to the gunworks."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先去驿站，别让假账再带我们绕路。",
+     "en": "We'll head for the post station next. I'm done with forged books sending us the long way round."
+    }
+   ]
+  },
+  {
+   "id": "D09-a",
+   "level": 9,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "驿站入口安全期",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "北面的旗手在找信号点。让他吹响，援兵会提前到。",
+     "en": "Their flagman's hunting for a signal point up north. If he sounds it, their reinforcements get here early."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你看住他，我们去取原账。",
+     "en": "You keep him in sight. We'll get the real ledger."
+    }
+   ]
+  },
+  {
+   "id": "D09-b",
+   "level": 9,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "原账取得且场面安全",
+   "lines": [
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "粮船装过骨灯，下一站是军械工坊。",
+     "en": "The grain boats were carrying bone lamps, so the gunworks is our next stop."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "我先去探路。",
+     "en": "I'll scout ahead."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "看见烟也别独自进去，那地方不缺火药。",
+     "en": "If you see smoke, don't go in alone. That place is full of powder."
+    }
+   ]
+  },
+  {
+   "id": "D10-a",
+   "level": 10,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "工坊外整队期",
+   "lines": [
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "先救人和图册！别往火药棚那边走。",
+     "en": "Get the people and the drawings out first! Keep away from the powder shed!"
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "西门能开吗？",
+     "en": "Can you open the west gate?"
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "能，门里还有一排铳。我们压住外院，你们接匠人。",
+     "en": "Yes, and there's a rack of guns behind it. We'll hold the outer yard, you get the smiths."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先把人送过井边，枪和账箱都跟着走。",
+     "en": "Get them past the well, and bring the guns and the ledger box too."
+    }
+   ]
+  },
+  {
+   "id": "D10-b",
+   "level": 10,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "许衡和匠人撤出并清场",
+   "lines": [
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "制式铳先给你们。保下的五雷和重管还能凑两组，到了江城才能按图普遍整备。",
+     "en": "The Matchlocks are yours. I saved two Five Thunders and two Heavy Muskets, but proper kit waits for the River City."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "五雷就是一口气打五发？",
+     "en": "So the Five Thunders fires five shots at once?"
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "一发一发打。前面快，打空以后慢。",
+     "en": "One at a time. It's fast while it's loaded and slow once it's empty."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "重管呢？",
+     "en": "And the heavy one?"
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "每发都重，节奏也匀。弹要选对，打成群的和打铁甲的不是一回事。",
+     "en": "Every shot hits hard at a steady rhythm. Pick the right round, though. Crowds and armor need different ones."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那就两样都留。先把会造它们的人带回去。",
+     "en": "We'll take both. And the man who builds them comes with us."
+    }
+   ]
+  },
+  {
+   "id": "D12-a",
+   "level": 12,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "码头准备期",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "江口那具水尸被叫作赢勾。别追进水里，干码头能绕过去。",
+     "en": "They call that drowned thing at the river mouth Yinggou. Don't chase it into the water, just go round the dry wharf."
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "枪交给我的人，给他们留装填的空地。",
+     "en": "Give the guns to my men, and give them room to reload."
+    }
+   ]
+  },
+  {
+   "id": "D12-b",
+   "level": 12,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "赢勾击败、主货单取回",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "顾廷舟的运单……封港的船，也是他的。",
+     "en": "These are Gu Tingzhou's manifests. The ships blockading the port are his too."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "江城的粮、骨灯、铁关的守军，全走一条水路。",
+     "en": "The city's grain, the bone lamps, the men holding the Iron Pass. It's all one water route."
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "铳坊失火前，他的人还催着我们交货。",
+     "en": "His people were still pushing us for delivery right before the gunworks burned."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "可江城现在连给北岛送信的船都凑不齐。",
+     "en": "And the River City can't scrape together one boat to carry word to the North Isle."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先开铁关，把军需送去东北港。陆绫说岛上有船队。",
+     "en": "We'll open the Iron Pass and run the supplies to the northeast port. Lu Ling says the isle has a fleet."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "岛军若也被围住了呢？",
+     "en": "And if the island garrison is under siege too?"
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们带着粮和军械去，不空着手求他们。",
+     "en": "We'll arrive with grain and weapons, so we're not begging empty-handed."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "我派人同行。江城的事，也不能一直让外人做。",
+     "en": "I'm sending men with you. Outsiders can't keep doing this city's work."
+    }
+   ]
+  },
+  {
+   "id": "D15-a",
+   "level": 15,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "铁炉准备期",
+   "lines": [
+    {
+     "speaker_zh": "炉长",
+     "speaker": "Forgemaster",
+     "zh": "炉还热着。守住三趟活，陌刀就能交到你们手上。",
+     "en": "Forge is still hot. Cover three runs of work and I'll have the Great Glaives ready for you."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "先让刀盾接散兵，长刀站后半步。",
+     "en": "Sword and shield, take the loose ones. Long blades, stay half a step back."
+    },
+    {
+     "speaker_zh": "炉长",
+     "speaker": "Forgemaster",
+     "zh": "那辆撞木车冲的是炉，不是人。正面铁板别硬啃。",
+     "en": "That Battering Ram's after the forge, not us. Don't waste your time on the front plate."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "留一队看炉，两侧打车架。谁也别挤在撞木前头。",
+     "en": "Keep one squad on the forge and hit the frame from the sides. Nobody stands in front of that beam."
+    }
+   ]
+  },
+  {
+   "id": "D15-b",
+   "level": 15,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "三段炉务完成、威胁清除",
+   "lines": [
+    {
+     "speaker_zh": "炉长",
+     "speaker": "Forgemaster",
+     "zh": "刀刃够重，出手就别乱转。等它自己撞上来。",
+     "en": "The blade's heavy enough on its own. Don't swing it around, just let them walk onto it."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先开关路，再让后面的车跟上。",
+     "en": "Open the pass road first, then bring the carts up."
+    }
+   ]
+  },
+  {
+   "id": "D17-a",
+   "level": 17,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "抵达关外集结点",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "里面的守军还在。缺口一亮旗，他们就出手。",
+     "en": "The garrison inside is still alive. Show a flag at the breach and they'll move."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先把原来的达思斧卫拉开，别让运料的人顶上去。",
+     "en": "Pull those Darth axemen off first. Don't let the supply crews take the hit."
+    }
+   ]
+  },
+  {
+   "id": "D17-b",
+   "level": 17,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "缺口恢复、运输到位",
+   "lines": [
+    {
+     "speaker_zh": "关内军士",
+     "speaker": "Pass Sergeant",
+     "zh": "将臣就在门后，他每次举刃，护卫都会换阵。",
+     "en": "General Jiangchen is right behind the gate. Every time he raises that blade, his guards shift."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "等护卫动的时候进去，两边一起。",
+     "en": "We'll go in while the guards are moving, both sides at once."
+    }
+   ]
+  },
+  {
+   "id": "D18-a",
+   "level": 18,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "夹击开始前",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "外面开路，里面接应。别挤进同一道门。",
+     "en": "We'll break in from outside while they push from within. Don't all pile into one gate."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先压住护卫，给另一队留出侧面。",
+     "en": "Pin the guards. Leave the flank open for the other column."
+    }
+   ]
+  },
+  {
+   "id": "D18-b",
+   "level": 18,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "将臣第二阶段结束且援兵暂歇",
+   "lines": [
+    {
+     "speaker_zh": "关内军士",
+     "speaker": "Pass Sergeant",
+     "zh": "它把最后一队全压到缺口了。",
+     "en": "It's thrown its last company at the breach."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "正面稳住，从空出来的侧路绕！",
+     "en": "Hold the front! Go round by the side road while it's empty!"
+    }
+   ]
+  },
+  {
+   "id": "D18-c",
+   "level": 18,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "铁门战胜利",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "东北港的船能走了，我想随第一船回岛。",
+     "en": "The northeast port can sail now. I want to be on the first boat home."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你是带信的人，当然一起去。",
+     "en": "You're carrying the letter. Of course you're coming."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "关内守军需要留下，能带走的人不会很多。",
+     "en": "The pass garrison stays here, so we won't be taking many men with us."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "有粮和军械就够让他们知道，海门没忘记我们。",
+     "en": "Grain and weapons are enough to tell them Seagate hasn't forgotten us."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "也让他们知道，我们不是来要他们舍下家乡的。",
+     "en": "And that we're not asking anyone to give up their home."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "我把这句话写进文书。至于能不能结盟，还得你们自己去谈。",
+     "en": "I'll put that in writing. Whether it turns into an alliance is for you to argue out."
+    }
+   ]
+  },
+  {
+   "id": "D19-a",
+   "level": 19,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "北岛登陆准备期",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "这是我回乡的路。岸哨没有旗，不像是撤走了。",
+     "en": "This is my way home. There's no flag on the shore post, but it doesn't look like they pulled out either."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先接住卸船的人，别把整队堵在栈桥上。",
+     "en": "Cover the unloading party. Don't jam the whole company on the pier."
+    }
+   ]
+  },
+  {
+   "id": "D19-b",
+   "level": 19,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "卸载完成并清场",
+   "lines": [
+    {
+     "speaker_zh": "岛军哨兵",
+     "speaker": "Island Sentry",
+     "zh": "陆绫？你真从海门回来了？",
+     "en": "Lu Ling? You actually made it back from Seagate?"
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "带了军需。岳将军在哪里？",
+     "en": "I brought supplies. Where's Commander Yue?"
+    },
+    {
+     "speaker_zh": "岛军哨兵",
+     "speaker": "Island Sentry",
+     "zh": "西港。马场和烽台都断了，我们等不到他的旗。",
+     "en": "West harbor. The ranch and the beacon are both cut off, so we never see his flag."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "先把卸货的人接上岸，我去把路找回来。",
+     "en": "Get the cargo crews ashore. I'll find the road back."
+    }
+   ]
+  },
+  {
+   "id": "D21-a",
+   "level": 21,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "孤台下方安全期",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "灯还亮着，雾却从灯下往外走。那不是我们的信号。",
+     "en": "The lamp's still lit, but the fog is rolling out from under it. That's not our signal."
+    },
+    {
+     "speaker_zh": "清禾",
+     "speaker": "Qinghe",
+     "zh": "先找灯架，不要追雾里的人影。",
+     "en": "Find the lamp frame. Don't chase shapes in the fog."
+    }
+   ]
+  },
+  {
+   "id": "D21-b",
+   "level": 21,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "烽台恢复并清场",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "回旗了！是西港的旗。",
+     "en": "They answered! That's the west harbor's flag."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "他们要我们往哪里走？",
+     "en": "Where do they want us?"
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "马场。开栏的人被困着，马一散，西岬就再也接不到援兵。",
+     "en": "The ranch. The gate crew's trapped, and if the horses scatter, West Cape gets no relief at all."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "回他一句：人和马，我们都去接。",
+     "en": "Signal back. We're coming for the people and the horses."
+    }
+   ]
+  },
+  {
+   "id": "D22-a",
+   "level": 22,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "马场准备期",
+   "lines": [
+    {
+     "speaker_zh": "马场守军",
+     "speaker": "Ranch Guard",
+     "zh": "堤边有骨蛛拉的索，快马也得先看脚下。",
+     "en": "Tripwire Spiders have lines strung along the bank. Watch your footing, however fast your horse is."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "我去探桩，你们护住开栏的人。",
+     "en": "I'll check the stakes. You cover the gate crew."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "别只顾跑得快，退路也要留出来。",
+     "en": "Don't just ride fast. Keep a way back open."
+    }
+   ]
+  },
+  {
+   "id": "D22-b",
+   "level": 22,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "人员马匹转移完成",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "马还在，骑哨就能重新跑起来。西岬的路我熟。",
+     "en": "We've still got horses, so the couriers can ride again. I know the road to West Cape."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "先报清敌情，不用你一个人冲开它。",
+     "en": "Report what's out there first. You don't have to open it alone."
+    }
+   ]
+  },
+  {
+   "id": "D23-a",
+   "level": 23,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "重骑出现前的安全观察点",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "黑甲和我们见过的达思骑士一样，可这次骑着马。",
+     "en": "Same black armor as the Darth knights, only these ones are mounted."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "别追着砍。陌刀朝来路立住，让铳手留在后面。",
+     "en": "Don't chase them. Glaives, face the road and hold. Gunners, stay behind them."
+    }
+   ]
+  },
+  {
+   "id": "D23-b",
+   "level": 23,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "西岬援军接应完成",
+   "lines": [
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "你们带来的粮，我收到了。马场的人也回来了。",
+     "en": "I got the grain you brought. My ranch hands are back as well."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "船队能借给我们吗？海对面还有人在等援军。",
+     "en": "Can you lend us the fleet? There are people across the sea waiting on relief."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "西港还被后卿压着。我若把船开走，岛上剩下的人怎么办？",
+     "en": "Houqing still has the west harbor by the throat. If I sail the fleet off, what happens to the rest?"
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "我们刚才守住了西岬。再往前一步，就能把他们接到港里。",
+     "en": "We just held West Cape. One more push and we can bring them into the harbor."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "我信你，陆绫。可这次要留下谁，不能靠你一个人答应。",
+     "en": "I trust you, Lu Ling. But who stays behind isn't yours alone to promise."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那就先不谈借船。把港口打通，人都接齐再谈。",
+     "en": "Then forget the ships for now. We'll open the harbor and get everyone in, then we talk."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "你们真愿意再打一场？",
+     "en": "You'd really fight another one?"
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们已经走到这里了。不会把人留在岸上。",
+     "en": "We came this far. We're not leaving people on the shore."
+    }
+   ]
+  },
+  {
+   "id": "D24-a",
+   "level": 24,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "会旗前准备期",
+   "lines": [
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "后卿借咒旗和尸体拖我们。旗能打，尸也能封。",
+     "en": "Houqing drags this out with hex banners and corpses. We can cut the banners down and lay the dead to rest."
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "我先顾最近的一具，别等所有尸体都堆起来。",
+     "en": "I'll take the nearest body first. Don't wait for them to pile up."
+    }
+   ]
+  },
+  {
+   "id": "D24-b",
+   "level": 24,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "后卿击败、船账取回",
+   "lines": [
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "岛上各营都回旗了。船队、骑哨和军需，我出。",
+     "en": "Every camp on the isle has answered. I'll provide the fleet, the outriders and the supplies."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那我们能一起回海门了？",
+     "en": "So we sail for Seagate together?"
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "先看这本船账。送来骨灯的船，都是从阴江出来的。",
+     "en": "Look at this shipping ledger first. Every boat that brought bone lamps came out of the Shadow River."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "如果现在就走，这里很快又会被封上。",
+     "en": "If we leave now, they'll close this place off again soon enough."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们想救自己的大陆，不能把另一片留给同样的灾难。",
+     "en": "We came to save our own land, but we're not leaving this one to the same thing."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "所以先往西渡。我留人守岛，亲自带一部随你们去。",
+     "en": "West first, then. I'll leave a force on the isle and bring the rest with you myself."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "这回不用我一个人送信了。",
+     "en": "I won't be carrying word alone this time."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "这回你送的，是两边都认的旗。",
+     "en": "This time you're carrying a banner that both sides answer to."
+    }
+   ]
+  },
+  {
+   "id": "D25-a",
+   "level": 25,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "回到大陆、旧渡准备期",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "岸边没有脚印，树上却有抓痕。",
+     "en": "No footprints on the bank, but there are claw marks up in the trees."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "后排留空地。看清它从哪儿起跳。",
+     "en": "Keep the back rank clear. Watch where it jumps from."
+    }
+   ]
+  },
+  {
+   "id": "D25-b",
+   "level": 25,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "信使与旧渡记录安全",
+   "lines": [
+    {
+     "speaker_zh": "信使",
+     "speaker": "Messenger",
+     "zh": "沉村的人还活着，有人不许他们离开河边。",
+     "en": "There are still people alive in the sunken village. Someone won't let them leave the river."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "是守军？",
+     "en": "Soldiers?"
+    },
+    {
+     "speaker_zh": "信使",
+     "speaker": "Messenger",
+     "zh": "押船的活人，和看住他们的死人。账簿在这里，我带你们去。",
+     "en": "Living men run the boats and dead ones watch the villagers. I've got the ledger. I'll take you there."
+    }
+   ]
+  },
+  {
+   "id": "D27-a",
+   "level": 27,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "古堰作业前",
+   "lines": [
+    {
+     "speaker_zh": "清禾",
+     "speaker": "Qinghe",
+     "zh": "水是被堰门截走的，污物顺着另一道渠进来。",
+     "en": "The weir gate is holding the water back. The filth comes in down the other channel."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "分开转两处绞盘，别让工人站在来敌路上。",
+     "en": "Split up and work both winches. Keep the workers off the paths they're coming down."
+    }
+   ]
+  },
+  {
+   "id": "D27-b",
+   "level": 27,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "两绞盘与祭台处理完毕",
+   "lines": [
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "傀儡背的锚架，和断碑寺留下的图形同形。",
+     "en": "The anchor frame those puppets carry matches the figures at the Temple of the Broken Stele."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "寺里的人也在帮他们？",
+     "en": "The temple's people are helping them?"
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "未必。同一口钟能报平安，也能被拿去号令死人。",
+     "en": "Maybe not. The monks there ring that bell for the all-clear, but someone else could be using it on the dead."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "去找懂它的人。人证和原文，总比猜测可靠。",
+     "en": "Let's find someone who can read it. I'd rather have a witness and the original text than guesses."
+    }
+   ]
+  },
+  {
+   "id": "D28-a",
+   "level": 28,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "寺前清场后",
+   "lines": [
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "木铃能安一具，挡不住成片引魂。这口铜铃可以把链接断开。",
+     "en": "The Wooden Bell only settles one body, so it can't stop soul-calling on this scale. This bronze one cuts the link."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你读碑，我们守三条路。",
+     "en": "You read the stele. We'll hold the three roads."
+    }
+   ]
+  },
+  {
+   "id": "D28-b",
+   "level": 28,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "碑文读完、最后敌人清除",
+   "lines": [
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "碑上记的是收殓护魂，他们却把线反接，拿尸体当货物拖走。",
+     "en": "The stele is about burying the dead and guarding the soul. They've reversed it and now they haul bodies off as cargo."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "所以铜铃能把整条线断开？",
+     "en": "So the bronze bell can cut the whole line?"
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "能断一段，不能隔着一条河把所有人救回来。",
+     "en": "Only a stretch of it. I can't reach across a river and bring everyone back."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "至少杀掉的敌人不会白杀。",
+     "en": "At least the dead we put down won't get up again."
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "活着的人也还要顾。让我只追着尸体摇铃，我就顾不上前排了。",
+     "en": "The living still need me. If I'm off chasing corpses with a bell, nobody's tending the front rank."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "明白。治疗的人照旧留着，你去断最要紧的一条。",
+     "en": "Understood. The healers stay where they are, and you cut the line that matters most."
+    }
+   ]
+  },
+  {
+   "id": "D29-a",
+   "level": 29,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "救证人前安全期",
+   "lines": [
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "顾廷舟改了货单，也改了水路。真账在塔里。",
+     "en": "Gu Tingzhou changed the manifests and the waterways both. The real books are up in the tower."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你带我们找账，撤退的路由我们守。",
+     "en": "Take us to the books. We'll keep the way out open."
+    }
+   ]
+  },
+  {
+   "id": "D29-b",
+   "level": 29,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "证人与原始账簿救出",
+   "lines": [
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "他给海外的法师送骨灯，回船卸的却是铁甲亡灵。",
+     "en": "He shipped bone lamps out to a mage overseas, and the boats came back unloading armored dead."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你亲眼见过那个法师？",
+     "en": "You saw this mage yourself?"
+    },
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "没有。我只管水闸，见过船、货和押运的文书。",
+     "en": "No. I mind the sluice gates. I saw boats, cargo, and the papers that went with them."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "文书上的刻记，我们在海对面也见过。",
+     "en": "We've seen the mark on those papers on the other side of the sea."
+    },
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "顾廷舟还说，这条生意没人敢查到两头。",
+     "en": "Gu Tingzhou used to say nobody would dare trace this trade to both ends."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "现在两头的人都在这里了。",
+     "en": "Well, people from both ends are standing here now."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "原账带走，别让证人独自上路。",
+     "en": "Take the original books, and nobody walks the witness out alone."
+    },
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "还有上游那三处阵眼。它们不停，河就回不来。",
+     "en": "We have to shut down the three soul-calling foci upstream before the river comes back."
+    }
+   ]
+  },
+  {
+   "id": "D30-a",
+   "level": 30,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "内河阵前准备期",
+   "lines": [
+    {
+     "speaker_zh": "清禾",
+     "speaker": "Qinghe",
+     "zh": "旱魃站在干渠中，热地会换位置。给队伍留两条退路。",
+     "en": "Hanba stands in the dry channel, and the hot ground keeps shifting. Leave the squads two ways out."
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "灯线能断，阵眼也能直接拆。别等我一个人。",
+     "en": "We can cut the lamp lines or just tear the foci down. Don't wait on me for it."
+    }
+   ]
+  },
+  {
+   "id": "D30-b",
+   "level": 30,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "第二阵眼拆除、当前来敌清完",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "河上的灯灭了两处，港口那边还亮着。",
+     "en": "Two of the river lamps are out, but the ones at the harbor are still burning."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "港锚是另一张网。先把这里彻底断干净。",
+     "en": "The harbor anchors are a separate net. Finish cutting this one clean first."
+    }
+   ]
+  },
+  {
+   "id": "D30-c",
+   "level": 30,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "旱魃击败、内河阵解除",
+   "lines": [
+    {
+     "speaker_zh": "老守堰人",
+     "speaker": "Old Weir-Keeper",
+     "zh": "水回来了。可西港那些灯怎么还亮着？",
+     "en": "The water's back. So why are those lamps at the west harbor still lit?"
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "港锚另有供引。这里断了，只是让它们再也借不到上游的尸体。",
+     "en": "The harbor anchors are fed from somewhere else. Cutting this one only stops them taking corpses from upstream."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那就带着账去港口。先把人送进去，再让船出来。",
+     "en": "Then we'll take the books to the harbor. We get the people in first, then the ships out."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "西岸有人接应，我带路。",
+     "en": "We've got people on the west coast. I'll lead."
+    }
+   ]
+  },
+  {
+   "id": "D31-a",
+   "level": 31,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "旧镇护送开始前",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "港门有人接应，主街能走，仓院也能绕。",
+     "en": "There are men waiting at the port gate. Main street is open, or you can swing round the warehouse yard."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "让居民等我们清路，不用跟着往前冲。",
+     "en": "Tell the townsfolk to wait while we clear the road. They shouldn't follow us in."
+    }
+   ]
+  },
+  {
+   "id": "D31-b",
+   "level": 31,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "证人、居民和账箱转移完成",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "三镇都有人赶来，可他们还不知道船在哪里集合。",
+     "en": "People are coming in from all three towns, and none of them know where the ships muster."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "旧烽路还能用。点起来，他们认得我们的旗。",
+     "en": "The old beacon line still works. Light it up and they'll recognize our flag."
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "船坞也要人，我带匠人先过去。",
+     "en": "The shipyard needs hands. I'll take the smiths over now."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "各走一段，最后都在港里会合。别再让谁等不到回信。",
+     "en": "We'll each take a leg of it and meet at the harbor. Nobody else gets left waiting for word."
+    }
+   ]
+  },
+  {
+   "id": "D35-a",
+   "level": 35,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "整队准备期",
+   "lines": [
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "五雷分两列装填，别一起打空。",
+     "en": "Five Thunders reload in two ranks. Don't run them all dry at once."
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "陌刀看南面，侧卫留住两边。人上船前，我们不退。",
+     "en": "Glaives, watch the south. Flank guards, hold both ends. Nobody steps back until the people are aboard."
+    }
+   ]
+  },
+  {
+   "id": "D35-b",
+   "level": 35,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "末波清除、三批装船完成",
+   "lines": [
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "最后一辆车也上去了，港口只剩那三座锚！",
+     "en": "Last cart's loaded! Only those three anchors left in the harbor!"
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "大队先登船。留下能突击的，跟我去断后。",
+     "en": "Main body boards now. Anyone who can still charge comes with me and covers the rear."
+    }
+   ]
+  },
+  {
+   "id": "D36-a",
+   "level": 36,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "外港突击准备期",
+   "lines": [
+    {
+     "speaker_zh": "顾廷舟",
+     "speaker": "Gu Tingzhou",
+     "zh": "两片大陆不认彼此的旗，倒都肯收我的货。",
+     "en": "Two continents won't salute each other's flags, yet both take my cargo."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "你的货里有人，有被拖走的尸体。",
+     "en": "Your cargo has people in it, and bodies you dragged off."
+    },
+    {
+     "speaker_zh": "顾廷舟",
+     "speaker": "Gu Tingzhou",
+     "zh": "你以为没有我，这些亡灵就会消失？海对面的法师也不是我造出来的。",
+     "en": "You think the dead go away without me? I didn't make the mage across the sea either."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "我们追的是他，今天先断你的船路。",
+     "en": "He's the one we're after. Today we cut your shipping lanes."
+    },
+    {
+     "speaker_zh": "顾廷舟",
+     "speaker": "Gu Tingzhou",
+     "zh": "把锚拆了，你们也留不住所有人。",
+     "en": "Break the anchors if you like. You still won't keep everyone."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "那就一个一个带走。我们一路都是这么过来的。",
+     "en": "Then we'll get them out one at a time. That's how we've done it the whole way."
+    }
+   ]
+  },
+  {
+   "id": "D36-b",
+   "level": 36,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "三锚全毁、首领击败、残敌清除",
+   "lines": [
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "港上的灯都灭了，所有船都能离岸。",
+     "en": "Every lamp in the harbor is out, so all the ships can sail."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "带上账簿，回启航点。我们的仗打完了。",
+     "en": "Bring the ledgers. Back to the launch point. Our fight here's done."
+    }
+   ]
+  },
+  {
+   "id": "D36-c",
+   "level": 36,
+   "presentation": "safe_checkpoint_skippable",
+   "trigger_zh": "启航区结算、战斗已结束",
+   "lines": [
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "东沧的船、人和军械，都在这支船队里。你们要的援军到了。",
+     "en": "Dongcang's ships, men and weapons are all in this fleet. Here's the relief you came for."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "西岸留下的守军呢？",
+     "en": "What about the garrison left on the west coast?"
+    },
+    {
+     "speaker_zh": "沈砺",
+     "speaker": "Shen Li",
+     "zh": "烽路和粮路都通了。他们守得住，我也会回来。",
+     "en": "The beacon line and the grain road are open. They'll hold, and I'm coming back."
+    },
+    {
+     "speaker_zh": "陆绫",
+     "speaker": "Lu Ling",
+     "zh": "海门还有封没送到的回信，这回总算能亲手交了。",
+     "en": "There's a reply still sitting at Seagate. This time I get to hand it over myself."
+    },
+    {
+     "speaker_zh": "许衡",
+     "speaker": "Xu Heng",
+     "zh": "先让我看看你们那边的工坊。不同的铳弹，得找能造它的人。",
+     "en": "Let me see your workshops first. Different rounds need someone who can actually make them."
+    },
+    {
+     "speaker_zh": "慧照",
+     "speaker": "Huizhao",
+     "zh": "也替船上的伤员留一间干净舱室。",
+     "en": "And keep one clean cabin for the wounded."
+    },
+    {
+     "speaker_zh": "岳岑",
+     "speaker": "Yue Cen",
+     "zh": "这些到了海对面再慢慢商量。现在，两家的旗一起升。",
+     "en": "We can settle all that on the other side. Right now both flags go up together."
+    },
+    {
+     "speaker_zh": "队长",
+     "speaker": "Captain",
+     "zh": "升旗，启航。",
+     "en": "Flags up. Make sail."
+    }
+   ]
+  }
+ ]
+}

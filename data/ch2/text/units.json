@@ -1,0 +1,497 @@
+{
+ "_note": "Chapter 2 in-game unit text, English. Translated from design/weapons.json and design/enemies.json. Proper nouns follow data/ch2/text/glossary.json. The zh fields are kept for traceability; the runtime reads only the English fields.",
+ "professions": [
+  {
+   "id": "warden",
+   "zh": "镇戍卫",
+   "name": "Warden",
+   "plural": "Wardens",
+   "hint": "Front-line melee. Holds ground against heavy troops, and the only unit that can stop a cavalry charge."
+  },
+  {
+   "id": "musketeer",
+   "zh": "火铳卫",
+   "name": "Musketeer",
+   "plural": "Musketeers",
+   "hint": "Ranged unit with heavy armor-breaking shots. Slow to reload and weak in a melee."
+  },
+  {
+   "id": "outrider",
+   "zh": "游骑",
+   "name": "Outrider",
+   "plural": "Outriders",
+   "hint": "Mounted scout. Fast, spots traps and ambushes, and gets in behind enemy archers and casters."
+  },
+  {
+   "id": "elementalist",
+   "zh": "术师",
+   "name": "Elementalist",
+   "plural": "Elementalists",
+   "hint": "Staff caster with one control spell and one damage spell. The only unit that can break an arrow volley in flight."
+  },
+  {
+   "id": "exorcist",
+   "zh": "随军僧",
+   "name": "Exorcist",
+   "plural": "Exorcists",
+   "hint": "Heals wounded units, and can lay dead enemies to rest so nothing raises them again."
+  }
+ ],
+ "weapons": [
+  {
+   "id": "dao-shield",
+   "zh": "制式刀盾",
+   "name": "Sword and Shield",
+   "profession": "warden",
+   "tier": "default",
+   "attack": "Quick single-target melee, faster than the Great Glaive and lighter than a knight's blade.",
+   "tradeoff": "Good on the line and on the flanks, but it cannot stop a heavy charge head-on the way the Great Glaive can."
+  },
+  {
+   "id": "modao",
+   "zh": "重型陌刀",
+   "name": "Great Glaive",
+   "profession": "warden",
+   "tier": "advanced",
+   "attack": "Slow overhead cut that reaches the main target and one enemy pressed against it.",
+   "tradeoff": "The best weapon for stopping heavy cavalry and holding ground, but it suffers badly from arrows and from anything that gets behind it."
+  },
+  {
+   "id": "horse-cleaver",
+   "zh": "长柄斩马刀",
+   "name": "Horsecleaver",
+   "profession": "warden",
+   "tier": "advanced",
+   "attack": "A faster, more focused heavy cut than the Great Glaive, and it works well on armored targets from the side.",
+   "tradeoff": "Better for killing captains and heavy infantry, and clearly worse than the Great Glaive at stopping a charge."
+  },
+  {
+   "id": "standard-gun",
+   "zh": "制式火铳",
+   "name": "Matchlock",
+   "profession": "musketeer",
+   "tier": "default",
+   "attack": "Steady single shots with a short reload between each, with enough damage and armor-breaking for most targets.",
+   "tradeoff": "A musketeer can fight with it from the day he is hired, but his armor is far lighter than a crossbowman's."
+  },
+  {
+   "id": "five-thunder",
+   "zh": "五雷神机",
+   "name": "Five Thunders",
+   "profession": "musketeer",
+   "tier": "advanced",
+   "attack": "Fires five rounds in quick succession and then takes a long reload. Rounds left over can be turned on another target.",
+   "tradeoff": "Heavy damage while it has rounds, then a long gap when it can do nothing at all, on a body that is easier to kill than a crossbowman's."
+  },
+  {
+   "id": "heavy-gun",
+   "zh": "精制重管火铳",
+   "name": "Heavy Musket",
+   "profession": "musketeer",
+   "tier": "advanced",
+   "attack": "Heavy single shots at a steady rhythm, harder-hitting than the Five Thunders and reloaded one round at a time.",
+   "tradeoff": "Even fire with no long pause, but much weaker than the Five Thunders at pushing back a crowd."
+  },
+  {
+   "id": "scout-saber",
+   "zh": "轻骑腰刀",
+   "name": "Cavalry Saber",
+   "profession": "outrider",
+   "tier": "default",
+   "attack": "Light mounted sword work, good for reaching an exposed back rank.",
+   "tradeoff": "A scout from the moment he is hired, but he has no charge and cannot hold a line."
+  },
+  {
+   "id": "long-lance",
+   "zh": "长槊",
+   "name": "Lance",
+   "profession": "outrider",
+   "tier": "advanced",
+   "attack": "Mounted thrust with longer reach than the saber, slow to turn and poor in a close scrap.",
+   "tradeoff": "Made for hitting archers and weak flanks. It is still light horse and cannot trade head-on with Darth Lancers."
+  },
+  {
+   "id": "three-eye",
+   "zh": "三眼火铳",
+   "name": "Three-Eyed Gun",
+   "profession": "outrider",
+   "tier": "advanced",
+   "attack": "Three shots in sequence at short to medium range, then a reload.",
+   "tradeoff": "Mobile enough to cut off fast enemies, but less accurate and shorter-ranged than a musketeer on foot, and riding will not refill the barrels."
+  },
+  {
+   "id": "wind-staff",
+   "zh": "风纹法杖",
+   "name": "Wind Staff",
+   "profession": "elementalist",
+   "tier": "default",
+   "attack": "Single-target wind blade at medium range, weaker over time than the old mages' spells.",
+   "tradeoff": "The only weapon that can break arrows in flight. Changing staves gives that up."
+  },
+  {
+   "id": "earth-staff",
+   "zh": "山岳法杖",
+   "name": "Stone Staff",
+   "profession": "elementalist",
+   "tier": "advanced",
+   "attack": "Slow single-target stone blow that works more like a heavy weapon than a spell.",
+   "tradeoff": "Good at slowing ground troops and punishing a known approach, but it carries no shield and does nothing about arrows."
+  },
+  {
+   "id": "water-staff",
+   "zh": "流泉法杖",
+   "name": "River Staff",
+   "profession": "elementalist",
+   "tier": "advanced",
+   "attack": "A small burst of water, weak on a single target but useful against clustered light troops.",
+   "tradeoff": "Covers a retreat and clears leftover ground hazards, but it gives up the wind wall and cancels no warning."
+  },
+  {
+   "id": "wood-bell",
+   "zh": "木铃",
+   "name": "Wooden Bell",
+   "profession": "exorcist",
+   "tier": "default",
+   "attack": "Heals wounded allies first, and rings a weak attack when there is nobody to heal.",
+   "tradeoff": "Healing and basic laying to rest from the first day, so the profession works with nothing unlocked."
+  },
+  {
+   "id": "soul-bell",
+   "zh": "镇魂铜铃",
+   "name": "Bronze Spirit Bell",
+   "profession": "exorcist",
+   "tier": "advanced",
+   "attack": "Keeps the small heal, and its bell strikes hurt soul-calling and corpse-hauling enemies more than most weapons do.",
+   "tradeoff": "The expert at laying the dead to rest and cutting soul links, but poor at saving an ally who is about to fall."
+  },
+  {
+   "id": "lotus-staff",
+   "zh": "莲灯经杖",
+   "name": "Lotus Lantern",
+   "profession": "exorcist",
+   "tier": "advanced",
+   "attack": "Steady single-target healing, better than either bell, with a weak lantern attack when idle.",
+   "tradeoff": "The best choice for keeping people alive, and it cannot lay the dead to rest at all."
+  }
+ ],
+ "skills": [
+  {
+   "weapon_id": "dao-shield",
+   "zh": "护步",
+   "name": "Hold Fast",
+   "description": "Cuts damage from ordinary melee attacks for a short time, but does nothing against a charge."
+  },
+  {
+   "weapon_id": "dao-shield",
+   "zh": "截锋",
+   "name": "Intercept",
+   "description": "Stuns and shoves back a light enemy that is attacking this unit.",
+   "slot": 2
+  },
+  {
+   "weapon_id": "modao",
+   "zh": "拒马斩",
+   "name": "Horsebreaker",
+   "description": "Works like Hold Fast, and while braced and facing a charge, stops it dead and destroys horse and rider.",
+   "slot": 1,
+   "inherits": "Hold Fast"
+  },
+  {
+   "weapon_id": "horse-cleaver",
+   "zh": "追刃",
+   "name": "Follow-Through",
+   "description": "Works like Intercept, then lands a second blow for double damage, even on heavily armored targets.",
+   "slot": 2,
+   "inherits": "Intercept"
+  },
+  {
+   "weapon_id": "standard-gun",
+   "zh": "校准",
+   "name": "Steady Aim",
+   "description": "Improves the next shot while standing still, and moving or turning starts the aim over."
+  },
+  {
+   "weapon_id": "standard-gun",
+   "zh": "破甲弹",
+   "name": "Rending Shot",
+   "description": "Replaces the next shot with a round that weakens an armored target for a short time."
+  },
+  {
+   "weapon_id": "five-thunder",
+   "zh": "霰子弹",
+   "name": "Scattershot",
+   "description": "Replaces the next shot with a spread that hits up to six enemies, and every pellet rends armor like Rending Shot.",
+   "slot": 2,
+   "inherits": "Rending Shot"
+  },
+  {
+   "weapon_id": "heavy-gun",
+   "zh": "锥心穿甲弹",
+   "name": "Heartpiercer",
+   "description": "Works like Steady Aim, and the shot also punches through its target into the enemy behind it, ignoring more armor.",
+   "slot": 1,
+   "inherits": "Steady Aim"
+  },
+  {
+   "weapon_id": "scout-saber",
+   "zh": "巡哨",
+   "name": "Scout Ahead",
+   "description": "Reveals nearby ambush entrances, tripwires and the direction enemies are forming up."
+  },
+  {
+   "weapon_id": "scout-saber",
+   "zh": "掠阵",
+   "name": "Hit and Run",
+   "description": "Strikes a caster, thrower or officer from behind to interrupt it, then breaks away faster for a short time."
+  },
+  {
+   "weapon_id": "long-lance",
+   "zh": "驰突",
+   "name": "Ride Down",
+   "description": "A short charge along a clear line that knocks back light infantry, but it cannot ride through a formation."
+  },
+  {
+   "weapon_id": "long-lance",
+   "zh": "回马刺",
+   "name": "Turnabout",
+   "description": "Turns in the saddle to spear a light pursuer, then needs a moment to recover."
+  },
+  {
+   "weapon_id": "three-eye",
+   "zh": "震响",
+   "name": "Thunderclap",
+   "description": "A loud volley that suppresses and interrupts a small group of light enemies, though it will not stop a charge."
+  },
+  {
+   "weapon_id": "three-eye",
+   "zh": "铁铳击",
+   "name": "Barrel Bash",
+   "description": "Clubs a nearby enemy with the barrels and backs the rider out of contact."
+  },
+  {
+   "weapon_id": "wind-staff",
+   "zh": "回风障",
+   "name": "Wind Wall",
+   "description": "Pushes light enemies back and leaves a wall of wind that breaks up arrows in flight, but only arrows coming from the side it covers."
+  },
+  {
+   "weapon_id": "wind-staff",
+   "zh": "裂风刃",
+   "name": "Gale Blade",
+   "description": "Sends several blades of wind through a narrow arc, hitting a few enemies at once."
+  },
+  {
+   "weapon_id": "earth-staff",
+   "zh": "沉砂",
+   "name": "Quicksand",
+   "description": "Slows everything on a small patch of ground for a short time, though a formed charge goes through it anyway."
+  },
+  {
+   "weapon_id": "earth-staff",
+   "zh": "地脉突刺",
+   "name": "Stone Spikes",
+   "description": "Raises spikes in sequence along a fixed strip of ground after a short delay."
+  },
+  {
+   "weapon_id": "water-staff",
+   "zh": "回流缚",
+   "name": "Undertow",
+   "description": "Drags at nearby light enemies and slows them so a line can pull back, while heavy enemies are only slowed."
+  },
+  {
+   "weapon_id": "water-staff",
+   "zh": "涤尘潮",
+   "name": "Washout",
+   "description": "A wave of water that damages what it passes and washes out small patches of fire and blight."
+  },
+  {
+   "weapon_id": "wood-bell",
+   "zh": "安魂",
+   "name": "Lay to Rest",
+   "description": "Seals one marked enemy body nearby so nothing can raise it again."
+  },
+  {
+   "weapon_id": "wood-bell",
+   "zh": "护念",
+   "name": "Ward",
+   "description": "Protects a front-line ally and shortens ordinary lasting effects on him."
+  },
+  {
+   "weapon_id": "soul-bell",
+   "zh": "封魂域",
+   "name": "Requiem",
+   "description": "Seals several marked enemy bodies in an area at once, so none of them can be raised or hauled away."
+  },
+  {
+   "weapon_id": "soul-bell",
+   "zh": "断引",
+   "name": "Sever",
+   "description": "Breaks an enemy's soul-calling, corpse-hauling or anchor link and keeps it from reconnecting for a short time."
+  },
+  {
+   "weapon_id": "lotus-staff",
+   "zh": "净秽",
+   "name": "Purify",
+   "description": "Removes ordinary lasting effects such as plague or sundered armor from one ally."
+  },
+  {
+   "weapon_id": "lotus-staff",
+   "zh": "护灯",
+   "name": "Shelter",
+   "description": "Gives one ally a small shield for a short time, usually whoever is being focused."
+  }
+ ],
+ "enemies": [
+  {
+   "id": "N01",
+   "zh": "缚索尸卫",
+   "name": "Snare Guard",
+   "plural": "Snare Guards",
+   "description": "Plants its feet and throws a weighted rope at a unit on the edge of your line, then winches the two of them together. It cannot attack while the rope holds, and the tie can be cut."
+  },
+  {
+   "id": "N02",
+   "zh": "牵尸傀",
+   "name": "Corpse Dragger",
+   "plural": "Corpse Draggers",
+   "description": "Hooks a fallen enemy onto its back frame and hauls it away to a shaman to be raised. Seal the body first, cut the link, or kill the dragger while it walks, since it cannot carry and fight at the same time."
+  },
+  {
+   "id": "N03",
+   "zh": "火罐尸车",
+   "name": "Firepot Cart",
+   "plural": "Firepot Carts",
+   "description": "Stops, plants its legs and throws clay pots that leave burning ground in a fixed arc in front of it. It cannot move and throw at once, so push in from a side it is not facing."
+  },
+  {
+   "id": "N04",
+   "zh": "蚀骨蛾群",
+   "name": "Bone Moths",
+   "plural": "Bone Moths",
+   "description": "A low swarm that loses only part of itself to a single aimed shot. Scattershot, wind blades and any area spell clear it far faster than careful shooting."
+  },
+  {
+   "id": "N05",
+   "zh": "骨弩床",
+   "name": "Bone Ballista",
+   "plural": "Bone Ballistae",
+   "description": "Sets up facing one direction, then looses a heavy bolt down a long line that can hit two units standing in it. Spread out, push it from the side, or take the frame apart with armor-piercing rounds; a wind wall will not turn a bolt this heavy."
+  },
+  {
+   "id": "N06",
+   "zh": "驮尸巨兽",
+   "name": "Corpse Bearer",
+   "plural": "Corpse Bearers",
+   "description": "A huge slow beast that carries a cage of zombies to the front, then stops and opens it. Break the cage before it unloads and the zombies inside die with it."
+  },
+  {
+   "id": "N07",
+   "zh": "掘道尸螯",
+   "name": "Burrower",
+   "plural": "Burrowers",
+   "description": "Travels underground between two visible holes to cut off units that are pulling back. It has to stay above ground for a while before it can dig again, which is when to surround it."
+  },
+  {
+   "id": "N08",
+   "zh": "攻城撞木车",
+   "name": "Battering Ram",
+   "plural": "Battering Rams",
+   "description": "A slow engine built to break buildings, not to fight troops, and it marks the ground before it drives forward. The front is plated, so hit the side frames; it is not cavalry, and Horsebreaker does nothing to it."
+  },
+  {
+   "id": "N09",
+   "zh": "不化骨",
+   "name": "Ironbone",
+   "plural": "Ironbones",
+   "description": "Very tough and heavily armored, switching between throwing rock at range and smashing anything that closes. Its plates open at the seams for a moment after a throw, which is when heavy shot hurts it most."
+  },
+  {
+   "id": "N10",
+   "zh": "雾灯辇",
+   "name": "Fog Lantern",
+   "plural": "Fog Lanterns",
+   "description": "Stops and lights its lamp, which covers that stretch of road in fog, and it can shift to another lamp post once the lamp is out. The fog clears while it moves, and it never hides a charge lane or an arrow marker."
+  },
+  {
+   "id": "N11",
+   "zh": "绊马蛛",
+   "name": "Tripwire Spider",
+   "plural": "Tripwire Spiders",
+   "description": "Sets two stakes and strings a wire between them, which slows whatever trips it and slows riders worst of all. A scout marks the stakes beforehand, and anyone can cut them down."
+  },
+  {
+   "id": "N12",
+   "zh": "达思游骑",
+   "name": "Darth Raider",
+   "plural": "Darth Raiders",
+   "description": "Light horse that probes a flank, falls back to its gathering point when it meets resistance, then tries another road. It has no armor and no charge, so a shield on each flank is usually enough."
+  },
+  {
+   "id": "N13",
+   "zh": "达思重骑兵",
+   "name": "Darth Lancer",
+   "plural": "Darth Lancers",
+   "description": "Heavy horse that forms up, commits to a straight line and runs everything down along it. Slowing or staggering will not break a charge once it is formed, so brace a Great Glaive facing the right way or step out of the lane in time."
+  },
+  {
+   "id": "N14",
+   "zh": "飞僵",
+   "name": "Leaping Jiangshi",
+   "plural": "Leaping Jiangshi",
+   "description": "Gathers on a visible mark, jumps over the front line in one arc and lands on the open ground behind it. It can be shot out of the air, and after landing it cannot jump again for a while."
+  },
+  {
+   "id": "N15",
+   "zh": "瘴囊母尸",
+   "name": "Blight Mother",
+   "plural": "Blight Mothers",
+   "description": "Stands still and lays sacs on the ground that only give off poison gas once they ripen. Shoot a sac early and it dies harmlessly; kill the mother and the rest never ripen."
+  },
+  {
+   "id": "N16",
+   "zh": "负锚尸傀",
+   "name": "Anchor Bearer",
+   "plural": "Anchor Bearers",
+   "description": "Drops an anchor and runs a line to an altar or an elite, taking some of the damage off it. While the line is up the bearer cannot move or attack, and the link can be cut or the frame shot apart."
+  }
+ ],
+ "bosses": [
+  {
+   "id": "B01",
+   "zh": "滩口督战",
+   "name": "The Shore Overseer",
+   "description": "Commands a formation of skeleton archers and calls their volleys. Clear his guards and focus him down; killing him cancels the volley he has not called yet, though arrows already in the air still have to be dodged."
+  },
+  {
+   "id": "B02",
+   "zh": "赢勾",
+   "name": "Yinggou the Drowned",
+   "description": "A huge waterlogged corpse that works the shallows and drags in tides that make the low ground unsafe to stand on. The water is marked before it rises and two dry roads always lead to him, and he can be hurt at any point in the fight."
+  },
+  {
+   "id": "B03",
+   "zh": "将臣",
+   "name": "General Jiangchen",
+   "description": "A heavy commander in old armor whose great blade commits to a direction before it falls. He can order a squad of guards forward, so step out of the blade's line and hit him while they are changing position."
+  },
+  {
+   "id": "B04",
+   "zh": "后卿",
+   "name": "Houqing the Hexer",
+   "description": "Plants cursed standards that slow how fast your units recover, sends Darth horse around the flanks and tries to raise marked bodies again. Cut the standards down, lay the bodies to rest, or go straight for him."
+  },
+  {
+   "id": "B05",
+   "zh": "旱魃",
+   "name": "Hanba, the Drought Fiend",
+   "description": "Burns lines of ground across the dry riverbed, marked before they light, and splits your position in two. Anchor bearers keep it protected, so cut their links, then follow it between the dry patches."
+  },
+  {
+   "id": "B06",
+   "zh": "渡魂使·顾廷舟",
+   "name": "Gu Tingzhou, the Soul Ferryman",
+   "description": "The shipping master behind the whole business, protected by three soul anchors in the outer harbor. Break the anchors to strip that protection and keep out of the line of his soul waves. He can be hurt throughout the fight."
+  }
+ ],
+ "_skills_note": "2026-11-06: each profession has two base skills; each advanced weapon has one upgrade skill that is a superset of one base skill ('inherits'). Wide Sweep, Sunder, Concussion Round and Burst Shell were removed for now."
+}

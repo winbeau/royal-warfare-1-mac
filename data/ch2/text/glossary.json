@@ -1,0 +1,425 @@
+{
+ "_note": "Chapter 2 English glossary. Source of truth for every proper noun and game term. zh -> en. Do not invent alternate spellings in other text files.",
+ "chapter": {
+  "第二章「东渡」": "Chapter II: The Eastern Crossing",
+  "东渡": "The Eastern Crossing"
+ },
+ "sections": {
+  "潮岸初盟": "The Tide Coast",
+  "江乡粮道": "The Grain Roads",
+  "铁关断路": "The Iron Pass",
+  "朔岛驰援": "Relief of the North Isle",
+  "阴江溯源": "Up the Shadow River",
+  "联军归航": "The Allied Fleet"
+ },
+ "levels": {
+  "1": [
+   "雾湾登陆",
+   "Landing at Mist Bay"
+  ],
+  "2": [
+   "风车盐田",
+   "The Windmill Saltpans"
+  ],
+  "3": [
+   "芦汊双桥",
+   "Twin Bridges"
+  ],
+  "4": [
+   "竹村粮道",
+   "The Bamboo Road"
+  ],
+  "5": [
+   "听潮古祠",
+   "Shrine of the Tides"
+  ],
+  "6": [
+   "海门守夜",
+   "Night Watch at Seagate"
+  ],
+  "7": [
+   "南汊渡场",
+   "South Fork Ferry"
+  ],
+  "8": [
+   "水轮粮仓",
+   "The Waterwheel Granary"
+  ],
+  "9": [
+   "运河驿站",
+   "The Canal Post"
+  ],
+  "10": [
+   "失火铳坊",
+   "The Burning Gunworks"
+  ],
+  "11": [
+   "石埠解围",
+   "Siege at Stone Wharf"
+  ],
+  "12": [
+   "江城会援",
+   "Rally at the River City"
+  ],
+  "13": [
+   "石径前哨",
+   "The Stone Path Outpost"
+  ],
+  "14": [
+   "旧矿岔道",
+   "The Old Mine Fork"
+  ],
+  "15": [
+   "铁炉保卫",
+   "Holding the Forge"
+  ],
+  "16": [
+   "栈道夺隘",
+   "Taking the Cliff Road"
+  ],
+  "17": [
+   "长关缺口",
+   "The Breach at Long Pass"
+  ],
+  "18": [
+   "铁门合围",
+   "The Iron Gate"
+  ],
+  "19": [
+   "东汀靠岸",
+   "Landing at East Shoal"
+  ],
+  "20": [
+   "海牧长堤",
+   "The Shore Pastures"
+  ],
+  "21": [
+   "北烽孤台",
+   "The Lone Beacon"
+  ],
+  "22": [
+   "风草马场",
+   "The Windgrass Ranch"
+  ],
+  "23": [
+   "西岬驰援",
+   "Ride to West Cape"
+  ],
+  "24": [
+   "朔岛会旗",
+   "Banners of the North Isle"
+  ],
+  "25": [
+   "阴江旧渡",
+   "The Old Ferry"
+  ],
+  "26": [
+   "沉村余烬",
+   "Embers of the Sunken Village"
+  ],
+  "27": [
+   "古堰止水",
+   "The Old Weir"
+  ],
+  "28": [
+   "断碑寺",
+   "Temple of the Broken Stele"
+  ],
+  "29": [
+   "孤塔证言",
+   "The Witness in the Tower"
+  ],
+  "30": [
+   "溯源破阵",
+   "Breaking the Source"
+  ],
+  "31": [
+   "西岸接应",
+   "West Coast Rendezvous"
+  ],
+  "32": [
+   "三镇连烽",
+   "Lighting the Beacons"
+  ],
+  "33": [
+   "船坞抢修",
+   "The Shipyard"
+  ],
+  "34": [
+   "海防并阵",
+   "The Sea Wall"
+  ],
+  "35": [
+   "长堤尸潮",
+   "Dead Tide at the Causeway"
+  ],
+  "36": [
+   "会盟出海",
+   "Setting Sail"
+  ]
+ },
+ "people": {
+  "队长": "Captain",
+  "沈砺": "Shen Li",
+  "陆绫": "Lu Ling",
+  "许衡": "Xu Heng",
+  "清禾": "Qinghe",
+  "慧照": "Huizhao",
+  "岳岑": "Yue Cen",
+  "顾廷舟": "Gu Tingzhou"
+ },
+ "minor_speakers": {
+  "老守堰人": "Old Weir-Keeper",
+  "炉长": "Forgemaster",
+  "渡夫": "Ferryman",
+  "粮仓管事": "Granary Steward",
+  "关内军士": "Pass Sergeant",
+  "岛军哨兵": "Island Sentry",
+  "信使": "Messenger",
+  "船工": "Boatman",
+  "马场守军": "Ranch Guard"
+ },
+ "places": {
+  "东沧": "Dongcang",
+  "海门": "Seagate",
+  "江城": "the River City",
+  "铁关": "the Iron Pass",
+  "铁门": "the Iron Gate",
+  "朔岛": "the North Isle",
+  "北岛": "the North Isle",
+  "北方长岛": "the North Isle",
+  "阴江": "the Shadow River",
+  "西岸军港": "the West Harbor",
+  "西岛港": "the island's west harbor",
+  "江口": "the river mouth"
+ },
+ "factions": {
+  "渡烛会": "the Candle Ferry Company",
+  "达思": "Darth",
+  "死灵法师": "the necromancer",
+  "联军": "the allied army",
+  "岛军": "the island garrison",
+  "海门守军": "the Seagate garrison"
+ },
+ "professions": {
+  "镇戍卫": "Warden",
+  "火铳卫": "Musketeer",
+  "游骑": "Outrider",
+  "术师": "Elementalist",
+  "随军僧": "Exorcist"
+ },
+ "weapons": {
+  "dao-shield": [
+   "制式刀盾",
+   "Sword and Shield"
+  ],
+  "modao": [
+   "重型陌刀",
+   "Great Glaive"
+  ],
+  "horse-cleaver": [
+   "长柄斩马刀",
+   "Horsecleaver"
+  ],
+  "standard-gun": [
+   "制式火铳",
+   "Matchlock"
+  ],
+  "five-thunder": [
+   "五雷神机",
+   "Five Thunders"
+  ],
+  "heavy-gun": [
+   "精制重管火铳",
+   "Heavy Musket"
+  ],
+  "scout-saber": [
+   "轻骑腰刀",
+   "Cavalry Saber"
+  ],
+  "long-lance": [
+   "长槊",
+   "Lance"
+  ],
+  "three-eye": [
+   "三眼火铳",
+   "Three-Eyed Gun"
+  ],
+  "wind-staff": [
+   "风纹法杖",
+   "Wind Staff"
+  ],
+  "earth-staff": [
+   "山岳法杖",
+   "Stone Staff"
+  ],
+  "water-staff": [
+   "流泉法杖",
+   "River Staff"
+  ],
+  "wood-bell": [
+   "木铃",
+   "Wooden Bell"
+  ],
+  "soul-bell": [
+   "镇魂铜铃",
+   "Bronze Spirit Bell"
+  ],
+  "lotus-staff": [
+   "莲灯经杖",
+   "Lotus Lantern"
+  ]
+ },
+ "skills": {
+  "护步": "Hold Fast",
+  "截锋": "Intercept",
+  "拒马斩": "Horsebreaker",
+  "追刃": "Follow-Through",
+  "校准": "Steady Aim",
+  "破甲弹": "Rending Shot",
+  "霰子弹": "Scattershot",
+  "锥心穿甲弹": "Heartpiercer",
+  "巡哨": "Scout Ahead",
+  "掠阵": "Hit and Run",
+  "驰突": "Ride Down",
+  "回马刺": "Turnabout",
+  "震响": "Thunderclap",
+  "铁铳击": "Barrel Bash",
+  "回风障": "Wind Wall",
+  "裂风刃": "Gale Blade",
+  "沉砂": "Quicksand",
+  "地脉突刺": "Stone Spikes",
+  "回流缚": "Undertow",
+  "涤尘潮": "Washout",
+  "安魂": "Lay to Rest",
+  "护念": "Ward",
+  "封魂域": "Requiem",
+  "断引": "Sever",
+  "净秽": "Purify",
+  "护灯": "Shelter"
+ },
+ "enemies": {
+  "N01": [
+   "缚索尸卫",
+   "Snare Guard"
+  ],
+  "N02": [
+   "牵尸傀",
+   "Corpse Dragger"
+  ],
+  "N03": [
+   "火罐尸车",
+   "Firepot Cart"
+  ],
+  "N04": [
+   "蚀骨蛾群",
+   "Bone Moths"
+  ],
+  "N05": [
+   "骨弩床",
+   "Bone Ballista"
+  ],
+  "N06": [
+   "驮尸巨兽",
+   "Corpse Bearer"
+  ],
+  "N07": [
+   "掘道尸螯",
+   "Burrower"
+  ],
+  "N08": [
+   "攻城撞木车",
+   "Battering Ram"
+  ],
+  "N09": [
+   "不化骨",
+   "Ironbone"
+  ],
+  "N10": [
+   "雾灯辇",
+   "Fog Lantern"
+  ],
+  "N11": [
+   "绊马蛛",
+   "Tripwire Spider"
+  ],
+  "N12": [
+   "达思游骑",
+   "Darth Raider"
+  ],
+  "N13": [
+   "达思重骑兵",
+   "Darth Lancer"
+  ],
+  "N14": [
+   "飞僵",
+   "Leaping Jiangshi"
+  ],
+  "N15": [
+   "瘴囊母尸",
+   "Blight Mother"
+  ],
+  "N16": [
+   "负锚尸傀",
+   "Anchor Bearer"
+  ]
+ },
+ "bosses": {
+  "B01": [
+   "滩口督战",
+   "The Shore Overseer"
+  ],
+  "B02": [
+   "赢勾",
+   "Yinggou the Drowned"
+  ],
+  "B03": [
+   "将臣",
+   "General Jiangchen"
+  ],
+  "B04": [
+   "后卿",
+   "Houqing the Hexer"
+  ],
+  "B05": [
+   "旱魃",
+   "Hanba, the Drought Fiend"
+  ],
+  "B06": [
+   "渡魂使·顾廷舟",
+   "Gu Tingzhou, the Soul Ferryman"
+  ]
+ },
+ "terms": {
+  "佣兵": "mercenaries",
+  "封尸": "lay the dead to rest",
+  "引魂": "soul-calling",
+  "魂锚": "soul anchor",
+  "骨灯": "bone lamp",
+  "船运刻记": "shipping mark",
+  "箭雨": "arrow volley",
+  "尸潮": "tide of the dead",
+  "关内募兵": "hire reinforcements",
+  "骑哨": "outrider",
+  "魂印": "soul-seal",
+  "阵眼": "soul-calling focus",
+  "魂波": "soul wave",
+  "运单": "manifest",
+  "货单": "manifest",
+  "主运单": "manifest",
+  "船账": "shipping ledger",
+  "调运簿": "shipping ledger",
+  "账印": "ledger seal",
+  "退栏": "release gate",
+  "旧尸堆": "corpse heap",
+  "咒旗": "hex banner",
+  "铳坊": "the gunworks",
+  "达思斧卫": "Darth axemen",
+  "达思骑士": "Darth knights"
+ },
+ "plurals": {
+  "Bone Ballista": "Bone Ballistae",
+  "Ironbone": "Ironbones",
+  "Leaping Jiangshi": "Leaping Jiangshi"
+ }
+}

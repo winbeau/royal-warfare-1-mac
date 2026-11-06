@@ -1,0 +1,15 @@
+{
+	"_note": "rod_flip 按 body/row/frame 手动翻转绿杆端点，格式: {\"<body_id>/<row>/<frame>\": \"flip\"}。tip_rule 按 body/action 指定整行的 tip 判定规则（tip_far 默认、tip_right、tip_left、tip_up），用于'离身体质心更远的是 tip' 这条默认规则不成立的动作行。",
+	"rod_flip": {
+		"elementalist_staff/2/0": "flip",
+		"elementalist_staff/2/7": "flip",
+		"elementalist_staff/3/0": "flip"
+	},
+	"tip_rule": {
+		"musketeer_gun/attack": "tip_right",
+		"musketeer_gun/reload": "tip_up",
+		"warden_glaive/brace": "tip_right",
+		"elementalist_staff/idle": "tip_up",
+		"elementalist_staff/walk": "tip_up"
+	}
+}

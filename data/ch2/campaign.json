@@ -1,0 +1,513 @@
+{
+ "sections": [
+  {
+   "number": 1,
+   "name_zh": "潮岸初盟",
+   "first": 1,
+   "last": 6,
+   "color": "#a65936"
+  },
+  {
+   "number": 2,
+   "name_zh": "江乡粮道",
+   "first": 7,
+   "last": 12,
+   "color": "#66734b"
+  },
+  {
+   "number": 3,
+   "name_zh": "铁关断路",
+   "first": 13,
+   "last": 18,
+   "color": "#7a6354"
+  },
+  {
+   "number": 4,
+   "name_zh": "朔岛驰援",
+   "first": 19,
+   "last": 24,
+   "color": "#4c6c76"
+  },
+  {
+   "number": 5,
+   "name_zh": "阴江溯源",
+   "first": 25,
+   "last": 30,
+   "color": "#716174"
+  },
+  {
+   "number": 6,
+   "name_zh": "联军归航",
+   "first": 31,
+   "last": 36,
+   "color": "#906d34"
+  }
+ ],
+ "stages": [
+  {
+   "number": 1,
+   "section": 1,
+   "map_position_px": [
+    111,
+    435
+   ]
+  },
+  {
+   "number": 2,
+   "section": 1,
+   "map_position_px": [
+    180,
+    441
+   ]
+  },
+  {
+   "number": 3,
+   "section": 1,
+   "map_position_px": [
+    237,
+    472
+   ]
+  },
+  {
+   "number": 4,
+   "section": 1,
+   "map_position_px": [
+    235,
+    418
+   ]
+  },
+  {
+   "number": 5,
+   "section": 1,
+   "map_position_px": [
+    281,
+    405
+   ]
+  },
+  {
+   "number": 6,
+   "section": 1,
+   "map_position_px": [
+    309,
+    461
+   ]
+  },
+  {
+   "number": 7,
+   "section": 2,
+   "map_position_px": [
+    385,
+    466
+   ]
+  },
+  {
+   "number": 8,
+   "section": 2,
+   "map_position_px": [
+    389,
+    392
+   ]
+  },
+  {
+   "number": 9,
+   "section": 2,
+   "map_position_px": [
+    481,
+    435
+   ]
+  },
+  {
+   "number": 10,
+   "section": 2,
+   "map_position_px": [
+    496,
+    389
+   ]
+  },
+  {
+   "number": 11,
+   "section": 2,
+   "map_position_px": [
+    459,
+    366
+   ]
+  },
+  {
+   "number": 12,
+   "section": 2,
+   "map_position_px": [
+    535,
+    345
+   ]
+  },
+  {
+   "number": 13,
+   "section": 3,
+   "map_position_px": [
+    605,
+    352
+   ]
+  },
+  {
+   "number": 14,
+   "section": 3,
+   "map_position_px": [
+    568,
+    310
+   ]
+  },
+  {
+   "number": 15,
+   "section": 3,
+   "map_position_px": [
+    612,
+    285
+   ]
+  },
+  {
+   "number": 16,
+   "section": 3,
+   "map_position_px": [
+    563,
+    258
+   ]
+  },
+  {
+   "number": 17,
+   "section": 3,
+   "map_position_px": [
+    591,
+    241
+   ]
+  },
+  {
+   "number": 18,
+   "section": 3,
+   "map_position_px": [
+    635,
+    229
+   ]
+  },
+  {
+   "number": 19,
+   "section": 4,
+   "map_position_px": [
+    606,
+    162
+   ]
+  },
+  {
+   "number": 20,
+   "section": 4,
+   "map_position_px": [
+    542,
+    151
+   ]
+  },
+  {
+   "number": 21,
+   "section": 4,
+   "map_position_px": [
+    494,
+    126
+   ]
+  },
+  {
+   "number": 22,
+   "section": 4,
+   "map_position_px": [
+    386,
+    147
+   ]
+  },
+  {
+   "number": 23,
+   "section": 4,
+   "map_position_px": [
+    275,
+    150
+   ]
+  },
+  {
+   "number": 24,
+   "section": 4,
+   "map_position_px": [
+    155,
+    162
+   ]
+  },
+  {
+   "number": 25,
+   "section": 5,
+   "map_position_px": [
+    278,
+    244
+   ]
+  },
+  {
+   "number": 26,
+   "section": 5,
+   "map_position_px": [
+    310,
+    278
+   ]
+  },
+  {
+   "number": 27,
+   "section": 5,
+   "map_position_px": [
+    405,
+    301
+   ]
+  },
+  {
+   "number": 28,
+   "section": 5,
+   "map_position_px": [
+    385,
+    340
+   ]
+  },
+  {
+   "number": 29,
+   "section": 5,
+   "map_position_px": [
+    319,
+    355
+   ]
+  },
+  {
+   "number": 30,
+   "section": 5,
+   "map_position_px": [
+    269,
+    328
+   ]
+  },
+  {
+   "number": 31,
+   "section": 6,
+   "map_position_px": [
+    247,
+    368
+   ]
+  },
+  {
+   "number": 32,
+   "section": 6,
+   "map_position_px": [
+    218,
+    311
+   ]
+  },
+  {
+   "number": 33,
+   "section": 6,
+   "map_position_px": [
+    164,
+    292
+   ]
+  },
+  {
+   "number": 34,
+   "section": 6,
+   "map_position_px": [
+    145,
+    253
+   ]
+  },
+  {
+   "number": 35,
+   "section": 6,
+   "map_position_px": [
+    182,
+    355
+   ]
+  },
+  {
+   "number": 36,
+   "section": 6,
+   "map_position_px": [
+    137,
+    350
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": 1,
+   "to": 2,
+   "travel": "land"
+  },
+  {
+   "from": 2,
+   "to": 3,
+   "travel": "land"
+  },
+  {
+   "from": 3,
+   "to": 4,
+   "travel": "land"
+  },
+  {
+   "from": 4,
+   "to": 5,
+   "travel": "land"
+  },
+  {
+   "from": 5,
+   "to": 6,
+   "travel": "land"
+  },
+  {
+   "from": 6,
+   "to": 7,
+   "travel": "land"
+  },
+  {
+   "from": 7,
+   "to": 8,
+   "travel": "land"
+  },
+  {
+   "from": 8,
+   "to": 9,
+   "travel": "land"
+  },
+  {
+   "from": 9,
+   "to": 10,
+   "travel": "land"
+  },
+  {
+   "from": 10,
+   "to": 11,
+   "travel": "land"
+  },
+  {
+   "from": 11,
+   "to": 12,
+   "travel": "land"
+  },
+  {
+   "from": 12,
+   "to": 13,
+   "travel": "land"
+  },
+  {
+   "from": 13,
+   "to": 14,
+   "travel": "land"
+  },
+  {
+   "from": 14,
+   "to": 15,
+   "travel": "land"
+  },
+  {
+   "from": 15,
+   "to": 16,
+   "travel": "land"
+  },
+  {
+   "from": 16,
+   "to": 17,
+   "travel": "land"
+  },
+  {
+   "from": 17,
+   "to": 18,
+   "travel": "land"
+  },
+  {
+   "from": 18,
+   "to": 19,
+   "travel": "sea"
+  },
+  {
+   "from": 19,
+   "to": 20,
+   "travel": "land"
+  },
+  {
+   "from": 20,
+   "to": 21,
+   "travel": "land"
+  },
+  {
+   "from": 21,
+   "to": 22,
+   "travel": "land"
+  },
+  {
+   "from": 22,
+   "to": 23,
+   "travel": "land"
+  },
+  {
+   "from": 23,
+   "to": 24,
+   "travel": "land"
+  },
+  {
+   "from": 24,
+   "to": 25,
+   "travel": "sea"
+  },
+  {
+   "from": 25,
+   "to": 26,
+   "travel": "land"
+  },
+  {
+   "from": 26,
+   "to": 27,
+   "travel": "land"
+  },
+  {
+   "from": 27,
+   "to": 28,
+   "travel": "land"
+  },
+  {
+   "from": 28,
+   "to": 29,
+   "travel": "land"
+  },
+  {
+   "from": 29,
+   "to": 30,
+   "travel": "land"
+  },
+  {
+   "from": 30,
+   "to": 31,
+   "travel": "land"
+  },
+  {
+   "from": 31,
+   "to": 32,
+   "travel": "land"
+  },
+  {
+   "from": 32,
+   "to": 33,
+   "travel": "land"
+  },
+  {
+   "from": 33,
+   "to": 34,
+   "travel": "land"
+  },
+  {
+   "from": 34,
+   "to": 35,
+   "travel": "land"
+  },
+  {
+   "from": 35,
+   "to": 36,
+   "travel": "land"
+  }
+ ]
+}

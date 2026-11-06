@@ -1,0 +1,179 @@
+{
+ "portraits": {
+  "warden": "portraits/warden.png",
+  "musketeer": "portraits/musketeer.png",
+  "outrider": "portraits/outrider.png",
+  "elementalist": "portraits/elementalist.png",
+  "exorcist": "portraits/exorcist.png",
+  "captain": "portraits/captain.png"
+ },
+ "skills": {
+  "hold_fast": {
+   "weapon_id": "dao-shield",
+   "skill_index": 0,
+   "path": "skills/hold_fast.png"
+  },
+  "shield_bash": {
+   "weapon_id": "dao-shield",
+   "skill_index": 1,
+   "path": "skills/shield_bash.png"
+  },
+  "horsebreaker": {
+   "weapon_id": "modao",
+   "skill_index": 0,
+   "path": "skills/horsebreaker.png"
+  },
+  "wide_sweep": {
+   "weapon_id": "modao",
+   "skill_index": 1,
+   "path": "skills/wide_sweep.png"
+  },
+  "sunder": {
+   "weapon_id": "horse-cleaver",
+   "skill_index": 0,
+   "path": "skills/sunder.png"
+  },
+  "follow_through": {
+   "weapon_id": "horse-cleaver",
+   "skill_index": 1,
+   "path": "skills/follow_through.png"
+  },
+  "steady_aim": {
+   "weapon_id": "standard-gun",
+   "skill_index": 0,
+   "path": "skills/steady_aim.png"
+  },
+  "rending_shot": {
+   "weapon_id": "standard-gun",
+   "skill_index": 1,
+   "path": "skills/rending_shot.png"
+  },
+  "scattershot": {
+   "weapon_id": "five-thunder",
+   "skill_index": 0,
+   "path": "skills/scattershot.png"
+  },
+  "concussion_round": {
+   "weapon_id": "five-thunder",
+   "skill_index": 1,
+   "path": "skills/concussion_round.png"
+  },
+  "heartpiercer": {
+   "weapon_id": "heavy-gun",
+   "skill_index": 0,
+   "path": "skills/heartpiercer.png"
+  },
+  "burst_shell": {
+   "weapon_id": "heavy-gun",
+   "skill_index": 1,
+   "path": "skills/burst_shell.png"
+  },
+  "scout_ahead": {
+   "weapon_id": "scout-saber",
+   "skill_index": 0,
+   "path": "skills/scout_ahead.png"
+  },
+  "hit_and_run": {
+   "weapon_id": "scout-saber",
+   "skill_index": 1,
+   "path": "skills/hit_and_run.png"
+  },
+  "ride_down": {
+   "weapon_id": "long-lance",
+   "skill_index": 0,
+   "path": "skills/ride_down.png"
+  },
+  "turnabout": {
+   "weapon_id": "long-lance",
+   "skill_index": 1,
+   "path": "skills/turnabout.png"
+  },
+  "thunderclap": {
+   "weapon_id": "three-eye",
+   "skill_index": 0,
+   "path": "skills/thunderclap.png"
+  },
+  "barrel_bash": {
+   "weapon_id": "three-eye",
+   "skill_index": 1,
+   "path": "skills/barrel_bash.png"
+  },
+  "wind_wall": {
+   "weapon_id": "wind-staff",
+   "skill_index": 0,
+   "path": "skills/wind_wall.png"
+  },
+  "gale_blade": {
+   "weapon_id": "wind-staff",
+   "skill_index": 1,
+   "path": "skills/gale_blade.png"
+  },
+  "quicksand": {
+   "weapon_id": "earth-staff",
+   "skill_index": 0,
+   "path": "skills/quicksand.png"
+  },
+  "stone_spikes": {
+   "weapon_id": "earth-staff",
+   "skill_index": 1,
+   "path": "skills/stone_spikes.png"
+  },
+  "undertow": {
+   "weapon_id": "water-staff",
+   "skill_index": 0,
+   "path": "skills/undertow.png"
+  },
+  "washout": {
+   "weapon_id": "water-staff",
+   "skill_index": 1,
+   "path": "skills/washout.png"
+  },
+  "lay_to_rest": {
+   "weapon_id": "wood-bell",
+   "skill_index": 0,
+   "path": "skills/lay_to_rest.png"
+  },
+  "ward": {
+   "weapon_id": "wood-bell",
+   "skill_index": 1,
+   "path": "skills/ward.png"
+  },
+  "requiem": {
+   "weapon_id": "soul-bell",
+   "skill_index": 0,
+   "path": "skills/requiem.png"
+  },
+  "sever": {
+   "weapon_id": "soul-bell",
+   "skill_index": 1,
+   "path": "skills/sever.png"
+  },
+  "purify": {
+   "weapon_id": "lotus-staff",
+   "skill_index": 0,
+   "path": "skills/purify.png"
+  },
+  "shelter": {
+   "weapon_id": "lotus-staff",
+   "skill_index": 1,
+   "path": "skills/shelter.png"
+  }
+ },
+ "weapons": {
+  "dao_shield": "weapons/dao_shield.png",
+  "great_glaive": "weapons/great_glaive.png",
+  "horse_cleaver": "weapons/horse_cleaver.png",
+  "matchlock": "weapons/matchlock.png",
+  "heavy_musket": "weapons/heavy_musket.png",
+  "cavalry_saber": "weapons/cavalry_saber.png",
+  "lance": "weapons/lance.png",
+  "wind_staff": "weapons/wind_staff.png",
+  "stone_staff": "weapons/stone_staff.png",
+  "river_staff": "weapons/river_staff.png",
+  "wood_bell": "weapons/wood_bell.png",
+  "bronze_bell": "weapons/bronze_bell.png",
+  "lotus_lantern": "weapons/lotus_lantern.png",
+  "five_thunders": "weapons/five_thunders.png",
+  "three_eyed": "weapons/three_eyed.png"
+ }
+}

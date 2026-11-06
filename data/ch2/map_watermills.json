@@ -1,0 +1,71 @@
+{
+  "logical_canvas_px": [
+    700,
+    600
+  ],
+  "watermills": [
+    {
+      "id": "watermill-1",
+      "foot_px": [
+        220,
+        172
+      ],
+      "phase_frame": 0,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-2",
+      "foot_px": [
+        345,
+        316
+      ],
+      "phase_frame": 11,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-3",
+      "foot_px": [
+        403,
+        347
+      ],
+      "phase_frame": 22,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-4",
+      "foot_px": [
+        425,
+        385
+      ],
+      "phase_frame": 33,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-5",
+      "foot_px": [
+        417,
+        468
+      ],
+      "phase_frame": 44,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-6",
+      "foot_px": [
+        478,
+        420
+      ],
+      "phase_frame": 55,
+      "scale": 0.66
+    },
+    {
+      "id": "watermill-7",
+      "foot_px": [
+        512,
+        441
+      ],
+      "phase_frame": 66,
+      "scale": 0.66
+    }
+  ]
+}
