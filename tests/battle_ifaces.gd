@@ -545,14 +545,30 @@ func test_achives_pages() -> void:
 	VinDefPanelAchivesController.remove_events()
 	VinDefPanelAchivesController.init(panel, [], no_new, left, right, cont, hint)
 	check(no_new.visible and not left.visible, "no achievements -> 'no new' label")
-	# 根因修复：eCont.width（AS3 DisplayObject.width）包含它自己时间轴上的背景图形（Symbol 5952，
-	# 没有成就图标时它是 eCont 唯一的内容），不只是手动加进去的 AchiveSprite；漏算会让"没有新成就"
-	# 时 eCont.position.x 被强制置 0，背景条整块偏到面板右侧，变成漂浮的半透明方块（胜利/失败面板的
-	# 截图反馈）。断言：没有图标时 eCont 仍按自身背景宽度居中（position.x 约为其宽度负一半），不是 0。
-	check(not hint.visible, "没有新成就时 eHint 也保持隐藏，不会凭空出现一块提示框背景")
-	var cw: float = VinDefPanelAchivesController._cont_width()
-	check(cw > 0.0, "没有图标时 eCont 自身背景图形的宽度仍非零（Symbol 5952 一直在）")
-	check(near(cont.position.x, -cw / 2.0, 0.5), "没有新成就时 eCont 按自身背景宽度居中（position.x=%.1f, 期望%.1f）" % [cont.position.x, -cw / 2.0])
+	check(not hint.visible, "没有新成就时 eHint 也保持隐藏")
+	# showPage 先 while(eCont.numChildren) removeChildAt(0)：连 eCont 时间轴上的半透明背景条（Symbol 5952）
+	# 一起移除，所以原版胜负面板上看不到这条底条。
+	check(cont.hide_own_layers and not cont._back.visible and not cont._front.visible,
+		"showPage 后 eCont 自身的半透明背景条隐藏（原版 removeChildAt 移除了时间轴图形）")
+	VinDefPanelAchivesController.remove_events()
+	# 3 个成就：图标排成一行，后一个左缘 = 前面总宽度 + 15，整行以面板中心居中（eCont.x = -width/2）。
+	VinDefPanelAchivesController.init(panel, [10, 20, 30], no_new, left, right, cont, hint)
+	var icons: Array = cont.get_children().filter(func(c): return c is VinDefPanelAchivesController.AchiveSprite)
+	check(icons.size() == 3 and not cont._back.visible, "3 个成就：3 个图标，底条仍隐藏")
+	var rects: Array = []
+	for c: Control in icons:
+		rects.append(Rect2(cont.position + c.position, c.size * c.scale))
+	rects.sort_custom(func(a: Rect2, b: Rect2) -> bool: return a.position.x < b.position.x)
+	for i in range(1, rects.size()):
+		var gap: float = rects[i].position.x - rects[i - 1].end.x
+		check(near(gap, 15.0, 1.5), "图标 %d 与前一个间隔 15（实际 %.1f）" % [i, gap])
+	var row_left: float = rects[0].position.x
+	var row_right: float = rects[rects.size() - 1].end.x
+	check(near(row_left + row_right, 0.0, 2.0), "整行以面板中心居中（左 %.1f 右 %.1f）" % [row_left, row_right])
+	VinDefPanelAchivesController.a1[2].mouse_entered.emit()
+	check(hint.visible and hint.position.x > row_left and hint.position.x < row_right,
+		"悬停第 3 个图标时 eHint 的 x（%.1f）落在图标行范围内" % hint.position.x)
+	VinDefPanelAchivesController.a1[2].mouse_exited.emit()
 	VinDefPanelAchivesController.remove_events()
 	VinDefPanelAchivesController.init(panel, [0, 1, 2, 3, 4], no_new, left, right, cont, hint)
 	check(VinDefPanelAchivesController.a_pages == [[0, 1, 2, 3, 4]] and not left.visible, "exactly 5 -> a single page, no arrows")

@@ -70,13 +70,15 @@ func visual_center_global(c: Control) -> Vector2:
 	return c.get_global_rect().get_center()
 
 ## 等到 cond 为真或超过 max_frames 真实帧（真实渲染帧：RWTween 等用真实墙钟驱动的过渡在这期间会正常推进）。
+## 界面入场、淡入淡出都由 RWTween 按墙钟时间推进，headless 下一帧的真实耗时随机器负载变化很大，
+## 按帧数等待会时过时不过。这里把 max_frames 按 30fps 换算成真实毫秒并留两倍余量。
 func wait_until(cond: Callable, max_frames: int, label: String) -> bool:
-	var n := 0
-	while not cond.call() and n < max_frames:
+	var max_ms := int(max_frames * 1000.0 / 30.0 * 2.0)
+	var t0 := Time.get_ticks_msec()
+	while not cond.call() and Time.get_ticks_msec() - t0 < max_ms:
 		await process_frame
-		n += 1
 	var ok: bool = cond.call()
-	check(ok, "%s（等待 %d 帧未满足）" % [label, n])
+	check(ok, "%s（等待 %d ms 未满足）" % [label, Time.get_ticks_msec() - t0])
 	return ok
 
 

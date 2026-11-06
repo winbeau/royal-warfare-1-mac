@@ -168,21 +168,11 @@ static func _descr(achive: Variant) -> String:
 	var descr: Array = screen.get("a_achives_description")
 	return str(descr[achive]) if descr != null and int(achive) < descr.size() else ""
 
-## eCont.width：AS3 的 DisplayObject.width 取的是整个显示对象（自身图形 ∪ 全部子节点）的包围盒，
-## 不只是手动加进去的那几个 AchiveSprite。eCont 这个符号自己在时间轴上就画着一块半透明的背景条
-## （Symbol 5952，403x51，见 assets/clips/5953/clip.tres），没有成就图标时它也是 eCont 唯一的内容——
-## 原来这里只统计 AchiveSprite，没有图标时并集为空，showPage 就把 eCont.position.x 强制置 0（本该是
-## "按总宽度居中"的 -width/2），这块本该一直居中显示在成就区域下方的背景条于是整块偏到面板右侧，
-## 看起来像一块漂浮的灰白色方块（胜利/失败面板"No new achievements"那一行右边的空块）。
-## 用 IfaceUtil.clip_bounds(eCont) 取 eCont 自身栅格内容的包围盒，与 AchiveSprite 的包围盒取并集，
-## 和 AS3 的 getBounds 语义一致。
+## eCont.width：showPage 一开始就把 eCont 的全部子对象移除了（包括时间轴上那条半透明背景条
+## Symbol 5952，它在 Flash 里也是 eCont 的子 Shape），所以此后 eCont 的宽度只由加进去的成就图标决定。
 static func _cont_width(exclude: AchiveSprite = null) -> float:
 	var lo := INF
 	var hi := -INF
-	var own: Rect2 = IfaceUtil.clip_bounds(e_cont)
-	if own.size != Vector2.ZERO or own.position != Vector2.ZERO:
-		lo = minf(lo, own.position.x)
-		hi = maxf(hi, own.end.x)
 	for c in e_cont.get_children():
 		if c is AchiveSprite and c != exclude:
 			var r := Rect2(c.position, c.size * c.scale)
@@ -194,8 +184,12 @@ static func show_page(param1: float) -> void:
 	var _loc4_: int
 	var _loc5_: AchiveSprite
 	var _loc6_: FlashClip
+	# while(eCont.numChildren > 0) eCont.removeChildAt(0)：原版连 eCont 时间轴上的背景条（子 Shape）
+	# 一起移除，所以胜负面板上看不到这条半透明底条。这里底条烘焙在 eCont 自己的光栅层里，用
+	# hide_own_layers 隐藏，并移除上一页的图标。
+	e_cont.hide_own_layers = true
 	for c in e_cont.get_children():
-		if c is AchiveSprite:  # while(numChildren > 0) removeChildAt(0)
+		if c is AchiveSprite:
 			e_cont.remove_child(c)
 	var page_index := int(param1 - 1)
 	if page_index < 0 or page_index >= a_pages.size():

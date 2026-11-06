@@ -27,6 +27,15 @@ var mouse_enabled := true:
 		mouse_enabled = value
 		mouse_filter = Control.MOUSE_FILTER_PASS if value else Control.MOUSE_FILTER_IGNORE
 
+## 相当于 AS3 把剪辑时间轴上的无名图形（Shape）从显示列表移除：自身 back/front 光栅层始终隐藏，
+## 具名子节点不受影响。例如 showPage 的 while(eCont.numChildren) removeChildAt(0)。
+var hide_own_layers := false:
+	set(value):
+		hide_own_layers = value
+		for layer in [_back, _front]:
+			if layer != null and value:
+				layer.visible = false
+
 var _back: Sprite2D
 var _front: Sprite2D
 var _acc := 0.0
@@ -198,7 +207,7 @@ func _update_layers() -> void:
 		var count := data.reuse_frames.get_frame_count(&"default")
 		_back.texture = data.reuse_frames.get_frame_texture(&"default", mini(i, count - 1))
 		_back.position = data.reuse_offset
-		_back.visible = true
+		_back.visible = not hide_own_layers
 		_front.visible = false
 		return
 	_set_layer(_back, data.back_textures, data.back_offsets, data.back_index, i)
@@ -212,7 +221,7 @@ func _set_layer(sprite: Sprite2D, textures: Array, offsets: PackedVector2Array, 
 	else:
 		sprite.texture = textures[k]
 		sprite.position = offsets[k]
-		sprite.visible = true
+		sprite.visible = not hide_own_layers
 
 func _update_children(initial: bool) -> void:
 	var stride := FlashClipData.STATE_STRIDE
