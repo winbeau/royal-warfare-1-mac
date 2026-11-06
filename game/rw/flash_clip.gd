@@ -36,6 +36,23 @@ var hide_own_layers := false:
 			if layer != null and value:
 				layer.visible = false
 
+## 父剪辑的具名子对象落在一个（近似矩形的）Flash clip-shape 遮罩范围内时（见 ClipExporter.java
+## WRAP_MASK_IDS，例如招募按钮/箭雨按钮/能力格里的 eCoolDown、eAbility、eNotAllowedBottom/Top），父
+## 剪辑在 _update_children 里直接给本节点设 clip_contents+size（裁到遮罩在父局部坐标系里的包围盒），
+## 本节点自己的内容（_back/_front 以及更深一层的具名子节点）则用 content_shift 反向平移回原位置——
+## clip_contents 只按本节点局部 (0,0)-size 裁切，没法单独指定裁剪矩形相对本节点原点的偏移，所以把
+## 节点原点挪到裁剪矩形左上角，再把内容整体挪回来等价实现。
+var content_shift := Vector2.ZERO:
+	set(value):
+		content_shift = value
+		if _ready_done:
+			_update_layers()
+			# _update_children 按 _child_state 缓存跳过状态没变的子节点（常态，省每帧重算），但这里形变的
+			# 是 content_shift 本身而不是子节点的状态索引，必须让下面这次调用强制把每个具名子节点都重摆一遍。
+			for cname in _child_state:
+				_child_state[cname] = -1
+			_update_children(true)
+
 var _back: Sprite2D
 var _front: Sprite2D
 var _acc := 0.0
@@ -207,7 +224,7 @@ func _update_layers() -> void:
 	if data.reuse_frames != null:
 		var count := data.reuse_frames.get_frame_count(&"default")
 		_back.texture = data.reuse_frames.get_frame_texture(&"default", mini(i, count - 1))
-		_back.position = data.reuse_offset
+		_back.position = data.reuse_offset + content_shift
 		_back.visible = not hide_own_layers
 		_front.visible = false
 		return
@@ -221,7 +238,7 @@ func _set_layer(sprite: Sprite2D, textures: Array, offsets: PackedVector2Array, 
 		sprite.texture = null
 	else:
 		sprite.texture = textures[k]
-		sprite.position = offsets[k]
+		sprite.position = offsets[k] + content_shift
 		sprite.visible = not hide_own_layers
 
 func _update_children(initial: bool) -> void:
@@ -255,14 +272,42 @@ func _update_children(initial: bool) -> void:
 		var bb := s[b + 2]
 		var cc := s[b + 3]
 		var d := s[b + 4]
+		var pos := Vector2(s[b + 5], s[b + 6])
 		var sx := sqrt(a * a + bb * bb)
-		c.position = Vector2(s[b + 5], s[b + 6])
+		var rot: float
+		var scl: Vector2
 		if sx > 0.0:
-			c.rotation = atan2(bb, a)
-			c.scale = Vector2(sx, (a * d - bb * cc) / sx)
+			rot = atan2(bb, a)
+			scl = Vector2(sx, (a * d - bb * cc) / sx)
 		else:
-			c.rotation = 0.0
-			c.scale = Vector2(0.0, sqrt(cc * cc + d * d))
+			rot = 0.0
+			scl = Vector2(0.0, sqrt(cc * cc + d * d))
+		c.rotation = rot
+		c.scale = scl
+		if info.has("mask"):
+			# 遮罩矩形是在父局部坐标系里量出来的（见 ClipExporter.java maskRectOf），本节点自身的变换会
+			# 再把 clip_contents 的裁剪矩形（本节点局部 (0,0)-size）变换一遍才落到父坐标系，所以这里要
+			# 把裁剪矩形换算回本节点局部单位。已知用到遮罩的几个子剪辑的变换都是轴对齐的（rotation 只有
+			# 0 或 180°，即 bb=cc=0，a/d 是带符号的缩放，见 ClipExporter.java WRAP_MASK_IDS 的注释）——
+			# 局部原点 (0,0) 经变换后总是落在 c.position，不受 a/d 正负影响；a/d 为负（180°）时局部 x/y
+			# 的正方向在父坐标系里反向，所以要把 position 挪到遮罩矩形另一角，让裁剪范围仍然落在原矩形内。
+			var a_abs := maxf(absf(a), 0.0001)
+			var d_abs := maxf(absf(d), 0.0001)
+			var mr: PackedFloat32Array = info.mask
+			var mask_pos := Vector2(mr[0], mr[1])
+			var mask_size := Vector2(mr[2], mr[3])
+			var npos := Vector2(
+				mask_pos.x if a >= 0.0 else mask_pos.x + mask_size.x,
+				mask_pos.y if d >= 0.0 else mask_pos.y + mask_size.y)
+			c.clip_contents = true
+			c.size = Vector2(mask_size.x / a_abs, mask_size.y / d_abs)
+			c.position = npos
+			if c is FlashClip:
+				var a_sg := a_abs if a >= 0.0 else -a_abs
+				var d_sg := d_abs if d >= 0.0 else -d_abs
+				(c as FlashClip).content_shift = Vector2((pos.x - npos.x) / a_sg, (pos.y - npos.y) / d_sg)
+		else:
+			c.position = pos + content_shift
 		c.modulate = Color(s[b + 7], s[b + 8], s[b + 9], s[b + 10])
 		if shown and not was_shown and not initial and node is FlashClip:
 			# a timeline instance that re-enters the stage is a fresh instance: it starts at frame 1
@@ -303,6 +348,8 @@ func _apply_mouse_children() -> void:
 func _has_point(point: Vector2) -> bool:
 	if data == null or _outside_ancestor_mask(point):
 		return false
+	if clip_contents and not Rect2(Vector2.ZERO, size).has_point(point):
+		return false  # 本节点自己被遮罩裁切（_update_children 的 "mask"）：裁掉的部分同样不算命中
 	return _hit_local(point)
 
 ## 点落在某一层祖先遮罩（set_mask 设了 clip_contents 的节点）的矩形之外：Flash 里这部分被遮住，

@@ -15,4 +15,4 @@ back_index = PackedInt32Array(0)
 front_textures = [ExtResource("front0")]
 front_offsets = PackedVector2Array(-19, -16.2)
 front_index = PackedInt32Array(0)
-children = {"eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0.6, -0.35, 1, 1, 1, 1)}, "eLocked": {"kind": "clip", "depth": 20, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.83626, 0, 0, 0.83626, -0.05, -1, 1, 1, 1, 1)}, "eCoolDown": {"kind": "clip", "depth": 23, "frames": PackedInt32Array(1), "states": PackedFloat32Array(0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}
+children = {"eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1, 0, 0, 1, 0.6, -0.35, 1, 1, 1, 1)}, "eLocked": {"kind": "clip", "depth": 20, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.83626, 0, 0, 0.83626, -0.05, -1, 1, 1, 1, 1)}, "eCoolDown": {"kind": "clip", "depth": 23, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 1.11905, 0, 0, 1.11905, 0, -0.05, 1, 1, 1, 0.69141), "mask": PackedFloat32Array(-17.51105, -14.52938, 34.13891, 30.19399)}}

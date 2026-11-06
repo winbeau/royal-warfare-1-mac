@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="FlashClipData" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="FlashClipData" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://game/rw/flash_clip_data.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/clips/5324f1/b0.png" id="back0"]
 [ext_resource type="Texture2D" path="res://assets/clips/5324f1/b1.png" id="back1"]
 [ext_resource type="Texture2D" path="res://assets/clips/5324f1/f0.png" id="front0"]
-[ext_resource type="Texture2D" path="res://assets/clips/5324f1/f1.png" id="front1"]
-[ext_resource type="Texture2D" path="res://assets/clips/5324f1/f2.png" id="front2"]
 
 [resource]
 script = ExtResource("1")
@@ -15,7 +13,7 @@ rect = Rect2(-83.6, -80.05, 171.95, 170.95)
 back_textures = [ExtResource("back0"), ExtResource("back1")]
 back_offsets = PackedVector2Array(-10.1, -5.55, -10.1, -5.55)
 back_index = PackedInt32Array(0, 0, 1)
-front_textures = [ExtResource("front0"), ExtResource("front1"), ExtResource("front2")]
-front_offsets = PackedVector2Array(-11.6, -8.05, -11.6, -8.05, -11.6, -8.05)
-front_index = PackedInt32Array(0, 1, 2)
-children = {"eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.68698, 0, 0, 0.71834, 1, 5.5, 1, 1, 1, 1)}, "eLight": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.54099, 0, 0, 0.67273, 0.6, 5.8, 1, 1, 1, 1)}, "eCoolDown": {"kind": "clip", "depth": 12, "frames": PackedInt32Array(1), "states": PackedFloat32Array(0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1)}}
+front_textures = [ExtResource("front0")]
+front_offsets = PackedVector2Array(-11.6, -8.05)
+front_index = PackedInt32Array(0, 0, 0)
+children = {"eIco": {"kind": "clip", "depth": 5, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.68698, 0, 0, 0.71834, 1, 5.5, 1, 1, 1, 1)}, "eLight": {"kind": "clip", "depth": 7, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, 0.54099, 0, 0, 0.67273, 0.6, 5.8, 1, 1, 1, 1)}, "eCoolDown": {"kind": "clip", "depth": 12, "frames": PackedInt32Array(1), "states": PackedFloat32Array(1, -0.83182, 0, 0, -0.83182, 0.85, 6.15, 1, 1, 1, 0.69141), "mask": PackedFloat32Array(-10.8, -6, 23.1, 21.75)}}

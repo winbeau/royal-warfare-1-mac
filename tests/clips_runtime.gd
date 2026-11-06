@@ -119,6 +119,41 @@ func run() -> void:
 	check(mf.get_string_size("w", 0, -1, 23).x < mf.get_string_size("W", 0, -1, 23).x - 3.0, "小写 w 比大写 W 窄（不是 W 的形状）")
 	check(mf.get_string_size("We", 0, -1, 23).x == desc.font.get_string_size("We", 0, -1, 23).x, "子集已有的字形仍取自 fontId 指定的字体")
 	popup.queue_free()
+
+	# 7. WRAP_MASK_IDS：eCoolDown/eAbility/eNotAllowedBottom|Top 以前被父剪辑的 clip-shape 遮罩静态烘焙
+	# 进 back/front 光栅（永远显示固定一帧，典型症状是招募按钮上一块烘死的灰色冷却覆板），现在保持
+	# 活节点，遮罩用 clip_contents + content_shift 在运行时实现（见 flash_clip.gd / ClipExporter.java）。
+	var e1: FlashClip = ui.get_node("e1")
+	var e1cd: FlashClip = e1.get_node("eCoolDown")
+	check(e1cd.clip_contents and e1cd.size != Vector2.ZERO, "e1/eCoolDown 的遮罩换成了运行时 clip_contents")
+	var e1_back := e1.back_texture()
+	var e1_front := e1.front_texture()
+	e1cd.visible = true
+	e1cd.goto_and_stop(50)
+	check(e1.back_texture() == e1_back and e1.front_texture() == e1_front,
+			"冷却进行到一半不会改动 e1 自己的 back/front 光栅（以前这里会烘出一块固定的灰板）")
+	e1cd.goto_and_stop(e1cd.total_frames)
+	check(e1.back_texture() == e1_back and e1.front_texture() == e1_front,
+			"冷却结束（total_frames 帧）同样不改动 e1 自己的 back/front 光栅")
+
+	var ba_cd: FlashClip = ui.get_node("bArchers/eCoolDown")
+	check(ba_cd.clip_contents and ba_cd.size != Vector2.ZERO, "bArchers/eCoolDown 的遮罩同样换成了运行时 clip_contents")
+
+	var holder_one: FlashClip = ui.get_node("eUnitPanel/eOne")
+	var ab: FlashClip = holder_one.get_node("eAbility")
+	check(ab.clip_contents and ab.size != Vector2.ZERO, "eUnitPanel/eOne/eAbility 的遮罩换成了运行时 clip_contents")
+	# setAbilityPic 以前因为 eAbility 被遮罩强制隐藏/烘成固定帧而失效：确认它现在是真正能换帧的活节点。
+	ab.visible = true
+	ab.goto_and_stop(5)
+	check(ab.current_frame == 5, "eAbility 现在是活节点，goto_and_stop 真的生效")
+
+	var nab := (load("res://scenes/clips/Symbol_4841.tscn") as PackedScene).instantiate()
+	root.add_child(nab)
+	var not_allowed: FlashClip = nab.get_node("eNotAllowedBottom")
+	check(not_allowed.clip_contents and not_allowed.size != Vector2.ZERO, "Symbol_4841/eNotAllowedBottom 的遮罩换成了运行时 clip_contents")
+	check(not_allowed.visible, "eNotAllowedBottom 保留 Flash 原始可见状态，不再被遮罩逻辑强制隐藏")
+	nab.queue_free()
+
 	ui.queue_free()
 	await process_frame
 	print("clips_runtime: %d checks, %d failures" % [checks, failures.size()])

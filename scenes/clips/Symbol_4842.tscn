@@ -13,7 +13,7 @@ total_frames = 1
 metadata/character_id = 4842
 
 [node name="eNotAllowedTop" parent="." instance=ExtResource("c0")]
-visible = false
-position = Vector2(0, 0)
+position = Vector2(0.5, -23.15)
+scale = Vector2(1.65054, 1.65054)
 metadata/original_instance = "eNotAllowedTop"
 metadata/character_id = 4840

@@ -435,8 +435,11 @@ func _as3_num(v: float) -> String:
 	return t
 
 
-## 冷却盘子剪辑 eCoolDown。原版 PlaceObject 里 eCoolDown 初始 visible=false（导出数据如此），而原版代码从不置 visible，
-## 这里与能力图标一致地保证其可见（冷却盘 100 帧是空帧）——见汇报「剪辑场景缺陷」。
+## 冷却盘子剪辑 eCoolDown。原版代码从不置 visible（只靠 gotoAndStop 切帧，冷却盘 100 帧是空帧），
+## 这里显式保证其可见，不依赖导出数据里 PlaceObject 的初始可见位（按钮/能力格的 eCoolDown/eAbility
+## 以前被父剪辑的 clip-shape 遮罩烘焙进父剪辑自己的 back/front 光栅、同时强制隐藏成活节点，父剪辑上
+## 因此永远挂着一块烘死的灰板；现在遮罩在运行时用 clip_contents + content_shift 实现，这两个子剪辑
+## 恢复成正常的活节点，见 pipeline/ClipExporter.java WRAP_MASK_IDS 与 game/rw/flash_clip.gd）。
 func _cool_down_clip(owner_clip: FlashClip) -> FlashClip:
 	var cd: FlashClip = owner_clip.get_node("eCoolDown")
 	cd.visible = true

@@ -27,7 +27,9 @@ metadata/original_instance = "eLight"
 metadata/character_id = 5161
 
 [node name="eCoolDown" parent="." instance=ExtResource("c2")]
-visible = false
-position = Vector2(0, 0)
+position = Vector2(0.85, 6.15)
+rotation = 3.14159
+scale = Vector2(0.83182, 0.83182)
+modulate = Color(1, 1, 1, 0.69141)
 metadata/original_instance = "eCoolDown"
 metadata/character_id = 5256

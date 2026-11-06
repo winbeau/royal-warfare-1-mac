@@ -28,7 +28,8 @@ metadata/original_instance = "eLocked"
 metadata/character_id = 4839
 
 [node name="eCoolDown" parent="." instance=ExtResource("c2")]
-visible = false
-position = Vector2(0, 0)
+position = Vector2(0, -0.05)
+scale = Vector2(1.11905, 1.11905)
+modulate = Color(1, 1, 1, 0.69141)
 metadata/original_instance = "eCoolDown"
 metadata/character_id = 5256
