@@ -35,6 +35,8 @@
 - 测试已经通过后，不为无关原因重复扩大测试。仅文档变更不必重跑完整资源导入。
 - 导出使用 `./dev/godot.sh export`，成品应在离开工程目录后运行，不依赖本地研究工具或二代仓库。凡是运行时用 `FileAccess` 读取的非资源文件，都必须加进 `export_presets.cfg` 的 `include_filter`。
 - 自动化探针和测试一律在后台运行（headless 或离屏渲染），不要在用户屏幕上弹出游戏窗口。
+- 界面与画面的改动必须截图验收：`./dev/screens/shot.sh <截图清单> [输出目录] [--ch2-dev]`。它在 Docker（Linux + Xvfb + Mesa）里跑同版本的 Godot，不在本机开窗口，也不抢焦点；截图名见 `dev/screens/shot.gd`。本机运行 Godot 一律加 `--headless`。
+- 第二章「东渡」是用户要求的二次开发：代码放在 `game/ch2/`，数据放在 `data/ch2/`。对一代共享文件只允许加二章才生效的分支，一代的回归测试必须全过。现状见 `docs/verification.md` 的第二章一节。
 - 每轮开发完成并提交后，用 aoci 更新仓库索引，使其保持 aligned。
 
 ## 如实记录
