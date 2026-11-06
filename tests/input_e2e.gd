@@ -107,13 +107,11 @@ func run() -> void:
 	LevelIntro.can_end_intro = true
 	StoredData.main_params["hints"] = false  # 关掉战内教学幻灯片（startTutorialMC），它和本次要测的输入路径无关，只会挡住后续点击
 
-	# 预载画面的 Start 按钮：真实点击（不是进入地图前要验证的 7 步之一，但同样走真实输入路径，
-	# 也是用户反馈"进入游戏后点击没反应"最早可能发生的地方）。点击后走完整的原版链路：
-	# startClicked -> 0.9 秒后 show_intro（maxgLogoIntro，546 帧 / 30fps≈18 秒）-> done -> max_done
-	# -> 0.2 秒后 load_main_menu。这里不走任何快捷方式，让真实链路把预载画面真正换掉。
-	await wait_until(func() -> bool: return main.start_game_button != null, 120, "预载 Start 按钮出现")
-	await click_center(main.start_game_button)
-	await wait_until(func() -> bool: return main.main_menu != null and main.main_menu.get_parent() != null and main.main_menu.visible, 3000, "点击预载 Start 按钮后主菜单出现")
+	# 启动提速后没有预载 Start 按钮和 MaxGames 片头：资源就绪即直接显示主菜单。
+	await wait_until(func() -> bool: return main.main_menu != null and main.main_menu.get_parent() != null and main.main_menu.visible, 3000, "启动后直接出现主菜单")
+	# 无头测试里每帧很短、而预热每帧要几十毫秒，补间进度按帧推进的界面（地图旗帜入场）会被预热打乱；
+	# 这里等后台预热跑完再开始输入，和启动提速前"资源全部就绪才出现界面"的条件一致。
+	await wait_until(func() -> bool: return main.warmup_done, 3000, "后台预热完成")
 
 	# ===== 1. 主菜单 Play 按钮：先悬停确认命中的真的是 bPlay（不是被别的层挡住），再点 =====
 	var b_play: Control = main.main_menu.get_node_or_null("bPlay")
@@ -136,6 +134,10 @@ func run() -> void:
 	if flag != null:
 		var sens: Control = flag.get_node_or_null("sens")
 		check(sens != null, "第 1 面旗帜的 sens 命中区存在")
+		# 下一面未通关的旗帜进地图时有 2 秒弹性入场（RWTween.from(flag, 2, {scale 3.5, y -20})），旗帜和 sens
+		# 一路在缩放、移动。真实玩家点的是落定后的旗帜；在动画中途按当时位置悬停/点击，命中与否取决于
+		# 补间进度，这正是这一步时过时不过的原因。
+		await wait_until(func() -> bool: return RWTween.get_tweens_of(flag).is_empty(), 150, "第 1 面旗帜入场动画播完")
 		var banner: FlashClip = flag.get_node("eVisited") if flag.get_node("eVisited").visible else flag.get_node("eUnvisited")
 		var banner_pos := visual_center_global(banner)
 		var scale_before: Vector2 = banner.scale

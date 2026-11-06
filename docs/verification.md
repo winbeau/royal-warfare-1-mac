@@ -23,7 +23,7 @@
 
 - 游戏入口已切换到原生移植的 `Main`（`game/core/main.gd`，`scenes/main.tscn` 的根节点）；旧的近似实现 `game/main.gd`、`battle.gd`、`unit.gd`、`specials.gd`、`achievements.gd`、`original_scene.gd` 已删除，`game/content.gd` 只保留 `BmpFrames` 等新代码实际用到的资源索引（`symbols`/`bounds`/`resources`/`isolated_profile`），不再读取或维护旧的 `profile`/`campaign.json` 读写逻辑（迁移到 `game/memory/stored_data.gd` + `game/memory/legacy_save.gd`）。
 - 实际运行一次（非 headless，窗口 700×600）走完完整启动流程并逐步截图：预载画面（分阶段文案 Caching/Preparing animations/.../Final preparations）→ 点击开始按钮 → MaxGames 片头（`maxgLogoIntro`，`done` 信号）→ 主菜单 → 序章漫画（`comix_intro`，依 `NUMPAN_COMIX` 标志选页）→ 点击"跳过"→ 地图 → 点击关卡旗帜 → 关卡弹窗 → 点击"开始战斗"→ 关卡过场 `LevelIntro`（原版 `levelIntro`，友军行军 + "点击跳过"）→ 第 1 关战斗 HUD（目标弹窗、生命/金钱/敌波次面板）。全程通过 `OS.add_logger` 捕获脚本错误，捕获结果为 0 条。
-- `Main.load_resources`：按原版 `loadResources` 的 case 编号顺序逐步调用各类 `init_resources()`（内部的 `cache(n)` 数量与原版 `Main.as` 的每个 case 一致，已用脚本逐条核对无遗漏/数量不符），并在 case 76/77/86~89/90/91/98/99 处补齐原版对应的单例初始化（`buttonClass.init`、`storedData.init`、`soundLibrary.init`、`Sounds.initSoundsFirst`、`gameUniverse.initOnce`/`loadLevels`、`gameMapObject.initOnce`、六段漫画、`arrowSwarm`、`miniIcons`、`extDataManager`）。不分帧（一次性在进入第一个界面前跑完），预载进度条直接跳到 100%，但保留预载界面的声音/音乐开关按钮及其状态。
+- （已被「启动提速」取代，见「用户要求的玩法改动」）`Main.load_resources`：按原版 `loadResources` 的 case 编号顺序逐步调用各类 `init_resources()`（内部的 `cache(n)` 数量与原版 `Main.as` 的每个 case 一致，已用脚本逐条核对无遗漏/数量不符），并在 case 76/77/86~89/90/91/98/99 处补齐原版对应的单例初始化（`buttonClass.init`、`storedData.init`、`soundLibrary.init`、`Sounds.initSoundsFirst`、`gameUniverse.initOnce`/`loadLevels`、`gameMapObject.initOnce`、六段漫画、`arrowSwarm`、`miniIcons`、`extDataManager`）。不分帧（一次性在进入第一个界面前跑完），预载进度条直接跳到 100%，但保留预载界面的声音/音乐开关按钮及其状态。
 - `Main.fadeClearLoadUnfade`：黑屏淡入 0.3 秒、延迟 0.1 秒、清空 `gameScreensContainer`、`RWTween.kill_all(false, false, true)`（只清延迟调用）、加入新面板、按需 `gameUni.init(level)`、淡出 0.3 秒；时序用 `tests/main_flow.gd` 以 `RWTween` 手动时钟逐段断言（黑屏显隐、容器清空时机、`init` 参数转发）。
 - `Main.loadGame(0)`：`LevelIntro.is_shown == false` 时改写为 `-2`（教学关），已覆盖未看过开场、已看过且 `canEndIntro` 为真两种分支；`Main.loadMap`：按 `NUMPAN_COMIX` 标志依次检查 `comix_intro`/`two`/`three`/`four`/`five`/`end`，全部看过才显示地图；两者均有测试覆盖。
 - Armor Games 站点 API（`agi`/Kong 连接、`checkArmorQuests`/`setQuestAchieved` 的任务提交、`onlineSave`/`onlineLoad`、站点域名探测）未移植，保留为注释与空实现；`Main.is_armor`/`is_kong`/`is_external_api_enabled` 恒为 `false`，与离线运行下的原版行为一致。
@@ -45,6 +45,9 @@
 
 - **第二次及以后进关看不到招募图标（右下角只剩空石板）**：`GameUniverse` 和战斗界面 `MainGameUIEx` 在整个游戏运行期间只创建一次、跨关卡复用。`continue_loading_level_data` 原来先 `remove_child(ingame_ui)` 再 `add_child(ingame_ui)`，让界面在同一次进关里多走一次离树、进树，`_added()` 执行两次；招募按钮的相对补间 `allFrom(aButtons, 0.4, {y:"42"})` 于是在已下移的位置上再叠加 42，新补间按 AUTO 覆盖杀掉前一个，按钮停在 y≈625，落到 600 高的舞台外。原版 `addChild(ingameUI)` 对已在本容器的子对象只调整层级，不会再派发 ADDED_TO_STAGE。修复为界面已是子节点时只 `move_child` 置顶。之前的探针每局都新建 `Main`，所以一直没复现；现在 `tests/input_battle_flow.gd` 断言回地图后进第 3 关、再重玩时，招募按钮都回到原位。
 - **法师技能加点点不了**：升级面板五块幕布的 `e0` 升起后整块移到 `msk` 遮罩之外，正好压在上方兵种的加点按钮上（祭司幕布压法师，盗贼幕布压战士）。Flash 里遮罩外的部分收不到鼠标事件，原版这些按钮照样能点；Godot 的 `clip_contents` 只裁绘制，不裁 GUI 拾取（脚本也覆盖不了 `clips_input`），点击落在看不见的幕布上。修复为 `FlashClip._has_point()` 先按祖先遮罩矩形裁切命中，下探子树时同样跳过子树里遮罩外的部分。`tests/upgrade_panel.gd` 用真实点击验证通过 4 关后法师、战士的加点按钮可点，而还没升起的盗贼幕布在遮罩内照常挡住它下面的按钮。
+- **招募/箭雨按钮、技能格上叠着一块灰色覆板**：导出管线把遮罩下的具名子对象（`eCoolDown`、`eAbility`、`eNotAllowedBottom/Top`，符号 5019/5324/5257/5261/5266/5267/5275/4841/4842）整体冻结进父剪辑自己的光栅，同时把活节点设成不可见。于是父剪辑上永远叠着一张定格的冷却灰板，和真正受游戏代码驱动的冷却进度无关；单位面板技能格的 `eAbility` 也因此永远只显示默认图标，`setAbilityPic` 从未生效。重导这 10 组资源：被遮罩的子对象保持为活节点，按遮罩矩形设 `clip_contents`，并用 `FlashClip.content_shift` 把内容平移回原位（这几个遮罩都是轴对齐矩形，含 0°/180°）。`tests/clips_runtime.gd` 第 7 节断言冷却推进时父剪辑自身光栅不变、`eAbility` 能切帧。`eSubOne/Two/Three`（tier 子面板图标）没有遮罩，不属于这个问题：锁定兵种时 `eIco` 切到第 6 帧（锁定图），和原版 `showSubPanel` 一致，未改动。实际观感待游玩确认。
+- **NEW HINT 端到端**：`tests/input_battle_flow.gd` 原来的第 4 步用轻量 harness，没有 `ingame_guide`，只验证了提示被消费、图标收起，验证不到教学面板本身。现补 5.23–5.30：在真实 `Main` 里回地图、重进关卡后打开提示，真实悬停并点击 NEW HINT，断言教学面板弹出到 Main 最上层、显示对应内容组、对局暂停，点关闭后恢复并移除。注意：对局暂停期间（对白、受控暂停）`HintsManager.update()` 不运行，点 NEW HINT 后面板要到恢复对局才出现，和原版 `globalUpdate` 的结构一致。
+- **地图旗帜测试时过时不过**：下一面未通关旗帜进地图时有 2 秒弹性入场（`RWTween.from(flag, 2, {scale 3.5, y -20})`），测试在动画中途按当时的位置悬停/点击，命中与否取决于补间进度。`input_e2e`、`input_e2e_new_save`、`input_battle_flow` 改为等入场补间结束再操作（真实玩家点的是落定后的旗帜），不是游戏逻辑问题。
 
 ## 用户要求的玩法改动（不是还原修复）
 
@@ -56,6 +59,27 @@
 - **开关**：`GameUniverse.USE_EXTRA_OBSTACLES`（`game/core/game_universe.gd`），默认 `true`。`PathParser.parse`（`game/service/path_parser.gd`）在加载原版 `assets/paths/<背景>.png` 之后，若该开关为真且 `assets/paths_extra/<背景>.png` 存在，按像素"或"合并成新的 `path_bd`（`PathParser.MergedMask`，不改动 `RWBitmapData` 本体）；没有原版障碍层（原本 `path_bd` 为 `null`）的背景，若补充层存在也能正确建出合并后的掩码。开关设为 `false` 时完全跳过合并，行为与原版一致，便于以后对照。
 - **与原版的差异**：这是纯粹的二次开发——`assets/paths/*.png`、`data/level_layout.json` 未改动，补充掩码单独存放在 `assets/paths_extra/`，不与原版数据混在一起。生成脚本 `pipeline/extra_obstacles.py`（本地工具，含颜色分割辅助与硬约束/连通性校验，手工多边形见同目录 `extra_obstacle_polys.py`）会自动沿每条路线画出一条走廊（`carve_clearways`，半宽 20px）并在 `eDefFlagPlace`、各关初始友军/敌军坐标周围镂空，保证补充障碍不会挡住敌人路线、防守旗或初始单位落点，也不会把原本连通的可走带切断。硬约束校验（24 张图全部通过，0 违规）和连通性校验见该脚本；回归测试见 `tests/extra_obstacles.gd`（断言硬约束、第 8 关目的地从天空被挪到可走区域、`USE_EXTRA_OBSTACLES=false` 时与原版一致）。审阅图（背景叠加原版障碍/补充障碍/路线/防守旗与初始单位位置）保存于本次会话的 scratchpad，未提交仓库。
 - **原版掩码本身的阻挡单独验证**（和补充障碍是两回事）：`tests/extra_obstacles.gd` 另外用真实输入（`push_input` 左键——本移植版和原版一样只有左键"选中 + 点地面下移动命令"，没有右键语义）在第 2/10/23 关（`level9bg_swamp2`、`level_castle`、`level_montTwo`，三张画面里有天空/远山/城墙、原版障碍层本身没有失效的图）点击天空/墙体/山脊上一个明确的原版障碍像素，断言 `set_destination` 算出的最终目的地落在可走像素上，并在之后约 300 帧的真实行走过程中逐帧核对单位所在像素的合并掩码值始终为 0；另外对全部 24 张图，用固定种子从合并后的掩码（原版 + 补充）里随机取被挡点验证 `set_destination` 落点可走（覆盖所有图，不只是补了空气墙的那几张）。这组验证确认了移植版 `PathParser`/`RWBitmapData`/`LivingObject.set_destination` 对原版掩码的阻挡本身是生效的，补充障碍只是在原版掩码失效/缺失处的二次开发补丁，不是绕过或替代原版阻挡逻辑。
+
+### 启动提速：直接进主菜单（用户要求的体验改动，非还原修复）
+
+- **动机**：原版启动链是 预载画面（同步跑完约 90 步 `loadResources`，期间创建所有界面和对象池）→ 点 Start → MaxGames 片头 `maxgLogoIntro`（约 9 秒）→ 主菜单。用户要求"打开游戏后尽量直接进入主菜单"。
+- **新流程**（`game/core/main.gd`）：`_ready` 只同步做进菜单必需的事（`ButtonClass.init`、旧存档迁移与 `StoredData.init`、声音库、屏幕容器与黑幕、`MainMenuScreen`），然后直接把主菜单放进容器并播放菜单音乐，不做切屏淡入；`resources_loaded` 现在表示"主菜单已显示、可点击"。不再创建 `Preloader`、Start 按钮和 MaxGames 片头（`game/core/preloader.gd` 保留文件但已不被使用，片头没有做成可跳过版本，直接去掉）。`project.godot` 的启动画面关闭图像、背景纯黑。
+- **其余界面**（地图、升级面板、成就、手册、制作人员、6 段漫画、局内教学、`GameUniverse`、`ArrowSwarm`）改为 lazy 属性：第一次访问字段时才创建，创建逻辑与原版 `loadResources` 对应 case 一致（只是后移）。`Main.lazy_screens` 仅在真实启动时为真；战斗 harness 只 `Main.new()`，字段仍是纯变量。
+- **后台预热**：菜单出现后，`Main._process` 每帧最多约 4 ms（单个作业不打断）按序跑：关卡数据 → 地图 → （开场漫画未看时）开场漫画 → 各兵种/特效的 `init_resources`（原版 case 0..75、92、93、97，逐步一个作业）→ MiniIcons / VinDef 成就 / ExtDataManager / ArrowSwarm / GameUniverse → 其余界面。战斗进行中暂停预热。
+- **进战斗的保证**：`Main.load_game` 开头调用 `_ensure_battle_resources()`，未预热完的兵种/特效资源、对象池和关卡数据在此同步补齐；所有作业经 `_run_job` 只执行一次。对象池只是缓存，不影响玩法结果。
+- **已知取舍**：玩家在预热完成前（约 3.5 秒，headless 测得）就点 Play/进战斗，会在该次点击时同步补齐剩余部分（有一次性卡顿）。创建顺序后移使 `RWRandom` 的消耗序列与原版不同（构造函数里有少量取随机数），随机战斗结果本就不可逐次对照。
+- **测试**：`tests/input_e2e.gd`、`input_e2e_new_save.gd`、`input_battle_flow.gd` 的启动步骤由"点 Start、等片头"改为"等主菜单直接出现"；`tests/ifaces_f3.gd` 去掉对 `main.preloader` 的隐藏调用。
+- **耗时测量**（headless，Dummy 渲染器，不含真实窗口/GPU 初始化；毫秒自进程启动起，`Time.get_ticks_msec`；`RW_BOOT_TIMING=1` 环境变量会让 `Main` 打印 `BOOT ...` 时间戳）：
+
+| | 优化前 | 优化后 |
+|---|---|---|
+| 开发环境：到引擎进入脚本 | 约 0.55 s | 约 0.55 s |
+| 开发环境：资源就绪 / 主菜单可点击 | 约 4.2 s 后进预载画面完成（`load_resources` 共约 3.6 s：界面创建 1.06 s、`GameUniverse.init_once` 0.24 s、漫画 0.4 s，其余为兵种/特效 `init_resources`） | 约 1.0 s（引导约 0.4 s，其中 `MmAnimSoldiersEx` 创建约 0.36 s） |
+| 导出包：主菜单可点击 | 资源就绪 2.5-2.6 s，之后还需点 Start + 0.9 s + 片头约 9 s + 0.2 s + 切屏淡入 0.7 s，约 13 s | 约 0.65 s（引导约 0.29 s） |
+| 导出包：后台预热全部完成 | 不适用（全部在预载期间同步完成） | 约 2.4 s |
+
+  优化前的导出包数字是同一份代码仅加了计时打印后的导出；片头时长取自任务说明的 273 帧 / 30 fps，未单独实测。真机窗口下 GPU/着色器初始化、启动画面显示时间不在上述数字内。
+
 
 ## 已验证（P0–P5 已有内容，未变动）
 

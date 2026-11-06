@@ -225,9 +225,9 @@ func run_level2_global_wave_recruit() -> void:
 	LevelIntro.can_end_intro = true
 	StoredData.main_params["hints"] = false
 
-	await wait_until(func() -> bool: return main2.start_game_button != null, 3000, "5.1 预载 Start 按钮出现")
-	await click_center(main2.start_game_button)
-	await wait_until(func() -> bool: return main2.main_menu != null and main2.main_menu.get_parent() != null and main2.main_menu.visible, 15000, "5.2 点击预载 Start 后主菜单出现")
+	# 启动提速后没有预载 Start 按钮和片头：资源就绪即直接显示主菜单。
+	await wait_until(func() -> bool: return main2.main_menu != null and main2.main_menu.get_parent() != null and main2.main_menu.visible, 15000, "5.2 启动后直接出现主菜单")
+	await wait_until(func() -> bool: return main2.warmup_done, 3000, "5.2b 后台预热完成")
 	var b_play: Control = main2.main_menu.get_node_or_null("bPlay")
 	if b_play != null:
 		await click_center(b_play)
@@ -238,6 +238,8 @@ func run_level2_global_wave_recruit() -> void:
 	var flag2: FlashClip = g_map.a_markers[1]
 	check(flag2.visible, "5.5 第 1 关已通关后第 2 面旗帜可见/可点")
 	var sens2: Control = flag2.get_node_or_null("sens")
+	# 等 2 秒弹性入场动画播完再按旗帜位置点击（同 input_e2e.gd 第 2 步）。
+	await wait_until(func() -> bool: return RWTween.get_tweens_of(flag2).is_empty(), 5000, "5.5b 第 2 面旗帜入场动画播完")
 	var banner2: FlashClip = flag2.get_node("eVisited") if flag2.get_node("eVisited").visible else flag2.get_node("eUnvisited")
 	await click_at(visual_center_global(banner2))
 	await wait_until(func() -> bool: return g_map.pop != null and g_map.pop.get_parent() != null, 8000, "5.6 点击第 2 面旗帜后弹窗出现")
@@ -323,6 +325,48 @@ func run_level2_global_wave_recruit() -> void:
 	main2.load_game(2)
 	await wait_real.call(2500)
 	await buttons_home.call("第 3 关重玩")
+
+	# 真实 Main 下点 NEW HINT 要真的弹出教学面板（startTutorialMC）。上面第 4 步用的是轻量 harness，
+	# 那里没有 ingame_guide，只能验证提示被消费、图标收起，验证不到面板本身。
+	StoredData.main_params["hints"] = true
+	var gu3: GameUniverse = main2.game_uni
+	var ui3: MainGameUIEx = gu3.ingame_ui
+	HintsManager.need_to_show_hint(5)
+	# 图标要等对局时间过 5 秒（whenRemovedHint + 5*30 < getGameTime）才出现；期间关卡对白会暂停对局，照真实玩家点掉。
+	var t_icon := Time.get_ticks_msec()
+	while not HintsManager.new_hint_shown and Time.get_ticks_msec() - t_icon < 20000:
+		await dismiss_chat_if_any()
+		await process_frame
+	check(HintsManager.new_hint_shown, "5.23 新提示入队后 NEW HINT 图标出现")
+	await wait_until(func() -> bool: return near(ui3.e_new_hint.position.x, HintsManager.top_position.x, 2.0), 3000, "5.24 NEW HINT 图标滑到停靠位置")
+	await dismiss_chat_if_any()
+	var expected_hint: int = HintsManager.a_hints_list[0] if HintsManager.a_hints_list.size() > 0 else -1
+	var hint_pos3 := visual_center_global(ui3.e_new_hint)
+	# 关卡对白随时可能弹出，它的 eBlack 会盖住 NEW HINT（原版同样如此）；像真实玩家一样先把对白点掉再悬停。
+	var hovered3: Control = null
+	for attempt in 5:
+		await dismiss_chat_if_any()
+		var mm3 := InputEventMouseMotion.new()
+		mm3.position = hint_pos3
+		mm3.global_position = hint_pos3
+		root.push_input(mm3)
+		await process_frame
+		await process_frame
+		hovered3 = root.gui_get_hovered_control()
+		if hovered3 == ui3.e_new_hint:
+			break
+	check(hovered3 == ui3.e_new_hint, "5.24b 悬停 NEW HINT 图案中心命中 eNewHint（实际命中 %s）" % (str(hovered3.get_path()) if hovered3 else "null"))
+	await click_at(hint_pos3)
+	var guide: StartTutorial = main2.ingame_guide
+	await wait_until(func() -> bool: return guide.is_inside_tree() and guide.modulate.a > 0.99, 3000, "5.25 点击 NEW HINT 后教学面板弹出并淡入完成")
+	check(guide.get_parent() == main2 and guide.get_index() == main2.get_child_count() - 1, "5.26 教学面板在 Main 最上层")
+	check(expected_hint > 0 and guide.e_content == guide.a_contents[expected_hint - 1] and guide.e_content.is_visible_in_tree(),
+		"5.27 面板显示第 %d 组内容（实际 %s）" % [expected_hint, guide.e_content.name])
+	check(gu3.is_paused, "5.28 教学面板打开时对局暂停")
+	await click_center(guide.b_closebtn)
+	check(not gu3.is_paused, "5.29 点关闭后对局立即恢复")  # 之后关卡对白可能随时弹出再次暂停，所以紧跟着点击检查
+	await wait_until(func() -> bool: return not guide.is_inside_tree(), 3000, "5.30 教学面板淡出后从树上移除")
+	StoredData.main_params["hints"] = false
 
 	main2.queue_free()
 	await process_frame

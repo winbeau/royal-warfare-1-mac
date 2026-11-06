@@ -25,12 +25,34 @@ func run() -> void:
 		return
 
 	await test_legacy_migration()
+	await test_startup_goes_straight_to_menu()
 	test_load_game_zero_maps_to_intro()
 	await test_load_map_picks_comic_by_flag()
 	await test_fade_clear_load_unfade_sequence()
 
 	print(JSON.stringify({"checks": checks, "failures": failures}))
 	quit(0 if failures.is_empty() else 1)
+
+
+## 启动提速：_ready 之后主菜单已经在容器里（没有预载画面/Start 按钮/片头），其余界面按需创建，
+## 战斗资源在 load_game 之前可由 _ensure_battle_resources 同步补齐。
+func test_startup_goes_straight_to_menu() -> void:
+	StoredData.test_wipe()
+	var m: Main = (load("res://scenes/main.tscn") as PackedScene).instantiate()
+	root.add_child(m)
+	check(m.resources_loaded, "启动后 resources_loaded 为真（主菜单已显示）")
+	check(m.main_menu != null and m.main_menu.get_parent() == m.game_screens_container, "主菜单直接放进屏幕容器")
+	check(m.get_node_or_null("Preloader") == null and not "preloader" in m, "没有预载画面")
+	check(not m._jobs_done.has("levels") and not m._jobs_done.has(0), "进主菜单前没有跑关卡数据和兵种资源")
+	check(m.fade_black_screen.visible == false, "启动时黑幕不可见（不走切屏淡入）")
+	var gm: GameMapObject = m.g_map  # 首次访问时创建
+	check(gm != null and m._jobs_done.has("levels"), "地图在首次访问时创建，并先准备好关卡数据")
+	m._ensure_battle_resources()  # 等价于 load_game 开头的同步补齐
+	check(m._jobs_done.has(0) and m._jobs_done.has(75) and m._jobs_done.has("mini_icons") and m._jobs_done.has("ext_data"), "进战斗前补齐全部兵种/特效资源作业")
+	check(m.game_uni != null and m.ar_swarm != null, "GameUniverse 与 ArrowSwarm 已创建")
+	m._ensure_battle_resources()  # 可重入：第二次不重复执行
+	m.queue_free()
+	await process_frame
 
 
 ## loadGame(0)：levelIntro.isShown == false 时 level 参数改写为 -2（教学关）；为 true 则按正常映射。

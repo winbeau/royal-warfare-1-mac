@@ -111,7 +111,6 @@ func run() -> void:
 	await process_frame
 	await process_frame
 	var g_map: GameMapObject = main.g_map
-	main.preloader.hide()  # 没点预载 Start 按钮；隐藏它以免它盖住地图截获鼠标
 	check(absf(g_map.red_circle.scale.y - 1.0) < 0.001, "红圈 scaleY 不被补间（原版字面量写了两次 scaleX）")
 	check(g_map.red_circle.scale.x > 1.0, "红圈 scaleX 从 1.5 往 1 补间")
 

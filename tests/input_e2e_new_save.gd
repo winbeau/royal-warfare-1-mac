@@ -88,9 +88,9 @@ func run() -> void:
 	await process_frame
 	await process_frame
 	StoredData.main_params["hints"] = false
-	await wait_until(func() -> bool: return main.start_game_button != null, 120, "(e) 预载 Start 按钮出现")
-	await click_center(main.start_game_button)
-	await wait_until(func() -> bool: return main.main_menu != null and main.main_menu.get_parent() != null and main.main_menu.visible, 3000, "(e) 点击预载 Start 按钮后主菜单出现")
+	# 启动提速后没有预载 Start 按钮和片头：资源就绪即直接显示主菜单。
+	await wait_until(func() -> bool: return main.main_menu != null and main.main_menu.get_parent() != null and main.main_menu.visible, 3000, "(e) 启动后直接出现主菜单")
+	await wait_until(func() -> bool: return main.warmup_done, 3000, "(e) 后台预热完成")  # 原因同 input_e2e.gd：无头帧太短，预热会打乱按帧推进的入场补间
 	var b_play: Control = main.main_menu.get_node_or_null("bPlay")
 	if b_play != null:
 		await click_center(b_play)
@@ -109,6 +109,12 @@ func run() -> void:
 	check(g_map.a_markers.size() > 0, "(e) 首次进入地图后旗帜列表非空")
 	if g_map.a_markers.size() > 0:
 		var flag: FlashClip = g_map.a_markers[0]
+		# 等 2 秒弹性入场动画播完再按旗帜位置悬停/点击（同 input_e2e.gd 第 2 步）。
+		# 本文件的 wait_until 按帧计数，headless 下一帧的真实耗时很短，这里按墙钟等。
+		var t_anim := Time.get_ticks_msec()
+		while not RWTween.get_tweens_of(flag).is_empty() and Time.get_ticks_msec() - t_anim < 5000:
+			await process_frame
+		check(RWTween.get_tweens_of(flag).is_empty(), "(e) 第 1 面旗帜入场动画播完")
 		var vis: FlashClip = flag.get_node("eVisited") if flag.get_node("eVisited").visible else flag.get_node("eUnvisited")
 		var pos: Vector2 = visual_center_global(vis)
 		var scale_before: Vector2 = vis.scale
