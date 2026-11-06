@@ -1,0 +1,218 @@
+{
+ "id": "06-sea-gate-watch",
+ "name": "海门守夜",
+ "number": 6,
+ "start": [
+  280,
+  315
+ ],
+ "target": [
+  158,
+  340
+ ],
+ "recruit": [
+  190,
+  180
+ ],
+ "enemies": [
+  [
+   [
+    710,
+    290
+   ],
+   [
+    535,
+    290
+   ],
+   [
+    420,
+    290
+   ],
+   [
+    265,
+    300
+   ],
+   [
+    158,
+    340
+   ]
+  ],
+  [
+   [
+    710,
+    516
+   ],
+   [
+    560,
+    490
+   ],
+   [
+    420,
+    465
+   ],
+   [
+    270,
+    450
+   ],
+   [
+    158,
+    340
+   ]
+  ],
+  [
+   [
+    710,
+    145
+   ],
+   [
+    540,
+    125
+   ],
+   [
+    400,
+    125
+   ],
+   [
+    320,
+    205
+   ]
+  ]
+ ],
+ "escort": [],
+ "points": [
+  [
+   "内院",
+   158,
+   340,
+   "target"
+  ],
+  [
+   "募兵",
+   190,
+   180,
+   "recruit"
+  ],
+  [
+   "风术援军",
+   325,
+   220,
+   "friendly"
+  ],
+  [
+   "门路",
+   420,
+   290,
+   "target"
+  ],
+  [
+   "南绕路",
+   420,
+   465,
+   "target"
+  ]
+ ],
+ "hazards": [
+  {
+   "name": "箭雨预警候选区",
+   "polygon": [
+    [
+     350,
+     250
+    ],
+    [
+     480,
+     250
+    ],
+    [
+     480,
+     335
+    ],
+    [
+     350,
+     335
+    ]
+   ],
+   "note": "须先让风术援军就位并提示；这是事件候选区，非永久地面伤害"
+  }
+ ],
+ "obstacles": [
+  {
+   "kind": "short_wall_north",
+   "polygon": [
+    [
+     407,
+     176
+    ],
+    [
+     424,
+     176
+    ],
+    [
+     424,
+     229
+    ],
+    [
+     407,
+     229
+    ]
+   ]
+  },
+  {
+   "kind": "short_wall_south",
+   "polygon": [
+    [
+     405,
+     315
+    ],
+    [
+     423,
+     315
+    ],
+    [
+     423,
+     382
+    ],
+    [
+     405,
+     382
+    ]
+   ]
+  },
+  {
+   "kind": "water",
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     74,
+     0
+    ],
+    [
+     85,
+     180
+    ],
+    [
+     65,
+     320
+    ],
+    [
+     84,
+     600
+    ],
+    [
+     0,
+     600
+    ]
+   ]
+  }
+ ],
+ "beats": [
+  "主路接敌，补兵站稳",
+  "南绕路施压，北侧可机动",
+  "风术援军就位后再启用箭雨与尸潮"
+ ],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; bridge_override must reopen river blocking polygons. Level 6 has open north and south flanks after requested wall removal.",
+ "_source": "royal-chapter-2/maps/first-six-layouts.json (rough authored intent, not validated collision)"
+}

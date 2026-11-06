@@ -37,6 +37,7 @@ var s: SoundLibrary
 var _attached: bool = false
 var _first_ready_done: bool = false
 var _bound: bool = false
+var ch2_page: Ch2UpgradePage = null   # 二次开发：升级面板第二页（二章武器与技能），一代第一页不受影响
 
 # ---- 符号类 upgrPanel 的实例字段 ----
 var b_next: FlashClip
@@ -396,6 +397,18 @@ func _added() -> void:
 		if zc != null:
 			zc.position.y = 0.0
 	check_zanaves_and_tier_three()
+	_attach_ch2_page()
+
+
+## 二次开发：二章可达时挂第二页。从二章地图（或二章胜利面板）进入时 Main.current_chapter 为 2，默认显示第二页。
+func _attach_ch2_page() -> void:
+	if ch2_page != null:
+		ch2_page.detach()
+		ch2_page = null
+	var m: Variant = IfaceUtil.main()
+	var chapter: int = int(m.current_chapter) if m != null and m.get("current_chapter") != null else 1
+	if Ch2UpgradePage.should_offer(chapter):
+		ch2_page = Ch2UpgradePage.attach(self, 2 if chapter == 2 else 1)
 
 
 ## 原版 checkZanavesAndTierThree()。内层闭包 showWarrior 等改写成本函数的局部函数（Callable）。
@@ -535,9 +548,14 @@ func button_clicked(e: ButtonClass.ButtonEvent) -> void:
 		b_more:
 			IfaceUtil.main().load_more_games()
 		b_reset:
+			if ch2_page != null and ch2_page.page == 2:
+				ch2_page.reset_upgrades()  # 二次开发：第二页的 Reset 只退二章的星
+				return
 			StoredData.save_data(StoredData.COM_RESET_ABILITIES, null)
 			IfaceUtil.main().load_upgrade_panel()
 		b_help:
+			if ch2_page != null and ch2_page.page == 2:
+				return
 			show_hint()
 		e_hint:
 			hide_hint()
@@ -777,6 +795,9 @@ func _removed() -> void:
 		return
 	StoredData.save_shared_data()
 	_attached = false
+	if ch2_page != null:
+		ch2_page.detach()
+		ch2_page = null
 	e_unit_unlocked_bar.visible = false
 	for u in [
 		u_thief_assasin_unit, u_thief_sabot_unit, u_war_knight_unit, u_war_sword_unit, u_arch_crossb_unit,

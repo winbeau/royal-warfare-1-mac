@@ -1,0 +1,151 @@
+{
+ "id": "02-windmill-saltpans",
+ "name": "风车盐田",
+ "number": 2,
+ "start": [
+  310,
+  330
+ ],
+ "target": [
+  175,
+  233
+ ],
+ "recruit": [
+  190,
+  450
+ ],
+ "enemies": [
+  [
+   [
+    710,
+    225
+   ],
+   [
+    565,
+    282
+   ],
+   [
+    360,
+    325
+   ],
+   [
+    220,
+    245
+   ]
+  ],
+  [
+   [
+    710,
+    500
+   ],
+   [
+    570,
+    430
+   ],
+   [
+    480,
+    350
+   ],
+   [
+    350,
+    285
+   ]
+  ]
+ ],
+ "escort": [
+  [
+   175,
+   235
+  ],
+  [
+   310,
+   215
+  ],
+  [
+   430,
+   170
+  ],
+  [
+   560,
+   125
+  ]
+ ],
+ "points": [
+  [
+   "风车",
+   125,
+   158,
+   "target"
+  ],
+  [
+   "工人",
+   175,
+   233,
+   "target"
+  ],
+  [
+   "志愿兵",
+   190,
+   450,
+   "recruit"
+  ],
+  [
+   "村内",
+   565,
+   125,
+   "target"
+  ]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {
+   "kind": "salt_pool",
+   "polygon": [
+    [
+     149,
+     125
+    ],
+    [
+     291,
+     125
+    ],
+    [
+     303,
+     207
+    ],
+    [
+     108,
+     207
+    ]
+   ]
+  },
+  {
+   "kind": "village",
+   "polygon": [
+    [
+     499,
+     29
+    ],
+    [
+     685,
+     29
+    ],
+    [
+     685,
+     115
+    ],
+    [
+     499,
+     115
+    ]
+   ]
+  }
+ ],
+ "beats": [
+  "东路来敌，保作业区",
+  "工人撤离，东南预警",
+  "两路交替压力，志愿兵可加入"
+ ],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; bridge_override must reopen river blocking polygons. Level 6 has open north and south flanks after requested wall removal.",
+ "_source": "royal-chapter-2/maps/first-six-layouts.json (rough authored intent, not validated collision)"
+}

@@ -88,19 +88,28 @@ func init(param1: int, param2: int) -> void:
 	position.x = 350
 	position.y = 250
 	num_stars = 0
+	# 二次开发：二章的星数由关卡对象的 compute_stars() 给出，不看生命数。
+	var is_ch2: bool = GameUniverse.inst.get("chapter") == 2
+	var ch2_stars_n := 1
+	if is_ch2:
+		var info: Variant = GameUniverse.inst.level_info
+		if info != null and (info as Object).has_method("compute_stars"):
+			ch2_stars_n = clampi(int(info.call("compute_stars")), 1, 3)
 	max_lifes = GameUniverse.inst.num_max_lives
 	lifes_spent = max_lifes - num_lifes
 	mid = floorf((max_lifes - 2) / 2)
 	var one: FlashClip = e_stars.get_node("eOneStar")
 	var two: FlashClip = e_stars.get_node("eTwoStars")
 	var three: FlashClip = e_stars.get_node("eThreeStars")
-	if lifes_spent <= 2:
+	var three_stars: bool = ch2_stars_n == 3 if is_ch2 else lifes_spent <= 2
+	var two_stars: bool = ch2_stars_n == 2 if is_ch2 else lifes_spent <= mid
+	if three_stars:
 		num_stars = 3
 		one.visible = false
 		two.visible = false
 		three.visible = true
 		three.goto_and_play(1)
-	elif lifes_spent <= mid:
+	elif two_stars:
 		num_stars = 2
 		one.visible = false
 		two.visible = true
@@ -114,11 +123,18 @@ func init(param1: int, param2: int) -> void:
 		one.goto_and_play(1)
 	dif_num = float(StoredData.local_game_data[StoredData.NUMPAN_DIFFICULTY])
 	saved_data = {"stars": num_stars, "level": cur_level_num, "dif": dif_num}
-	StoredData.save_data(StoredData.COM_VICTORY, saved_data)
+	if is_ch2:
+		var info2: Variant = GameUniverse.inst.level_info
+		var ch2_n: int = int(info2.get("level_number")) if info2 != null and info2.get("level_number") != null else cur_level_num + 1
+		StoredData.ch2_record_victory(ch2_n, num_stars, int(dif_num))
+	else:
+		StoredData.save_data(StoredData.COM_VICTORY, saved_data)
 	e_stars_hint.visible = false
 	e_achives_hint.visible = false
 	RWTween.from(self_, 0.6, {"scaleX": 0.4, "scaleY": 0.4, "alpha": 0.3, "onComplete": show_hint})
-	if cur_level_num == 5:
+	if is_ch2:
+		pass  # 二章没有一代的漫画解锁与通关标志
+	elif cur_level_num == 5:
 		StoredData.save_data(StoredData.COMIX_SET_TO_WATCH, {"comixNumber": 2})
 	elif cur_level_num == 11:
 		StoredData.save_data(StoredData.COMIX_SET_TO_WATCH, {"comixNumber": 3})
@@ -134,7 +150,7 @@ func init(param1: int, param2: int) -> void:
 	ButtonClass.add_button_on_frames_rd(b_menu, button_clicked)
 	ButtonClass.add_button_on_frames_rd(b_next, button_clicked)
 	set_statistics()
-	a_numbers = g.check_achievements(cur_level_num)
+	a_numbers = [] if is_ch2 else g.check_achievements(cur_level_num)
 	if a_numbers.size() == 0:
 		e_achives_hint.visible = false
 	VinDefPanelAchivesController.init(self_, a_numbers, get_node("eNoNewAchives"), get_node("bLeft"),

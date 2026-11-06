@@ -1,0 +1,58 @@
+{
+  "_tuning": "起测值",
+  "_source": "docs/ch2-spotlight-spec.md WP-D3 第 11 关 + data/ch2/text/levels.json",
+  "_gap": "data/ch2/text/dialogue.json 还没有第 11 关的事件（D11-*），本关暂不挂 dialogue 动作；对白应在整队期和两批出发之前各插一条，待对白文本补上后由负责该文件的工作包加回。",
+  "id": "ch2_11",
+  "name": "石埠解围",
+  "section": 2,
+  "background": "11-stone-wharf",
+  "music": "battle1",
+  "locked": ["BUTTON_MAGES", "BUTTON_THIEVES", "FR_KNIGHT", "FR_SNIPER", "FR_CROSSBOW", "FR_BLESSER"],
+  "start": {
+    "money": 1200,
+    "_formation": "用户 2026-11-06 追加：开局站位从码头/起重台移到卸货场西半部，阵型中心约 (205,300)。火铳卫两列，列间距 30px、列内纵向间距 28px，两列错开半格（东列整体下移 14px）、五雷与重管交错排开；镇戍卫在火铳列东侧约 34px 处单列，纵向间距 32px，上下居中对齐火铳列；治疗者在火铳列西侧约 30px 处。见 docs/ch2-spotlight-spec.md WP-D3 汇报。",
+    "units": [
+      {"kind": "CH2_MUSKETEER", "weapon": "five_thunders", "level": 3, "at": [190, 244]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [190, 272]},
+      {"kind": "CH2_MUSKETEER", "weapon": "five_thunders", "level": 3, "at": [190, 300]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [190, 328]},
+      {"kind": "CH2_MUSKETEER", "weapon": "matchlock", "level": 1, "at": [190, 356]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [220, 258]},
+      {"kind": "CH2_MUSKETEER", "weapon": "five_thunders", "level": 3, "at": [220, 286]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [220, 314]},
+      {"kind": "CH2_MUSKETEER", "weapon": "five_thunders", "level": 3, "at": [220, 342]},
+      {"kind": "CH2_MUSKETEER", "weapon": "matchlock", "level": 1, "at": [220, 370]},
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [254, 252]},
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [254, 284]},
+      {"kind": "CH2_WARDEN", "weapon": "horse_cleaver", "level": 3, "at": [254, 316]},
+      {"kind": "CH2_WARDEN", "weapon": "dao_shield", "level": 1, "at": [254, 348]},
+      {"kind": "FR_HEALER", "level": 1, "at": [160, 286]},
+      {"kind": "FR_HEALER", "level": 1, "at": [160, 314]}
+    ]
+  },
+  "objectives": [
+    {"id": "take_lift", "type": "protect", "optional": false, "rect": [60, 185, 50, 40], "health": 600},
+    {"id": "evacuate_train", "type": "evac", "optional": false, "batches": 2, "size": 5, "min_per_batch": 4, "path": [[660, 100], [480, 130], [300, 170], [150, 190], [95, 205]]},
+    {"id": "medicine_wagon", "type": "protect", "optional": true, "rect": [280, 460, 40, 40], "health": 150}
+  ],
+  "phases": [
+    {"id": "p1", "when": {"time_s": 3}, "do": [{"recruit_window": "rw1"}]},
+    {"id": "p2", "when": {"window_closed": "rw1"}, "do": [{"spawn": [["RW_ZOMBIE", 1, 15]], "route": 1, "prob": 0.97}, {"spawn": [["RW_GREY_ZOMBIE", 1, 15]], "route": 2, "prob": 0.97}]},
+    {"id": "p3", "when": {"cleared": "p2"}, "do": [{"objective_state": {"id": "evacuate_train", "state": "release_batch"}}, {"spawn": [["RW_ZOMBIE", 1, 14]], "route": 1, "prob": 0.97}, {"spawn": [["RW_SKELETON", 1, 13]], "route": 2, "prob": 0.97, "delay_s": 2}, {"spawn": [["RW_ARMORED_SKELETON", 1, 13]], "route": 3, "prob": 0.97, "delay_s": 4}]},
+    {"id": "p4", "when": {"cleared": "p3"}, "do": [{"recruit_window": "rw2"}]},
+    {"id": "p5", "when": {"window_closed": "rw2"}, "do": [
+      {"objective_state": {"id": "evacuate_train", "state": "release_batch"}},
+      {"spawn": [["RW_ZOMBIE", 1, 20]], "route": 1, "prob": 0.97},
+      {"spawn": [["RW_PLAGUE_ZOMBIE", 1, 20]], "route": 2, "prob": 0.97},
+      {"spawn": [["RW_GREY_ZOMBIE", 1, 20]], "route": 3, "prob": 0.97},
+      {"spawn": [["RW_SKELETON_ARCHER", 1, 6]], "route": 1, "prob": 0.97, "delay_s": 4},
+      {"spawn": [["RW_DARTH_KNIGHT", 2, 4]], "route": 2, "prob": 0.97, "delay_s": 6}
+    ]},
+    {"id": "p6", "when": {"cleared": "p5"}, "do": []}
+  ],
+  "recruit": {"at": "recruit", "windows": "between_phases"},
+  "victory": {"all": [{"objective": "evacuate_train"}, {"phases_done": true}, {"enemies_alive": 0}]},
+  "failure": {"any": [{"objective_failed": "evacuate_train"}, {"objective_failed": "take_lift"}, {"no_combat_power": true}]},
+  "dialogue": [],
+  "stars": {"2": {"losses_max": 6}, "3": {"losses_max": 3, "optional": "medicine_wagon"}}
+}

@@ -1,0 +1,40 @@
+{
+	"_comment": "WP-D1 起测数值，见 docs/ch2-spotlight-spec.md D1 全节。unit_cost 取对应一代兵种类的静态 unit_cost；money_upgrade 取对应一代兵种 XML 的 money_upgrade。",
+	"classes": {
+		"warden": {
+			"base_weapon": "dao_shield",
+			"advanced_weapons": ["great_glaive", "horse_cleaver"],
+			"unit_cost": 320,
+			"source_unit_cost": "FriendKnight.unit_cost",
+			"money_upgrade": 300,
+			"source_money_upgrade": "knight XML money_upgrade=300",
+			"upgrade_cost": 600,
+			"swap_cost": 300,
+			"exp_levels": [35, 40, 45],
+			"source_exp_levels": "knight XML <Experience> one/two/three"
+		},
+		"musketeer": {
+			"base_weapon": "matchlock",
+			"advanced_weapons": ["five_thunders", "heavy_musket"],
+			"unit_cost": 340,
+			"source_unit_cost": "FriendCrossBowMan.unit_cost",
+			"money_upgrade": 150,
+			"source_money_upgrade": "crossbowman XML money_upgrade=150",
+			"upgrade_cost": 300,
+			"swap_cost": 150,
+			"exp_levels": [20, 25, 30],
+			"source_exp_levels": "crossbowman XML <Experience> one/two/three"
+		}
+	},
+	"skills": {
+		"_comment": "用户 2026-11-06 重定技能结构：职业自带两个基础技能（hold_fast/intercept、steady_aim/rending_shot），每把高级武器只带一个升级技能（horsebreaker/follow_through/scattershot/heartpiercer），升级技能是对应基础技能的超集。冷却单位为逻辑帧（30/秒）。",
+		"hold_fast": {"cooldown_frames": 600, "window_frames": 180, "melee_threshold": 2, "damage_mult": 0.5},
+		"intercept": {"_comment": "原 Shield Bash 改名，效果不变。", "cooldown_frames": 420, "stun_frames": 45, "push_px": 15},
+		"steady_aim": {"cooldown_frames": 300, "still_frames": 60, "damage_mult": 1.6},
+		"rending_shot": {"cooldown_frames": 600, "armor_penalty": 0.3, "duration_frames": 180},
+		"horsebreaker": {"_comment": "⊇ hold_fast：保留减伤窗口，并在窗口期间或单独站定正面迎骑时进入支势；正面拦下的冲锋人马俱碎。单一冷却同时覆盖两种触发。", "cooldown_frames": 360, "window_frames": 180, "melee_threshold": 2, "damage_mult": 0.5, "brace_range_px": 220, "brace_corridor_px": 40, "brace_max_frames": 90, "angle_deg": 120},
+		"follow_through": {"_comment": "⊇ intercept：轻型目标眩晕+推开，随后对任意目标（含重型）追加 2 倍伤害斩击。", "cooldown_frames": 360, "stun_frames": 45, "push_px": 15, "damage_mult": 2.0},
+		"scattershot": {"_comment": "⊇ rending_shot：扇面散射，每个命中目标都附带破甲。", "cooldown_frames": 480, "radius_px": 120, "min_targets": 3, "max_targets": 6, "arc_deg": 44, "damage_mult": 0.8, "armor_penalty": 0.3, "duration_frames": 180},
+		"heartpiercer": {"_comment": "⊇ steady_aim：站定必中 x1.6，并穿透命中身后第二个目标。", "cooldown_frames": 420, "still_frames": 60, "damage_mult": 1.6, "pierce_range_px": 60, "armor_pierce_bonus": 0.5}
+	}
+}

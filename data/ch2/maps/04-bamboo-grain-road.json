@@ -1,0 +1,171 @@
+{
+ "id": "04-bamboo-grain-road",
+ "name": "竹村粮道",
+ "number": 4,
+ "start": [
+  115,
+  355
+ ],
+ "target": [
+  625,
+  237
+ ],
+ "recruit": [
+  135,
+  170
+ ],
+ "enemies": [
+  [
+   [
+    270,
+    75
+   ],
+   [
+    270,
+    175
+   ],
+   [
+    304,
+    266
+   ]
+  ],
+  [
+   [
+    710,
+    450
+   ],
+   [
+    565,
+    365
+   ],
+   [
+    453,
+    287
+   ]
+  ],
+  [
+   [
+    -10,
+    360
+   ],
+   [
+    120,
+    350
+   ],
+   [
+    220,
+    333
+   ]
+  ]
+ ],
+ "escort": [
+  [
+   65,
+   385
+  ],
+  [
+   215,
+   343
+  ],
+  [
+   343,
+   269
+  ],
+  [
+   500,
+   275
+  ],
+  [
+   625,
+   237
+  ]
+ ],
+ "points": [
+  [
+   "粮车",
+   65,
+   385,
+   "friendly"
+  ],
+  [
+   "停靠1",
+   230,
+   330,
+   "target"
+  ],
+  [
+   "停靠2",
+   450,
+   280,
+   "target"
+  ],
+  [
+   "村棚",
+   135,
+   170,
+   "recruit"
+  ],
+  [
+   "粮仓",
+   625,
+   237,
+   "target"
+  ]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {
+   "kind": "bamboo",
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     170,
+     0
+    ],
+    [
+     180,
+     119
+    ],
+    [
+     40,
+     150
+    ],
+    [
+     0,
+     115
+    ]
+   ]
+  },
+  {
+   "kind": "granary",
+   "polygon": [
+    [
+     585,
+     150
+    ],
+    [
+     694,
+     150
+    ],
+    [
+     694,
+     216
+    ],
+    [
+     585,
+     216
+    ]
+   ]
+  }
+ ],
+ "beats": [
+  "前方拦路，粮车遇敌停下",
+  "后方追赶，可主动停靠整队",
+  "南北袭扰，护送进入仓院"
+ ],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; bridge_override must reopen river blocking polygons. Level 6 has open north and south flanks after requested wall removal.",
+ "_source": "royal-chapter-2/maps/first-six-layouts.json (rough authored intent, not validated collision)"
+}

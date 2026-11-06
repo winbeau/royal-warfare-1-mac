@@ -1,0 +1,31 @@
+{
+ "id": "11-stone-wharf",
+ "name": "石埠解围",
+ "number": 11,
+ "start": [85, 205],
+ "target": [85, 205],
+ "recruit": [85, 205],
+ "enemies": [
+  [[710, 70], [650, 85], [560, 150], [485, 215], [420, 255]],
+  [[710, 330], [660, 290], [590, 290], [500, 290], [430, 300]],
+  [[400, 610], [400, 530], [400, 470]]
+ ],
+ "escort": [[650, 95], [480, 130], [300, 170], [150, 190], [100, 205]],
+ "points": [
+  ["升降台", 85, 205, "recruit"],
+  ["军械院", 660, 105, "target"]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {"kind": "water", "polygon": [[0, 0], [95, 0], [60, 50], [45, 140], [55, 230], [45, 320], [50, 410], [65, 480], [85, 540], [50, 580], [0, 600]]},
+  {"kind": "crane", "polygon": [[15, 80], [78, 80], [78, 172], [15, 172]]},
+  {"kind": "warehouse", "polygon": [[150, 15], [390, 15], [390, 65], [500, 70], [500, 115], [150, 115]]},
+  {"kind": "supply_shed", "polygon": [[345, 425], [470, 425], [470, 510], [345, 510]]},
+  {"kind": "workshop_wall", "polygon": [[595, 0], [700, 0], [700, 80], [595, 80]]},
+  {"kind": "ramp_rail_inner", "polygon": [[447, 192], [618, 52], [631, 67], [461, 207]]},
+  {"kind": "ramp_rail_outer", "polygon": [[500, 253], [670, 113], [683, 128], [513, 268]]}
+ ],
+ "beats": ["两堤路首波压力，守住升降台", "军械队首批出发，南路同时来援", "军械队第二批出发，尸潮加达思压阵"],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; the single rendered ramp/balustrade on the east dyke stands in for both the north and south dyke entrances (routes 1 and 2) per docs/ch2-spotlight-spec.md WP-D3; the plaza itself (roughly x150-470,y130-420) stays fully open.",
+ "_source": "docs/ch2-spotlight-spec.md WP-D3 第 11 关 + assets/backgrounds/ch2/11-stone-wharf.png"
+}

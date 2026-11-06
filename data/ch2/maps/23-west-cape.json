@@ -1,0 +1,28 @@
+{
+ "id": "23-west-cape",
+ "name": "西岬驰援",
+ "number": 23,
+ "start": [375, 220],
+ "target": [375, 70],
+ "recruit": [375, 115],
+ "enemies": [
+  [[180, 610], [180, 480], [190, 350], [230, 230], [290, 130]],
+  [[520, 610], [520, 480], [510, 350], [470, 230], [410, 130]],
+  [[-10, 180], [60, 230], [150, 210], [230, 160], [300, 150]]
+ ],
+ "escort": [[375, 100], [375, 115]],
+ "points": [
+  ["港门", 375, 70, "target"],
+  ["驻防", 375, 115, "recruit"]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {"kind": "fence_west", "polygon": [[0, 45], [310, 45], [310, 95], [0, 95]]},
+  {"kind": "fence_east", "polygon": [[430, 45], [700, 45], [700, 95], [430, 95]]},
+  {"kind": "nw_rocks", "polygon": [[10, 140], [110, 150], [120, 195], [55, 215], [5, 200]]},
+  {"kind": "east_cliff", "polygon": [[630, 90], [700, 90], [700, 600], [630, 600]]}
+ ],
+ "beats": ["示范冲锋，熟悉拒马", "双骑交替冲锋与绕山骑射", "主攻：两路重骑分批冲锋"],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; the gate itself is left open (no obstacle polygon) so the hold_gate hit-rect and the friendly recruit route stay passable, and the two south roads plus the central flat both stay fully open.",
+ "_source": "docs/ch2-spotlight-spec.md WP-D3 第 23 关 + assets/backgrounds/ch2/23-west-cape.png"
+}

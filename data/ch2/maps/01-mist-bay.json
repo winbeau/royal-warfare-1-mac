@@ -1,0 +1,158 @@
+{
+ "id": "01-mist-bay",
+ "name": "雾湾登陆",
+ "number": 1,
+ "start": [
+  180,
+  390
+ ],
+ "target": [
+  625,
+  252
+ ],
+ "recruit": [
+  140,
+  350
+ ],
+ "enemies": [
+  [
+   [
+    710,
+    247
+   ],
+   [
+    595,
+    265
+   ],
+   [
+    480,
+    278
+   ],
+   [
+    350,
+    310
+   ],
+   [
+    210,
+    390
+   ]
+  ],
+  [
+   [
+    710,
+    485
+   ],
+   [
+    600,
+    420
+   ],
+   [
+    480,
+    335
+   ],
+   [
+    350,
+    310
+   ]
+  ],
+  [
+   [
+    710,
+    82
+   ],
+   [
+    620,
+    150
+   ],
+   [
+    515,
+    252
+   ]
+  ]
+ ],
+ "escort": [
+  [
+   155,
+   390
+  ],
+  [
+   335,
+   310
+  ],
+  [
+   480,
+   278
+  ],
+  [
+   625,
+   252
+  ]
+ ],
+ "points": [
+  [
+   "补给",
+   140,
+   350,
+   "recruit"
+  ],
+  [
+   "登陆",
+   180,
+   390,
+   "friendly"
+  ],
+  [
+   "撤离",
+   625,
+   252,
+   "target"
+  ]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {
+   "kind": "water",
+   "polygon": [
+    [
+     0,
+     0
+    ],
+    [
+     125,
+     0
+    ],
+    [
+     80,
+     100
+    ],
+    [
+     100,
+     225
+    ],
+    [
+     65,
+     390
+    ],
+    [
+     120,
+     495
+    ],
+    [
+     240,
+     600
+    ],
+    [
+     0,
+     600
+    ]
+   ]
+  }
+ ],
+ "beats": [
+  "东路首波，重温走位",
+  "东南袭扰，援护渡夫",
+  "东北施压，完成撤离"
+ ],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; bridge_override must reopen river blocking polygons. Level 6 has open north and south flanks after requested wall removal.",
+ "_source": "royal-chapter-2/maps/first-six-layouts.json (rough authored intent, not validated collision)"
+}

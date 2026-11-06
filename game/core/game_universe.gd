@@ -53,6 +53,8 @@ var selection_box_start_coords: Vector2 = Vector2.ZERO
 var selection_box_is_shown: bool = false
 var num_lifes: int = 0
 var level_info: LevelTemplate
+# 二次开发：当前章节。Main.load_game 在进关前写入；1 为一代，2 为第二章。
+var chapter: int = 1
 var cur_select_index: int = 0
 var a_effects: Array = []  # Vector.<visualsTemplate>
 var a_effects_to_delete: Array = []
@@ -233,6 +235,16 @@ func init(param1: int) -> void:
 		o_unit_groups[k] = []
 	global_wave_counter = 0
 	ingame_ui.unlock_units()
+	if chapter == 1:
+		# 二次开发：ingame_ui 跨关复用，二章会隐藏生命数 HUD、挂目标栏；回到一代时复原
+		if ingame_ui.e_hp != null:
+			ingame_ui.e_hp.visible = true
+		var stale_hud: Node = get_node_or_null("ch2_objective_hud")
+		if stale_hud != null:
+			remove_child(stale_hud)
+			stale_hud.queue_free()
+		# WP-D1 D1.8：二章静音开关默认不影响一代；回到一代强制置假（LevelCh2 会在进/出二章关卡时按需置真/假）。
+		Sounds.ch2_sfx_muted = false
 	ingame_ui.e_fader.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ingame_ui.e_fader.visible = false
 	last_wave_time = 0
@@ -351,6 +363,8 @@ func reset_money(param1: float) -> void:
 
 
 func friendly_unit_clicked(param1: LivingObject) -> void:
+	if param1.ch2_uncontrollable:
+		return  # 二次开发：二章盟军与设施不可选（默认 false，一代不受影响）
 	if a_selected_units.size() != 0:
 		if a_selected_units.size() == 1:
 			if a_selected_units[0] != param1:
@@ -388,6 +402,9 @@ static func _splice_replace(arr: Array, idx: int, item: Variant) -> void:
 
 
 func _new_unit(kind: int) -> LivingObject:
+	# WP-D1 D1.1：一代的 kind 都小于 100，第二章新 kind（镇戍卫/火铳卫/达思重骑）交给 Ch2UnitFactory，不受影响。
+	if kind >= 100:
+		return Ch2UnitFactory.new_unit(kind)
 	var scr := _living_script(A_LIVING_CLASSES[kind])
 	if scr == null:
 		push_error("GameUniverse: living class %s is not ported yet" % A_LIVING_CLASSES[kind])
@@ -525,6 +542,8 @@ func enemy_escaped() -> void:
 
 
 func minus_health(param1: int = 1) -> void:
+	if level_info != null and not level_info.uses_lives():
+		return
 	num_lifes -= param1
 	if num_lifes < 0:
 		num_lifes = 0
@@ -581,7 +600,7 @@ func select_all_of_type(param1: int) -> void:
 	var i := 0
 	while i < a_all_units.size():
 		var u: LivingObject = a_all_units[i]
-		if u.friendly == true and u.is_npc == false:
+		if u.friendly == true and u.is_npc == false and not u.ch2_uncontrollable:
 			if u.class_kind == param1:
 				a_selected_units.append(u)
 				if u.selected == false:
@@ -735,7 +754,10 @@ func add_effect(param1: VisualsTemplate, param2: Node, param3: bool = false) -> 
 
 func load_level(param1: int) -> void:
 	cur_select_index = 0
-	level_info = _new_level_template(param1)
+	if chapter == 2:
+		level_info = LevelCh2.new(param1 + 1)
+	else:
+		level_info = _new_level_template(param1)
 	level_info.load_xml_data()
 
 
@@ -779,7 +801,10 @@ func continue_loading_level_data() -> void:
 			old.queue_free()
 	bg_mc = _make_background(bg_name)
 	add_child(bg_mc)
-	PathParser.parse(bg_name, self)
+	if chapter == 2:
+		PathParser.parse_ch2(level_info, self)
+	else:
+		PathParser.parse(bg_name, self)
 	units_cont = _new_container("units_cont")
 	healt_bar_cont = _new_container("healt_bar_cont")
 	bottom_effects_cont = _new_container("bottom_effects_cont")
@@ -930,6 +955,7 @@ func key_pressed(key_code: int, shift_key: bool = false, ctrl_key: bool = false)
 		else:
 			unselect_all()
 			a_selected_units = o_unit_groups[n].duplicate()
+			a_selected_units = a_selected_units.filter(func(gu_: LivingObject) -> bool: return not gu_.ch2_uncontrollable)  # 二次开发：编组里不含不可控单位
 			draw_rings_on_units()
 
 
@@ -1005,7 +1031,7 @@ func stop_selection_box(_param1: RWMouseEvent = null) -> void:
 		var i := 0
 		while i < a_all_units.size():
 			var c: LivingObject = a_all_units[i]
-			if c.friendly == true and c.is_npc == false:
+			if c.friendly == true and c.is_npc == false and not c.ch2_uncontrollable:
 				if _sens_hits_rect(c, selection_ramka.rect):
 					a_selected_units.append(c)
 					if c.selected == false:
@@ -1422,6 +1448,8 @@ func call_summoned_enemy(param1: int, param2: int, param3: int) -> void:
 
 
 func check_end() -> void:
+	if not level_info.allows_default_end():
+		return
 	if check_enemies_existence() == false:
 		if def_panel.on_stage == false:
 			if ChatFrameController.on_stage == false:

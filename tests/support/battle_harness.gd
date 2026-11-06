@@ -106,7 +106,8 @@ func reset_effect_pools() -> void:
 		scr.set("_cached_data", null)
 
 ## 对应 Main.loadGame(level) -> fadeClearLoadUnfade：killAll、加入舞台、gameUni.init(level)。level 为 0 基下标（第 1 关 = 0）。
-func start_level(level: int, rng_seed: int, difficulty: int = 1, fresh_pools: bool = true) -> GameUniverse:
+## chapter：二次开发参数（WP-B 用），GameUniverse.chapter 必须在 init() 之前写入才会走 LevelCh2 分支；默认 1，一代测试不受影响。
+func start_level(level: int, rng_seed: int, difficulty: int = 1, fresh_pools: bool = true, chapter: int = 1) -> GameUniverse:
 	stop_level()
 	RWTween.reset()
 	StoredData.local_game_data[StoredData.NUMPAN_DIFFICULTY] = difficulty
@@ -116,6 +117,7 @@ func start_level(level: int, rng_seed: int, difficulty: int = 1, fresh_pools: bo
 	RWRandom.set_seed(rng_seed)
 	LivingObject.unit_num_warriors = 0
 	gu = GameUniverse.new()
+	gu.chapter = chapter
 	tree.root.add_child(gu)
 	gu.init(level)
 	return gu

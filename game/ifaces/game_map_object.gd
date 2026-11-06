@@ -17,6 +17,8 @@ class_name GameMapObject
 extends FlashClip
 
 const SCENE := "res://scenes/ifaces/game_map_object.tscn"
+## 二次开发：东渡船在逻辑坐标（700x600）里的中心，东侧海面。
+const CH2_SHIP_CENTER := Vector2(650, 440)
 
 static var map_bitmap: FlashClip
 static var anims: FlashClip  # gameMapAnimatedElems
@@ -36,6 +38,8 @@ var armor_save_pop: PopupSaveLoadEx
 var storage_popup: PopupStorageFailureEx
 
 var _attached: bool = false
+## 二次开发：一代通关后出现在东侧海面的「东渡」船（进入第二章地图）。
+var ch2_ship: Ch2ShipButton = null
 
 
 func _init() -> void:
@@ -165,6 +169,10 @@ func _added() -> void:
 		e_got_free.visible = false
 	# F+Shift+Alt+Ctrl 赞助商解锁秘籍：原版监听 stage 的 KEY_UP；这里改在根节点上处理 _unhandled_key_input。
 	set_process_unhandled_key_input(true)
+	# 二次开发：东渡船。命中区域避开 markers 里所有按钮与旗帜（见 tests/ch2_flow.gd）。
+	if StoredData.ch2_available():
+		ch2_ship = Ch2ShipButton.create(CH2_SHIP_CENTER, &"load_ch2_map")
+		add_child(ch2_ship)
 
 
 ## 原版 init() 里按存档 NUMPAN_LEVELS / NUMPAN_LEVELS_MIDDIF / NUMPAN_LEVELS_HIGHDIF 逐关设置旗帜状态。
@@ -351,6 +359,11 @@ func _removed() -> void:
 	# 效果一致：下次点旗帜会重新 init() 再 add_child 回来）。
 	if pop.get_parent() == self:
 		remove_child(pop)
+	if ch2_ship != null:
+		if ch2_ship.get_parent() == self:
+			remove_child(ch2_ship)
+		ch2_ship.queue_free()
+		ch2_ship = null
 	var e_storage_failure: FlashClip = markers.get_node("eStorageFailure")
 	var b_online: FlashClip = markers.get_node("bOnline")
 	ButtonClass.remove_button_scale(e_storage_failure, button_clicked)

@@ -1,0 +1,161 @@
+{
+ "id": "05-tide-shrine",
+ "name": "听潮古祠",
+ "number": 5,
+ "start": [
+  350,
+  375
+ ],
+ "target": [
+  350,
+  180
+ ],
+ "recruit": [
+  470,
+  200
+ ],
+ "enemies": [
+  [
+   [
+    -10,
+    239
+   ],
+   [
+    155,
+    249
+   ],
+   [
+    265,
+    292
+   ]
+  ],
+  [
+   [
+    710,
+    345
+   ],
+   [
+    550,
+    338
+   ],
+   [
+    425,
+    305
+   ]
+  ],
+  [
+   [
+    330,
+    610
+   ],
+   [
+    345,
+    445
+   ],
+   [
+    350,
+    345
+   ]
+  ]
+ ],
+ "escort": [
+  [
+   350,
+   180
+  ],
+  [
+   160,
+   290
+  ],
+  [
+   550,
+   335
+  ],
+  [
+   390,
+   485
+  ],
+  [
+   350,
+   180
+  ]
+ ],
+ "points": [
+  [
+   "僧侣",
+   350,
+   180,
+   "friendly"
+  ],
+  [
+   "封尸1",
+   160,
+   290,
+   "target"
+  ],
+  [
+   "封尸2",
+   550,
+   335,
+   "target"
+  ],
+  [
+   "封尸3",
+   390,
+   485,
+   "target"
+  ]
+ ],
+ "hazards": [],
+ "obstacles": [
+  {
+   "kind": "shrine",
+   "polygon": [
+    [
+     280,
+     52
+    ],
+    [
+     431,
+     52
+    ],
+    [
+     431,
+     148
+    ],
+    [
+     280,
+     148
+    ]
+   ]
+  },
+  {
+   "kind": "graves",
+   "polygon": [
+    [
+     48,
+     100
+    ],
+    [
+     175,
+     100
+    ],
+    [
+     175,
+     172
+    ],
+    [
+     48,
+     172
+    ]
+   ]
+  }
+ ],
+ "beats": [
+  "示范封尸，明确压力减少",
+  "东西接近，保护仪式停顿",
+  "南路追击，护送僧侣归祠"
+ ],
+ "navigation_note": "Obstacle polygons are rough authored intent, not validated collision; bridge_override must reopen river blocking polygons. Level 6 has open north and south flanks after requested wall removal.",
+ "_source": "royal-chapter-2/maps/first-six-layouts.json (rough authored intent, not validated collision)"
+}

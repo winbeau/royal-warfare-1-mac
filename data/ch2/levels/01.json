@@ -1,0 +1,39 @@
+{
+  "_tuning": "起测值",
+  "_source": "royal-chapter-2/design/levels.json 第 1 关 + design/sections/01-coast.md",
+  "id": "ch2_01",
+  "name": "雾湾登陆",
+  "section": 1,
+  "background": "01-mist-bay",
+  "music": "battle1",
+  "locked": ["BUTTON_MAGES", "BUTTON_THIEVES", "FR_KNIGHT", "FR_SNIPER", "FR_CROSSBOW", "FR_BLESSER"],
+  "start": {
+    "money": 400,
+    "units": [
+      {"kind": "FR_WARRIOR", "level": 2, "at": [170, 400]},
+      {"kind": "FR_WARRIOR", "level": 1, "at": [190, 410]},
+      {"kind": "FR_ARCHER", "level": 2, "at": [160, 420]},
+      {"kind": "FR_ARCHER", "level": 1, "at": [200, 430]},
+      {"kind": "FR_PRIEST", "level": 1, "at": [180, 370]},
+      {"kind": "FR_WARRIOR", "level": 1, "at": [210, 440]}
+    ],
+    "allies": [
+      {"kind": "FR_WARRIOR", "_placeholder": "CH2_ZHENSHU dao-shield 3 级占位，M1 换成新职业", "level": 3, "hold": [610, 300], "controllable": false, "count": 2}
+    ]
+  },
+  "objectives": [
+    {"id": "escort_ferrymen", "type": "escort", "optional": false, "count": 2, "min": 2, "path": [[155, 390], [335, 310], [480, 278], [625, 252]], "downed_window_s": 20},
+    {"id": "medicine_chest", "type": "pickup", "optional": true, "at": [220, 480], "radius": 30, "reward_money": 150}
+  ],
+  "phases": [
+    {"id": "p1", "when": {"time_s": 3}, "do": [{"dialogue": "D01-a"}, {"spawn": [["RW_ZOMBIE", 1, 4]], "route": 1, "prob": 0.97}]},
+    {"id": "p2", "when": {"all": [{"cleared": "p1"}, {"flag": "escort_ferrymen.at_1"}]}, "do": [{"spawn": [["RW_ZOMBIE", 1, 6]], "route": 1, "prob": 0.97}, {"recruit_window": "rw1"}]},
+    {"id": "p3", "when": {"all": [{"window_closed": "rw1"}, {"flag": "escort_ferrymen.at_2"}]}, "do": [{"warn": 3}, {"spawn": [["RW_SKELETON", 1, 4]], "route": 3, "prob": 0.97, "delay_s": 3}]},
+    {"id": "p4", "when": {"all": [{"cleared": "p3"}, {"flag": "escort_ferrymen.at_3"}]}, "do": [{"dialogue": "D01-b"}]}
+  ],
+  "recruit": {"at": "recruit", "windows": "between_phases"},
+  "victory": {"all": [{"objective": "escort_ferrymen"}, {"phases_done": true}, {"enemies_alive": 0}]},
+  "failure": {"any": [{"objective_failed": "escort_ferrymen"}, {"no_combat_power": true}]},
+  "dialogue": ["D01-a", "D01-b"],
+  "stars": {"2": {"losses_max": 3}, "3": {"losses_max": 1, "optional": "medicine_chest"}}
+}

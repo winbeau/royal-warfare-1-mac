@@ -1,0 +1,22 @@
+{
+  "_note": "占位映射：对白说话人 -> 一代兵种 kind 名（仅用来在 ChatFrame 里选一帧头像），M1 换成新头像后这张表作废。kind 名经 Ch2Kinds.friend_map() 解析。",
+  "speakers": {
+    "Captain": "FR_KING",
+    "Ferryman": "NPC_MAN",
+    "Boatman": "NPC_MAN",
+    "Shen Li": "FR_SWORDMASTER",
+    "Lu Ling": "FR_ROGUE",
+    "Gu Tingzhou": "FR_WARRIOR",
+    "Huizhao": "FR_PRIEST",
+    "Qinghe": "FR_BLUEMAGE",
+    "Xu Heng": "FR_KNIGHT",
+    "Yue Cen": "FR_ARCHER",
+    "Forgemaster": "FR_WARRIOR",
+    "Granary Steward": "NPC_OLDMAN",
+    "Island Sentry": "FR_CROSSBOW",
+    "Messenger": "NPC_MAN",
+    "Old Weir-Keeper": "NPC_OLDMAN",
+    "Pass Sergeant": "FR_WARRIOR",
+    "Ranch Guard": "FR_ARCHER"
+  }
+}

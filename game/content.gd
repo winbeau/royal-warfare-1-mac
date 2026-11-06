@@ -8,6 +8,8 @@ var bounds: Dictionary  ## characterId -> 包围盒偏移（data/bounds.json）
 var resources: Dictionary = {}  ## characterId -> 资源记录（data/resources.json）
 ## 测试用：带 --isolated-profile 或以 --script 运行时为真；StoredData 据此不读写 user://。
 var isolated_profile := false
+## 二次开发调试参数 --ch2-unlock：一代未通关也显示东渡船。
+var ch2_debug_unlock := false
 
 
 func read_json(path: String) -> Variant:
@@ -16,6 +18,7 @@ func read_json(path: String) -> Variant:
 
 func _ready() -> void:
 	isolated_profile = OS.get_cmdline_user_args().has("--isolated-profile") or OS.get_cmdline_args().has("--script")
+	ch2_debug_unlock = OS.get_cmdline_user_args().has("--ch2-unlock") or OS.get_cmdline_args().has("--ch2-unlock")
 	symbols = read_json("data/symbols.json")
 	bounds = read_json("data/bounds.json")
 	for record in read_json("data/resources.json").resources:

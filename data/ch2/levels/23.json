@@ -1,0 +1,53 @@
+{
+  "_tuning": "起测值",
+  "_source": "docs/ch2-spotlight-spec.md WP-D3 第 23 关 + data/ch2/text/levels.json；开局编制按主会话 2026-11-06 追加的陌刀/斩马刀设计改过，又按用户容器截图自查反馈把火铳卫换成大部分直接拿高级武器（重管 2、五雷 1、制式 1）。",
+  "id": "ch2_23",
+  "name": "西岬驰援",
+  "section": 4,
+  "background": "23-west-cape",
+  "music": "battle1",
+  "locked": ["BUTTON_MAGES", "BUTTON_THIEVES", "FR_KNIGHT", "FR_SNIPER", "FR_CROSSBOW", "FR_BLESSER"],
+  "start": {
+    "money": 1500,
+    "units": [
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [310, 210]},
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [330, 200]},
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [370, 200]},
+      {"kind": "CH2_WARDEN", "weapon": "great_glaive", "level": 3, "at": [390, 210]},
+      {"kind": "CH2_WARDEN", "weapon": "horse_cleaver", "level": 3, "at": [350, 195]},
+      {"kind": "CH2_WARDEN", "weapon": "dao_shield", "level": 1, "at": [350, 240]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [300, 250]},
+      {"kind": "CH2_MUSKETEER", "weapon": "heavy_musket", "level": 3, "at": [400, 250]},
+      {"kind": "CH2_MUSKETEER", "weapon": "five_thunders", "level": 3, "at": [320, 270]},
+      {"kind": "CH2_MUSKETEER", "weapon": "matchlock", "level": 1, "at": [380, 270]},
+      {"kind": "FR_HEALER", "level": 1, "at": [350, 280]}
+    ]
+  },
+  "objectives": [
+    {"id": "hold_gate", "type": "protect", "optional": false, "rect": [340, 55, 70, 30], "health": 800},
+    {"id": "wounded_in", "type": "evac", "optional": true, "batches": 1, "size": 2, "min_per_batch": 1, "path": [[280, 350], [375, 115]]}
+  ],
+  "phases": [
+    {"id": "p1", "when": {"time_s": 2}, "do": [{"dialogue": "D23-a"}, {"recruit_window": "rw1"}, {"spawn": [["CH2_DARTH_LANCER", 1, 1]], "route": 1, "prob": 0.0, "delay_s": 5}]},
+    {"id": "p2", "when": {"cleared": "p1"}, "do": [{"spawn": [["CH2_DARTH_LANCER", 1, 1]], "route": 1, "prob": 0.0}, {"spawn": [["CH2_DARTH_LANCER", 1, 1]], "route": 1, "prob": 0.0, "delay_s": 3}]},
+    {"id": "p3", "when": {"cleared": "p2"}, "do": [{"recruit_window": "rw2"}]},
+    {"id": "p4", "when": {"window_closed": "rw2"}, "do": [
+      {"spawn": [["CH2_DARTH_LANCER", 1, 3]], "route": 1, "prob": 0.4},
+      {"spawn": [["CH2_DARTH_LANCER", 1, 3]], "route": 2, "prob": 0.4, "delay_s": 2},
+      {"spawn": [["RW_DARTH_ARCHER", 1, 6]], "route": 3, "prob": 0.9},
+      {"spawn": [["RW_ZOMBIE", 1, 12]], "route": 1, "prob": 0.9, "delay_s": 4}
+    ]},
+    {"id": "p5", "when": {"cleared": "p4"}, "do": [
+      {"spawn": [["CH2_DARTH_LANCER", 1, 3]], "route": 1, "prob": 0.3},
+      {"spawn": [["CH2_DARTH_LANCER", 1, 3]], "route": 2, "prob": 0.3, "delay_s": 8},
+      {"spawn": [["RW_DARTH_KNIGHT", 1, 2]], "route": 1, "prob": 0.9, "delay_s": 12},
+      {"spawn": [["RW_ZOMBIE", 1, 20]], "route": 2, "prob": 0.9, "delay_s": 14}
+    ]},
+    {"id": "p6", "when": {"cleared": "p5"}, "do": [{"dialogue": "D23-b"}]}
+  ],
+  "recruit": {"at": "recruit", "windows": "between_phases"},
+  "victory": {"all": [{"phases_done": true}, {"enemies_alive": 0}]},
+  "failure": {"any": [{"objective_failed": "hold_gate"}, {"no_combat_power": true}]},
+  "dialogue": ["D23-a", "D23-b"],
+  "stars": {"2": {"losses_max": 4}, "3": {"losses_max": 2, "optional": "wounded_in"}}
+}

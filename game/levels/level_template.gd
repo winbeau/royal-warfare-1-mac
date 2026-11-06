@@ -23,6 +23,16 @@ func level_custom_actions() -> void:
 	pass
 
 
+## 二次开发钩子（默认值等于一代行为）：为 false 时 GameUniverse.check_end 不做"波次出完即胜利"的默认判定。
+func allows_default_end() -> bool:
+	return true
+
+
+## 二次开发钩子：为 false 时 GameUniverse.minus_health 不扣生命、不因生命归零判负。
+func uses_lives() -> bool:
+	return true
+
+
 ## 未匹配时原版返回 null；GDScript 的 String 不能为 null，返回 ""。
 func parse_wave_type(param1: String) -> String:
 	var _loc2_: String = ""

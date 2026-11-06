@@ -14,6 +14,7 @@ config/name="Royal Warfare 1"
 run/main_scene="res://scenes/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Godot/app_userdata/Royal Warfare 1 — Mac"
+config/custom_user_dir_name.dev="Godot/app_userdata/Royal Warfare 1 — Mac Dev"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false

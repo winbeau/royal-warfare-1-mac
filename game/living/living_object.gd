@@ -263,6 +263,8 @@ var bmp_dead: BmpFrames = null
 var bmp_ranged: BmpFrames = null
 var bmp_casting: BmpFrames = null
 var stand_still: bool = false
+# 二次开发（二章）：为 true 的单位不能被玩家选中（盟军、设施）；默认 false，一代不受影响
+var ch2_uncontrollable: bool = false
 var sens_class: String = ""
 var can_remove_from_units_array: bool = false
 var temp_dist_to_attacker: float = 0.0
@@ -415,6 +417,7 @@ func add_to_game(param1: float, param2: float, param3: int = 1, param4: bool = f
 	o_pursue_counter = {}
 	is_archer_shooting_its_target_while_is_needed_to_move = false
 	stand_still = false
+	ch2_uncontrollable = false  # 池化实例复用时复位
 	ext_unlock = false
 	cur_group = -1
 	s = SoundLibrary.inst

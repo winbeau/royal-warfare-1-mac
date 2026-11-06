@@ -24,9 +24,11 @@ case "$action" in
         # 测试日志写到 build/test-logs，避免轮替掉玩家游戏在 user:// 下的日志。
         log="$project_dir/build/test-logs/godot.log"
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
-        for t in smoke rw_runtime sounds_runtime levels_data universe_core living_core class_bases friend_units enemy_units visual_effects specials_rules as3_abort clips_runtime menu_screens upgrade_panel comics battle_ifaces main_game_ui level_intro main_flow input_e2e input_e2e_new_save living_units_audit f2_core ifaces_f3 extra_obstacles input_battle_flow; do
+        for t in smoke rw_runtime sounds_runtime levels_data universe_core living_core class_bases friend_units enemy_units visual_effects specials_rules as3_abort clips_runtime menu_screens upgrade_panel comics battle_ifaces main_game_ui level_intro main_flow input_e2e input_e2e_new_save living_units_audit f2_core ifaces_f3 extra_obstacles input_battle_flow ch2_flow ch2_levels_data ch2_levels_spotlight ch2_director ch2_battle ch2_units ch2_cavalry; do
             "$godot_bin" --headless --path "$project_dir" --log-file "$log" --script "tests/$t.gd" -- --isolated-profile
         done
+        # 二次开发：二章界面测试需要 --ch2-dev 模拟 dev 版存档
+        "$godot_bin" --headless --path "$project_dir" --log-file "$log" --script tests/ch2_ui.gd -- --isolated-profile --ch2-dev
         # battle_level1 / battle_all_levels 放在最后：已知 game/ifaces/hints_manager.gd 在关卡结束清理时与
         # main_game_ui_ex.gd 的 _exit_tree 存在一个 remove_child 时序冲突（详见 docs/verification.md「测试运行中
         # 已知问题」），不属于本次改动范围；放在最后可以让前面的测试（含 main_flow）不被这个已知问题挡住。
@@ -39,5 +41,12 @@ case "$action" in
         "$godot_bin" --headless --editor --path "$project_dir" --import --quit
         exec "$godot_bin" --headless --path "$project_dir" --export-release macOS "$project_dir/build/Royal Warfare 1.app"
         ;;
-    *) echo '用法：dev/godot.sh [run|editor|test|export]' >&2; exit 2 ;;
+    export-dev)
+        # 二次开发：dev 版（自定义特性 dev：存档目录与文件名都与正式版分开）
+        mkdir -p "$project_dir/build"
+        touch "$project_dir/build/.gdignore"
+        "$godot_bin" --headless --editor --path "$project_dir" --import --quit
+        exec "$godot_bin" --headless --path "$project_dir" --export-release "macOS Dev" "$project_dir/build/Royal Warfare 1-dev.app"
+        ;;
+    *) echo '用法：dev/godot.sh [run|editor|test|export|export-dev]' >&2; exit 2 ;;
 esac

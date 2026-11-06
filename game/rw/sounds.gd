@@ -185,8 +185,15 @@ func init_sounds() -> void:
 		o_types_max[pair[0]] = pair[1]
 
 
+# WP-D1 D1.8：二章战斗角色/战斗音效全部静音开关。为真时 play() 直接返回 null；play_music 不受影响。
+# 默认 false，一代行为不变；由 LevelCh2.loading_completed_handler/clear_data 和 GameUniverse.init（chapter==1）切换。
+static var ch2_sfx_muted: bool = false
+
+
 # play(param1 声音, param2 循环, param3 起点秒, param4 音量, param5 单位 x, param6 分类)
 func play(param1: AudioStream, param2: bool = false, param3: float = 0, param4: float = 1, param5: float = 350, param6: String = "") -> Channel:
+	if ch2_sfx_muted:
+		return null
 	pan = (param5 / 350.0 - 1) * 0.5
 	res = null
 	if sound_on:

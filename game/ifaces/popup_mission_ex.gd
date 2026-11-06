@@ -19,6 +19,9 @@ const SCENE := "res://scenes/ifaces/popup_mission_ex.tscn"
 const SCROLL_STEP := 1.0 / 30.0  # 原版按 ENTER_FRAME（舞台 30fps）驱动滚动，这里用累加器近似
 
 var pos: int = 0
+## 二次开发：二章模式的关号（1 基）；0 表示一代模式。二章的 pos 恒为 ch2_level - 1。
+var ch2_level: int = 0
+var _ch2_playable: bool = true
 var popup: FlashClip  # popupMission
 var big_shadow: FlashClip  # mapBlack (character 5978)
 var text_start_coords: float = 0.0
@@ -103,7 +106,23 @@ func _construct() -> void:
 ## 被 FlashClip 自己随后创建的 _back/_front 盖住）。
 func init(param1: int) -> void:
 	pos = param1
+	ch2_level = 0
 	IfaceUtil.when_ready(self, _added)
+
+
+## 二次开发：二章模式。同一个实例与入场动画，只是标题、正文、缩略图和开始按钮的去向不同。
+func init_ch2(level_n: int) -> void:
+	pos = level_n - 1
+	ch2_level = level_n
+	IfaceUtil.when_ready(self, _added)
+
+
+static func ch2_level_data(level_n: int) -> Dictionary:
+	var path := "res://data/ch2/levels/%02d.json" % level_n
+	if not FileAccess.file_exists(path):
+		return {}
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	return parsed if parsed is Dictionary else {}
 
 
 func _exit_tree() -> void:
@@ -142,9 +161,21 @@ func _added() -> void:
 			deselect_dif(d1)
 			deselect_dif(d2)
 			select_dif(d3)
-	var tmpl: LevelTemplate = GameUniverse.a_levels_templates_inited[pos]
-	t_mission_name.text = tmpl.level_caption
-	t_mission_desc.text = tmpl.level_description
+	var ch2_data: Dictionary = {}
+	_ch2_playable = true
+	b_playbtn.modulate = Color.WHITE
+	if ch2_level > 0:
+		ch2_data = ch2_level_data(ch2_level)
+		var text := Ch2Text.level(ch2_level)
+		t_mission_name.text = str(text.get("name", ""))
+		_ch2_playable = not ch2_data.is_empty()
+		t_mission_desc.text = str(text.get("briefing", "")) if _ch2_playable else "Coming soon."
+		if not _ch2_playable:
+			b_playbtn.modulate = Color(0.5, 0.5, 0.5, 1.0)
+	else:
+		var tmpl: LevelTemplate = GameUniverse.a_levels_templates_inited[pos]
+		t_mission_name.text = tmpl.level_caption
+		t_mission_desc.text = tmpl.level_description
 	# .mask = eTextMask：FlashClip 无遮罩机制，不移植（见文件头注释）
 	# 原版这里是 `while(eCont.numChildren) eCont.removeChildAt(0)`：AS3 的 eCont 除了上一次 init()
 	# 加进去的背景位图以外没有别的子节点，清空重来是安全的。移植后 e_cont 本身是 FlashClip（Symbol_67，
@@ -166,7 +197,12 @@ func _added() -> void:
 	_scrolling = t_mission_desc.box.size.y > e_text_mask.size.y
 	_scroll_acc = 0.0
 	set_process(_scrolling)
-	var bg_name: String = GameUniverse.a_levels_back_grounds[pos]
+	var bg_name: String = ""
+	if ch2_level > 0:
+		var bg_id := str(ch2_data.get("background", ""))
+		bg_name = "ch2/" + bg_id if bg_id != "" else ""
+	else:
+		bg_name = GameUniverse.a_levels_back_grounds[pos]
 	var bg_path := "res://assets/backgrounds/%s.png" % bg_name
 	var tex: Texture2D = load(bg_path) if ResourceLoader.exists(bg_path) else null
 	if tex != null:
@@ -266,6 +302,8 @@ func button_clicked(param1: ButtonClass.ButtonEvent) -> void:
 		deselect_dif(d2)
 		deselect_dif(d1)
 	elif target == b_playbtn:
+		if ch2_level > 0 and not _ch2_playable:
+			return
 		IfaceUtil.play_sound(SoundLibrary.GAME_START, 0, 0.4)
 		destroy()
 		_main_call(&"load_game", [pos])

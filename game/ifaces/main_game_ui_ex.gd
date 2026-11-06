@@ -106,6 +106,7 @@ var a_disabled_buttons: Array = []
 var archers_clicked: bool = false
 var level_class_name_coord: float = 0.0
 var s: SoundLibrary
+var ch2_ui: Ch2BattleUi   # 二次开发：二章三格界面（招募第二页、换武器、技能图标），一代战斗里不起作用
 const BOTTOM_LEFT_PANEL_COORDS := Vector2(540, 584)
 var game_uni: GameUniverse
 var e_game_paused_message_coords: Vector2 = Vector2.ZERO
@@ -259,6 +260,7 @@ func _construct() -> void:
 	e_game_paused_message.mouse_enabled = false
 	e_game_paused_message.visible = false
 	e_game_paused_message_coords = e_game_paused_message.position
+	ch2_ui = Ch2BattleUi.new(self)
 
 
 ## 原版 added()（ADDED_TO_STAGE）。
@@ -873,6 +875,10 @@ func _rover(param1: Variant) -> void:
 	tname.position.y = -15
 	eback.goto_and_stop(1)
 	var sel_frame := (_unit_select().get_node("eSelector") as FlashClip).current_frame
+	if ch2_ui.rover(mc, tname, tcost, eback):
+		_hint_update_width()
+		_set_hint_pos(mc)
+		return
 	if mc == e1:
 		tname.text = "Warriors"
 		_set_no_price()
@@ -1030,6 +1036,9 @@ func _basic_to_pro_clicked(param1: Variant) -> void:
 	var mc: FlashClip = IfaceUtil.target_of(param1)
 	var sel_frame := (_unit_select().get_node("eSelector") as FlashClip).current_frame
 	var cur: LivingObject = game_uni.get_cur_selected
+	if ch2_ui.is_ch2_unit(cur):
+		ch2_ui.weapon_button_clicked(mc == _unit_select().get_node("bTop"))  # 二次开发：二章单位换武器
+		return
 	if mc == _unit_select().get_node("bTop"):
 		match sel_frame:
 			1: _try_pro(FriendKnight, LivingObject.FR_KNIGHT, cur)
@@ -1072,6 +1081,9 @@ func _upgrade_clicked(_param1: RWMouseEvent = null) -> void:
 	var up: FlashClip = e_unit_panel.get_node("eUpgrade")
 	if up.position.y != e_upgrade_down_coord:
 		var u: LivingObject = game_uni.get_cur_selected
+		if ch2_ui.is_ch2_unit(u):
+			ch2_ui.open_weapon_select()
+			return
 		if u.basic_unit == true:
 			if u.get_level == 3:
 				var us := _unit_select()
@@ -1150,8 +1162,9 @@ func update_soldier_data() -> void:
 		return
 	last_unit = u
 	var kind: int = u.get_kind
-	(e_unit_panel.get_node("eIco") as FlashClip).goto_and_stop(kind + 1)
-	var class_name_: String = u.get_class_name
+	if kind < 100:  # 二次开发：二章 kind（>=100）的立绘由 ch2_ui 盖在 eIco 上
+		(e_unit_panel.get_node("eIco") as FlashClip).goto_and_stop(kind + 1)
+	var class_name_: String = ch2_ui.class_name_for(u)
 	var level: int = u.get_level
 	var cur_hp: int = u.cur_health
 	var max_hp: int = u.health
@@ -1211,6 +1224,10 @@ func update_soldier_data() -> void:
 	else:
 		atype.goto_and_stop(1)
 	var up: FlashClip = panel.get_node("eUpgrade")
+	ch2_ui.refresh_unit_panel(u)
+	if ch2_ui.is_ch2_unit(u):
+		ch2_ui.update_upgrade_entry(up, u)  # 二次开发：二章单位的“可换武器”条件见 Ch2BattleUi
+		return
 	if u.friendly == true:
 		if xp >= xp_until:
 			if level == 3 and u.basic_unit == true:
@@ -1483,11 +1500,14 @@ func _clicked(param1: Variant) -> void:
 	elif mc == e_sub_down:
 		hide_sub_panel()
 	elif mc == e_sub_one:
-		_selected_tier(tier_one(), true)
+		if not ch2_ui.cell_clicked(0):
+			_selected_tier(tier_one(), true)
 	elif mc == e_sub_two:
-		_selected_tier(tier_two(), false)
+		if not ch2_ui.cell_clicked(1):
+			_selected_tier(tier_two(), false)
 	elif mc == e_sub_three:
-		_selected_tier(tier_three(), false)
+		if not ch2_ui.cell_clicked(2):
+			_selected_tier(tier_three(), false)
 
 
 func _try_open_sub_panel(button: FlashClip, cool_status: int, group: String) -> void:
@@ -1567,9 +1587,11 @@ func _show_sub_panel() -> void:
 			if a_locked_units_and_buttons.find(locked_ones[i]) >= 0:
 				(panels[i].get_node("eIco") as FlashClip).goto_and_stop(6)
 	RWTween.all_to(a_sub_units_panel, 0.15, {"y": sub_units_panel_y})
+	ch2_ui.on_sub_panel_shown()
 
 
 func hide_sub_panel() -> void:
+	ch2_ui.on_sub_panel_hide()
 	RWTween.all_to(a_sub_units_panel, 0.2, {"y": sub_units_panel_down_y, "ease": RWEase.linear_ease_in}, 0.0, _sub_panel_invis)
 
 

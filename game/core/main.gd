@@ -64,6 +64,15 @@ var sponsor_url: String = "http://www.maxgames.com"
 var strategy_guide_url: String = "http://www.maxgames.com/guides/royal-warfare.html"
 var host_it_url: String = "http://www.maxgames.com/free-games.html"
 var last_level_num: float = 0
+## 二次开发：当前所在章节（1 或 2）。二章各自记一个 last_level_num（0 基关号），-1 重玩本章上一关。
+var current_chapter: int = 1
+var last_level_num_ch2: float = 0
+var dev_ch1_visit: bool = false  # dev 版：为真时 load_map 不重定向到二章地图
+var ch2_map: Ch2MapScreen = null:
+	get:
+		if ch2_map == null and lazy_screens:
+			ch2_map = Ch2MapScreen.create()
+		return ch2_map
 var comix_intro: IntroComicsEx = null:
 	get:
 		if comix_intro == null and lazy_screens:
@@ -389,7 +398,19 @@ func _resource_steps() -> Dictionary:
 		92: [FriendWiseman.init_resources, NpcOldman.init_resources],
 		93: [NpcMan.init_resources, NpcWoman.init_resources],
 		97: [CantMoveVisual.init_resources, FreeMoveVisual.init_resources, HoldGroundVisual.init_resources],
+		100: _ch2_unit_inits(),
 	}
+
+
+## 二次开发：二章单位类的预热。D1 提供静态 init_resources()；类或方法尚不存在时跳过。
+## 用全局类表按名字取脚本，避免本文件在这些类缺失时无法编译。
+func _ch2_unit_inits() -> Array:
+	var calls: Array = []
+	for cls_name: String in ["Ch2Warden", "Ch2Musketeer", "Ch2DarthLancer"]:
+		var scr: Script = IfaceUtil.global_script(cls_name)
+		if scr != null and scr.has_method("init_resources"):
+			calls.append(Callable(scr, "init_resources"))
+	return calls
 
 
 ## Sounds 的实例是 autoload 节点 SoundSystem（docs/port-plan.md）；未在树中（测试）时退回已有单例。
@@ -425,6 +446,8 @@ func unfaded() -> void:
 
 
 func load_main_menu(_e: Variant = null) -> void:
+	current_chapter = 1  # 二次开发：主菜单的 Play 总是回到一代地图
+	dev_ch1_visit = false
 	play_menu_music()
 	fade_clear_load_unfade(main_menu)
 
@@ -463,6 +486,10 @@ func load_final() -> void:
 
 ## 地图：按 comix_* 标志先放尚未看过（值为 0）的漫画，-1 表示未解锁，1 表示已看。
 func load_map() -> void:
+	# 二次开发：dev 版主菜单 Play 直接进二章地图（经二章地图的船去一代时 dev_ch1_visit 为真，放行）
+	if current_chapter == 2 or (StoredData.dev and not dev_ch1_visit):
+		load_ch2_map()
+		return
 	play_map_music()
 	var flags: Dictionary = StoredData.local_game_data[StoredData.NUMPAN_COMIX]
 	if flags["comix_intro"] == 0:
@@ -486,16 +513,20 @@ func load_game(param1: int = -1, param2: bool = true) -> void:
 	_ensure_battle_resources()  # 后台预热未完成时在这里同步补齐，保证进入任何关卡前资源就绪
 	if param2 == true:
 		play_game_music()
-	if param1 == 0:
+	if param1 == 0 and current_chapter == 1:
 		if LevelIntro.is_shown == false:
 			param1 = -2
 		elif LevelIntro.can_end_intro == false:
 			param1 = -2
 			LevelIntro.is_shown = true
 	if param1 == -1:
-		param1 = int(last_level_num)
+		param1 = int(last_level_num_ch2 if current_chapter == 2 else last_level_num)
+	elif current_chapter == 2:
+		last_level_num_ch2 = param1
 	else:
 		last_level_num = param1
+	# 二次开发：GameUniverse.chapter 由 B 包（战斗框架）添加。
+	game_uni.chapter = current_chapter
 	fade_clear_load_unfade(game_uni, param1)
 
 
@@ -505,6 +536,20 @@ func play_map_music() -> void:
 			sound_class.stop_music(current_music)
 	current_music = sound_lib.get_sound(sound_lib.MAP_MUSIC)
 	sound_class.play_music(current_music, true, 0, 0.25)
+
+
+## 二次开发：进入第二章地图（东渡）。
+func load_ch2_map() -> void:
+	current_chapter = 2
+	play_map_music()
+	fade_clear_load_unfade(ch2_map)
+
+
+## 二次开发：回到一代地图。
+func load_ch1_map() -> void:
+	current_chapter = 1
+	dev_ch1_visit = true  # dev 版从二章地图的船主动去一代地图时，不再被 load_map 拉回二章
+	load_map()
 
 
 func reload_map() -> void:

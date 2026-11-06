@@ -146,13 +146,20 @@ static var local_game_data: Array = []
 static var is_save_ok: bool = false
 static var main_params = null
 static var end_game_flag = null
+## 二次开发：第二章存档，顶层键 "ch2"。{"stars": {"1": [36 个星数], "2": [...], "3": [...]}}，键是难度，下标是关号减 1。
+## 与一代的 aGameData / mainParams / endGameFlag 完全分开，reset_data / sponsor_unlock / 旧档迁移都不碰它。
+const CH2_LEVELS := 36
+static var ch2_data: Dictionary = {}
 
 ## 隔离模式：不读写 user://，序列化文本只保留在内存。
 # 以 --script 运行的测试和截图脚本也一律隔离，防止漏带参数时写入玩家存档。
 static var isolated: bool = OS.get_cmdline_user_args().has("--isolated-profile") or OS.get_cmdline_args().has("--script")
 static var _isolated_blob: String = ""
-## 测试可改写；默认 user://RoyalDefenderGame7.json。
-static var save_path: String = "user://" + SAVE_GAME_NAME + ".json"
+## 二次开发：dev 版开关。导出预设带自定义特性 `dev`，测试用用户参数 --ch2-dev 模拟。
+## dev 版存档文件名带 _dev（另有 project.godot 的 custom_user_dir_name.dev 把目录也分开，两道保险）。
+static var dev: bool = OS.has_feature("dev") or OS.get_cmdline_user_args().has("--ch2-dev") or OS.get_cmdline_args().has("--ch2-dev")
+## 测试可改写；默认 user://RoyalDefenderGame7.json（dev 版 RoyalDefenderGame7_dev.json）。
+static var save_path: String = "user://" + SAVE_GAME_NAME + ("_dev" if dev else "") + ".json"
 ## 原版 flush 失败时弹 popupStorageFailure；这里改为日志 + 可选回调（占位）。
 static var on_storage_failure: Callable = Callable()
 
@@ -164,6 +171,7 @@ static func test_wipe() -> void:
 	local_game_data = []
 	main_params = null
 	end_game_flag = null
+	ch2_data = {}
 	is_save_ok = false
 
 
@@ -220,10 +228,13 @@ static func _storage_failure() -> void:
 
 static func init() -> void:
 	_read_store()
+	_load_ch2()
 	if not shared_data.has("aGameData"):
 		reset_data()
 		reset_main_params()
 		resetif_end_game()
+		if dev:
+			_dev_init()
 	else:
 		local_game_data = (shared_data["aGameData"] as Array).duplicate(false)  # concat：浅拷贝
 		main_params = shared_data.get("mainParams")
@@ -245,6 +256,224 @@ static func init() -> void:
 				set_end_game_completed()
 		else:
 			end_game_flag = shared_data["endGameFlag"]
+
+
+## 读取 shared_data["ch2"]：缺失或类型不对的部分用默认值补齐。
+static func _load_ch2() -> void:
+	var raw: Variant = shared_data.get("ch2")
+	var stars_raw: Variant = raw.get("stars") if raw is Dictionary else null
+	var stars := {}
+	for d in ["1", "2", "3"]:
+		var arr: Array = []
+		var src: Variant = stars_raw.get(d) if stars_raw is Dictionary else null
+		for i in CH2_LEVELS:
+			var v := 0
+			if src is Array and i < (src as Array).size() and (src[i] is int or src[i] is float):
+				v = clampi(int(src[i]), 0, 3)
+			arr.append(v)
+		stars[d] = arr
+	var skills := {}
+	var skills_raw: Variant = raw.get("skills") if raw is Dictionary else null
+	if skills_raw is Dictionary:
+		for k in (skills_raw as Dictionary).keys():
+			var v: Variant = skills_raw[k]
+			if CH2_SKILLS.has(str(k)) and (v is int or v is float):
+				skills[str(k)] = clampi(int(v), 1, 3)
+	var weapons := _ch2_string_list(raw, "weapons", CH2_ADV_WEAPONS, [])
+	var free_weapons := _ch2_string_list(raw, "free_weapons", CH2_ADV_WEAPONS, [])
+	var classes := _ch2_string_list(raw, "classes", CH2_CLASSES, CH2_CLASSES)
+	var bonuses := {}
+	var bonuses_raw: Variant = raw.get("bonuses") if raw is Dictionary else null
+	for cls_ in CH2_CLASSES:
+		var pair := [0, 0]
+		var src: Variant = bonuses_raw.get(cls_) if bonuses_raw is Dictionary else null
+		if src is Array:
+			for i in 2:
+				if i < (src as Array).size() and ((src as Array)[i] is int or (src as Array)[i] is float):
+					pair[i] = clampi(int((src as Array)[i]), 0, 3)
+		bonuses[cls_] = pair
+	ch2_data = {"stars": stars, "skills": skills, "weapons": weapons, "free_weapons": free_weapons, "classes": classes, "bonuses": bonuses}
+	shared_data["ch2"] = ch2_data
+
+
+## raw[key] 里属于 allowed 的字符串（去重）；键缺失或类型不对时用 fallback。
+static func _ch2_string_list(raw: Variant, key: String, allowed: Array, fallback: Array) -> Array:
+	var src: Variant = raw.get(key) if raw is Dictionary else null
+	if not (src is Array):
+		return fallback.duplicate()
+	var out: Array = []
+	for v in src:
+		if v is String and allowed.has(v) and not out.has(v):
+			out.append(v)
+	return out
+
+
+## 第 n 关（1 基）的最高星数；dif = -1 取三个难度里的最大值。
+static func ch2_stars(n: int, dif: int = -1) -> int:
+	if n < 1 or n > CH2_LEVELS or not ch2_data.has("stars"):
+		return 0
+	var stars: Dictionary = ch2_data["stars"]
+	if dif >= 1 and dif <= 3:
+		return int(stars[str(dif)][n - 1])
+	var best := 0
+	for d in ["1", "2", "3"]:
+		best = maxi(best, int(stars[d][n - 1]))
+	return best
+
+
+## 只在新星数更高时覆盖。调用方负责随后 save_shared_data()。
+static func ch2_record_victory(n: int, stars: int, dif: int) -> void:
+	if n < 1 or n > CH2_LEVELS or dif < 1 or dif > 3:
+		return
+	if ch2_data.is_empty():
+		_load_ch2()
+	var arr: Array = ch2_data["stars"][str(dif)]
+	if stars > int(arr[n - 1]):
+		arr[n - 1] = clampi(stars, 0, 3)
+
+
+static func ch2_level_unlocked(n: int) -> bool:
+	if dev:
+		return n >= 1 and n <= CH2_LEVELS  # dev 版所有关卡的旗帜都可点
+	return n == 1 or ch2_stars(n - 1) > 0
+
+
+## 一代通关，或调试参数 --ch2-unlock 时才显示东渡船。
+static func ch2_available() -> bool:
+	# 静态函数里不能直接引用 autoload 名，经场景树取 Content 节点（同 BmpFrames._content 的写法）
+	var content: Node = (Engine.get_main_loop() as SceneTree).root.get_node_or_null("Content")
+	if content != null and bool(content.get("ch2_debug_unlock")):
+		return true
+	return end_game_flag is Dictionary and bool((end_game_flag as Dictionary).get("completed", false))
+
+
+# ---- 二次开发：第二章武器解锁与技能等级（升级面板第二页写入，二章单位读取）----
+## 武器 id 与图标文件名一致（assets/ch2/icons/weapons/<id>.png）。基础武器永远可用，高级武器花 1 星解锁。
+const CH2_BASE_WEAPONS := ["dao_shield", "matchlock"]
+const CH2_ADV_WEAPONS := ["great_glaive", "horse_cleaver", "five_thunders", "heavy_musket"]
+const CH2_CLASSES := ["warden", "musketeer"]
+## 用户 2026-11-06 规则改动：每个职业 2 个基础技能 + 每把高级武器 1 个继承基础技能的"超集"升级技能，
+## 共 8 个（原 wide_sweep / sunder / concussion_round / burst_shell 四个技能删除，不再出现在界面里）。
+const CH2_SKILLS := ["hold_fast", "intercept", "horsebreaker", "follow_through", "steady_aim", "rending_shot", "scattershot", "heartpiercer"]
+
+
+## 技能等级 1..3，默认 1（二章技能一开始就可用，加点只提升等级）。
+static func ch2_skill_level(skill_id: String) -> int:
+	if ch2_data.is_empty():
+		_load_ch2()
+	return clampi(int((ch2_data["skills"] as Dictionary).get(skill_id, 1)), 1, 3)
+
+
+static func ch2_set_skill_level(skill_id: String, level: int) -> void:
+	if not CH2_SKILLS.has(skill_id):
+		return
+	if ch2_data.is_empty():
+		_load_ch2()
+	(ch2_data["skills"] as Dictionary)[skill_id] = clampi(level, 1, 3)
+
+
+## 基础武器恒为真；高级武器已用星解锁，或 dev 授予；dev 版全部解锁。
+static func ch2_weapon_unlocked(weapon_id: String) -> bool:
+	if dev or CH2_BASE_WEAPONS.has(weapon_id):
+		return true
+	if ch2_data.is_empty():
+		_load_ch2()
+	return (ch2_data["weapons"] as Array).has(weapon_id) or (ch2_data["free_weapons"] as Array).has(weapon_id)
+
+
+## 用 1 颗星解锁高级武器（调用方先检查星数）。
+static func ch2_unlock_weapon(weapon_id: String) -> void:
+	if not CH2_ADV_WEAPONS.has(weapon_id) or ch2_weapon_unlocked(weapon_id):
+		return
+	(ch2_data["weapons"] as Array).append(weapon_id)
+
+
+static func ch2_class_open(class_id: String) -> bool:
+	if ch2_data.is_empty():
+		_load_ch2()
+	return (ch2_data["classes"] as Array).has(class_id)
+
+
+## 二章挣到的星：每关取三个难度里的最高星数后求和（同一代每关一个值的口径）。
+static func ch2_stars_gained() -> int:
+	var total := 0
+	for n in range(1, CH2_LEVELS + 1):
+		total += ch2_stars(n)
+	return total
+
+
+## 职业加成（一代 BonusCalculator 的两槽：0=伤害/攻击、1=生命/防御）等级 0..3，默认 0（未加点）。
+## 存档另存在 ch2.bonuses，不与一代 NUMPAN_UNIT_BONUSES 混用。规则与数值照搬对应家族：
+## 镇戍卫 = 战士系（BonusCalculator 槽 0/1），火铳卫 = 弓手系（槽 2/3）。
+static func ch2_bonus_level(class_id: String, slot: int) -> int:
+	if not CH2_CLASSES.has(class_id) or slot < 0 or slot > 1:
+		return 0
+	if ch2_data.is_empty():
+		_load_ch2()
+	return clampi(int((ch2_data["bonuses"] as Dictionary).get(class_id, [0, 0])[slot]), 0, 3)
+
+
+static func ch2_set_bonus_level(class_id: String, slot: int, level: int) -> void:
+	if not CH2_CLASSES.has(class_id) or slot < 0 or slot > 1:
+		return
+	if ch2_data.is_empty():
+		_load_ch2()
+	var bonuses: Dictionary = ch2_data["bonuses"]
+	var pair: Array = bonuses.get(class_id, [0, 0]).duplicate()
+	pair[slot] = clampi(level, 0, 3)
+	bonuses[class_id] = pair
+
+
+## 已花的星：技能每升 1 级（高于默认 1 级）花 1 星，职业加成每升 1 级花 1 星，武器解锁 1 星（dev 授予的不算）。
+static func ch2_stars_spent() -> int:
+	if ch2_data.is_empty():
+		_load_ch2()
+	var total := (ch2_data["weapons"] as Array).size()
+	for k in (ch2_data["skills"] as Dictionary).keys():
+		total += int(ch2_data["skills"][k]) - 1
+	for cls_ in (ch2_data["bonuses"] as Dictionary).keys():
+		for lvl in ch2_data["bonuses"][cls_]:
+			total += int(lvl)
+	return total
+
+
+static func ch2_stars_free() -> int:
+	return ch2_stars_gained() - ch2_stars_spent()
+
+
+## 重置二章加点：技能回 1 级，职业加成回 0 级，付费解锁的武器退还（dev 授予的保留）。
+static func ch2_reset_upgrades() -> void:
+	if ch2_data.is_empty():
+		_load_ch2()
+	ch2_data["skills"] = {}
+	ch2_data["weapons"] = []
+	var bonuses := {}
+	for cls_ in CH2_CLASSES:
+		bonuses[cls_] = [0, 0]
+	ch2_data["bonuses"] = bonuses
+
+
+## dev 版首次启动的存档：一代全开（24 关三难度全 3 星 + 48 成就 = 120 星），二章两个职业、6 把武器全开，
+## 技能全部 1 级（职业加成不预置，dev 授予的解锁不占星，加成仍需要玩家自行加点）。
+static func _dev_init() -> void:
+	sponsor_unlock()  # 兵种、幕布、三级职业、漫画、开场教学、技能 1 级
+	local_game_data[NUMPAN_LEVELS] = _filled(24, 3)
+	local_game_data[NUMPAN_LEVELS_MIDDIF] = _filled(24, 3)
+	local_game_data[NUMPAN_LEVELS_HIGHDIF] = _filled(24, 3)
+	local_game_data[NUMPAN_ACHIVES] = _filled(48, 1)
+	set_end_game_completed()
+	var skills := {}
+	for id in CH2_SKILLS:
+		skills[id] = 1
+	ch2_data["skills"] = skills
+	ch2_data["weapons"] = []
+	ch2_data["free_weapons"] = CH2_ADV_WEAPONS.duplicate()
+	ch2_data["classes"] = CH2_CLASSES.duplicate()
+	var bonuses := {}
+	for cls_ in CH2_CLASSES:
+		bonuses[cls_] = [0, 0]
+	ch2_data["bonuses"] = bonuses
+	save_shared_data()
 
 
 static func reset_main_params() -> void:
@@ -494,6 +723,8 @@ static func reset_data() -> void:
 static func save_shared_data() -> void:
 	shared_data["aGameData"] = local_game_data.duplicate(false)  # concat：浅拷贝，内层数组与 local_game_data 共享
 	shared_data["mainParams"] = main_params
+	if not ch2_data.is_empty():
+		shared_data["ch2"] = ch2_data
 	is_save_ok = true
 	if not _flush():
 		is_save_ok = false
