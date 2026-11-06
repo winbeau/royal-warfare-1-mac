@@ -44,6 +44,7 @@
 - **选中已经满级的进阶兵种（如 Elite Sniper）时单位面板的 "^^" 进阶按钮点击无反应**：对照反编译的 `mainGameUI_ex.as`（`updateSoldierData`/`upgradeClicked`）和 `livingObject.as`（`upgradeClicked`/`upgrade`），逐行核对后判定这是**原版本来就有的行为**，不是移植引入的 bug：按钮的"抬起/放下"位置只在单位满足 `xp>=xpUntil && level==3 && basicUnit==true && isUpgradeAllowed` 时才会被挪上去，`xp>=xpUntil` 为真但其余条件不满足时（例如选中的是已经不是 `basicUnit` 的满级进阶兵种）不会把按钮复位——如果之前选过一个满足条件的基础兵种，按钮会沿用旧位置停在"抬起"的样子；对 `basicUnit==false` 的单位点击会调用 `livingObject.upgradeClicked()`，它总是播放一次升级特效，但 `upgrade()` 内部 `if cur_level != 3` 会跳过真正的数值变化，所以视觉上"好像点了但什么都没变"。两份反编译源码在这一段逐行一致，按项目约定不擅自当作笔误修掉，只在 `tests/input_battle_flow.gd` 顶部注释记录这个行为，避免以后误当 bug "修复"。
 
 - **第二次及以后进关看不到招募图标（右下角只剩空石板）**：`GameUniverse` 和战斗界面 `MainGameUIEx` 在整个游戏运行期间只创建一次、跨关卡复用。`continue_loading_level_data` 原来先 `remove_child(ingame_ui)` 再 `add_child(ingame_ui)`，让界面在同一次进关里多走一次离树、进树，`_added()` 执行两次；招募按钮的相对补间 `allFrom(aButtons, 0.4, {y:"42"})` 于是在已下移的位置上再叠加 42，新补间按 AUTO 覆盖杀掉前一个，按钮停在 y≈625，落到 600 高的舞台外。原版 `addChild(ingameUI)` 对已在本容器的子对象只调整层级，不会再派发 ADDED_TO_STAGE。修复为界面已是子节点时只 `move_child` 置顶。之前的探针每局都新建 `Main`，所以一直没复现；现在 `tests/input_battle_flow.gd` 断言回地图后进第 3 关、再重玩时，招募按钮都回到原位。
+- **法师技能加点点不了**：升级面板五块幕布的 `e0` 升起后整块移到 `msk` 遮罩之外，正好压在上方兵种的加点按钮上（祭司幕布压法师，盗贼幕布压战士）。Flash 里遮罩外的部分收不到鼠标事件，原版这些按钮照样能点；Godot 的 `clip_contents` 只裁绘制，不裁 GUI 拾取（脚本也覆盖不了 `clips_input`），点击落在看不见的幕布上。修复为 `FlashClip._has_point()` 先按祖先遮罩矩形裁切命中，下探子树时同样跳过子树里遮罩外的部分。`tests/upgrade_panel.gd` 用真实点击验证通过 4 关后法师、战士的加点按钮可点，而还没升起的盗贼幕布在遮罩内照常挡住它下面的按钮。
 
 ## 用户要求的玩法改动（不是还原修复）
 

@@ -39,6 +39,7 @@ func run() -> void:
 	await test_ability_description()
 	await test_zanaves_mask()
 	await test_help_hint_click_closes()
+	await test_raised_curtain_does_not_block_pads()
 
 	print(JSON.stringify({"checks": checks, "failures": failures}))
 	quit(0 if failures.is_empty() else 1)
@@ -91,6 +92,36 @@ func test_help_hint_click_closes() -> void:
 	RWTween.step(0.35)  # hideHint 的 TweenMax.to(...0.3...) 用墙钟驱动；紧跟着立刻断言，
 	# 避免真实帧的 _process 用很小的墙钟增量覆盖 step() 推进的 root_time
 	check(not panel.e_hint.visible, "点击说明面板后帮助提示关闭")
+	root.remove_child(panel)
+	panel.free()
+
+
+## 幕布升起后 e0 整块移到 msk 遮罩之外，正好压在上方兵种的加点按钮上（祭司幕布压法师、盗贼幕布压战士）。
+## Flash 里遮罩外的部分收不到鼠标事件，这些按钮照样能点；之前 clip_contents 只裁绘制，不裁命中，
+## 法师技能因此点不了。另一面：还没升起的幕布在遮罩内照常挡住它下面的按钮。
+func test_raised_curtain_does_not_block_pads() -> void:
+	StoredData.reset_data()
+	for i in 4:  # 通过 4 关：战士/弓手/祭司/法师幕布升起，盗贼幕布还盖着
+		var levels: Array = StoredData.local_game_data[StoredData.NUMPAN_LEVELS]
+		StoredData._splice1(levels, i, 3)
+		StoredData._splice1(StoredData.local_game_data, StoredData.NUMPAN_LEVELS, levels.duplicate())
+	var z: Dictionary = StoredData.local_game_data[StoredData.NUMPAN_ZANAVES]
+	for k in ["zWarriors", "zArchers", "zPriests", "zMages"]:
+		z[k] = 1  # 已看过：直接停在升起位置，也不会自动弹出帮助提示
+	var panel := UpgrPanelEx.create()
+	panel.init_once()  # Main 创建面板时调用，五块幕布在这里接上遮罩
+	root.add_child(panel)
+	root.size = Vector2(700, 600)
+	await settle()
+	for pad: FlashClip in [panel.u_mage_blue_a, panel.u_mage_red_b, panel.u_mages_attack, panel.u_war_warrior_a]:
+		var lock := pad.child_clip("eLock")
+		await click_at(pad.get_global_transform() * IfaceUtil.clip_bounds(pad).get_center())
+		check(root.gui_get_hovered_control() == pad, "%s 不被升起的幕布挡住（实际命中 %s）" % [pad.name, root.gui_get_hovered_control()])
+		check(lock.current_frame == 3, "%s 真实点击后加到 1 级（eLock 第 3 帧，got %d）" % [pad.name, lock.current_frame])
+	var thief_pad := panel.u_thief_thief_a
+	await click_at(thief_pad.get_global_transform() * IfaceUtil.clip_bounds(thief_pad).get_center())
+	check(thief_pad.child_clip("eLock").current_frame == 1, "盗贼幕布还没升起时，它下面的加点按钮点不到")
+	RWTween.kill_all()
 	root.remove_child(panel)
 	panel.free()
 

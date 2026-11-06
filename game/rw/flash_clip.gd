@@ -142,10 +142,11 @@ func back_texture() -> Texture2D:
 func front_texture() -> Texture2D:
 	return _front.texture if _front else null
 
-## Flash 的 `target.mask = mask`：mask 本身在舞台上不可见，只用它的形状裁切 target 的渲染；遮罩
-## 只影响绘制，不影响点击命中测试（Flash 的 hitTestPoint 不看 mask），所以这里不需要、也不应该改
-## target 自身的命中范围。两处已知用例（popupMission 的 eTextMask / eMapSymbol.eMask）都是矩形遮罩，
-## 用 Control.clip_contents（按 mask.size 的矩形裁切）实现，等价于 Flash 遮罩在这两处的效果。
+## Flash 的 `target.mask = mask`：mask 本身在舞台上不可见，只用它的形状裁切 target。被遮住的部分
+## 既不显示，也收不到鼠标事件（升级面板的幕布升起后整块移到遮罩外，压在上方兵种的加点按钮上；
+## 原版这些按钮照样能点）。已知用例（popupMission 的 eTextMask / eMapSymbol.eMask / 升级面板五块幕布
+## 的 msk）都是矩形遮罩，绘制用 Control.clip_contents（按 mask.size 的矩形裁切）实现；鼠标命中的裁切
+## 由 _has_point 按祖先遮罩矩形另外判定（clip_contents 只裁绘制，不裁 GUI 拾取）。
 ## 把 target 重新挂到 mask 下面，并按两者当前的全局变换换算 target 的新局部变换，保证视觉位置不变；
 ## mask 自己的图层（_back/_front）隐藏掉（否则会被当成普通可见内容画出来，且默认 mouse_filter=PASS
 ## 还会拦截点击——这正是当前界面上遮罩被画成实心矩形、同时吞掉点击的根因）。
@@ -300,6 +301,30 @@ func _apply_mouse_children() -> void:
 				child.remove_meta("_fc_filter")
 
 func _has_point(point: Vector2) -> bool:
+	if data == null or _outside_ancestor_mask(point):
+		return false
+	return _hit_local(point)
+
+## 点落在某一层祖先遮罩（set_mask 设了 clip_contents 的节点）的矩形之外：Flash 里这部分被遮住，
+## 收不到鼠标事件。Godot 的 clip_contents 只裁绘制，GUI 拾取照样命中，且脚本无法覆盖 clips_input，
+## 所以在命中测试里自己判。
+func _outside_ancestor_mask(point: Vector2) -> bool:
+	var a := get_parent()
+	var global_pt := Vector2.ZERO
+	var computed := false
+	while a != null:
+		var ac := a as Control
+		if ac != null and ac.clip_contents:
+			if not computed:
+				global_pt = get_global_transform() * point
+				computed = true
+			if not Rect2(Vector2.ZERO, ac.size).has_point(ac.get_global_transform().affine_inverse() * global_pt):
+				return true
+		a = a.get_parent()
+	return false
+
+## 本剪辑（含子树）在 point（本地坐标）处有没有可点的内容，不看祖先遮罩。
+func _hit_local(point: Vector2) -> bool:
 	if data == null:
 		return false
 	var any_texture := false
@@ -342,7 +367,9 @@ func _has_point(point: Vector2) -> bool:
 		if sx == 0.0 or sy == 0.0:
 			continue
 		var local_pt: Vector2 = (point - c.position) / Vector2(sx, sy)
-		if c._has_point(local_pt):
+		if c.clip_contents and not Rect2(Vector2.ZERO, c.size).has_point(local_pt):
+			continue  # 子树里的遮罩：遮罩外的部分同样不算命中
+		if c._hit_local(local_pt):
 			return true
 	if not any_texture and data.children.is_empty() and not _has_content_children() and data.rect.size != Vector2.ZERO:
 		# 纯"命中形状"符号（Flash 里常见做法：填充 alpha=0 的矢量形状专门用来当点击热区，例如地图旗帜/
